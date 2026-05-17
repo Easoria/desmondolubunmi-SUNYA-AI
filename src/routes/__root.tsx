@@ -72,11 +72,19 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Sunya — A Universal System for Inner Transformation" },
+      {
+        name: "description",
+        content:
+          "Sunya is a complete, practical framework for human wellbeing — rooted in the timeless mechanics of consciousness, not belief. Try Sunya AI free.",
+      },
+      { name: "author", content: "Desmond Olubunmi" },
+      { property: "og:title", content: "Sunya — A Universal System for Inner Transformation" },
+      {
+        property: "og:description",
+        content:
+          "Sunya is a complete, practical framework for human wellbeing — rooted in the timeless mechanics of consciousness, not belief.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
