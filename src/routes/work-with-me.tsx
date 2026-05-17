@@ -130,14 +130,53 @@ function WorkPage() {
         </div>
       </section>
 
-      <section className="relative bg-[#060d1c] py-20">
-        <div className="mx-auto max-w-2xl px-6 text-center">
-          <p className="text-[#b8d4e8]">
-            Want to learn more about Desmond first?{" "}
-            <Link to="/" className="text-[#7ec8e3] hover:text-white">
-              Read his story →
-            </Link>
-          </p>
+      <section
+        className="relative overflow-hidden py-32"
+        style={{
+          background: "linear-gradient(135deg, #0a1628 0%, #1a1530 50%, #2a1a1f 100%)",
+        }}
+      >
+        <div className="relative z-10 mx-auto grid max-w-6xl gap-14 px-6 lg:grid-cols-5 lg:items-center">
+          <div className="lg:col-span-2">
+            <div className="glass relative overflow-hidden rounded-3xl">
+              <img
+                src={desmondImg}
+                alt="Desmond Olubunmi"
+                width={1024}
+                height={1024}
+                loading="lazy"
+                className="aspect-[4/5] h-full w-full object-cover"
+              />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0a1628]/40 via-transparent to-transparent" />
+            </div>
+          </div>
+          <div className="lg:col-span-3">
+            <div className="label-eyebrow">The founder</div>
+            <h2 className="display mt-5 text-4xl text-white sm:text-6xl">Desmond Olubunmi</h2>
+            <p className="display-italic mt-3 text-lg text-[#b8d4e8]">
+              Nigerian-Irish. 23. Built this because he needed it.
+            </p>
+            <div className="mt-8 space-y-4 text-[#b8d4e8]">
+              <p>
+                I grew up between worlds — Nigerian roots, Irish upbringing, a mind that couldn't
+                stop asking why.
+              </p>
+              <p>
+                I went deep. Vedanta. Taoism. Neuroscience. Kabbalah. Sufism. Isha Yoga. And
+                underneath all of it, I found the same mechanics. The same root causes. The same
+                levers.
+              </p>
+              <p className="text-white/90">
+                Sunya is the distillation of that search — a universal map that belongs to no
+                tradition, but honours all of them.
+              </p>
+            </div>
+            <div className="mt-9 flex flex-wrap gap-4">
+              <button className="glow-btn inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium">
+                Book a Session <ArrowRight className="h-4 w-4" />
+              </button>
+            </div>
+          </div>
         </div>
       </section>
 
