@@ -151,7 +151,7 @@ function SunyaAIPage() {
                   </li>
                 ))}
               </ul>
-              <button className="glow-btn mt-auto mt-8 inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium">
+              <button className="glow-btn mt-8 inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium">
                 Get Full Access <ArrowRight className="h-4 w-4" />
               </button>
             </div>
