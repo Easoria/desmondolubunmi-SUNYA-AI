@@ -4,6 +4,7 @@ import { Starfield } from "@/components/Starfield";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { Breadcrumb } from "@/components/site/Breadcrumb";
+import desmondImg from "@/assets/desmond.jpg";
 
 export const Route = createFileRoute("/work-with-me")({
   component: WorkPage,
