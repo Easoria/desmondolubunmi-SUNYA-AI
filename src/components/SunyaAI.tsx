@@ -24,6 +24,13 @@ export function SunyaAI() {
   useEffect(() => {
     const v = parseInt(localStorage.getItem(STORAGE_KEY) || "0", 10);
     setUses(isNaN(v) ? 0 : v);
+    try {
+      const prefill = sessionStorage.getItem("sunya_prefill");
+      if (prefill) {
+        setInput(prefill);
+        sessionStorage.removeItem("sunya_prefill");
+      }
+    } catch {}
   }, []);
 
   const exhausted = uses >= FREE_LIMIT;
