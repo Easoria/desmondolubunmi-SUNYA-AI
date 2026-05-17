@@ -25,9 +25,9 @@ export function Nav() {
       }`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
-        <Link to="/" className="group flex items-baseline gap-3">
+        <Link to="/" className="group flex flex-col leading-tight">
           <span className="display text-2xl tracking-[0.4em] text-white">SUNYA</span>
-          <span className="hidden text-xs italic text-[#b8d4e8]/70 sm:inline">
+          <span className="text-[10px] italic text-[#b8d4e8]/70 sm:text-xs">
             by Desmond Olubunmi
           </span>
         </Link>
@@ -49,13 +49,21 @@ export function Nav() {
             Try Sunya AI <ArrowRight className="h-3.5 w-3.5" />
           </Link>
         </div>
-        <button
-          aria-label="Menu"
-          className="rounded-md border border-white/10 p-2 text-white md:hidden"
-          onClick={() => setOpen((v) => !v)}
-        >
-          {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-        </button>
+        <div className="flex items-center gap-2 md:hidden">
+          <Link
+            to="/sunya-ai"
+            className="glow-btn inline-flex items-center gap-1.5 rounded-full px-3.5 py-2 text-xs font-medium"
+          >
+            Try Sunya AI <ArrowRight className="h-3 w-3" />
+          </Link>
+          <button
+            aria-label="Menu"
+            className="rounded-md border border-white/10 p-2 text-white"
+            onClick={() => setOpen((v) => !v)}
+          >
+            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
+        </div>
       </nav>
       {open && (
         <div className="border-t border-white/10 bg-[#0a1628]/95 backdrop-blur-xl md:hidden">
