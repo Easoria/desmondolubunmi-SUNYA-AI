@@ -1,0 +1,210 @@
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { useState } from "react";
+import { ArrowRight, ChevronDown, CheckCircle2 } from "lucide-react";
+import { Starfield } from "@/components/Starfield";
+import { SunyaAI } from "@/components/SunyaAI";
+import { Nav } from "@/components/site/Nav";
+import { Footer } from "@/components/site/Footer";
+import { Breadcrumb } from "@/components/site/Breadcrumb";
+
+export const Route = createFileRoute("/sunya-ai")({
+  component: SunyaAIPage,
+  head: () => ({
+    meta: [
+      { title: "Sunya AI — Personal diagnostic intelligence for inner transformation" },
+      {
+        name: "description",
+        content:
+          "Describe what you're experiencing. Sunya AI diagnoses the mechanics behind it and gives you the precise tools to address it — drawn from the complete Sunya framework.",
+      },
+    ],
+  }),
+});
+
+const STEPS = [
+  { n: "1", t: "Describe your situation", c: "In your own words, no jargon required." },
+  { n: "2", t: "Receive your diagnosis", c: "The root mechanical cause identified across the 4 principles and 7 layers." },
+  { n: "3", t: "Get your protocol", c: "The specific levers and practices most relevant to you right now." },
+];
+
+const FAQ = [
+  {
+    q: "Do I need to know anything about spirituality or mindfulness?",
+    a: "Not at all. Sunya is built on universal mechanics, not belief systems. You just describe how you feel in ordinary language.",
+  },
+  {
+    q: "How is this different from a regular AI chatbot?",
+    a: "Sunya AI is trained specifically on the complete Sunya framework — the 4 root causes, 7 layers of being, and 12 levers. It doesn't give generic advice. It gives a precise mechanical diagnosis of your specific situation.",
+  },
+  {
+    q: "Is what I share private?",
+    a: "Yes. Your inputs are not stored or shared.",
+  },
+  {
+    q: "What if I want to go deeper than the tool can take me?",
+    a: "That's what the 1-on-1 sessions with Desmond are for.",
+  },
+];
+
+function SunyaAIPage() {
+  const [open, setOpen] = useState<number | null>(0);
+  return (
+    <div className="min-h-screen bg-[#0a1628] text-white">
+      <Nav />
+      <Breadcrumb />
+
+      <section className="relative overflow-hidden pb-20 pt-16">
+        <Starfield density={1.1} />
+        <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
+          <div className="label-eyebrow">Personal diagnostic intelligence</div>
+          <h1 className="display mt-6 text-5xl text-white sm:text-7xl">Sunya AI</h1>
+          <p className="mx-auto mt-8 max-w-2xl text-lg text-[#b8d4e8]">
+            Describe what you're experiencing. The system diagnoses the mechanics behind it and
+            gives you the precise tools to address it — drawn from the complete Sunya framework.
+          </p>
+        </div>
+      </section>
+
+      <section className="relative overflow-hidden bg-[#060d1c] py-20">
+        <Starfield density={0.5} />
+        <div className="relative z-10 mx-auto max-w-5xl px-6">
+          <SunyaAI />
+        </div>
+      </section>
+
+      {/* How it works */}
+      <section className="relative overflow-hidden bg-[#0a1628] py-28">
+        <div className="relative z-10 mx-auto max-w-5xl px-6">
+          <div className="text-center">
+            <div className="label-eyebrow">How it works</div>
+            <h2 className="display mt-6 text-4xl text-white sm:text-5xl">
+              Three steps. <span className="display-italic text-[#b8d4e8]">No fluff.</span>
+            </h2>
+          </div>
+          <div className="mt-14 grid gap-6 md:grid-cols-3">
+            {STEPS.map((s) => (
+              <div key={s.n} className="glass-card p-7">
+                <div className="font-display text-xs tracking-[0.4em] text-[#7ec8e3]">STEP {s.n}</div>
+                <h3 className="display mt-4 text-2xl text-white">{s.t}</h3>
+                <p className="mt-3 text-sm text-[#b8d4e8]">{s.c}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing */}
+      <section className="relative overflow-hidden bg-[#060d1c] py-28">
+        <div className="relative z-10 mx-auto max-w-5xl px-6">
+          <div className="text-center">
+            <div className="label-eyebrow">Pricing</div>
+            <h2 className="display mt-6 text-4xl text-white sm:text-5xl">
+              Start free. <span className="display-italic text-[#b8d4e8]">Go deeper when ready.</span>
+            </h2>
+          </div>
+          <div className="mt-14 grid gap-6 md:grid-cols-2">
+            <div className="glass-card flex flex-col p-8">
+              <div className="label-eyebrow">Free</div>
+              <div className="mt-4 flex items-baseline gap-2">
+                <span className="display text-5xl text-white">3</span>
+                <span className="text-sm text-[#b8d4e8]">sessions</span>
+              </div>
+              <ul className="mt-7 space-y-3 text-sm text-[#b8d4e8]">
+                {["Full diagnostic", "Personalised protocol", "No account needed"].map((i) => (
+                  <li key={i} className="flex gap-2">
+                    <CheckCircle2 className="h-4 w-4 text-[#7ec8e3]" /> {i}
+                  </li>
+                ))}
+              </ul>
+              <a
+                href="#top"
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }}
+                className="mt-auto pt-8"
+              >
+                <span className="glow-btn inline-flex w-full items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium">
+                  Try Free <ArrowRight className="h-4 w-4" />
+                </span>
+              </a>
+            </div>
+            <div className="glass-strong relative flex flex-col rounded-3xl p-8">
+              <div className="absolute right-6 top-6 rounded-full bg-[#7ec8e3]/15 px-3 py-1 text-[10px] uppercase tracking-[0.25em] text-[#7ec8e3] ring-1 ring-[#7ec8e3]/30">
+                Recommended
+              </div>
+              <div className="label-eyebrow">Full Access</div>
+              <div className="mt-4 flex items-baseline gap-2">
+                <span className="display text-5xl text-white">€29</span>
+                <span className="text-sm text-[#b8d4e8]">/ month</span>
+              </div>
+              <ul className="mt-7 space-y-3 text-sm text-[#b8d4e8]">
+                {[
+                  "Unlimited sessions",
+                  "Full diagnostic",
+                  "Session history",
+                  "Progress tracking",
+                  "Priority responses",
+                ].map((i) => (
+                  <li key={i} className="flex gap-2">
+                    <CheckCircle2 className="h-4 w-4 text-[#7ec8e3]" /> {i}
+                  </li>
+                ))}
+              </ul>
+              <button className="glow-btn mt-8 inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium">
+                Get Full Access <ArrowRight className="h-4 w-4" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="relative overflow-hidden bg-[#0a1628] py-28">
+        <div className="relative z-10 mx-auto max-w-3xl px-6">
+          <div className="text-center">
+            <div className="label-eyebrow">FAQ</div>
+            <h2 className="display mt-6 text-4xl text-white sm:text-5xl">Questions, answered.</h2>
+          </div>
+          <div className="mt-12 space-y-3">
+            {FAQ.map((f, i) => {
+              const isOpen = open === i;
+              return (
+                <div key={i} className="glass-card overflow-hidden">
+                  <button
+                    onClick={() => setOpen(isOpen ? null : i)}
+                    className="flex w-full items-center gap-4 p-5 text-left"
+                  >
+                    <span className="flex-1 text-white">{f.q}</span>
+                    <ChevronDown
+                      className={`h-4 w-4 text-[#7ec8e3] transition-transform ${
+                        isOpen ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+                  {isOpen && (
+                    <div className="border-t border-white/10 px-5 pb-5 pt-4 text-sm leading-relaxed text-[#b8d4e8]">
+                      {f.a}
+                      {i === 3 && (
+                        <div className="mt-3">
+                          <Link
+                            to="/work-with-me"
+                            className="inline-flex items-center gap-2 text-[#7ec8e3] hover:text-white"
+                          >
+                            Book a session <ArrowRight className="h-4 w-4" />
+                          </Link>
+                        </div>
+                      )}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+    </div>
+  );
+}
