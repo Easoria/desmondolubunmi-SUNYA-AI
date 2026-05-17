@@ -9,9 +9,33 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as WorkWithMeRouteImport } from './routes/work-with-me'
+import { Route as VisionRouteImport } from './routes/vision'
+import { Route as SunyaAiRouteImport } from './routes/sunya-ai'
+import { Route as PhilosophyRouteImport } from './routes/philosophy'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ApiChatRouteImport } from './routes/api/chat'
 
+const WorkWithMeRoute = WorkWithMeRouteImport.update({
+  id: '/work-with-me',
+  path: '/work-with-me',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VisionRoute = VisionRouteImport.update({
+  id: '/vision',
+  path: '/vision',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SunyaAiRoute = SunyaAiRouteImport.update({
+  id: '/sunya-ai',
+  path: '/sunya-ai',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PhilosophyRoute = PhilosophyRouteImport.update({
+  id: '/philosophy',
+  path: '/philosophy',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -25,32 +49,95 @@ const ApiChatRoute = ApiChatRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/philosophy': typeof PhilosophyRoute
+  '/sunya-ai': typeof SunyaAiRoute
+  '/vision': typeof VisionRoute
+  '/work-with-me': typeof WorkWithMeRoute
   '/api/chat': typeof ApiChatRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/philosophy': typeof PhilosophyRoute
+  '/sunya-ai': typeof SunyaAiRoute
+  '/vision': typeof VisionRoute
+  '/work-with-me': typeof WorkWithMeRoute
   '/api/chat': typeof ApiChatRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/philosophy': typeof PhilosophyRoute
+  '/sunya-ai': typeof SunyaAiRoute
+  '/vision': typeof VisionRoute
+  '/work-with-me': typeof WorkWithMeRoute
   '/api/chat': typeof ApiChatRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/api/chat'
+  fullPaths:
+    | '/'
+    | '/philosophy'
+    | '/sunya-ai'
+    | '/vision'
+    | '/work-with-me'
+    | '/api/chat'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/api/chat'
-  id: '__root__' | '/' | '/api/chat'
+  to:
+    | '/'
+    | '/philosophy'
+    | '/sunya-ai'
+    | '/vision'
+    | '/work-with-me'
+    | '/api/chat'
+  id:
+    | '__root__'
+    | '/'
+    | '/philosophy'
+    | '/sunya-ai'
+    | '/vision'
+    | '/work-with-me'
+    | '/api/chat'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  PhilosophyRoute: typeof PhilosophyRoute
+  SunyaAiRoute: typeof SunyaAiRoute
+  VisionRoute: typeof VisionRoute
+  WorkWithMeRoute: typeof WorkWithMeRoute
   ApiChatRoute: typeof ApiChatRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/work-with-me': {
+      id: '/work-with-me'
+      path: '/work-with-me'
+      fullPath: '/work-with-me'
+      preLoaderRoute: typeof WorkWithMeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/vision': {
+      id: '/vision'
+      path: '/vision'
+      fullPath: '/vision'
+      preLoaderRoute: typeof VisionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sunya-ai': {
+      id: '/sunya-ai'
+      path: '/sunya-ai'
+      fullPath: '/sunya-ai'
+      preLoaderRoute: typeof SunyaAiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/philosophy': {
+      id: '/philosophy'
+      path: '/philosophy'
+      fullPath: '/philosophy'
+      preLoaderRoute: typeof PhilosophyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -70,8 +157,22 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  PhilosophyRoute: PhilosophyRoute,
+  SunyaAiRoute: SunyaAiRoute,
+  VisionRoute: VisionRoute,
+  WorkWithMeRoute: WorkWithMeRoute,
   ApiChatRoute: ApiChatRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
