@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Sparkles, Lock, Globe, Zap, ArrowRight, Loader2, X, Plus } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/hooks/use-auth";
 
 const PROMPTS = [
@@ -52,6 +51,7 @@ export function SunyaAI() {
 
   async function persistMessage(role: "user" | "assistant", content: string, sid: string) {
     if (!user) return;
+    const { supabase } = await import("@/integrations/supabase/client");
     await supabase.from("messages").insert({
       session_id: sid,
       user_id: user.id,
@@ -63,6 +63,7 @@ export function SunyaAI() {
   async function ensureSession(): Promise<string | null> {
     if (!user) return null;
     if (sessionId) return sessionId;
+    const { supabase } = await import("@/integrations/supabase/client");
     const { data, error } = await supabase
       .from("sessions")
       .insert({ user_id: user.id })
