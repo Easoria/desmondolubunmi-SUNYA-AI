@@ -29,9 +29,22 @@ export function Footer() {
           ))}
         </div>
       </div>
-      <div className="border-t border-white/5 px-6 py-6 text-center text-xs text-[#b8d4e8]/50">
-        © 2026 Desmond Olubunmi · desmondolubunmi.com
-        <div className="mt-1 text-[10px] tracking-[0.3em]">BUILT ON TRUTH · POWERED BY SUNYA</div>
+
+      <div className="border-t border-white/5 px-6 py-6">
+        <p className="mx-auto max-w-3xl text-center text-[11px] leading-relaxed text-[#b8d4e8]/60">
+          Sunya AI is a wellness and personal development tool. It is not a substitute for medical
+          or mental health care. If you are in crisis or need professional support, please reach
+          out to a qualified professional or crisis service — Ireland &amp; UK: Samaritans 116 123 ·
+          US: 988.
+        </p>
+        <div className="mt-5 flex flex-col items-center justify-center gap-3 text-xs text-[#b8d4e8]/60 sm:flex-row sm:gap-6">
+          <Link to="/privacy" className="hover:text-white">Privacy Policy</Link>
+          <Link to="/terms" className="hover:text-white">Terms of Service</Link>
+          <a href="mailto:support@sunyasleep.com" className="hover:text-white">support@sunyasleep.com</a>
+        </div>
+        <div className="mt-4 text-center text-[10px] tracking-[0.3em] text-[#b8d4e8]/40">
+          © 2026 DESMOND OLUBUNMI · BUILT ON TRUTH · POWERED BY SUNYA
+        </div>
       </div>
     </footer>
   );

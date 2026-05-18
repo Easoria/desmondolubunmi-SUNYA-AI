@@ -11,8 +11,10 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as WorkWithMeRouteImport } from './routes/work-with-me'
 import { Route as VisionRouteImport } from './routes/vision'
+import { Route as TermsRouteImport } from './routes/terms'
 import { Route as SunyaAiRouteImport } from './routes/sunya-ai'
 import { Route as ResetPasswordRouteImport } from './routes/reset-password'
+import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as PhilosophyRouteImport } from './routes/philosophy'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as ForgotPasswordRouteImport } from './routes/forgot-password'
@@ -29,6 +31,11 @@ const VisionRoute = VisionRouteImport.update({
   path: '/vision',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SunyaAiRoute = SunyaAiRouteImport.update({
   id: '/sunya-ai',
   path: '/sunya-ai',
@@ -37,6 +44,11 @@ const SunyaAiRoute = SunyaAiRouteImport.update({
 const ResetPasswordRoute = ResetPasswordRouteImport.update({
   id: '/reset-password',
   path: '/reset-password',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PhilosophyRoute = PhilosophyRouteImport.update({
@@ -70,8 +82,10 @@ export interface FileRoutesByFullPath {
   '/forgot-password': typeof ForgotPasswordRoute
   '/login': typeof LoginRoute
   '/philosophy': typeof PhilosophyRoute
+  '/privacy': typeof PrivacyRoute
   '/reset-password': typeof ResetPasswordRoute
   '/sunya-ai': typeof SunyaAiRoute
+  '/terms': typeof TermsRoute
   '/vision': typeof VisionRoute
   '/work-with-me': typeof WorkWithMeRoute
   '/api/chat': typeof ApiChatRoute
@@ -81,8 +95,10 @@ export interface FileRoutesByTo {
   '/forgot-password': typeof ForgotPasswordRoute
   '/login': typeof LoginRoute
   '/philosophy': typeof PhilosophyRoute
+  '/privacy': typeof PrivacyRoute
   '/reset-password': typeof ResetPasswordRoute
   '/sunya-ai': typeof SunyaAiRoute
+  '/terms': typeof TermsRoute
   '/vision': typeof VisionRoute
   '/work-with-me': typeof WorkWithMeRoute
   '/api/chat': typeof ApiChatRoute
@@ -93,8 +109,10 @@ export interface FileRoutesById {
   '/forgot-password': typeof ForgotPasswordRoute
   '/login': typeof LoginRoute
   '/philosophy': typeof PhilosophyRoute
+  '/privacy': typeof PrivacyRoute
   '/reset-password': typeof ResetPasswordRoute
   '/sunya-ai': typeof SunyaAiRoute
+  '/terms': typeof TermsRoute
   '/vision': typeof VisionRoute
   '/work-with-me': typeof WorkWithMeRoute
   '/api/chat': typeof ApiChatRoute
@@ -106,8 +124,10 @@ export interface FileRouteTypes {
     | '/forgot-password'
     | '/login'
     | '/philosophy'
+    | '/privacy'
     | '/reset-password'
     | '/sunya-ai'
+    | '/terms'
     | '/vision'
     | '/work-with-me'
     | '/api/chat'
@@ -117,8 +137,10 @@ export interface FileRouteTypes {
     | '/forgot-password'
     | '/login'
     | '/philosophy'
+    | '/privacy'
     | '/reset-password'
     | '/sunya-ai'
+    | '/terms'
     | '/vision'
     | '/work-with-me'
     | '/api/chat'
@@ -128,8 +150,10 @@ export interface FileRouteTypes {
     | '/forgot-password'
     | '/login'
     | '/philosophy'
+    | '/privacy'
     | '/reset-password'
     | '/sunya-ai'
+    | '/terms'
     | '/vision'
     | '/work-with-me'
     | '/api/chat'
@@ -140,8 +164,10 @@ export interface RootRouteChildren {
   ForgotPasswordRoute: typeof ForgotPasswordRoute
   LoginRoute: typeof LoginRoute
   PhilosophyRoute: typeof PhilosophyRoute
+  PrivacyRoute: typeof PrivacyRoute
   ResetPasswordRoute: typeof ResetPasswordRoute
   SunyaAiRoute: typeof SunyaAiRoute
+  TermsRoute: typeof TermsRoute
   VisionRoute: typeof VisionRoute
   WorkWithMeRoute: typeof WorkWithMeRoute
   ApiChatRoute: typeof ApiChatRoute
@@ -163,6 +189,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof VisionRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sunya-ai': {
       id: '/sunya-ai'
       path: '/sunya-ai'
@@ -175,6 +208,13 @@ declare module '@tanstack/react-router' {
       path: '/reset-password'
       fullPath: '/reset-password'
       preLoaderRoute: typeof ResetPasswordRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/philosophy': {
@@ -220,8 +260,10 @@ const rootRouteChildren: RootRouteChildren = {
   ForgotPasswordRoute: ForgotPasswordRoute,
   LoginRoute: LoginRoute,
   PhilosophyRoute: PhilosophyRoute,
+  PrivacyRoute: PrivacyRoute,
   ResetPasswordRoute: ResetPasswordRoute,
   SunyaAiRoute: SunyaAiRoute,
+  TermsRoute: TermsRoute,
   VisionRoute: VisionRoute,
   WorkWithMeRoute: WorkWithMeRoute,
   ApiChatRoute: ApiChatRoute,
@@ -229,3 +271,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
