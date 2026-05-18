@@ -1,3 +1,4 @@
+import "./lib/ssr-shims";
 import { createStart, createMiddleware } from "@tanstack/react-start";
 import { attachSupabaseAuth } from "@/integrations/supabase/auth-attacher";
 
