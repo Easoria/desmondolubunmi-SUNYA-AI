@@ -41,18 +41,36 @@ export function Nav() {
     return () => document.removeEventListener("mousedown", h);
   }, []);
 
+  const avatarUrl =
+    (user?.user_metadata as { avatar_url?: string; picture?: string } | undefined)?.avatar_url ||
+    (user?.user_metadata as { avatar_url?: string; picture?: string } | undefined)?.picture ||
+    null;
+  const displayName =
+    (user?.user_metadata as { full_name?: string; name?: string } | undefined)?.full_name ||
+    (user?.user_metadata as { full_name?: string; name?: string } | undefined)?.name ||
+    null;
+
   const Avatar = (
     <div ref={menuRef} className="relative">
       <button
         onClick={() => setMenuOpen((v) => !v)}
         aria-label="Account"
-        className="flex h-9 w-9 items-center justify-center rounded-full border border-[#7ec8e3]/40 bg-[#7ec8e3]/10 text-xs font-medium text-white hover:bg-[#7ec8e3]/20"
+        className="flex h-9 w-9 items-center justify-center overflow-hidden rounded-full border border-[#7ec8e3]/40 bg-[#7ec8e3]/10 text-xs font-medium text-white shadow-[0_0_18px_-4px_rgba(126,200,227,0.4)] hover:bg-[#7ec8e3]/20"
       >
-        {initials(user?.email)}
+        {avatarUrl ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img src={avatarUrl} alt="" className="h-full w-full object-cover" />
+        ) : (
+          initials(displayName, user?.email)
+        )}
       </button>
       {menuOpen && (
-        <div className="absolute right-0 top-12 w-52 rounded-2xl border border-white/10 bg-[#0a1628]/95 p-2 shadow-xl backdrop-blur-xl">
-          <div className="px-3 py-2 text-xs text-[#b8d4e8]/70">{user?.email}</div>
+        <div className="absolute right-0 top-12 w-56 rounded-2xl border border-white/10 bg-[#0a1628]/95 p-2 shadow-xl backdrop-blur-xl">
+          <div className="px-3 py-2">
+            <div className="text-sm text-white">{displayName || user?.email?.split("@")[0]}</div>
+            <div className="truncate text-xs text-[#b8d4e8]/70">{user?.email}</div>
+          </div>
+          <div className="my-1 h-px bg-white/10" />
           <Link
             to="/dashboard"
             onClick={() => setMenuOpen(false)}
@@ -61,12 +79,20 @@ export function Nav() {
             <LayoutDashboard className="h-4 w-4" /> Dashboard
           </Link>
           <Link
-            to="/dashboard"
+            to="/sessions"
             onClick={() => setMenuOpen(false)}
             className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-[#b8d4e8] hover:bg-white/5 hover:text-white"
           >
             <History className="h-4 w-4" /> Session history
           </Link>
+          <Link
+            to="/account"
+            onClick={() => setMenuOpen(false)}
+            className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-[#b8d4e8] hover:bg-white/5 hover:text-white"
+          >
+            <Settings className="h-4 w-4" /> Account settings
+          </Link>
+          <div className="my-1 h-px bg-white/10" />
           <button
             onClick={async () => {
               setMenuOpen(false);
