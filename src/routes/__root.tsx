@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
   Outlet,
@@ -9,6 +10,8 @@ import {
 } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
+import { supabase } from "@/integrations/supabase/client";
+import { AuthProvider } from "@/hooks/use-auth";
 
 function NotFoundComponent() {
   return (
