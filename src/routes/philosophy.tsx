@@ -73,6 +73,81 @@ const LEVERS = [
   { n: 12, t: "Sustenance", layer: "Mental Body + Environment", what: "Stripping the survival panic away from money and work. When livelihood is misaligned with authentic nature, every working hour costs Prana. Aligning labour with truth transforms work into frictionless service.", practices: ["Authentic audit: Does my work align with what I am here to do?", "Value creation focus: Shift from 'how do I make money' to 'how do I create genuine value?'", "Sufficiency practice: Define clearly what 'enough' looks like financially."], group: "external" },
 ];
 
+function ExtractionLoopDiagram() {
+  const nodes = [
+    { t: "Inner Void", angle: -90 },
+    { t: "External Seeking", angle: 0 },
+    { t: "Temporary Relief", angle: 90 },
+    { t: "Deeper Emptiness", angle: 180 },
+  ];
+  const R = 130;
+  return (
+    <div className="glass-strong relative mx-auto aspect-square w-full max-w-md rounded-3xl p-6">
+      <div
+        className="pointer-events-none absolute inset-0 rounded-3xl"
+        style={{
+          background:
+            "radial-gradient(circle at 50% 50%, rgba(126,200,227,0.18), transparent 65%)",
+          animation: "pulse-glow 5s ease-in-out infinite",
+        }}
+      />
+      <div className="relative h-full w-full">
+        <svg viewBox="-160 -160 320 320" className="absolute inset-0 h-full w-full">
+          <defs>
+            <linearGradient id="loopStroke" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stopColor="#7ec8e3" stopOpacity="0.8" />
+              <stop offset="100%" stopColor="#2e6db4" stopOpacity="0.4" />
+            </linearGradient>
+          </defs>
+          <circle
+            cx="0"
+            cy="0"
+            r={R}
+            fill="none"
+            stroke="url(#loopStroke)"
+            strokeWidth="1.5"
+            strokeDasharray="4 6"
+            style={{ filter: "drop-shadow(0 0 6px rgba(126,200,227,0.4))" }}
+          />
+          {nodes.map((n, i) => {
+            const next = nodes[(i + 1) % nodes.length];
+            const a1 = ((n.angle + 18) * Math.PI) / 180;
+            const a2 = ((next.angle - 18) * Math.PI) / 180;
+            const x2 = Math.cos(a2) * R;
+            const y2 = Math.sin(a2) * R;
+            return (
+              <polygon
+                key={i}
+                points={`${x2 - 5},${y2 - 5} ${x2 + 6},${y2} ${x2 - 5},${y2 + 5}`}
+                fill="#7ec8e3"
+                opacity="0.8"
+                transform={`rotate(${(next.angle - 18) + 90} ${x2} ${y2})`}
+              />
+            );
+          })}
+        </svg>
+        {nodes.map((n, i) => {
+          const rad = (n.angle * Math.PI) / 180;
+          const x = Math.cos(rad) * R;
+          const y = Math.sin(rad) * R;
+          return (
+            <div
+              key={i}
+              className="absolute left-1/2 top-1/2 whitespace-nowrap rounded-full border border-[#7ec8e3]/40 bg-[#0a1628]/80 px-3 py-1.5 text-[11px] text-white backdrop-blur-md sm:text-xs"
+              style={{ transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))` }}
+            >
+              {n.t}
+            </div>
+          );
+        })}
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
+          <div className="text-[10px] uppercase tracking-[0.3em] text-[#7ec8e3]">The Loop</div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function PhilosophyPage() {
   const [activeLayer, setActiveLayer] = useState(0);
   const [openLever, setOpenLever] = useState<number | null>(null);
@@ -115,6 +190,74 @@ function PhilosophyPage() {
         </div>
       </section>
 
+      {/* Why the human condition is what it is */}
+      <section className="relative overflow-hidden bg-[#0a1628] py-32">
+        <div className="relative z-10 mx-auto max-w-3xl px-6">
+          <div className="text-center">
+            <div className="label-eyebrow">Why the human condition is what it is</div>
+            <h2 className="display mt-6 text-4xl text-white sm:text-5xl">
+              Your suffering is not personal.
+              <br />
+              <span className="display-italic text-[#b8d4e8]">It is mechanical.</span>
+            </h2>
+          </div>
+          <div className="mx-auto mt-12 h-px w-24 bg-gradient-to-r from-transparent via-[#7ec8e3]/40 to-transparent" />
+          <div className="mt-12 space-y-6 text-[15px] leading-loose text-[#b8d4e8] sm:text-base">
+            <p>
+              The human being is not broken by accident or moral failure. The conditions for
+              suffering are built into the architecture of physical existence itself.
+            </p>
+            <p>
+              You are a biological system operating under constant pressure — the need to maintain
+              itself, the awareness of its own impermanence, the gap between what it wants and what
+              it has. This creates a baseline of inner tension that never fully resolves.
+            </p>
+            <p>
+              To cope with this tension, the mind does something entirely predictable: it contracts.
+              It builds a defended sense of self. It identifies with everything it can hold — its
+              body, its story, its roles, its possessions — because identification feels like
+              safety.
+            </p>
+            <p>
+              But identification with limited, temporary things is itself the root of suffering.
+              Because everything it holds will change. Everything it grasps will eventually be lost.
+              And the separate, defended self lives in permanent low-grade fear of that loss.
+            </p>
+            <p>
+              This contraction cuts you off from the natural flow of life-force through your system.
+              You become, energetically, a closed system.
+            </p>
+            <p className="text-white/90">And a closed system runs low.</p>
+            <p>
+              When the internal reservoir empties, the mind does what any depleted system does: it
+              seeks replenishment from outside itself. More achievement. More connection. More
+              stimulation. More acquisition. More validation.
+            </p>
+            <p>
+              This is what drives almost every compulsive human behaviour — not weakness, not evil,
+              not laziness. A closed system, depleted, reaching outward for what can only be found
+              within.
+            </p>
+            <p>
+              The Sunya framework calls this the Inner Void. And the tragedy is not that people
+              seek to fill it. The tragedy is that they seek to fill it with things that cannot
+              fill it.
+            </p>
+            <p className="display-italic text-white">
+              Finite things cannot produce infinite fulfilment.
+              <br />
+              External solutions cannot solve an internal mechanical problem.
+            </p>
+            <p>
+              Understanding this — really understanding it — changes everything. Because the moment
+              you see the mechanics clearly, you stop blaming yourself. And you start working on
+              the actual problem.
+            </p>
+          </div>
+          <div className="mx-auto mt-16 h-px w-24 bg-gradient-to-r from-transparent via-[#7ec8e3]/40 to-transparent" />
+        </div>
+      </section>
+
       {/* 4 Root Causes */}
       <section className="relative overflow-hidden bg-[#060d1c] py-32">
         <Starfield density={0.3} />
@@ -126,6 +269,9 @@ function PhilosophyPage() {
               <br />
               <span className="display-italic text-[#b8d4e8]">and how they become free.</span>
             </h2>
+            <p className="mt-10 text-xs uppercase tracking-[0.3em] text-[#b8d4e8]">
+              These four mechanics are at the root of it all.
+            </p>
           </div>
           <div className="mt-16 grid gap-6 md:grid-cols-2">
             {CAUSES.map((c) => (
@@ -136,6 +282,67 @@ function PhilosophyPage() {
                 <p className="mt-5 text-[15px] leading-relaxed text-[#b8d4e8]">{c.body}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* The Extraction Loop */}
+      <section className="relative overflow-hidden bg-[#0a1628] py-32">
+        <div className="relative z-10 mx-auto max-w-6xl px-6">
+          <div className="text-center">
+            <div className="label-eyebrow">The extraction loop</div>
+            <h2 className="display mt-6 text-4xl text-white sm:text-5xl">
+              Why nothing outside you
+              <br />
+              <span className="display-italic text-[#b8d4e8]">has ever fully fixed it.</span>
+            </h2>
+          </div>
+          <div className="mt-16 grid gap-12 lg:grid-cols-2 lg:items-center">
+            <div className="space-y-5 text-[15px] leading-relaxed text-[#b8d4e8]">
+              <p>
+                When the internal system runs low, human beings do something entirely predictable —
+                they extract from the world around them.
+              </p>
+              <p>
+                Status. Money. Relationships. Substances. Validation. Achievement. Scrolling.
+                Eating. Working. Avoiding.
+              </p>
+              <p>
+                Each of these provides a temporary spike of relief. And then the feeling returns —
+                often deeper than before.
+              </p>
+              <p>
+                This is not a moral failing. It is the logical output of a depleted system. A
+                closed system cannot sustain itself. So it reaches outward.
+              </p>
+              <p>
+                But the world outside cannot permanently replenish what is depleted inside. It can
+                distract it. It can temporarily stimulate it. It cannot fill it.
+              </p>
+              <p className="text-white/90">
+                This is why the most successful, most connected, most admired people often feel the
+                emptiest. They have done everything the world said would work. And the void remains.
+              </p>
+              <p>
+                The solution is not to reach further outward. It is to open the system from within.
+                To restore the natural flow of life-force through the human mechanism. To move from
+                a closed, depleted, seeking system — to an open, self-sustaining, naturally full
+                one.
+              </p>
+              <p className="display-italic text-white">
+                That is what the Sunya framework is built to do.
+              </p>
+            </div>
+            <ExtractionLoopDiagram />
+          </div>
+          <div className="mt-16 text-center">
+            <Link
+              to="/sunya-ai"
+              className="glow-btn inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-medium"
+            >
+              There is a way out of the loop. Try Sunya AI
+              <ArrowRight className="h-4 w-4" />
+            </Link>
           </div>
         </div>
       </section>

@@ -81,6 +81,11 @@ function Pain() {
       title: "The Disconnection",
       copy: "From yourself. From others. From meaning. Like you're watching your own life from behind glass.",
     },
+    {
+      icon: "🔁",
+      title: "The Endless Cycle",
+      copy: "You achieve the thing. You feel better — briefly. Then the emptiness returns, and the seeking begins again. This cycle is not a personal failing. It is what happens when an inner problem is solved with outer solutions.",
+    },
   ];
   return (
     <section className="relative overflow-hidden bg-[#060d1c] py-32">
@@ -107,8 +112,34 @@ function Pain() {
                solution.
             </p>
           </div>
+
+          <div className="mx-auto mt-16 max-w-2xl space-y-6 text-center text-lg leading-loose text-white/85 sm:text-xl">
+            <p>And so we reach outward.</p>
+            <p>
+              More achievement. More validation. More stimulation.
+              <br />
+              A new relationship, a better job, a bigger goal.
+              <br />
+              And it works — briefly. Then the feeling returns.
+            </p>
+            <p className="text-[#b8d4e8]">
+              This is not weakness. This is not failure.
+            </p>
+            <p>
+              This is a mechanical condition.
+              <br />
+              A closed system, running low, trying to fill
+              <br />
+              an infinite inner need with finite external things.
+            </p>
+            <p className="display-italic text-[#b8d4e8]">
+              It cannot work. Not because you are broken.
+              <br />
+              Because finite things cannot produce infinite fulfilment.
+            </p>
+          </div>
         </div>
-        <div className="mt-16 grid gap-6 md:grid-cols-3">
+        <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {cards.map((c) => (
             <div key={c.title} className="glass-card p-7">
               <div className="text-3xl">{c.icon}</div>
@@ -116,6 +147,14 @@ function Pain() {
               <p className="mt-3 text-sm leading-relaxed text-[#b8d4e8]">{c.copy}</p>
             </div>
           ))}
+        </div>
+        <div className="mx-auto mt-16 max-w-2xl">
+          <div className="mx-auto h-px w-24 bg-gradient-to-r from-transparent via-[#7ec8e3]/50 to-transparent" />
+          <p className="mt-8 text-center text-xs uppercase leading-relaxed tracking-[0.3em] text-[#b8d4e8]">
+            The problem has never been the world outside you.
+            <br />
+            It has always been the system inside you.
+          </p>
         </div>
       </div>
     </section>
