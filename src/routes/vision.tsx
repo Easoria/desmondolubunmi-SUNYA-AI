@@ -206,6 +206,122 @@ function VisionPage() {
         </div>
       </section>
 
+      {/* Three Paths */}
+      <section className="relative overflow-hidden bg-[#0a1628] py-28">
+        <div
+          className="absolute inset-0 opacity-40"
+          style={{
+            background:
+              "radial-gradient(ellipse at 50% 100%, rgba(217, 165, 80, 0.10) 0%, transparent 65%)",
+          }}
+        />
+        <div className="relative z-10 mx-auto max-w-6xl px-6">
+          <div className="text-center">
+            <div className="label-eyebrow">Three paths in</div>
+            <h2 className="display mt-6 text-4xl text-white sm:text-5xl">
+              Where do <span className="display-italic text-[#b8d4e8]">you stand?</span>
+            </h2>
+          </div>
+          <div className="mt-14 grid gap-5 md:grid-cols-3">
+            <div className="glass-card flex flex-col p-7">
+              <Waves className="h-7 w-7 text-[#7ec8e3]" />
+              <div className="label-eyebrow mt-5">The Seeker</div>
+              <h3 className="display mt-3 text-2xl text-white">
+                I'm here for my own transformation
+              </h3>
+              <p className="mt-3 flex-1 text-sm text-[#b8d4e8]">
+                Start with Sunya AI or book a 1-on-1 session with Desmond.
+              </p>
+              <Link
+                to="/sunya-ai"
+                className="mt-6 inline-flex items-center gap-2 text-sm text-[#7ec8e3] hover:text-white"
+              >
+                Begin here <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+
+            <div className="glass-card flex flex-col p-7">
+              <Sparkles className="h-7 w-7 text-[#7ec8e3]" />
+              <div className="label-eyebrow mt-5">The Believer</div>
+              <h3 className="display mt-3 text-2xl text-white">
+                I resonate with this mission
+              </h3>
+              <p className="mt-3 flex-1 text-sm text-[#b8d4e8]">
+                Stay connected. Be part of Sunya as it grows into something larger.
+              </p>
+              <a
+                href="#community-signup"
+                className="mt-6 inline-flex items-center gap-2 text-sm text-[#7ec8e3] hover:text-white"
+              >
+                Stay connected <ArrowRight className="h-4 w-4" />
+              </a>
+            </div>
+
+            <div className="glass-card flex flex-col p-7">
+              <Flame className="h-7 w-7 text-[#7ec8e3]" />
+              <div className="label-eyebrow mt-5">The Builder</div>
+              <h3 className="display mt-3 text-2xl text-white">
+                I want to contribute
+              </h3>
+              <p className="mt-3 flex-1 text-sm text-[#b8d4e8]">
+                Volunteers, collaborators, future teachers — Sunya needs people like you.
+              </p>
+              <Link
+                to="/join"
+                className="mt-6 inline-flex items-center gap-2 text-sm text-[#7ec8e3] hover:text-white"
+              >
+                Tell us about yourself <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Be Part of This */}
+      <section className="relative overflow-hidden bg-[#0a1628] py-32">
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(ellipse at 50% 50%, rgba(217, 165, 80, 0.14) 0%, transparent 60%), radial-gradient(ellipse at 10% 100%, rgba(217, 165, 80, 0.08) 0%, transparent 50%), radial-gradient(ellipse at 90% 0%, rgba(217, 165, 80, 0.08) 0%, transparent 50%)",
+          }}
+        />
+        <div className="relative z-10 mx-auto max-w-3xl px-6 text-center">
+          <div className="label-eyebrow">This is just the beginning</div>
+          <h2 className="display display-italic mt-6 text-4xl text-white sm:text-6xl">
+            You found this for a reason.
+          </h2>
+          <div className="mx-auto mt-10 max-w-2xl space-y-5 text-left text-[#b8d4e8]">
+            <p>
+              Sunya is not a finished product. It is a living project — a framework, a community,
+              and eventually a civilisation being built from the ground up.
+            </p>
+            <p>
+              If something here has resonated with you — the philosophy, the mission, the vision of
+              what human life could actually be — then you are already part of this.
+            </p>
+            <p className="text-white/90">
+              Stay connected. Be the first to know as Sunya grows. Receive philosophy, practices,
+              and early access to everything being built.
+            </p>
+            <p className="display-italic text-lg text-white">No noise. No spam. Just signal.</p>
+          </div>
+
+          <div className="mt-10">
+            <EmailCapture id="community-signup" />
+          </div>
+
+          <div className="mt-10">
+            <Link
+              to="/join"
+              className="display-italic text-sm text-[#b8d4e8] underline-offset-4 hover:text-white hover:underline"
+            >
+              Want to contribute, volunteer, or collaborate? →
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <Footer />
     </div>
   );
