@@ -283,6 +283,7 @@ function About() {
           <div className="mt-9 flex flex-wrap gap-4">
             <Link
               to="/work-with-me"
+              hash="booking"
               className="glow-btn inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium"
             >
               Work With Me 1-on-1 <ArrowRight className="h-4 w-4" />

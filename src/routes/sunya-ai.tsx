@@ -6,6 +6,7 @@ import { SunyaAI } from "@/components/SunyaAI";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { Breadcrumb } from "@/components/site/Breadcrumb";
+import { UpgradeModal } from "@/components/site/UpgradeModal";
 
 export const Route = createFileRoute("/sunya-ai")({
   component: SunyaAIPage,
@@ -48,6 +49,7 @@ const FAQ = [
 
 function SunyaAIPage() {
   const [open, setOpen] = useState<number | null>(0);
+  const [upgradeOpen, setUpgradeOpen] = useState(false);
   return (
     <div className="min-h-screen bg-[#0a1628] text-white">
       <Nav />
@@ -151,7 +153,10 @@ function SunyaAIPage() {
                   </li>
                 ))}
               </ul>
-              <button className="glow-btn mt-8 inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium">
+              <button
+                onClick={() => setUpgradeOpen(true)}
+                className="glow-btn mt-8 inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium"
+              >
                 Get Full Access <ArrowRight className="h-4 w-4" />
               </button>
             </div>
@@ -205,6 +210,7 @@ function SunyaAIPage() {
       </section>
 
       <Footer />
+      <UpgradeModal open={upgradeOpen} onClose={() => setUpgradeOpen(false)} />
     </div>
   );
 }
