@@ -14,7 +14,104 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      messages: {
+        Row: {
+          content: string
+          created_at: string
+          id: string
+          lever_tags: string[]
+          role: string
+          session_id: string
+          state_family: string | null
+          user_id: string
+        }
+        Insert: {
+          content: string
+          created_at?: string
+          id?: string
+          lever_tags?: string[]
+          role: string
+          session_id: string
+          state_family?: string | null
+          user_id: string
+        }
+        Update: {
+          content?: string
+          created_at?: string
+          id?: string
+          lever_tags?: string[]
+          role?: string
+          session_id?: string
+          state_family?: string | null
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "messages_session_id_fkey"
+            columns: ["session_id"]
+            isOneToOne: false
+            referencedRelation: "sessions"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      sessions: {
+        Row: {
+          created_at: string
+          id: string
+          session_number: number
+          summary: string | null
+          title: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          session_number?: number
+          summary?: string | null
+          title?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          session_number?: number
+          summary?: string | null
+          title?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      user_profiles: {
+        Row: {
+          created_at: string
+          id: string
+          last_session_date: string | null
+          sessions_today: number
+          subscription_start: string | null
+          subscription_status: string
+        }
+        Insert: {
+          created_at?: string
+          id: string
+          last_session_date?: string | null
+          sessions_today?: number
+          subscription_start?: string | null
+          subscription_status?: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          last_session_date?: string | null
+          sessions_today?: number
+          subscription_start?: string | null
+          subscription_status?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
