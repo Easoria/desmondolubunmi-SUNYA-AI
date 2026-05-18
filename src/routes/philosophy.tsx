@@ -115,6 +115,74 @@ function PhilosophyPage() {
         </div>
       </section>
 
+      {/* Why the human condition is what it is */}
+      <section className="relative overflow-hidden bg-[#0a1628] py-32">
+        <div className="relative z-10 mx-auto max-w-3xl px-6">
+          <div className="text-center">
+            <div className="label-eyebrow">Why the human condition is what it is</div>
+            <h2 className="display mt-6 text-4xl text-white sm:text-5xl">
+              Your suffering is not personal.
+              <br />
+              <span className="display-italic text-[#b8d4e8]">It is mechanical.</span>
+            </h2>
+          </div>
+          <div className="mx-auto mt-12 h-px w-24 bg-gradient-to-r from-transparent via-[#7ec8e3]/40 to-transparent" />
+          <div className="mt-12 space-y-6 text-[15px] leading-loose text-[#b8d4e8] sm:text-base">
+            <p>
+              The human being is not broken by accident or moral failure. The conditions for
+              suffering are built into the architecture of physical existence itself.
+            </p>
+            <p>
+              You are a biological system operating under constant pressure — the need to maintain
+              itself, the awareness of its own impermanence, the gap between what it wants and what
+              it has. This creates a baseline of inner tension that never fully resolves.
+            </p>
+            <p>
+              To cope with this tension, the mind does something entirely predictable: it contracts.
+              It builds a defended sense of self. It identifies with everything it can hold — its
+              body, its story, its roles, its possessions — because identification feels like
+              safety.
+            </p>
+            <p>
+              But identification with limited, temporary things is itself the root of suffering.
+              Because everything it holds will change. Everything it grasps will eventually be lost.
+              And the separate, defended self lives in permanent low-grade fear of that loss.
+            </p>
+            <p>
+              This contraction cuts you off from the natural flow of life-force through your system.
+              You become, energetically, a closed system.
+            </p>
+            <p className="text-white/90">And a closed system runs low.</p>
+            <p>
+              When the internal reservoir empties, the mind does what any depleted system does: it
+              seeks replenishment from outside itself. More achievement. More connection. More
+              stimulation. More acquisition. More validation.
+            </p>
+            <p>
+              This is what drives almost every compulsive human behaviour — not weakness, not evil,
+              not laziness. A closed system, depleted, reaching outward for what can only be found
+              within.
+            </p>
+            <p>
+              The Sunya framework calls this the Inner Void. And the tragedy is not that people
+              seek to fill it. The tragedy is that they seek to fill it with things that cannot
+              fill it.
+            </p>
+            <p className="display-italic text-white">
+              Finite things cannot produce infinite fulfilment.
+              <br />
+              External solutions cannot solve an internal mechanical problem.
+            </p>
+            <p>
+              Understanding this — really understanding it — changes everything. Because the moment
+              you see the mechanics clearly, you stop blaming yourself. And you start working on
+              the actual problem.
+            </p>
+          </div>
+          <div className="mx-auto mt-16 h-px w-24 bg-gradient-to-r from-transparent via-[#7ec8e3]/40 to-transparent" />
+        </div>
+      </section>
+
       {/* 4 Root Causes */}
       <section className="relative overflow-hidden bg-[#060d1c] py-32">
         <Starfield density={0.3} />
@@ -126,6 +194,9 @@ function PhilosophyPage() {
               <br />
               <span className="display-italic text-[#b8d4e8]">and how they become free.</span>
             </h2>
+            <p className="mt-10 text-xs uppercase tracking-[0.3em] text-[#b8d4e8]">
+              These four mechanics are at the root of it all.
+            </p>
           </div>
           <div className="mt-16 grid gap-6 md:grid-cols-2">
             {CAUSES.map((c) => (
@@ -136,6 +207,67 @@ function PhilosophyPage() {
                 <p className="mt-5 text-[15px] leading-relaxed text-[#b8d4e8]">{c.body}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* The Extraction Loop */}
+      <section className="relative overflow-hidden bg-[#0a1628] py-32">
+        <div className="relative z-10 mx-auto max-w-6xl px-6">
+          <div className="text-center">
+            <div className="label-eyebrow">The extraction loop</div>
+            <h2 className="display mt-6 text-4xl text-white sm:text-5xl">
+              Why nothing outside you
+              <br />
+              <span className="display-italic text-[#b8d4e8]">has ever fully fixed it.</span>
+            </h2>
+          </div>
+          <div className="mt-16 grid gap-12 lg:grid-cols-2 lg:items-center">
+            <div className="space-y-5 text-[15px] leading-relaxed text-[#b8d4e8]">
+              <p>
+                When the internal system runs low, human beings do something entirely predictable —
+                they extract from the world around them.
+              </p>
+              <p>
+                Status. Money. Relationships. Substances. Validation. Achievement. Scrolling.
+                Eating. Working. Avoiding.
+              </p>
+              <p>
+                Each of these provides a temporary spike of relief. And then the feeling returns —
+                often deeper than before.
+              </p>
+              <p>
+                This is not a moral failing. It is the logical output of a depleted system. A
+                closed system cannot sustain itself. So it reaches outward.
+              </p>
+              <p>
+                But the world outside cannot permanently replenish what is depleted inside. It can
+                distract it. It can temporarily stimulate it. It cannot fill it.
+              </p>
+              <p className="text-white/90">
+                This is why the most successful, most connected, most admired people often feel the
+                emptiest. They have done everything the world said would work. And the void remains.
+              </p>
+              <p>
+                The solution is not to reach further outward. It is to open the system from within.
+                To restore the natural flow of life-force through the human mechanism. To move from
+                a closed, depleted, seeking system — to an open, self-sustaining, naturally full
+                one.
+              </p>
+              <p className="display-italic text-white">
+                That is what the Sunya framework is built to do.
+              </p>
+            </div>
+            <ExtractionLoopDiagram />
+          </div>
+          <div className="mt-16 text-center">
+            <Link
+              to="/sunya-ai"
+              className="glow-btn inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-medium"
+            >
+              There is a way out of the loop. Try Sunya AI
+              <ArrowRight className="h-4 w-4" />
+            </Link>
           </div>
         </div>
       </section>
