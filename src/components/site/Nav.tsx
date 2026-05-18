@@ -154,13 +154,18 @@ export function Nav() {
               Try Sunya AI <ArrowRight className="h-3 w-3" />
             </Link>
           )}
-          <button
-            aria-label="Menu"
-            className="rounded-md border border-white/10 p-2 text-white"
-            onClick={() => setOpen((v) => !v)}
-          >
-            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </button>
+          <div className="flex flex-col items-center">
+            <button
+              aria-label="Menu"
+              className="rounded-full border border-[#7ec8e3]/40 bg-[#7ec8e3]/10 p-2 text-white shadow-[0_0_18px_-2px_rgba(126,200,227,0.6)] hover:bg-[#7ec8e3]/20"
+              onClick={() => setOpen((v) => !v)}
+            >
+              {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </button>
+            <span className="mt-1 text-[9px] uppercase tracking-[0.2em] text-[#b8d4e8]/80">
+              {open ? "Close" : "View Menu"}
+            </span>
+          </div>
         </div>
       </nav>
       {open && (
