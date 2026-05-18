@@ -49,6 +49,7 @@ const FAQ = [
 
 function SunyaAIPage() {
   const [open, setOpen] = useState<number | null>(0);
+  const [upgradeOpen, setUpgradeOpen] = useState(false);
   return (
     <div className="min-h-screen bg-[#0a1628] text-white">
       <Nav />
