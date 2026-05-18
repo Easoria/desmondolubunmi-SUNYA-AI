@@ -73,6 +73,81 @@ const LEVERS = [
   { n: 12, t: "Sustenance", layer: "Mental Body + Environment", what: "Stripping the survival panic away from money and work. When livelihood is misaligned with authentic nature, every working hour costs Prana. Aligning labour with truth transforms work into frictionless service.", practices: ["Authentic audit: Does my work align with what I am here to do?", "Value creation focus: Shift from 'how do I make money' to 'how do I create genuine value?'", "Sufficiency practice: Define clearly what 'enough' looks like financially."], group: "external" },
 ];
 
+function ExtractionLoopDiagram() {
+  const nodes = [
+    { t: "Inner Void", angle: -90 },
+    { t: "External Seeking", angle: 0 },
+    { t: "Temporary Relief", angle: 90 },
+    { t: "Deeper Emptiness", angle: 180 },
+  ];
+  const R = 130;
+  return (
+    <div className="glass-strong relative mx-auto aspect-square w-full max-w-md rounded-3xl p-6">
+      <div
+        className="pointer-events-none absolute inset-0 rounded-3xl"
+        style={{
+          background:
+            "radial-gradient(circle at 50% 50%, rgba(126,200,227,0.18), transparent 65%)",
+          animation: "pulse-glow 5s ease-in-out infinite",
+        }}
+      />
+      <div className="relative h-full w-full">
+        <svg viewBox="-160 -160 320 320" className="absolute inset-0 h-full w-full">
+          <defs>
+            <linearGradient id="loopStroke" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stopColor="#7ec8e3" stopOpacity="0.8" />
+              <stop offset="100%" stopColor="#2e6db4" stopOpacity="0.4" />
+            </linearGradient>
+          </defs>
+          <circle
+            cx="0"
+            cy="0"
+            r={R}
+            fill="none"
+            stroke="url(#loopStroke)"
+            strokeWidth="1.5"
+            strokeDasharray="4 6"
+            style={{ filter: "drop-shadow(0 0 6px rgba(126,200,227,0.4))" }}
+          />
+          {nodes.map((n, i) => {
+            const next = nodes[(i + 1) % nodes.length];
+            const a1 = ((n.angle + 18) * Math.PI) / 180;
+            const a2 = ((next.angle - 18) * Math.PI) / 180;
+            const x2 = Math.cos(a2) * R;
+            const y2 = Math.sin(a2) * R;
+            return (
+              <polygon
+                key={i}
+                points={`${x2 - 5},${y2 - 5} ${x2 + 6},${y2} ${x2 - 5},${y2 + 5}`}
+                fill="#7ec8e3"
+                opacity="0.8"
+                transform={`rotate(${(next.angle - 18) + 90} ${x2} ${y2})`}
+              />
+            );
+          })}
+        </svg>
+        {nodes.map((n, i) => {
+          const rad = (n.angle * Math.PI) / 180;
+          const x = Math.cos(rad) * R;
+          const y = Math.sin(rad) * R;
+          return (
+            <div
+              key={i}
+              className="absolute left-1/2 top-1/2 whitespace-nowrap rounded-full border border-[#7ec8e3]/40 bg-[#0a1628]/80 px-3 py-1.5 text-[11px] text-white backdrop-blur-md sm:text-xs"
+              style={{ transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))` }}
+            >
+              {n.t}
+            </div>
+          );
+        })}
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
+          <div className="text-[10px] uppercase tracking-[0.3em] text-[#7ec8e3]">The Loop</div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function PhilosophyPage() {
   const [activeLayer, setActiveLayer] = useState(0);
   const [openLever, setOpenLever] = useState<number | null>(null);
