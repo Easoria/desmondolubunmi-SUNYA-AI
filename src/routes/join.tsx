@@ -35,6 +35,7 @@ const CARDS = [
     copy: "Once teacher training is available, go through the framework yourself and learn to bring these practices to others — in schools, communities, organisations, or your own work.",
     tag: "Coming Soon",
     tagTone: "soon",
+    optionId: "teacher",
   },
   {
     Icon: Handshake,
@@ -42,6 +43,7 @@ const CARDS = [
     copy: "Design, development, writing, video, community building, translation — if you have a skill and want to offer it in service of this mission, we want to hear from you.",
     tag: "Open Now",
     tagTone: "open",
+    optionId: "volunteer",
   },
   {
     Icon: Radio,
@@ -49,6 +51,7 @@ const CARDS = [
     copy: "The simplest contribution: if this framework has helped you or resonates with you, share it with one person who might need it. Word of mouth is how movements begin.",
     tag: "Always Open",
     tagTone: "open",
+    optionId: "spread_word",
   },
   {
     Icon: Globe2,
@@ -56,6 +59,7 @@ const CARDS = [
     copy: "Schools, wellness centres, retreat spaces, NGOs, corporate wellbeing programmes — if you represent an organisation that wants to bring Sunya into your community, reach out.",
     tag: "Open Now",
     tagTone: "open",
+    optionId: "partner",
   },
 ] as const;
 
