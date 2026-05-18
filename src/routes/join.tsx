@@ -155,7 +155,19 @@ function JoinPage() {
         <section className="mt-16">
           <div className="grid gap-5 md:grid-cols-2">
             {CARDS.map((c) => (
-              <div key={c.title} className="glass-card flex flex-col p-7">
+              <button
+                type="button"
+                key={c.title}
+                onClick={() => {
+                  setSelected((s) =>
+                    s.includes(c.optionId as OptionId) ? s : [...s, c.optionId as OptionId],
+                  );
+                  document
+                    .getElementById("contributor-form")
+                    ?.scrollIntoView({ behavior: "smooth", block: "start" });
+                }}
+                className="glass-card flex flex-col p-7 text-left transition hover:border-[#7ec8e3]/40 hover:bg-white/[0.04] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#7ec8e3]/50"
+              >
                 <div className="flex items-start justify-between gap-3">
                   <c.Icon className="h-7 w-7 text-[#7ec8e3]" />
                   <span
@@ -170,7 +182,7 @@ function JoinPage() {
                 </div>
                 <h3 className="display mt-5 text-2xl text-white">{c.title}</h3>
                 <p className="mt-3 text-sm text-[#b8d4e8]">{c.copy}</p>
-              </div>
+              </button>
             ))}
           </div>
         </section>
