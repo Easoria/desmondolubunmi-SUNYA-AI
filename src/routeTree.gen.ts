@@ -13,6 +13,7 @@ import { Route as WorkWithMeRouteImport } from './routes/work-with-me'
 import { Route as VisionRouteImport } from './routes/vision'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as SunyaAiRouteImport } from './routes/sunya-ai'
+import { Route as SessionsRouteImport } from './routes/sessions'
 import { Route as ResetPasswordRouteImport } from './routes/reset-password'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as PhilosophyRouteImport } from './routes/philosophy'
@@ -20,7 +21,10 @@ import { Route as LoginRouteImport } from './routes/login'
 import { Route as JoinRouteImport } from './routes/join'
 import { Route as ForgotPasswordRouteImport } from './routes/forgot-password'
 import { Route as DashboardRouteImport } from './routes/dashboard'
+import { Route as BookedRouteImport } from './routes/booked'
+import { Route as AccountRouteImport } from './routes/account'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ApiSessionTitleRouteImport } from './routes/api/session-title'
 import { Route as ApiContributorSignupRouteImport } from './routes/api/contributor-signup'
 import { Route as ApiCommunitySignupRouteImport } from './routes/api/community-signup'
 import { Route as ApiChatRouteImport } from './routes/api/chat'
@@ -43,6 +47,11 @@ const TermsRoute = TermsRouteImport.update({
 const SunyaAiRoute = SunyaAiRouteImport.update({
   id: '/sunya-ai',
   path: '/sunya-ai',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SessionsRoute = SessionsRouteImport.update({
+  id: '/sessions',
+  path: '/sessions',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ResetPasswordRoute = ResetPasswordRouteImport.update({
@@ -80,9 +89,24 @@ const DashboardRoute = DashboardRouteImport.update({
   path: '/dashboard',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BookedRoute = BookedRouteImport.update({
+  id: '/booked',
+  path: '/booked',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AccountRoute = AccountRouteImport.update({
+  id: '/account',
+  path: '/account',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiSessionTitleRoute = ApiSessionTitleRouteImport.update({
+  id: '/api/session-title',
+  path: '/api/session-title',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiContributorSignupRoute = ApiContributorSignupRouteImport.update({
@@ -103,6 +127,8 @@ const ApiChatRoute = ApiChatRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/account': typeof AccountRoute
+  '/booked': typeof BookedRoute
   '/dashboard': typeof DashboardRoute
   '/forgot-password': typeof ForgotPasswordRoute
   '/join': typeof JoinRoute
@@ -110,6 +136,7 @@ export interface FileRoutesByFullPath {
   '/philosophy': typeof PhilosophyRoute
   '/privacy': typeof PrivacyRoute
   '/reset-password': typeof ResetPasswordRoute
+  '/sessions': typeof SessionsRoute
   '/sunya-ai': typeof SunyaAiRoute
   '/terms': typeof TermsRoute
   '/vision': typeof VisionRoute
@@ -117,9 +144,12 @@ export interface FileRoutesByFullPath {
   '/api/chat': typeof ApiChatRoute
   '/api/community-signup': typeof ApiCommunitySignupRoute
   '/api/contributor-signup': typeof ApiContributorSignupRoute
+  '/api/session-title': typeof ApiSessionTitleRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/account': typeof AccountRoute
+  '/booked': typeof BookedRoute
   '/dashboard': typeof DashboardRoute
   '/forgot-password': typeof ForgotPasswordRoute
   '/join': typeof JoinRoute
@@ -127,6 +157,7 @@ export interface FileRoutesByTo {
   '/philosophy': typeof PhilosophyRoute
   '/privacy': typeof PrivacyRoute
   '/reset-password': typeof ResetPasswordRoute
+  '/sessions': typeof SessionsRoute
   '/sunya-ai': typeof SunyaAiRoute
   '/terms': typeof TermsRoute
   '/vision': typeof VisionRoute
@@ -134,10 +165,13 @@ export interface FileRoutesByTo {
   '/api/chat': typeof ApiChatRoute
   '/api/community-signup': typeof ApiCommunitySignupRoute
   '/api/contributor-signup': typeof ApiContributorSignupRoute
+  '/api/session-title': typeof ApiSessionTitleRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/account': typeof AccountRoute
+  '/booked': typeof BookedRoute
   '/dashboard': typeof DashboardRoute
   '/forgot-password': typeof ForgotPasswordRoute
   '/join': typeof JoinRoute
@@ -145,6 +179,7 @@ export interface FileRoutesById {
   '/philosophy': typeof PhilosophyRoute
   '/privacy': typeof PrivacyRoute
   '/reset-password': typeof ResetPasswordRoute
+  '/sessions': typeof SessionsRoute
   '/sunya-ai': typeof SunyaAiRoute
   '/terms': typeof TermsRoute
   '/vision': typeof VisionRoute
@@ -152,11 +187,14 @@ export interface FileRoutesById {
   '/api/chat': typeof ApiChatRoute
   '/api/community-signup': typeof ApiCommunitySignupRoute
   '/api/contributor-signup': typeof ApiContributorSignupRoute
+  '/api/session-title': typeof ApiSessionTitleRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/account'
+    | '/booked'
     | '/dashboard'
     | '/forgot-password'
     | '/join'
@@ -164,6 +202,7 @@ export interface FileRouteTypes {
     | '/philosophy'
     | '/privacy'
     | '/reset-password'
+    | '/sessions'
     | '/sunya-ai'
     | '/terms'
     | '/vision'
@@ -171,9 +210,12 @@ export interface FileRouteTypes {
     | '/api/chat'
     | '/api/community-signup'
     | '/api/contributor-signup'
+    | '/api/session-title'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/account'
+    | '/booked'
     | '/dashboard'
     | '/forgot-password'
     | '/join'
@@ -181,6 +223,7 @@ export interface FileRouteTypes {
     | '/philosophy'
     | '/privacy'
     | '/reset-password'
+    | '/sessions'
     | '/sunya-ai'
     | '/terms'
     | '/vision'
@@ -188,9 +231,12 @@ export interface FileRouteTypes {
     | '/api/chat'
     | '/api/community-signup'
     | '/api/contributor-signup'
+    | '/api/session-title'
   id:
     | '__root__'
     | '/'
+    | '/account'
+    | '/booked'
     | '/dashboard'
     | '/forgot-password'
     | '/join'
@@ -198,6 +244,7 @@ export interface FileRouteTypes {
     | '/philosophy'
     | '/privacy'
     | '/reset-password'
+    | '/sessions'
     | '/sunya-ai'
     | '/terms'
     | '/vision'
@@ -205,10 +252,13 @@ export interface FileRouteTypes {
     | '/api/chat'
     | '/api/community-signup'
     | '/api/contributor-signup'
+    | '/api/session-title'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AccountRoute: typeof AccountRoute
+  BookedRoute: typeof BookedRoute
   DashboardRoute: typeof DashboardRoute
   ForgotPasswordRoute: typeof ForgotPasswordRoute
   JoinRoute: typeof JoinRoute
@@ -216,6 +266,7 @@ export interface RootRouteChildren {
   PhilosophyRoute: typeof PhilosophyRoute
   PrivacyRoute: typeof PrivacyRoute
   ResetPasswordRoute: typeof ResetPasswordRoute
+  SessionsRoute: typeof SessionsRoute
   SunyaAiRoute: typeof SunyaAiRoute
   TermsRoute: typeof TermsRoute
   VisionRoute: typeof VisionRoute
@@ -223,6 +274,7 @@ export interface RootRouteChildren {
   ApiChatRoute: typeof ApiChatRoute
   ApiCommunitySignupRoute: typeof ApiCommunitySignupRoute
   ApiContributorSignupRoute: typeof ApiContributorSignupRoute
+  ApiSessionTitleRoute: typeof ApiSessionTitleRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -253,6 +305,13 @@ declare module '@tanstack/react-router' {
       path: '/sunya-ai'
       fullPath: '/sunya-ai'
       preLoaderRoute: typeof SunyaAiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sessions': {
+      id: '/sessions'
+      path: '/sessions'
+      fullPath: '/sessions'
+      preLoaderRoute: typeof SessionsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/reset-password': {
@@ -304,11 +363,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DashboardRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/booked': {
+      id: '/booked'
+      path: '/booked'
+      fullPath: '/booked'
+      preLoaderRoute: typeof BookedRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/account': {
+      id: '/account'
+      path: '/account'
+      fullPath: '/account'
+      preLoaderRoute: typeof AccountRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/session-title': {
+      id: '/api/session-title'
+      path: '/api/session-title'
+      fullPath: '/api/session-title'
+      preLoaderRoute: typeof ApiSessionTitleRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/contributor-signup': {
@@ -337,6 +417,8 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AccountRoute: AccountRoute,
+  BookedRoute: BookedRoute,
   DashboardRoute: DashboardRoute,
   ForgotPasswordRoute: ForgotPasswordRoute,
   JoinRoute: JoinRoute,
@@ -344,6 +426,7 @@ const rootRouteChildren: RootRouteChildren = {
   PhilosophyRoute: PhilosophyRoute,
   PrivacyRoute: PrivacyRoute,
   ResetPasswordRoute: ResetPasswordRoute,
+  SessionsRoute: SessionsRoute,
   SunyaAiRoute: SunyaAiRoute,
   TermsRoute: TermsRoute,
   VisionRoute: VisionRoute,
@@ -351,6 +434,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiChatRoute: ApiChatRoute,
   ApiCommunitySignupRoute: ApiCommunitySignupRoute,
   ApiContributorSignupRoute: ApiContributorSignupRoute,
+  ApiSessionTitleRoute: ApiSessionTitleRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
