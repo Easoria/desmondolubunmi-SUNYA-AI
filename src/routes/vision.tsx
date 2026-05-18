@@ -7,11 +7,14 @@ import {
   ShoppingBag,
   Leaf,
   Building2,
+  Waves,
+  Flame,
 } from "lucide-react";
 import { Starfield } from "@/components/Starfield";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { Breadcrumb } from "@/components/site/Breadcrumb";
+import { EmailCapture } from "@/components/site/EmailCapture";
 
 export const Route = createFileRoute("/vision")({
   component: VisionPage,

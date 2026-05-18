@@ -20,6 +20,8 @@ import { Route as LoginRouteImport } from './routes/login'
 import { Route as ForgotPasswordRouteImport } from './routes/forgot-password'
 import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ApiContributorSignupRouteImport } from './routes/api/contributor-signup'
+import { Route as ApiCommunitySignupRouteImport } from './routes/api/community-signup'
 import { Route as ApiChatRouteImport } from './routes/api/chat'
 
 const WorkWithMeRoute = WorkWithMeRouteImport.update({
@@ -77,6 +79,16 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiContributorSignupRoute = ApiContributorSignupRouteImport.update({
+  id: '/api/contributor-signup',
+  path: '/api/contributor-signup',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiCommunitySignupRoute = ApiCommunitySignupRouteImport.update({
+  id: '/api/community-signup',
+  path: '/api/community-signup',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiChatRoute = ApiChatRouteImport.update({
   id: '/api/chat',
   path: '/api/chat',
@@ -96,6 +108,8 @@ export interface FileRoutesByFullPath {
   '/vision': typeof VisionRoute
   '/work-with-me': typeof WorkWithMeRoute
   '/api/chat': typeof ApiChatRoute
+  '/api/community-signup': typeof ApiCommunitySignupRoute
+  '/api/contributor-signup': typeof ApiContributorSignupRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -110,6 +124,8 @@ export interface FileRoutesByTo {
   '/vision': typeof VisionRoute
   '/work-with-me': typeof WorkWithMeRoute
   '/api/chat': typeof ApiChatRoute
+  '/api/community-signup': typeof ApiCommunitySignupRoute
+  '/api/contributor-signup': typeof ApiContributorSignupRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -125,6 +141,8 @@ export interface FileRoutesById {
   '/vision': typeof VisionRoute
   '/work-with-me': typeof WorkWithMeRoute
   '/api/chat': typeof ApiChatRoute
+  '/api/community-signup': typeof ApiCommunitySignupRoute
+  '/api/contributor-signup': typeof ApiContributorSignupRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -141,6 +159,8 @@ export interface FileRouteTypes {
     | '/vision'
     | '/work-with-me'
     | '/api/chat'
+    | '/api/community-signup'
+    | '/api/contributor-signup'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -155,6 +175,8 @@ export interface FileRouteTypes {
     | '/vision'
     | '/work-with-me'
     | '/api/chat'
+    | '/api/community-signup'
+    | '/api/contributor-signup'
   id:
     | '__root__'
     | '/'
@@ -169,6 +191,8 @@ export interface FileRouteTypes {
     | '/vision'
     | '/work-with-me'
     | '/api/chat'
+    | '/api/community-signup'
+    | '/api/contributor-signup'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -184,6 +208,8 @@ export interface RootRouteChildren {
   VisionRoute: typeof VisionRoute
   WorkWithMeRoute: typeof WorkWithMeRoute
   ApiChatRoute: typeof ApiChatRoute
+  ApiCommunitySignupRoute: typeof ApiCommunitySignupRoute
+  ApiContributorSignupRoute: typeof ApiContributorSignupRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -265,6 +291,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/contributor-signup': {
+      id: '/api/contributor-signup'
+      path: '/api/contributor-signup'
+      fullPath: '/api/contributor-signup'
+      preLoaderRoute: typeof ApiContributorSignupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/community-signup': {
+      id: '/api/community-signup'
+      path: '/api/community-signup'
+      fullPath: '/api/community-signup'
+      preLoaderRoute: typeof ApiCommunitySignupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/chat': {
       id: '/api/chat'
       path: '/api/chat'
@@ -288,6 +328,8 @@ const rootRouteChildren: RootRouteChildren = {
   VisionRoute: VisionRoute,
   WorkWithMeRoute: WorkWithMeRoute,
   ApiChatRoute: ApiChatRoute,
+  ApiCommunitySignupRoute: ApiCommunitySignupRoute,
+  ApiContributorSignupRoute: ApiContributorSignupRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
