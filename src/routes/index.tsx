@@ -81,6 +81,11 @@ function Pain() {
       title: "The Disconnection",
       copy: "From yourself. From others. From meaning. Like you're watching your own life from behind glass.",
     },
+    {
+      icon: "🔁",
+      title: "The Endless Cycle",
+      copy: "You achieve the thing. You feel better — briefly. Then the emptiness returns, and the seeking begins again. This cycle is not a personal failing. It is what happens when an inner problem is solved with outer solutions.",
+    },
   ];
   return (
     <section className="relative overflow-hidden bg-[#060d1c] py-32">
