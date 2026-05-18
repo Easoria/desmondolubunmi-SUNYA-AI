@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
-import { ArrowRight, Menu, X, LogOut, LayoutDashboard, History } from "lucide-react";
+import { ArrowRight, Menu, X, LogOut, LayoutDashboard, History, Settings } from "lucide-react";
 import { useAuth } from "@/hooks/use-auth";
 
 const NAV = [
@@ -10,9 +10,12 @@ const NAV = [
   { label: "Vision", to: "/vision" as const },
 ];
 
-function initials(email?: string | null) {
-  if (!email) return "U";
-  return email.slice(0, 2).toUpperCase();
+function initials(name?: string | null, email?: string | null) {
+  const base = (name || email || "U").trim();
+  if (!base) return "U";
+  const parts = base.split(/\s+/);
+  if (parts.length >= 2) return (parts[0][0] + parts[1][0]).toUpperCase();
+  return base.slice(0, 2).toUpperCase();
 }
 
 export function Nav() {
