@@ -1,26 +1,48 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { ArrowRight, Loader2, Trash2, Download, LogOut, ChevronDown } from "lucide-react";
+import { ArrowRight, Loader2, ChevronDown, Trash2, Sparkles } from "lucide-react";
 import { useAuth } from "@/hooks/use-auth";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
-import { Breadcrumb } from "@/components/site/Breadcrumb";
+import { UpgradeModal } from "@/components/site/UpgradeModal";
 
 export const Route = createFileRoute("/dashboard")({
   component: DashboardPage,
-  head: () => ({ meta: [{ title: "Dashboard — Sunya" }, { name: "robots", content: "noindex" }] }),
+  head: () => ({
+    meta: [{ title: "Dashboard — Sunya" }, { name: "robots", content: "noindex" }],
+  }),
 });
 
-type SessionRow = { id: string; created_at: string; title: string | null; summary: string | null };
-type MessageRow = { id: string; role: "user" | "assistant"; content: string; created_at: string };
+type Profile = {
+  first_name: string | null;
+  subscription_status: string;
+  sessions_today: number;
+  last_session_date: string | null;
+  created_at: string;
+};
+type SessionRow = {
+  id: string;
+  created_at: string;
+  title: string | null;
+  lever_tags: string[] | null;
+};
+type MessageRow = { id: string; role: "user" | "assistant"; content: string };
+
+const FREE_LIMIT = 3;
+
+function todayStr() {
+  return new Date().toISOString().slice(0, 10);
+}
 
 function DashboardPage() {
-  const { user, loading, signOut } = useAuth();
+  const { user, loading } = useAuth();
   const navigate = useNavigate();
+  const [profile, setProfile] = useState<Profile | null>(null);
   const [sessions, setSessions] = useState<SessionRow[]>([]);
-  const [openId, setOpenId] = useState<string | null>(null);
   const [messages, setMessages] = useState<Record<string, MessageRow[]>>({});
-  const [loadingSessions, setLoadingSessions] = useState(true);
+  const [openId, setOpenId] = useState<string | null>(null);
+  const [loadingData, setLoadingData] = useState(true);
+  const [showUpgrade, setShowUpgrade] = useState(false);
 
   useEffect(() => {
     if (!loading && !user) navigate({ to: "/login" });
@@ -29,14 +51,23 @@ function DashboardPage() {
   useEffect(() => {
     if (!user) return;
     (async () => {
-      setLoadingSessions(true);
+      setLoadingData(true);
       const { supabase } = await import("@/integrations/supabase/client");
-      const { data } = await supabase
-        .from("sessions")
-        .select("id,created_at,title,summary")
-        .order("created_at", { ascending: false });
-      setSessions(data ?? []);
-      setLoadingSessions(false);
+      const [{ data: prof }, { data: sess }] = await Promise.all([
+        supabase
+          .from("user_profiles")
+          .select("first_name,subscription_status,sessions_today,last_session_date,created_at")
+          .eq("id", user.id)
+          .single(),
+        supabase
+          .from("sessions")
+          .select("id,created_at,title,lever_tags")
+          .order("created_at", { ascending: false })
+          .limit(5),
+      ]);
+      setProfile((prof as Profile) ?? null);
+      setSessions((sess ?? []) as SessionRow[]);
+      setLoadingData(false);
     })();
   }, [user]);
 
@@ -50,7 +81,7 @@ function DashboardPage() {
       const { supabase } = await import("@/integrations/supabase/client");
       const { data } = await supabase
         .from("messages")
-        .select("id,role,content,created_at")
+        .select("id,role,content")
         .eq("session_id", id)
         .order("created_at", { ascending: true });
       setMessages((m) => ({ ...m, [id]: (data ?? []) as MessageRow[] }));
@@ -64,30 +95,7 @@ function DashboardPage() {
     setSessions((s) => s.filter((x) => x.id !== id));
   }
 
-  async function exportData() {
-    const { supabase } = await import("@/integrations/supabase/client");
-    const { data: sess } = await supabase.from("sessions").select("*");
-    const { data: msgs } = await supabase.from("messages").select("*");
-    const blob = new Blob([JSON.stringify({ sessions: sess, messages: msgs }, null, 2)], {
-      type: "application/json",
-    });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = `sunya-data-${new Date().toISOString().slice(0, 10)}.json`;
-    a.click();
-    URL.revokeObjectURL(url);
-  }
-
-  async function deleteAccount() {
-    if (!confirm("Permanently delete your account and all sessions? This cannot be undone.")) return;
-    const { supabase } = await import("@/integrations/supabase/client");
-    await supabase.from("sessions").delete().neq("id", "00000000-0000-0000-0000-000000000000");
-    await signOut();
-    navigate({ to: "/" });
-  }
-
-  if (loading || !user) {
+  if (loading || !user || loadingData || !profile) {
     return (
       <div className="flex min-h-screen items-center justify-center bg-[#0a1628] text-[#b8d4e8]">
         <Loader2 className="h-5 w-5 animate-spin" />
@@ -95,121 +103,207 @@ function DashboardPage() {
     );
   }
 
+  const isPaid = profile.subscription_status === "paid";
+  const todaysCount =
+    profile.last_session_date === todayStr() ? profile.sessions_today : 0;
+  const remaining = Math.max(0, FREE_LIMIT - todaysCount);
+  const firstName = profile.first_name?.trim() || user.email?.split("@")[0] || "there";
+
   return (
     <div className="min-h-screen bg-[#0a1628] text-white">
       <Nav />
-      <Breadcrumb />
-      <main className="mx-auto max-w-4xl px-6 pb-24 pt-12">
-        <div className="flex flex-wrap items-end justify-between gap-4">
-          <div>
-            <div className="label-eyebrow">Your dashboard</div>
-            <h1 className="display mt-3 text-4xl text-white sm:text-5xl">
-              Welcome back<span className="display-italic text-[#b8d4e8]">.</span>
-            </h1>
-            <p className="mt-2 text-sm text-[#b8d4e8]">{user.email}</p>
-          </div>
-          <Link
-            to="/sunya-ai"
-            className="glow-btn inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium"
-          >
-            New session <ArrowRight className="h-4 w-4" />
-          </Link>
+      <main className="mx-auto max-w-6xl px-6 pb-24 pt-28">
+        <div>
+          <div className="label-eyebrow">Your dashboard</div>
+          <h1 className="display mt-3 text-4xl text-white sm:text-5xl">
+            Welcome back, <span className="display-italic text-[#b8d4e8]">{firstName}</span>.
+          </h1>
+          <p className="mt-3 text-sm text-[#b8d4e8]">
+            {isPaid ? (
+              <>
+                Full access active. <Sparkles className="ml-1 inline h-3.5 w-3.5 text-[#7ec8e3]" />
+              </>
+            ) : (
+              <>You have {remaining} free session{remaining === 1 ? "" : "s"} remaining today.</>
+            )}
+          </p>
         </div>
 
-        <section className="mt-10">
-          <h2 className="display text-2xl text-white">Session history</h2>
-          {loadingSessions ? (
-            <div className="mt-6 flex items-center gap-2 text-sm text-[#b8d4e8]">
-              <Loader2 className="h-4 w-4 animate-spin" /> Loading...
+        {/* Panel 1 — Quick Start */}
+        <section className="glass-strong relative mt-10 overflow-hidden rounded-3xl p-8 sm:p-10">
+          <div className="absolute -inset-px -z-10 rounded-3xl bg-gradient-to-br from-[#7ec8e3]/20 via-transparent to-[#2e6db4]/20 blur-xl" />
+          <div className="flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <div className="label-eyebrow">Start a new session</div>
+              <h2 className="display mt-3 text-3xl text-white sm:text-4xl">
+                How are you right now?
+              </h2>
+              <p className="mt-2 text-sm text-[#b8d4e8]">
+                Bring whatever's present. Sunya meets you there.
+              </p>
             </div>
-          ) : sessions.length === 0 ? (
-            <div className="glass-card mt-6 p-8 text-center text-sm text-[#b8d4e8]">
-              No saved sessions yet. Start one to begin.
-            </div>
-          ) : (
-            <div className="mt-6 space-y-3">
-              {sessions.map((s) => {
-                const isOpen = openId === s.id;
-                return (
-                  <div key={s.id} className="glass-card overflow-hidden">
-                    <div className="flex items-center gap-3 p-4">
-                      <button
-                        onClick={() => toggle(s.id)}
-                        className="flex flex-1 items-center gap-3 text-left"
-                      >
-                        <ChevronDown
-                          className={`h-4 w-4 text-[#7ec8e3] transition ${isOpen ? "rotate-180" : ""}`}
-                        />
-                        <div className="flex-1">
-                          <div className="text-sm text-white">
-                            {s.title || `Session — ${new Date(s.created_at).toLocaleDateString()}`}
-                          </div>
-                          <div className="text-xs text-[#b8d4e8]/70">
-                            {new Date(s.created_at).toLocaleString()}
-                          </div>
-                        </div>
-                      </button>
-                      <button
-                        onClick={() => deleteSession(s.id)}
-                        aria-label="Delete"
-                        className="rounded-full p-2 text-[#b8d4e8] hover:bg-white/5 hover:text-red-300"
-                      >
-                        <Trash2 className="h-4 w-4" />
-                      </button>
-                    </div>
-                    {isOpen && (
-                      <div className="space-y-3 border-t border-white/10 p-4">
-                        {(messages[s.id] ?? []).map((m) => (
-                          <div
-                            key={m.id}
-                            className={
-                              m.role === "user"
-                                ? "ml-auto max-w-[85%] rounded-2xl border border-white/10 bg-white/5 p-3 text-sm text-white"
-                                : "max-w-[92%] rounded-2xl border border-[#7ec8e3]/25 bg-white/[0.04] p-4 text-sm leading-relaxed text-white/90"
-                            }
-                          >
-                            <div className="whitespace-pre-wrap">{m.content}</div>
-                          </div>
-                        ))}
-                        {(messages[s.id]?.length ?? 0) === 0 && (
-                          <div className="text-center text-xs text-[#b8d4e8]/60">
-                            No messages in this session.
-                          </div>
-                        )}
-                      </div>
-                    )}
-                  </div>
-                );
-              })}
-            </div>
-          )}
-        </section>
-
-        <section className="mt-16">
-          <h2 className="display text-2xl text-white">Account</h2>
-          <div className="mt-4 flex flex-wrap gap-3">
-            <button
-              onClick={exportData}
-              className="inline-flex items-center gap-2 rounded-full border border-white/15 px-4 py-2.5 text-sm text-white hover:border-[#7ec8e3]/40"
+            <Link
+              to="/sunya-ai"
+              className="glow-btn inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium"
             >
-              <Download className="h-4 w-4" /> Download my data
-            </button>
-            <button
-              onClick={() => signOut().then(() => navigate({ to: "/" }))}
-              className="inline-flex items-center gap-2 rounded-full border border-white/15 px-4 py-2.5 text-sm text-white hover:border-[#7ec8e3]/40"
-            >
-              <LogOut className="h-4 w-4" /> Sign out
-            </button>
-            <button
-              onClick={deleteAccount}
-              className="inline-flex items-center gap-2 rounded-full border border-red-400/30 px-4 py-2.5 text-sm text-red-200 hover:bg-red-500/10"
-            >
-              <Trash2 className="h-4 w-4" /> Delete all my data
-            </button>
+              Begin <ArrowRight className="h-4 w-4" />
+            </Link>
           </div>
         </section>
+
+        <div className="mt-10 grid gap-6 lg:grid-cols-3">
+          {/* Panel 2 — Recent sessions */}
+          <section className="lg:col-span-2">
+            <div className="flex items-end justify-between">
+              <h2 className="display text-2xl text-white">Recent sessions</h2>
+              <Link
+                to="/sessions"
+                className="text-xs text-[#7ec8e3] hover:text-white"
+              >
+                View all sessions →
+              </Link>
+            </div>
+            {sessions.length === 0 ? (
+              <div className="glass-card mt-4 p-8 text-center text-sm text-[#b8d4e8]">
+                No saved sessions yet.
+              </div>
+            ) : (
+              <div className="mt-4 space-y-3">
+                {sessions.map((s) => {
+                  const isOpen = openId === s.id;
+                  return (
+                    <div key={s.id} className="glass-card overflow-hidden">
+                      <div className="flex items-center gap-3 p-4">
+                        <button
+                          onClick={() => toggle(s.id)}
+                          className="flex flex-1 items-center gap-3 text-left"
+                        >
+                          <ChevronDown
+                            className={`h-4 w-4 text-[#7ec8e3] transition ${
+                              isOpen ? "rotate-180" : ""
+                            }`}
+                          />
+                          <div className="flex-1">
+                            <div className="text-sm text-white">
+                              {s.title ||
+                                `Session — ${new Date(s.created_at).toLocaleDateString()}`}
+                            </div>
+                            <div className="mt-1 flex flex-wrap items-center gap-2 text-xs text-[#b8d4e8]/70">
+                              <span>{new Date(s.created_at).toLocaleString()}</span>
+                              {(s.lever_tags ?? []).map((t) => (
+                                <span
+                                  key={t}
+                                  className="rounded-full bg-[#7ec8e3]/10 px-2 py-0.5 text-[10px] uppercase tracking-wider text-[#7ec8e3]"
+                                >
+                                  {t}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+                        </button>
+                        <button
+                          onClick={() => deleteSession(s.id)}
+                          aria-label="Delete"
+                          className="rounded-full p-2 text-[#b8d4e8] hover:bg-white/5 hover:text-red-300"
+                        >
+                          <Trash2 className="h-4 w-4" />
+                        </button>
+                      </div>
+                      {isOpen && (
+                        <div className="space-y-3 border-t border-white/10 p-4">
+                          {(messages[s.id] ?? []).map((m) => (
+                            <div
+                              key={m.id}
+                              className={
+                                m.role === "user"
+                                  ? "ml-auto max-w-[85%] rounded-2xl border border-white/10 bg-white/5 p-3 text-sm text-white"
+                                  : "max-w-[92%] rounded-2xl border border-[#7ec8e3]/25 bg-white/[0.04] p-4 text-sm leading-relaxed text-white/90"
+                              }
+                            >
+                              <div className="whitespace-pre-wrap">{m.content}</div>
+                            </div>
+                          ))}
+                          {(messages[s.id]?.length ?? 0) === 0 && (
+                            <div className="text-center text-xs text-[#b8d4e8]/60">
+                              No messages in this session.
+                            </div>
+                          )}
+                          <div className="flex flex-wrap items-center justify-between gap-3 pt-2 text-xs">
+                            <Link
+                              to="/sunya-ai"
+                              className="text-[#7ec8e3] hover:text-white"
+                            >
+                              Start a follow-up session →
+                            </Link>
+                            <button
+                              onClick={() => deleteSession(s.id)}
+                              className="text-[#b8d4e8]/60 hover:text-red-300"
+                            >
+                              Delete this session
+                            </button>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            )}
+          </section>
+
+          {/* Panel 3 — Account summary */}
+          <aside>
+            <div className="glass-card p-6">
+              <h2 className="display text-xl text-white">Your account</h2>
+              <dl className="mt-5 space-y-3 text-sm">
+                <div className="flex justify-between gap-3">
+                  <dt className="text-[#b8d4e8]">Plan</dt>
+                  <dd className="text-white">{isPaid ? "Full Access" : "Free"}</dd>
+                </div>
+                <div className="flex justify-between gap-3">
+                  <dt className="text-[#b8d4e8]">Sessions today</dt>
+                  <dd className="text-white">
+                    {isPaid ? "Unlimited" : `${todaysCount} / ${FREE_LIMIT}`}
+                  </dd>
+                </div>
+                <div className="flex justify-between gap-3">
+                  <dt className="text-[#b8d4e8]">Member since</dt>
+                  <dd className="text-white">
+                    {new Date(profile.created_at).toLocaleDateString()}
+                  </dd>
+                </div>
+              </dl>
+              <button
+                onClick={() => setShowUpgrade(true)}
+                className={
+                  isPaid
+                    ? "mt-6 w-full rounded-full border border-white/15 px-4 py-2.5 text-sm text-white hover:border-[#7ec8e3]/40"
+                    : "glow-btn mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium"
+                }
+              >
+                {isPaid ? "Manage subscription" : "Upgrade to Full Access"}
+              </button>
+              <div className="mt-6 border-t border-white/10 pt-5 space-y-2 text-sm">
+                <Link
+                  to="/account"
+                  className="block text-[#b8d4e8] hover:text-white"
+                >
+                  Account settings →
+                </Link>
+                <Link
+                  to="/work-with-me"
+                  hash="booking"
+                  className="block text-[#b8d4e8] hover:text-white"
+                >
+                  Book a session with Desmond →
+                </Link>
+              </div>
+            </div>
+          </aside>
+        </div>
       </main>
       <Footer />
+      <UpgradeModal open={showUpgrade} onClose={() => setShowUpgrade(false)} />
     </div>
   );
 }

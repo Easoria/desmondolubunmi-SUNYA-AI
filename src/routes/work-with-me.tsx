@@ -1,4 +1,5 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { useEffect } from "react";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { Starfield } from "@/components/Starfield";
 import { Nav } from "@/components/site/Nav";
@@ -20,6 +21,8 @@ export const Route = createFileRoute("/work-with-me")({
   }),
 });
 
+const CALENDLY_URL = "https://calendly.com/easoriaai/reset_session";
+
 const STEPS = [
   "Full diagnostic conversation across the 4 root causes and 7 layers",
   "Identification of your primary imbalances and patterns",
@@ -29,6 +32,27 @@ const STEPS = [
 ];
 
 function WorkPage() {
+  // Load Calendly script + scroll to #booking if hash present
+  useEffect(() => {
+    const s = document.createElement("script");
+    s.src = "https://assets.calendly.com/assets/external/widget.js";
+    s.async = true;
+    document.body.appendChild(s);
+    return () => {
+      document.body.removeChild(s);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.location.hash === "#booking") {
+      setTimeout(() => {
+        document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    }
+  }, []);
+
+  const calendlyEmbedUrl = `${CALENDLY_URL}?hide_gdpr_banner=1&background_color=0a1628&text_color=ffffff&primary_color=7ec8e3`;
+
   return (
     <div className="min-h-screen bg-[#0a1628] text-white">
       <Nav />
@@ -53,6 +77,12 @@ function WorkPage() {
             Direct, personalised engagement with the full Sunya framework — applied to your
             specific life, your specific situation, your specific system.
           </p>
+          <a
+            href="#booking"
+            className="glow-btn mt-10 inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium"
+          >
+            Book a Session with Desmond <ArrowRight className="h-4 w-4" />
+          </a>
         </div>
       </section>
 
@@ -97,32 +127,38 @@ function WorkPage() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-[#0a1628] py-28">
-        <div className="relative z-10 mx-auto max-w-3xl px-6">
-          <div className="glass-strong rounded-3xl p-10 text-center">
-            <div className="label-eyebrow">Single Session</div>
-            <div className="mt-5 flex items-baseline justify-center gap-2">
-              <span className="display text-6xl text-white">€[PRICE]</span>
-              <span className="text-sm text-[#b8d4e8]">/ 90 minutes</span>
-            </div>
-            <ul className="mx-auto mt-8 max-w-sm space-y-3 text-left text-sm text-[#b8d4e8]">
+      {/* Booking */}
+      <section
+        id="booking"
+        className="relative overflow-hidden bg-[#0a1628] py-28 scroll-mt-24"
+      >
+        <div className="relative z-10 mx-auto max-w-4xl px-6">
+          <div className="text-center">
+            <div className="label-eyebrow">Book your session</div>
+            <h2 className="display mt-6 text-4xl text-white sm:text-5xl">
+              Pick a time <span className="display-italic text-[#b8d4e8]">that works.</span>
+            </h2>
+            <ul className="mx-auto mt-8 flex max-w-2xl flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-[#b8d4e8]">
               {[
                 "Full Sunya diagnostic",
                 "Personalised practice protocol",
                 "48-hour follow-up voice note",
               ].map((i) => (
-                <li key={i} className="flex gap-2">
+                <li key={i} className="inline-flex items-center gap-2">
                   <CheckCircle2 className="h-4 w-4 text-[#7ec8e3]" /> {i}
                 </li>
               ))}
             </ul>
-            <button className="glow-btn mt-9 inline-flex items-center gap-2 rounded-full px-8 py-4 text-sm font-medium">
-              Book a Session <ArrowRight className="h-4 w-4" />
-            </button>
-            <p className="mt-6 text-center text-xs text-[#b8d4e8]/60">
-              [PLACEHOLDER: Cal.com / Calendly embed goes here]
-            </p>
           </div>
+
+          <div className="glass-strong mt-10 overflow-hidden rounded-3xl p-2">
+            <div
+              className="calendly-inline-widget"
+              data-url={calendlyEmbedUrl}
+              style={{ minWidth: "320px", height: "780px" }}
+            />
+          </div>
+
           <p className="mt-8 text-center text-sm italic text-[#b8d4e8]/70">
             Desmond works with a small number of people at any given time to ensure full presence
             and depth with each person.
@@ -172,9 +208,13 @@ function WorkPage() {
               </p>
             </div>
             <div className="mt-9 flex flex-wrap gap-4">
-              <button className="glow-btn inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium">
-                Book a Session <ArrowRight className="h-4 w-4" />
-              </button>
+              <Link
+                to="/work-with-me"
+                hash="booking"
+                className="glow-btn inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium"
+              >
+                Book a Session with Desmond <ArrowRight className="h-4 w-4" />
+              </Link>
             </div>
           </div>
         </div>

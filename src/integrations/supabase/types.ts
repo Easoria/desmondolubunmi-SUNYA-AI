@@ -58,7 +58,9 @@ export type Database = {
       sessions: {
         Row: {
           created_at: string
+          ended_at: string | null
           id: string
+          lever_tags: string[]
           session_number: number
           summary: string | null
           title: string | null
@@ -67,7 +69,9 @@ export type Database = {
         }
         Insert: {
           created_at?: string
+          ended_at?: string | null
           id?: string
+          lever_tags?: string[]
           session_number?: number
           summary?: string | null
           title?: string | null
@@ -76,7 +80,9 @@ export type Database = {
         }
         Update: {
           created_at?: string
+          ended_at?: string | null
           id?: string
+          lever_tags?: string[]
           session_number?: number
           summary?: string | null
           title?: string | null
@@ -87,26 +93,44 @@ export type Database = {
       }
       user_profiles: {
         Row: {
+          avatar_url: string | null
           created_at: string
+          email: string | null
+          first_name: string | null
           id: string
+          last_name: string | null
           last_session_date: string | null
+          notifications_enabled: boolean
           sessions_today: number
+          stripe_customer_id: string | null
           subscription_start: string | null
           subscription_status: string
         }
         Insert: {
+          avatar_url?: string | null
           created_at?: string
+          email?: string | null
+          first_name?: string | null
           id: string
+          last_name?: string | null
           last_session_date?: string | null
+          notifications_enabled?: boolean
           sessions_today?: number
+          stripe_customer_id?: string | null
           subscription_start?: string | null
           subscription_status?: string
         }
         Update: {
+          avatar_url?: string | null
           created_at?: string
+          email?: string | null
+          first_name?: string | null
           id?: string
+          last_name?: string | null
           last_session_date?: string | null
+          notifications_enabled?: boolean
           sessions_today?: number
+          stripe_customer_id?: string | null
           subscription_start?: string | null
           subscription_status?: string
         }

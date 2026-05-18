@@ -74,12 +74,53 @@ export function SunyaAI() {
     return data.id;
   }
 
+  async function finalizeSession(sid: string, history: Msg[]) {
+    if (!user || history.length < 2) return;
+    try {
+      const res = await fetch("/api/session-title", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ messages: history }),
+      });
+      if (!res.ok) return;
+      const data = (await res.json()) as { title: string | null; lever_tags: string[] };
+      const { supabase } = await import("@/integrations/supabase/client");
+      await supabase
+        .from("sessions")
+        .update({
+          title: data.title,
+          lever_tags: data.lever_tags ?? [],
+          ended_at: new Date().toISOString(),
+        })
+        .eq("id", sid);
+    } catch {
+      /* ignore */
+    }
+  }
+
+  async function bumpSessionsToday() {
+    if (!user) return;
+    const { supabase } = await import("@/integrations/supabase/client");
+    const today = new Date().toISOString().slice(0, 10);
+    const { data: prof } = await supabase
+      .from("user_profiles")
+      .select("sessions_today,last_session_date")
+      .eq("id", user.id)
+      .single();
+    const todays = prof?.last_session_date === today ? (prof?.sessions_today ?? 0) : 0;
+    await supabase
+      .from("user_profiles")
+      .update({ sessions_today: todays + 1, last_session_date: today })
+      .eq("id", user.id);
+  }
+
   async function submit(text?: string) {
     const content = (text ?? input).trim();
     if (!content || loading) return;
     if (exhausted) return;
     setError("");
 
+    const isFirstUserTurn = messages.length === 0;
     const newUserMsg: Msg = { role: "user", content };
     const history = [...messages, newUserMsg];
     setMessages(history);
@@ -88,15 +129,27 @@ export function SunyaAI() {
 
     const sid = await ensureSession();
     if (sid) void persistMessage("user", content, sid);
+    if (user && isFirstUserTurn) void bumpSessionsToday();
 
     try {
+      const { supabase } = await import("@/integrations/supabase/client");
+      const { data: sessData } = await supabase.auth.getSession();
+      const token = sessData.session?.access_token;
       const res = await fetch("/api/chat", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          ...(token ? { Authorization: `Bearer ${token}` } : {}),
+        },
         body: JSON.stringify({ messages: history }),
       });
       if (res.status === 429) {
-        setError("The system is at capacity. Please try again in a moment.");
+        const j = await res.json().catch(() => ({}));
+        if (j?.error === "limit") {
+          setError("You've used your 3 free sessions for today. Come back tomorrow or upgrade for unlimited access.");
+        } else {
+          setError("The system is at capacity. Please try again in a moment.");
+        }
         return;
       }
       if (res.status === 402) {
@@ -109,14 +162,14 @@ export function SunyaAI() {
       }
       const data = await res.json();
       const reply: Msg = { role: "assistant", content: data.text || "" };
-      setMessages((m) => [...m, reply]);
+      const next = [...history, reply];
+      setMessages(next);
       if (sid) void persistMessage("assistant", reply.content, sid);
 
       if (!user) {
-        const next = uses + 1;
-        setUses(next);
-        localStorage.setItem(STORAGE_KEY, String(next));
-        // After the very first assistant response, nudge to save
+        const n = uses + 1;
+        setUses(n);
+        localStorage.setItem(STORAGE_KEY, String(n));
         if (history.filter((m) => m.role === "user").length === 1) {
           setTimeout(() => setShowAuthPrompt(true), 400);
         }
@@ -129,10 +182,23 @@ export function SunyaAI() {
   }
 
   function newSession() {
+    if (sessionId && messages.length >= 2) {
+      void finalizeSession(sessionId, messages);
+    }
     setMessages([]);
     setSessionId(null);
     setError("");
   }
+
+  // Finalize on unload / route change
+  useEffect(() => {
+    return () => {
+      if (sessionId && messages.length >= 2) {
+        void finalizeSession(sessionId, messages);
+      }
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [sessionId]);
 
   return (
     <div className="glass-strong relative mx-auto max-w-3xl rounded-3xl p-6 sm:p-8">

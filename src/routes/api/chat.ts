@@ -64,23 +64,67 @@ export const Route = createFileRoute("/api/chat")({
             messages = [{ role: "user", content: body.message }];
           }
           if (!messages || messages.length === 0) {
-            return new Response(JSON.stringify({ error: "Messages required" }), {
-              status: 400,
-              headers: { "Content-Type": "application/json" },
-            });
+            return Response.json({ error: "Messages required" }, { status: 400 });
           }
-          // Trim each message and cap history
           messages = messages
             .filter((m) => m && typeof m.content === "string" && m.content.trim().length > 0)
             .slice(-12)
             .map((m) => ({ role: m.role, content: m.content.slice(0, 4000) }));
 
+          // Enforce session limit for authenticated free users
+          const authHeader = request.headers.get("authorization") || "";
+          const token = authHeader.toLowerCase().startsWith("bearer ")
+            ? authHeader.slice(7)
+            : "";
+          if (token) {
+            try {
+              const supabaseUrl = process.env.SUPABASE_URL;
+              const anon = process.env.SUPABASE_PUBLISHABLE_KEY;
+              if (supabaseUrl && anon) {
+                const userRes = await fetch(`${supabaseUrl}/auth/v1/user`, {
+                  headers: { apikey: anon, Authorization: `Bearer ${token}` },
+                });
+                if (userRes.ok) {
+                  const u = (await userRes.json()) as { id?: string };
+                  if (u.id) {
+                    const profRes = await fetch(
+                      `${supabaseUrl}/rest/v1/user_profiles?id=eq.${u.id}&select=subscription_status,sessions_today,last_session_date`,
+                      {
+                        headers: {
+                          apikey: anon,
+                          Authorization: `Bearer ${token}`,
+                          Accept: "application/json",
+                        },
+                      },
+                    );
+                    if (profRes.ok) {
+                      const rows = (await profRes.json()) as Array<{
+                        subscription_status: string;
+                        sessions_today: number;
+                        last_session_date: string | null;
+                      }>;
+                      const p = rows[0];
+                      if (p && p.subscription_status !== "paid") {
+                        const today = new Date().toISOString().slice(0, 10);
+                        const todays = p.last_session_date === today ? p.sessions_today : 0;
+                        // First user-turn of a session counts. We approximate by counting only first message.
+                        const userTurns = messages.filter((m) => m.role === "user").length;
+                        if (userTurns <= 1 && todays >= 3) {
+                          return Response.json({ error: "limit" }, { status: 429 });
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            } catch {
+              // soft-fail on limit check; never block due to enforcement bug
+            }
+          }
+
           const key = process.env.LOVABLE_API_KEY;
           if (!key) {
-            return new Response(JSON.stringify({ error: "Missing LOVABLE_API_KEY" }), {
-              status: 500,
-              headers: { "Content-Type": "application/json" },
-            });
+            return Response.json({ error: "Missing LOVABLE_API_KEY" }, { status: 500 });
           }
 
           const res = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {
@@ -96,29 +140,20 @@ export const Route = createFileRoute("/api/chat")({
           });
 
           if (res.status === 429 || res.status === 402) {
-            return new Response(JSON.stringify({ error: "rate" }), {
-              status: res.status,
-              headers: { "Content-Type": "application/json" },
-            });
+            return Response.json({ error: "rate" }, { status: res.status });
           }
           if (!res.ok) {
             const t = await res.text();
-            return new Response(
-              JSON.stringify({ error: "Upstream error", detail: t.slice(0, 500) }),
-              { status: 502, headers: { "Content-Type": "application/json" } },
+            return Response.json(
+              { error: "Upstream error", detail: t.slice(0, 500) },
+              { status: 502 },
             );
           }
           const data = await res.json();
           const text: string = data?.choices?.[0]?.message?.content ?? "";
-          return new Response(JSON.stringify({ text }), {
-            status: 200,
-            headers: { "Content-Type": "application/json" },
-          });
+          return Response.json({ text });
         } catch (e) {
-          return new Response(JSON.stringify({ error: String(e) }), {
-            status: 500,
-            headers: { "Content-Type": "application/json" },
-          });
+          return Response.json({ error: String(e) }, { status: 500 });
         }
       },
     },
