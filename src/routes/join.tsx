@@ -35,6 +35,7 @@ const CARDS = [
     copy: "Once teacher training is available, go through the framework yourself and learn to bring these practices to others — in schools, communities, organisations, or your own work.",
     tag: "Coming Soon",
     tagTone: "soon",
+    optionId: "teacher",
   },
   {
     Icon: Handshake,
@@ -42,6 +43,7 @@ const CARDS = [
     copy: "Design, development, writing, video, community building, translation — if you have a skill and want to offer it in service of this mission, we want to hear from you.",
     tag: "Open Now",
     tagTone: "open",
+    optionId: "volunteer",
   },
   {
     Icon: Radio,
@@ -49,6 +51,7 @@ const CARDS = [
     copy: "The simplest contribution: if this framework has helped you or resonates with you, share it with one person who might need it. Word of mouth is how movements begin.",
     tag: "Always Open",
     tagTone: "open",
+    optionId: "spread_word",
   },
   {
     Icon: Globe2,
@@ -56,6 +59,7 @@ const CARDS = [
     copy: "Schools, wellness centres, retreat spaces, NGOs, corporate wellbeing programmes — if you represent an organisation that wants to bring Sunya into your community, reach out.",
     tag: "Open Now",
     tagTone: "open",
+    optionId: "partner",
   },
 ] as const;
 
@@ -151,7 +155,19 @@ function JoinPage() {
         <section className="mt-16">
           <div className="grid gap-5 md:grid-cols-2">
             {CARDS.map((c) => (
-              <div key={c.title} className="glass-card flex flex-col p-7">
+              <button
+                type="button"
+                key={c.title}
+                onClick={() => {
+                  setSelected((s) =>
+                    s.includes(c.optionId as OptionId) ? s : [...s, c.optionId as OptionId],
+                  );
+                  document
+                    .getElementById("contributor-form")
+                    ?.scrollIntoView({ behavior: "smooth", block: "start" });
+                }}
+                className="glass-card flex flex-col p-7 text-left transition hover:border-[#7ec8e3]/40 hover:bg-white/[0.04] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#7ec8e3]/50"
+              >
                 <div className="flex items-start justify-between gap-3">
                   <c.Icon className="h-7 w-7 text-[#7ec8e3]" />
                   <span
@@ -166,13 +182,13 @@ function JoinPage() {
                 </div>
                 <h3 className="display mt-5 text-2xl text-white">{c.title}</h3>
                 <p className="mt-3 text-sm text-[#b8d4e8]">{c.copy}</p>
-              </div>
+              </button>
             ))}
           </div>
         </section>
 
         {/* Form */}
-        <section className="mt-20">
+        <section id="contributor-form" className="mt-20 scroll-mt-24">
           <div className="text-center">
             <div className="label-eyebrow">The contributor form</div>
             <h2 className="display mt-5 text-3xl text-white sm:text-4xl">
