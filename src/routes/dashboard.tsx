@@ -1,7 +1,6 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { ArrowRight, Loader2, Trash2, Download, LogOut, ChevronDown } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/hooks/use-auth";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
@@ -31,6 +30,7 @@ function DashboardPage() {
     if (!user) return;
     (async () => {
       setLoadingSessions(true);
+      const { supabase } = await import("@/integrations/supabase/client");
       const { data } = await supabase
         .from("sessions")
         .select("id,created_at,title,summary")
@@ -47,6 +47,7 @@ function DashboardPage() {
     }
     setOpenId(id);
     if (!messages[id]) {
+      const { supabase } = await import("@/integrations/supabase/client");
       const { data } = await supabase
         .from("messages")
         .select("id,role,content,created_at")
@@ -58,11 +59,13 @@ function DashboardPage() {
 
   async function deleteSession(id: string) {
     if (!confirm("Delete this session permanently?")) return;
+    const { supabase } = await import("@/integrations/supabase/client");
     await supabase.from("sessions").delete().eq("id", id);
     setSessions((s) => s.filter((x) => x.id !== id));
   }
 
   async function exportData() {
+    const { supabase } = await import("@/integrations/supabase/client");
     const { data: sess } = await supabase.from("sessions").select("*");
     const { data: msgs } = await supabase.from("messages").select("*");
     const blob = new Blob([JSON.stringify({ sessions: sess, messages: msgs }, null, 2)], {
@@ -78,6 +81,7 @@ function DashboardPage() {
 
   async function deleteAccount() {
     if (!confirm("Permanently delete your account and all sessions? This cannot be undone.")) return;
+    const { supabase } = await import("@/integrations/supabase/client");
     await supabase.from("sessions").delete().neq("id", "00000000-0000-0000-0000-000000000000");
     await signOut();
     navigate({ to: "/" });
