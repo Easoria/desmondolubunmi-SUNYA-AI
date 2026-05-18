@@ -75,14 +75,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Sunya — A Universal System for Inner Transformation" },
+      { title: "Sunya — A Universal System for Inner Transformation." },
       {
         name: "description",
         content:
           "Sunya is a complete, practical framework for human wellbeing — rooted in the timeless mechanics of consciousness, not belief. Try Sunya AI free.",
       },
       { name: "author", content: "Desmond Olubunmi" },
-      { property: "og:title", content: "Sunya — A Universal System for Inner Transformation" },
+      { property: "og:title", content: "Sunya — A Universal System for Inner Transformation." },
       {
         property: "og:description",
         content:
@@ -91,6 +91,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Sunya — A Universal System for Inner Transformation." },
+      { name: "description", content: "Desmond Olubunmi's complete, practical system for human wellbeing - rooted in the timeless mechanics of inner engineering, not belief." },
+      { property: "og:description", content: "Desmond Olubunmi's complete, practical system for human wellbeing - rooted in the timeless mechanics of inner engineering, not belief." },
+      { name: "twitter:description", content: "Desmond Olubunmi's complete, practical system for human wellbeing - rooted in the timeless mechanics of inner engineering, not belief." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/0e04f25b-eced-489c-977d-b75e2fe09d40" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/0e04f25b-eced-489c-977d-b75e2fe09d40" },
     ],
     links: [
       {
