@@ -97,15 +97,23 @@ function LoginPage() {
               <div className="relative mt-2">
                 <Lock className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#b8d4e8]/60" />
                 <input
-                  type="password"
+                  type={showPassword ? "text" : "password"}
                   required
                   minLength={8}
                   autoComplete={mode === "signin" ? "current-password" : "new-password"}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full rounded-2xl border border-white/10 bg-white/5 py-3 pl-10 pr-3 text-white placeholder:text-[#b8d4e8]/40 outline-none focus:border-[#7ec8e3]/50"
+                  className="w-full rounded-2xl border border-white/10 bg-white/5 py-3 pl-10 pr-11 text-white placeholder:text-[#b8d4e8]/40 outline-none focus:border-[#7ec8e3]/50"
                   placeholder="At least 8 characters"
                 />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword((v) => !v)}
+                  aria-label={showPassword ? "Hide password" : "Show password"}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-[#b8d4e8]/60 hover:text-white"
+                >
+                  {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+                </button>
               </div>
             </div>
 
