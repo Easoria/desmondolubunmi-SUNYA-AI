@@ -188,7 +188,7 @@ function JoinPage() {
         </section>
 
         {/* Form */}
-        <section className="mt-20">
+        <section id="contributor-form" className="mt-20 scroll-mt-24">
           <div className="text-center">
             <div className="label-eyebrow">The contributor form</div>
             <h2 className="display mt-5 text-3xl text-white sm:text-4xl">
