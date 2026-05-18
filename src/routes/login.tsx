@@ -1,7 +1,6 @@
 import { createFileRoute, Link, useNavigate, useRouter } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { ArrowRight, Loader2, Mail, Lock } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/hooks/use-auth";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
@@ -35,6 +34,7 @@ function LoginPage() {
     setInfo("");
     setLoading(true);
     try {
+      const { supabase } = await import("@/integrations/supabase/client");
       if (mode === "signup") {
         const { error } = await supabase.auth.signUp({
           email,
