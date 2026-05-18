@@ -17,9 +17,12 @@ import { Route as ResetPasswordRouteImport } from './routes/reset-password'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as PhilosophyRouteImport } from './routes/philosophy'
 import { Route as LoginRouteImport } from './routes/login'
+import { Route as JoinRouteImport } from './routes/join'
 import { Route as ForgotPasswordRouteImport } from './routes/forgot-password'
 import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ApiContributorSignupRouteImport } from './routes/api/contributor-signup'
+import { Route as ApiCommunitySignupRouteImport } from './routes/api/community-signup'
 import { Route as ApiChatRouteImport } from './routes/api/chat'
 
 const WorkWithMeRoute = WorkWithMeRouteImport.update({
@@ -62,6 +65,11 @@ const LoginRoute = LoginRouteImport.update({
   path: '/login',
   getParentRoute: () => rootRouteImport,
 } as any)
+const JoinRoute = JoinRouteImport.update({
+  id: '/join',
+  path: '/join',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ForgotPasswordRoute = ForgotPasswordRouteImport.update({
   id: '/forgot-password',
   path: '/forgot-password',
@@ -77,6 +85,16 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiContributorSignupRoute = ApiContributorSignupRouteImport.update({
+  id: '/api/contributor-signup',
+  path: '/api/contributor-signup',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiCommunitySignupRoute = ApiCommunitySignupRouteImport.update({
+  id: '/api/community-signup',
+  path: '/api/community-signup',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiChatRoute = ApiChatRouteImport.update({
   id: '/api/chat',
   path: '/api/chat',
@@ -87,6 +105,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/dashboard': typeof DashboardRoute
   '/forgot-password': typeof ForgotPasswordRoute
+  '/join': typeof JoinRoute
   '/login': typeof LoginRoute
   '/philosophy': typeof PhilosophyRoute
   '/privacy': typeof PrivacyRoute
@@ -96,11 +115,14 @@ export interface FileRoutesByFullPath {
   '/vision': typeof VisionRoute
   '/work-with-me': typeof WorkWithMeRoute
   '/api/chat': typeof ApiChatRoute
+  '/api/community-signup': typeof ApiCommunitySignupRoute
+  '/api/contributor-signup': typeof ApiContributorSignupRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/dashboard': typeof DashboardRoute
   '/forgot-password': typeof ForgotPasswordRoute
+  '/join': typeof JoinRoute
   '/login': typeof LoginRoute
   '/philosophy': typeof PhilosophyRoute
   '/privacy': typeof PrivacyRoute
@@ -110,12 +132,15 @@ export interface FileRoutesByTo {
   '/vision': typeof VisionRoute
   '/work-with-me': typeof WorkWithMeRoute
   '/api/chat': typeof ApiChatRoute
+  '/api/community-signup': typeof ApiCommunitySignupRoute
+  '/api/contributor-signup': typeof ApiContributorSignupRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/dashboard': typeof DashboardRoute
   '/forgot-password': typeof ForgotPasswordRoute
+  '/join': typeof JoinRoute
   '/login': typeof LoginRoute
   '/philosophy': typeof PhilosophyRoute
   '/privacy': typeof PrivacyRoute
@@ -125,6 +150,8 @@ export interface FileRoutesById {
   '/vision': typeof VisionRoute
   '/work-with-me': typeof WorkWithMeRoute
   '/api/chat': typeof ApiChatRoute
+  '/api/community-signup': typeof ApiCommunitySignupRoute
+  '/api/contributor-signup': typeof ApiContributorSignupRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -132,6 +159,7 @@ export interface FileRouteTypes {
     | '/'
     | '/dashboard'
     | '/forgot-password'
+    | '/join'
     | '/login'
     | '/philosophy'
     | '/privacy'
@@ -141,11 +169,14 @@ export interface FileRouteTypes {
     | '/vision'
     | '/work-with-me'
     | '/api/chat'
+    | '/api/community-signup'
+    | '/api/contributor-signup'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/dashboard'
     | '/forgot-password'
+    | '/join'
     | '/login'
     | '/philosophy'
     | '/privacy'
@@ -155,11 +186,14 @@ export interface FileRouteTypes {
     | '/vision'
     | '/work-with-me'
     | '/api/chat'
+    | '/api/community-signup'
+    | '/api/contributor-signup'
   id:
     | '__root__'
     | '/'
     | '/dashboard'
     | '/forgot-password'
+    | '/join'
     | '/login'
     | '/philosophy'
     | '/privacy'
@@ -169,12 +203,15 @@ export interface FileRouteTypes {
     | '/vision'
     | '/work-with-me'
     | '/api/chat'
+    | '/api/community-signup'
+    | '/api/contributor-signup'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   DashboardRoute: typeof DashboardRoute
   ForgotPasswordRoute: typeof ForgotPasswordRoute
+  JoinRoute: typeof JoinRoute
   LoginRoute: typeof LoginRoute
   PhilosophyRoute: typeof PhilosophyRoute
   PrivacyRoute: typeof PrivacyRoute
@@ -184,6 +221,8 @@ export interface RootRouteChildren {
   VisionRoute: typeof VisionRoute
   WorkWithMeRoute: typeof WorkWithMeRoute
   ApiChatRoute: typeof ApiChatRoute
+  ApiCommunitySignupRoute: typeof ApiCommunitySignupRoute
+  ApiContributorSignupRoute: typeof ApiContributorSignupRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -244,6 +283,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LoginRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/join': {
+      id: '/join'
+      path: '/join'
+      fullPath: '/join'
+      preLoaderRoute: typeof JoinRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/forgot-password': {
       id: '/forgot-password'
       path: '/forgot-password'
@@ -265,6 +311,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/contributor-signup': {
+      id: '/api/contributor-signup'
+      path: '/api/contributor-signup'
+      fullPath: '/api/contributor-signup'
+      preLoaderRoute: typeof ApiContributorSignupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/community-signup': {
+      id: '/api/community-signup'
+      path: '/api/community-signup'
+      fullPath: '/api/community-signup'
+      preLoaderRoute: typeof ApiCommunitySignupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/chat': {
       id: '/api/chat'
       path: '/api/chat'
@@ -279,6 +339,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   DashboardRoute: DashboardRoute,
   ForgotPasswordRoute: ForgotPasswordRoute,
+  JoinRoute: JoinRoute,
   LoginRoute: LoginRoute,
   PhilosophyRoute: PhilosophyRoute,
   PrivacyRoute: PrivacyRoute,
@@ -288,6 +349,8 @@ const rootRouteChildren: RootRouteChildren = {
   VisionRoute: VisionRoute,
   WorkWithMeRoute: WorkWithMeRoute,
   ApiChatRoute: ApiChatRoute,
+  ApiCommunitySignupRoute: ApiCommunitySignupRoute,
+  ApiContributorSignupRoute: ApiContributorSignupRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
