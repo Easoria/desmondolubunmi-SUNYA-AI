@@ -6,6 +6,7 @@ import { SunyaAI } from "@/components/SunyaAI";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { Breadcrumb } from "@/components/site/Breadcrumb";
+import { UpgradeModal } from "@/components/site/UpgradeModal";
 
 export const Route = createFileRoute("/sunya-ai")({
   component: SunyaAIPage,
