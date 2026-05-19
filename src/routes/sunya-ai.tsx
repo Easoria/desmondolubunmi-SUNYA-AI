@@ -176,7 +176,7 @@ function SunyaAIPage() {
                 Founding rate — price will increase as Sunya grows.
               </p>
               <button
-                onClick={() => setUpgradeOpen(true)}
+                onClick={handleUpgrade}
                 className="glow-btn mt-6 inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium"
               >
                 Get Founding Access <ArrowRight className="h-4 w-4" />
