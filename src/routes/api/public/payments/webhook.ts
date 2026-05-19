@@ -114,13 +114,25 @@ async function handleCheckoutCompleted(session: any, env: StripeEnv) {
   // One-time payments (1-on-1 sessions) — subscriptions handled via subscription.* events.
   if (session.mode !== "payment") return;
 
+  // checkout.session.completed does NOT include line_items by default.
+  // Retrieve the session with line_items expanded so we can resolve the real price.
+  let priceId = "unknown";
+  try {
+    const stripe = createStripeClient(env);
+    const full = await stripe.checkout.sessions.retrieve(session.id, {
+      expand: ["line_items.data.price"],
+    });
+    const item: any = (full as any).line_items?.data?.[0];
+    priceId =
+      item?.price?.lookup_key ||
+      item?.price?.metadata?.lovable_external_id ||
+      item?.price?.id ||
+      "unknown";
+  } catch (e) {
+    console.error("Failed to expand line_items for session", session.id, e);
+  }
+
   const userId = session.metadata?.userId || null;
-  const lineItems = session.line_items?.data?.[0];
-  const priceId =
-    lineItems?.price?.lookup_key ||
-    lineItems?.price?.metadata?.lovable_external_id ||
-    lineItems?.price?.id ||
-    "unknown";
 
   await getSupabase().from("one_on_one_bookings").upsert(
     {
