@@ -5,6 +5,7 @@ import { useAuth } from "@/hooks/use-auth";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { UpgradeModal } from "@/components/site/UpgradeModal";
+import { AuthModal } from "@/components/site/AuthModal";
 
 export const Route = createFileRoute("/dashboard")({
   component: DashboardPage,
@@ -44,9 +45,7 @@ function DashboardPage() {
   const [loadingData, setLoadingData] = useState(true);
   const [showUpgrade, setShowUpgrade] = useState(false);
 
-  useEffect(() => {
-    if (!loading && !user) navigate({ to: "/login" });
-  }, [loading, user, navigate]);
+  // Auth handled inline via AuthModal overlay below (no redirect).
 
   useEffect(() => {
     if (!user) return;
