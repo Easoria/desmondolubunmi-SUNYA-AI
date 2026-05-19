@@ -93,10 +93,12 @@ function Pain() {
       <div className="relative z-10 mx-auto max-w-5xl px-6">
         <div className="text-center">
           <div className="label-eyebrow">You know this feeling</div>
+          <h2 className="display mt-6 text-4xl text-white sm:text-5xl md:text-6xl">
+            Something is missing.
+            <br />
+            <span className="display-italic text-[#b8d4e8]">You can't name it. But you feel it.</span>
+          </h2>
           <div className="mx-auto mt-10 max-w-2xl space-y-10 text-[#b8d4e8]">
-            <p>
-              Something is missing. You can't name it. But you feel it.
-            </p>
             <p>
               You've tried everything. More achievement. More experiences. More stimulation. A new
               relationship, a better job, a bigger goal. And it works — briefly. Then the feeling returns.
