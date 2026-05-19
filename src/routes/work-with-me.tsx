@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useEffect } from "react";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { useEffect, useState } from "react";
+import { ArrowRight, CheckCircle2, ChevronDown } from "lucide-react";
 import { Starfield } from "@/components/Starfield";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
