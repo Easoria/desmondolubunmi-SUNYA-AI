@@ -30,6 +30,11 @@ type SessionRow = {
   lever_tags: string[] | null;
 };
 type MessageRow = { id: string; role: "user" | "assistant"; content: string };
+type SubRow = {
+  status: string;
+  cancel_at_period_end: boolean | null;
+  current_period_end: string | null;
+};
 
 const FREE_LIMIT = 3;
 
@@ -46,6 +51,7 @@ function DashboardPage() {
   const [openId, setOpenId] = useState<string | null>(null);
   const [loadingData, setLoadingData] = useState(true);
   const [showUpgrade, setShowUpgrade] = useState(false);
+  const [sub, setSub] = useState<SubRow | null>(null);
   const { openCheckout, checkoutElement } = useStripeCheckout();
 
   function handleUnlock() {
@@ -82,7 +88,8 @@ function DashboardPage() {
     (async () => {
       setLoadingData(true);
       const { supabase } = await import("@/integrations/supabase/client");
-      const [{ data: prof }, { data: sess }] = await Promise.all([
+      const env = getStripeEnvironment();
+      const [{ data: prof }, { data: sess }, { data: subRow }] = await Promise.all([
         supabase
           .from("user_profiles")
           .select("first_name,subscription_status,sessions_today,last_session_date,created_at")
@@ -93,9 +100,18 @@ function DashboardPage() {
           .select("id,created_at,title,lever_tags")
           .order("created_at", { ascending: false })
           .limit(5),
+        supabase
+          .from("subscriptions")
+          .select("status,cancel_at_period_end,current_period_end")
+          .eq("user_id", user.id)
+          .eq("environment", env)
+          .order("created_at", { ascending: false })
+          .limit(1)
+          .maybeSingle(),
       ]);
       setProfile((prof as Profile) ?? null);
       setSessions((sess ?? []) as SessionRow[]);
+      setSub((subRow as SubRow) ?? null);
       setLoadingData(false);
     })();
   }, [user]);
@@ -157,6 +173,33 @@ function DashboardPage() {
             )}
           </p>
         </div>
+
+        {isPaid && sub?.cancel_at_period_end && sub?.current_period_end && (
+          <div className="mt-6 rounded-2xl border border-amber-400/30 bg-amber-500/10 p-4 text-sm text-amber-100">
+            Your subscription is set to cancel. Access ends on{" "}
+            <span className="font-medium text-white">
+              {new Date(sub.current_period_end).toLocaleDateString(undefined, {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })}
+            </span>
+            . You can resume anytime from{" "}
+            <button onClick={handleManage} className="underline hover:text-white">
+              Manage subscription
+            </button>
+            .
+          </div>
+        )}
+        {isPaid && sub?.status === "past_due" && (
+          <div className="mt-6 rounded-2xl border border-red-400/30 bg-red-500/10 p-4 text-sm text-red-100">
+            Your last payment failed. Stripe is retrying automatically — you still have access for now. Please{" "}
+            <button onClick={handleManage} className="underline hover:text-white">
+              update your payment method
+            </button>{" "}
+            to avoid interruption.
+          </div>
+        )}
 
         {/* Panel 1 — Quick Start */}
         <section className="glass-strong relative mt-10 overflow-hidden rounded-3xl p-8 sm:p-10">
