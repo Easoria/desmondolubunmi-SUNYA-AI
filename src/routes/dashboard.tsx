@@ -311,7 +311,7 @@ function DashboardPage() {
                 </div>
               )}
               <button
-                onClick={() => setShowUpgrade(true)}
+                onClick={isPaid ? handleManage : handleUnlock}
                 className={
                   isPaid
                     ? "mt-6 w-full rounded-full border border-white/15 px-4 py-2.5 text-sm text-white hover:border-[#7ec8e3]/40"
@@ -341,6 +341,7 @@ function DashboardPage() {
       </main>
       <Footer />
       <UpgradeModal open={showUpgrade} onClose={() => setShowUpgrade(false)} />
+      {checkoutElement}
     </div>
   );
 }
