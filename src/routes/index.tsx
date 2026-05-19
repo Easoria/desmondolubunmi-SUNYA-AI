@@ -93,49 +93,20 @@ function Pain() {
       <div className="relative z-10 mx-auto max-w-5xl px-6">
         <div className="text-center">
           <div className="label-eyebrow">You know this feeling</div>
-          <h2 className="display mt-6 text-4xl text-white sm:text-5xl md:text-6xl">
-            Something is missing.
-            <br />
-            <span className="display-italic text-[#b8d4e8]">You can't name it. But you feel it.</span>
-          </h2>
-          <div className="mx-auto mt-10 max-w-2xl space-y-5 text-[#b8d4e8]">
+          <div className="mx-auto mt-10 max-w-2xl space-y-10 text-[#b8d4e8]">
             <p>
-              You've achieved things. You've tried things. Maybe meditation, maybe therapy, maybe
-              philosophy, maybe religion. Maybe nothing at all.
+              You know this feeling. Something is missing. You can't name it. But you feel it.
             </p>
             <p>
-              And yet there is this persistent sense — an emptiness underneath everything. A restlessness
-              that no achievement, relationship, or experience fully resolves.
-            </p>
-            <p className="text-white/90">
-              This is not a personal failure. This is a mechanical condition. And it has a precise
-               solution.
-            </p>
-          </div>
-
-          <div className="mx-auto mt-16 max-w-2xl space-y-6 text-center text-lg leading-loose text-white/85 sm:text-xl">
-            <p>And so we reach outward.</p>
-            <p>
-              More achievement. More validation. More stimulation.
-              <br />
-              A new relationship, a better job, a bigger goal.
-              <br />
-              And it works — briefly. Then the feeling returns.
-            </p>
-            <p className="text-[#b8d4e8]">
-              This is not weakness. This is not failure.
+              You've tried everything. More achievement. More experiences. More stimulation. A new
+              relationship, a better job, a bigger goal. And it works — briefly. Then the feeling returns.
             </p>
             <p>
-              This is a mechanical condition.
-              <br />
-              A closed system, running low, trying to fill
-              <br />
-              an infinite inner need with finite external things.
+              This is a closed system trying to fill an infinite inner need with finite external things.
             </p>
-            <p className="display-italic text-[#b8d4e8]">
-              It cannot work. Not because you are broken.
-              <br />
-              Because finite things cannot produce infinite fulfilment.
+            <p>
+              It cannot work. Not because you are broken — because finite things cannot produce infinite
+              fulfilment.
             </p>
           </div>
         </div>
