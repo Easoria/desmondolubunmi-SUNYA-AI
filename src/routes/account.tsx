@@ -134,8 +134,9 @@ function AccountPage() {
     );
   }
 
-  const isPaid = profile.subscription_status === "paid";
+  const isPaid = isActive || profile.subscription_status === "paid";
   const isEmailUser = user.app_metadata?.provider === "email";
+
 
   return (
     <div className="min-h-screen bg-[#0a1628] text-white">
