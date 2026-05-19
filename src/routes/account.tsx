@@ -146,7 +146,7 @@ function AccountPage() {
         )}
 
         <Section title="Subscription">
-          <Row label="Plan" value={isPaid ? "Full Access — €29 / month" : "Free"} />
+          <Row label="Plan" value={isPaid ? "Full Access — €19 / month" : "Free"} />
           <Row label="Member since" value={new Date(profile.created_at).toLocaleDateString()} />
           <div className="mt-4">
             {isPaid ? (
