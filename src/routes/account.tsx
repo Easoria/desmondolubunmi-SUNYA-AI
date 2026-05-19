@@ -175,11 +175,14 @@ function AccountPage() {
           <div className="mt-4">
             {isPaid ? (
               <button
-                onClick={() => setShowUpgrade(true)}
-                className="rounded-full border border-white/15 px-4 py-2.5 text-sm text-white hover:border-[#7ec8e3]/40"
+                onClick={openPortal}
+                disabled={portalLoading}
+                className="inline-flex items-center gap-2 rounded-full border border-white/15 px-4 py-2.5 text-sm text-white hover:border-[#7ec8e3]/40 disabled:opacity-60"
               >
+                {portalLoading && <Loader2 className="h-3.5 w-3.5 animate-spin" />}
                 Manage subscription
               </button>
+
             ) : (
               <button
                 onClick={() => setShowUpgrade(true)}
