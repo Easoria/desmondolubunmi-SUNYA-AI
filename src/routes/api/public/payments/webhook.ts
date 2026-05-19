@@ -1,6 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { createClient } from "@supabase/supabase-js";
-import { type StripeEnv, verifyWebhook } from "@/lib/stripe.server";
+import { type StripeEnv, createStripeClient, verifyWebhook } from "@/lib/stripe.server";
+
+// Statuses that should still count as "has access" for entitlement gating.
+// past_due keeps access during Stripe's automatic retry window (~3 weeks)
+// so a single failed renewal doesn't immediately revoke access.
+const ENTITLED_STATUSES = new Set(["active", "trialing", "past_due"]);
 
 let _supabase: any = null;
 function getSupabase(): any {
