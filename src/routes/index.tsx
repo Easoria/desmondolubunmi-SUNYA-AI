@@ -95,7 +95,7 @@ function Pain() {
           <div className="label-eyebrow">You know this feeling</div>
           <div className="mx-auto mt-10 max-w-2xl space-y-10 text-[#b8d4e8]">
             <p>
-              You know this feeling. Something is missing. You can't name it. But you feel it.
+              Something is missing. You can't name it. But you feel it.
             </p>
             <p>
               You've tried everything. More achievement. More experiences. More stimulation. A new
