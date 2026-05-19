@@ -127,6 +127,41 @@ function WorkPage() {
         </div>
       </section>
 
+      {/* Pricing card */}
+      <section className="relative overflow-hidden bg-[#0a1628] py-20">
+        <div className="relative z-10 mx-auto max-w-2xl px-6">
+          <div className="glass-strong rounded-3xl p-8 shadow-[0_0_60px_-15px_rgba(232,199,156,0.35)] ring-1 ring-[#e8c79c]/30">
+            <div className="label-eyebrow">1-on-1 Session with Desmond</div>
+            <div className="mt-4 flex items-baseline gap-2">
+              <span className="display text-5xl text-white">€150</span>
+              <span className="text-sm text-[#b8d4e8]">/ 90 minutes</span>
+            </div>
+            <ul className="mt-7 space-y-3 text-sm text-[#b8d4e8]">
+              {[
+                "Full Sunya diagnostic",
+                "Personalised practice protocol",
+                "Applied to your specific situation",
+                "Follow-up voice note within 48hrs",
+              ].map((i) => (
+                <li key={i} className="flex gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-[#e8c79c]" /> {i}
+                </li>
+              ))}
+            </ul>
+            <a
+              href="#booking"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="glow-btn mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium"
+            >
+              Book a Session <ArrowRight className="h-4 w-4" />
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Booking */}
       <section
         id="booking"

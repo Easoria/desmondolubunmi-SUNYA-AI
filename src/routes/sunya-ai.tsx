@@ -109,10 +109,10 @@ function SunyaAIPage() {
               <div className="label-eyebrow">Free</div>
               <div className="mt-4 flex items-baseline gap-2">
                 <span className="display text-5xl text-white">3</span>
-                <span className="text-sm text-[#b8d4e8]">sessions</span>
+                <span className="text-sm text-[#b8d4e8]">sessions per day</span>
               </div>
               <ul className="mt-7 space-y-3 text-sm text-[#b8d4e8]">
-                {["Full diagnostic", "Personalised protocol", "No account needed"].map((i) => (
+                {["Full Sunya diagnostic", "Personalised protocol", "No account needed"].map((i) => (
                   <li key={i} className="flex gap-2">
                     <CheckCircle2 className="h-4 w-4 text-[#7ec8e3]" /> {i}
                   </li>
@@ -127,37 +127,40 @@ function SunyaAIPage() {
                 className="mt-auto pt-8"
               >
                 <span className="glow-btn inline-flex w-full items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium">
-                  Try Free <ArrowRight className="h-4 w-4" />
+                  Start Free <ArrowRight className="h-4 w-4" />
                 </span>
               </a>
             </div>
-            <div className="glass-strong relative flex flex-col rounded-3xl p-8">
+            <div className="glass-strong relative flex flex-col rounded-3xl p-8 shadow-[0_0_60px_-15px_rgba(126,200,227,0.5)] ring-1 ring-[#7ec8e3]/40">
               <div className="absolute right-6 top-6 rounded-full bg-[#7ec8e3]/15 px-3 py-1 text-[10px] uppercase tracking-[0.25em] text-[#7ec8e3] ring-1 ring-[#7ec8e3]/30">
-                Recommended
+                ✦ Recommended
               </div>
-              <div className="label-eyebrow">Full Access</div>
+              <div className="label-eyebrow">Founding Access · Live</div>
               <div className="mt-4 flex items-baseline gap-2">
-                <span className="display text-5xl text-white">€29</span>
+                <span className="display text-5xl text-white">€19</span>
                 <span className="text-sm text-[#b8d4e8]">/ month</span>
               </div>
               <ul className="mt-7 space-y-3 text-sm text-[#b8d4e8]">
                 {[
                   "Unlimited sessions",
                   "Full diagnostic",
-                  "Session history",
-                  "Progress tracking",
-                  "Priority responses",
+                  "Session history saved",
+                  "Lever insights over time",
+                  "Cancel anytime",
                 ].map((i) => (
                   <li key={i} className="flex gap-2">
                     <CheckCircle2 className="h-4 w-4 text-[#7ec8e3]" /> {i}
                   </li>
                 ))}
               </ul>
+              <p className="mt-5 text-xs italic text-[#b8d4e8]/70">
+                Founding rate — price will increase as Sunya grows.
+              </p>
               <button
                 onClick={() => setUpgradeOpen(true)}
-                className="glow-btn mt-8 inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium"
+                className="glow-btn mt-6 inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium"
               >
-                Get Full Access <ArrowRight className="h-4 w-4" />
+                Get Founding Access <ArrowRight className="h-4 w-4" />
               </button>
             </div>
           </div>
