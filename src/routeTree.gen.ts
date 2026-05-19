@@ -30,7 +30,6 @@ import { Route as ApiContributorSignupRouteImport } from './routes/api/contribut
 import { Route as ApiCommunitySignupRouteImport } from './routes/api/community-signup'
 import { Route as ApiChatRouteImport } from './routes/api/chat'
 import { Route as ApiPublicPaymentsWebhookRouteImport } from './routes/api/public/payments/webhook'
-import { Route as ApiPublicAdminRecreateInclusiveRouteImport } from './routes/api/public/admin/recreate-inclusive'
 
 const WorkWithMeRoute = WorkWithMeRouteImport.update({
   id: '/work-with-me',
@@ -138,12 +137,6 @@ const ApiPublicPaymentsWebhookRoute =
     path: '/api/public/payments/webhook',
     getParentRoute: () => rootRouteImport,
   } as any)
-const ApiPublicAdminRecreateInclusiveRoute =
-  ApiPublicAdminRecreateInclusiveRouteImport.update({
-    id: '/api/public/admin/recreate-inclusive',
-    path: '/api/public/admin/recreate-inclusive',
-    getParentRoute: () => rootRouteImport,
-  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -166,7 +159,6 @@ export interface FileRoutesByFullPath {
   '/api/contributor-signup': typeof ApiContributorSignupRoute
   '/api/session-title': typeof ApiSessionTitleRoute
   '/checkout/return': typeof CheckoutReturnRoute
-  '/api/public/admin/recreate-inclusive': typeof ApiPublicAdminRecreateInclusiveRoute
   '/api/public/payments/webhook': typeof ApiPublicPaymentsWebhookRoute
 }
 export interface FileRoutesByTo {
@@ -190,7 +182,6 @@ export interface FileRoutesByTo {
   '/api/contributor-signup': typeof ApiContributorSignupRoute
   '/api/session-title': typeof ApiSessionTitleRoute
   '/checkout/return': typeof CheckoutReturnRoute
-  '/api/public/admin/recreate-inclusive': typeof ApiPublicAdminRecreateInclusiveRoute
   '/api/public/payments/webhook': typeof ApiPublicPaymentsWebhookRoute
 }
 export interface FileRoutesById {
@@ -215,7 +206,6 @@ export interface FileRoutesById {
   '/api/contributor-signup': typeof ApiContributorSignupRoute
   '/api/session-title': typeof ApiSessionTitleRoute
   '/checkout/return': typeof CheckoutReturnRoute
-  '/api/public/admin/recreate-inclusive': typeof ApiPublicAdminRecreateInclusiveRoute
   '/api/public/payments/webhook': typeof ApiPublicPaymentsWebhookRoute
 }
 export interface FileRouteTypes {
@@ -241,7 +231,6 @@ export interface FileRouteTypes {
     | '/api/contributor-signup'
     | '/api/session-title'
     | '/checkout/return'
-    | '/api/public/admin/recreate-inclusive'
     | '/api/public/payments/webhook'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -265,7 +254,6 @@ export interface FileRouteTypes {
     | '/api/contributor-signup'
     | '/api/session-title'
     | '/checkout/return'
-    | '/api/public/admin/recreate-inclusive'
     | '/api/public/payments/webhook'
   id:
     | '__root__'
@@ -289,7 +277,6 @@ export interface FileRouteTypes {
     | '/api/contributor-signup'
     | '/api/session-title'
     | '/checkout/return'
-    | '/api/public/admin/recreate-inclusive'
     | '/api/public/payments/webhook'
   fileRoutesById: FileRoutesById
 }
@@ -314,7 +301,6 @@ export interface RootRouteChildren {
   ApiContributorSignupRoute: typeof ApiContributorSignupRoute
   ApiSessionTitleRoute: typeof ApiSessionTitleRoute
   CheckoutReturnRoute: typeof CheckoutReturnRoute
-  ApiPublicAdminRecreateInclusiveRoute: typeof ApiPublicAdminRecreateInclusiveRoute
   ApiPublicPaymentsWebhookRoute: typeof ApiPublicPaymentsWebhookRoute
 }
 
@@ -467,13 +453,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiPublicPaymentsWebhookRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/api/public/admin/recreate-inclusive': {
-      id: '/api/public/admin/recreate-inclusive'
-      path: '/api/public/admin/recreate-inclusive'
-      fullPath: '/api/public/admin/recreate-inclusive'
-      preLoaderRoute: typeof ApiPublicAdminRecreateInclusiveRouteImport
-      parentRoute: typeof rootRouteImport
-    }
   }
 }
 
@@ -498,9 +477,18 @@ const rootRouteChildren: RootRouteChildren = {
   ApiContributorSignupRoute: ApiContributorSignupRoute,
   ApiSessionTitleRoute: ApiSessionTitleRoute,
   CheckoutReturnRoute: CheckoutReturnRoute,
-  ApiPublicAdminRecreateInclusiveRoute: ApiPublicAdminRecreateInclusiveRoute,
   ApiPublicPaymentsWebhookRoute: ApiPublicPaymentsWebhookRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
