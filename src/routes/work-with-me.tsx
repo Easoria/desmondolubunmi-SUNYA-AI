@@ -32,6 +32,7 @@ const STEPS = [
 ];
 
 function WorkPage() {
+  const [bioExpanded, setBioExpanded] = useState(false);
   function scrollToBooking() {
     document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" });
   }
