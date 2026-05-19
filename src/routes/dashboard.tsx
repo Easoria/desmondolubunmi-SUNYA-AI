@@ -88,7 +88,8 @@ function DashboardPage() {
     (async () => {
       setLoadingData(true);
       const { supabase } = await import("@/integrations/supabase/client");
-      const [{ data: prof }, { data: sess }] = await Promise.all([
+      const env = getStripeEnvironment();
+      const [{ data: prof }, { data: sess }, { data: subRow }] = await Promise.all([
         supabase
           .from("user_profiles")
           .select("first_name,subscription_status,sessions_today,last_session_date,created_at")
@@ -99,9 +100,18 @@ function DashboardPage() {
           .select("id,created_at,title,lever_tags")
           .order("created_at", { ascending: false })
           .limit(5),
+        supabase
+          .from("subscriptions")
+          .select("status,cancel_at_period_end,current_period_end")
+          .eq("user_id", user.id)
+          .eq("environment", env)
+          .order("created_at", { ascending: false })
+          .limit(1)
+          .maybeSingle(),
       ]);
       setProfile((prof as Profile) ?? null);
       setSessions((sess ?? []) as SessionRow[]);
+      setSub((subRow as SubRow) ?? null);
       setLoadingData(false);
     })();
   }, [user]);
