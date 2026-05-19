@@ -265,15 +265,15 @@ function About() {
               experienced inner peace. Not by believing in something, but by working with the
               natural mechanics of my own system.
             </p>
-            <p>
-              This relief inspired a journey into deeper practice and curiosity — to understand
-              the mechanisms of human life. I practiced daily for many years, long hours, multiple
-              silent retreats, including several ten-day Vipassana retreats — where I sat until
-              thought and time dissolved and what remained was pure awareness, totally alive and
-              still.
-            </p>
             {expanded && (
               <>
+                <p>
+                  This relief inspired a journey into deeper practice and curiosity — to understand
+                  the mechanisms of human life. I practiced daily for many years, long hours, multiple
+                  silent retreats, including several ten-day Vipassana retreats — where I sat until
+                  thought and time dissolved and what remained was pure awareness, totally alive and
+                  still.
+                </p>
                 <p>And gradually, what became clear was this:</p>
                 <p>
                   Every tradition, every religion, every healing modality — different brands, one
