@@ -5,6 +5,10 @@ import { useAuth } from "@/hooks/use-auth";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { UpgradeModal } from "@/components/site/UpgradeModal";
+import { useSubscription } from "@/hooks/useSubscription";
+import { createPortalSession } from "@/utils/payments.functions";
+import { getStripeEnvironment } from "@/lib/stripe";
+
 
 export const Route = createFileRoute("/account")({
   component: AccountPage,
