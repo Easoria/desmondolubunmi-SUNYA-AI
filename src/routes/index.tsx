@@ -147,11 +147,6 @@ function Reframe() {
       <div className="relative z-10 mx-auto max-w-5xl px-6">
         <div className="text-center">
           <div className="label-eyebrow">The reframe</div>
-          <h2 className="display mt-6 text-4xl text-white sm:text-5xl md:text-6xl">
-            This is not a psychological problem.
-            <br />
-            <span className="display-italic text-[#b8d4e8]">It is an energetic one.</span>
-          </h2>
           <p className="mx-auto mt-8 max-w-xl text-[#b8d4e8]">
             Every form of human suffering traces back to four root causes. Each has a precise cure.
           </p>
