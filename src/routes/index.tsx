@@ -69,7 +69,7 @@ function Pain() {
     {
       icon: "🌀",
       title: "The Endless Search",
-      copy: "You've read the books, tried the paths, had glimpses — but nothing has fully landed or stayed.",
+      copy: "You've read the books, tried different paths, had glimpses — but nothing has fully landed or stayed.",
     },
     {
       icon: "⚡",
