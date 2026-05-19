@@ -79,7 +79,7 @@ function Pain() {
     {
       icon: "🌊",
       title: "The Disconnection",
-      copy: "From yourself. From others. From meaning. Like you're watching your own life from behind glass.",
+      copy: "From yourself. From others. A persistent feeling of being a separate, isolated person in a hostile universe.",
     },
     {
       icon: "🔁",
