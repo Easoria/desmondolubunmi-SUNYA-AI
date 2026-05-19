@@ -8,6 +8,7 @@ import { Footer } from "@/components/site/Footer";
 import { Breadcrumb } from "@/components/site/Breadcrumb";
 import { UpgradeModal } from "@/components/site/UpgradeModal";
 import { useStripeCheckout } from "@/hooks/useStripeCheckout";
+import { useSubscription } from "@/hooks/useSubscription";
 import { useAuth } from "@/hooks/use-auth";
 import { useNavigate } from "@tanstack/react-router";
 
@@ -56,6 +57,7 @@ function SunyaAIPage() {
   const { user } = useAuth();
   const navigate = useNavigate();
   const { openCheckout, checkoutElement } = useStripeCheckout();
+  const { isActive: hasActiveSub } = useSubscription();
 
   function handleUpgrade() {
     if (!user) {
@@ -114,7 +116,8 @@ function SunyaAIPage() {
         </div>
       </section>
 
-      {/* Pricing */}
+      {/* Pricing — hidden for active subscribers */}
+      {!hasActiveSub && (
       <section className="relative overflow-hidden bg-[#060d1c] py-28">
         <div className="relative z-10 mx-auto max-w-5xl px-6">
           <div className="text-center">
@@ -185,6 +188,9 @@ function SunyaAIPage() {
           </div>
         </div>
       </section>
+      )}
+
+
 
       {/* FAQ */}
       <section className="relative overflow-hidden bg-[#0a1628] py-28">
