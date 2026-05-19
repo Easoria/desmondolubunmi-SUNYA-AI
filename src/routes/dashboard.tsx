@@ -30,6 +30,11 @@ type SessionRow = {
   lever_tags: string[] | null;
 };
 type MessageRow = { id: string; role: "user" | "assistant"; content: string };
+type SubRow = {
+  status: string;
+  cancel_at_period_end: boolean | null;
+  current_period_end: string | null;
+};
 
 const FREE_LIMIT = 3;
 
