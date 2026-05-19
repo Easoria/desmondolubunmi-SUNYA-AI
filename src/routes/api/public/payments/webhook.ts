@@ -86,7 +86,7 @@ async function handleSubscriptionUpdated(subscription: any, env: StripeEnv) {
 
   const userId = subscription.metadata?.userId;
   if (userId) {
-    const isActive = ["active", "trialing"].includes(subscription.status);
+    const isActive = ENTITLED_STATUSES.has(subscription.status);
     await getSupabase()
       .from("user_profiles")
       .update({ subscription_status: isActive ? "paid" : "free" })
