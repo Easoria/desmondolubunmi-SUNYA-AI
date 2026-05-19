@@ -408,6 +408,7 @@ export function SunyaAI() {
         </span>
       </div>
 
+      <UpgradeModal open={showUpgrade} onClose={() => setShowUpgrade(false)} variant="limit" />
       <AuthModal
         open={showAuthPrompt && !user}
         onClose={() => setShowAuthPrompt(false)}
