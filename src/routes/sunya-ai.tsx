@@ -57,6 +57,7 @@ function SunyaAIPage() {
   const { user } = useAuth();
   const navigate = useNavigate();
   const { openCheckout, checkoutElement } = useStripeCheckout();
+  const { isActive: hasActiveSub } = useSubscription();
 
   function handleUpgrade() {
     if (!user) {
