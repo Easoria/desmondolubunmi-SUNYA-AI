@@ -5,6 +5,9 @@ import { useAuth } from "@/hooks/use-auth";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { UpgradeModal } from "@/components/site/UpgradeModal";
+import { useStripeCheckout } from "@/hooks/useStripeCheckout";
+import { createPortalSession } from "@/utils/payments.functions";
+import { getStripeEnvironment } from "@/lib/stripe";
 
 export const Route = createFileRoute("/dashboard")({
   component: DashboardPage,
@@ -43,6 +46,32 @@ function DashboardPage() {
   const [openId, setOpenId] = useState<string | null>(null);
   const [loadingData, setLoadingData] = useState(true);
   const [showUpgrade, setShowUpgrade] = useState(false);
+  const { openCheckout, checkoutElement } = useStripeCheckout();
+
+  function handleUnlock() {
+    if (!user) return;
+    openCheckout({
+      priceId: "sunya_ai_founding_monthly",
+      customerEmail: user.email,
+      userId: user.id,
+      returnUrl: `${window.location.origin}/checkout/return?session_id={CHECKOUT_SESSION_ID}`,
+    });
+  }
+
+  async function handleManage() {
+    try {
+      const url = await createPortalSession({
+        data: {
+          returnUrl: `${window.location.origin}/dashboard`,
+          environment: getStripeEnvironment(),
+        },
+      });
+      if (url) window.open(url, "_blank");
+    } catch (e) {
+      console.error(e);
+      setShowUpgrade(true);
+    }
+  }
 
   useEffect(() => {
     if (!loading && !user) navigate({ to: "/login" });
@@ -282,7 +311,7 @@ function DashboardPage() {
                 </div>
               )}
               <button
-                onClick={() => setShowUpgrade(true)}
+                onClick={isPaid ? handleManage : handleUnlock}
                 className={
                   isPaid
                     ? "mt-6 w-full rounded-full border border-white/15 px-4 py-2.5 text-sm text-white hover:border-[#7ec8e3]/40"
@@ -312,6 +341,7 @@ function DashboardPage() {
       </main>
       <Footer />
       <UpgradeModal open={showUpgrade} onClose={() => setShowUpgrade(false)} />
+      {checkoutElement}
     </div>
   );
 }
