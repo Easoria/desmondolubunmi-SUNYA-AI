@@ -154,13 +154,13 @@ function WorkPage() {
               ))}
             </ul>
             <button
-              onClick={handlePay}
+              onClick={scrollToBooking}
               className="glow-btn mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium"
             >
-              Pay &amp; Book — €150 <ArrowRight className="h-4 w-4" />
+              Book a Session <ArrowRight className="h-4 w-4" />
             </button>
             <p className="mt-3 text-center text-xs italic text-[#b8d4e8]/70">
-              Pay securely, then pick your time below.
+              Pick your time and pay securely below — €150 all-in.
             </p>
           </div>
         </div>
