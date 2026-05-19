@@ -263,38 +263,52 @@ function WorkPage() {
                 time, I experienced inner peace. Not by believing in something, but by working
                 with the natural mechanics of my own system.
               </p>
-              <p>
-                This relief inspired a journey into deeper practice and curiosity — to understand
-                the mechanisms of human life. I practiced daily for many years, long hours,
-                multiple silent retreats, including several ten-day Vipassana retreats — where I
-                sat until thought and time dissolved and what remained was pure awareness,
-                totally alive and still.
-              </p>
-              <p>And gradually, what became clear was this:</p>
-              <p>
-                Every tradition, every religion, every healing modality — different brands, one
-                human system, one truth.
-              </p>
-              <p>
-                I began to distil. I traced every practice back to its essence — breathwork,
-                movement, sound, meditation, devotion, nutrition, environment — asking: what is
-                this fundamentally doing to the human system? What is it actually changing?
-              </p>
-              <p>That process became Sunya.</p>
-              <p>
-                Not a belief system. Not a tradition. A universal map — built on first
-                principles, belonging to no culture, accessible to every human being.
-              </p>
-              <p>
-                We all want the same thing: freedom from suffering and the realisation of lasting
-                happiness. Sunya exists to make that available — without dogma, without belief,
-                without asking you to convert to anything.
-              </p>
-              <p className="text-white/90">
-                I built this because I lived the problem. And found the path through it.
-              </p>
-              <p>Now it's yours.</p>
-              <p className="display-italic">— Desmond</p>
+              {bioExpanded && (
+                <>
+                  <p>
+                    This relief inspired a journey into deeper practice and curiosity — to understand
+                    the mechanisms of human life. I practiced daily for many years, long hours,
+                    multiple silent retreats, including several ten-day Vipassana retreats — where I
+                    sat until thought and time dissolved and what remained was pure awareness,
+                    totally alive and still.
+                  </p>
+                  <p>And gradually, what became clear was this:</p>
+                  <p>
+                    Every tradition, every religion, every healing modality — different brands, one
+                    human system, one truth.
+                  </p>
+                  <p>
+                    I began to distil. I traced every practice back to its essence — breathwork,
+                    movement, sound, meditation, devotion, nutrition, environment — asking: what is
+                    this fundamentally doing to the human system? What is it actually changing?
+                  </p>
+                  <p>That process became Sunya.</p>
+                  <p>
+                    Not a belief system. Not a tradition. A universal map — built on first
+                    principles, belonging to no culture, accessible to every human being.
+                  </p>
+                  <p>
+                    We all want the same thing: freedom from suffering and the realisation of lasting
+                    happiness. Sunya exists to make that available — without dogma, without belief,
+                    without asking you to convert to anything.
+                  </p>
+                  <p className="text-white/90">
+                    I built this because I lived the problem. And found the path through it.
+                  </p>
+                  <p>Now it's yours.</p>
+                  <p className="display-italic">— Desmond</p>
+                </>
+              )}
+              <button
+                type="button"
+                onClick={() => setBioExpanded((v) => !v)}
+                className="mt-2 inline-flex items-center gap-1 text-xs uppercase tracking-[0.32em] text-[#7ec8e3] transition hover:text-white"
+              >
+                {bioExpanded ? "Read less" : "Read more"}
+                <ChevronDown
+                  className={`h-3 w-3 transition-transform ${bioExpanded ? "rotate-180" : ""}`}
+                />
+              </button>
             </div>
             <div className="mt-9 flex flex-wrap gap-4">
               <a
