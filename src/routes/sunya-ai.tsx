@@ -7,6 +7,9 @@ import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { Breadcrumb } from "@/components/site/Breadcrumb";
 import { UpgradeModal } from "@/components/site/UpgradeModal";
+import { useStripeCheckout } from "@/hooks/useStripeCheckout";
+import { useAuth } from "@/hooks/use-auth";
+import { useNavigate } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/sunya-ai")({
   component: SunyaAIPage,
@@ -50,6 +53,22 @@ const FAQ = [
 function SunyaAIPage() {
   const [open, setOpen] = useState<number | null>(0);
   const [upgradeOpen, setUpgradeOpen] = useState(false);
+  const { user } = useAuth();
+  const navigate = useNavigate();
+  const { openCheckout, checkoutElement } = useStripeCheckout();
+
+  function handleUpgrade() {
+    if (!user) {
+      navigate({ to: "/login", search: { next: "/sunya-ai" } as any });
+      return;
+    }
+    openCheckout({
+      priceId: "sunya_ai_founding_monthly",
+      customerEmail: user.email,
+      userId: user.id,
+      returnUrl: `${window.location.origin}/checkout/return?session_id={CHECKOUT_SESSION_ID}`,
+    });
+  }
   return (
     <div className="min-h-screen bg-[#0a1628] text-white">
       <Nav />
