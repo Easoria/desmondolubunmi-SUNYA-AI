@@ -135,7 +135,7 @@ function SunyaAIPage() {
               <div className="absolute right-6 top-6 rounded-full bg-[#7ec8e3]/15 px-3 py-1 text-[10px] uppercase tracking-[0.25em] text-[#7ec8e3] ring-1 ring-[#7ec8e3]/30">
                 ✦ Recommended
               </div>
-              <div className="label-eyebrow">Founding Access · Live</div>
+              <div className="label-eyebrow mt-10 sm:mt-0">Founding Access · Live</div>
               <div className="mt-4 flex items-baseline gap-2">
                 <span className="display text-5xl text-white">€19</span>
                 <span className="text-sm text-[#b8d4e8]">/ month</span>
