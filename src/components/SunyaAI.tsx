@@ -362,18 +362,23 @@ export function SunyaAI() {
 
       {exhausted && !loading && (
         <div className="mt-6 rounded-2xl border border-[#7ec8e3]/30 bg-[#7ec8e3]/5 p-5 text-center">
-          <div className="display text-xl text-white">You've used your free sessions.</div>
+          <div className="display text-xl text-white">
+            ✦ You've used your free sessions for today
+          </div>
           <p className="mt-2 text-sm text-[#b8d4e8]">
-            Create a free account to save your sessions, or subscribe for unlimited access at{" "}
-            <span className="text-white">€29/month</span>.
+            Unlock full access for <span className="text-white">€19/month</span> — unlimited
+            sessions, saved history, and lever tracking over time.
+          </p>
+          <p className="mt-2 text-xs italic text-[#b8d4e8]/70">
+            Founding rate. Price increases as Sunya grows.
           </p>
           <div className="mt-4 flex flex-wrap justify-center gap-2">
-            <Link
-              to="/login"
+            <button
+              onClick={() => setShowAuthPrompt(true)}
               className="glow-btn inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium"
             >
               Create free account <ArrowRight className="h-3.5 w-3.5" />
-            </Link>
+            </button>
           </div>
         </div>
       )}
@@ -390,44 +395,40 @@ export function SunyaAI() {
         </span>
       </div>
 
-      {showAuthPrompt && !user && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#0a1628]/80 p-4 backdrop-blur-sm">
-          <div className="glass-strong relative w-full max-w-md rounded-3xl p-7">
-            <button
-              onClick={() => setShowAuthPrompt(false)}
-              aria-label="Close"
-              className="absolute right-4 top-4 rounded-full p-1.5 text-[#b8d4e8] hover:bg-white/10 hover:text-white"
-            >
-              <X className="h-4 w-4" />
-            </button>
-            <div className="label-eyebrow">✦ Save your session</div>
-            <h3 className="display mt-3 text-2xl text-white">Create a free account</h3>
-            <p className="mt-2 text-sm text-[#b8d4e8]">
-              Save this session, track your progress, and return anytime.
-            </p>
-            <div className="mt-6 space-y-3">
-              <Link
-                to="/login"
-                className="glow-btn flex w-full items-center justify-center gap-2 rounded-2xl px-5 py-3 text-sm font-medium"
-              >
-                Sign up with email <ArrowRight className="h-4 w-4" />
-              </Link>
-              <Link
-                to="/login"
-                className="flex w-full items-center justify-center gap-2 rounded-2xl border border-white/15 px-5 py-3 text-sm text-white hover:border-[#7ec8e3]/40"
-              >
-                Already have an account? Sign in
-              </Link>
-            </div>
-            <button
-              onClick={() => setShowAuthPrompt(false)}
-              className="mt-4 block w-full text-center text-xs text-[#b8d4e8]/70 hover:text-white"
-            >
-              Or continue without saving →
-            </button>
-          </div>
-        </div>
-      )}
+      <AuthModal
+        open={showAuthPrompt && !user}
+        onClose={() => setShowAuthPrompt(false)}
+        defaultMode="signup"
+        contextMessage="Create a free account to save this session and access it anytime."
+        onAuthSuccess={async () => {
+          // Persist any in-memory guest messages to a new session, then go to dashboard.
+          try {
+            const { supabase } = await import("@/integrations/supabase/client");
+            const { data: u } = await supabase.auth.getUser();
+            const uid = u.user?.id;
+            if (uid && messages.length > 0) {
+              const { data: sess } = await supabase
+                .from("sessions")
+                .insert({ user_id: uid })
+                .select("id")
+                .single();
+              if (sess) {
+                await supabase.from("messages").insert(
+                  messages.map((m) => ({
+                    session_id: sess.id,
+                    user_id: uid,
+                    role: m.role,
+                    content: m.content,
+                  })),
+                );
+              }
+            }
+          } catch {
+            /* non-blocking */
+          }
+          navigate({ to: "/dashboard" });
+        }}
+      />
     </div>
   );
 }
