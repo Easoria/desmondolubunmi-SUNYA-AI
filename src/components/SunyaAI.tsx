@@ -383,15 +383,15 @@ export function SunyaAI() {
         </div>
       )}
 
-      <div className="mt-8 flex flex-wrap items-center justify-center gap-2 text-xs text-[#b8d4e8]/70">
-        <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1.5">
-          <Lock className="h-3 w-3" /> Private & Confidential
+      <div className="mt-8 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-[10px] text-[#b8d4e8]/40">
+        <span className="inline-flex items-center gap-1">
+          <Lock className="h-2.5 w-2.5" /> Private & Confidential
         </span>
-        <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1.5">
-          <Globe className="h-3 w-3" /> No belief system required
+        <span className="inline-flex items-center gap-1">
+          <Globe className="h-2.5 w-2.5" /> No belief system required
         </span>
-        <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1.5">
-          <Zap className="h-3 w-3" /> Powered by the Sunya framework
+        <span className="inline-flex items-center gap-1">
+          <Zap className="h-2.5 w-2.5" /> Powered by the Sunya framework
         </span>
       </div>
 
