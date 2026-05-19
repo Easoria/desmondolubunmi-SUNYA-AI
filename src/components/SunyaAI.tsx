@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from "react";
-import { Link } from "@tanstack/react-router";
-import { Sparkles, Lock, Globe, Zap, ArrowRight, Loader2, X, Plus } from "lucide-react";
+import { Link, useNavigate } from "@tanstack/react-router";
+import { Sparkles, Lock, Globe, Zap, ArrowRight, Loader2, Plus } from "lucide-react";
 import { useAuth } from "@/hooks/use-auth";
+import { AuthModal } from "@/components/site/AuthModal";
 
 const PROMPTS = [
   "I feel anxious",
@@ -22,6 +23,7 @@ type Msg = { role: "user" | "assistant"; content: string };
 
 export function SunyaAI() {
   const { user } = useAuth();
+  const navigate = useNavigate();
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const [messages, setMessages] = useState<Msg[]>([]);
@@ -240,7 +242,7 @@ export function SunyaAI() {
             onChange={(e) => setInput(e.target.value)}
             disabled={loading || exhausted}
             rows={4}
-            placeholder="Describe what you're experiencing..."
+            placeholder="How are you right now? Say whatever comes..."
             className="mt-3 w-full resize-none rounded-2xl border border-white/10 bg-white/5 p-4 text-base text-white placeholder:text-[#b8d4e8]/40 outline-none transition focus:border-[#7ec8e3]/50 focus:bg-white/[0.07] disabled:opacity-50"
           />
 
