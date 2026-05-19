@@ -43,7 +43,7 @@ function Hero() {
             to="/sunya-ai"
             className="glow-btn inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-medium tracking-wide"
           >
-            Begin Free <ArrowRight className="h-4 w-4" />
+            Try Sunya AI <ArrowRight className="h-4 w-4" />
           </Link>
           <Link
             to="/philosophy"
