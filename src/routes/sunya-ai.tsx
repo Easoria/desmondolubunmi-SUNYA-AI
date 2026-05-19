@@ -8,6 +8,7 @@ import { Footer } from "@/components/site/Footer";
 import { Breadcrumb } from "@/components/site/Breadcrumb";
 import { UpgradeModal } from "@/components/site/UpgradeModal";
 import { useStripeCheckout } from "@/hooks/useStripeCheckout";
+import { useSubscription } from "@/hooks/useSubscription";
 import { useAuth } from "@/hooks/use-auth";
 import { useNavigate } from "@tanstack/react-router";
 
