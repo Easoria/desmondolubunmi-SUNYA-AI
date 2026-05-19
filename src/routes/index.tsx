@@ -323,7 +323,7 @@ function FinalCTA() {
           to="/sunya-ai"
           className="glow-btn mt-12 inline-flex items-center gap-2 rounded-full px-10 py-5 text-base font-medium"
         >
-          Begin Free <ArrowUpRight className="h-5 w-5" />
+          Try Sunya AI <ArrowUpRight className="h-5 w-5" />
         </Link>
       </div>
     </section>
