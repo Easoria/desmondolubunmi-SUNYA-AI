@@ -32,6 +32,8 @@ export function SunyaAI() {
   const [uses, setUses] = useState(0);
   const [sessionId, setSessionId] = useState<string | null>(null);
   const [showAuthPrompt, setShowAuthPrompt] = useState(false);
+  const [showUpgrade, setShowUpgrade] = useState(false);
+  const [limitHit, setLimitHit] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
