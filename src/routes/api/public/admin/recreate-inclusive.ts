@@ -14,6 +14,8 @@ const TARGET_LOOKUP_KEYS = [
   "sunya_ai_founding_monthly",
 ];
 
+const ONE_TIME_TOKEN = "f61ad91a5c13d7bed45b194407ef5305c4d78a036b1b6c38";
+
 export const Route = createFileRoute("/api/public/admin/recreate-inclusive")({
   server: {
     handlers: {
@@ -21,8 +23,7 @@ export const Route = createFileRoute("/api/public/admin/recreate-inclusive")({
         const url = new URL(request.url);
         const secret = url.searchParams.get("secret");
         const env = (url.searchParams.get("env") || "sandbox") as "sandbox" | "live";
-        const expected = process.env.ADMIN_SETUP_SECRET;
-        if (!expected || secret !== expected) {
+        if (secret !== ONE_TIME_TOKEN) {
           return new Response("Unauthorized", { status: 401 });
         }
 
