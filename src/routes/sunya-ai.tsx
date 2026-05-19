@@ -116,7 +116,8 @@ function SunyaAIPage() {
         </div>
       </section>
 
-      {/* Pricing */}
+      {/* Pricing — hidden for active subscribers */}
+      {!hasActiveSub && (
       <section className="relative overflow-hidden bg-[#060d1c] py-28">
         <div className="relative z-10 mx-auto max-w-5xl px-6">
           <div className="text-center">
