@@ -147,7 +147,7 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <AuthProvider>
-        <PaymentTestModeBanner />
+        
         <Outlet />
       </AuthProvider>
     </QueryClientProvider>
