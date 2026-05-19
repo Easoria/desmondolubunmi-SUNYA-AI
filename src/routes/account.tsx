@@ -32,6 +32,25 @@ function AccountPage() {
   const [savingNotif, setSavingNotif] = useState(false);
   const [resetSent, setResetSent] = useState(false);
   const [showUpgrade, setShowUpgrade] = useState(false);
+  const [portalLoading, setPortalLoading] = useState(false);
+  const { isActive } = useSubscription();
+
+  async function openPortal() {
+    setPortalLoading(true);
+    try {
+      const url = await createPortalSession({
+        data: {
+          environment: getStripeEnvironment(),
+          returnUrl: window.location.href,
+        },
+      });
+      if (url) window.open(url, "_blank");
+    } catch (e) {
+      console.error(e);
+    } finally {
+      setPortalLoading(false);
+    }
+  }
 
   useEffect(() => {
     if (!loading && !user) navigate({ to: "/login" });
