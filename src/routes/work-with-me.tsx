@@ -263,7 +263,6 @@ function WorkPage() {
       </section>
 
       <Footer />
-      {checkoutElement}
     </div>
   );
 }
