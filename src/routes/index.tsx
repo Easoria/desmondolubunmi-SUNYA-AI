@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, ArrowUpRight, ChevronDown } from "lucide-react";
 import { Starfield } from "@/components/Starfield";
@@ -206,6 +207,7 @@ function AITeaser() {
 }
 
 function About() {
+  const [expanded, setExpanded] = useState(false);
   return (
     <section
       id="about"
@@ -270,31 +272,45 @@ function About() {
               thought and time dissolved and what remained was pure awareness, totally alive and
               still.
             </p>
-            <p>And gradually, what became clear was this:</p>
-            <p>
-              Every tradition, every religion, every healing modality — different brands, one
-              human system, one truth.
-            </p>
-            <p>
-              I began to distil. I traced every practice back to its essence — breathwork,
-              movement, sound, meditation, devotion, nutrition, environment — asking: what is this
-              fundamentally doing to the human system? What is it actually changing?
-            </p>
-            <p>That process became Sunya.</p>
-            <p>
-              Not a belief system. Not a tradition. A universal map — built on first principles,
-              belonging to no culture, accessible to every human being.
-            </p>
-            <p>
-              We all want the same thing: freedom from suffering and the realisation of lasting
-              happiness. Sunya exists to make that available — without dogma, without belief,
-              without asking you to convert to anything.
-            </p>
-            <p className="text-white/90">
-              I built this because I lived the problem. And found the path through it.
-            </p>
-            <p>Now it's yours.</p>
-            <p className="display-italic">— Desmond</p>
+            {expanded && (
+              <>
+                <p>And gradually, what became clear was this:</p>
+                <p>
+                  Every tradition, every religion, every healing modality — different brands, one
+                  human system, one truth.
+                </p>
+                <p>
+                  I began to distil. I traced every practice back to its essence — breathwork,
+                  movement, sound, meditation, devotion, nutrition, environment — asking: what is this
+                  fundamentally doing to the human system? What is it actually changing?
+                </p>
+                <p>That process became Sunya.</p>
+                <p>
+                  Not a belief system. Not a tradition. A universal map — built on first principles,
+                  belonging to no culture, accessible to every human being.
+                </p>
+                <p>
+                  We all want the same thing: freedom from suffering and the realisation of lasting
+                  happiness. Sunya exists to make that available — without dogma, without belief,
+                  without asking you to convert to anything.
+                </p>
+                <p className="text-white/90">
+                  I built this because I lived the problem. And found the path through it.
+                </p>
+                <p>Now it's yours.</p>
+                <p className="display-italic">— Desmond</p>
+              </>
+            )}
+            <button
+              type="button"
+              onClick={() => setExpanded((v) => !v)}
+              className="mt-2 inline-flex items-center gap-1 text-xs uppercase tracking-[0.32em] text-[#7ec8e3] transition hover:text-white"
+            >
+              {expanded ? "Read less" : "Read more"}
+              <ChevronDown
+                className={`h-3 w-3 transition-transform ${expanded ? "rotate-180" : ""}`}
+              />
+            </button>
           </div>
           <div className="mt-9 flex flex-wrap gap-4">
             <Link
