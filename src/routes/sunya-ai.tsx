@@ -233,6 +233,7 @@ function SunyaAIPage() {
 
       <Footer />
       <UpgradeModal open={upgradeOpen} onClose={() => setUpgradeOpen(false)} />
+      {checkoutElement}
     </div>
   );
 }
