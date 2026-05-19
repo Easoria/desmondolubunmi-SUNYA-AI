@@ -124,9 +124,9 @@ function Pain() {
         <div className="mx-auto mt-16 max-w-2xl">
           <div className="mx-auto h-px w-24 bg-gradient-to-r from-transparent via-[#7ec8e3]/50 to-transparent" />
           <p className="mt-8 text-center text-xs uppercase leading-relaxed tracking-[0.3em] text-[#b8d4e8]">
-            The problem has never been the world outside you.
+            The world will always be unstable.
             <br />
-            It has always been the system inside you.
+            Your inner state doesn't have to be.
           </p>
         </div>
       </div>
