@@ -360,9 +360,18 @@ export function SunyaAI() {
 
       {error && (
         <div className="mt-6 rounded-2xl border border-red-400/30 bg-red-500/10 p-4 text-sm text-red-100">
-          {error}
+          <div>{error}</div>
+          {limitHit && user && (
+            <button
+              onClick={() => setShowUpgrade(true)}
+              className="glow-btn mt-3 inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-medium"
+            >
+              Unlock Full Access — €19/month <ArrowRight className="h-3 w-3" />
+            </button>
+          )}
         </div>
       )}
+
 
       {exhausted && !loading && (
         <div className="mt-6 rounded-2xl border border-[#7ec8e3]/30 bg-[#7ec8e3]/5 p-5 text-center">
