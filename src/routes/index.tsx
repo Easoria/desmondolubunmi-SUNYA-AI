@@ -124,9 +124,9 @@ function Pain() {
         <div className="mx-auto mt-16 max-w-2xl">
           <div className="mx-auto h-px w-24 bg-gradient-to-r from-transparent via-[#7ec8e3]/50 to-transparent" />
           <p className="mt-8 text-center text-xs uppercase leading-relaxed tracking-[0.3em] text-[#b8d4e8]">
-            The problem has never been the world outside you.
+            The world will always be unstable.
             <br />
-            It has always been the system inside you.
+            Your inner state doesn't have to be.
           </p>
         </div>
       </div>
@@ -147,11 +147,6 @@ function Reframe() {
       <div className="relative z-10 mx-auto max-w-5xl px-6">
         <div className="text-center">
           <div className="label-eyebrow">The reframe</div>
-          <h2 className="display mt-6 text-4xl text-white sm:text-5xl md:text-6xl">
-            This is not a psychological problem.
-            <br />
-            <span className="display-italic text-[#b8d4e8]">It is an energetic one.</span>
-          </h2>
           <p className="mx-auto mt-8 max-w-xl text-[#b8d4e8]">
             Every form of human suffering traces back to four root causes. Each has a precise cure.
           </p>
@@ -237,21 +232,69 @@ function About() {
           <div className="label-eyebrow">The founder</div>
           <h2 className="display mt-5 text-4xl text-white sm:text-6xl">Desmond Olubunmi</h2>
           <p className="display-italic mt-3 text-lg text-[#b8d4e8]">
-            Nigerian-Irish. 23. Built this because he needed it.
+            Spiritual teacher. Visionary. 23.
           </p>
           <div className="mt-8 space-y-4 text-[#b8d4e8]">
+            <p>Everything humans do is an attempt to be happy.</p>
             <p>
-              I grew up between worlds — Nigerian roots, Irish upbringing, a mind that couldn't stop
-              asking why.
+              We earn degrees, build careers, raise children, enter relationships, pray, meditate.
+              Every act — however it appears — is aimed at one thing: reducing suffering and
+              realising happiness. This is the most universal human truth there is.
             </p>
             <p>
-              I went deep. Vedanta. Taoism. Neuroscience. Kabbalah. Sufism. Isha Yoga. And underneath
-              all of it, I found the same mechanics. The same root causes. The same levers.
+              We have more comfort, more information, and more options than any generation before
+              us. But can we say we are happier?
+            </p>
+            <p>
+              Born in Nigeria, raised in Ireland, I was exposed early to radically different
+              cultures and ways of understanding life. Christians, Muslims, Hindus, Buddhists,
+              scientists, therapists — all essentially trying to create human well-being. I wanted
+              to know the truth of human life. Not what people believed. What was actually true.
+            </p>
+            <p>
+              That curiosity was always in me — even as a child I had a deep sense of reverence
+              for something sacred in life, even before I could name it.
+            </p>
+            <p>But it was suffering that made the question urgent.</p>
+            <p>
+              In my teens, my nervous system was constantly dysregulated. My mind wouldn't stop. I
+              couldn't sleep. The inner chaos became intolerable — and that intolerance became the
+              catalyst. I found mindful breathing practices — and for the first time, I
+              experienced inner peace. Not by believing in something, but by working with the
+              natural mechanics of my own system.
+            </p>
+            <p>
+              This relief inspired a journey into deeper practice and curiosity — to understand
+              the mechanisms of human life. I practiced daily for many years, long hours, multiple
+              silent retreats, including several ten-day Vipassana retreats — where I sat until
+              thought and time dissolved and what remained was pure awareness, totally alive and
+              still.
+            </p>
+            <p>And gradually, what became clear was this:</p>
+            <p>
+              Every tradition, every religion, every healing modality — different brands, one
+              human system, one truth.
+            </p>
+            <p>
+              I began to distil. I traced every practice back to its essence — breathwork,
+              movement, sound, meditation, devotion, nutrition, environment — asking: what is this
+              fundamentally doing to the human system? What is it actually changing?
+            </p>
+            <p>That process became Sunya.</p>
+            <p>
+              Not a belief system. Not a tradition. A universal map — built on first principles,
+              belonging to no culture, accessible to every human being.
+            </p>
+            <p>
+              We all want the same thing: freedom from suffering and the realisation of lasting
+              happiness. Sunya exists to make that available — without dogma, without belief,
+              without asking you to convert to anything.
             </p>
             <p className="text-white/90">
-              Sunya is the distillation of that search — a universal map that belongs to no tradition,
-              but honours all of them.
+              I built this because I lived the problem. And found the path through it.
             </p>
+            <p>Now it's yours.</p>
+            <p className="display-italic">— Desmond</p>
           </div>
           <div className="mt-9 flex flex-wrap gap-4">
             <Link
