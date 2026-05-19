@@ -51,6 +51,7 @@ function DashboardPage() {
   const [openId, setOpenId] = useState<string | null>(null);
   const [loadingData, setLoadingData] = useState(true);
   const [showUpgrade, setShowUpgrade] = useState(false);
+  const [sub, setSub] = useState<SubRow | null>(null);
   const { openCheckout, checkoutElement } = useStripeCheckout();
 
   function handleUnlock() {
