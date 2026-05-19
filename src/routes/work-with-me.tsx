@@ -5,8 +5,6 @@ import { Starfield } from "@/components/Starfield";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { Breadcrumb } from "@/components/site/Breadcrumb";
-import { useStripeCheckout } from "@/hooks/useStripeCheckout";
-import { useAuth } from "@/hooks/use-auth";
 import desmondImg from "@/assets/desmond.jpg";
 
 export const Route = createFileRoute("/work-with-me")({
@@ -34,17 +32,10 @@ const STEPS = [
 ];
 
 function WorkPage() {
-  const { user } = useAuth();
-  const { openCheckout, checkoutElement } = useStripeCheckout();
-
-  function handlePay() {
-    openCheckout({
-      priceId: "one_on_one_90min",
-      customerEmail: user?.email,
-      userId: user?.id,
-      returnUrl: `${window.location.origin}/checkout/return?type=booking&session_id={CHECKOUT_SESSION_ID}`,
-    });
+  function scrollToBooking() {
+    document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" });
   }
+
 
   // Load Calendly script + scroll to #booking if hash present
   useEffect(() => {
@@ -163,13 +154,13 @@ function WorkPage() {
               ))}
             </ul>
             <button
-              onClick={handlePay}
+              onClick={scrollToBooking}
               className="glow-btn mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium"
             >
-              Pay &amp; Book — €150 <ArrowRight className="h-4 w-4" />
+              Book a Session <ArrowRight className="h-4 w-4" />
             </button>
             <p className="mt-3 text-center text-xs italic text-[#b8d4e8]/70">
-              Pay securely, then pick your time below.
+              Pick your time and pay securely below — €150 all-in.
             </p>
           </div>
         </div>
@@ -272,7 +263,6 @@ function WorkPage() {
       </section>
 
       <Footer />
-      {checkoutElement}
     </div>
   );
 }
