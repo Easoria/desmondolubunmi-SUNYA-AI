@@ -207,6 +207,7 @@ function AITeaser() {
 }
 
 function About() {
+  const [expanded, setExpanded] = useState(false);
   return (
     <section
       id="about"
