@@ -151,7 +151,8 @@ export function SunyaAI() {
       if (res.status === 429) {
         const j = await res.json().catch(() => ({}));
         if (j?.error === "limit") {
-          setError("You've used your 3 free sessions for today. Come back tomorrow or upgrade for unlimited access.");
+          setLimitHit(true);
+          setError("You've used your 3 free sessions for today. Upgrade for unlimited access.");
         } else {
           setError("The system is at capacity. Please try again in a moment.");
         }
