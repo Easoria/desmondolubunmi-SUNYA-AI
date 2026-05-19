@@ -273,6 +273,14 @@ function DashboardPage() {
                   </dd>
                 </div>
               </dl>
+              {!isPaid && (
+                <div className="mt-5 rounded-2xl border border-[#7ec8e3]/30 bg-[#7ec8e3]/5 p-4 text-center">
+                  <div className="text-xs uppercase tracking-[0.25em] text-[#7ec8e3]">
+                    ✦ Founding Access
+                  </div>
+                  <div className="mt-1 text-sm text-white">€19/month · Cancel anytime</div>
+                </div>
+              )}
               <button
                 onClick={() => setShowUpgrade(true)}
                 className={
@@ -281,7 +289,7 @@ function DashboardPage() {
                     : "glow-btn mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium"
                 }
               >
-                {isPaid ? "Manage subscription" : "Upgrade to Full Access"}
+                {isPaid ? "Manage subscription" : "Unlock Full Access"}
               </button>
               <div className="mt-6 border-t border-white/10 pt-5 space-y-2 text-sm">
                 <Link

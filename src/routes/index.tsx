@@ -43,7 +43,7 @@ function Hero() {
             to="/sunya-ai"
             className="glow-btn inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-medium tracking-wide"
           >
-            Try Sunya AI — Free <ArrowRight className="h-4 w-4" />
+            Begin Free <ArrowRight className="h-4 w-4" />
           </Link>
           <Link
             to="/philosophy"
@@ -323,7 +323,7 @@ function FinalCTA() {
           to="/sunya-ai"
           className="glow-btn mt-12 inline-flex items-center gap-2 rounded-full px-10 py-5 text-base font-medium"
         >
-          Try Sunya AI — Free <ArrowUpRight className="h-5 w-5" />
+          Begin Free <ArrowUpRight className="h-5 w-5" />
         </Link>
       </div>
     </section>
