@@ -174,6 +174,33 @@ function DashboardPage() {
           </p>
         </div>
 
+        {isPaid && sub?.cancel_at_period_end && sub?.current_period_end && (
+          <div className="mt-6 rounded-2xl border border-amber-400/30 bg-amber-500/10 p-4 text-sm text-amber-100">
+            Your subscription is set to cancel. Access ends on{" "}
+            <span className="font-medium text-white">
+              {new Date(sub.current_period_end).toLocaleDateString(undefined, {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })}
+            </span>
+            . You can resume anytime from{" "}
+            <button onClick={handleManage} className="underline hover:text-white">
+              Manage subscription
+            </button>
+            .
+          </div>
+        )}
+        {isPaid && sub?.status === "past_due" && (
+          <div className="mt-6 rounded-2xl border border-red-400/30 bg-red-500/10 p-4 text-sm text-red-100">
+            Your last payment failed. Stripe is retrying automatically — you still have access for now. Please{" "}
+            <button onClick={handleManage} className="underline hover:text-white">
+              update your payment method
+            </button>{" "}
+            to avoid interruption.
+          </div>
+        )}
+
         {/* Panel 1 — Quick Start */}
         <section className="glass-strong relative mt-10 overflow-hidden rounded-3xl p-8 sm:p-10">
           <div className="absolute -inset-px -z-10 rounded-3xl bg-gradient-to-br from-[#7ec8e3]/20 via-transparent to-[#2e6db4]/20 blur-xl" />
