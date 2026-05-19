@@ -107,7 +107,7 @@ function Pain() {
               This is a closed system trying to fill an infinite inner need with finite external things.
             </p>
             <p>
-              It cannot work. Not because you are broken — because finite things cannot produce infinite
+              It cannot work. Not because you are broken — but because finite things cannot produce infinite
               fulfilment.
             </p>
           </div>
