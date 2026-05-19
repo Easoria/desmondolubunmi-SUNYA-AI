@@ -3,6 +3,7 @@ import { Link, useNavigate } from "@tanstack/react-router";
 import { Sparkles, Lock, Globe, Zap, ArrowRight, Loader2, Plus } from "lucide-react";
 import { useAuth } from "@/hooks/use-auth";
 import { AuthModal } from "@/components/site/AuthModal";
+import { UpgradeModal } from "@/components/site/UpgradeModal";
 
 const PROMPTS = [
   "I feel anxious",
@@ -31,6 +32,8 @@ export function SunyaAI() {
   const [uses, setUses] = useState(0);
   const [sessionId, setSessionId] = useState<string | null>(null);
   const [showAuthPrompt, setShowAuthPrompt] = useState(false);
+  const [showUpgrade, setShowUpgrade] = useState(false);
+  const [limitHit, setLimitHit] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -148,7 +151,8 @@ export function SunyaAI() {
       if (res.status === 429) {
         const j = await res.json().catch(() => ({}));
         if (j?.error === "limit") {
-          setError("You've used your 3 free sessions for today. Come back tomorrow or upgrade for unlimited access.");
+          setLimitHit(true);
+          setError("You've used your 3 free sessions for today. Upgrade for unlimited access.");
         } else {
           setError("The system is at capacity. Please try again in a moment.");
         }
@@ -356,9 +360,18 @@ export function SunyaAI() {
 
       {error && (
         <div className="mt-6 rounded-2xl border border-red-400/30 bg-red-500/10 p-4 text-sm text-red-100">
-          {error}
+          <div>{error}</div>
+          {limitHit && user && (
+            <button
+              onClick={() => setShowUpgrade(true)}
+              className="glow-btn mt-3 inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-medium"
+            >
+              Unlock Full Access — €19/month <ArrowRight className="h-3 w-3" />
+            </button>
+          )}
         </div>
       )}
+
 
       {exhausted && !loading && (
         <div className="mt-6 rounded-2xl border border-[#7ec8e3]/30 bg-[#7ec8e3]/5 p-5 text-center">
@@ -395,6 +408,7 @@ export function SunyaAI() {
         </span>
       </div>
 
+      <UpgradeModal open={showUpgrade} onClose={() => setShowUpgrade(false)} variant="limit" />
       <AuthModal
         open={showAuthPrompt && !user}
         onClose={() => setShowAuthPrompt(false)}

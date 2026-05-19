@@ -5,6 +5,10 @@ import { useAuth } from "@/hooks/use-auth";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { UpgradeModal } from "@/components/site/UpgradeModal";
+import { useSubscription } from "@/hooks/useSubscription";
+import { createPortalSession } from "@/utils/payments.functions";
+import { getStripeEnvironment } from "@/lib/stripe";
+
 
 export const Route = createFileRoute("/account")({
   component: AccountPage,
@@ -28,6 +32,25 @@ function AccountPage() {
   const [savingNotif, setSavingNotif] = useState(false);
   const [resetSent, setResetSent] = useState(false);
   const [showUpgrade, setShowUpgrade] = useState(false);
+  const [portalLoading, setPortalLoading] = useState(false);
+  const { isActive } = useSubscription();
+
+  async function openPortal() {
+    setPortalLoading(true);
+    try {
+      const url = await createPortalSession({
+        data: {
+          environment: getStripeEnvironment(),
+          returnUrl: window.location.href,
+        },
+      });
+      if (url) window.open(url, "_blank");
+    } catch (e) {
+      console.error(e);
+    } finally {
+      setPortalLoading(false);
+    }
+  }
 
   useEffect(() => {
     if (!loading && !user) navigate({ to: "/login" });
@@ -111,8 +134,9 @@ function AccountPage() {
     );
   }
 
-  const isPaid = profile.subscription_status === "paid";
+  const isPaid = isActive || profile.subscription_status === "paid";
   const isEmailUser = user.app_metadata?.provider === "email";
+
 
   return (
     <div className="min-h-screen bg-[#0a1628] text-white">
@@ -151,11 +175,14 @@ function AccountPage() {
           <div className="mt-4">
             {isPaid ? (
               <button
-                onClick={() => setShowUpgrade(true)}
-                className="rounded-full border border-white/15 px-4 py-2.5 text-sm text-white hover:border-[#7ec8e3]/40"
+                onClick={openPortal}
+                disabled={portalLoading}
+                className="inline-flex items-center gap-2 rounded-full border border-white/15 px-4 py-2.5 text-sm text-white hover:border-[#7ec8e3]/40 disabled:opacity-60"
               >
+                {portalLoading && <Loader2 className="h-3.5 w-3.5 animate-spin" />}
                 Manage subscription
               </button>
+
             ) : (
               <button
                 onClick={() => setShowUpgrade(true)}
