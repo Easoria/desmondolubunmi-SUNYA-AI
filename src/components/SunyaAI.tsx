@@ -3,6 +3,7 @@ import { Link, useNavigate } from "@tanstack/react-router";
 import { Sparkles, Lock, Globe, Zap, ArrowRight, Loader2, Plus } from "lucide-react";
 import { useAuth } from "@/hooks/use-auth";
 import { AuthModal } from "@/components/site/AuthModal";
+import { UpgradeModal } from "@/components/site/UpgradeModal";
 
 const PROMPTS = [
   "I feel anxious",
