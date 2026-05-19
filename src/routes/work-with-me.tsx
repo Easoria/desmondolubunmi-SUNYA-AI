@@ -32,17 +32,10 @@ const STEPS = [
 ];
 
 function WorkPage() {
-  const { user } = useAuth();
-  const { openCheckout, checkoutElement } = useStripeCheckout();
-
-  function handlePay() {
-    openCheckout({
-      priceId: "one_on_one_90min",
-      customerEmail: user?.email,
-      userId: user?.id,
-      returnUrl: `${window.location.origin}/checkout/return?type=booking&session_id={CHECKOUT_SESSION_ID}`,
-    });
+  function scrollToBooking() {
+    document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" });
   }
+
 
   // Load Calendly script + scroll to #booking if hash present
   useEffect(() => {
