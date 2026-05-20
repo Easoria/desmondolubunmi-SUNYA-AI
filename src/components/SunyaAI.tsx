@@ -228,6 +228,9 @@ export function SunyaAI() {
     setSolutionCreatedAt(now);
     setPhase("solution");
 
+    // V15: increment session count ONLY when solution card is generated
+    void incrementSessionCount();
+
     if (user && sid) {
       void finalizeSession(sid, history, parsed);
     }
