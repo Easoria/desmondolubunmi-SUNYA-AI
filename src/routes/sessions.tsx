@@ -35,6 +35,7 @@ type SessionRow = {
   created_at: string;
   title: string | null;
   lever_tags: string[] | null;
+  solution: Solution | null;
 };
 type MessageRow = { id: string; role: "user" | "assistant"; content: string };
 
