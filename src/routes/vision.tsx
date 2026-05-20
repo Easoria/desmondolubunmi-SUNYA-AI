@@ -114,6 +114,11 @@ function VisionPage() {
             <br />
             <span className="display-italic text-[#b8d4e8]">Vision.</span>
           </h1>
+          <p className="mx-auto mt-10 max-w-2xl text-lg text-[#b8d4e8] sm:text-xl">
+            When individuals change, the world changes.
+            <br />
+            This is how we change individuals.
+          </p>
         </div>
       </section>
 
@@ -125,7 +130,7 @@ function VisionPage() {
           </div>
           <div className="mt-12 space-y-7 text-[#b8d4e8]">
             <p className="display-italic text-2xl text-white">
-              Imagine a world where every human being knows how to create peace within
+              Imagine a world where every human being knows how to create wellbeing within
               themselves.
             </p>
             <p>
@@ -244,10 +249,8 @@ function VisionPage() {
               what doesn't require the human spirit. People have more time — for creativity,
               for connection, for inner exploration, for living fully.
             </p>
-            <p className="text-white/90">
-              This is the world Sunya is building. Not perfect. But conscious.
-              <br />
-              Not uniform. But deeply, genuinely human.
+            <p className="display pt-2 text-center text-2xl font-semibold text-white sm:text-3xl">
+              This is the world Sunya is building — conscious and genuinely human.
             </p>
           </div>
           <div className="mt-16 text-center">
