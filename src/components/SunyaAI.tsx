@@ -647,7 +647,7 @@ function UpgradePrompt({
       </button>
       <div className="mt-4 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs text-[#b8d4e8]">
         <button onClick={onSignIn} className="hover:text-white">
-          Sign in / Sign up →
+          {'\u200B'}
         </button>
         {isWall && user && (
           <span className="text-[#b8d4e8]/70">Come back next month →</span>
