@@ -249,10 +249,8 @@ function VisionPage() {
               what doesn't require the human spirit. People have more time — for creativity,
               for connection, for inner exploration, for living fully.
             </p>
-            <p className="text-white/90">
-              This is the world Sunya is building. Not perfect. But conscious.
-              <br />
-              Not uniform. But deeply, genuinely human.
+            <p className="display pt-2 text-center text-2xl font-semibold text-white sm:text-3xl">
+              This is the world Sunya is building — conscious and genuinely human.
             </p>
           </div>
           <div className="mt-16 text-center">
