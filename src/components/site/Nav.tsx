@@ -18,28 +18,22 @@ function initials(name?: string | null, email?: string | null) {
   return base.slice(0, 2).toUpperCase();
 }
 
-export function Nav() {
+function AccountAvatar() {
   const { user, signOut } = useAuth();
-  const [scrolled, setScrolled] = useState(false);
-  const [open, setOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
 
   useEffect(() => {
-    const on = () => setScrolled(window.scrollY > 30);
-    on();
-    window.addEventListener("scroll", on, { passive: true });
-    return () => window.removeEventListener("scroll", on);
-  }, []);
-
-  useEffect(() => {
+    if (!menuOpen) return;
     const h = (e: MouseEvent) => {
-      if (menuRef.current && !menuRef.current.contains(e.target as Node)) setMenuOpen(false);
+      if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
+        setMenuOpen(false);
+      }
     };
     document.addEventListener("mousedown", h);
     return () => document.removeEventListener("mousedown", h);
-  }, []);
+  }, [menuOpen]);
 
   const avatarUrl =
     (user?.user_metadata as { avatar_url?: string; picture?: string } | undefined)?.avatar_url ||
@@ -50,7 +44,7 @@ export function Nav() {
     (user?.user_metadata as { full_name?: string; name?: string } | undefined)?.name ||
     null;
 
-  const Avatar = (
+  return (
     <div ref={menuRef} className="relative">
       <button
         onClick={() => setMenuOpen((v) => !v)}
@@ -58,14 +52,13 @@ export function Nav() {
         className="flex h-9 w-9 items-center justify-center overflow-hidden rounded-full border border-[#7ec8e3]/40 bg-[#7ec8e3]/10 text-xs font-medium text-white shadow-[0_0_18px_-4px_rgba(126,200,227,0.4)] hover:bg-[#7ec8e3]/20"
       >
         {avatarUrl ? (
-          // eslint-disable-next-line @next/next/no-img-element
           <img src={avatarUrl} alt="" className="h-full w-full object-cover" />
         ) : (
           initials(displayName, user?.email)
         )}
       </button>
       {menuOpen && (
-        <div className="absolute right-0 top-12 w-56 rounded-2xl border border-white/10 bg-[#0a1628]/95 p-2 shadow-xl backdrop-blur-xl">
+        <div className="absolute right-0 top-12 z-[60] w-56 rounded-2xl border border-white/10 bg-[#0a1628]/95 p-2 shadow-xl backdrop-blur-xl">
           <div className="px-3 py-2">
             <div className="text-sm text-white">{displayName || user?.email?.split("@")[0]}</div>
             <div className="truncate text-xs text-[#b8d4e8]/70">{user?.email}</div>
@@ -107,6 +100,21 @@ export function Nav() {
       )}
     </div>
   );
+}
+
+export function Nav() {
+  const { user, signOut } = useAuth();
+  const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const on = () => setScrolled(window.scrollY > 30);
+    on();
+    window.addEventListener("scroll", on, { passive: true });
+    return () => window.removeEventListener("scroll", on);
+  }, []);
+
 
   return (
     <header
@@ -133,7 +141,7 @@ export function Nav() {
             </Link>
           ))}
           {user ? (
-            Avatar
+            <AccountAvatar />
           ) : (
             <Link
               to="/sunya-ai"
@@ -145,7 +153,7 @@ export function Nav() {
         </div>
         <div className="flex items-center gap-2 md:hidden">
           {user ? (
-            Avatar
+            <AccountAvatar />
           ) : (
             <Link
               to="/sunya-ai"
