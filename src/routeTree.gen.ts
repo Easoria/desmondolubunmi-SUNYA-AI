@@ -27,6 +27,7 @@ import { Route as BlogRouteImport } from './routes/blog'
 import { Route as AccountRouteImport } from './routes/account'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as CheckoutReturnRouteImport } from './routes/checkout.return'
+import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as ApiSessionTitleRouteImport } from './routes/api/session-title'
 import { Route as ApiContributorSignupRouteImport } from './routes/api/contributor-signup'
 import { Route as ApiCommunitySignupRouteImport } from './routes/api/community-signup'
@@ -123,6 +124,11 @@ const CheckoutReturnRoute = CheckoutReturnRouteImport.update({
   path: '/checkout/return',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogSlugRoute = BlogSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => BlogRoute,
+} as any)
 const ApiSessionTitleRoute = ApiSessionTitleRouteImport.update({
   id: '/api/session-title',
   path: '/api/session-title',
@@ -153,7 +159,7 @@ const ApiPublicPaymentsWebhookRoute =
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/account': typeof AccountRoute
-  '/blog': typeof BlogRoute
+  '/blog': typeof BlogRouteWithChildren
   '/booked': typeof BookedRoute
   '/dashboard': typeof DashboardRoute
   '/forgot-password': typeof ForgotPasswordRoute
@@ -172,13 +178,14 @@ export interface FileRoutesByFullPath {
   '/api/community-signup': typeof ApiCommunitySignupRoute
   '/api/contributor-signup': typeof ApiContributorSignupRoute
   '/api/session-title': typeof ApiSessionTitleRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/checkout/return': typeof CheckoutReturnRoute
   '/api/public/payments/webhook': typeof ApiPublicPaymentsWebhookRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/account': typeof AccountRoute
-  '/blog': typeof BlogRoute
+  '/blog': typeof BlogRouteWithChildren
   '/booked': typeof BookedRoute
   '/dashboard': typeof DashboardRoute
   '/forgot-password': typeof ForgotPasswordRoute
@@ -197,6 +204,7 @@ export interface FileRoutesByTo {
   '/api/community-signup': typeof ApiCommunitySignupRoute
   '/api/contributor-signup': typeof ApiContributorSignupRoute
   '/api/session-title': typeof ApiSessionTitleRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/checkout/return': typeof CheckoutReturnRoute
   '/api/public/payments/webhook': typeof ApiPublicPaymentsWebhookRoute
 }
@@ -204,7 +212,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/account': typeof AccountRoute
-  '/blog': typeof BlogRoute
+  '/blog': typeof BlogRouteWithChildren
   '/booked': typeof BookedRoute
   '/dashboard': typeof DashboardRoute
   '/forgot-password': typeof ForgotPasswordRoute
@@ -223,6 +231,7 @@ export interface FileRoutesById {
   '/api/community-signup': typeof ApiCommunitySignupRoute
   '/api/contributor-signup': typeof ApiContributorSignupRoute
   '/api/session-title': typeof ApiSessionTitleRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/checkout/return': typeof CheckoutReturnRoute
   '/api/public/payments/webhook': typeof ApiPublicPaymentsWebhookRoute
 }
@@ -250,6 +259,7 @@ export interface FileRouteTypes {
     | '/api/community-signup'
     | '/api/contributor-signup'
     | '/api/session-title'
+    | '/blog/$slug'
     | '/checkout/return'
     | '/api/public/payments/webhook'
   fileRoutesByTo: FileRoutesByTo
@@ -275,6 +285,7 @@ export interface FileRouteTypes {
     | '/api/community-signup'
     | '/api/contributor-signup'
     | '/api/session-title'
+    | '/blog/$slug'
     | '/checkout/return'
     | '/api/public/payments/webhook'
   id:
@@ -300,6 +311,7 @@ export interface FileRouteTypes {
     | '/api/community-signup'
     | '/api/contributor-signup'
     | '/api/session-title'
+    | '/blog/$slug'
     | '/checkout/return'
     | '/api/public/payments/webhook'
   fileRoutesById: FileRoutesById
@@ -307,7 +319,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AccountRoute: typeof AccountRoute
-  BlogRoute: typeof BlogRoute
+  BlogRoute: typeof BlogRouteWithChildren
   BookedRoute: typeof BookedRoute
   DashboardRoute: typeof DashboardRoute
   ForgotPasswordRoute: typeof ForgotPasswordRoute
@@ -458,6 +470,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CheckoutReturnRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog/$slug': {
+      id: '/blog/$slug'
+      path: '/$slug'
+      fullPath: '/blog/$slug'
+      preLoaderRoute: typeof BlogSlugRouteImport
+      parentRoute: typeof BlogRoute
+    }
     '/api/session-title': {
       id: '/api/session-title'
       path: '/api/session-title'
@@ -496,10 +515,20 @@ declare module '@tanstack/react-router' {
   }
 }
 
+interface BlogRouteChildren {
+  BlogSlugRoute: typeof BlogSlugRoute
+}
+
+const BlogRouteChildren: BlogRouteChildren = {
+  BlogSlugRoute: BlogSlugRoute,
+}
+
+const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AccountRoute: AccountRoute,
-  BlogRoute: BlogRoute,
+  BlogRoute: BlogRouteWithChildren,
   BookedRoute: BookedRoute,
   DashboardRoute: DashboardRoute,
   ForgotPasswordRoute: ForgotPasswordRoute,
