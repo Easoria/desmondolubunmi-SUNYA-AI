@@ -110,13 +110,52 @@ export function SolutionCard({
   const [showConvo, setShowConvo] = useState(false);
   const date = createdAt ? new Date(createdAt) : new Date();
 
-  function downloadPdf() {
+  async function downloadPdf() {
     const html = buildPdfHtml(solution, formatDate(date));
-    const w = window.open("", "_blank", "width=900,height=1100");
-    if (!w) return;
-    w.document.open();
-    w.document.write(html);
-    w.document.close();
+    const iframe = document.createElement("iframe");
+    iframe.style.position = "fixed";
+    iframe.style.left = "-10000px";
+    iframe.style.top = "0";
+    iframe.style.width = "800px";
+    iframe.style.height = "1200px";
+    document.body.appendChild(iframe);
+    const doc = iframe.contentDocument!;
+    doc.open();
+    doc.write(html.replace(/<script[\s\S]*?<\/script>/g, ""));
+    doc.close();
+    await new Promise((r) => setTimeout(r, 400));
+    try {
+      const [{ default: html2canvas }, { jsPDF }] = await Promise.all([
+        import("html2canvas"),
+        import("jspdf"),
+      ]);
+      const target = doc.body;
+      const canvas = await html2canvas(target, {
+        scale: 2,
+        backgroundColor: "#ffffff",
+        useCORS: true,
+      });
+      const pdf = new jsPDF({ unit: "mm", format: "a4", orientation: "portrait" });
+      const pageW = pdf.internal.pageSize.getWidth();
+      const pageH = pdf.internal.pageSize.getHeight();
+      const imgW = pageW;
+      const imgH = (canvas.height * imgW) / canvas.width;
+      const imgData = canvas.toDataURL("image/png");
+      let heightLeft = imgH;
+      let position = 0;
+      pdf.addImage(imgData, "PNG", 0, position, imgW, imgH);
+      heightLeft -= pageH;
+      while (heightLeft > 0) {
+        position = heightLeft - imgH;
+        pdf.addPage();
+        pdf.addImage(imgData, "PNG", 0, position, imgW, imgH);
+        heightLeft -= pageH;
+      }
+      const safeDate = date.toISOString().slice(0, 10);
+      pdf.save(`sunya-reading-${safeDate}.pdf`);
+    } finally {
+      document.body.removeChild(iframe);
+    }
   }
 
   return (
@@ -202,8 +241,9 @@ export function SolutionCard({
           </button>
           <Link
             to="/work-with-me"
-            className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2.5 text-[#cfe1ef] transition hover:border-[#7ec8e3]/40 hover:text-white"
+            className="group relative inline-flex items-center gap-2 rounded-full border border-[#e6c89a]/50 bg-gradient-to-r from-[#e6c89a]/20 via-[#7ec8e3]/20 to-[#e6c89a]/20 px-4 py-2.5 text-white shadow-[0_0_24px_-4px_rgba(230,200,154,0.6)] transition hover:shadow-[0_0_36px_-2px_rgba(230,200,154,0.9)]"
           >
+            <span className="pointer-events-none absolute inset-0 rounded-full bg-gradient-to-r from-[#e6c89a]/0 via-white/20 to-[#e6c89a]/0 opacity-0 blur-md transition-opacity group-hover:opacity-100" />
             <Calendar className="h-3.5 w-3.5" /> Book a 1-on-1
           </Link>
           {isPastView ? (
