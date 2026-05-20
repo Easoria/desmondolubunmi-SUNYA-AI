@@ -24,29 +24,63 @@ export const Route = createFileRoute("/vision")({
       {
         name: "description",
         content:
-          "Bigger than a wellness brand. The civilisational scope of Sunya — the ecosystem, the sanctuaries, the 50-year legacy.",
+          "Imagine a world where every human being knows how to create peace within themselves. The Sunya ecosystem, mission, and legacy.",
       },
     ],
   }),
 });
 
-const ECO = [
-  { Icon: Sparkles, t: "Sunya AI", c: "The diagnostic intelligence." },
-  { Icon: BookOpen, t: "Sunya Publishing", c: "The intellectual anchors — The Timeless Solution, The Sleep Rhythm Reset." },
-  { Icon: Globe2, t: "Sunya Experiences", c: "Digital courses, communities, live events." },
-  { Icon: ShoppingBag, t: "Sunya Shop", c: "Physical tools for the 12 levers." },
-  { Icon: Leaf, t: "Sunya Superfoods", c: "Nutrition for peak consciousness." },
-  { Icon: Building2, t: "Sunya Sanctuaries", c: "The physical retreat centres." },
-];
+type EcoItem = {
+  Icon: typeof Sparkles;
+  t: string;
+  c: string;
+  items: { label: string; href?: string; to?: string; comingSoon?: boolean }[];
+};
 
-const SANCTUARY = [
-  "Situated in nature, near living water",
-  "Futuristic dome architecture, white and ocean blue",
-  "Solar powered, humanoid robots for physical work",
-  "Consecrated mercury shivling meditation hall",
-  "Community, devotional music, satsang, ecstatic dance",
-  "Open to the public — a charging station for the world",
-  "Teacher training — sending practitioners into schools, prisons, military",
+const ECO: EcoItem[] = [
+  {
+    Icon: Sparkles,
+    t: "Sunya Superintelligence",
+    c: "AI and technology in service of human wellbeing — for individuals, wellness creators, and organisations.",
+    items: [
+      { label: "Sunya AI →", to: "/sunya-ai" },
+      { label: "Sunya Sleep →", href: "#" },
+      { label: "Sunya Studio", comingSoon: true },
+    ],
+  },
+  {
+    Icon: BookOpen,
+    t: "Sunya Publishing",
+    c: "Timeless written guides distilling the framework into accessible, practical wisdom.",
+    items: [
+      { label: "The Sleep Rhythm Reset →", href: "#" },
+      { label: "The Timeless Solution for Humanity", comingSoon: true },
+    ],
+  },
+  {
+    Icon: Globe2,
+    t: "Sunya Experiences",
+    c: "Live events, immersive retreats, digital courses, and conscious communities — structured pathways for deep inner transformation.",
+    items: [{ label: "Coming Soon", comingSoon: true }],
+  },
+  {
+    Icon: ShoppingBag,
+    t: "Sunya Shop",
+    c: "A curated collection of physical tools for human wellbeing — herbs, organic essentials, natural oils, copper vessels, and healing consumables.",
+    items: [{ label: "Coming Soon", comingSoon: true }],
+  },
+  {
+    Icon: Leaf,
+    t: "Sunya Superfoods",
+    c: "High-frequency nutrition for peak consciousness. Clean, living, nourishing food designed to fuel the human system at its highest.",
+    items: [{ label: "Coming Soon", comingSoon: true }],
+  },
+  {
+    Icon: Building2,
+    t: "Sunya Sanctuaries",
+    c: "Physical spaces of inner transformation and conscious living. Situated in nature, solar powered, open to the world. Not isolated communes — charging stations for humanity, integrated with society.",
+    items: [{ label: "Coming Soon", comingSoon: true }],
+  },
 ];
 
 function VisionPage() {
@@ -80,32 +114,49 @@ function VisionPage() {
             <br />
             <span className="display-italic text-[#b8d4e8]">Vision.</span>
           </h1>
-          <p className="mx-auto mt-8 max-w-2xl text-lg text-[#b8d4e8]">
-            This is bigger than a wellness brand. This is a civilisational project.
-          </p>
         </div>
       </section>
 
-      {/* Mission */}
+      {/* The Vision */}
       <section className="relative bg-[#0a1628] py-28">
-        <div className="relative z-10 mx-auto max-w-3xl space-y-6 px-6 text-[#b8d4e8]">
-          <p className="display-italic text-2xl text-white">
-            The vision is a world where human beings stop exporting their freedom to an imagined
-            afterlife — and start living it here, now, in this body, in this lifetime.
-          </p>
-          <p>
-            A world where technology and spirituality are not enemies, but partners in the
-            liberation of human potential.
-          </p>
-          <p>
-            A world with Sunya Sanctuaries — physical spaces of inner transformation powered by
-            solar energy, AI, and the living transmission of truth.
-          </p>
-          <p className="text-white/90">
-            A world where the mechanics of human wellbeing are taught in schools, offered in
-            prisons, brought to the military, made available to everyone — regardless of religion,
-            culture, or tradition.
-          </p>
+        <div className="relative z-10 mx-auto max-w-3xl px-6">
+          <div className="text-center">
+            <div className="label-eyebrow">The vision</div>
+          </div>
+          <div className="mt-12 space-y-7 text-[#b8d4e8]">
+            <p className="display-italic text-2xl text-white">
+              Imagine a world where every human being knows how to create peace within
+              themselves.
+            </p>
+            <p>
+              Where the restlessness that drives conflict, addiction, and endless seeking
+              finally has an answer. Not in doctrine, not in an imagined afterlife — but here,
+              in this body, in this lifetime, in this breath.
+            </p>
+            <p>
+              We have developed the external world enormously. But inwardly, we remain largely
+              underdeveloped. We still operate from fear, tribalism, and borrowed beliefs —
+              creating the very conflict and suffering we are trying to escape.
+            </p>
+            <p>
+              The world is simply a collection of individuals. When individuals change, the
+              world changes. This is what Sunya exists to address — to empower every human
+              being with universal tools to create genuine wellbeing within themselves.
+            </p>
+            <p>
+              We breathe the same air. We want the same things. Freedom from suffering.
+              Genuine happiness. A life that feels worth living. These truths run deeper than
+              any belief or ideology that divides us.
+            </p>
+            <p>
+              When people learn to create real inner peace — conflict loses its fuel. Division
+              loses its grip. Not because unity was preached, but because inner freedom
+              naturally dissolves the fear that drives separation.
+            </p>
+            <p className="display pt-2 text-2xl font-semibold text-white sm:text-3xl">
+              This is not idealism. This is mechanics.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -121,81 +172,90 @@ function VisionPage() {
           </div>
           <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {ECO.map((e, i) => (
-              <div key={e.t} className="glass-card p-7">
+              <div key={e.t} className="glass-card flex flex-col p-7">
                 <div className="font-display text-xs tracking-[0.4em] text-[#7ec8e3]">
                   {String(i + 1).padStart(2, "0")}
                 </div>
                 <e.Icon className="mt-4 h-6 w-6 text-[#7ec8e3]" />
                 <h3 className="display mt-4 text-2xl text-white">{e.t}</h3>
                 <p className="mt-3 text-sm text-[#b8d4e8]">{e.c}</p>
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {e.items.map((item) =>
+                    item.to ? (
+                      <Link
+                        key={item.label}
+                        to={item.to}
+                        className="rounded-full border border-[#7ec8e3]/40 bg-white/[0.04] px-3 py-1 text-[11px] tracking-wide text-[#b8d4e8] transition hover:border-[#7ec8e3] hover:text-white"
+                      >
+                        {item.label}
+                      </Link>
+                    ) : item.href ? (
+                      <a
+                        key={item.label}
+                        href={item.href}
+                        className="rounded-full border border-[#7ec8e3]/40 bg-white/[0.04] px-3 py-1 text-[11px] tracking-wide text-[#b8d4e8] transition hover:border-[#7ec8e3] hover:text-white"
+                      >
+                        {item.label}
+                      </a>
+                    ) : (
+                      <span
+                        key={item.label}
+                        className="rounded-full border border-white/10 bg-white/[0.02] px-3 py-1 text-[11px] tracking-wide text-white/40"
+                      >
+                        {item.label}
+                      </span>
+                    ),
+                  )}
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Sanctuaries */}
-      <section className="relative overflow-hidden bg-[#0a1628] py-28">
-        <div
-          className="absolute inset-0 opacity-30"
-          style={{
-            background:
-              "radial-gradient(ellipse at 50% 0%, #2e6db4 0%, transparent 60%)",
-          }}
-        />
-        <div className="relative z-10 mx-auto max-w-5xl px-6">
-          <div className="text-center">
-            <div className="label-eyebrow">The sanctuaries</div>
-            <h2 className="display mt-6 text-4xl text-white sm:text-5xl md:text-6xl">
-              Charging stations
-              <br />
-              <span className="display-italic text-[#b8d4e8]">for the world.</span>
-            </h2>
-          </div>
-          <ul className="mx-auto mt-14 grid max-w-3xl gap-3 sm:grid-cols-2">
-            {SANCTUARY.map((s, i) => (
-              <li
-                key={i}
-                className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-sm text-[#b8d4e8]"
-              >
-                {s}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      {/* 50-year legacy */}
+      {/* The Legacy */}
       <section className="relative overflow-hidden bg-[#060d1c] py-32">
         <Starfield density={1.2} />
-        <div className="relative z-10 mx-auto max-w-3xl space-y-6 px-6 text-center">
-          <div className="label-eyebrow">The 50-year legacy</div>
-          <h2 className="display text-4xl text-white sm:text-5xl">
-            What we are building
-            <br />
-            <span className="display-italic text-[#b8d4e8]">will outlive us all.</span>
-          </h2>
-          <div className="space-y-5 pt-4 text-left text-[#b8d4e8]">
+        <div className="relative z-10 mx-auto max-w-3xl px-6">
+          <div className="text-center">
+            <div className="label-eyebrow">The legacy</div>
+            <h2 className="display mt-6 text-4xl text-white sm:text-5xl">
+              This is how humanity moves
+              <br />
+              <span className="display-italic text-[#b8d4e8]">into its next phase.</span>
+            </h2>
+          </div>
+          <div className="space-y-6 pt-12 text-left text-[#b8d4e8]">
             <p>
-              Fifty years from now, the work begun today will have become infrastructure. Not a
-              brand. Not a movement. Infrastructure — as ordinary and as essential as electricity.
+              Not through a new religion. Not through a new ideology. But through something far
+              more fundamental — every human being learning to understand and work with their
+              own inner system.
             </p>
             <p>
-              Children will grow up understanding the mechanics of their own nervous systems.
-              Workers will know how to discharge stress before it accumulates. The dying will face
-              death without terror. The seeking will know exactly where to look — and what they
-              will find.
+              Children growing up knowing how to regulate their own nervous system. Workers who
+              can discharge stress before it accumulates into illness or conflict. People who
+              face life's difficulties — and even death — with equanimity rather than terror.
+              Goodness that emerges from inner freedom rather than from fear of punishment.
+            </p>
+            <p>
+              And through AI and technology, the burden of survival lifts. Automation handles
+              what doesn't require the human spirit. People have more time — for creativity,
+              for connection, for inner exploration, for living fully.
             </p>
             <p className="text-white/90">
-              This is not a vision of a perfect world. It is a vision of an honest one. A world in
-              which human beings finally meet themselves — and discover there was never anything to
-              fix in the first place.
-            </p>
-            <p className="display-italic pt-2 text-xl text-white">
-              We are at the beginning. You are part of this.
+              This is the world Sunya is building. Not perfect. But conscious.
+              <br />
+              Not uniform. But deeply, genuinely human.
             </p>
           </div>
-          <div className="pt-8">
+          <div className="mt-16 text-center">
+            <p className="display-italic text-2xl text-white sm:text-3xl">
+              We are at the beginning.
+              <br />
+              You are already part of this.
+            </p>
+          </div>
+          <div className="mt-10 text-center">
             <Link
               to="/sunya-ai"
               className="glow-btn inline-flex items-center gap-2 rounded-full px-8 py-4 text-sm font-medium"
