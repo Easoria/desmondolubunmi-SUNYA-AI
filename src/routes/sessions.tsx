@@ -4,6 +4,8 @@ import { ArrowLeft, ChevronDown, Loader2, Search, Trash2 } from "lucide-react";
 import { useAuth } from "@/hooks/use-auth";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
+import { SolutionCard } from "@/components/SolutionCard";
+import type { Solution } from "@/lib/parse-solution";
 
 export const Route = createFileRoute("/sessions")({
   component: SessionsPage,
@@ -33,6 +35,7 @@ type SessionRow = {
   created_at: string;
   title: string | null;
   lever_tags: string[] | null;
+  solution: Solution | null;
 };
 type MessageRow = { id: string; role: "user" | "assistant"; content: string };
 
@@ -57,7 +60,7 @@ function SessionsPage() {
       const { supabase } = await import("@/integrations/supabase/client");
       const { data } = await supabase
         .from("sessions")
-        .select("id,created_at,title,lever_tags")
+        .select("id,created_at,title,lever_tags,solution")
         .order("created_at", { ascending: false });
       setSessions((data ?? []) as SessionRow[]);
       setLoadingList(false);
@@ -199,38 +202,46 @@ function SessionsPage() {
                     </button>
                   </div>
                   {isOpen && (
-                    <div className="space-y-3 border-t border-white/10 p-4">
-                      {(messages[s.id] ?? []).map((m) => (
-                        <div
-                          key={m.id}
-                          className={
-                            m.role === "user"
-                              ? "ml-auto max-w-[85%] rounded-2xl border border-white/10 bg-white/5 p-3 text-sm text-white"
-                              : "max-w-[92%] rounded-2xl border border-[#7ec8e3]/25 bg-white/[0.04] p-4 text-sm leading-relaxed text-white/90"
-                          }
-                        >
-                          <div className="whitespace-pre-wrap">{m.content}</div>
-                        </div>
-                      ))}
-                      {(messages[s.id]?.length ?? 0) === 0 && (
-                        <div className="text-center text-xs text-[#b8d4e8]/60">
-                          No messages in this session.
+                    <div className="border-t border-white/10 bg-black/20 p-5">
+                      {s.solution ? (
+                        <SolutionCard
+                          solution={s.solution}
+                          createdAt={s.created_at}
+                          conversation={messages[s.id] ?? []}
+                          isPastView
+                        />
+                      ) : (
+                        <div className="space-y-3">
+                          {(messages[s.id] ?? []).map((m) => (
+                            <div
+                              key={m.id}
+                              className={
+                                m.role === "user"
+                                  ? "ml-auto max-w-[85%] rounded-2xl border border-white/10 bg-white/5 p-3 text-sm text-white"
+                                  : "max-w-[92%] rounded-2xl border border-[#7ec8e3]/25 bg-white/[0.04] p-4 text-sm leading-relaxed text-white/90"
+                              }
+                            >
+                              <div className="whitespace-pre-wrap">{m.content}</div>
+                            </div>
+                          ))}
+                          {(messages[s.id]?.length ?? 0) === 0 && (
+                            <div className="text-center text-xs text-[#b8d4e8]/60">
+                              No messages in this session.
+                            </div>
+                          )}
+                          <div className="flex flex-wrap items-center justify-between gap-3 pt-2 text-xs">
+                            <Link to="/sunya-ai" className="text-[#7ec8e3] hover:text-white">
+                              Start a follow-up session →
+                            </Link>
+                            <button
+                              onClick={() => deleteSession(s.id)}
+                              className="text-[#b8d4e8]/60 hover:text-red-300"
+                            >
+                              Delete this session
+                            </button>
+                          </div>
                         </div>
                       )}
-                      <div className="flex flex-wrap items-center justify-between gap-3 pt-2 text-xs">
-                        <Link
-                          to="/sunya-ai"
-                          className="text-[#7ec8e3] hover:text-white"
-                        >
-                          Start a follow-up session →
-                        </Link>
-                        <button
-                          onClick={() => deleteSession(s.id)}
-                          className="text-[#b8d4e8]/60 hover:text-red-300"
-                        >
-                          Delete this session
-                        </button>
-                      </div>
                     </div>
                   )}
                 </div>
