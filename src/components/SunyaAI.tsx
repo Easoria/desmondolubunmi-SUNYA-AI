@@ -23,6 +23,7 @@ const PROMPTS = [
 const MONTHLY_LIMIT = 2;
 const GUEST_LIMIT = 2;
 const GUEST_KEY = "sunya_guest_sessions_used";
+const FP_KEY = "sunya_fp_id";
 const READY_MARKER = "[SUNYA_READY]";
 const MIN_REFLECT_MS = 2000;
 
@@ -51,6 +52,7 @@ export function SunyaAI() {
   const [solution, setSolution] = useState<Solution | null>(null);
   const [solutionCreatedAt, setSolutionCreatedAt] = useState<string | null>(null);
   const [chatFading, setChatFading] = useState(false);
+  const [visitorId, setVisitorId] = useState<string | null>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -63,6 +65,42 @@ export function SunyaAI() {
         sessionStorage.removeItem("sunya_prefill");
       }
     } catch {}
+  }, []);
+
+  // FingerprintJS: identify device, sync session count across storage resets
+  useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      try {
+        let id = localStorage.getItem(FP_KEY);
+        if (!id) {
+          const FingerprintJS = (await import("@fingerprintjs/fingerprintjs")).default;
+          const fp = await FingerprintJS.load();
+          const result = await fp.get();
+          id = result.visitorId;
+          try { localStorage.setItem(FP_KEY, id); } catch {}
+        }
+        if (cancelled || !id) return;
+        setVisitorId(id);
+
+        const { supabase } = await import("@/integrations/supabase/client");
+        const { data } = await supabase
+          .from("fingerprint_sessions")
+          .select("sessions_used")
+          .eq("visitor_id", id)
+          .maybeSingle();
+        const remote = data?.sessions_used ?? 0;
+        const local = parseInt(localStorage.getItem(GUEST_KEY) || "0", 10) || 0;
+        const merged = Math.max(remote, local);
+        if (merged !== local) {
+          try { localStorage.setItem(GUEST_KEY, String(merged)); } catch {}
+        }
+        if (!cancelled) setGuestUsed(merged);
+      } catch {
+        /* fingerprint failures are non-blocking */
+      }
+    })();
+    return () => { cancelled = true; };
   }, []);
 
   // Load monthly session count for logged-in free users
@@ -164,6 +202,16 @@ export function SunyaAI() {
       try {
         localStorage.setItem(GUEST_KEY, String(next));
       } catch {}
+      if (visitorId) {
+        try {
+          const { supabase } = await import("@/integrations/supabase/client");
+          await supabase.from("fingerprint_sessions").upsert({
+            visitor_id: visitorId,
+            sessions_used: next,
+            last_seen: new Date().toISOString(),
+          });
+        } catch { /* non-blocking */ }
+      }
       return;
     }
     if (isPaid) return;
@@ -582,21 +630,45 @@ export function SunyaAI() {
             const { supabase } = await import("@/integrations/supabase/client");
             const { data: u } = await supabase.auth.getUser();
             const uid = u.user?.id;
-            if (uid && messages.length > 0) {
-              const { data: sess } = await supabase
-                .from("sessions")
-                .insert({ user_id: uid })
-                .select("id")
-                .single();
-              if (sess) {
-                await supabase.from("messages").insert(
-                  messages.map((m) => ({
-                    session_id: sess.id,
-                    user_id: uid,
-                    role: m.role,
-                    content: m.content,
-                  })),
-                );
+            if (uid) {
+              // Carry forward guest usage tracked against this device fingerprint
+              // so creating a new account doesn't reset free-tier limits.
+              const fpId = localStorage.getItem(FP_KEY) || visitorId;
+              if (fpId) {
+                try {
+                  const { data: fp } = await supabase
+                    .from("fingerprint_sessions")
+                    .select("sessions_used")
+                    .eq("visitor_id", fpId)
+                    .maybeSingle();
+                  const used = fp?.sessions_used ?? 0;
+                  if (used >= GUEST_LIMIT) {
+                    await supabase
+                      .from("user_profiles")
+                      .update({
+                        sessions_this_month: used,
+                        last_session_month: currentMonthKey(),
+                      })
+                      .eq("id", uid);
+                  }
+                } catch { /* non-blocking */ }
+              }
+              if (messages.length > 0) {
+                const { data: sess } = await supabase
+                  .from("sessions")
+                  .insert({ user_id: uid })
+                  .select("id")
+                  .single();
+                if (sess) {
+                  await supabase.from("messages").insert(
+                    messages.map((m) => ({
+                      session_id: sess.id,
+                      user_id: uid,
+                      role: m.role,
+                      content: m.content,
+                    })),
+                  );
+                }
               }
             }
           } catch {
@@ -645,14 +717,13 @@ function UpgradePrompt({
       >
         Get Full Access <ArrowRight className="h-4 w-4" />
       </button>
-      <div className="mt-4 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs text-[#b8d4e8]">
-        <button onClick={onSignIn} className="hover:text-white">
-          {'\u200B'}
-        </button>
-        {isWall && user && (
-          <span className="text-[#b8d4e8]/70">{"\u200B"}</span>
-        )}
-      </div>
+      {!user && (
+        <div className="mt-4 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs text-[#b8d4e8]">
+          <button onClick={onSignIn} className="hover:text-white">
+            Sign in / Sign up →
+          </button>
+        </div>
+      )}
     </div>
   );
 }

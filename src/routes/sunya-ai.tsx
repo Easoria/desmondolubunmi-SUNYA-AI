@@ -135,7 +135,7 @@ function SunyaAIPage() {
                 to="/login"
                 className="text-xs text-[#b8d4e8]/80 transition hover:text-white"
               >
-                {'\u200B'}
+                Sign in / Sign up →
               </Link>
             </div>
           )}
