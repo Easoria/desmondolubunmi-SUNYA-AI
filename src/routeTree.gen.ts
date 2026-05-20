@@ -32,6 +32,7 @@ import { Route as ApiSessionTitleRouteImport } from './routes/api/session-title'
 import { Route as ApiContributorSignupRouteImport } from './routes/api/contributor-signup'
 import { Route as ApiCommunitySignupRouteImport } from './routes/api/community-signup'
 import { Route as ApiChatRouteImport } from './routes/api/chat'
+import { Route as AdminBlogRouteImport } from './routes/admin.blog'
 import { Route as ApiPublicPaymentsWebhookRouteImport } from './routes/api/public/payments/webhook'
 
 const WorkWithMeRoute = WorkWithMeRouteImport.update({
@@ -149,6 +150,11 @@ const ApiChatRoute = ApiChatRouteImport.update({
   path: '/api/chat',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminBlogRoute = AdminBlogRouteImport.update({
+  id: '/admin/blog',
+  path: '/admin/blog',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiPublicPaymentsWebhookRoute =
   ApiPublicPaymentsWebhookRouteImport.update({
     id: '/api/public/payments/webhook',
@@ -174,6 +180,7 @@ export interface FileRoutesByFullPath {
   '/terms': typeof TermsRoute
   '/vision': typeof VisionRoute
   '/work-with-me': typeof WorkWithMeRoute
+  '/admin/blog': typeof AdminBlogRoute
   '/api/chat': typeof ApiChatRoute
   '/api/community-signup': typeof ApiCommunitySignupRoute
   '/api/contributor-signup': typeof ApiContributorSignupRoute
@@ -200,6 +207,7 @@ export interface FileRoutesByTo {
   '/terms': typeof TermsRoute
   '/vision': typeof VisionRoute
   '/work-with-me': typeof WorkWithMeRoute
+  '/admin/blog': typeof AdminBlogRoute
   '/api/chat': typeof ApiChatRoute
   '/api/community-signup': typeof ApiCommunitySignupRoute
   '/api/contributor-signup': typeof ApiContributorSignupRoute
@@ -227,6 +235,7 @@ export interface FileRoutesById {
   '/terms': typeof TermsRoute
   '/vision': typeof VisionRoute
   '/work-with-me': typeof WorkWithMeRoute
+  '/admin/blog': typeof AdminBlogRoute
   '/api/chat': typeof ApiChatRoute
   '/api/community-signup': typeof ApiCommunitySignupRoute
   '/api/contributor-signup': typeof ApiContributorSignupRoute
@@ -255,6 +264,7 @@ export interface FileRouteTypes {
     | '/terms'
     | '/vision'
     | '/work-with-me'
+    | '/admin/blog'
     | '/api/chat'
     | '/api/community-signup'
     | '/api/contributor-signup'
@@ -281,6 +291,7 @@ export interface FileRouteTypes {
     | '/terms'
     | '/vision'
     | '/work-with-me'
+    | '/admin/blog'
     | '/api/chat'
     | '/api/community-signup'
     | '/api/contributor-signup'
@@ -307,6 +318,7 @@ export interface FileRouteTypes {
     | '/terms'
     | '/vision'
     | '/work-with-me'
+    | '/admin/blog'
     | '/api/chat'
     | '/api/community-signup'
     | '/api/contributor-signup'
@@ -334,6 +346,7 @@ export interface RootRouteChildren {
   TermsRoute: typeof TermsRoute
   VisionRoute: typeof VisionRoute
   WorkWithMeRoute: typeof WorkWithMeRoute
+  AdminBlogRoute: typeof AdminBlogRoute
   ApiChatRoute: typeof ApiChatRoute
   ApiCommunitySignupRoute: typeof ApiCommunitySignupRoute
   ApiContributorSignupRoute: typeof ApiContributorSignupRoute
@@ -505,6 +518,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiChatRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin/blog': {
+      id: '/admin/blog'
+      path: '/admin/blog'
+      fullPath: '/admin/blog'
+      preLoaderRoute: typeof AdminBlogRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/public/payments/webhook': {
       id: '/api/public/payments/webhook'
       path: '/api/public/payments/webhook'
@@ -543,6 +563,7 @@ const rootRouteChildren: RootRouteChildren = {
   TermsRoute: TermsRoute,
   VisionRoute: VisionRoute,
   WorkWithMeRoute: WorkWithMeRoute,
+  AdminBlogRoute: AdminBlogRoute,
   ApiChatRoute: ApiChatRoute,
   ApiCommunitySignupRoute: ApiCommunitySignupRoute,
   ApiContributorSignupRoute: ApiContributorSignupRoute,
@@ -553,3 +574,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
