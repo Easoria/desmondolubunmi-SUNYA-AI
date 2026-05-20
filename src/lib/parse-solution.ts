@@ -35,16 +35,41 @@ function cleanLine(s: string): string {
     .trim();
 }
 
+// Strip leading section-label lines the model sometimes emits despite
+// instructions ("The Practices", "Your Practices:", "Insight —", etc.).
+const SECTION_LABEL_RE =
+  /^\s*(?:#+\s*)?(?:the\s+|your\s+)?(?:mirror|insight|practice|practices|reframe)\s*[:—–-]?\s*$/i;
+
+function stripSectionLabel(block: string): string {
+  const lines = block.split("\n");
+  while (lines.length && SECTION_LABEL_RE.test(lines[0])) lines.shift();
+  return lines.join("\n").trim();
+}
+
+function looksLikePracticeName(name: string): boolean {
+  if (!name) return false;
+  // A practice name is a short label, not a paragraph. Reject anything
+  // that's clearly a sentence/paragraph (too long, ends in a period, or
+  // contains multiple sentences).
+  if (name.length > 90) return false;
+  const sentenceCount = (name.match(/[.!?]\s|[.!?]$/g) || []).length;
+  if (sentenceCount > 1) return false;
+  return true;
+}
+
 function parsePractices(text: string): Practice[] {
-  const blocks = text
+  const cleaned = stripSectionLabel(text);
+  if (!cleaned) return [];
+
+  const blocks = cleaned
     .split(/\n\s*\n/)
     .map((b) => b.trim())
     .filter(Boolean);
 
   // If only one block came through, try splitting on numbered lines or capitalised name lines
   let raw = blocks;
-  if (blocks.length <= 1 && text.trim()) {
-    raw = text
+  if (blocks.length <= 1 && cleaned) {
+    raw = cleaned
       .split(/\n(?=\s*(?:\d+\.|[-*•]\s|[A-Z][^\n:]{0,40}\n))/)
       .map((b) => b.trim())
       .filter(Boolean);
@@ -55,8 +80,11 @@ function parsePractices(text: string): Practice[] {
     const lines = block.split("\n").map(cleanLine).filter(Boolean);
     if (lines.length === 0) return;
     const name = lines[0].replace(/[:：]\s*$/, "");
-    const description = lines.slice(1).join(" ").trim() || "";
+    const description = lines.slice(1).join(" ").trim();
     if (!name) return;
+    // Reject paragraph-shaped "practices" — a real practice has either a
+    // short name + description, or at minimum a short label-style name.
+    if (!description && !looksLikePracticeName(name)) return;
     out.push({
       name,
       description: description || name,
@@ -69,7 +97,20 @@ function parsePractices(text: string): Practice[] {
 
 export function parseSolution(responseText: string): Solution {
   const text = responseText.replace(/\[SUNYA_READY\]/g, "").trim();
-  const sections = text.split(/\n\s*\n\s*\n*/).map((s) => s.trim()).filter(Boolean);
+
+  // Prefer 2+ blank lines as section separators (per the prompt), but fall
+  // back to single blank lines if that produced too few sections.
+  let sections = text.split(/\n\s*\n\s*\n+/).map((s) => s.trim()).filter(Boolean);
+  if (sections.length < 3) {
+    sections = text.split(/\n\s*\n/).map((s) => s.trim()).filter(Boolean);
+  }
+
+  // Drop pure section-label lines that the model sometimes emits as their
+  // own paragraph ("The Mirror", "Practices:", etc.) so they don't get
+  // counted as content sections.
+  sections = sections.filter((s) => !SECTION_LABEL_RE.test(s));
+  // Also strip a leading label line inside each remaining section.
+  sections = sections.map(stripSectionLabel).filter(Boolean);
 
   let mirror = "";
   let insight = "";
