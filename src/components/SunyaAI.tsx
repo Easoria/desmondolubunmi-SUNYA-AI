@@ -384,9 +384,9 @@ export function SunyaAI() {
               <Plus className="h-3 w-3" /> New
             </button>
           )}
-          {!user && (
+          {!isPaid && (
             <div className="text-xs text-[#b8d4e8]/60">
-              {Math.max(0, FREE_LIMIT - uses)} / {FREE_LIMIT} free
+              {Math.max(0, limit - usedCount)} / {limit} free
             </div>
           )}
         </div>
