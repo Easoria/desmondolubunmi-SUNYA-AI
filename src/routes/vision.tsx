@@ -135,8 +135,8 @@ function VisionPage() {
             </p>
             <p>
               Where the restlessness that drives conflict, addiction, and endless seeking
-              finally has an answer. Not in doctrine, not in an imagined afterlife — but here,
-              in this body, in this lifetime, in this breath.
+              finally has an answer. Not in doctrine, not in an imagined afterlife — but here
+              and now.
             </p>
             <p>
               We have developed the external world enormously. But inwardly, we remain largely
