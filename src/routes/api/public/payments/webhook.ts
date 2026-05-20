@@ -118,7 +118,7 @@ async function handleSubscriptionDeleted(subscription: any, env: StripeEnv) {
     .eq("environment", env);
 
   const userId = subscription.metadata?.userId;
-  if (userId) {
+  if (userId && !(await isAdminUser(userId))) {
     await getSupabase()
       .from("user_profiles")
       .update({ subscription_status: "free" })
