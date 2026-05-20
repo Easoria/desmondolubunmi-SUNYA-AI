@@ -107,6 +107,7 @@ export type Database = {
           id: string
           lever_tags: string[]
           session_number: number
+          solution: Json | null
           summary: string | null
           title: string | null
           updated_at: string
@@ -118,6 +119,7 @@ export type Database = {
           id?: string
           lever_tags?: string[]
           session_number?: number
+          solution?: Json | null
           summary?: string | null
           title?: string | null
           updated_at?: string
@@ -129,6 +131,7 @@ export type Database = {
           id?: string
           lever_tags?: string[]
           session_number?: number
+          solution?: Json | null
           summary?: string | null
           title?: string | null
           updated_at?: string
