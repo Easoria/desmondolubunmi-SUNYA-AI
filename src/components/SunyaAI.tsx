@@ -248,7 +248,6 @@ export function SunyaAI() {
 
     const sid = await ensureSession();
     if (sid) void persistMessage("user", content, sid);
-    if (user && isFirstUserTurn) void bumpSessionsToday();
 
     try {
       const { supabase } = await import("@/integrations/supabase/client");
@@ -258,8 +257,7 @@ export function SunyaAI() {
       if (res.status === 429) {
         const j = await res.json().catch(() => ({}));
         if (j?.error === "limit") {
-          setLimitHit(true);
-          setError("You've used your 3 free sessions for today. Upgrade for unlimited access.");
+          setError("You've used your free sessions. Upgrade for unlimited access.");
         } else {
           setError("The system is at capacity. Please try again in a moment.");
         }
@@ -283,14 +281,7 @@ export function SunyaAI() {
       setMessages(next);
       if (sid) void persistMessage("assistant", cleanReply, sid);
 
-      if (!user) {
-        const n = uses + 1;
-        setUses(n);
-        localStorage.setItem(STORAGE_KEY, String(n));
-        if (history.filter((m) => m.role === "user").length === 1 && !hasMarker) {
-          setTimeout(() => setShowAuthPrompt(true), 400);
-        }
-      }
+      // V15 PART 6: No mid-conversation interruptions. No auth prompts during chat.
 
       if (hasMarker) {
         setLoading(false);
