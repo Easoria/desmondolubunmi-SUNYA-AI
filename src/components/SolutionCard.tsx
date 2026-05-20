@@ -139,40 +139,93 @@ export function SolutionCard({
     iframe.style.left = "-10000px";
     iframe.style.top = "0";
     iframe.style.width = "800px";
-    iframe.style.height = "1200px";
+    iframe.style.height = "2400px";
     document.body.appendChild(iframe);
     const doc = iframe.contentDocument!;
     doc.open();
     doc.write(html.replace(/<script[\s\S]*?<\/script>/g, ""));
     doc.close();
-    await new Promise((r) => setTimeout(r, 400));
+    await new Promise((r) => setTimeout(r, 500));
     try {
       const [{ default: html2canvas }, { jsPDF }] = await Promise.all([
         import("html2canvas"),
         import("jspdf"),
       ]);
-      const target = doc.body;
-      const canvas = await html2canvas(target, {
-        scale: 2,
-        backgroundColor: "#06101f",
-        useCORS: true,
-      });
+
       const pdf = new jsPDF({ unit: "mm", format: "a4", orientation: "portrait" });
       const pageW = pdf.internal.pageSize.getWidth();
       const pageH = pdf.internal.pageSize.getHeight();
-      const imgW = pageW;
-      const imgH = (canvas.height * imgW) / canvas.width;
-      const imgData = canvas.toDataURL("image/png");
-      let heightLeft = imgH;
-      let position = 0;
-      pdf.addImage(imgData, "PNG", 0, position, imgW, imgH);
-      heightLeft -= pageH;
-      while (heightLeft > 0) {
-        position = heightLeft - imgH;
-        pdf.addPage();
-        pdf.addImage(imgData, "PNG", 0, position, imgW, imgH);
-        heightLeft -= pageH;
+      const marginX = 12;
+      const marginY = 14;
+      const gap = 5;
+      const contentW = pageW - marginX * 2;
+
+      const fillBg = () => {
+        pdf.setFillColor(6, 16, 31);
+        pdf.rect(0, 0, pageW, pageH, "F");
+      };
+      fillBg();
+
+      const blocks = Array.from(
+        doc.querySelectorAll(".pdf-block"),
+      ) as HTMLElement[];
+
+      let cursorY = marginY;
+
+      for (const block of blocks) {
+        const canvas = await html2canvas(block, {
+          scale: 2,
+          backgroundColor: "#06101f",
+          useCORS: true,
+        });
+        const wPx = canvas.width;
+        const hPx = canvas.height;
+        const mmPerPx = contentW / wPx;
+        const blockHmm = hPx * mmPerPx;
+        const imgData = canvas.toDataURL("image/png");
+
+        if (blockHmm > pageH - marginY * 2) {
+          // Slice this oversized block across pages
+          let consumedPx = 0;
+          while (consumedPx < hPx) {
+            const availMm = pageH - marginY - cursorY;
+            if (availMm < 25) {
+              pdf.addPage();
+              fillBg();
+              cursorY = marginY;
+              continue;
+            }
+            const slicePx = Math.min(hPx - consumedPx, Math.floor(availMm / mmPerPx));
+            const sliceCanvas = document.createElement("canvas");
+            sliceCanvas.width = wPx;
+            sliceCanvas.height = slicePx;
+            const ctx = sliceCanvas.getContext("2d")!;
+            ctx.fillStyle = "#06101f";
+            ctx.fillRect(0, 0, wPx, slicePx);
+            ctx.drawImage(canvas, 0, -consumedPx);
+            const sliceData = sliceCanvas.toDataURL("image/png");
+            const sliceMm = slicePx * mmPerPx;
+            pdf.addImage(sliceData, "PNG", marginX, cursorY, contentW, sliceMm);
+            cursorY += sliceMm + gap;
+            consumedPx += slicePx;
+            if (consumedPx < hPx) {
+              pdf.addPage();
+              fillBg();
+              cursorY = marginY;
+            }
+          }
+          continue;
+        }
+
+        if (cursorY + blockHmm > pageH - marginY) {
+          pdf.addPage();
+          fillBg();
+          cursorY = marginY;
+        }
+        pdf.addImage(imgData, "PNG", marginX, cursorY, contentW, blockHmm);
+        cursorY += blockHmm + gap;
       }
+
       const safeDate = date.toISOString().slice(0, 10);
       pdf.save(`sunya-reading-${safeDate}.pdf`);
     } finally {
