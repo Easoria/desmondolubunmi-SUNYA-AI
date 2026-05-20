@@ -29,18 +29,24 @@ const MIN_REFLECT_MS = 2000;
 type Msg = { role: "user" | "assistant"; content: string };
 type Phase = "chat" | "reflecting" | "solution";
 
+function currentMonthKey() {
+  return new Date().toISOString().slice(0, 7); // YYYY-MM
+}
+
 export function SunyaAI() {
   const { user } = useAuth();
+  const { isActive: isPaid } = useSubscription();
+  const { openCheckout, checkoutElement } = useStripeCheckout();
   const navigate = useNavigate();
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const [messages, setMessages] = useState<Msg[]>([]);
   const [error, setError] = useState("");
-  const [uses, setUses] = useState(0);
+  const [guestUsed, setGuestUsed] = useState(0);
+  const [monthCount, setMonthCount] = useState(0);
+  const [sessionsThisRun, setSessionsThisRun] = useState(0);
   const [sessionId, setSessionId] = useState<string | null>(null);
   const [showAuthPrompt, setShowAuthPrompt] = useState(false);
-  const [showUpgrade, setShowUpgrade] = useState(false);
-  const [limitHit, setLimitHit] = useState(false);
   const [phase, setPhase] = useState<Phase>("chat");
   const [solution, setSolution] = useState<Solution | null>(null);
   const [solutionCreatedAt, setSolutionCreatedAt] = useState<string | null>(null);
@@ -48,8 +54,8 @@ export function SunyaAI() {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const v = parseInt(localStorage.getItem(STORAGE_KEY) || "0", 10);
-    setUses(isNaN(v) ? 0 : v);
+    const v = parseInt(localStorage.getItem(GUEST_KEY) || "0", 10);
+    setGuestUsed(isNaN(v) ? 0 : v);
     try {
       const prefill = sessionStorage.getItem("sunya_prefill");
       if (prefill) {
@@ -59,11 +65,32 @@ export function SunyaAI() {
     } catch {}
   }, []);
 
+  // Load monthly session count for logged-in free users
+  useEffect(() => {
+    if (!user) return;
+    (async () => {
+      const { supabase } = await import("@/integrations/supabase/client");
+      const { data } = await supabase
+        .from("user_profiles")
+        .select("sessions_this_month,last_session_month")
+        .eq("id", user.id)
+        .single();
+      if (data) {
+        const m = currentMonthKey();
+        setMonthCount(data.last_session_month === m ? (data.sessions_this_month ?? 0) : 0);
+      }
+    })();
+  }, [user]);
+
   useEffect(() => {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
   }, [messages, loading]);
 
-  const exhausted = !user && uses >= FREE_LIMIT;
+  // Hard wall: guest used >= 2; free user month >= 2; paid never blocked
+  const usedCount = user ? monthCount : guestUsed;
+  const limit = user ? MONTHLY_LIMIT : GUEST_LIMIT;
+  const hardWall = !isPaid && usedCount >= limit;
+  const exhausted = hardWall;
 
   async function persistMessage(role: "user" | "assistant", content: string, sid: string) {
     if (!user) return;
