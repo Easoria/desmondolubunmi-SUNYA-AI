@@ -16,6 +16,17 @@ function getSupabase(): any {
   return _supabase;
 }
 
+// Admin accounts (is_admin = true) get permanent paid access and are never
+// downgraded by Stripe webhook events.
+async function isAdminUser(userId: string): Promise<boolean> {
+  const { data } = await getSupabase()
+    .from("user_profiles")
+    .select("is_admin")
+    .eq("id", userId)
+    .maybeSingle();
+  return Boolean(data?.is_admin);
+}
+
 async function handleSubscriptionCreated(subscription: any, env: StripeEnv) {
   const userId: string | null = subscription.metadata?.userId || null;
   if (!userId) {
