@@ -6,7 +6,14 @@ import { SunyaAI } from "@/components/SunyaAI";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { Orbs, SacredGeometry } from "@/components/site/Decor";
+import { useSubscription } from "@/hooks/useSubscription";
 import desmondImg from "@/assets/desmond.jpg";
+
+function useSunyaCtaLabel(freeSuffix = "") {
+  const { isActive } = useSubscription();
+  if (isActive) return "Use Sunya AI";
+  return freeSuffix ? `Try Sunya AI${freeSuffix}` : "Try Sunya AI";
+}
 
 export const Route = createFileRoute("/")({
   component: Index,
