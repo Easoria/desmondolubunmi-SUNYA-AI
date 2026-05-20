@@ -23,6 +23,7 @@ const PROMPTS = [
 const MONTHLY_LIMIT = 2;
 const GUEST_LIMIT = 2;
 const GUEST_KEY = "sunya_guest_sessions_used";
+const FP_KEY = "sunya_fp_id";
 const READY_MARKER = "[SUNYA_READY]";
 const MIN_REFLECT_MS = 2000;
 
