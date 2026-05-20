@@ -416,7 +416,14 @@ export function SunyaAI() {
         </div>
       </div>
 
-      {messages.length === 0 ? (
+      {messages.length === 0 && exhausted ? (
+        <UpgradePrompt
+          variant="wall"
+          user={!!user}
+          onUpgrade={handleUpgrade}
+          onSignIn={() => setShowAuthPrompt(true)}
+        />
+      ) : messages.length === 0 ? (
         <div>
           <label className="label-eyebrow block">How are you right now?</label>
           <p className="mt-1 text-sm text-[#b8d4e8]/80">
