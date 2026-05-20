@@ -210,22 +210,13 @@ export function Nav() {
                 </button>
               </>
             ) : (
-              <>
-                <Link
-                  to="/login"
-                  onClick={() => setOpen(false)}
-                  className="rounded-lg px-2 py-3 text-[#b8d4e8] hover:bg-white/5 hover:text-white"
-                >
-                  Sign in
-                </Link>
-                <Link
-                  to="/sunya-ai"
-                  onClick={() => setOpen(false)}
-                  className="glow-btn mt-2 inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-medium"
-                >
-                  Try Sunya AI <ArrowRight className="h-3.5 w-3.5" />
-                </Link>
-              </>
+              <Link
+                to="/sunya-ai"
+                onClick={() => setOpen(false)}
+                className="glow-btn mt-2 inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-medium"
+              >
+                Try Free <ArrowRight className="h-3.5 w-3.5" />
+              </Link>
             )}
           </div>
         </div>
