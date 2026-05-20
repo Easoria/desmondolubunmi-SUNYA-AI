@@ -30,6 +30,7 @@ export const Route = createFileRoute("/")({
 });
 
 function Hero() {
+  const ctaLabel = useSunyaCtaLabel();
   return (
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden pt-24">
       <Starfield density={1.2} />
