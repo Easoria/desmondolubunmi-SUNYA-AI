@@ -411,7 +411,7 @@ export function SunyaAI() {
         <div>
           <div
             ref={scrollRef}
-            className="max-h-[60vh] space-y-4 overflow-y-auto pr-1"
+            className="max-h-[60vh] space-y-4 overflow-y-auto pr-1 [scrollbar-gutter:stable]"
           >
             {messages.map((m, i) => (
               <div
