@@ -14,6 +14,24 @@ export type Database = {
   }
   public: {
     Tables: {
+      fingerprint_sessions: {
+        Row: {
+          last_seen: string
+          sessions_used: number
+          visitor_id: string
+        }
+        Insert: {
+          last_seen?: string
+          sessions_used?: number
+          visitor_id: string
+        }
+        Update: {
+          last_seen?: string
+          sessions_used?: number
+          visitor_id?: string
+        }
+        Relationships: []
+      }
       messages: {
         Row: {
           content: string
