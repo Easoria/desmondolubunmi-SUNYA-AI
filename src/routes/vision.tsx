@@ -53,7 +53,7 @@ const ECO: EcoItem[] = [
     t: "Sunya Publishing",
     c: "Timeless written guides distilling the framework into accessible, practical wisdom.",
     items: [
-      { label: "The Sleep Rhythm Reset →", href: "#" },
+      { label: "The Sleep Rhythm Reset →", href: "https://amzn.eu/d/04G8jn0y" },
       { label: "The Timeless Solution for Humanity", comingSoon: true },
     ],
   },
