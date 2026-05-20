@@ -213,68 +213,49 @@ function VisionPage() {
         </div>
       </section>
 
-      {/* Sanctuaries */}
-      <section className="relative overflow-hidden bg-[#0a1628] py-28">
-        <div
-          className="absolute inset-0 opacity-30"
-          style={{
-            background:
-              "radial-gradient(ellipse at 50% 0%, #2e6db4 0%, transparent 60%)",
-          }}
-        />
-        <div className="relative z-10 mx-auto max-w-5xl px-6">
-          <div className="text-center">
-            <div className="label-eyebrow">The sanctuaries</div>
-            <h2 className="display mt-6 text-4xl text-white sm:text-5xl md:text-6xl">
-              Charging stations
-              <br />
-              <span className="display-italic text-[#b8d4e8]">for the world.</span>
-            </h2>
-          </div>
-          <ul className="mx-auto mt-14 grid max-w-3xl gap-3 sm:grid-cols-2">
-            {SANCTUARY.map((s, i) => (
-              <li
-                key={i}
-                className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-sm text-[#b8d4e8]"
-              >
-                {s}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      {/* 50-year legacy */}
+      {/* The Legacy */}
       <section className="relative overflow-hidden bg-[#060d1c] py-32">
         <Starfield density={1.2} />
-        <div className="relative z-10 mx-auto max-w-3xl space-y-6 px-6 text-center">
-          <div className="label-eyebrow">The 50-year legacy</div>
-          <h2 className="display text-4xl text-white sm:text-5xl">
-            What we are building
-            <br />
-            <span className="display-italic text-[#b8d4e8]">will outlive us all.</span>
-          </h2>
-          <div className="space-y-5 pt-4 text-left text-[#b8d4e8]">
+        <div className="relative z-10 mx-auto max-w-3xl px-6">
+          <div className="text-center">
+            <div className="label-eyebrow">The legacy</div>
+            <h2 className="display mt-6 text-4xl text-white sm:text-5xl">
+              This is how humanity moves
+              <br />
+              <span className="display-italic text-[#b8d4e8]">into its next phase.</span>
+            </h2>
+          </div>
+          <div className="space-y-6 pt-12 text-left text-[#b8d4e8]">
             <p>
-              Fifty years from now, the work begun today will have become infrastructure. Not a
-              brand. Not a movement. Infrastructure — as ordinary and as essential as electricity.
+              Not through a new religion. Not through a new ideology. But through something far
+              more fundamental — every human being learning to understand and work with their
+              own inner system.
             </p>
             <p>
-              Children will grow up understanding the mechanics of their own nervous systems.
-              Workers will know how to discharge stress before it accumulates. The dying will face
-              death without terror. The seeking will know exactly where to look — and what they
-              will find.
+              Children growing up knowing how to regulate their own nervous system. Workers who
+              can discharge stress before it accumulates into illness or conflict. People who
+              face life's difficulties — and even death — with equanimity rather than terror.
+              Goodness that emerges from inner freedom rather than from fear of punishment.
+            </p>
+            <p>
+              And through AI and technology, the burden of survival lifts. Automation handles
+              what doesn't require the human spirit. People have more time — for creativity,
+              for connection, for inner exploration, for living fully.
             </p>
             <p className="text-white/90">
-              This is not a vision of a perfect world. It is a vision of an honest one. A world in
-              which human beings finally meet themselves — and discover there was never anything to
-              fix in the first place.
-            </p>
-            <p className="display-italic pt-2 text-xl text-white">
-              We are at the beginning. You are part of this.
+              This is the world Sunya is building. Not perfect. But conscious.
+              <br />
+              Not uniform. But deeply, genuinely human.
             </p>
           </div>
-          <div className="pt-8">
+          <div className="mt-16 text-center">
+            <p className="display-italic text-2xl text-white sm:text-3xl">
+              We are at the beginning.
+              <br />
+              You are already part of this.
+            </p>
+          </div>
+          <div className="mt-10 text-center">
             <Link
               to="/sunya-ai"
               className="glow-btn inline-flex items-center gap-2 rounded-full px-8 py-4 text-sm font-medium"
