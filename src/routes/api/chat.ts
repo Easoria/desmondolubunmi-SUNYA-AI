@@ -122,20 +122,23 @@ export const Route = createFileRoute("/api/chat")({
             }
           }
 
-          const key = process.env.LOVABLE_API_KEY;
-          if (!key) {
-            return Response.json({ error: "Missing LOVABLE_API_KEY" }, { status: 500 });
+          const anthropicKey = process.env.ANTHROPIC_API_KEY;
+          if (!anthropicKey) {
+            return Response.json({ error: "Missing ANTHROPIC_API_KEY" }, { status: 500 });
           }
 
-          const res = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {
+          const res = await fetch("https://api.anthropic.com/v1/messages", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
-              "Lovable-API-Key": key,
+              "x-api-key": anthropicKey,
+              "anthropic-version": "2023-06-01",
             },
             body: JSON.stringify({
-              model: "google/gemini-3-flash-preview",
-              messages: [{ role: "system", content: SYSTEM_PROMPT }, ...messages],
+              model: "claude-sonnet-4-5",
+              max_tokens: 1024,
+              system: SYSTEM_PROMPT,
+              messages: messages.map((m) => ({ role: m.role, content: m.content })),
             }),
           });
 
@@ -149,8 +152,11 @@ export const Route = createFileRoute("/api/chat")({
               { status: 502 },
             );
           }
-          const data = await res.json();
-          const text: string = data?.choices?.[0]?.message?.content ?? "";
+          const data = (await res.json()) as {
+            content?: Array<{ type: string; text?: string }>;
+          };
+          const text: string =
+            data?.content?.filter((c) => c.type === "text").map((c) => c.text ?? "").join("") ?? "";
           return Response.json({ text });
         } catch (e) {
           return Response.json({ error: String(e) }, { status: 500 });
