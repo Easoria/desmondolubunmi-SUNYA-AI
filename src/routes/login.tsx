@@ -30,7 +30,14 @@ function LoginPage() {
       <Footer />
       <AuthModal
         open
-        dismissible={false}
+        dismissible
+        onClose={() => {
+          if (typeof window !== "undefined" && window.history.length > 1) {
+            window.history.back();
+          } else {
+            navigate({ to: "/" });
+          }
+        }}
         onAuthSuccess={() => navigate({ to: "/dashboard" })}
       />
     </div>
