@@ -333,7 +333,7 @@ function About() {
               to="/sunya-ai"
               className="inline-flex items-center gap-2 rounded-full border border-white/15 px-6 py-3 text-sm text-white transition hover:border-[#7ec8e3]/50 hover:bg-white/5"
             >
-              Try Sunya AI Free <ArrowRight className="h-4 w-4" />
+              {ctaLabel} <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
         </div>
@@ -365,7 +365,7 @@ function FinalCTA() {
           to="/sunya-ai"
           className="glow-btn mt-12 inline-flex items-center gap-2 rounded-full px-10 py-5 text-base font-medium"
         >
-          Try Sunya AI <ArrowUpRight className="h-5 w-5" />
+          {ctaLabel} <ArrowUpRight className="h-5 w-5" />
         </Link>
       </div>
     </section>
