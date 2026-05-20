@@ -15,6 +15,7 @@ export function Footer() {
           <Link to="/sunya-ai" className="hover:text-white">Sunya AI</Link>
           <Link to="/work-with-me" className="hover:text-white">Work With Me</Link>
           <Link to="/vision" className="hover:text-white">Vision</Link>
+          <Link to="/blog" className="hover:text-white">Blog</Link>
         </nav>
         <div className="flex justify-start gap-3 md:justify-end">
           {[Instagram, Youtube].map((Ic, i) => (

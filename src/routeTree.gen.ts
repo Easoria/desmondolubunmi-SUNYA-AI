@@ -13,6 +13,7 @@ import { Route as WorkWithMeRouteImport } from './routes/work-with-me'
 import { Route as VisionRouteImport } from './routes/vision'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as SunyaAiRouteImport } from './routes/sunya-ai'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SessionsRouteImport } from './routes/sessions'
 import { Route as ResetPasswordRouteImport } from './routes/reset-password'
 import { Route as PrivacyRouteImport } from './routes/privacy'
@@ -22,13 +23,16 @@ import { Route as JoinRouteImport } from './routes/join'
 import { Route as ForgotPasswordRouteImport } from './routes/forgot-password'
 import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as BookedRouteImport } from './routes/booked'
+import { Route as BlogRouteImport } from './routes/blog'
 import { Route as AccountRouteImport } from './routes/account'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as CheckoutReturnRouteImport } from './routes/checkout.return'
+import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as ApiSessionTitleRouteImport } from './routes/api/session-title'
 import { Route as ApiContributorSignupRouteImport } from './routes/api/contributor-signup'
 import { Route as ApiCommunitySignupRouteImport } from './routes/api/community-signup'
 import { Route as ApiChatRouteImport } from './routes/api/chat'
+import { Route as AdminBlogRouteImport } from './routes/admin.blog'
 import { Route as ApiPublicPaymentsWebhookRouteImport } from './routes/api/public/payments/webhook'
 
 const WorkWithMeRoute = WorkWithMeRouteImport.update({
@@ -49,6 +53,11 @@ const TermsRoute = TermsRouteImport.update({
 const SunyaAiRoute = SunyaAiRouteImport.update({
   id: '/sunya-ai',
   path: '/sunya-ai',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SessionsRoute = SessionsRouteImport.update({
@@ -96,6 +105,11 @@ const BookedRoute = BookedRouteImport.update({
   path: '/booked',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogRoute = BlogRouteImport.update({
+  id: '/blog',
+  path: '/blog',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AccountRoute = AccountRouteImport.update({
   id: '/account',
   path: '/account',
@@ -110,6 +124,11 @@ const CheckoutReturnRoute = CheckoutReturnRouteImport.update({
   id: '/checkout/return',
   path: '/checkout/return',
   getParentRoute: () => rootRouteImport,
+} as any)
+const BlogSlugRoute = BlogSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => BlogRoute,
 } as any)
 const ApiSessionTitleRoute = ApiSessionTitleRouteImport.update({
   id: '/api/session-title',
@@ -131,6 +150,11 @@ const ApiChatRoute = ApiChatRouteImport.update({
   path: '/api/chat',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminBlogRoute = AdminBlogRouteImport.update({
+  id: '/admin/blog',
+  path: '/admin/blog',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiPublicPaymentsWebhookRoute =
   ApiPublicPaymentsWebhookRouteImport.update({
     id: '/api/public/payments/webhook',
@@ -141,6 +165,7 @@ const ApiPublicPaymentsWebhookRoute =
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/account': typeof AccountRoute
+  '/blog': typeof BlogRouteWithChildren
   '/booked': typeof BookedRoute
   '/dashboard': typeof DashboardRoute
   '/forgot-password': typeof ForgotPasswordRoute
@@ -150,20 +175,24 @@ export interface FileRoutesByFullPath {
   '/privacy': typeof PrivacyRoute
   '/reset-password': typeof ResetPasswordRoute
   '/sessions': typeof SessionsRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sunya-ai': typeof SunyaAiRoute
   '/terms': typeof TermsRoute
   '/vision': typeof VisionRoute
   '/work-with-me': typeof WorkWithMeRoute
+  '/admin/blog': typeof AdminBlogRoute
   '/api/chat': typeof ApiChatRoute
   '/api/community-signup': typeof ApiCommunitySignupRoute
   '/api/contributor-signup': typeof ApiContributorSignupRoute
   '/api/session-title': typeof ApiSessionTitleRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/checkout/return': typeof CheckoutReturnRoute
   '/api/public/payments/webhook': typeof ApiPublicPaymentsWebhookRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/account': typeof AccountRoute
+  '/blog': typeof BlogRouteWithChildren
   '/booked': typeof BookedRoute
   '/dashboard': typeof DashboardRoute
   '/forgot-password': typeof ForgotPasswordRoute
@@ -173,14 +202,17 @@ export interface FileRoutesByTo {
   '/privacy': typeof PrivacyRoute
   '/reset-password': typeof ResetPasswordRoute
   '/sessions': typeof SessionsRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sunya-ai': typeof SunyaAiRoute
   '/terms': typeof TermsRoute
   '/vision': typeof VisionRoute
   '/work-with-me': typeof WorkWithMeRoute
+  '/admin/blog': typeof AdminBlogRoute
   '/api/chat': typeof ApiChatRoute
   '/api/community-signup': typeof ApiCommunitySignupRoute
   '/api/contributor-signup': typeof ApiContributorSignupRoute
   '/api/session-title': typeof ApiSessionTitleRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/checkout/return': typeof CheckoutReturnRoute
   '/api/public/payments/webhook': typeof ApiPublicPaymentsWebhookRoute
 }
@@ -188,6 +220,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/account': typeof AccountRoute
+  '/blog': typeof BlogRouteWithChildren
   '/booked': typeof BookedRoute
   '/dashboard': typeof DashboardRoute
   '/forgot-password': typeof ForgotPasswordRoute
@@ -197,14 +230,17 @@ export interface FileRoutesById {
   '/privacy': typeof PrivacyRoute
   '/reset-password': typeof ResetPasswordRoute
   '/sessions': typeof SessionsRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sunya-ai': typeof SunyaAiRoute
   '/terms': typeof TermsRoute
   '/vision': typeof VisionRoute
   '/work-with-me': typeof WorkWithMeRoute
+  '/admin/blog': typeof AdminBlogRoute
   '/api/chat': typeof ApiChatRoute
   '/api/community-signup': typeof ApiCommunitySignupRoute
   '/api/contributor-signup': typeof ApiContributorSignupRoute
   '/api/session-title': typeof ApiSessionTitleRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/checkout/return': typeof CheckoutReturnRoute
   '/api/public/payments/webhook': typeof ApiPublicPaymentsWebhookRoute
 }
@@ -213,6 +249,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/account'
+    | '/blog'
     | '/booked'
     | '/dashboard'
     | '/forgot-password'
@@ -222,20 +259,24 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/reset-password'
     | '/sessions'
+    | '/sitemap.xml'
     | '/sunya-ai'
     | '/terms'
     | '/vision'
     | '/work-with-me'
+    | '/admin/blog'
     | '/api/chat'
     | '/api/community-signup'
     | '/api/contributor-signup'
     | '/api/session-title'
+    | '/blog/$slug'
     | '/checkout/return'
     | '/api/public/payments/webhook'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/account'
+    | '/blog'
     | '/booked'
     | '/dashboard'
     | '/forgot-password'
@@ -245,20 +286,24 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/reset-password'
     | '/sessions'
+    | '/sitemap.xml'
     | '/sunya-ai'
     | '/terms'
     | '/vision'
     | '/work-with-me'
+    | '/admin/blog'
     | '/api/chat'
     | '/api/community-signup'
     | '/api/contributor-signup'
     | '/api/session-title'
+    | '/blog/$slug'
     | '/checkout/return'
     | '/api/public/payments/webhook'
   id:
     | '__root__'
     | '/'
     | '/account'
+    | '/blog'
     | '/booked'
     | '/dashboard'
     | '/forgot-password'
@@ -268,14 +313,17 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/reset-password'
     | '/sessions'
+    | '/sitemap.xml'
     | '/sunya-ai'
     | '/terms'
     | '/vision'
     | '/work-with-me'
+    | '/admin/blog'
     | '/api/chat'
     | '/api/community-signup'
     | '/api/contributor-signup'
     | '/api/session-title'
+    | '/blog/$slug'
     | '/checkout/return'
     | '/api/public/payments/webhook'
   fileRoutesById: FileRoutesById
@@ -283,6 +331,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AccountRoute: typeof AccountRoute
+  BlogRoute: typeof BlogRouteWithChildren
   BookedRoute: typeof BookedRoute
   DashboardRoute: typeof DashboardRoute
   ForgotPasswordRoute: typeof ForgotPasswordRoute
@@ -292,10 +341,12 @@ export interface RootRouteChildren {
   PrivacyRoute: typeof PrivacyRoute
   ResetPasswordRoute: typeof ResetPasswordRoute
   SessionsRoute: typeof SessionsRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SunyaAiRoute: typeof SunyaAiRoute
   TermsRoute: typeof TermsRoute
   VisionRoute: typeof VisionRoute
   WorkWithMeRoute: typeof WorkWithMeRoute
+  AdminBlogRoute: typeof AdminBlogRoute
   ApiChatRoute: typeof ApiChatRoute
   ApiCommunitySignupRoute: typeof ApiCommunitySignupRoute
   ApiContributorSignupRoute: typeof ApiContributorSignupRoute
@@ -332,6 +383,13 @@ declare module '@tanstack/react-router' {
       path: '/sunya-ai'
       fullPath: '/sunya-ai'
       preLoaderRoute: typeof SunyaAiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/sessions': {
@@ -397,6 +455,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BookedRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog': {
+      id: '/blog'
+      path: '/blog'
+      fullPath: '/blog'
+      preLoaderRoute: typeof BlogRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/account': {
       id: '/account'
       path: '/account'
@@ -417,6 +482,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/checkout/return'
       preLoaderRoute: typeof CheckoutReturnRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/blog/$slug': {
+      id: '/blog/$slug'
+      path: '/$slug'
+      fullPath: '/blog/$slug'
+      preLoaderRoute: typeof BlogSlugRouteImport
+      parentRoute: typeof BlogRoute
     }
     '/api/session-title': {
       id: '/api/session-title'
@@ -446,6 +518,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiChatRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin/blog': {
+      id: '/admin/blog'
+      path: '/admin/blog'
+      fullPath: '/admin/blog'
+      preLoaderRoute: typeof AdminBlogRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/public/payments/webhook': {
       id: '/api/public/payments/webhook'
       path: '/api/public/payments/webhook'
@@ -456,9 +535,20 @@ declare module '@tanstack/react-router' {
   }
 }
 
+interface BlogRouteChildren {
+  BlogSlugRoute: typeof BlogSlugRoute
+}
+
+const BlogRouteChildren: BlogRouteChildren = {
+  BlogSlugRoute: BlogSlugRoute,
+}
+
+const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AccountRoute: AccountRoute,
+  BlogRoute: BlogRouteWithChildren,
   BookedRoute: BookedRoute,
   DashboardRoute: DashboardRoute,
   ForgotPasswordRoute: ForgotPasswordRoute,
@@ -468,10 +558,12 @@ const rootRouteChildren: RootRouteChildren = {
   PrivacyRoute: PrivacyRoute,
   ResetPasswordRoute: ResetPasswordRoute,
   SessionsRoute: SessionsRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   SunyaAiRoute: SunyaAiRoute,
   TermsRoute: TermsRoute,
   VisionRoute: VisionRoute,
   WorkWithMeRoute: WorkWithMeRoute,
+  AdminBlogRoute: AdminBlogRoute,
   ApiChatRoute: ApiChatRoute,
   ApiCommunitySignupRoute: ApiCommunitySignupRoute,
   ApiContributorSignupRoute: ApiContributorSignupRoute,
