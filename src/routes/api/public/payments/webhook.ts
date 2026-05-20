@@ -99,6 +99,7 @@ async function handleSubscriptionCreated(subscription: any, env: StripeEnv) {
     console.error("No userId resolved for subscription", subscription.id);
     return;
   }
+  const item = subscription.items?.data?.[0];
   const priceId =
     item?.price?.lookup_key ||
     item?.price?.metadata?.lovable_external_id ||
