@@ -211,3 +211,20 @@
 .chev {
   animation: float-chev 2.5s ease-in-out infinite;
 }
+
+/* Blog article markdown */
+.prose-article { color: #b8d4e8; font-size: 18px; line-height: 1.8; }
+.prose-article h1, .prose-article h2, .prose-article h3 { color: #fff; font-family: var(--font-display, serif); margin-top: 2em; margin-bottom: 0.6em; line-height: 1.25; }
+.prose-article h2 { font-size: 1.75em; }
+.prose-article h3 { font-size: 1.35em; }
+.prose-article p { margin: 1.25em 0; }
+.prose-article a { color: #7ec8e3; text-decoration: underline; }
+.prose-article strong { color: #fff; }
+.prose-article em { font-style: italic; }
+.prose-article ul, .prose-article ol { margin: 1.25em 0; padding-left: 1.5em; }
+.prose-article ul { list-style: disc; }
+.prose-article ol { list-style: decimal; }
+.prose-article li { margin: 0.4em 0; }
+.prose-article blockquote { border-left: 3px solid #7ec8e3; padding: 0.2em 0 0.2em 1.25em; margin: 1.5em 0; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 1.25em; color: #d8e6f0; }
+.prose-article img { border-radius: 0.75rem; margin: 1.5em 0; max-width: 100%; }
+.prose-article code { background: rgba(255,255,255,0.08); padding: 0.15em 0.4em; border-radius: 4px; font-size: 0.9em; }
