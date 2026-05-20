@@ -202,6 +202,16 @@ export function SunyaAI() {
       try {
         localStorage.setItem(GUEST_KEY, String(next));
       } catch {}
+      if (visitorId) {
+        try {
+          const { supabase } = await import("@/integrations/supabase/client");
+          await supabase.from("fingerprint_sessions").upsert({
+            visitor_id: visitorId,
+            sessions_used: next,
+            last_seen: new Date().toISOString(),
+          });
+        } catch { /* non-blocking */ }
+      }
       return;
     }
     if (isPaid) return;
