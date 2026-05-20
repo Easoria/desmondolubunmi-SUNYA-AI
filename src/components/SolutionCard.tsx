@@ -29,7 +29,7 @@ function buildPdfHtml(s: Solution, dateStr: string) {
   const practices = s.practices
     .map(
       (p, i) => `
-      <div class="practice">
+      <div class="practice pdf-block">
         <div class="practice-num">${String(i + 1).padStart(2, "0")}</div>
         <div class="practice-row">
           <div class="practice-icon">${(p.lever && LEVER_ICONS[p.lever]) || "✦"}</div>
@@ -45,64 +45,71 @@ function buildPdfHtml(s: Solution, dateStr: string) {
   return `<!doctype html><html><head><meta charset="utf-8" />
 <title>Sunya Reading — ${dateStr}</title>
 <style>
-  @page { size: A4; margin: 0; }
   * { box-sizing: border-box; }
   html, body { margin: 0; padding: 0; background: #06101f; }
-  body { font-family: Georgia, 'Cormorant Garamond', serif; color: #e8f0fa; line-height: 1.6; padding: 28mm 24mm; }
-  .wordmark { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 34px; letter-spacing: 0.5em; font-weight: 500; text-align: center; color: #ffffff; }
-  .brand-sub { text-align: center; font-size: 10px; letter-spacing: 0.4em; text-transform: uppercase; color: #7ec8e3; margin-top: 10px; }
-  .date { text-align: center; font-size: 11px; color: #b8d4e8; margin-top: 6px; font-family: 'Helvetica Neue', Arial, sans-serif; }
-  .star { text-align: center; color: #7ec8e3; font-size: 18px; margin-top: 6px; }
-  .divider { height: 1px; background: rgba(126,200,227,0.25); margin: 18px 0 26px; }
-  .label { font-size: 10px; letter-spacing: 0.32em; text-transform: uppercase; color: #7ec8e3; margin-bottom: 12px; font-family: 'Helvetica Neue', Arial, sans-serif; }
-  .section { margin-bottom: 24px; page-break-inside: avoid; }
-  .mirror-wrap { background: linear-gradient(90deg, rgba(230,200,154,0.12), rgba(126,200,227,0.04), transparent); border-radius: 12px; padding: 18px 20px; }
+  body { font-family: Georgia, 'Cormorant Garamond', serif; color: #e8f0fa; line-height: 1.65; width: 760px; }
+  .pdf-root { padding: 0; }
+  .pdf-block { margin-bottom: 14px; }
+  .header-block { text-align: center; padding-bottom: 4px; }
+  .wordmark { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 42px; letter-spacing: 0.5em; font-weight: 500; color: #ffffff; }
+  .brand-sub { font-size: 12px; letter-spacing: 0.4em; text-transform: uppercase; color: #7ec8e3; margin-top: 12px; }
+  .date { font-size: 13px; color: #b8d4e8; margin-top: 8px; font-family: 'Helvetica Neue', Arial, sans-serif; }
+  .star { color: #7ec8e3; font-size: 22px; margin-top: 8px; }
+  .divider { height: 1px; background: rgba(126,200,227,0.25); margin-top: 18px; }
+  .label { font-size: 12px; letter-spacing: 0.32em; text-transform: uppercase; color: #7ec8e3; margin-bottom: 14px; font-family: 'Helvetica Neue', Arial, sans-serif; }
+  .mirror-wrap { background: linear-gradient(90deg, rgba(230,200,154,0.12), rgba(126,200,227,0.04), transparent); border-radius: 16px; padding: 22px 24px; }
   .mirror-label { color: #e6c89a; }
-  .mirror { font-style: italic; font-size: 18px; color: #ffffff; border-left: 3px solid #e6c89a; padding-left: 16px; margin: 0; }
-  .insight { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 13px; color: #e8f0fa; }
-  .practice { border: 1px solid rgba(126,200,227,0.18); background: rgba(255,255,255,0.03); border-radius: 14px; padding: 16px 18px; margin-bottom: 12px; position: relative; page-break-inside: avoid; }
-  .practice-num { position: absolute; top: 12px; right: 16px; font-size: 10px; color: rgba(126,200,227,0.55); letter-spacing: 0.2em; font-family: 'Courier New', monospace; }
+  .mirror { font-style: italic; font-size: 22px; color: #ffffff; border-left: 3px solid #e6c89a; padding-left: 18px; margin: 0; line-height: 1.55; }
+  .insight { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 15.5px; color: #e8f0fa; line-height: 1.8; }
+  .practice { border: 1px solid rgba(126,200,227,0.18); background: rgba(255,255,255,0.03); border-radius: 16px; padding: 18px 20px; position: relative; }
+  .practice-num { position: absolute; top: 14px; right: 18px; font-size: 11px; color: rgba(126,200,227,0.55); letter-spacing: 0.2em; font-family: 'Courier New', monospace; }
   .practice-row { display: flex; align-items: flex-start; gap: 14px; }
-  .practice-icon { font-size: 22px; line-height: 1; flex-shrink: 0; }
-  .practice-body { flex: 1; padding-right: 28px; }
-  .practice-name { font-family: 'Helvetica Neue', Arial, sans-serif; font-weight: 700; font-size: 14px; color: #ffffff; margin-bottom: 5px; }
-  .practice-desc { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 12.5px; color: #cfe1ef; }
-  .reframe-section { background: linear-gradient(180deg, rgba(14,31,58,0.5), transparent); border-radius: 14px; padding: 26px 20px; margin-top: 8px; page-break-inside: avoid; }
+  .practice-icon { font-size: 26px; line-height: 1; flex-shrink: 0; }
+  .practice-body { flex: 1; padding-right: 32px; }
+  .practice-name { font-family: 'Helvetica Neue', Arial, sans-serif; font-weight: 700; font-size: 16px; color: #ffffff; margin-bottom: 6px; }
+  .practice-desc { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 14.5px; color: #cfe1ef; line-height: 1.7; }
+  .reframe-section { background: linear-gradient(180deg, rgba(14,31,58,0.5), transparent); border-radius: 16px; padding: 30px 24px; }
   .reframe-label { text-align: center; }
-  .reframe { text-align: center; font-style: italic; font-size: 22px; color: #ffffff; margin: 14px auto 0; max-width: 80%; line-height: 1.5; }
-  .footer { margin-top: 36px; padding-top: 16px; border-top: 1px solid rgba(126,200,227,0.25); font-size: 10px; color: #b8d4e8; text-align: center; font-family: 'Helvetica Neue', Arial, sans-serif; letter-spacing: 0.04em; }
+  .reframe { text-align: center; font-style: italic; font-size: 26px; color: #ffffff; margin: 16px auto 0; max-width: 85%; line-height: 1.5; }
+  .footer-block { padding-top: 18px; border-top: 1px solid rgba(126,200,227,0.25); font-size: 11.5px; color: #b8d4e8; text-align: center; font-family: 'Helvetica Neue', Arial, sans-serif; letter-spacing: 0.04em; }
 </style></head><body>
-  <div class="wordmark">SUNYA</div>
-  <div class="brand-sub">Your Personal Reading</div>
-  <div class="date">${escapeHtml(dateStr)}</div>
-  <div class="star">✦</div>
-  <div class="divider"></div>
-
-  <div class="section">
-    <div class="mirror-wrap">
-      <div class="label mirror-label">What Sunya Heard</div>
-      <p class="mirror">${escapeHtml(s.mirror)}</p>
+  <div class="pdf-root">
+    <div class="pdf-block header-block">
+      <div class="wordmark">SUNYA</div>
+      <div class="brand-sub">Your Personal Reading</div>
+      <div class="date">${escapeHtml(dateStr)}</div>
+      <div class="star">✦</div>
+      <div class="divider"></div>
     </div>
-  </div>
 
-  <div class="section">
-    <div class="label">The Insight</div>
-    <div class="insight">${escapeHtml(s.insight).replace(/\n/g, "<br/>")}</div>
-  </div>
+    <div class="pdf-block">
+      <div class="mirror-wrap">
+        <div class="label mirror-label">What Sunya Heard</div>
+        <p class="mirror">${escapeHtml(s.mirror)}</p>
+      </div>
+    </div>
 
-  <div class="section">
-    <div class="label">Your Practices</div>
+    <div class="pdf-block">
+      <div class="label">The Insight</div>
+      <div class="insight">${escapeHtml(s.insight).replace(/\n/g, "<br/>")}</div>
+    </div>
+
+    <div class="pdf-block">
+      <div class="label">Your Practices</div>
+    </div>
     ${practices}
-  </div>
 
-  ${
-    s.reframe
-      ? `<div class="reframe-section"><div class="label reframe-label">The Reframe</div><div class="reframe">${escapeHtml(s.reframe)}</div></div>`
-      : ""
-  }
+    ${
+      s.reframe
+        ? `<div class="pdf-block reframe-section"><div class="label reframe-label">The Reframe</div><div class="reframe">${escapeHtml(s.reframe)}</div></div>`
+        : ""
+    }
 
-  <div class="footer">
-    This reading is generated by Sunya AI for personal reflection only. Not medical advice. desmondolubunmi.com.
+    <div class="pdf-block" style="margin-top:18px">
+      <div class="footer-block">
+        This reading is generated by Sunya AI for personal reflection only. Not medical advice. desmondolubunmi.com.
+      </div>
+    </div>
   </div>
 </body></html>`;
 }
