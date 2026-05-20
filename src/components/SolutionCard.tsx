@@ -147,7 +147,7 @@ export function SolutionCard({
       const target = doc.body;
       const canvas = await html2canvas(target, {
         scale: 2,
-        backgroundColor: "#ffffff",
+        backgroundColor: "#06101f",
         useCORS: true,
       });
       const pdf = new jsPDF({ unit: "mm", format: "a4", orientation: "portrait" });
