@@ -71,7 +71,8 @@ function buildPdfHtml(s: Solution, dateStr: string) {
   .reframe-section { background: linear-gradient(180deg, rgba(14,31,58,0.5), transparent); border-radius: 16px; padding: 30px 24px; }
   .reframe-label { text-align: center; }
   .reframe { text-align: center; font-style: italic; font-size: 26px; color: #ffffff; margin: 16px auto 0; max-width: 85%; line-height: 1.5; }
-  .footer-block { padding-top: 18px; border-top: 1px solid rgba(126,200,227,0.25); font-size: 11.5px; color: #b8d4e8; text-align: center; font-family: 'Helvetica Neue', Arial, sans-serif; letter-spacing: 0.04em; }
+  .footer-block { padding: 18px 4px 14px; border-top: 1px solid rgba(126,200,227,0.25); font-size: 11.5px; line-height: 1.7; color: #b8d4e8; text-align: center; font-family: 'Helvetica Neue', Arial, sans-serif; letter-spacing: 0.04em; }
+  .footer-link { color: #7ec8e3; text-decoration: underline; }
 </style></head><body>
   <div class="pdf-root">
     <div class="pdf-block header-block">
