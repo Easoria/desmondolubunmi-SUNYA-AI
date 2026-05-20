@@ -44,7 +44,7 @@ const ECO: EcoItem[] = [
     c: "AI and technology in service of human wellbeing — for individuals, wellness creators, and organisations.",
     items: [
       { label: "Sunya AI →", to: "/sunya-ai" },
-      { label: "Sunya Sleep →", href: "#" },
+      { label: "Sunya Sleep →", href: "https://sunyasleep.com/" },
       { label: "Sunya Studio", comingSoon: true },
     ],
   },
