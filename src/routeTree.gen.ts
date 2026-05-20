@@ -13,6 +13,7 @@ import { Route as WorkWithMeRouteImport } from './routes/work-with-me'
 import { Route as VisionRouteImport } from './routes/vision'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as SunyaAiRouteImport } from './routes/sunya-ai'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SessionsRouteImport } from './routes/sessions'
 import { Route as ResetPasswordRouteImport } from './routes/reset-password'
 import { Route as PrivacyRouteImport } from './routes/privacy'
@@ -49,6 +50,11 @@ const TermsRoute = TermsRouteImport.update({
 const SunyaAiRoute = SunyaAiRouteImport.update({
   id: '/sunya-ai',
   path: '/sunya-ai',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SessionsRoute = SessionsRouteImport.update({
@@ -150,6 +156,7 @@ export interface FileRoutesByFullPath {
   '/privacy': typeof PrivacyRoute
   '/reset-password': typeof ResetPasswordRoute
   '/sessions': typeof SessionsRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sunya-ai': typeof SunyaAiRoute
   '/terms': typeof TermsRoute
   '/vision': typeof VisionRoute
@@ -173,6 +180,7 @@ export interface FileRoutesByTo {
   '/privacy': typeof PrivacyRoute
   '/reset-password': typeof ResetPasswordRoute
   '/sessions': typeof SessionsRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sunya-ai': typeof SunyaAiRoute
   '/terms': typeof TermsRoute
   '/vision': typeof VisionRoute
@@ -197,6 +205,7 @@ export interface FileRoutesById {
   '/privacy': typeof PrivacyRoute
   '/reset-password': typeof ResetPasswordRoute
   '/sessions': typeof SessionsRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sunya-ai': typeof SunyaAiRoute
   '/terms': typeof TermsRoute
   '/vision': typeof VisionRoute
@@ -222,6 +231,7 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/reset-password'
     | '/sessions'
+    | '/sitemap.xml'
     | '/sunya-ai'
     | '/terms'
     | '/vision'
@@ -245,6 +255,7 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/reset-password'
     | '/sessions'
+    | '/sitemap.xml'
     | '/sunya-ai'
     | '/terms'
     | '/vision'
@@ -268,6 +279,7 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/reset-password'
     | '/sessions'
+    | '/sitemap.xml'
     | '/sunya-ai'
     | '/terms'
     | '/vision'
@@ -292,6 +304,7 @@ export interface RootRouteChildren {
   PrivacyRoute: typeof PrivacyRoute
   ResetPasswordRoute: typeof ResetPasswordRoute
   SessionsRoute: typeof SessionsRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SunyaAiRoute: typeof SunyaAiRoute
   TermsRoute: typeof TermsRoute
   VisionRoute: typeof VisionRoute
@@ -332,6 +345,13 @@ declare module '@tanstack/react-router' {
       path: '/sunya-ai'
       fullPath: '/sunya-ai'
       preLoaderRoute: typeof SunyaAiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/sessions': {
@@ -468,6 +488,7 @@ const rootRouteChildren: RootRouteChildren = {
   PrivacyRoute: PrivacyRoute,
   ResetPasswordRoute: ResetPasswordRoute,
   SessionsRoute: SessionsRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   SunyaAiRoute: SunyaAiRoute,
   TermsRoute: TermsRoute,
   VisionRoute: VisionRoute,
@@ -482,3 +503,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
