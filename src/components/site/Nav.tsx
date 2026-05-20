@@ -159,7 +159,7 @@ export function Nav() {
               to="/sunya-ai"
               className="glow-btn inline-flex items-center gap-1.5 rounded-full px-3.5 py-2 text-xs font-medium"
             >
-              Try Sunya AI <ArrowRight className="h-3 w-3" />
+              Try Free <ArrowRight className="h-3 w-3" />
             </Link>
           )}
           <div className="flex flex-col items-center">
