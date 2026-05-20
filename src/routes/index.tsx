@@ -215,6 +215,7 @@ function AITeaser() {
 }
 
 function About() {
+  const ctaLabel = useSunyaCtaLabel(" Free");
   const [expanded, setExpanded] = useState(false);
   return (
     <section
@@ -342,6 +343,7 @@ function About() {
 }
 
 function FinalCTA() {
+  const ctaLabel = useSunyaCtaLabel();
   return (
     <section className="relative flex min-h-[80vh] items-center justify-center overflow-hidden bg-[#060d1c] py-32">
       <div
