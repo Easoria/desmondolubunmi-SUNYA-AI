@@ -18,10 +18,85 @@ function getSupabase(): any {
   return _supabase;
 }
 
+// Find a Supabase auth user by email, paging through admin.listUsers.
+async function findUserIdByEmail(email: string): Promise<string | null> {
+  const supa = getSupabase();
+  const normalized = email.trim().toLowerCase();
+  for (let page = 1; page <= 10; page++) {
+    const { data, error } = await supa.auth.admin.listUsers({ page, perPage: 200 });
+    if (error) {
+      console.error("listUsers failed:", error);
+      return null;
+    }
+    const match = data?.users?.find(
+      (u: any) => (u.email || "").toLowerCase() === normalized,
+    );
+    if (match) return match.id;
+    if (!data?.users?.length || data.users.length < 200) return null;
+  }
+  return null;
+}
+
+// Provision (or find) a Supabase auth user for a guest checkout, then trigger
+// a password-reset email so they can set a password and sign in.
+async function provisionGuestUser(email: string | null | undefined): Promise<string | null> {
+  if (!email) return null;
+  const supa = getSupabase();
+
+  const existing = await findUserIdByEmail(email);
+  if (existing) return existing;
+
+  const { data, error } = await supa.auth.admin.createUser({
+    email,
+    email_confirm: true,
+    user_metadata: { created_via: "stripe_checkout" },
+  });
+  if (error || !data?.user) {
+    console.error("Failed to create guest user:", error);
+    // Race: another webhook may have just created them.
+    return await findUserIdByEmail(email);
+  }
+
+  // Send a password-reset email so the new user can set their password.
+  try {
+    const redirectTo = `${process.env.SUPABASE_URL?.replace(".supabase.co", ".lovable.app") || ""}/reset-password`;
+    await supa.auth.admin.generateLink({
+      type: "recovery",
+      email,
+      options: { redirectTo },
+    });
+  } catch (e) {
+    console.error("Failed to send recovery link:", e);
+  }
+
+  return data.user.id;
+}
+
 async function handleSubscriptionCreated(subscription: any, env: StripeEnv) {
-  const userId = subscription.metadata?.userId;
+  let userId: string | null = subscription.metadata?.userId || null;
+
   if (!userId) {
-    console.error("No userId in subscription metadata");
+    // Guest checkout — look up the email on the Stripe customer and provision an account.
+    try {
+      const stripe = createStripeClient(env);
+      const customer: any = await stripe.customers.retrieve(subscription.customer);
+      const email = customer?.email || customer?.metadata?.email || null;
+      userId = await provisionGuestUser(email);
+      if (userId) {
+        await stripe.customers.update(subscription.customer, {
+          metadata: { ...(customer.metadata || {}), userId },
+        });
+        await stripe.subscriptions.update(subscription.id, {
+          metadata: { ...(subscription.metadata || {}), userId },
+        });
+      }
+    } catch (e) {
+      console.error("Guest provisioning failed:", e);
+    }
+  }
+
+  if (!userId) {
+    console.error("No userId resolved for subscription", subscription.id);
     return;
   }
   const item = subscription.items?.data?.[0];
@@ -132,7 +207,11 @@ async function handleCheckoutCompleted(session: any, env: StripeEnv) {
     console.error("Failed to expand line_items for session", session.id, e);
   }
 
-  const userId = session.metadata?.userId || null;
+  let userId: string | null = session.metadata?.userId || null;
+  if (!userId) {
+    const email = session.customer_details?.email || session.customer_email || null;
+    userId = await provisionGuestUser(email);
+  }
 
   await getSupabase().from("one_on_one_bookings").upsert(
     {
