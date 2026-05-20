@@ -224,6 +224,13 @@ export function SolutionCard({
           cursorY = marginY;
         }
         pdf.addImage(imgData, "PNG", marginX, cursorY, contentW, blockHmm);
+        // If this is the footer block, overlay a clickable link annotation across the bottom strip.
+        if (block.classList.contains("pdf-footer-block")) {
+          const linkH = Math.min(8, blockHmm * 0.45);
+          pdf.link(marginX, cursorY + blockHmm - linkH, contentW, linkH, {
+            url: "https://desmondolubunmi.com",
+          });
+        }
         cursorY += blockHmm + gap;
       }
 
