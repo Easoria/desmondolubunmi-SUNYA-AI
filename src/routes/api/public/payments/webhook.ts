@@ -61,6 +61,11 @@ async function handleSubscriptionCreated(subscription: any, env: StripeEnv) {
     { onConflict: "stripe_subscription_id" },
   );
 
+  if (await isAdminUser(userId)) {
+    // Admin: still record the subscription row above, but never touch profile status.
+    return;
+  }
+
   await getSupabase()
     .from("user_profiles")
     .update({
