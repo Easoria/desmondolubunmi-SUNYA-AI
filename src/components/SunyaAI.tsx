@@ -145,20 +145,32 @@ export function SunyaAI() {
     }
   }
 
-  async function bumpSessionsToday() {
-    if (!user) return;
+  async function incrementSessionCount() {
+    // Increment ONLY when a solution card is generated.
+    setSessionsThisRun((n) => n + 1);
+    if (!user) {
+      const next = guestUsed + 1;
+      setGuestUsed(next);
+      try {
+        localStorage.setItem(GUEST_KEY, String(next));
+      } catch {}
+      return;
+    }
+    if (isPaid) return;
     const { supabase } = await import("@/integrations/supabase/client");
-    const today = new Date().toISOString().slice(0, 10);
+    const m = currentMonthKey();
     const { data: prof } = await supabase
       .from("user_profiles")
-      .select("sessions_today,last_session_date")
+      .select("sessions_this_month,last_session_month")
       .eq("id", user.id)
       .single();
-    const todays = prof?.last_session_date === today ? (prof?.sessions_today ?? 0) : 0;
+    const base = prof?.last_session_month === m ? (prof?.sessions_this_month ?? 0) : 0;
+    const next = base + 1;
     await supabase
       .from("user_profiles")
-      .update({ sessions_today: todays + 1, last_session_date: today })
+      .update({ sessions_this_month: next, last_session_month: m })
       .eq("id", user.id);
+    setMonthCount(next);
   }
 
   async function callChat(history: Msg[], token: string | undefined): Promise<Response> {
