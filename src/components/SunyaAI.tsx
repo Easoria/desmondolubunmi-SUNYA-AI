@@ -2,8 +2,9 @@ import { useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "@tanstack/react-router";
 import { Sparkles, Lock, Globe, Zap, ArrowRight, Loader2, Plus } from "lucide-react";
 import { useAuth } from "@/hooks/use-auth";
+import { useSubscription } from "@/hooks/useSubscription";
+import { useStripeCheckout } from "@/hooks/useStripeCheckout";
 import { AuthModal } from "@/components/site/AuthModal";
-import { UpgradeModal } from "@/components/site/UpgradeModal";
 import { SolutionCard } from "@/components/SolutionCard";
 import { parseSolution, type Solution } from "@/lib/parse-solution";
 
@@ -19,8 +20,9 @@ const PROMPTS = [
   "Something feels off",
 ];
 
-const FREE_LIMIT = 3;
-const STORAGE_KEY = "sunya_free_uses";
+const MONTHLY_LIMIT = 2;
+const GUEST_LIMIT = 2;
+const GUEST_KEY = "sunya_guest_sessions_used";
 const READY_MARKER = "[SUNYA_READY]";
 const MIN_REFLECT_MS = 2000;
 
