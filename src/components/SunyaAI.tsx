@@ -4,6 +4,8 @@ import { Sparkles, Lock, Globe, Zap, ArrowRight, Loader2, Plus } from "lucide-re
 import { useAuth } from "@/hooks/use-auth";
 import { AuthModal } from "@/components/site/AuthModal";
 import { UpgradeModal } from "@/components/site/UpgradeModal";
+import { SolutionCard } from "@/components/SolutionCard";
+import { parseSolution, type Solution } from "@/lib/parse-solution";
 
 const PROMPTS = [
   "I feel anxious",
@@ -19,8 +21,11 @@ const PROMPTS = [
 
 const FREE_LIMIT = 3;
 const STORAGE_KEY = "sunya_free_uses";
+const READY_MARKER = "[SUNYA_READY]";
+const MIN_REFLECT_MS = 2000;
 
 type Msg = { role: "user" | "assistant"; content: string };
+type Phase = "chat" | "reflecting" | "solution";
 
 export function SunyaAI() {
   const { user } = useAuth();
@@ -34,6 +39,10 @@ export function SunyaAI() {
   const [showAuthPrompt, setShowAuthPrompt] = useState(false);
   const [showUpgrade, setShowUpgrade] = useState(false);
   const [limitHit, setLimitHit] = useState(false);
+  const [phase, setPhase] = useState<Phase>("chat");
+  const [solution, setSolution] = useState<Solution | null>(null);
+  const [solutionCreatedAt, setSolutionCreatedAt] = useState<string | null>(null);
+  const [chatFading, setChatFading] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -79,7 +88,7 @@ export function SunyaAI() {
     return data.id;
   }
 
-  async function finalizeSession(sid: string, history: Msg[]) {
+  async function finalizeSession(sid: string, history: Msg[], sol: Solution | null) {
     if (!user || history.length < 2) return;
     try {
       const res = await fetch("/api/session-title", {
@@ -87,17 +96,21 @@ export function SunyaAI() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ messages: history }),
       });
-      if (!res.ok) return;
-      const data = (await res.json()) as { title: string | null; lever_tags: string[] };
       const { supabase } = await import("@/integrations/supabase/client");
-      await supabase
-        .from("sessions")
-        .update({
-          title: data.title,
-          lever_tags: data.lever_tags ?? [],
-          ended_at: new Date().toISOString(),
-        })
-        .eq("id", sid);
+      let title: string | null = null;
+      let lever_tags: string[] = [];
+      if (res.ok) {
+        const data = (await res.json()) as { title: string | null; lever_tags: string[] };
+        title = data.title;
+        lever_tags = data.lever_tags ?? [];
+      }
+      const update: Record<string, unknown> = {
+        title,
+        lever_tags,
+        ended_at: new Date().toISOString(),
+      };
+      if (sol) update.solution = sol;
+      await supabase.from("sessions").update(update).eq("id", sid);
     } catch {
       /* ignore */
     }
@@ -117,6 +130,66 @@ export function SunyaAI() {
       .from("user_profiles")
       .update({ sessions_today: todays + 1, last_session_date: today })
       .eq("id", user.id);
+  }
+
+  async function callChat(history: Msg[], token: string | undefined): Promise<Response> {
+    return fetch("/api/chat", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        ...(token ? { Authorization: `Bearer ${token}` } : {}),
+      },
+      body: JSON.stringify({ messages: history }),
+    });
+  }
+
+  async function triggerSolutionFlow(history: Msg[], token: string | undefined, sid: string | null) {
+    setPhase("reflecting");
+    setChatFading(true);
+    const startedAt = Date.now();
+
+    // Append an instruction so the model returns the structured solution.
+    const solutionRequest: Msg = {
+      role: "user",
+      content:
+        "Please deliver the full solution response now. Structure it with The Mirror, The Insight, The Practices (2-4 named practices, each on its own block with name on first line and description on next lines, separated by a blank line), and The Reframe — separated by double line breaks. No markdown headers, no section labels.",
+    };
+    const solHistory = [...history, solutionRequest];
+
+    let parsed: Solution | null = null;
+    try {
+      const res = await callChat(solHistory, token);
+      if (res.ok) {
+        const data = await res.json();
+        const text: string = (data.text || "").replace(READY_MARKER, "").trim();
+        parsed = parseSolution(text);
+        if (sid) void persistMessage("assistant", text, sid);
+      }
+    } catch {
+      /* ignore */
+    }
+
+    // Enforce minimum reflecting pause
+    const elapsed = Date.now() - startedAt;
+    if (elapsed < MIN_REFLECT_MS) {
+      await new Promise((r) => setTimeout(r, MIN_REFLECT_MS - elapsed));
+    }
+
+    if (!parsed) {
+      setError("Sunya could not complete the reading. Please try again.");
+      setPhase("chat");
+      setChatFading(false);
+      return;
+    }
+
+    const now = new Date().toISOString();
+    setSolution(parsed);
+    setSolutionCreatedAt(now);
+    setPhase("solution");
+
+    if (user && sid) {
+      void finalizeSession(sid, history, parsed);
+    }
   }
 
   async function submit(text?: string) {
@@ -140,14 +213,7 @@ export function SunyaAI() {
       const { supabase } = await import("@/integrations/supabase/client");
       const { data: sessData } = await supabase.auth.getSession();
       const token = sessData.session?.access_token;
-      const res = await fetch("/api/chat", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          ...(token ? { Authorization: `Bearer ${token}` } : {}),
-        },
-        body: JSON.stringify({ messages: history }),
-      });
+      const res = await callChat(history, token);
       if (res.status === 429) {
         const j = await res.json().catch(() => ({}));
         if (j?.error === "limit") {
@@ -167,18 +233,31 @@ export function SunyaAI() {
         return;
       }
       const data = await res.json();
-      const reply: Msg = { role: "assistant", content: data.text || "" };
+      const rawReply: string = data.text || "";
+      const hasMarker = rawReply.includes(READY_MARKER);
+      const cleanReply = rawReply.replace(READY_MARKER, "").trim();
+
+      const reply: Msg = { role: "assistant", content: cleanReply };
       const next = [...history, reply];
       setMessages(next);
-      if (sid) void persistMessage("assistant", reply.content, sid);
+      if (sid) void persistMessage("assistant", cleanReply, sid);
 
       if (!user) {
         const n = uses + 1;
         setUses(n);
         localStorage.setItem(STORAGE_KEY, String(n));
-        if (history.filter((m) => m.role === "user").length === 1) {
+        if (history.filter((m) => m.role === "user").length === 1 && !hasMarker) {
           setTimeout(() => setShowAuthPrompt(true), 400);
         }
+      }
+
+      if (hasMarker) {
+        setLoading(false);
+        // Brief pause so the user can see Sunya's final reply, then enter reflecting state
+        setTimeout(() => {
+          void triggerSolutionFlow(next, token, sid);
+        }, 900);
+        return;
       }
     } catch {
       setError("Network error. Please try again.");
@@ -188,26 +267,69 @@ export function SunyaAI() {
   }
 
   function newSession() {
-    if (sessionId && messages.length >= 2) {
-      void finalizeSession(sessionId, messages);
+    if (sessionId && messages.length >= 2 && phase !== "solution") {
+      void finalizeSession(sessionId, messages, null);
     }
     setMessages([]);
     setSessionId(null);
     setError("");
+    setPhase("chat");
+    setSolution(null);
+    setSolutionCreatedAt(null);
+    setChatFading(false);
   }
 
-  // Finalize on unload / route change
+  // Finalize on unmount
   useEffect(() => {
     return () => {
-      if (sessionId && messages.length >= 2) {
-        void finalizeSession(sessionId, messages);
+      if (sessionId && messages.length >= 2 && phase !== "solution") {
+        void finalizeSession(sessionId, messages, null);
       }
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sessionId]);
 
+  // ---------------- SOLUTION PHASE ----------------
+  if (phase === "solution" && solution) {
+    return (
+      <div className="animate-[fadeInUp_600ms_ease-out]">
+        <style>{`@keyframes fadeInUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }`}</style>
+        <SolutionCard
+          solution={solution}
+          createdAt={solutionCreatedAt ?? undefined}
+          conversation={messages}
+          onNewSession={newSession}
+        />
+      </div>
+    );
+  }
+
+  // ---------------- REFLECTING PHASE ----------------
+  if (phase === "reflecting") {
+    return (
+      <div className="flex flex-col items-center justify-center py-24 text-center">
+        <div className="relative h-24 w-24">
+          <div className="absolute inset-0 animate-ping rounded-full bg-[#7ec8e3]/20" />
+          <div className="absolute inset-2 animate-pulse rounded-full border border-[#7ec8e3]/40 bg-gradient-to-br from-[#7ec8e3]/20 to-[#2e6db4]/10" />
+          <div className="absolute inset-6 rounded-full bg-[#7ec8e3]/30 blur-md" />
+          <div className="absolute inset-0 flex items-center justify-center text-2xl text-[#7ec8e3]">
+            ✦
+          </div>
+        </div>
+        <p className="mt-10 text-sm italic tracking-[0.3em] text-[#b8d4e8]/70">
+          Sunya is reflecting…
+        </p>
+      </div>
+    );
+  }
+
+  // ---------------- CHAT PHASE ----------------
   return (
-    <div className="glass-strong relative mx-auto max-w-3xl rounded-3xl p-6 sm:p-8">
+    <div
+      className={`glass-strong relative mx-auto max-w-3xl rounded-3xl p-6 transition-all duration-[600ms] ease-out sm:p-8 ${
+        chatFading ? "translate-y-6 opacity-0" : "translate-y-0 opacity-100"
+      }`}
+    >
       <div className="absolute -inset-px -z-10 rounded-3xl bg-gradient-to-br from-[#7ec8e3]/20 via-transparent to-[#2e6db4]/20 blur-xl" />
 
       <div className="mb-6 flex items-center gap-3">
@@ -415,7 +537,6 @@ export function SunyaAI() {
         defaultMode="signup"
         contextMessage="Create a free account to save this session and access it anytime."
         onAuthSuccess={async () => {
-          // Persist any in-memory guest messages to a new session, then go to dashboard.
           try {
             const { supabase } = await import("@/integrations/supabase/client");
             const { data: u } = await supabase.auth.getUser();
