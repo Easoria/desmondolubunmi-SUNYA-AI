@@ -24,29 +24,63 @@ export const Route = createFileRoute("/vision")({
       {
         name: "description",
         content:
-          "Bigger than a wellness brand. The civilisational scope of Sunya — the ecosystem, the sanctuaries, the 50-year legacy.",
+          "Imagine a world where every human being knows how to create peace within themselves. The Sunya ecosystem, mission, and legacy.",
       },
     ],
   }),
 });
 
-const ECO = [
-  { Icon: Sparkles, t: "Sunya AI", c: "The diagnostic intelligence." },
-  { Icon: BookOpen, t: "Sunya Publishing", c: "The intellectual anchors — The Timeless Solution, The Sleep Rhythm Reset." },
-  { Icon: Globe2, t: "Sunya Experiences", c: "Digital courses, communities, live events." },
-  { Icon: ShoppingBag, t: "Sunya Shop", c: "Physical tools for the 12 levers." },
-  { Icon: Leaf, t: "Sunya Superfoods", c: "Nutrition for peak consciousness." },
-  { Icon: Building2, t: "Sunya Sanctuaries", c: "The physical retreat centres." },
-];
+type EcoItem = {
+  Icon: typeof Sparkles;
+  t: string;
+  c: string;
+  items: { label: string; href?: string; to?: string; comingSoon?: boolean }[];
+};
 
-const SANCTUARY = [
-  "Situated in nature, near living water",
-  "Futuristic dome architecture, white and ocean blue",
-  "Solar powered, humanoid robots for physical work",
-  "Consecrated mercury shivling meditation hall",
-  "Community, devotional music, satsang, ecstatic dance",
-  "Open to the public — a charging station for the world",
-  "Teacher training — sending practitioners into schools, prisons, military",
+const ECO: EcoItem[] = [
+  {
+    Icon: Sparkles,
+    t: "Sunya Superintelligence",
+    c: "AI and technology in service of human wellbeing — for individuals, wellness creators, and organisations.",
+    items: [
+      { label: "Sunya AI →", to: "/sunya-ai" },
+      { label: "Sunya Sleep →", href: "#" },
+      { label: "Sunya Studio", comingSoon: true },
+    ],
+  },
+  {
+    Icon: BookOpen,
+    t: "Sunya Publishing",
+    c: "Timeless written guides distilling the framework into accessible, practical wisdom.",
+    items: [
+      { label: "The Sleep Rhythm Reset →", href: "#" },
+      { label: "The Timeless Solution for Humanity", comingSoon: true },
+    ],
+  },
+  {
+    Icon: Globe2,
+    t: "Sunya Experiences",
+    c: "Live events, immersive retreats, digital courses, and conscious communities — structured pathways for deep inner transformation.",
+    items: [{ label: "Coming Soon", comingSoon: true }],
+  },
+  {
+    Icon: ShoppingBag,
+    t: "Sunya Shop",
+    c: "A curated collection of physical tools for human wellbeing — herbs, organic essentials, natural oils, copper vessels, and healing consumables.",
+    items: [{ label: "Coming Soon", comingSoon: true }],
+  },
+  {
+    Icon: Leaf,
+    t: "Sunya Superfoods",
+    c: "High-frequency nutrition for peak consciousness. Clean, living, nourishing food designed to fuel the human system at its highest.",
+    items: [{ label: "Coming Soon", comingSoon: true }],
+  },
+  {
+    Icon: Building2,
+    t: "Sunya Sanctuaries",
+    c: "Physical spaces of inner transformation and conscious living. Situated in nature, solar powered, open to the world. Not isolated communes — charging stations for humanity, integrated with society.",
+    items: [{ label: "Coming Soon", comingSoon: true }],
+  },
 ];
 
 function VisionPage() {
