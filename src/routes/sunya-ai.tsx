@@ -176,7 +176,7 @@ function SunyaAIPage() {
             <div className="glass-card flex flex-col p-8">
               <div className="label-eyebrow">Free</div>
               <div className="mt-4 flex items-baseline gap-2">
-                <span className=\"display text-5xl text-white\">2</span>
+                <span className="display text-5xl text-white">2</span>
                 <span className="text-sm text-[#b8d4e8]">sessions per day</span>
               </div>
               <ul className="mt-7 space-y-3 text-sm text-[#b8d4e8]">

@@ -646,7 +646,7 @@ function UpgradePrompt({
         Get Full Access <ArrowRight className="h-4 w-4" />
       </button>
       <div className="mt-4 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs text-[#b8d4e8]">
-        <button onClick={onSignIn} className=\"hover:text-white\">
+        <button onClick={onSignIn} className="hover:text-white">
           {'\u200B'}
         </button>
         {isWall && user && (
