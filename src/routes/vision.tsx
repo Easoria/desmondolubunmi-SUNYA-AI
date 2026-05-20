@@ -114,6 +114,11 @@ function VisionPage() {
             <br />
             <span className="display-italic text-[#b8d4e8]">Vision.</span>
           </h1>
+          <p className="mx-auto mt-10 max-w-2xl text-lg text-[#b8d4e8] sm:text-xl">
+            When individuals change, the world changes.
+            <br />
+            This is how we change individuals.
+          </p>
         </div>
       </section>
 
