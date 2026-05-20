@@ -50,20 +50,21 @@ function parsePractices(text: string): Practice[] {
       .filter(Boolean);
   }
 
-  return raw
-    .map((block, i) => {
-      const lines = block.split("\n").map(cleanLine).filter(Boolean);
-      if (lines.length === 0) return null;
-      const name = lines[0].replace(/[:：]\s*$/, "");
-      const description = lines.slice(1).join(" ").trim() || "";
-      return {
-        name,
-        description: description || name,
-        index: i + 1,
-        lever: detectLever(name),
-      };
-    })
-    .filter((p): p is Practice => !!p && !!p.name);
+  const out: Practice[] = [];
+  raw.forEach((block, i) => {
+    const lines = block.split("\n").map(cleanLine).filter(Boolean);
+    if (lines.length === 0) return;
+    const name = lines[0].replace(/[:：]\s*$/, "");
+    const description = lines.slice(1).join(" ").trim() || "";
+    if (!name) return;
+    out.push({
+      name,
+      description: description || name,
+      index: i + 1,
+      lever: detectLever(name),
+    });
+  });
+  return out;
 }
 
 export function parseSolution(responseText: string): Solution {
