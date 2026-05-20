@@ -130,7 +130,7 @@ function VisionPage() {
           </div>
           <div className="mt-12 space-y-7 text-[#b8d4e8]">
             <p className="display-italic text-2xl text-white">
-              Imagine a world where every human being knows how to create peace within
+              Imagine a world where every human being knows how to create wellbeing within
               themselves.
             </p>
             <p>
