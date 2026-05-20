@@ -10,17 +10,21 @@ import {
   getPublishedArticleBySlug,
   listPublishedArticles,
 } from "@/lib/articles.functions";
+import type { PublishedArticleCard, PublishedArticleFull } from "@/lib/articles.functions";
 import { SITE_URL, formatDate } from "@/lib/blog";
 
+type LoaderData = { article: PublishedArticleFull; related: PublishedArticleCard[] };
+
 export const Route = createFileRoute("/blog/$slug")({
-  loader: async ({ params }) => {
+  loader: async ({ params }): Promise<LoaderData> => {
     const article = await getPublishedArticleBySlug({ data: { slug: params.slug } });
     if (!article) throw notFound();
     const all = await listPublishedArticles();
     const related = all
       .filter(
-        (a) =>
-          a.slug !== article.slug && a.tags?.some((t) => article.tags?.includes(t)),
+        (a: PublishedArticleCard) =>
+          a.slug !== article.slug &&
+          a.tags?.some((t: string) => article.tags?.includes(t)),
       )
       .slice(0, 3);
     return { article, related };
