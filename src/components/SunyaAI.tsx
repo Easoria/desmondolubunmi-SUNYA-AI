@@ -336,6 +336,10 @@ export function SunyaAI() {
 
   // ---------------- SOLUTION PHASE ----------------
   if (phase === "solution" && solution) {
+    const showPrompt = !isPaid;
+    // After Session 2 (free user hit limit) or guest used >=2 — final framing.
+    // Otherwise soft.
+    const variant: "soft" | "final" = hardWall ? "final" : "soft";
     return (
       <div className="animate-[fadeInUp_600ms_ease-out]">
         <style>{`@keyframes fadeInUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }`}</style>
@@ -345,9 +349,19 @@ export function SunyaAI() {
           conversation={messages}
           onNewSession={newSession}
         />
+        {showPrompt && (
+          <UpgradePrompt
+            variant={variant}
+            user={!!user}
+            onUpgrade={handleUpgrade}
+            onSignIn={() => setShowAuthPrompt(true)}
+          />
+        )}
+        {checkoutElement}
       </div>
     );
   }
+
 
   // ---------------- REFLECTING PHASE ----------------
   if (phase === "reflecting") {
