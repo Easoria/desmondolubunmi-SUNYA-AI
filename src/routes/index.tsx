@@ -6,7 +6,14 @@ import { SunyaAI } from "@/components/SunyaAI";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { Orbs, SacredGeometry } from "@/components/site/Decor";
+import { useSubscription } from "@/hooks/useSubscription";
 import desmondImg from "@/assets/desmond.jpg";
+
+function useSunyaCtaLabel(freeSuffix = "") {
+  const { isActive } = useSubscription();
+  if (isActive) return "Use Sunya AI";
+  return freeSuffix ? `Try Sunya AI${freeSuffix}` : "Try Sunya AI";
+}
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -23,6 +30,7 @@ export const Route = createFileRoute("/")({
 });
 
 function Hero() {
+  const ctaLabel = useSunyaCtaLabel();
   return (
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden pt-24">
       <Starfield density={1.2} />
@@ -44,7 +52,7 @@ function Hero() {
             to="/sunya-ai"
             className="glow-btn inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-medium tracking-wide"
           >
-            Try Sunya AI <ArrowRight className="h-4 w-4" />
+            {ctaLabel} <ArrowRight className="h-4 w-4" />
           </Link>
           <Link
             to="/philosophy"
@@ -207,6 +215,7 @@ function AITeaser() {
 }
 
 function About() {
+  const ctaLabel = useSunyaCtaLabel(" Free");
   const [expanded, setExpanded] = useState(false);
   return (
     <section
@@ -324,7 +333,7 @@ function About() {
               to="/sunya-ai"
               className="inline-flex items-center gap-2 rounded-full border border-white/15 px-6 py-3 text-sm text-white transition hover:border-[#7ec8e3]/50 hover:bg-white/5"
             >
-              Try Sunya AI Free <ArrowRight className="h-4 w-4" />
+              {ctaLabel} <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
         </div>
@@ -334,6 +343,7 @@ function About() {
 }
 
 function FinalCTA() {
+  const ctaLabel = useSunyaCtaLabel();
   return (
     <section className="relative flex min-h-[80vh] items-center justify-center overflow-hidden bg-[#060d1c] py-32">
       <div
@@ -355,7 +365,7 @@ function FinalCTA() {
           to="/sunya-ai"
           className="glow-btn mt-12 inline-flex items-center gap-2 rounded-full px-10 py-5 text-base font-medium"
         >
-          Try Sunya AI <ArrowUpRight className="h-5 w-5" />
+          {ctaLabel} <ArrowUpRight className="h-5 w-5" />
         </Link>
       </div>
     </section>
