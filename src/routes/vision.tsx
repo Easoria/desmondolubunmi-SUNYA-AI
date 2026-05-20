@@ -114,9 +114,6 @@ function VisionPage() {
             <br />
             <span className="display-italic text-[#b8d4e8]">Vision.</span>
           </h1>
-          <p className="mx-auto mt-8 max-w-2xl text-lg text-[#b8d4e8]">
-            This is bigger than a wellness brand. This is a civilisational project.
-          </p>
         </div>
       </section>
 
