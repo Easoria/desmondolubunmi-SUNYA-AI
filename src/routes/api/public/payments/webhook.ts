@@ -101,7 +101,7 @@ async function handleSubscriptionUpdated(subscription: any, env: StripeEnv) {
     .eq("environment", env);
 
   const userId = subscription.metadata?.userId;
-  if (userId) {
+  if (userId && !(await isAdminUser(userId))) {
     const isActive = ENTITLED_STATUSES.has(subscription.status);
     await getSupabase()
       .from("user_profiles")
