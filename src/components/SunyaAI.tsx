@@ -104,12 +104,12 @@ export function SunyaAI() {
         title = data.title;
         lever_tags = data.lever_tags ?? [];
       }
-      const update: Record<string, unknown> = {
+      const update = {
         title,
         lever_tags,
         ended_at: new Date().toISOString(),
+        ...(sol ? { solution: sol as unknown as never } : {}),
       };
-      if (sol) update.solution = sol;
       await supabase.from("sessions").update(update).eq("id", sid);
     } catch {
       /* ignore */
