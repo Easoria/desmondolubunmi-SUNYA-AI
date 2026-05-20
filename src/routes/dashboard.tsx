@@ -39,7 +39,7 @@ type SubRow = {
   current_period_end: string | null;
 };
 
-const FREE_LIMIT = 3;
+const FREE_LIMIT = 2;
 
 function todayStr() {
   return new Date().toISOString().slice(0, 10);
