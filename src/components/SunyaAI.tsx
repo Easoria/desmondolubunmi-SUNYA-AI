@@ -2,8 +2,9 @@ import { useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "@tanstack/react-router";
 import { Sparkles, Lock, Globe, Zap, ArrowRight, Loader2, Plus } from "lucide-react";
 import { useAuth } from "@/hooks/use-auth";
+import { useSubscription } from "@/hooks/useSubscription";
+import { useStripeCheckout } from "@/hooks/useStripeCheckout";
 import { AuthModal } from "@/components/site/AuthModal";
-import { UpgradeModal } from "@/components/site/UpgradeModal";
 import { SolutionCard } from "@/components/SolutionCard";
 import { parseSolution, type Solution } from "@/lib/parse-solution";
 
@@ -19,26 +20,33 @@ const PROMPTS = [
   "Something feels off",
 ];
 
-const FREE_LIMIT = 3;
-const STORAGE_KEY = "sunya_free_uses";
+const MONTHLY_LIMIT = 2;
+const GUEST_LIMIT = 2;
+const GUEST_KEY = "sunya_guest_sessions_used";
 const READY_MARKER = "[SUNYA_READY]";
 const MIN_REFLECT_MS = 2000;
 
 type Msg = { role: "user" | "assistant"; content: string };
 type Phase = "chat" | "reflecting" | "solution";
 
+function currentMonthKey() {
+  return new Date().toISOString().slice(0, 7); // YYYY-MM
+}
+
 export function SunyaAI() {
   const { user } = useAuth();
+  const { isActive: isPaid } = useSubscription();
+  const { openCheckout, checkoutElement } = useStripeCheckout();
   const navigate = useNavigate();
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const [messages, setMessages] = useState<Msg[]>([]);
   const [error, setError] = useState("");
-  const [uses, setUses] = useState(0);
+  const [guestUsed, setGuestUsed] = useState(0);
+  const [monthCount, setMonthCount] = useState(0);
+  const [sessionsThisRun, setSessionsThisRun] = useState(0);
   const [sessionId, setSessionId] = useState<string | null>(null);
   const [showAuthPrompt, setShowAuthPrompt] = useState(false);
-  const [showUpgrade, setShowUpgrade] = useState(false);
-  const [limitHit, setLimitHit] = useState(false);
   const [phase, setPhase] = useState<Phase>("chat");
   const [solution, setSolution] = useState<Solution | null>(null);
   const [solutionCreatedAt, setSolutionCreatedAt] = useState<string | null>(null);
@@ -46,8 +54,8 @@ export function SunyaAI() {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const v = parseInt(localStorage.getItem(STORAGE_KEY) || "0", 10);
-    setUses(isNaN(v) ? 0 : v);
+    const v = parseInt(localStorage.getItem(GUEST_KEY) || "0", 10);
+    setGuestUsed(isNaN(v) ? 0 : v);
     try {
       const prefill = sessionStorage.getItem("sunya_prefill");
       if (prefill) {
@@ -57,11 +65,42 @@ export function SunyaAI() {
     } catch {}
   }, []);
 
+  // Load monthly session count for logged-in free users
+  useEffect(() => {
+    if (!user) return;
+    (async () => {
+      const { supabase } = await import("@/integrations/supabase/client");
+      const { data } = await supabase
+        .from("user_profiles")
+        .select("sessions_this_month,last_session_month")
+        .eq("id", user.id)
+        .single();
+      if (data) {
+        const m = currentMonthKey();
+        setMonthCount(data.last_session_month === m ? (data.sessions_this_month ?? 0) : 0);
+      }
+    })();
+  }, [user]);
+
   useEffect(() => {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
   }, [messages, loading]);
 
-  const exhausted = !user && uses >= FREE_LIMIT;
+  // Hard wall: guest used >= 2; free user month >= 2; paid never blocked
+  const usedCount = user ? monthCount : guestUsed;
+  const limit = user ? MONTHLY_LIMIT : GUEST_LIMIT;
+  const hardWall = !isPaid && usedCount >= limit;
+  const exhausted = hardWall;
+
+  function handleUpgrade() {
+    openCheckout({
+      priceId: "sunya_ai_founding_monthly",
+      customerEmail: user?.email,
+      userId: user?.id,
+      returnUrl: `${window.location.origin}/checkout/return?session_id={CHECKOUT_SESSION_ID}`,
+    });
+  }
+
 
   async function persistMessage(role: "user" | "assistant", content: string, sid: string) {
     if (!user) return;
@@ -116,20 +155,32 @@ export function SunyaAI() {
     }
   }
 
-  async function bumpSessionsToday() {
-    if (!user) return;
+  async function incrementSessionCount() {
+    // Increment ONLY when a solution card is generated.
+    setSessionsThisRun((n) => n + 1);
+    if (!user) {
+      const next = guestUsed + 1;
+      setGuestUsed(next);
+      try {
+        localStorage.setItem(GUEST_KEY, String(next));
+      } catch {}
+      return;
+    }
+    if (isPaid) return;
     const { supabase } = await import("@/integrations/supabase/client");
-    const today = new Date().toISOString().slice(0, 10);
+    const m = currentMonthKey();
     const { data: prof } = await supabase
       .from("user_profiles")
-      .select("sessions_today,last_session_date")
+      .select("sessions_this_month,last_session_month")
       .eq("id", user.id)
       .single();
-    const todays = prof?.last_session_date === today ? (prof?.sessions_today ?? 0) : 0;
+    const base = prof?.last_session_month === m ? (prof?.sessions_this_month ?? 0) : 0;
+    const next = base + 1;
     await supabase
       .from("user_profiles")
-      .update({ sessions_today: todays + 1, last_session_date: today })
+      .update({ sessions_this_month: next, last_session_month: m })
       .eq("id", user.id);
+    setMonthCount(next);
   }
 
   async function callChat(history: Msg[], token: string | undefined): Promise<Response> {
@@ -187,6 +238,9 @@ export function SunyaAI() {
     setSolutionCreatedAt(now);
     setPhase("solution");
 
+    // V15: increment session count ONLY when solution card is generated
+    void incrementSessionCount();
+
     if (user && sid) {
       void finalizeSession(sid, history, parsed);
     }
@@ -207,7 +261,6 @@ export function SunyaAI() {
 
     const sid = await ensureSession();
     if (sid) void persistMessage("user", content, sid);
-    if (user && isFirstUserTurn) void bumpSessionsToday();
 
     try {
       const { supabase } = await import("@/integrations/supabase/client");
@@ -217,8 +270,7 @@ export function SunyaAI() {
       if (res.status === 429) {
         const j = await res.json().catch(() => ({}));
         if (j?.error === "limit") {
-          setLimitHit(true);
-          setError("You've used your 3 free sessions for today. Upgrade for unlimited access.");
+          setError("You've used your free sessions. Upgrade for unlimited access.");
         } else {
           setError("The system is at capacity. Please try again in a moment.");
         }
@@ -242,14 +294,7 @@ export function SunyaAI() {
       setMessages(next);
       if (sid) void persistMessage("assistant", cleanReply, sid);
 
-      if (!user) {
-        const n = uses + 1;
-        setUses(n);
-        localStorage.setItem(STORAGE_KEY, String(n));
-        if (history.filter((m) => m.role === "user").length === 1 && !hasMarker) {
-          setTimeout(() => setShowAuthPrompt(true), 400);
-        }
-      }
+      // V15 PART 6: No mid-conversation interruptions. No auth prompts during chat.
 
       if (hasMarker) {
         setLoading(false);
@@ -291,6 +336,10 @@ export function SunyaAI() {
 
   // ---------------- SOLUTION PHASE ----------------
   if (phase === "solution" && solution) {
+    const showPrompt = !isPaid;
+    // After Session 2 (free user hit limit) or guest used >=2 — final framing.
+    // Otherwise soft.
+    const variant: "soft" | "final" = hardWall ? "final" : "soft";
     return (
       <div className="animate-[fadeInUp_600ms_ease-out]">
         <style>{`@keyframes fadeInUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }`}</style>
@@ -300,9 +349,19 @@ export function SunyaAI() {
           conversation={messages}
           onNewSession={newSession}
         />
+        {showPrompt && (
+          <UpgradePrompt
+            variant={variant}
+            user={!!user}
+            onUpgrade={handleUpgrade}
+            onSignIn={() => setShowAuthPrompt(true)}
+          />
+        )}
+        {checkoutElement}
       </div>
     );
   }
+
 
   // ---------------- REFLECTING PHASE ----------------
   if (phase === "reflecting") {
@@ -349,15 +408,22 @@ export function SunyaAI() {
               <Plus className="h-3 w-3" /> New
             </button>
           )}
-          {!user && (
+          {!isPaid && (
             <div className="text-xs text-[#b8d4e8]/60">
-              {Math.max(0, FREE_LIMIT - uses)} / {FREE_LIMIT} free
+              {Math.max(0, limit - usedCount)} / {limit} free
             </div>
           )}
         </div>
       </div>
 
-      {messages.length === 0 ? (
+      {messages.length === 0 && exhausted ? (
+        <UpgradePrompt
+          variant="wall"
+          user={!!user}
+          onUpgrade={handleUpgrade}
+          onSignIn={() => setShowAuthPrompt(true)}
+        />
+      ) : messages.length === 0 ? (
         <div>
           <label className="label-eyebrow block">How are you right now?</label>
           <p className="mt-1 text-sm text-[#b8d4e8]/80">
@@ -461,14 +527,6 @@ export function SunyaAI() {
 
           {messages.some((m) => m.role === "assistant") && (
             <div className="mt-6 flex flex-wrap items-center justify-center gap-3 text-xs">
-              {!user && (
-                <button
-                  onClick={() => setShowAuthPrompt(true)}
-                  className="rounded-full border border-[#7ec8e3]/40 bg-[#7ec8e3]/10 px-4 py-2 text-white hover:bg-[#7ec8e3]/20"
-                >
-                  This helped — save my session
-                </button>
-              )}
               <Link
                 to="/work-with-me"
                 className="rounded-full border border-white/10 px-4 py-2 text-[#b8d4e8] hover:border-white/30 hover:text-white"
@@ -483,38 +541,6 @@ export function SunyaAI() {
       {error && (
         <div className="mt-6 rounded-2xl border border-red-400/30 bg-red-500/10 p-4 text-sm text-red-100">
           <div>{error}</div>
-          {limitHit && user && (
-            <button
-              onClick={() => setShowUpgrade(true)}
-              className="glow-btn mt-3 inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-medium"
-            >
-              Unlock Full Access — €19/month <ArrowRight className="h-3 w-3" />
-            </button>
-          )}
-        </div>
-      )}
-
-
-      {exhausted && !loading && (
-        <div className="mt-6 rounded-2xl border border-[#7ec8e3]/30 bg-[#7ec8e3]/5 p-5 text-center">
-          <div className="display text-xl text-white">
-            ✦ You've used your free sessions for today
-          </div>
-          <p className="mt-2 text-sm text-[#b8d4e8]">
-            Unlock full access for <span className="text-white">€19/month</span> — unlimited
-            sessions, saved history, and lever tracking over time.
-          </p>
-          <p className="mt-2 text-xs italic text-[#b8d4e8]/70">
-            Founding rate. Price increases as Sunya grows.
-          </p>
-          <div className="mt-4 flex flex-wrap justify-center gap-2">
-            <button
-              onClick={() => setShowAuthPrompt(true)}
-              className="glow-btn inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium"
-            >
-              Create free account <ArrowRight className="h-3.5 w-3.5" />
-            </button>
-          </div>
         </div>
       )}
 
@@ -530,12 +556,12 @@ export function SunyaAI() {
         </span>
       </div>
 
-      <UpgradeModal open={showUpgrade} onClose={() => setShowUpgrade(false)} variant="limit" />
+      {checkoutElement}
       <AuthModal
         open={showAuthPrompt && !user}
         onClose={() => setShowAuthPrompt(false)}
-        defaultMode="signup"
-        contextMessage="Create a free account to save this session and access it anytime."
+        defaultMode="signin"
+        contextMessage="Sign in or create your free account to continue."
         onAuthSuccess={async () => {
           try {
             const { supabase } = await import("@/integrations/supabase/client");
@@ -564,6 +590,54 @@ export function SunyaAI() {
           navigate({ to: "/dashboard" });
         }}
       />
+    </div>
+  );
+}
+
+function UpgradePrompt({
+  variant,
+  user,
+  onUpgrade,
+  onSignIn,
+}: {
+  variant: "soft" | "final" | "wall";
+  user: boolean;
+  onUpgrade: () => void;
+  onSignIn: () => void;
+}) {
+  const isWall = variant === "wall";
+  const isFinal = variant === "final";
+  return (
+    <div className="glass-strong mx-auto mt-6 max-w-2xl rounded-3xl border border-[#7ec8e3]/30 p-7 text-center shadow-[0_0_60px_-20px_rgba(126,200,227,0.55)]">
+      <div className="display text-xl text-white sm:text-2xl">
+        {isWall
+          ? "✦ Unlock unlimited access to Sunya AI"
+          : isFinal
+            ? "You've used your free sessions"
+            : "✦ Unlock unlimited access to Sunya AI"}
+      </div>
+      <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-[#b8d4e8]">
+        {isWall
+          ? "You've used your free sessions. Get full access for unlimited sessions, permanent reading history, and PDF downloads."
+          : isFinal
+            ? "Unlock unlimited access to Sunya AI — save every reading, download PDFs, and return whenever you need clarity."
+            : "Save your readings permanently, download PDFs, and get unlimited sessions whenever you need them."}
+      </p>
+      <p className="mt-3 text-xs text-[#b8d4e8]/70">€19/month · Cancel anytime</p>
+      <button
+        onClick={onUpgrade}
+        className="glow-btn mt-5 inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium"
+      >
+        Get Full Access <ArrowRight className="h-4 w-4" />
+      </button>
+      <div className="mt-4 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs text-[#b8d4e8]">
+        <button onClick={onSignIn} className="hover:text-white">
+          Sign in / Sign up →
+        </button>
+        {isWall && user && (
+          <span className="text-[#b8d4e8]/70">Come back next month →</span>
+        )}
+      </div>
     </div>
   );
 }

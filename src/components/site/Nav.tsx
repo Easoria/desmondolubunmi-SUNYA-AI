@@ -143,20 +143,12 @@ export function Nav() {
           {user ? (
             <AccountAvatar />
           ) : (
-            <>
-              <Link
-                to="/login"
-                className="text-sm text-[#b8d4e8] transition hover:text-white"
-              >
-                Sign in
-              </Link>
-              <Link
-                to="/sunya-ai"
-                className="glow-btn inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium"
-              >
-                Try Sunya AI <ArrowRight className="h-3.5 w-3.5" />
-              </Link>
-            </>
+            <Link
+              to="/sunya-ai"
+              className="glow-btn inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium"
+            >
+              Try Free <ArrowRight className="h-3.5 w-3.5" />
+            </Link>
           )}
         </div>
         <div className="flex items-center gap-2 md:hidden">
@@ -167,7 +159,7 @@ export function Nav() {
               to="/sunya-ai"
               className="glow-btn inline-flex items-center gap-1.5 rounded-full px-3.5 py-2 text-xs font-medium"
             >
-              Try Sunya AI <ArrowRight className="h-3 w-3" />
+              Try Free <ArrowRight className="h-3 w-3" />
             </Link>
           )}
           <div className="flex flex-col items-center">
@@ -218,22 +210,13 @@ export function Nav() {
                 </button>
               </>
             ) : (
-              <>
-                <Link
-                  to="/login"
-                  onClick={() => setOpen(false)}
-                  className="rounded-lg px-2 py-3 text-[#b8d4e8] hover:bg-white/5 hover:text-white"
-                >
-                  Sign in
-                </Link>
-                <Link
-                  to="/sunya-ai"
-                  onClick={() => setOpen(false)}
-                  className="glow-btn mt-2 inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-medium"
-                >
-                  Try Sunya AI <ArrowRight className="h-3.5 w-3.5" />
-                </Link>
-              </>
+              <Link
+                to="/sunya-ai"
+                onClick={() => setOpen(false)}
+                className="glow-btn mt-2 inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-medium"
+              >
+                Try Free <ArrowRight className="h-3.5 w-3.5" />
+              </Link>
             )}
           </div>
         </div>

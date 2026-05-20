@@ -128,7 +128,17 @@ function SunyaAIPage() {
 
       <section className="relative overflow-hidden bg-[#060d1c] py-20">
         <Starfield density={0.5} />
-        <div className="relative z-10 mx-auto max-w-5xl px-6">
+        <div className="relative z-10 mx-auto max-w-3xl px-6">
+          {!user && (
+            <div className="mb-3 flex justify-end">
+              <Link
+                to="/login"
+                className="text-xs text-[#b8d4e8]/80 transition hover:text-white"
+              >
+                Sign in / Sign up →
+              </Link>
+            </div>
+          )}
           <SunyaAI />
         </div>
       </section>

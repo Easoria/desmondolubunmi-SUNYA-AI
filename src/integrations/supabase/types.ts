@@ -196,7 +196,9 @@ export type Database = {
           id: string
           last_name: string | null
           last_session_date: string | null
+          last_session_month: string | null
           notifications_enabled: boolean
+          sessions_this_month: number
           sessions_today: number
           stripe_customer_id: string | null
           subscription_start: string | null
@@ -210,7 +212,9 @@ export type Database = {
           id: string
           last_name?: string | null
           last_session_date?: string | null
+          last_session_month?: string | null
           notifications_enabled?: boolean
+          sessions_this_month?: number
           sessions_today?: number
           stripe_customer_id?: string | null
           subscription_start?: string | null
@@ -224,7 +228,9 @@ export type Database = {
           id?: string
           last_name?: string | null
           last_session_date?: string | null
+          last_session_month?: string | null
           notifications_enabled?: boolean
+          sessions_this_month?: number
           sessions_today?: number
           stripe_customer_id?: string | null
           subscription_start?: string | null
