@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /dashboard
+Disallow: /account
+Disallow: /sessions
+
+Sitemap: https://desmondolubunmisunya.lovable.app/sitemap.xml
