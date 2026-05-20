@@ -73,12 +73,32 @@ async function provisionGuestUser(email: string | null | undefined): Promise<str
 }
 
 async function handleSubscriptionCreated(subscription: any, env: StripeEnv) {
-  const userId = subscription.metadata?.userId;
+  let userId: string | null = subscription.metadata?.userId || null;
+
   if (!userId) {
-    console.error("No userId in subscription metadata");
+    // Guest checkout — look up the email on the Stripe customer and provision an account.
+    try {
+      const stripe = createStripeClient(env);
+      const customer: any = await stripe.customers.retrieve(subscription.customer);
+      const email = customer?.email || customer?.metadata?.email || null;
+      userId = await provisionGuestUser(email);
+      if (userId) {
+        await stripe.customers.update(subscription.customer, {
+          metadata: { ...(customer.metadata || {}), userId },
+        });
+        await stripe.subscriptions.update(subscription.id, {
+          metadata: { ...(subscription.metadata || {}), userId },
+        });
+      }
+    } catch (e) {
+      console.error("Guest provisioning failed:", e);
+    }
+  }
+
+  if (!userId) {
+    console.error("No userId resolved for subscription", subscription.id);
     return;
   }
-  const item = subscription.items?.data?.[0];
   const priceId =
     item?.price?.lookup_key ||
     item?.price?.metadata?.lovable_external_id ||
