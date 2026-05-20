@@ -88,7 +88,7 @@ export const Route = createFileRoute("/blog/$slug")({
 });
 
 function ArticlePage() {
-  const { article, related } = Route.useLoaderData();
+  const { article, related } = Route.useLoaderData() as LoaderData;
 
   return (
     <div className="min-h-screen bg-[#0a1628] text-white">
