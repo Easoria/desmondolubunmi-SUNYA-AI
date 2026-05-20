@@ -92,6 +92,16 @@ export function SunyaAI() {
   const hardWall = !isPaid && usedCount >= limit;
   const exhausted = hardWall;
 
+  function handleUpgrade() {
+    openCheckout({
+      priceId: "sunya_ai_founding_monthly",
+      customerEmail: user?.email,
+      userId: user?.id,
+      returnUrl: `${window.location.origin}/checkout/return?session_id={CHECKOUT_SESSION_ID}`,
+    });
+  }
+
+
   async function persistMessage(role: "user" | "assistant", content: string, sid: string) {
     if (!user) return;
     const { supabase } = await import("@/integrations/supabase/client");
