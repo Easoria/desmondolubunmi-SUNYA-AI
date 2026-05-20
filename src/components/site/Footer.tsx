@@ -15,7 +15,13 @@ export function Footer() {
           <Link to="/sunya-ai" className="hover:text-white">Sunya AI</Link>
           <Link to="/work-with-me" className="hover:text-white">Work With Me</Link>
           <Link to="/vision" className="hover:text-white">Vision</Link>
-          <Link to="/blog" className="hover:text-white">Blog</Link>
+          <Link
+            to="/blog"
+            className="group inline-flex items-center gap-1.5 rounded-full border border-[#7ec8e3]/40 bg-white/5 px-3 py-1 text-[#e8f4fb] shadow-[0_0_18px_-4px_rgba(126,200,227,0.55)] backdrop-blur-sm transition hover:border-[#7ec8e3]/70 hover:bg-white/10 hover:shadow-[0_0_24px_-2px_rgba(126,200,227,0.8)]"
+          >
+            <span aria-hidden className="text-[#7ec8e3]">✦</span>
+            <span>Blog</span>
+          </Link>
         </nav>
         <div className="flex justify-start gap-3 md:justify-end">
           {[Instagram, Youtube].map((Ic, i) => (

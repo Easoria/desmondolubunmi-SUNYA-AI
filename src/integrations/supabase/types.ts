@@ -260,6 +260,7 @@ export type Database = {
           email: string | null
           first_name: string | null
           id: string
+          is_admin: boolean
           last_name: string | null
           last_session_date: string | null
           last_session_month: string | null
@@ -276,6 +277,7 @@ export type Database = {
           email?: string | null
           first_name?: string | null
           id: string
+          is_admin?: boolean
           last_name?: string | null
           last_session_date?: string | null
           last_session_month?: string | null
@@ -292,6 +294,7 @@ export type Database = {
           email?: string | null
           first_name?: string | null
           id?: string
+          is_admin?: boolean
           last_name?: string | null
           last_session_date?: string | null
           last_session_month?: string | null

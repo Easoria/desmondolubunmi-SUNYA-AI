@@ -16,6 +16,17 @@ function getSupabase(): any {
   return _supabase;
 }
 
+// Admin accounts (is_admin = true) get permanent paid access and are never
+// downgraded by Stripe webhook events.
+async function isAdminUser(userId: string): Promise<boolean> {
+  const { data } = await getSupabase()
+    .from("user_profiles")
+    .select("is_admin")
+    .eq("id", userId)
+    .maybeSingle();
+  return Boolean(data?.is_admin);
+}
+
 async function handleSubscriptionCreated(subscription: any, env: StripeEnv) {
   const userId: string | null = subscription.metadata?.userId || null;
   if (!userId) {
@@ -49,6 +60,11 @@ async function handleSubscriptionCreated(subscription: any, env: StripeEnv) {
     },
     { onConflict: "stripe_subscription_id" },
   );
+
+  if (await isAdminUser(userId)) {
+    // Admin: still record the subscription row above, but never touch profile status.
+    return;
+  }
 
   await getSupabase()
     .from("user_profiles")
@@ -85,7 +101,7 @@ async function handleSubscriptionUpdated(subscription: any, env: StripeEnv) {
     .eq("environment", env);
 
   const userId = subscription.metadata?.userId;
-  if (userId) {
+  if (userId && !(await isAdminUser(userId))) {
     const isActive = ENTITLED_STATUSES.has(subscription.status);
     await getSupabase()
       .from("user_profiles")
@@ -102,7 +118,7 @@ async function handleSubscriptionDeleted(subscription: any, env: StripeEnv) {
     .eq("environment", env);
 
   const userId = subscription.metadata?.userId;
-  if (userId) {
+  if (userId && !(await isAdminUser(userId))) {
     await getSupabase()
       .from("user_profiles")
       .update({ subscription_status: "free" })
