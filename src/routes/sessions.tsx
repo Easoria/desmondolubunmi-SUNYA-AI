@@ -4,6 +4,8 @@ import { ArrowLeft, ChevronDown, Loader2, Search, Trash2 } from "lucide-react";
 import { useAuth } from "@/hooks/use-auth";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
+import { SolutionCard } from "@/components/SolutionCard";
+import type { Solution } from "@/lib/parse-solution";
 
 export const Route = createFileRoute("/sessions")({
   component: SessionsPage,
