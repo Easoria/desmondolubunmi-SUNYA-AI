@@ -207,7 +207,11 @@ async function handleCheckoutCompleted(session: any, env: StripeEnv) {
     console.error("Failed to expand line_items for session", session.id, e);
   }
 
-  const userId = session.metadata?.userId || null;
+  let userId: string | null = session.metadata?.userId || null;
+  if (!userId) {
+    const email = session.customer_details?.email || session.customer_email || null;
+    userId = await provisionGuestUser(email);
+  }
 
   await getSupabase().from("one_on_one_bookings").upsert(
     {
