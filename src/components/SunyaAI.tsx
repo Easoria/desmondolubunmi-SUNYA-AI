@@ -496,14 +496,6 @@ export function SunyaAI() {
 
           {messages.some((m) => m.role === "assistant") && (
             <div className="mt-6 flex flex-wrap items-center justify-center gap-3 text-xs">
-              {!user && (
-                <button
-                  onClick={() => setShowAuthPrompt(true)}
-                  className="rounded-full border border-[#7ec8e3]/40 bg-[#7ec8e3]/10 px-4 py-2 text-white hover:bg-[#7ec8e3]/20"
-                >
-                  This helped — save my session
-                </button>
-              )}
               <Link
                 to="/work-with-me"
                 className="rounded-full border border-white/10 px-4 py-2 text-[#b8d4e8] hover:border-white/30 hover:text-white"
@@ -518,38 +510,6 @@ export function SunyaAI() {
       {error && (
         <div className="mt-6 rounded-2xl border border-red-400/30 bg-red-500/10 p-4 text-sm text-red-100">
           <div>{error}</div>
-          {limitHit && user && (
-            <button
-              onClick={() => setShowUpgrade(true)}
-              className="glow-btn mt-3 inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-medium"
-            >
-              Unlock Full Access — €19/month <ArrowRight className="h-3 w-3" />
-            </button>
-          )}
-        </div>
-      )}
-
-
-      {exhausted && !loading && (
-        <div className="mt-6 rounded-2xl border border-[#7ec8e3]/30 bg-[#7ec8e3]/5 p-5 text-center">
-          <div className="display text-xl text-white">
-            ✦ You've used your free sessions for today
-          </div>
-          <p className="mt-2 text-sm text-[#b8d4e8]">
-            Unlock full access for <span className="text-white">€19/month</span> — unlimited
-            sessions, saved history, and lever tracking over time.
-          </p>
-          <p className="mt-2 text-xs italic text-[#b8d4e8]/70">
-            Founding rate. Price increases as Sunya grows.
-          </p>
-          <div className="mt-4 flex flex-wrap justify-center gap-2">
-            <button
-              onClick={() => setShowAuthPrompt(true)}
-              className="glow-btn inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium"
-            >
-              Create free account <ArrowRight className="h-3.5 w-3.5" />
-            </button>
-          </div>
         </div>
       )}
 
@@ -565,12 +525,12 @@ export function SunyaAI() {
         </span>
       </div>
 
-      <UpgradeModal open={showUpgrade} onClose={() => setShowUpgrade(false)} variant="limit" />
+      {checkoutElement}
       <AuthModal
         open={showAuthPrompt && !user}
         onClose={() => setShowAuthPrompt(false)}
-        defaultMode="signup"
-        contextMessage="Create a free account to save this session and access it anytime."
+        defaultMode="signin"
+        contextMessage="Sign in or create your free account to continue."
         onAuthSuccess={async () => {
           try {
             const { supabase } = await import("@/integrations/supabase/client");
@@ -599,6 +559,54 @@ export function SunyaAI() {
           navigate({ to: "/dashboard" });
         }}
       />
+    </div>
+  );
+}
+
+function UpgradePrompt({
+  variant,
+  user,
+  onUpgrade,
+  onSignIn,
+}: {
+  variant: "soft" | "final" | "wall";
+  user: boolean;
+  onUpgrade: () => void;
+  onSignIn: () => void;
+}) {
+  const isWall = variant === "wall";
+  const isFinal = variant === "final";
+  return (
+    <div className="glass-strong mx-auto mt-6 max-w-2xl rounded-3xl border border-[#7ec8e3]/30 p-7 text-center shadow-[0_0_60px_-20px_rgba(126,200,227,0.55)]">
+      <div className="display text-xl text-white sm:text-2xl">
+        {isWall
+          ? "✦ Unlock unlimited access to Sunya AI"
+          : isFinal
+            ? "You've used your free sessions"
+            : "✦ Unlock unlimited access to Sunya AI"}
+      </div>
+      <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-[#b8d4e8]">
+        {isWall
+          ? "You've used your free sessions. Get full access for unlimited sessions, permanent reading history, and PDF downloads."
+          : isFinal
+            ? "Unlock unlimited access to Sunya AI — save every reading, download PDFs, and return whenever you need clarity."
+            : "Save your readings permanently, download PDFs, and get unlimited sessions whenever you need them."}
+      </p>
+      <p className="mt-3 text-xs text-[#b8d4e8]/70">€19/month · Cancel anytime</p>
+      <button
+        onClick={onUpgrade}
+        className="glow-btn mt-5 inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium"
+      >
+        Get Full Access <ArrowRight className="h-4 w-4" />
+      </button>
+      <div className="mt-4 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs text-[#b8d4e8]">
+        <button onClick={onSignIn} className="hover:text-white">
+          Sign in / Sign up →
+        </button>
+        {isWall && user && (
+          <span className="text-[#b8d4e8]/70">Come back next month →</span>
+        )}
+      </div>
     </div>
   );
 }
