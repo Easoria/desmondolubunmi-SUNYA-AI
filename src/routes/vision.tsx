@@ -172,13 +172,41 @@ function VisionPage() {
           </div>
           <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {ECO.map((e, i) => (
-              <div key={e.t} className="glass-card p-7">
+              <div key={e.t} className="glass-card flex flex-col p-7">
                 <div className="font-display text-xs tracking-[0.4em] text-[#7ec8e3]">
                   {String(i + 1).padStart(2, "0")}
                 </div>
                 <e.Icon className="mt-4 h-6 w-6 text-[#7ec8e3]" />
                 <h3 className="display mt-4 text-2xl text-white">{e.t}</h3>
                 <p className="mt-3 text-sm text-[#b8d4e8]">{e.c}</p>
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {e.items.map((item) =>
+                    item.to ? (
+                      <Link
+                        key={item.label}
+                        to={item.to}
+                        className="rounded-full border border-[#7ec8e3]/40 bg-white/[0.04] px-3 py-1 text-[11px] tracking-wide text-[#b8d4e8] transition hover:border-[#7ec8e3] hover:text-white"
+                      >
+                        {item.label}
+                      </Link>
+                    ) : item.href ? (
+                      <a
+                        key={item.label}
+                        href={item.href}
+                        className="rounded-full border border-[#7ec8e3]/40 bg-white/[0.04] px-3 py-1 text-[11px] tracking-wide text-[#b8d4e8] transition hover:border-[#7ec8e3] hover:text-white"
+                      >
+                        {item.label}
+                      </a>
+                    ) : (
+                      <span
+                        key={item.label}
+                        className="rounded-full border border-white/10 bg-white/[0.02] px-3 py-1 text-[11px] tracking-wide text-white/40"
+                      >
+                        {item.label}
+                      </span>
+                    ),
+                  )}
+                </div>
               </div>
             ))}
           </div>
