@@ -60,7 +60,7 @@ function SessionsPage() {
       const { supabase } = await import("@/integrations/supabase/client");
       const { data } = await supabase
         .from("sessions")
-        .select("id,created_at,title,lever_tags")
+        .select("id,created_at,title,lever_tags,solution")
         .order("created_at", { ascending: false });
       setSessions((data ?? []) as SessionRow[]);
       setLoadingList(false);
