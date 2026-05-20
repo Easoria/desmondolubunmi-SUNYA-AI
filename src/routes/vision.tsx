@@ -117,26 +117,46 @@ function VisionPage() {
         </div>
       </section>
 
-      {/* Mission */}
+      {/* The Vision */}
       <section className="relative bg-[#0a1628] py-28">
-        <div className="relative z-10 mx-auto max-w-3xl space-y-6 px-6 text-[#b8d4e8]">
-          <p className="display-italic text-2xl text-white">
-            The vision is a world where human beings stop exporting their freedom to an imagined
-            afterlife — and start living it here, now, in this body, in this lifetime.
-          </p>
-          <p>
-            A world where technology and spirituality are not enemies, but partners in the
-            liberation of human potential.
-          </p>
-          <p>
-            A world with Sunya Sanctuaries — physical spaces of inner transformation powered by
-            solar energy, AI, and the living transmission of truth.
-          </p>
-          <p className="text-white/90">
-            A world where the mechanics of human wellbeing are taught in schools, offered in
-            prisons, brought to the military, made available to everyone — regardless of religion,
-            culture, or tradition.
-          </p>
+        <div className="relative z-10 mx-auto max-w-3xl px-6">
+          <div className="text-center">
+            <div className="label-eyebrow">The vision</div>
+          </div>
+          <div className="mt-12 space-y-7 text-[#b8d4e8]">
+            <p className="display-italic text-2xl text-white">
+              Imagine a world where every human being knows how to create peace within
+              themselves.
+            </p>
+            <p>
+              Where the restlessness that drives conflict, addiction, and endless seeking
+              finally has an answer. Not in doctrine, not in an imagined afterlife — but here,
+              in this body, in this lifetime, in this breath.
+            </p>
+            <p>
+              We have developed the external world enormously. But inwardly, we remain largely
+              underdeveloped. We still operate from fear, tribalism, and borrowed beliefs —
+              creating the very conflict and suffering we are trying to escape.
+            </p>
+            <p>
+              The world is simply a collection of individuals. When individuals change, the
+              world changes. This is what Sunya exists to address — to empower every human
+              being with universal tools to create genuine wellbeing within themselves.
+            </p>
+            <p>
+              We breathe the same air. We want the same things. Freedom from suffering.
+              Genuine happiness. A life that feels worth living. These truths run deeper than
+              any belief or ideology that divides us.
+            </p>
+            <p>
+              When people learn to create real inner peace — conflict loses its fuel. Division
+              loses its grip. Not because unity was preached, but because inner freedom
+              naturally dissolves the fear that drives separation.
+            </p>
+            <p className="display pt-2 text-2xl font-semibold text-white sm:text-3xl">
+              This is not idealism. This is mechanics.
+            </p>
+          </div>
         </div>
       </section>
 
