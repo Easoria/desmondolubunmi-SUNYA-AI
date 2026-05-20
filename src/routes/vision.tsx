@@ -174,6 +174,7 @@ function VisionPage() {
             <h2 className="display mt-6 text-4xl text-white sm:text-5xl md:text-6xl">
               Six arms. <span className="display-italic text-[#b8d4e8]">One mission.</span>
             </h2>
+            <p className="mt-4 text-lg text-[#b8d4e8]">Sunya creates infrastructure for inner wellbeing.</p>
           </div>
           <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {ECO.map((e, i) => (
