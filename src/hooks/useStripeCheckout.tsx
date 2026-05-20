@@ -27,12 +27,12 @@ export function useStripeCheckout() {
   const checkoutElement =
     isOpen && options ? (
       <div className="fixed inset-0 z-[60] overflow-y-auto bg-[#0a1628]/90 backdrop-blur-sm">
-        <div className="flex min-h-full justify-center p-4 pt-16 sm:p-8 sm:pt-16">
+        <div className="flex min-h-full justify-center px-4 pb-12 pt-32 sm:px-8 sm:pt-36">
           <div className="relative w-full max-w-2xl">
             <button
               onClick={closeCheckout}
               aria-label="Close checkout"
-              className="fixed right-4 top-4 z-[70] rounded-full bg-white/10 p-2 text-white hover:bg-white/20"
+              className="fixed right-4 top-24 z-[70] rounded-full bg-white/15 p-2 text-white shadow-lg ring-1 ring-white/20 backdrop-blur hover:bg-white/25 sm:top-28"
             >
               <X className="h-5 w-5" />
             </button>

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "@tanstack/react-router";
-import { Sparkles, Lock, Globe, Zap, ArrowRight, Loader2, Plus } from "lucide-react";
+import { Sparkles, Lock, Globe, Zap, ArrowRight, Loader2, Plus, Send } from "lucide-react";
 import { useAuth } from "@/hooks/use-auth";
 import { useSubscription } from "@/hooks/useSubscription";
 import { useStripeCheckout } from "@/hooks/useStripeCheckout";
@@ -366,10 +366,23 @@ export function SunyaAI() {
   // ---------------- REFLECTING PHASE ----------------
   if (phase === "reflecting") {
     return (
-      <div className="flex flex-col items-center justify-center py-24 text-center">
+      <div
+        className="flex flex-col items-center justify-center py-16 text-center sm:py-20"
+        style={{ scrollMarginTop: 0 }}
+      >
+        <style>{`
+          @keyframes sunyaSlowPing { 0% { transform: scale(1); opacity: 0.6; } 75%, 100% { transform: scale(1.6); opacity: 0; } }
+          @keyframes sunyaSlowPulse { 0%, 100% { opacity: 0.5; } 50% { opacity: 1; } }
+        `}</style>
         <div className="relative h-24 w-24">
-          <div className="absolute inset-0 animate-ping rounded-full bg-[#7ec8e3]/20" />
-          <div className="absolute inset-2 animate-pulse rounded-full border border-[#7ec8e3]/40 bg-gradient-to-br from-[#7ec8e3]/20 to-[#2e6db4]/10" />
+          <div
+            className="absolute inset-0 rounded-full bg-[#7ec8e3]/20"
+            style={{ animation: "sunyaSlowPing 3.2s cubic-bezier(0,0,0.2,1) infinite" }}
+          />
+          <div
+            className="absolute inset-2 rounded-full border border-[#7ec8e3]/40 bg-gradient-to-br from-[#7ec8e3]/20 to-[#2e6db4]/10"
+            style={{ animation: "sunyaSlowPulse 3.2s ease-in-out infinite" }}
+          />
           <div className="absolute inset-6 rounded-full bg-[#7ec8e3]/30 blur-md" />
           <div className="absolute inset-0 flex items-center justify-center text-2xl text-[#7ec8e3]">
             ✦
@@ -409,8 +422,9 @@ export function SunyaAI() {
             </button>
           )}
           {!isPaid && (
-            <div className="text-xs text-[#b8d4e8]/60">
-              {Math.max(0, limit - usedCount)} / {limit} free
+            <div className="flex flex-col items-end leading-tight text-[#b8d4e8]/60 sm:flex-row sm:items-baseline sm:gap-1">
+              <span className="text-xs">{Math.max(0, limit - usedCount)} / {limit}</span>
+              <span className="text-[10px] sm:text-xs">free</span>
             </div>
           )}
         </div>
@@ -477,7 +491,7 @@ export function SunyaAI() {
         <div>
           <div
             ref={scrollRef}
-            className="max-h-[60vh] space-y-4 overflow-y-auto pr-1 [scrollbar-gutter:stable]"
+            className="max-h-[60vh] space-y-4 overflow-y-auto pr-1 [scrollbar-gutter:stable] [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
           >
             {messages.map((m, i) => (
               <div
@@ -501,7 +515,7 @@ export function SunyaAI() {
             )}
           </div>
 
-          <div className="mt-5">
+          <div className="relative mt-5">
             <textarea
               value={input}
               onChange={(e) => setInput(e.target.value)}
@@ -509,19 +523,20 @@ export function SunyaAI() {
               rows={2}
               placeholder="Continue the conversation..."
               onKeyDown={(e) => {
-                if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) {
+                if (e.key === "Enter" && !e.shiftKey) {
                   e.preventDefault();
                   submit();
                 }
               }}
-              className="w-full resize-none rounded-2xl border border-white/10 bg-white/5 p-3 text-sm text-white placeholder:text-[#b8d4e8]/40 outline-none focus:border-[#7ec8e3]/50 disabled:opacity-50"
+              className="w-full resize-none rounded-2xl border border-white/10 bg-white/5 p-3 pr-14 text-sm text-white placeholder:text-[#b8d4e8]/40 outline-none focus:border-[#7ec8e3]/50 disabled:opacity-50"
             />
             <button
               onClick={() => submit()}
               disabled={loading || exhausted || !input.trim()}
-              className="glow-btn mt-3 inline-flex w-full items-center justify-center gap-2 rounded-2xl px-6 py-3 text-sm font-medium disabled:opacity-50"
+              aria-label="Send"
+              className="glow-btn absolute bottom-2.5 right-2.5 inline-flex h-9 w-9 items-center justify-center rounded-full p-0 disabled:cursor-not-allowed disabled:opacity-40"
             >
-              {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : <>Send <ArrowRight className="h-4 w-4" /></>}
+              {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : <Send className="h-4 w-4" />}
             </button>
           </div>
 
