@@ -8,6 +8,8 @@ import { UpgradeModal } from "@/components/site/UpgradeModal";
 import { useStripeCheckout } from "@/hooks/useStripeCheckout";
 import { createPortalSession } from "@/utils/payments.functions";
 import { getStripeEnvironment } from "@/lib/stripe";
+import { SolutionCard } from "@/components/SolutionCard";
+import type { Solution } from "@/lib/parse-solution";
 
 export const Route = createFileRoute("/dashboard")({
   component: DashboardPage,
