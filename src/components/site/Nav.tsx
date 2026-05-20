@@ -141,7 +141,7 @@ export function Nav() {
             </Link>
           ))}
           {user ? (
-            Avatar
+            <AccountAvatar />
           ) : (
             <Link
               to="/sunya-ai"
@@ -153,7 +153,7 @@ export function Nav() {
         </div>
         <div className="flex items-center gap-2 md:hidden">
           {user ? (
-            Avatar
+            <AccountAvatar />
           ) : (
             <Link
               to="/sunya-ai"
