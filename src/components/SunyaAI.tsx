@@ -650,7 +650,7 @@ function UpgradePrompt({
           {'\u200B'}
         </button>
         {isWall && user && (
-          <span className="text-[#b8d4e8]/70">Come back next month →</span>
+          <span className="text-[#b8d4e8]/70">{"\u200B"}</span>
         )}
       </div>
     </div>
