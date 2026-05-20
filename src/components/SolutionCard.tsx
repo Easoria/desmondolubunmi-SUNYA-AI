@@ -241,8 +241,9 @@ export function SolutionCard({
           </button>
           <Link
             to="/work-with-me"
-            className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2.5 text-[#cfe1ef] transition hover:border-[#7ec8e3]/40 hover:text-white"
+            className="group relative inline-flex items-center gap-2 rounded-full border border-[#e6c89a]/50 bg-gradient-to-r from-[#e6c89a]/20 via-[#7ec8e3]/20 to-[#e6c89a]/20 px-4 py-2.5 text-white shadow-[0_0_24px_-4px_rgba(230,200,154,0.6)] transition hover:shadow-[0_0_36px_-2px_rgba(230,200,154,0.9)]"
           >
+            <span className="pointer-events-none absolute inset-0 rounded-full bg-gradient-to-r from-[#e6c89a]/0 via-white/20 to-[#e6c89a]/0 opacity-0 blur-md transition-opacity group-hover:opacity-100" />
             <Calendar className="h-3.5 w-3.5" /> Book a 1-on-1
           </Link>
           {isPastView ? (
