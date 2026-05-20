@@ -630,21 +630,45 @@ export function SunyaAI() {
             const { supabase } = await import("@/integrations/supabase/client");
             const { data: u } = await supabase.auth.getUser();
             const uid = u.user?.id;
-            if (uid && messages.length > 0) {
-              const { data: sess } = await supabase
-                .from("sessions")
-                .insert({ user_id: uid })
-                .select("id")
-                .single();
-              if (sess) {
-                await supabase.from("messages").insert(
-                  messages.map((m) => ({
-                    session_id: sess.id,
-                    user_id: uid,
-                    role: m.role,
-                    content: m.content,
-                  })),
-                );
+            if (uid) {
+              // Carry forward guest usage tracked against this device fingerprint
+              // so creating a new account doesn't reset free-tier limits.
+              const fpId = localStorage.getItem(FP_KEY) || visitorId;
+              if (fpId) {
+                try {
+                  const { data: fp } = await supabase
+                    .from("fingerprint_sessions")
+                    .select("sessions_used")
+                    .eq("visitor_id", fpId)
+                    .maybeSingle();
+                  const used = fp?.sessions_used ?? 0;
+                  if (used >= GUEST_LIMIT) {
+                    await supabase
+                      .from("user_profiles")
+                      .update({
+                        sessions_this_month: used,
+                        last_session_month: currentMonthKey(),
+                      })
+                      .eq("id", uid);
+                  }
+                } catch { /* non-blocking */ }
+              }
+              if (messages.length > 0) {
+                const { data: sess } = await supabase
+                  .from("sessions")
+                  .insert({ user_id: uid })
+                  .select("id")
+                  .single();
+                if (sess) {
+                  await supabase.from("messages").insert(
+                    messages.map((m) => ({
+                      session_id: sess.id,
+                      user_id: uid,
+                      role: m.role,
+                      content: m.content,
+                    })),
+                  );
+                }
               }
             }
           } catch {
