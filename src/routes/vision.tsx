@@ -44,7 +44,7 @@ const ECO: EcoItem[] = [
     c: "AI and technology in service of human wellbeing — for individuals, wellness creators, and organisations.",
     items: [
       { label: "Sunya AI →", to: "/sunya-ai" },
-      { label: "Sunya Sleep →", href: "#" },
+      { label: "Sunya Sleep →", href: "https://sunyasleep.com/" },
       { label: "Sunya Studio", comingSoon: true },
     ],
   },
@@ -53,7 +53,7 @@ const ECO: EcoItem[] = [
     t: "Sunya Publishing",
     c: "Timeless written guides distilling the framework into accessible, practical wisdom.",
     items: [
-      { label: "The Sleep Rhythm Reset →", href: "#" },
+      { label: "The Sleep Rhythm Reset →", href: "https://amzn.eu/d/04G8jn0y" },
       { label: "The Timeless Solution for Humanity", comingSoon: true },
     ],
   },
@@ -193,6 +193,8 @@ function VisionPage() {
                       <a
                         key={item.label}
                         href={item.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="rounded-full border border-[#7ec8e3]/40 bg-white/[0.04] px-3 py-1 text-[11px] tracking-wide text-[#b8d4e8] transition hover:border-[#7ec8e3] hover:text-white"
                       >
                         {item.label}
