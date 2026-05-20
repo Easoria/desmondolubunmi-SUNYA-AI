@@ -52,6 +52,7 @@ export function SunyaAI() {
   const [solution, setSolution] = useState<Solution | null>(null);
   const [solutionCreatedAt, setSolutionCreatedAt] = useState<string | null>(null);
   const [chatFading, setChatFading] = useState(false);
+  const [visitorId, setVisitorId] = useState<string | null>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -64,6 +65,42 @@ export function SunyaAI() {
         sessionStorage.removeItem("sunya_prefill");
       }
     } catch {}
+  }, []);
+
+  // FingerprintJS: identify device, sync session count across storage resets
+  useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      try {
+        let id = localStorage.getItem(FP_KEY);
+        if (!id) {
+          const FingerprintJS = (await import("@fingerprintjs/fingerprintjs")).default;
+          const fp = await FingerprintJS.load();
+          const result = await fp.get();
+          id = result.visitorId;
+          try { localStorage.setItem(FP_KEY, id); } catch {}
+        }
+        if (cancelled || !id) return;
+        setVisitorId(id);
+
+        const { supabase } = await import("@/integrations/supabase/client");
+        const { data } = await supabase
+          .from("fingerprint_sessions")
+          .select("sessions_used")
+          .eq("visitor_id", id)
+          .maybeSingle();
+        const remote = data?.sessions_used ?? 0;
+        const local = parseInt(localStorage.getItem(GUEST_KEY) || "0", 10) || 0;
+        const merged = Math.max(remote, local);
+        if (merged !== local) {
+          try { localStorage.setItem(GUEST_KEY, String(merged)); } catch {}
+        }
+        if (!cancelled) setGuestUsed(merged);
+      } catch {
+        /* fingerprint failures are non-blocking */
+      }
+    })();
+    return () => { cancelled = true; };
   }, []);
 
   // Load monthly session count for logged-in free users
