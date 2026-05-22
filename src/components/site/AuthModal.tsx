@@ -78,6 +78,7 @@ export function AuthModal({
     setError("");
     setLoading(true);
     try {
+      const { supabase } = await import("@/integrations/supabase/client");
       const { error } = await supabase.auth.signInWithOAuth({
         provider: "google",
         options: { redirectTo: window.location.origin + "/dashboard" },
