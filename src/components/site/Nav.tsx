@@ -147,7 +147,7 @@ export function Nav() {
               to="/sunya-ai"
               className="glow-btn inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium"
             >
-              Try Free <ArrowRight className="h-3.5 w-3.5" />
+              Try Sunya AI <ArrowRight className="h-3.5 w-3.5" />
             </Link>
           )}
         </div>
@@ -159,7 +159,7 @@ export function Nav() {
               to="/sunya-ai"
               className="glow-btn inline-flex items-center gap-1.5 rounded-full px-3.5 py-2 text-xs font-medium"
             >
-              Try Free <ArrowRight className="h-3 w-3" />
+              Try Sunya AI <ArrowRight className="h-3 w-3" />
             </Link>
           )}
           <div className="flex flex-col items-center">
@@ -215,7 +215,7 @@ export function Nav() {
                 onClick={() => setOpen(false)}
                 className="glow-btn mt-2 inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-medium"
               >
-                Try Free <ArrowRight className="h-3.5 w-3.5" />
+                Try Sunya AI <ArrowRight className="h-3.5 w-3.5" />
               </Link>
             )}
           </div>
