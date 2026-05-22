@@ -24,7 +24,7 @@ export function UpgradeModal({ open, onClose, variant = "default" }: Props) {
       return;
     }
     openCheckout({
-      priceId: "price_1TYUrm3t1ZeJXXaMF49gUspB",
+      priceId: "price_1TZqzP3t1ZeJXXaM0BrNZjv9",
       customerEmail: user.email,
       userId: user.id,
       returnUrl: `${window.location.origin}/checkout/return?session_id={CHECKOUT_SESSION_ID}`,
