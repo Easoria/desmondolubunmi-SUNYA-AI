@@ -1,6 +1,18 @@
 // Vercel serverless entry. Bridges Node's IncomingMessage/ServerResponse to
 // the Web fetch Request/Response that TanStack Start's server handler expects.
-import "../src/lib/ssr-shims";
+
+// Inline SSR shim: the supabase client touches `localStorage` at module scope.
+if (typeof globalThis !== "undefined" && typeof (globalThis as any).localStorage === "undefined") {
+  const mem = new Map<string, string>();
+  (globalThis as any).localStorage = {
+    getItem: (k: string) => (mem.has(k) ? mem.get(k)! : null),
+    setItem: (k: string, v: string) => void mem.set(k, String(v)),
+    removeItem: (k: string) => void mem.delete(k),
+    clear: () => mem.clear(),
+    key: (i: number) => Array.from(mem.keys())[i] ?? null,
+    get length() { return mem.size; },
+  };
+}
 // The TanStack Start build emits a server bundle that exports a fetch handler.
 // We import it via the published entry point used by Start at runtime.
 // @ts-expect-error - virtual module resolved by the Start build output
