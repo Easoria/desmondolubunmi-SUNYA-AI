@@ -2,10 +2,9 @@ import { loadStripe, type Stripe } from "@stripe/stripe-js";
 
 type StripeEnv = "sandbox" | "live";
 
-export const SUNYA_FOUNDING_PRICE_ID = "price_1TZqzP3t1ZeJXXaM0BrNZjv9";
+export const SUNYA_FOUNDING_PRICE_ID = "price_1TYUrm3t1ZeJXXaMF49gUspB";
 
 const clientToken = import.meta.env.VITE_PAYMENTS_CLIENT_TOKEN as string | undefined;
-const environment: StripeEnv = clientToken?.startsWith("pk_test_") ? "sandbox" : "live";
 
 let stripePromise: Promise<Stripe | null> | null = null;
 
@@ -18,5 +17,5 @@ export function getStripe(): Promise<Stripe | null> {
 }
 
 export function getStripeEnvironment(): StripeEnv {
-  return environment;
+  return "live";
 }
