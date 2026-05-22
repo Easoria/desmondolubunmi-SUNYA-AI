@@ -7,7 +7,7 @@ import { Footer } from "@/components/site/Footer";
 import { UpgradeModal } from "@/components/site/UpgradeModal";
 import { useStripeCheckout } from "@/hooks/useStripeCheckout";
 import { createPortalSession } from "@/utils/payments.functions";
-import { getStripeEnvironment } from "@/lib/stripe";
+import { getStripeEnvironment, SUNYA_FOUNDING_PRICE_ID } from "@/lib/stripe";
 import { SolutionCard } from "@/components/SolutionCard";
 import type { Solution } from "@/lib/parse-solution";
 
@@ -60,7 +60,7 @@ function DashboardPage() {
   function handleUnlock() {
     if (!user) return;
     openCheckout({
-      priceId: "sunya_ai_founding_monthly",
+      priceId: SUNYA_FOUNDING_PRICE_ID,
       customerEmail: user.email,
       userId: user.id,
       returnUrl: `${window.location.origin}/checkout/return?session_id={CHECKOUT_SESSION_ID}`,

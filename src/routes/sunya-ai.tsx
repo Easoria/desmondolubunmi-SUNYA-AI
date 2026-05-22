@@ -11,6 +11,7 @@ import { useStripeCheckout } from "@/hooks/useStripeCheckout";
 import { useSubscription } from "@/hooks/useSubscription";
 import { useAuth } from "@/hooks/use-auth";
 import { useNavigate } from "@tanstack/react-router";
+import { SUNYA_FOUNDING_PRICE_ID } from "@/lib/stripe";
 
 export const Route = createFileRoute("/sunya-ai")({
   component: SunyaAIPage,
@@ -87,7 +88,7 @@ function SunyaAIPage() {
       return;
     }
     openCheckout({
-      priceId: "sunya_ai_founding_monthly",
+      priceId: SUNYA_FOUNDING_PRICE_ID,
       customerEmail: user.email,
       userId: user.id,
       returnUrl: `${window.location.origin}/checkout/return?session_id={CHECKOUT_SESSION_ID}`,
