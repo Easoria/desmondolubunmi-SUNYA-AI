@@ -21,6 +21,18 @@ export default defineConfig({
     },
     dedupe: ["react", "react-dom", "@tanstack/react-router", "@tanstack/react-start"],
   },
+  ssr: {
+    noExternal: [
+      "@tanstack/start-server-core",
+      "@tanstack/start-client-core",
+      "@tanstack/react-start",
+      "@tanstack/react-start-client",
+      "@tanstack/react-start-server",
+      "@tanstack/react-router",
+      "@tanstack/router-core",
+      "@tanstack/history",
+    ],
+  },
   server: {
     host: true,
     port: 5173,
