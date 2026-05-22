@@ -2,7 +2,7 @@ import { loadStripe, type Stripe } from "@stripe/stripe-js";
 
 type StripeEnv = "sandbox" | "live";
 
-export const SUNYA_FOUNDING_PRICE_ID = "price_1TYUrm3t1ZeJXXaMF49gUspB";
+export const SUNYA_FOUNDING_PRICE_ID = "price_1TZroE3t1ZeJXXaM4LvCjzAJ";
 
 const clientToken = import.meta.env.VITE_PAYMENTS_CLIENT_TOKEN as string | undefined;
 
