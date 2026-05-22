@@ -7,6 +7,7 @@ import { useStripeCheckout } from "@/hooks/useStripeCheckout";
 import { AuthModal } from "@/components/site/AuthModal";
 import { SolutionCard } from "@/components/SolutionCard";
 import { parseSolution, type Solution } from "@/lib/parse-solution";
+import { SUNYA_FOUNDING_PRICE_ID } from "@/lib/stripe";
 
 const PROMPTS = [
   "I feel anxious",
@@ -132,7 +133,7 @@ export function SunyaAI() {
 
   function handleUpgrade() {
     openCheckout({
-      priceId: "sunya_ai_founding_monthly",
+      priceId: SUNYA_FOUNDING_PRICE_ID,
       customerEmail: user?.email,
       userId: user?.id,
       returnUrl: `${window.location.origin}/checkout/return?session_id={CHECKOUT_SESSION_ID}`,

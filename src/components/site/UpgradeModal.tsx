@@ -2,6 +2,7 @@ import { X, Sparkles, ArrowRight, Loader2 } from "lucide-react";
 import { useNavigate } from "@tanstack/react-router";
 import { useAuth } from "@/hooks/use-auth";
 import { useStripeCheckout } from "@/hooks/useStripeCheckout";
+import { SUNYA_FOUNDING_PRICE_ID } from "@/lib/stripe";
 
 type Props = {
   open: boolean;
@@ -24,7 +25,7 @@ export function UpgradeModal({ open, onClose, variant = "default" }: Props) {
       return;
     }
     openCheckout({
-      priceId: "price_1TZqzP3t1ZeJXXaM0BrNZjv9",
+      priceId: SUNYA_FOUNDING_PRICE_ID,
       customerEmail: user.email,
       userId: user.id,
       returnUrl: `${window.location.origin}/checkout/return?session_id={CHECKOUT_SESSION_ID}`,

@@ -2,6 +2,8 @@ import { loadStripe, type Stripe } from "@stripe/stripe-js";
 
 type StripeEnv = "sandbox" | "live";
 
+export const SUNYA_FOUNDING_PRICE_ID = "price_1TZqzP3t1ZeJXXaM0BrNZjv9";
+
 const clientToken = import.meta.env.VITE_PAYMENTS_CLIENT_TOKEN as string | undefined;
 const environment: StripeEnv = clientToken?.startsWith("pk_test_") ? "sandbox" : "live";
 
