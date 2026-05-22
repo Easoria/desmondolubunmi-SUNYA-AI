@@ -1,6 +1,8 @@
 import "@tanstack/react-start";
 import { createFileRoute } from "@tanstack/react-router";
 
+// Generates a short title + lever tags for a session, using Anthropic directly.
+// Requires ANTHROPIC_API_KEY env var on Vercel.
 export const Route = createFileRoute("/api/session-title")({
   server: {
     handlers: {
@@ -16,7 +18,7 @@ export const Route = createFileRoute("/api/session-title")({
             return Response.json({ title: null, lever_tags: [] });
           }
 
-          const key = process.env.LOVABLE_API_KEY;
+          const key = process.env.ANTHROPIC_API_KEY;
           if (!key) return Response.json({ title: null, lever_tags: [] });
 
           const transcript = msgs
@@ -32,20 +34,26 @@ Return ONLY the JSON object, no markdown fences, no commentary.
 Conversation:
 ${transcript}`;
 
-          const res = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {
+          const res = await fetch("https://api.anthropic.com/v1/messages", {
             method: "POST",
-            headers: { "Content-Type": "application/json", "Lovable-API-Key": key },
+            headers: {
+              "Content-Type": "application/json",
+              "x-api-key": key,
+              "anthropic-version": "2023-06-01",
+            },
             body: JSON.stringify({
-              model: "google/gemini-3-flash-preview",
-              messages: [
-                { role: "system", content: "You return only valid JSON. No prose, no markdown." },
-                { role: "user", content: prompt },
-              ],
+              model: "claude-3-5-haiku-latest",
+              max_tokens: 200,
+              system: "You return only valid JSON. No prose, no markdown.",
+              messages: [{ role: "user", content: prompt }],
             }),
           });
           if (!res.ok) return Response.json({ title: null, lever_tags: [] });
-          const data = await res.json();
-          const raw: string = data?.choices?.[0]?.message?.content ?? "";
+          const data = (await res.json()) as {
+            content?: Array<{ type: string; text?: string }>;
+          };
+          const raw =
+            data?.content?.filter((c) => c.type === "text").map((c) => c.text ?? "").join("") ?? "";
           const cleaned = raw.replace(/```json|```/g, "").trim();
           let parsed: { title?: string; lever_tags?: string[] } = {};
           try {
@@ -61,18 +69,8 @@ ${transcript}`;
             }
           }
           const VALID = new Set([
-            "Breath",
-            "Awareness",
-            "Mind",
-            "Heart",
-            "Movement",
-            "Sound",
-            "Sleep",
-            "Nutrition",
-            "Connection",
-            "Environment",
-            "Nature",
-            "Sustenance",
+            "Breath", "Awareness", "Mind", "Heart", "Movement", "Sound",
+            "Sleep", "Nutrition", "Connection", "Environment", "Nature", "Sustenance",
           ]);
           const tags = Array.isArray(parsed.lever_tags)
             ? parsed.lever_tags.filter((t) => typeof t === "string" && VALID.has(t)).slice(0, 3)
