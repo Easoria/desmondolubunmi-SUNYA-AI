@@ -9,7 +9,7 @@ import serverEntry from "@tanstack/react-start/server-entry";
 import type { IncomingMessage, ServerResponse } from "node:http";
 
 export const config = {
-  runtime: "nodejs20.x",
+  runtime: "nodejs",
 };
 
 function nodeToWebRequest(req: IncomingMessage): Request {
