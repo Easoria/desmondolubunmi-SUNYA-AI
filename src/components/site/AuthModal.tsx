@@ -78,12 +78,12 @@ export function AuthModal({
     setError("");
     setLoading(true);
     try {
-      const { lovable } = await import("@/integrations/lovable");
-      const res = await lovable.auth.signInWithOAuth("google", {
-        redirect_uri: window.location.origin + "/dashboard",
+      const { error } = await supabase.auth.signInWithOAuth({
+        provider: "google",
+        options: { redirectTo: window.location.origin + "/dashboard" },
       });
-      if (res?.error) throw res.error;
-      // On success the page will redirect; if not, refresh state.
+      if (error) throw error;
+      // Browser will redirect to Google. If it doesn't, refresh router state.
       router.invalidate();
     } catch (err: unknown) {
       setError(err instanceof Error ? err.message : "Google sign-in failed");
