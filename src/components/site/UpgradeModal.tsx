@@ -24,7 +24,7 @@ export function UpgradeModal({ open, onClose, variant = "default" }: Props) {
       return;
     }
     openCheckout({
-      priceId: "sunya_ai_monthly",
+      priceId: "price_1TYUrm3t1ZeJXXaMF49gUspB",
       customerEmail: user.email,
       userId: user.id,
       returnUrl: `${window.location.origin}/checkout/return?session_id={CHECKOUT_SESSION_ID}`,
