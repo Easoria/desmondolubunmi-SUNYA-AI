@@ -80,6 +80,9 @@ function WorkPage() {
             Work With <span className="display-italic text-[#e8c79c]">Desmond</span>
           </h1>
           <p className="mx-auto mt-8 max-w-2xl text-lg text-[#b8d4e8]">
+            Currently offering free founding sessions in exchange for honest feedback and a short testimonial.
+          </p>
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-[#b8d4e8]">
             Direct, personalised engagement with the full Sunya framework — applied to your
             specific life, your specific situation, your specific system.
           </p>
@@ -87,7 +90,7 @@ function WorkPage() {
             href="#booking"
             className="glow-btn mt-10 inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium"
           >
-            Book a Session with Desmond <ArrowRight className="h-4 w-4" />
+            Book Free Session <ArrowRight className="h-4 w-4" />
           </a>
         </div>
       </section>
@@ -138,9 +141,9 @@ function WorkPage() {
         <div className="relative z-10 mx-auto max-w-2xl px-6">
           <div className="glass-strong rounded-3xl p-8 shadow-[0_0_60px_-15px_rgba(232,199,156,0.35)] ring-1 ring-[#e8c79c]/30">
             <div className="label-eyebrow">1-on-1 Session with Desmond</div>
-            <div className="mt-4 flex items-baseline gap-2">
-              <span className="display text-5xl text-white">€150</span>
-              <span className="text-sm text-[#b8d4e8]">/ 90 minutes</span>
+            <div className="mt-4 flex items-baseline gap-3">
+              <span className="display text-2xl text-[#b8d4e8]/60 line-through">€150</span>
+              <span className="display text-5xl text-[#e8c79c]">FREE</span>
             </div>
             <ul className="mt-7 space-y-3 text-sm text-[#b8d4e8]">
               {[
@@ -158,10 +161,10 @@ function WorkPage() {
               onClick={scrollToBooking}
               className="glow-btn mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium"
             >
-              Book a Session <ArrowRight className="h-4 w-4" />
+              Book Free Session <ArrowRight className="h-4 w-4" />
             </button>
             <p className="mt-3 text-center text-xs italic text-[#b8d4e8]/70">
-              Pick your time and pay securely below — €150 all-in.
+              Free for founding clients only. Will return to €150 once this period closes.
             </p>
           </div>
         </div>
@@ -230,7 +233,7 @@ function WorkPage() {
             <div className="label-eyebrow">The founder</div>
             <h2 className="display mt-5 text-4xl text-white sm:text-6xl">Desmond Olubunmi</h2>
             <p className="display-italic mt-3 text-lg text-[#b8d4e8]">
-              Spiritual teacher. Visionary. 23.
+              Spiritual teacher. Visionary.
             </p>
             <div className="mt-8 space-y-4 text-[#b8d4e8]">
               <p>Everything humans do is an attempt to be happy.</p>
@@ -319,7 +322,7 @@ function WorkPage() {
                 }}
                 className="glow-btn inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium"
               >
-                Book a Session with Desmond <ArrowRight className="h-4 w-4" />
+                Book Free Session <ArrowRight className="h-4 w-4" />
               </a>
             </div>
           </div>

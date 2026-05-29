@@ -6,7 +6,7 @@ import { useAuth } from "@/hooks/use-auth";
 const NAV = [
   { label: "Philosophy", to: "/philosophy" as const },
   { label: "Sunya AI", to: "/sunya-ai" as const },
-  { label: "Work With Me", to: "/work-with-me" as const },
+  { label: "1-on-1 (Free)", to: "/work-with-me" as const },
   { label: "Vision", to: "/vision" as const },
 ];
 

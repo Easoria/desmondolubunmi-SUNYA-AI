@@ -243,7 +243,7 @@ function About() {
           <div className="label-eyebrow">The founder</div>
           <h2 className="display mt-5 text-4xl text-white sm:text-6xl">Desmond Olubunmi</h2>
           <p className="display-italic mt-3 text-lg text-[#b8d4e8]">
-            Spiritual teacher. Visionary. 23.
+            Spiritual teacher. Visionary.
           </p>
           <div className="mt-8 space-y-4 text-[#b8d4e8]">
             <p>Everything humans do is an attempt to be happy.</p>
