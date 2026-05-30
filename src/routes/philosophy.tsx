@@ -128,13 +128,22 @@ function ExtractionLoopDiagram() {
         </svg>
         {nodes.map((n, i) => {
           const rad = (n.angle * Math.PI) / 180;
-          const x = 50 + Math.cos(rad) * labelRadiusPercent;
-          const y = 50 + Math.sin(rad) * labelRadiusPercent;
+          const isHorizontal = n.angle === 0 || n.angle === 180;
+          const mobileRadius = isHorizontal ? 42 : 38;
+          const x = 50 + Math.cos(rad) * mobileRadius;
+          const y = 50 + Math.sin(rad) * mobileRadius;
+          const xSm = 50 + Math.cos(rad) * 32;
+          const ySm = 50 + Math.sin(rad) * 32;
           return (
             <div
               key={i}
-              className="absolute max-w-[7.25rem] -translate-x-1/2 -translate-y-1/2 whitespace-normal rounded-full border border-[#7ec8e3]/40 bg-[#0a1628]/80 px-2.5 py-1.5 text-center text-[10px] leading-tight text-white backdrop-blur-md sm:max-w-none sm:whitespace-nowrap sm:px-3 sm:text-xs"
-              style={{ left: `${x}%`, top: `${y}%` }}
+              className="absolute max-w-[5.5rem] -translate-x-1/2 -translate-y-1/2 whitespace-normal rounded-full border border-[#7ec8e3]/40 bg-[#0a1628]/80 px-2 py-1 text-center text-[9px] leading-tight text-white backdrop-blur-md sm:max-w-none sm:whitespace-nowrap sm:px-3 sm:py-1.5 sm:text-xs"
+              style={{
+                left: `${x}%`,
+                top: `${y}%`,
+                ['--sm-left' as string]: `${xSm}%`,
+                ['--sm-top' as string]: `${ySm}%`,
+              }}
             >
               {n.t}
             </div>
