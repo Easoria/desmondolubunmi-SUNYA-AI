@@ -288,8 +288,8 @@ function PhilosophyPage() {
       </section>
 
       {/* The Extraction Loop */}
-      <section className="relative overflow-hidden bg-[#0a1628] py-20 sm:py-32">
-        <div className="relative z-10 mx-auto w-full max-w-6xl overflow-hidden px-5 sm:px-6">
+      <section className="relative max-w-full overflow-x-clip bg-[#0a1628] py-20 sm:py-32">
+        <div className="relative z-10 mx-auto w-full max-w-6xl overflow-x-clip px-5 sm:px-6">
           <div className="text-center">
             <div className="label-eyebrow">The extraction loop</div>
             <h2 className="display mt-6 text-4xl text-white sm:text-5xl">
@@ -298,8 +298,8 @@ function PhilosophyPage() {
               <span className="display-italic text-[#b8d4e8]">has ever fully fixed it.</span>
             </h2>
           </div>
-          <div className="mx-auto mt-12 grid w-full min-w-0 max-w-5xl gap-10 lg:mt-16 lg:grid-cols-2 lg:items-center">
-            <div className="mx-auto w-full min-w-0 max-w-[42rem] space-y-5 overflow-hidden text-wrap break-words text-[15px] leading-relaxed text-[#b8d4e8] lg:mx-0">
+          <div className="mx-auto mt-12 grid w-full min-w-0 max-w-5xl grid-cols-1 gap-10 lg:mt-16 lg:grid-cols-2 lg:items-center">
+            <div className="mx-auto w-full min-w-0 max-w-full space-y-5 overflow-x-clip text-wrap break-words text-[15px] leading-relaxed text-[#b8d4e8] lg:mx-0 lg:max-w-[42rem]">
               <p>
                 When the internal system runs low, human beings do something entirely predictable —
                 they extract from the world around them.
@@ -334,7 +334,7 @@ function PhilosophyPage() {
                 That is what the Sunya framework is built to do.
               </p>
             </div>
-            <div className="w-full min-w-0 overflow-hidden">
+            <div className="mx-auto w-full min-w-0 max-w-full overflow-x-clip">
               <ExtractionLoopDiagram />
             </div>
           </div>
