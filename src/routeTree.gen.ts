@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as Char91indexChar93RouteImport } from './routes/[index]'
 import { Route as WorkWithMeRouteImport } from './routes/work-with-me'
 import { Route as VisionRouteImport } from './routes/vision'
 import { Route as TermsRouteImport } from './routes/terms'
@@ -35,6 +36,11 @@ import { Route as ApiChatRouteImport } from './routes/api/chat'
 import { Route as AdminBlogRouteImport } from './routes/admin.blog'
 import { Route as ApiPublicPaymentsWebhookRouteImport } from './routes/api/public/payments/webhook'
 
+const Char91indexChar93Route = Char91indexChar93RouteImport.update({
+  id: '/index',
+  path: '/index',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const WorkWithMeRoute = WorkWithMeRouteImport.update({
   id: '/work-with-me',
   path: '/work-with-me',
@@ -169,6 +175,7 @@ export interface FileRoutesByFullPath {
   '/booked': typeof BookedRoute
   '/dashboard': typeof DashboardRoute
   '/forgot-password': typeof ForgotPasswordRoute
+  '/index': typeof Char91indexChar93Route
   '/join': typeof JoinRoute
   '/login': typeof LoginRoute
   '/philosophy': typeof PhilosophyRoute
@@ -196,6 +203,7 @@ export interface FileRoutesByTo {
   '/booked': typeof BookedRoute
   '/dashboard': typeof DashboardRoute
   '/forgot-password': typeof ForgotPasswordRoute
+  '/index': typeof Char91indexChar93Route
   '/join': typeof JoinRoute
   '/login': typeof LoginRoute
   '/philosophy': typeof PhilosophyRoute
@@ -224,6 +232,7 @@ export interface FileRoutesById {
   '/booked': typeof BookedRoute
   '/dashboard': typeof DashboardRoute
   '/forgot-password': typeof ForgotPasswordRoute
+  '/index': typeof Char91indexChar93Route
   '/join': typeof JoinRoute
   '/login': typeof LoginRoute
   '/philosophy': typeof PhilosophyRoute
@@ -253,6 +262,7 @@ export interface FileRouteTypes {
     | '/booked'
     | '/dashboard'
     | '/forgot-password'
+    | '/index'
     | '/join'
     | '/login'
     | '/philosophy'
@@ -280,6 +290,7 @@ export interface FileRouteTypes {
     | '/booked'
     | '/dashboard'
     | '/forgot-password'
+    | '/index'
     | '/join'
     | '/login'
     | '/philosophy'
@@ -307,6 +318,7 @@ export interface FileRouteTypes {
     | '/booked'
     | '/dashboard'
     | '/forgot-password'
+    | '/index'
     | '/join'
     | '/login'
     | '/philosophy'
@@ -335,6 +347,7 @@ export interface RootRouteChildren {
   BookedRoute: typeof BookedRoute
   DashboardRoute: typeof DashboardRoute
   ForgotPasswordRoute: typeof ForgotPasswordRoute
+  Char91indexChar93Route: typeof Char91indexChar93Route
   JoinRoute: typeof JoinRoute
   LoginRoute: typeof LoginRoute
   PhilosophyRoute: typeof PhilosophyRoute
@@ -357,6 +370,13 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/index': {
+      id: '/index'
+      path: '/index'
+      fullPath: '/index'
+      preLoaderRoute: typeof Char91indexChar93RouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/work-with-me': {
       id: '/work-with-me'
       path: '/work-with-me'
@@ -552,6 +572,7 @@ const rootRouteChildren: RootRouteChildren = {
   BookedRoute: BookedRoute,
   DashboardRoute: DashboardRoute,
   ForgotPasswordRoute: ForgotPasswordRoute,
+  Char91indexChar93Route: Char91indexChar93Route,
   JoinRoute: JoinRoute,
   LoginRoute: LoginRoute,
   PhilosophyRoute: PhilosophyRoute,
