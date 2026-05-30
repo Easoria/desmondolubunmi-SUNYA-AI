@@ -81,8 +81,9 @@ function ExtractionLoopDiagram() {
     { t: "Deeper Emptiness", angle: 180 },
   ];
   const R = 130;
+  const labelRadiusPercent = 28;
   return (
-    <div className="glass-strong relative mx-auto aspect-square w-full max-w-md rounded-3xl p-6">
+    <div className="glass-strong relative mx-auto aspect-square w-full min-w-0 max-w-full overflow-hidden rounded-3xl p-4 sm:max-w-md sm:p-6">
       <div
         className="pointer-events-none absolute inset-0 rounded-3xl"
         style={{
@@ -91,7 +92,7 @@ function ExtractionLoopDiagram() {
           animation: "pulse-glow 5s ease-in-out infinite",
         }}
       />
-      <div className="relative h-full w-full">
+      <div className="relative h-full w-full min-w-0">
         <svg viewBox="-160 -160 320 320" className="absolute inset-0 h-full w-full">
           <defs>
             <linearGradient id="loopStroke" x1="0" y1="0" x2="1" y2="1">
@@ -128,13 +129,13 @@ function ExtractionLoopDiagram() {
         </svg>
         {nodes.map((n, i) => {
           const rad = (n.angle * Math.PI) / 180;
-          const x = Math.cos(rad) * R;
-          const y = Math.sin(rad) * R;
+          const x = 50 + Math.cos(rad) * labelRadiusPercent;
+          const y = 50 + Math.sin(rad) * labelRadiusPercent;
           return (
             <div
               key={i}
-              className="absolute left-1/2 top-1/2 whitespace-nowrap rounded-full border border-[#7ec8e3]/40 bg-[#0a1628]/80 px-3 py-1.5 text-[11px] text-white backdrop-blur-md sm:text-xs"
-              style={{ transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))` }}
+              className="absolute max-w-[7.25rem] -translate-x-1/2 -translate-y-1/2 whitespace-normal rounded-full border border-[#7ec8e3]/40 bg-[#0a1628]/80 px-2.5 py-1.5 text-center text-[10px] leading-tight text-white backdrop-blur-md sm:max-w-none sm:whitespace-nowrap sm:px-3 sm:text-xs"
+              style={{ left: `${x}%`, top: `${y}%` }}
             >
               {n.t}
             </div>
