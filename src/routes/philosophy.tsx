@@ -83,7 +83,7 @@ function ExtractionLoopDiagram() {
   const R = 130;
   const labelRadiusPercent = 28;
   return (
-    <div className="glass-strong relative mx-auto aspect-square w-full min-w-0 max-w-full overflow-hidden rounded-3xl p-4 sm:max-w-md sm:p-6">
+    <div className="glass-strong relative mx-auto aspect-square w-full min-w-0 max-w-full overflow-hidden rounded-3xl p-4 sm:max-w-sm sm:p-6 md:max-w-md">
       <div
         className="pointer-events-none absolute inset-0 rounded-3xl"
         style={{
@@ -92,8 +92,8 @@ function ExtractionLoopDiagram() {
           animation: "pulse-glow 5s ease-in-out infinite",
         }}
       />
-      <div className="relative h-full w-full min-w-0">
-        <svg viewBox="-160 -160 320 320" className="absolute inset-0 h-full w-full">
+      <div className="relative mx-auto h-full w-full min-w-0 max-w-full">
+        <svg viewBox="-160 -160 320 320" className="absolute inset-0 h-full w-full max-w-full overflow-visible">
           <defs>
             <linearGradient id="loopStroke" x1="0" y1="0" x2="1" y2="1">
               <stop offset="0%" stopColor="#7ec8e3" stopOpacity="0.8" />
