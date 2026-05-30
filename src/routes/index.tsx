@@ -16,7 +16,7 @@ function useSunyaCtaLabel(freeSuffix = "") {
 }
 
 export const Route = createFileRoute("/")({
-  component: Index,
+  component: IndexPage,
   head: () => ({
     meta: [
       { title: "Sunya — A universal system for inner transformation" },
@@ -372,7 +372,7 @@ function FinalCTA() {
   );
 }
 
-function Index() {
+export function IndexPage() {
   return (
     <div className="min-h-screen bg-[#0a1628] text-white">
       <Nav />
