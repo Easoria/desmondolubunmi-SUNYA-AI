@@ -81,8 +81,9 @@ function ExtractionLoopDiagram() {
     { t: "Deeper Emptiness", angle: 180 },
   ];
   const R = 130;
+  const labelRadiusPercent = 28;
   return (
-    <div className="glass-strong relative mx-auto aspect-square w-full max-w-md rounded-3xl p-6">
+    <div className="glass-strong relative mx-auto aspect-square w-full min-w-0 max-w-full overflow-hidden rounded-3xl p-4 sm:max-w-sm sm:p-6 md:max-w-md">
       <div
         className="pointer-events-none absolute inset-0 rounded-3xl"
         style={{
@@ -91,8 +92,8 @@ function ExtractionLoopDiagram() {
           animation: "pulse-glow 5s ease-in-out infinite",
         }}
       />
-      <div className="relative h-full w-full">
-        <svg viewBox="-160 -160 320 320" className="absolute inset-0 h-full w-full">
+      <div className="relative mx-auto h-full w-full min-w-0 max-w-full">
+        <svg viewBox="-160 -160 320 320" className="absolute inset-0 h-full w-full max-w-full overflow-visible">
           <defs>
             <linearGradient id="loopStroke" x1="0" y1="0" x2="1" y2="1">
               <stop offset="0%" stopColor="#7ec8e3" stopOpacity="0.8" />
@@ -128,13 +129,13 @@ function ExtractionLoopDiagram() {
         </svg>
         {nodes.map((n, i) => {
           const rad = (n.angle * Math.PI) / 180;
-          const x = Math.cos(rad) * R;
-          const y = Math.sin(rad) * R;
+          const x = 50 + Math.cos(rad) * labelRadiusPercent;
+          const y = 50 + Math.sin(rad) * labelRadiusPercent;
           return (
             <div
               key={i}
-              className="absolute left-1/2 top-1/2 whitespace-nowrap rounded-full border border-[#7ec8e3]/40 bg-[#0a1628]/80 px-3 py-1.5 text-[11px] text-white backdrop-blur-md sm:text-xs"
-              style={{ transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))` }}
+              className="absolute max-w-[7.25rem] -translate-x-1/2 -translate-y-1/2 whitespace-normal rounded-full border border-[#7ec8e3]/40 bg-[#0a1628]/80 px-2.5 py-1.5 text-center text-[10px] leading-tight text-white backdrop-blur-md sm:max-w-none sm:whitespace-nowrap sm:px-3 sm:text-xs"
+              style={{ left: `${x}%`, top: `${y}%` }}
             >
               {n.t}
             </div>
@@ -287,8 +288,8 @@ function PhilosophyPage() {
       </section>
 
       {/* The Extraction Loop */}
-      <section className="relative overflow-hidden bg-[#0a1628] py-32">
-        <div className="relative z-10 mx-auto max-w-6xl px-6">
+      <section className="relative max-w-full overflow-x-clip bg-[#0a1628] py-20 sm:py-32">
+        <div className="relative z-10 mx-auto w-full max-w-6xl overflow-x-clip px-5 sm:px-6">
           <div className="text-center">
             <div className="label-eyebrow">The extraction loop</div>
             <h2 className="display mt-6 text-4xl text-white sm:text-5xl">
@@ -297,8 +298,8 @@ function PhilosophyPage() {
               <span className="display-italic text-[#b8d4e8]">has ever fully fixed it.</span>
             </h2>
           </div>
-          <div className="mx-auto mt-16 grid max-w-5xl gap-12 lg:grid-cols-2 lg:items-center">
-            <div className="mx-auto w-full max-w-[42rem] space-y-5 text-[15px] leading-relaxed text-[#b8d4e8] lg:mx-0">
+          <div className="mx-auto mt-12 grid w-full min-w-0 max-w-5xl grid-cols-1 gap-10 lg:mt-16 lg:grid-cols-2 lg:items-center">
+            <div className="mx-auto w-full min-w-0 max-w-full space-y-5 overflow-x-clip text-wrap break-words text-[15px] leading-relaxed text-[#b8d4e8] lg:mx-0 lg:max-w-[42rem]">
               <p>
                 When the internal system runs low, human beings do something entirely predictable —
                 they extract from the world around them.
@@ -333,7 +334,9 @@ function PhilosophyPage() {
                 That is what the Sunya framework is built to do.
               </p>
             </div>
-            <ExtractionLoopDiagram />
+            <div className="mx-auto w-full min-w-0 max-w-full overflow-x-clip">
+              <ExtractionLoopDiagram />
+            </div>
           </div>
           <div className="mt-16 text-center">
             <Link
