@@ -81,7 +81,6 @@ function ExtractionLoopDiagram() {
     { t: "Deeper Emptiness", angle: 180 },
   ];
   const R = 130;
-  const labelRadiusPercent = 28;
   return (
     <div className="glass-strong relative mx-auto aspect-square w-full min-w-0 max-w-full overflow-hidden rounded-3xl p-4 sm:max-w-sm sm:p-6 md:max-w-md">
       <div
