@@ -297,8 +297,8 @@ function PhilosophyPage() {
               <span className="display-italic text-[#b8d4e8]">has ever fully fixed it.</span>
             </h2>
           </div>
-          <div className="mt-16 grid gap-12 lg:grid-cols-2 lg:items-center">
-            <div className="space-y-5 text-[15px] leading-relaxed text-[#b8d4e8]">
+          <div className="mx-auto mt-16 grid max-w-5xl gap-12 lg:grid-cols-2 lg:items-center">
+            <div className="mx-auto w-full max-w-[42rem] space-y-5 text-[15px] leading-relaxed text-[#b8d4e8] lg:mx-0">
               <p>
                 When the internal system runs low, human beings do something entirely predictable —
                 they extract from the world around them.
