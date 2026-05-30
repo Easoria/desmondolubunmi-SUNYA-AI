@@ -12,7 +12,7 @@ export default defineConfig({
   plugins: [
     tsconfigPaths(),
     tailwindcss(),
-    tanstackStart(),
+    tanstackStart({ server: { entry: "server" } }),
     nitro({ preset: "vercel" }),
     viteReact(),
   ],
