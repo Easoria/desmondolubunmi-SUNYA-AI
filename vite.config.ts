@@ -6,16 +6,24 @@ import tailwindcss from "@tailwindcss/vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 import path from "node:path";
 
-// Native TanStack Start build for Vercel. Nitro emits Vercel Build Output in
-// .vercel/output, so no manual api/ function or vercel.json is needed.
+// On Vercel, Nitro emits Vercel Build Output in .vercel/output (no manual
+// api/ function or vercel.json needed). Elsewhere (Lovable preview/build
+// checks) it emits a standard build into dist/.
+const isVercel = Boolean(process.env.VERCEL);
+
 export default defineConfig({
   plugins: [
     tsconfigPaths(),
     tailwindcss(),
     tanstackStart({ server: { entry: "server" } }),
-    nitro({ preset: "vercel" }),
+    nitro(
+      isVercel
+        ? { preset: "vercel" }
+        : { output: { dir: path.resolve(__dirname, "dist") } },
+    ),
     viteReact(),
   ],
+
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "src"),
