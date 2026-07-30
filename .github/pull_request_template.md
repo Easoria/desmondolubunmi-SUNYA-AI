@@ -13,5 +13,5 @@
 - [ ] Rollback path is clear (revert commit or restore previous Vercel deployment)
 
 ## Approval gate
-- [ ] Owner approval received before merge to `main`
+- [ ] Owner approval received in chat before push to `main`
 
