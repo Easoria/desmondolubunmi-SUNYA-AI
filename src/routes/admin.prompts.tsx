@@ -95,7 +95,7 @@ function AdminPromptsPage() {
         <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-4 px-6 py-4 sm:flex-row sm:items-center">
           <div>
             <h1 className="text-xl font-semibold">Sunya AI Prompts</h1>
-            <p className="text-xs text-slate-500">Signed in as {user.email}</p>
+            <p className="text-xs text-slate-500">Signed in as {user?.email}</p>
           </div>
           <div className="flex items-center gap-3">
             <Link to="/admin/blog" className="text-sm text-blue-600 hover:underline">
