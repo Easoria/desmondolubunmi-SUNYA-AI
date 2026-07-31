@@ -24,38 +24,38 @@ function Hero() {
       <SacredGeometry className="inset-0 m-auto h-[700px] w-[700px]" />
       <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
         <div className="label-eyebrow reveal">A universal system for inner transformation</div>
-        <h1 className="display reveal mt-6 text-5xl text-white sm:text-7xl md:text-[5.5rem]">
+        <div className="reveal mt-6 flex flex-col items-center">
+          <img
+            src={desmondImg}
+            alt="Desmond Olubunmi"
+            width={88}
+            height={88}
+            className="h-[72px] w-[72px] rounded-full object-cover ring-2 ring-[#7ec8e3]/45 shadow-[0_0_36px_-10px_rgba(126,200,227,0.85)] transition hover:ring-[#7ec8e3]/65 hover:shadow-[0_0_46px_-10px_rgba(126,200,227,0.95)] sm:h-[88px] sm:w-[88px]"
+          />
+          <p className="mt-2 text-sm text-[#b8d4e8]">Founded by Desmond Olubunmi</p>
+        </div>
+        <h1 className="display reveal mt-9 text-5xl text-white sm:text-7xl md:text-[5.5rem]">
           You are not broken.
           <br />
           <span className="display-italic text-[#b8d4e8]">You are contracted.</span>
         </h1>
-        <p className="reveal mx-auto mt-8 max-w-2xl text-base leading-relaxed text-[#b8d4e8] sm:text-lg">
+        <p className="reveal mx-auto mt-7 max-w-2xl text-base leading-relaxed text-[#b8d4e8] sm:text-lg">
           Sunya is a complete, practical framework for human wellbeing — rooted in the timeless mechanics
           of consciousness, not belief, not religion, not dogma. Just the truth of how you work.
         </p>
-        <div className="reveal mt-10 flex items-center justify-center gap-3">
-          <img
-            src={desmondImg}
-            alt="Desmond Olubunmi"
-            width={44}
-            height={44}
-            className="h-10 w-10 rounded-full object-cover ring-1 ring-[#7ec8e3]/45 shadow-[0_0_24px_-8px_rgba(126,200,227,0.8)] transition hover:ring-[#7ec8e3]/65 hover:shadow-[0_0_28px_-8px_rgba(126,200,227,0.95)] sm:h-11 sm:w-11"
-          />
-          <p className="text-sm text-[#b8d4e8]">Founded by Desmond Olubunmi</p>
-        </div>
-        <div className="reveal mx-auto mt-8 max-w-2xl">
+        <div className="reveal mx-auto mt-7 max-w-2xl">
           <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
             <Link
               to="/work-with-me"
-              className="glow-btn inline-flex w-full items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-medium tracking-wide sm:w-auto"
+              className="glow-btn inline-flex w-full items-center justify-center rounded-full px-7 py-3.5 text-sm font-medium tracking-wide sm:w-auto"
             >
-              Work with me 1-on-1 <ArrowRight className="h-4 w-4" />
+              Work with me 1-on-1
             </Link>
             <Link
               to="/sunya-ai"
-              className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-[#7ec8e3]/45 bg-white/[0.02] px-7 py-3.5 text-sm font-medium tracking-wide text-[#dcecf7] transition hover:border-[#7ec8e3]/70 hover:bg-white/[0.06] hover:shadow-[0_0_26px_-10px_rgba(126,200,227,0.75)] sm:w-auto"
+              className="inline-flex w-full items-center justify-center rounded-full border border-[#7ec8e3]/45 bg-white/[0.02] px-7 py-3.5 text-sm font-medium tracking-wide text-[#dcecf7] transition hover:border-[#7ec8e3]/70 hover:bg-white/[0.06] hover:shadow-[0_0_26px_-10px_rgba(126,200,227,0.75)] sm:w-auto"
             >
-              Try Sunya AI <ArrowRight className="h-4 w-4" />
+              Try Sunya AI
             </Link>
           </div>
           <div className="mt-4 text-center">
