@@ -9,10 +9,15 @@ export const requireSupabaseAuth = createMiddleware({ type: 'function' }).server
   async ({ next }) => {
     const SUPABASE_URL = process.env.SUPABASE_URL ?? process.env.VITE_SUPABASE_URL;
     const SUPABASE_ANON_KEY =
-      process.env.SUPABASE_ANON_KEY ?? process.env.VITE_SUPABASE_ANON_KEY;
+      process.env.SUPABASE_ANON_KEY ??
+      process.env.VITE_SUPABASE_ANON_KEY ??
+      process.env.SUPABASE_PUBLISHABLE_KEY ??
+      process.env.VITE_SUPABASE_PUBLISHABLE_KEY;
 
     if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
-      throw new Error('Missing SUPABASE_URL or SUPABASE_ANON_KEY env var.');
+      throw new Error(
+        'Missing SUPABASE_URL and a Supabase key (SUPABASE_ANON_KEY, VITE_SUPABASE_ANON_KEY, SUPABASE_PUBLISHABLE_KEY, or VITE_SUPABASE_PUBLISHABLE_KEY).',
+      );
     }
 
     const request = getRequest();
