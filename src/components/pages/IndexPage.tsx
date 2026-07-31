@@ -34,10 +34,9 @@ function Hero() {
           />
           <p className="mt-2 text-sm text-[#b8d4e8]">Founded by Desmond Olubunmi</p>
         </div>
-        <h1 className="display reveal mt-9 text-5xl text-white sm:text-7xl md:text-[5.5rem]">
-          You are not broken.
-          <br />
-          <span className="display-italic text-[#b8d4e8]">You are contracted.</span>
+        <h1 className="display reveal mt-9 text-4xl leading-[1.1] text-white sm:text-7xl md:text-[5.5rem]">
+          <span className="block whitespace-nowrap">You are not broken.</span>
+          <span className="display-italic block whitespace-nowrap text-[#b8d4e8]">You are contracted.</span>
         </h1>
         <p className="reveal mx-auto mt-7 max-w-2xl text-base leading-relaxed text-[#b8d4e8] sm:text-lg">
           Sunya is a complete, practical framework for human wellbeing — rooted in the timeless mechanics
