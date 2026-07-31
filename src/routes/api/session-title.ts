@@ -38,7 +38,7 @@ export const Route = createFileRoute("/api/session-title")({
             body: JSON.stringify({
               model: "claude-3-5-haiku-latest",
               max_tokens: 200,
-              system: "You return only valid JSON. No prose, no markdown.",
+              system: SESSION_TITLE_SYSTEM_PROMPT,
               messages: [{ role: "user", content: prompt }],
             }),
           });
