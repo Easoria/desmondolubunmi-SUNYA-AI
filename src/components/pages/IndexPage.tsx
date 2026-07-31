@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, ArrowUpRight, ChevronDown } from "lucide-react";
 import { Starfield } from "@/components/Starfield";
@@ -17,7 +17,6 @@ function useSunyaCtaLabel(freeSuffix = "") {
 
 
 function Hero() {
-  const ctaLabel = useSunyaCtaLabel();
   return (
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden pt-24">
       <Starfield density={1.2} />
@@ -34,24 +33,40 @@ function Hero() {
           Sunya is a complete, practical framework for human wellbeing — rooted in the timeless mechanics
           of consciousness, not belief, not religion, not dogma. Just the truth of how you work.
         </p>
-        <div className="reveal mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6">
-          <Link
-            to="/sunya-ai"
-            className="glow-btn inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-medium tracking-wide"
-          >
-            {ctaLabel} <ArrowRight className="h-4 w-4" />
-          </Link>
-          <Link
-            to="/philosophy"
-            className="group inline-flex items-center gap-2 text-sm text-[#b8d4e8] transition hover:text-white"
-          >
-            Explore the Philosophy
-            <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
-          </Link>
+        <div className="reveal mt-10 flex items-center justify-center gap-3">
+          <img
+            src={desmondImg}
+            alt="Desmond Olubunmi"
+            width={44}
+            height={44}
+            className="h-10 w-10 rounded-full object-cover ring-1 ring-[#7ec8e3]/45 shadow-[0_0_24px_-8px_rgba(126,200,227,0.8)] transition hover:ring-[#7ec8e3]/65 hover:shadow-[0_0_28px_-8px_rgba(126,200,227,0.95)] sm:h-11 sm:w-11"
+          />
+          <p className="text-sm text-[#b8d4e8]">Founded by Desmond Olubunmi</p>
         </div>
-        <p className="mt-8 text-xs uppercase tracking-[0.32em] text-[#b8d4e8]/60">
-          No belief required · No tradition · Just what works
-        </p>
+        <div className="reveal mx-auto mt-8 max-w-2xl">
+          <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
+            <Link
+              to="/work-with-me"
+              className="glow-btn inline-flex w-full items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-medium tracking-wide sm:w-auto"
+            >
+              Work with me 1-on-1 <ArrowRight className="h-4 w-4" />
+            </Link>
+            <Link
+              to="/sunya-ai"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-[#7ec8e3]/45 bg-white/[0.02] px-7 py-3.5 text-sm font-medium tracking-wide text-[#dcecf7] transition hover:border-[#7ec8e3]/70 hover:bg-white/[0.06] hover:shadow-[0_0_26px_-10px_rgba(126,200,227,0.75)] sm:w-auto"
+            >
+              Try Sunya AI <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+          <div className="mt-4 text-center">
+            <Link
+              to="/philosophy"
+              className="inline-flex items-center gap-2 text-sm text-[#b8d4e8] transition hover:text-white"
+            >
+              Explore the philosophy →
+            </Link>
+          </div>
+        </div>
       </div>
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
         <ChevronDown className="chev h-6 w-6 text-[#b8d4e8]/60" />
@@ -61,28 +76,6 @@ function Hero() {
 }
 
 function Pain() {
-  const cards = [
-    {
-      icon: "🌀",
-      title: "The Endless Search",
-      copy: "You've read the books, tried different paths, had glimpses — but nothing has fully landed or stayed.",
-    },
-    {
-      icon: "⚡",
-      title: "The Inner Depletion",
-      copy: "Low energy, chronic anxiety, the feeling of running on empty — no matter how much you rest.",
-    },
-    {
-      icon: "🌊",
-      title: "The Disconnection",
-      copy: "From yourself. From others. A persistent feeling of being a separate, isolated person in a hostile universe.",
-    },
-    {
-      icon: "🔁",
-      title: "The Endless Cycle",
-      copy: "You achieve the thing. You feel better — briefly. Then the emptiness returns, and the seeking begins again. This cycle is not a personal failing. It is what happens when an inner problem is solved with outer solutions.",
-    },
-  ];
   return (
     <section className="relative overflow-hidden bg-[#060d1c] py-32">
       <Starfield density={0.4} />
@@ -94,7 +87,7 @@ function Pain() {
             <br />
             <span className="display-italic text-[#b8d4e8]">You can't name it. But you feel it.</span>
           </h2>
-          <div className="mx-auto mt-10 max-w-2xl space-y-10 text-[#b8d4e8]">
+          <div className="mx-auto mt-10 max-w-[640px] space-y-8 text-[#b8d4e8]">
             <p>
               You've tried everything. More achievement. More experiences. More stimulation. A new
               relationship, a better job, a bigger goal. And it works — briefly. Then the feeling returns.
@@ -103,19 +96,9 @@ function Pain() {
               This is a closed system trying to fill an infinite inner need with finite external things.
             </p>
             <p>
-              It cannot work. Not because you are broken — but because finite things cannot produce infinite
-              fulfilment.
+              It cannot work. Not because you are broken — but because you cannot reach infinity by adding.
             </p>
           </div>
-        </div>
-        <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {cards.map((c) => (
-            <div key={c.title} className="glass-card p-7">
-              <div className="text-3xl">{c.icon}</div>
-              <h3 className="display mt-5 text-2xl text-white">{c.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-[#b8d4e8]">{c.copy}</p>
-            </div>
-          ))}
         </div>
         <div className="mx-auto mt-16 max-w-2xl">
           <div className="mx-auto h-px w-24 bg-gradient-to-r from-transparent via-[#7ec8e3]/50 to-transparent" />
@@ -131,43 +114,150 @@ function Pain() {
 }
 
 function Reframe() {
-  const causes = [
-    { n: "01", t: "Resistance", cure: "Total surrender." },
-    { n: "02", t: "Identification", cure: "Un-defining yourself." },
-    { n: "03", t: "The Separate Self", cure: "Seeing through it." },
-    { n: "04", t: "Unconsciousness", cure: "Pure observation." },
+  const chainLinks = [
+    {
+      n: "01",
+      name: "Unconsciousness",
+      line: "We are born with our senses turned outward for survival — unaware of the source of life within.",
+    },
+    {
+      n: "02",
+      name: "Identification",
+      line: "So we take ourselves to be the nearest things: the body, our thoughts, what we accumulate. And every identification draws a boundary.",
+    },
+    {
+      n: "03",
+      name: "Resistance",
+      line: "Inside that boundary we live in fear, bracing against everything that threatens our limited sense of self.",
+    },
+    {
+      n: "04",
+      name: "Contraction",
+      line: "The bracing stops being a thought and becomes physical — restricting the flow of life through the system, felt as tension, anger, unease.",
+    },
+    {
+      n: "05",
+      name: "Insufficiency",
+      line: "A closed system runs low. So we reach outward, trying to fill an infinite emptiness with finite things.",
+    },
   ];
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const [reduceMotion, setReduceMotion] = useState(
+    () => typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+  );
+  const [revealed, setRevealed] = useState(
+    () => typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+  );
+
+  useEffect(() => {
+    const media = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const onChange = () => setReduceMotion(media.matches);
+    onChange();
+    media.addEventListener("change", onChange);
+    return () => media.removeEventListener("change", onChange);
+  }, []);
+
+  useEffect(() => {
+    if (reduceMotion) {
+      setRevealed(true);
+      return;
+    }
+    const node = sectionRef.current;
+    if (!node) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setRevealed(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.24 },
+    );
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, [reduceMotion]);
+
+  const desktopStepClasses = ["md:mt-0", "md:mt-1", "md:mt-2", "md:mt-3", "md:mt-4"];
+  const mobileWidthClasses = ["w-full", "w-[98%]", "w-[96%]", "w-[94%]", "w-[92%]"];
+
   return (
-    <section className="relative overflow-hidden bg-[#0a1628] py-32">
+    <section ref={sectionRef} className="relative overflow-hidden bg-[#0a1628] py-32">
       <SacredGeometry className="right-[-200px] top-1/4 h-[800px] w-[800px]" />
       <div className="relative z-10 mx-auto max-w-5xl px-6">
         <div className="text-center">
-          <div className="label-eyebrow">The reframe</div>
-          <p className="mx-auto mt-8 max-w-xl text-[#b8d4e8]">
-            Every form of human suffering traces back to four root causes. Each has a precise cure.
+          <div className="label-eyebrow">THE REFRAME</div>
+          <h2 className="display mt-6 text-4xl text-white sm:text-5xl">
+            Every form of human suffering traces back to a single root.
+          </h2>
+          <p className="mx-auto mt-6 max-w-3xl text-[#b8d4e8]">
+            Not a set of separate problems. One chain, built in a fixed order, where each link produces the next.
           </p>
         </div>
-        <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-          {causes.map((c) => (
-            <div key={c.t} className="glass-card p-6">
-              <div className="font-display text-xs tracking-[0.4em] text-[#7ec8e3]">{c.n}</div>
-              <h3 className="display mt-3 text-2xl text-white">{c.t}</h3>
-              <p className="mt-4 border-t border-white/10 pt-3 text-xs uppercase tracking-[0.2em] text-[#7ec8e3]/80">
-                Cure
-              </p>
-              <p className="mt-1 text-sm italic text-white/90">{c.cure}</p>
-            </div>
-          ))}
+        <div className="relative mx-auto mt-14 max-w-4xl md:max-w-none">
+          <div className="pointer-events-none absolute left-[10%] right-[10%] top-12 hidden md:block">
+            <div className="h-px w-full bg-gradient-to-r from-transparent via-[#7ec8e3]/50 to-transparent" />
+            {!reduceMotion && (
+              <div className="reframe-connector-pulse absolute left-0 top-1/2 h-[2px] w-24 -translate-y-1/2 rounded-full bg-gradient-to-r from-transparent via-[#7ec8e3]/80 to-transparent blur-[1px]" />
+            )}
+          </div>
+          <div className="pointer-events-none absolute bottom-12 left-1/2 top-12 block w-px -translate-x-1/2 md:hidden">
+            <div className="h-full w-full bg-gradient-to-b from-transparent via-[#7ec8e3]/45 to-transparent" />
+            {!reduceMotion && (
+              <div className="reframe-connector-pulse-mobile absolute left-1/2 top-0 h-16 w-[2px] -translate-x-1/2 rounded-full bg-gradient-to-b from-transparent via-[#7ec8e3]/75 to-transparent blur-[1px]" />
+            )}
+          </div>
+          <div className="flex flex-col items-center gap-4 md:grid md:grid-cols-5 md:items-stretch md:gap-4">
+            {chainLinks.map((link, index) => (
+              <div
+                key={link.name}
+                className={`${mobileWidthClasses[index]} ${desktopStepClasses[index]} glass-card relative z-10 flex h-full flex-col p-5 transition-all duration-700 md:w-full ${
+                  revealed ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0"
+                }`}
+                style={{
+                  transitionDelay: reduceMotion ? "0ms" : `${index * 120}ms`,
+                  transitionDuration: reduceMotion ? "0ms" : "700ms",
+                  backgroundColor: `rgba(10, 22, 40, ${0.56 + index * 0.05})`,
+                }}
+              >
+                <div className="font-display text-xl tracking-[0.16em] text-[#7ec8e3]/45">{link.n}</div>
+                <h3 className="display mt-2 text-2xl text-white">{link.name}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-[#b8d4e8]">{link.line}</p>
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="mt-12 text-center">
+        <p className="display mx-auto mt-12 max-w-3xl text-center text-3xl text-white sm:text-4xl">
+          Pull the root, and every link lets go at once.
+        </p>
+        <div className="mt-8 text-center">
           <Link
             to="/philosophy"
             className="inline-flex items-center gap-2 text-sm text-[#7ec8e3] transition hover:text-white"
           >
-            Explore the full philosophy <ArrowRight className="h-4 w-4" />
+            Explore the full philosophy →
           </Link>
         </div>
       </div>
+      <style>{`
+        @keyframes reframeConnectorPulse {
+          0% { transform: translateX(0); opacity: 0.25; }
+          50% { opacity: 0.7; }
+          100% { transform: translateX(calc(100% - 6rem)); opacity: 0.2; }
+        }
+        @keyframes reframeConnectorPulseMobile {
+          0% { transform: translate(-50%, 0); opacity: 0.3; }
+          50% { opacity: 0.7; }
+          100% { transform: translate(-50%, calc(100% - 4rem)); opacity: 0.2; }
+        }
+        .reframe-connector-pulse { animation: reframeConnectorPulse 3.6s ease-in-out infinite; }
+        .reframe-connector-pulse-mobile { animation: reframeConnectorPulseMobile 3.6s ease-in-out infinite; }
+        @media (prefers-reduced-motion: reduce) {
+          .reframe-connector-pulse,
+          .reframe-connector-pulse-mobile {
+            animation: none !important;
+          }
+        }
+      `}</style>
     </section>
   );
 }
@@ -186,7 +276,7 @@ function AITeaser() {
           </h2>
         </div>
         <div className="mt-14">
-          <SunyaAI />
+          <SunyaAI hideSessionCounter />
           <div className="mt-8 text-center">
             <Link
               to="/sunya-ai"

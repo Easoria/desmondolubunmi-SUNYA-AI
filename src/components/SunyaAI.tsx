@@ -35,7 +35,7 @@ function currentMonthKey() {
   return new Date().toISOString().slice(0, 7); // YYYY-MM
 }
 
-export function SunyaAI() {
+export function SunyaAI({ hideSessionCounter = false }: { hideSessionCounter?: boolean } = {}) {
   const { user } = useAuth();
   const { isActive: isPaid } = useSubscription();
   const { openCheckout, checkoutElement } = useStripeCheckout();
@@ -470,7 +470,7 @@ export function SunyaAI() {
               <Plus className="h-3 w-3" /> New
             </button>
           )}
-          {!isPaid && (
+          {!hideSessionCounter && !isPaid && (
             <div className="flex flex-col items-end leading-tight text-[#b8d4e8]/60 sm:flex-row sm:items-baseline sm:gap-1">
               <span className="text-xs">{Math.max(0, limit - usedCount)} / {limit}</span>
               <span className="text-[10px] sm:text-xs">free</span>
