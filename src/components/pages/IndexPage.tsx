@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, ArrowUpRight, ChevronDown } from "lucide-react";
 import { Starfield } from "@/components/Starfield";
@@ -34,7 +34,17 @@ function Hero() {
           Sunya is a complete, practical framework for human wellbeing — rooted in the timeless mechanics
           of consciousness, not belief, not religion, not dogma. Just the truth of how you work.
         </p>
-        <div className="reveal mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6">
+        <div className="reveal group mt-10 flex items-center justify-center gap-3">
+          <img
+            src={desmondImg}
+            alt="Desmond Olubunmi"
+            width={44}
+            height={44}
+            className="h-10 w-10 rounded-full object-cover ring-1 ring-[#7ec8e3]/45 shadow-[0_0_24px_-8px_rgba(126,200,227,0.8)] transition group-hover:ring-[#7ec8e3]/65 group-hover:shadow-[0_0_28px_-8px_rgba(126,200,227,0.95)] sm:h-11 sm:w-11"
+          />
+          <p className="text-sm text-[#b8d4e8]">Founded by Desmond Olubunmi</p>
+        </div>
+        <div className="reveal mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6">
           <Link
             to="/sunya-ai"
             className="glow-btn inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-medium tracking-wide"
@@ -131,43 +141,138 @@ function Pain() {
 }
 
 function Reframe() {
-  const causes = [
-    { n: "01", t: "Resistance", cure: "Total surrender." },
-    { n: "02", t: "Identification", cure: "Un-defining yourself." },
-    { n: "03", t: "The Separate Self", cure: "Seeing through it." },
-    { n: "04", t: "Unconsciousness", cure: "Pure observation." },
+  const chainLinks = [
+    { n: "01", name: "Unconsciousness", line: "We never learn what we actually are." },
+    {
+      n: "02",
+      name: "Identification",
+      line: "So we become the nearest thing — the body, the story, the role.",
+    },
+    { n: "03", name: "Resistance", line: "And brace against everything that threatens it." },
+    {
+      n: "04",
+      name: "Contraction",
+      line: "The bracing stops being a thought and becomes physical.",
+    },
+    {
+      n: "05",
+      name: "Insufficiency",
+      line: "A closed system runs low — and reaches outward to fill what only opens from within.",
+    },
   ];
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const [reduceMotion, setReduceMotion] = useState(
+    () => typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+  );
+  const [revealed, setRevealed] = useState(
+    () => typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+  );
+
+  useEffect(() => {
+    const media = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const onChange = () => setReduceMotion(media.matches);
+    onChange();
+    media.addEventListener("change", onChange);
+    return () => media.removeEventListener("change", onChange);
+  }, []);
+
+  useEffect(() => {
+    if (reduceMotion) {
+      setRevealed(true);
+      return;
+    }
+    const node = sectionRef.current;
+    if (!node) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setRevealed(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.24 },
+    );
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, [reduceMotion]);
+
+  const desktopStepClasses = ["md:mt-0", "md:mt-1", "md:mt-2", "md:mt-3", "md:mt-4"];
+  const mobileWidthClasses = ["w-full", "w-[98%]", "w-[96%]", "w-[94%]", "w-[92%]"];
+
   return (
-    <section className="relative overflow-hidden bg-[#0a1628] py-32">
+    <section ref={sectionRef} className="relative overflow-hidden bg-[#0a1628] py-32">
       <SacredGeometry className="right-[-200px] top-1/4 h-[800px] w-[800px]" />
       <div className="relative z-10 mx-auto max-w-5xl px-6">
         <div className="text-center">
-          <div className="label-eyebrow">The reframe</div>
-          <p className="mx-auto mt-8 max-w-xl text-[#b8d4e8]">
-            Every form of human suffering traces back to four root causes. Each has a precise cure.
+          <div className="label-eyebrow">THE REFRAME</div>
+          <h2 className="display mt-6 text-4xl text-white sm:text-5xl">
+            Every form of human suffering traces back to a single root.
+          </h2>
+          <p className="mx-auto mt-6 max-w-3xl text-[#b8d4e8]">
+            Not a set of separate problems. One chain, built in a fixed order, where each link produces the next.
           </p>
         </div>
-        <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-          {causes.map((c) => (
-            <div key={c.t} className="glass-card p-6">
-              <div className="font-display text-xs tracking-[0.4em] text-[#7ec8e3]">{c.n}</div>
-              <h3 className="display mt-3 text-2xl text-white">{c.t}</h3>
-              <p className="mt-4 border-t border-white/10 pt-3 text-xs uppercase tracking-[0.2em] text-[#7ec8e3]/80">
-                Cure
-              </p>
-              <p className="mt-1 text-sm italic text-white/90">{c.cure}</p>
-            </div>
-          ))}
+        <div className="relative mx-auto mt-14 max-w-4xl md:max-w-none">
+          <div className="pointer-events-none absolute left-[10%] right-[10%] top-12 hidden h-px bg-gradient-to-r from-transparent via-[#7ec8e3]/50 to-transparent md:block" />
+          <div className="pointer-events-none absolute bottom-12 left-1/2 top-12 block w-px -translate-x-1/2 bg-gradient-to-b from-transparent via-[#7ec8e3]/45 to-transparent md:hidden" />
+          {!reduceMotion && (
+            <>
+              <div className="reframe-connector-pulse pointer-events-none absolute left-[10%] top-12 hidden h-[2px] w-24 -translate-y-1/2 rounded-full bg-gradient-to-r from-transparent via-[#7ec8e3]/80 to-transparent blur-[1px] md:block" />
+              <div className="reframe-connector-pulse-mobile pointer-events-none absolute left-1/2 top-12 block h-16 w-[2px] -translate-x-1/2 rounded-full bg-gradient-to-b from-transparent via-[#7ec8e3]/75 to-transparent blur-[1px] md:hidden" />
+            </>
+          )}
+          <div className="flex flex-col items-center gap-4 md:grid md:grid-cols-5 md:items-start md:gap-4">
+            {chainLinks.map((link, index) => (
+              <div
+                key={link.name}
+                className={`${mobileWidthClasses[index]} ${desktopStepClasses[index]} glass-card relative z-10 p-5 transition-all duration-700 md:w-full ${
+                  revealed ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0"
+                }`}
+                style={{
+                  transitionDelay: reduceMotion ? "0ms" : `${index * 120}ms`,
+                  transitionDuration: reduceMotion ? "0ms" : "700ms",
+                  backgroundColor: `rgba(10, 22, 40, ${0.56 + index * 0.05})`,
+                }}
+              >
+                <div className="font-display text-xl tracking-[0.16em] text-[#7ec8e3]/45">{link.n}</div>
+                <h3 className="display mt-2 text-2xl text-white">{link.name}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-[#b8d4e8]">{link.line}</p>
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="mt-12 text-center">
+        <p className="display mx-auto mt-12 max-w-3xl text-center text-3xl text-white sm:text-4xl">
+          Pull the root, and every link lets go at once.
+        </p>
+        <div className="mt-8 text-center">
           <Link
             to="/philosophy"
             className="inline-flex items-center gap-2 text-sm text-[#7ec8e3] transition hover:text-white"
           >
-            Explore the full philosophy <ArrowRight className="h-4 w-4" />
+            Explore the full philosophy →
           </Link>
         </div>
       </div>
+      <style>{`
+        @keyframes reframeConnectorPulse {
+          0% { transform: translateX(0); opacity: 0.25; }
+          50% { opacity: 0.75; }
+          100% { transform: translateX(calc(100vw - 22rem)); opacity: 0.2; }
+        }
+        @keyframes reframeConnectorPulseMobile {
+          0% { transform: translate(-50%, 0); opacity: 0.3; }
+          50% { opacity: 0.75; }
+          100% { transform: translate(-50%, calc(100% + 19rem)); opacity: 0.2; }
+        }
+        .reframe-connector-pulse { animation: reframeConnectorPulse 3.6s ease-in-out infinite; }
+        .reframe-connector-pulse-mobile { animation: reframeConnectorPulseMobile 3.6s ease-in-out infinite; }
+        @media (prefers-reduced-motion: reduce) {
+          .reframe-connector-pulse,
+          .reframe-connector-pulse-mobile {
+            animation: none !important;
+          }
+        }
+      `}</style>
     </section>
   );
 }
@@ -186,7 +291,7 @@ function AITeaser() {
           </h2>
         </div>
         <div className="mt-14">
-          <SunyaAI />
+          <SunyaAI hideSessionCounter />
           <div className="mt-8 text-center">
             <Link
               to="/sunya-ai"

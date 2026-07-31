@@ -24,6 +24,7 @@ export function Footer() {
           </Link>
         </nav>
         <div className="flex justify-start gap-3 md:justify-end">
+          {/* TODO: Replace placeholder # links with Desmond's real Instagram and TikTok URLs. */}
           {[Instagram, Youtube].map((Ic, i) => (
             <a
               key={i}
@@ -47,7 +48,7 @@ export function Footer() {
         <div className="mt-5 flex flex-col items-center justify-center gap-3 text-xs text-[#b8d4e8]/60 sm:flex-row sm:gap-6">
           <Link to="/privacy" className="hover:text-white">Privacy Policy</Link>
           <Link to="/terms" className="hover:text-white">Terms of Service</Link>
-          <a href="mailto:support@sunyasleep.com" className="hover:text-white">support@sunyasleep.com</a>
+          <a href="mailto:hello@desmondolubunmi.com" className="hover:text-white">hello@desmondolubunmi.com</a>
         </div>
         <div className="mt-4 text-center text-[10px] tracking-[0.3em] text-[#b8d4e8]/40">
           © 2026 DESMOND OLUBUNMI · BUILT ON TRUTH · POWERED BY SUNYA
