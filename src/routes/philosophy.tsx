@@ -285,10 +285,10 @@ function ZonePanel({ zone }: { zone: Zone }) {
           : "ring-1 ring-[#7ec8e3]/25"
       }`}
     >
-      <div className="pointer-events-none absolute left-4 top-2 font-display text-6xl text-white/10 sm:text-7xl">
+      <div className="pointer-events-none absolute left-3 top-2 font-display text-6xl text-white/10 sm:left-4 sm:text-7xl">
         {String(zone.n).padStart(2, "0")}
       </div>
-      <div className="relative z-10">
+      <div className="relative z-10 pl-10 sm:pl-12">
         <h3 className="display text-3xl text-white">{zone.name}</h3>
         <p className="mt-4 text-[15px] leading-relaxed text-[#b8d4e8]">{zone.description}</p>
         <ul className="mt-5 space-y-2 text-sm text-[#b8d4e8]">
