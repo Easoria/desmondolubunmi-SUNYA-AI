@@ -67,7 +67,7 @@ Separate the four sections from each other with a double line break.`;
 
 export const SESSION_TITLE_SYSTEM_PROMPT = `You return only valid JSON. No prose, no markdown.`;
 
-export const SESSION_TITLE_USER_PROMPT = `Based on the conversation below, return a short JSON object with:
+export const SESSION_TITLE_USER_PROMPT = (transcript: string) => `Based on the conversation below, return a short JSON object with:
 - "title": 4-6 word session title capturing the core theme (no punctuation at end, sentence case).
 - "lever_tags": array of 1-3 levers most central to the session, chosen ONLY from: Conservation, Breath, Movement, Mind, Sound, Heart, Awareness, Sleep, Nutrition, Connection, Environment, Nature, Sustenance.
 
