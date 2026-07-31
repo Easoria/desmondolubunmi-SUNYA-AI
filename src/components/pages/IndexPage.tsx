@@ -76,28 +76,6 @@ function Hero() {
 }
 
 function Pain() {
-  const cards = [
-    {
-      icon: "🌀",
-      title: "The Endless Search",
-      copy: "You've read the books, tried different paths, had glimpses — but nothing has fully landed or stayed.",
-    },
-    {
-      icon: "⚡",
-      title: "The Inner Depletion",
-      copy: "Low energy, chronic anxiety, the feeling of running on empty — no matter how much you rest.",
-    },
-    {
-      icon: "🌊",
-      title: "The Disconnection",
-      copy: "From yourself. From others. A persistent feeling of being a separate, isolated person in a hostile universe.",
-    },
-    {
-      icon: "🔁",
-      title: "The Endless Cycle",
-      copy: "You achieve the thing. You feel better — briefly. Then the emptiness returns, and the seeking begins again. This cycle is not a personal failing. It is what happens when an inner problem is solved with outer solutions.",
-    },
-  ];
   return (
     <section className="relative overflow-hidden bg-[#060d1c] py-32">
       <Starfield density={0.4} />
@@ -109,7 +87,7 @@ function Pain() {
             <br />
             <span className="display-italic text-[#b8d4e8]">You can't name it. But you feel it.</span>
           </h2>
-          <div className="mx-auto mt-10 max-w-2xl space-y-10 text-[#b8d4e8]">
+          <div className="mx-auto mt-10 max-w-[640px] space-y-8 text-[#b8d4e8]">
             <p>
               You've tried everything. More achievement. More experiences. More stimulation. A new
               relationship, a better job, a bigger goal. And it works — briefly. Then the feeling returns.
@@ -118,19 +96,9 @@ function Pain() {
               This is a closed system trying to fill an infinite inner need with finite external things.
             </p>
             <p>
-              It cannot work. Not because you are broken — but because finite things cannot produce infinite
-              fulfilment.
+              It cannot work. Not because you are broken — but because you cannot reach infinity by adding.
             </p>
           </div>
-        </div>
-        <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {cards.map((c) => (
-            <div key={c.title} className="glass-card p-7">
-              <div className="text-3xl">{c.icon}</div>
-              <h3 className="display mt-5 text-2xl text-white">{c.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-[#b8d4e8]">{c.copy}</p>
-            </div>
-          ))}
         </div>
         <div className="mx-auto mt-16 max-w-2xl">
           <div className="mx-auto h-px w-24 bg-gradient-to-r from-transparent via-[#7ec8e3]/50 to-transparent" />
