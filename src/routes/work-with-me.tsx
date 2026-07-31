@@ -30,7 +30,7 @@ const STEPS = [
   "Identification of where your system is actually contracted — which is rarely where you think",
   "The single lever that matters most for you right now, and why the others can wait",
   "A personalised protocol built for your actual life, not a generic programme",
-  "Follow-up voice note from Desmond within 48 hours",
+  "ongoing support you if needed.",
 ];
 
 const ZONES = [
