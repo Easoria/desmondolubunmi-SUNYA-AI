@@ -91,7 +91,7 @@ export const SOLUTION_PARSER_RULES = `After the model returns the solution respo
 
 export const CHAT_LIMIT_LOGIC = `Authenticated free users are allowed up to 3 sessions per day. The chat route checks the request's bearer token against the user_profiles table. If subscription_status is not "paid" and the user has already sent 1 message today (today === last_session_date) and sessions_today >= 3, the route returns HTTP 429 with error code "limit" before calling the model. This limit is enforced on the server; the UI displays the remaining quota and blocks the input when the limit is reached.`;
 
-export const COMBINED_PROMPT_EXPORT = `=== SUNYA AI — MAIN CHAT SYSTEM PROMPT ===
+export const COMBINED_PROMPT_EXPORT = (transcript = "[PASTE TRANSCRIPT HERE]") => `=== SUNYA AI — MAIN CHAT SYSTEM PROMPT ===
 Model: claude-sonnet-4-6
 Max tokens: 1024
 Context window sent: last 12 messages, truncated to 4000 characters each.
@@ -106,7 +106,7 @@ ${SESSION_TITLE_SYSTEM_PROMPT}
 
 === SUNYA AI — SESSION TITLE USER PROMPT ===
 
-${SESSION_TITLE_USER_PROMPT}
+${SESSION_TITLE_USER_PROMPT(transcript)}
 
 === SUNYA AI — SOLUTION PARSER RULES (post-processing, not sent to model) ===
 
