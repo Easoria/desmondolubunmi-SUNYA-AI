@@ -545,7 +545,7 @@ simple logic.`}
                 >
                   <details
                     className={`chain-card glass-card group relative overflow-hidden border-l-2 ${edgeClass}`}
-                    defaultOpen={index === 0}
+                    open={index === 0}
                     style={{
                       background: `linear-gradient(160deg, rgba(255,255,255,${0.09 - index * 0.01}), rgba(10,22,40,${0.42 + index * 0.08}))`,
                       boxShadow: `0 0 ${48 - index * 6}px rgba(126,200,227,${0.24 - index * 0.02})`,
