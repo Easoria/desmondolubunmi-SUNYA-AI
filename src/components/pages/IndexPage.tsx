@@ -17,7 +17,6 @@ function useSunyaCtaLabel(freeSuffix = "") {
 
 
 function Hero() {
-  const ctaLabel = useSunyaCtaLabel();
   return (
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden pt-24">
       <Starfield density={1.2} />
@@ -34,34 +33,40 @@ function Hero() {
           Sunya is a complete, practical framework for human wellbeing — rooted in the timeless mechanics
           of consciousness, not belief, not religion, not dogma. Just the truth of how you work.
         </p>
-        <div className="reveal group mt-10 flex items-center justify-center gap-3">
+        <div className="reveal mt-10 flex items-center justify-center gap-3">
           <img
             src={desmondImg}
             alt="Desmond Olubunmi"
             width={44}
             height={44}
-            className="h-10 w-10 rounded-full object-cover ring-1 ring-[#7ec8e3]/45 shadow-[0_0_24px_-8px_rgba(126,200,227,0.8)] transition group-hover:ring-[#7ec8e3]/65 group-hover:shadow-[0_0_28px_-8px_rgba(126,200,227,0.95)] sm:h-11 sm:w-11"
+            className="h-10 w-10 rounded-full object-cover ring-1 ring-[#7ec8e3]/45 shadow-[0_0_24px_-8px_rgba(126,200,227,0.8)] transition hover:ring-[#7ec8e3]/65 hover:shadow-[0_0_28px_-8px_rgba(126,200,227,0.95)] sm:h-11 sm:w-11"
           />
           <p className="text-sm text-[#b8d4e8]">Founded by Desmond Olubunmi</p>
         </div>
-        <div className="reveal mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6">
-          <Link
-            to="/sunya-ai"
-            className="glow-btn inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-medium tracking-wide"
-          >
-            {ctaLabel} <ArrowRight className="h-4 w-4" />
-          </Link>
-          <Link
-            to="/philosophy"
-            className="group inline-flex items-center gap-2 text-sm text-[#b8d4e8] transition hover:text-white"
-          >
-            Explore the Philosophy
-            <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
-          </Link>
+        <div className="reveal mx-auto mt-8 max-w-2xl">
+          <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
+            <Link
+              to="/work-with-me"
+              className="glow-btn inline-flex w-full items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-medium tracking-wide sm:w-auto"
+            >
+              Work with me 1-on-1 <ArrowRight className="h-4 w-4" />
+            </Link>
+            <Link
+              to="/sunya-ai"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-[#7ec8e3]/45 bg-white/[0.02] px-7 py-3.5 text-sm font-medium tracking-wide text-[#dcecf7] transition hover:border-[#7ec8e3]/70 hover:bg-white/[0.06] hover:shadow-[0_0_26px_-10px_rgba(126,200,227,0.75)] sm:w-auto"
+            >
+              Try Sunya AI <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+          <div className="mt-4 text-center">
+            <Link
+              to="/philosophy"
+              className="inline-flex items-center gap-2 text-sm text-[#b8d4e8] transition hover:text-white"
+            >
+              Explore the philosophy →
+            </Link>
+          </div>
         </div>
-        <p className="mt-8 text-xs uppercase tracking-[0.32em] text-[#b8d4e8]/60">
-          No belief required · No tradition · Just what works
-        </p>
       </div>
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
         <ChevronDown className="chev h-6 w-6 text-[#b8d4e8]/60" />
@@ -142,22 +147,30 @@ function Pain() {
 
 function Reframe() {
   const chainLinks = [
-    { n: "01", name: "Unconsciousness", line: "We never learn what we actually are." },
+    {
+      n: "01",
+      name: "Unconsciousness",
+      line: "We are born with our senses turned outward for survival — unaware of the source of life within.",
+    },
     {
       n: "02",
       name: "Identification",
-      line: "So we become the nearest thing — the body, the story, the role.",
+      line: "So we take ourselves to be the nearest things: the body, our thoughts, what we accumulate. And every identification draws a boundary.",
     },
-    { n: "03", name: "Resistance", line: "And brace against everything that threatens it." },
+    {
+      n: "03",
+      name: "Resistance",
+      line: "Inside that boundary we live in fear, bracing against everything that threatens our limited sense of self.",
+    },
     {
       n: "04",
       name: "Contraction",
-      line: "The bracing stops being a thought and becomes physical.",
+      line: "The bracing stops being a thought and becomes physical — restricting the flow of life through the system, felt as tension, anger, unease.",
     },
     {
       n: "05",
       name: "Insufficiency",
-      line: "A closed system runs low — and reaches outward to fill what only opens from within.",
+      line: "A closed system runs low. So we reach outward, trying to fill an infinite emptiness with finite things.",
     },
   ];
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -213,19 +226,23 @@ function Reframe() {
           </p>
         </div>
         <div className="relative mx-auto mt-14 max-w-4xl md:max-w-none">
-          <div className="pointer-events-none absolute left-[10%] right-[10%] top-12 hidden h-px bg-gradient-to-r from-transparent via-[#7ec8e3]/50 to-transparent md:block" />
-          <div className="pointer-events-none absolute bottom-12 left-1/2 top-12 block w-px -translate-x-1/2 bg-gradient-to-b from-transparent via-[#7ec8e3]/45 to-transparent md:hidden" />
-          {!reduceMotion && (
-            <>
-              <div className="reframe-connector-pulse pointer-events-none absolute left-[10%] top-12 hidden h-[2px] w-24 -translate-y-1/2 rounded-full bg-gradient-to-r from-transparent via-[#7ec8e3]/80 to-transparent blur-[1px] md:block" />
-              <div className="reframe-connector-pulse-mobile pointer-events-none absolute left-1/2 top-12 block h-16 w-[2px] -translate-x-1/2 rounded-full bg-gradient-to-b from-transparent via-[#7ec8e3]/75 to-transparent blur-[1px] md:hidden" />
-            </>
-          )}
-          <div className="flex flex-col items-center gap-4 md:grid md:grid-cols-5 md:items-start md:gap-4">
+          <div className="pointer-events-none absolute left-[10%] right-[10%] top-12 hidden md:block">
+            <div className="h-px w-full bg-gradient-to-r from-transparent via-[#7ec8e3]/50 to-transparent" />
+            {!reduceMotion && (
+              <div className="reframe-connector-pulse absolute left-0 top-1/2 h-[2px] w-24 -translate-y-1/2 rounded-full bg-gradient-to-r from-transparent via-[#7ec8e3]/80 to-transparent blur-[1px]" />
+            )}
+          </div>
+          <div className="pointer-events-none absolute bottom-12 left-1/2 top-12 block w-px -translate-x-1/2 md:hidden">
+            <div className="h-full w-full bg-gradient-to-b from-transparent via-[#7ec8e3]/45 to-transparent" />
+            {!reduceMotion && (
+              <div className="reframe-connector-pulse-mobile absolute left-1/2 top-0 h-16 w-[2px] -translate-x-1/2 rounded-full bg-gradient-to-b from-transparent via-[#7ec8e3]/75 to-transparent blur-[1px]" />
+            )}
+          </div>
+          <div className="flex flex-col items-center gap-4 md:grid md:grid-cols-5 md:items-stretch md:gap-4">
             {chainLinks.map((link, index) => (
               <div
                 key={link.name}
-                className={`${mobileWidthClasses[index]} ${desktopStepClasses[index]} glass-card relative z-10 p-5 transition-all duration-700 md:w-full ${
+                className={`${mobileWidthClasses[index]} ${desktopStepClasses[index]} glass-card relative z-10 flex h-full flex-col p-5 transition-all duration-700 md:w-full ${
                   revealed ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0"
                 }`}
                 style={{
@@ -256,13 +273,13 @@ function Reframe() {
       <style>{`
         @keyframes reframeConnectorPulse {
           0% { transform: translateX(0); opacity: 0.25; }
-          50% { opacity: 0.75; }
-          100% { transform: translateX(calc(100vw - 22rem)); opacity: 0.2; }
+          50% { opacity: 0.7; }
+          100% { transform: translateX(calc(100% - 6rem)); opacity: 0.2; }
         }
         @keyframes reframeConnectorPulseMobile {
           0% { transform: translate(-50%, 0); opacity: 0.3; }
-          50% { opacity: 0.75; }
-          100% { transform: translate(-50%, calc(100% + 19rem)); opacity: 0.2; }
+          50% { opacity: 0.7; }
+          100% { transform: translate(-50%, calc(100% - 4rem)); opacity: 0.2; }
         }
         .reframe-connector-pulse { animation: reframeConnectorPulse 3.6s ease-in-out infinite; }
         .reframe-connector-pulse-mobile { animation: reframeConnectorPulseMobile 3.6s ease-in-out infinite; }
