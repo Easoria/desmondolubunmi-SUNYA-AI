@@ -1,16 +1,17 @@
 // Browser Supabase client. Uses your own Supabase project's env vars.
-// Provide VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY in .env.
+// Supports Lovable naming too: VITE_SUPABASE_PUBLISHABLE_KEY.
 import { createClient } from '@supabase/supabase-js';
 import type { Database } from './types';
 
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL as string;
-const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY as string;
+const SUPABASE_ANON_KEY = (import.meta.env.VITE_SUPABASE_ANON_KEY ??
+  import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY) as string;
 
 if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
   // Surface a clear error during dev/build if envs are missing.
   // eslint-disable-next-line no-console
   console.error(
-    '[Supabase] Missing VITE_SUPABASE_URL or VITE_SUPABASE_ANON_KEY. Set them in your environment.',
+    '[Supabase] Missing VITE_SUPABASE_URL and a Supabase browser key. Set VITE_SUPABASE_ANON_KEY or VITE_SUPABASE_PUBLISHABLE_KEY.',
   );
 }
 
