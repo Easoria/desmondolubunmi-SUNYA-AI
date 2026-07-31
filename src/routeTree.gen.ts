@@ -33,6 +33,7 @@ import { Route as ApiSessionTitleRouteImport } from './routes/api/session-title'
 import { Route as ApiContributorSignupRouteImport } from './routes/api/contributor-signup'
 import { Route as ApiCommunitySignupRouteImport } from './routes/api/community-signup'
 import { Route as ApiChatRouteImport } from './routes/api/chat'
+import { Route as AdminPromptsRouteImport } from './routes/admin.prompts'
 import { Route as AdminBlogRouteImport } from './routes/admin.blog'
 import { Route as ApiPublicPaymentsWebhookRouteImport } from './routes/api/public/payments/webhook'
 
@@ -156,6 +157,11 @@ const ApiChatRoute = ApiChatRouteImport.update({
   path: '/api/chat',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminPromptsRoute = AdminPromptsRouteImport.update({
+  id: '/admin/prompts',
+  path: '/admin/prompts',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AdminBlogRoute = AdminBlogRouteImport.update({
   id: '/admin/blog',
   path: '/admin/blog',
@@ -188,6 +194,7 @@ export interface FileRoutesByFullPath {
   '/vision': typeof VisionRoute
   '/work-with-me': typeof WorkWithMeRoute
   '/admin/blog': typeof AdminBlogRoute
+  '/admin/prompts': typeof AdminPromptsRoute
   '/api/chat': typeof ApiChatRoute
   '/api/community-signup': typeof ApiCommunitySignupRoute
   '/api/contributor-signup': typeof ApiContributorSignupRoute
@@ -216,6 +223,7 @@ export interface FileRoutesByTo {
   '/vision': typeof VisionRoute
   '/work-with-me': typeof WorkWithMeRoute
   '/admin/blog': typeof AdminBlogRoute
+  '/admin/prompts': typeof AdminPromptsRoute
   '/api/chat': typeof ApiChatRoute
   '/api/community-signup': typeof ApiCommunitySignupRoute
   '/api/contributor-signup': typeof ApiContributorSignupRoute
@@ -245,6 +253,7 @@ export interface FileRoutesById {
   '/vision': typeof VisionRoute
   '/work-with-me': typeof WorkWithMeRoute
   '/admin/blog': typeof AdminBlogRoute
+  '/admin/prompts': typeof AdminPromptsRoute
   '/api/chat': typeof ApiChatRoute
   '/api/community-signup': typeof ApiCommunitySignupRoute
   '/api/contributor-signup': typeof ApiContributorSignupRoute
@@ -275,6 +284,7 @@ export interface FileRouteTypes {
     | '/vision'
     | '/work-with-me'
     | '/admin/blog'
+    | '/admin/prompts'
     | '/api/chat'
     | '/api/community-signup'
     | '/api/contributor-signup'
@@ -303,6 +313,7 @@ export interface FileRouteTypes {
     | '/vision'
     | '/work-with-me'
     | '/admin/blog'
+    | '/admin/prompts'
     | '/api/chat'
     | '/api/community-signup'
     | '/api/contributor-signup'
@@ -331,6 +342,7 @@ export interface FileRouteTypes {
     | '/vision'
     | '/work-with-me'
     | '/admin/blog'
+    | '/admin/prompts'
     | '/api/chat'
     | '/api/community-signup'
     | '/api/contributor-signup'
@@ -360,6 +372,7 @@ export interface RootRouteChildren {
   VisionRoute: typeof VisionRoute
   WorkWithMeRoute: typeof WorkWithMeRoute
   AdminBlogRoute: typeof AdminBlogRoute
+  AdminPromptsRoute: typeof AdminPromptsRoute
   ApiChatRoute: typeof ApiChatRoute
   ApiCommunitySignupRoute: typeof ApiCommunitySignupRoute
   ApiContributorSignupRoute: typeof ApiContributorSignupRoute
@@ -538,6 +551,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiChatRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin/prompts': {
+      id: '/admin/prompts'
+      path: '/admin/prompts'
+      fullPath: '/admin/prompts'
+      preLoaderRoute: typeof AdminPromptsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/admin/blog': {
       id: '/admin/blog'
       path: '/admin/blog'
@@ -585,6 +605,7 @@ const rootRouteChildren: RootRouteChildren = {
   VisionRoute: VisionRoute,
   WorkWithMeRoute: WorkWithMeRoute,
   AdminBlogRoute: AdminBlogRoute,
+  AdminPromptsRoute: AdminPromptsRoute,
   ApiChatRoute: ApiChatRoute,
   ApiCommunitySignupRoute: ApiCommunitySignupRoute,
   ApiContributorSignupRoute: ApiContributorSignupRoute,
