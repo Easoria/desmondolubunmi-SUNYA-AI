@@ -2,11 +2,12 @@ import { Link, useNavigate } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { ArrowRight, Menu, X, LogOut, LayoutDashboard, History, Settings } from "lucide-react";
 import { useAuth } from "@/hooks/use-auth";
+import { oneToOneNavLabel } from "@/lib/one-to-one-offer";
 
 const NAV = [
   { label: "Philosophy", to: "/philosophy" as const },
   { label: "Sunya AI", to: "/sunya-ai" as const },
-  { label: "1-on-1 (Free)", to: "/work-with-me" as const },
+  { label: oneToOneNavLabel(), to: "/work-with-me" as const },
   { label: "Vision", to: "/vision" as const },
 ];
 

@@ -6,33 +6,64 @@ import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { Breadcrumb } from "@/components/site/Breadcrumb";
 import desmondImg from "@/assets/desmond.jpg";
+import { pageMeta } from "@/lib/page-meta";
+import {
+  oneToOneBookingLeadLine,
+  oneToOneBookingCtaLabel,
+  oneToOneHeroOfferLine,
+  oneToOneOfferNote,
+  oneToOnePricingLine,
+  oneToOneWorkDescription,
+} from "@/lib/one-to-one-offer";
 
 export const Route = createFileRoute("/work-with-me")({
   component: WorkPage,
   head: () => ({
-    meta: [
-      { title: "Work With Desmond — 1-on-1 Sunya sessions" },
-      {
-        name: "description",
-        content:
-          "Direct, personalised engagement with the full Sunya framework — applied to your specific life, your specific situation, your specific system.",
-      },
-    ],
+    meta: pageMeta("Work With Desmond — 1-on-1 Sunya Sessions", oneToOneWorkDescription()),
   }),
 });
 
 const CALENDLY_URL = "https://calendly.com/easoriaai/reset_session";
 
 const STEPS = [
-  "Full diagnostic conversation across the 4 root causes and 7 layers",
-  "Identification of your primary imbalances and patterns",
-  "A personalised practice protocol tailored to your life",
-  "Clarity on the single most important shift for you right now",
+  "Full diagnostic across the five links and the seven layers of being",
+  "Identification of where your system is actually contracted — which is rarely where you think",
+  "The single lever that matters most for you right now, and why the others can wait",
+  "A personalised protocol built for your actual life, not a generic programme",
   "Follow-up voice note from Desmond within 48 hours",
 ];
 
+const ZONES = [
+  {
+    zone: "Survival crisis",
+    description:
+      "The material ground is unstable — money, housing, safety. No inner practice takes root here until that is addressed directly.",
+  },
+  {
+    zone: "Nervous system collapse",
+    description:
+      "Exhausted, dysregulated, sleeping badly, tense in a way that never fully releases.",
+  },
+  {
+    zone: "Emotional accumulation",
+    description:
+      "Stable on the surface, but carrying grief, resentment, or numbness that has not moved in years.",
+  },
+  {
+    zone: "Mental fragmentation",
+    description:
+      "Scattered, overthinking, self-critical, mentally exhausted despite physical rest.",
+  },
+  {
+    zone: "The hollow seeker",
+    description:
+      "Everything works. Nothing satisfies. Successful by every external measure and persistently empty.",
+  },
+] as const;
+
 function WorkPage() {
   const [bioExpanded, setBioExpanded] = useState(false);
+
   function scrollToBooking() {
     document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" });
   }
@@ -80,7 +111,7 @@ function WorkPage() {
             Work With <span className="display-italic text-[#e8c79c]">Desmond</span>
           </h1>
           <p className="mx-auto mt-8 max-w-2xl text-lg text-[#b8d4e8]">
-            Currently offering free founding sessions in exchange for honest feedback and a short testimonial.
+            {oneToOneHeroOfferLine()}
           </p>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-[#b8d4e8]">
             Direct, personalised engagement with the full Sunya framework — applied to your
@@ -90,7 +121,7 @@ function WorkPage() {
             href="#booking"
             className="glow-btn mt-10 inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium"
           >
-            Book Free Session <ArrowRight className="h-4 w-4" />
+            {oneToOneBookingCtaLabel()} <ArrowRight className="h-4 w-4" />
           </a>
         </div>
       </section>
@@ -100,13 +131,10 @@ function WorkPage() {
           <div className="glass-card space-y-5 p-9 text-[#b8d4e8]">
             <p className="display text-2xl text-white">This is not generic life coaching.</p>
             <p>
-              It is a precise, diagnostic session rooted in the complete Sunya framework. Desmond
-              will identify exactly where your system is contracted, which levers are most important
-              for you right now, and give you a personalised protocol to work with.
+              It is a diagnostic session rooted in the complete Sunya framework. The aim is not to make you feel better for an hour. It is to find the one place your system is actually stuck — and to leave you with something precise enough to work with.
             </p>
-            <p className="display-italic text-white/90">
-              Think of it as the Sunya AI — but with full human depth, direct transmission, and the
-              capacity to go wherever the conversation needs to go.
+            <p>
+              Most people arrive assuming they know what their problem is. Usually the thing they name is downstream of something else. Finding what is actually upstream is most of the work.
             </p>
           </div>
         </div>
@@ -136,14 +164,55 @@ function WorkPage() {
         </div>
       </section>
 
+      <section className="relative overflow-hidden bg-[#0a1628] py-24">
+        <div className="relative z-10 mx-auto max-w-6xl px-6">
+          <div className="text-center">
+            <div className="label-eyebrow">IS THIS FOR YOU</div>
+            <h2 className="display mt-6 text-4xl text-white sm:text-5xl">
+              Most people are stuck in one of five places.
+            </h2>
+            <p className="mx-auto mt-6 max-w-3xl text-[#b8d4e8]">
+              Every system has a single point of greatest friction at any moment. Address anything other than that and it quietly defeats every other effort. Much of a session is simply finding yours.
+            </p>
+          </div>
+          <div className="mx-auto mt-14 max-w-4xl space-y-4">
+            {ZONES.map((item, index) => (
+              <div
+                key={item.zone}
+                className="flex items-start gap-5 rounded-2xl border border-white/10 bg-white/[0.03] p-5"
+              >
+                <div className="display flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#7ec8e3]/10 text-xl text-[#7ec8e3] ring-1 ring-[#7ec8e3]/30">
+                  {index + 1}
+                </div>
+                <div className="pt-1">
+                  <h3 className="display text-2xl text-white">{item.zone}</h3>
+                  <p className="mt-2 text-[#b8d4e8]">{item.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="mx-auto mt-10 max-w-4xl text-center text-[#b8d4e8]">
+            If you recognise yourself in more than one, that is normal — and identifying which one to address first is exactly what the session is for.
+          </p>
+          <div className="mt-6 text-center">
+            <Link
+              to="/philosophy"
+              className="inline-flex items-center gap-2 text-sm text-[#7ec8e3] transition hover:text-white"
+            >
+              Read more about the five zones →
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Pricing card */}
       <section className="relative overflow-hidden bg-[#0a1628] py-20">
         <div className="relative z-10 mx-auto max-w-2xl px-6">
           <div className="glass-strong rounded-3xl p-8 shadow-[0_0_60px_-15px_rgba(232,199,156,0.35)] ring-1 ring-[#e8c79c]/30">
             <div className="label-eyebrow">1-on-1 Session with Desmond</div>
-            <div className="mt-4 flex items-baseline gap-3">
-              <span className="display text-2xl text-[#b8d4e8]/60 line-through">€150</span>
-              <span className="display text-5xl text-[#e8c79c]">FREE</span>
+            <div className="mt-4">
+              <span className="display text-4xl text-[#e8c79c]">{oneToOnePricingLine()}</span>
+              <p className="mt-2 text-xs text-[#b8d4e8]/70">{oneToOneOfferNote()}</p>
             </div>
             <ul className="mt-7 space-y-3 text-sm text-[#b8d4e8]">
               {[
@@ -161,11 +230,8 @@ function WorkPage() {
               onClick={scrollToBooking}
               className="glow-btn mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium"
             >
-              Book Free Session <ArrowRight className="h-4 w-4" />
+              {oneToOneBookingCtaLabel()} <ArrowRight className="h-4 w-4" />
             </button>
-            <p className="mt-3 text-center text-xs italic text-[#b8d4e8]/70">
-              Free for founding clients only. Will return to €150 once this period closes.
-            </p>
           </div>
         </div>
       </section>
@@ -181,6 +247,7 @@ function WorkPage() {
             <h2 className="display mt-6 text-4xl text-white sm:text-5xl">
               Pick a time <span className="display-italic text-[#b8d4e8]">that works.</span>
             </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-sm text-[#b8d4e8]">{oneToOneBookingLeadLine()}</p>
             <ul className="mx-auto mt-8 flex max-w-2xl flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-[#b8d4e8]">
               {[
                 "Full Sunya diagnostic",
@@ -322,7 +389,7 @@ function WorkPage() {
                 }}
                 className="glow-btn inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium"
               >
-                Book Free Session <ArrowRight className="h-4 w-4" />
+                {oneToOneBookingCtaLabel()} <ArrowRight className="h-4 w-4" />
               </a>
             </div>
           </div>

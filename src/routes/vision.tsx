@@ -15,18 +15,15 @@ import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { Breadcrumb } from "@/components/site/Breadcrumb";
 import { EmailCapture } from "@/components/site/EmailCapture";
+import { pageMeta } from "@/lib/page-meta";
 
 export const Route = createFileRoute("/vision")({
   component: VisionPage,
   head: () => ({
-    meta: [
-      { title: "The Sunya Vision — A civilisational project" },
-      {
-        name: "description",
-        content:
-          "Imagine a world where every human being knows how to create peace within themselves. The Sunya ecosystem, mission, and legacy.",
-      },
-    ],
+    meta: pageMeta(
+      "The Sunya Vision — A Civilisational Project",
+      "Imagine a world where every human being knows how to create wellbeing within themselves. The Sunya mission, the six arms of the ecosystem, and the legacy being built.",
+    ),
   }),
 });
 
@@ -45,7 +42,7 @@ const ECO: EcoItem[] = [
     items: [
       { label: "Sunya AI →", to: "/sunya-ai" },
       { label: "Sunya Sleep →", href: "https://sunyasleep.com/" },
-      { label: "Sunya Studio", comingSoon: true },
+      { label: "Sunya Studio — Coming Soon", comingSoon: true },
     ],
   },
   {
@@ -161,6 +158,17 @@ function VisionPage() {
             <p className="display pt-2 text-2xl font-semibold text-white sm:text-3xl">
               This is not idealism. This is mechanics.
             </p>
+            <p>
+              The mechanics are specific. Human suffering runs as a single chain — unconsciousness, identification, resistance, contraction, insufficiency — where each link produces the next. One root means one place it can be undone, and that is what every part of Sunya is built to address.
+            </p>
+            <div>
+              <Link
+                to="/philosophy"
+                className="inline-flex items-center gap-2 text-sm text-[#7ec8e3] transition hover:text-white"
+              >
+                See the full framework →
+              </Link>
+            </div>
           </div>
         </div>
       </section>
