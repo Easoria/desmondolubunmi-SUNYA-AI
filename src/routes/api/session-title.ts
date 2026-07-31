@@ -27,7 +27,7 @@ export const Route = createFileRoute("/api/session-title")({
 
           const prompt = `Based on the conversation below, return a short JSON object with:
 - "title": 4-6 word session title capturing the core theme (no punctuation at end, sentence case).
-- "lever_tags": array of 1-3 levers most central to the session, chosen ONLY from: Breath, Awareness, Mind, Heart, Movement, Sound, Sleep, Nutrition, Connection, Environment, Nature, Sustenance.
+- "lever_tags": array of 1-3 levers most central to the session, chosen ONLY from: Conservation, Breath, Movement, Mind, Sound, Heart, Awareness, Sleep, Nutrition, Connection, Environment, Nature, Sustenance.
 
 Return ONLY the JSON object, no markdown fences, no commentary.
 
@@ -69,7 +69,7 @@ ${transcript}`;
             }
           }
           const VALID = new Set([
-            "Breath", "Awareness", "Mind", "Heart", "Movement", "Sound",
+            "Conservation", "Breath", "Movement", "Mind", "Sound", "Heart", "Awareness",
             "Sleep", "Nutrition", "Connection", "Environment", "Nature", "Sustenance",
           ]);
           const tags = Array.isArray(parsed.lever_tags)

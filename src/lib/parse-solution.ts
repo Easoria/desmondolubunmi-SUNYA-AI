@@ -8,12 +8,13 @@ export type Solution = {
 };
 
 const LEVERS = [
+  "Conservation",
   "Breath",
-  "Awareness",
-  "Mind",
-  "Heart",
   "Movement",
+  "Mind",
   "Sound",
+  "Heart",
+  "Awareness",
   "Sleep",
   "Nutrition",
   "Connection",
@@ -141,16 +142,17 @@ export function parseSolution(responseText: string): Solution {
 }
 
 export const LEVER_ICONS: Record<string, string> = {
+  Conservation: "🔒",
   Breath: "🌬️",
-  Awareness: "👁️",
-  Heart: "❤️",
   Movement: "🏃",
+  Mind: "🧠",
   Sound: "🔔",
+  Heart: "❤️",
+  Awareness: "👁️",
   Sleep: "🌙",
-  Nature: "🌿",
+  Nutrition: "🥗",
   Connection: "🤝",
   Environment: "🏡",
-  Mind: "🧠",
-  Nutrition: "🥗",
+  Nature: "🌿",
   Sustenance: "✦",
 };

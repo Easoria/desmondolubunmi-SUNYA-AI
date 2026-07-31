@@ -16,12 +16,13 @@ export const Route = createFileRoute("/sessions")({
 
 const LEVERS = [
   "All",
+  "Conservation",
   "Breath",
-  "Awareness",
-  "Heart",
-  "Mind",
   "Movement",
+  "Mind",
   "Sound",
+  "Heart",
+  "Awareness",
   "Sleep",
   "Nutrition",
   "Connection",
