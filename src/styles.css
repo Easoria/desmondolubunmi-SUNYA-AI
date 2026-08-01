@@ -204,14 +204,6 @@
   animation: spin-slow 80s linear infinite;
 }
 
-@keyframes float-chev {
-  0%, 100% { transform: translateY(0); opacity: 0.5; }
-  50% { transform: translateY(8px); opacity: 1; }
-}
-.chev {
-  animation: float-chev 2.5s ease-in-out infinite;
-}
-
 /* Blog article markdown */
 .prose-article { color: #b8d4e8; font-size: 18px; line-height: 1.75; }
 .prose-article h1, .prose-article h2, .prose-article h3 { color: #fff; font-family: var(--font-display, serif); margin-top: 2em; margin-bottom: 0.6em; line-height: 1.25; }
