@@ -67,18 +67,14 @@ ALTER TABLE public.gatherings ENABLE ROW LEVEL SECURITY;
 DO $$ BEGIN
   CREATE POLICY "Public can read published gatherings" ON public.gatherings FOR SELECT USING (published = true);
 EXCEPTION WHEN duplicate_object THEN NULL; END $$;
-DO $$ BEGIN
-  CREATE POLICY "Admin can read all gatherings" ON public.gatherings FOR SELECT USING (public.is_blog_admin());
-EXCEPTION WHEN duplicate_object THEN NULL; END $$;
-DO $$ BEGIN
-  CREATE POLICY "Admin can insert gatherings" ON public.gatherings FOR INSERT WITH CHECK (public.is_blog_admin());
-EXCEPTION WHEN duplicate_object THEN NULL; END $$;
-DO $$ BEGIN
-  CREATE POLICY "Admin can update gatherings" ON public.gatherings FOR UPDATE USING (public.is_blog_admin()) WITH CHECK (public.is_blog_admin());
-EXCEPTION WHEN duplicate_object THEN NULL; END $$;
-DO $$ BEGIN
-  CREATE POLICY "Admin can delete gatherings" ON public.gatherings FOR DELETE USING (public.is_blog_admin());
-EXCEPTION WHEN duplicate_object THEN NULL; END $$;
+DROP POLICY IF EXISTS "Admin can read all gatherings" ON public.gatherings;
+CREATE POLICY "Admin can read all gatherings" ON public.gatherings FOR SELECT TO authenticated USING (public.is_blog_admin());
+DROP POLICY IF EXISTS "Admin can insert gatherings" ON public.gatherings;
+CREATE POLICY "Admin can insert gatherings" ON public.gatherings FOR INSERT TO authenticated WITH CHECK (public.is_blog_admin());
+DROP POLICY IF EXISTS "Admin can update gatherings" ON public.gatherings;
+CREATE POLICY "Admin can update gatherings" ON public.gatherings FOR UPDATE TO authenticated USING (public.is_blog_admin()) WITH CHECK (public.is_blog_admin());
+DROP POLICY IF EXISTS "Admin can delete gatherings" ON public.gatherings;
+CREATE POLICY "Admin can delete gatherings" ON public.gatherings FOR DELETE TO authenticated USING (public.is_blog_admin());
 
 DROP TRIGGER IF EXISTS gatherings_set_updated_at ON public.gatherings;
 CREATE TRIGGER gatherings_set_updated_at
@@ -148,6 +144,19 @@ export const Route = createFileRoute("/api/admin/bootstrap-gatherings")({
           await client.connect();
           try {
             await client.query(migrationSql());
+            // Ensure admin policies are scoped to authenticated (anon-safe public reads).
+            try {
+              const fixSql = readFileSync(
+                join(
+                  process.cwd(),
+                  "supabase/migrations/20260801170000_fix_admin_rls_policies.sql",
+                ),
+                "utf8",
+              );
+              await client.query(fixSql);
+            } catch {
+              // File may be absent in some deploy bundles; policies in migrationSql are already TO authenticated.
+            }
             const check = await client.query(
               `SELECT slug, published FROM public.gatherings WHERE slug = 'the-open-gathering-dublin'`,
             );

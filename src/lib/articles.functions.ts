@@ -24,41 +24,71 @@ export type PublishedArticleFull = PublishedArticleCard & {
 const cardCols =
   "id, slug, title, excerpt, featured_image_url, reading_time_minutes, tags, published_at";
 
+function isPermissionError(error: { code?: string; message?: string } | null): boolean {
+  if (!error) return false;
+  return (
+    error.code === "42501" ||
+    /permission denied/i.test(error.message ?? "") ||
+    /is_blog_admin/i.test(error.message ?? "")
+  );
+}
+
 export const listPublishedArticles = createServerFn({ method: "GET" }).handler(
   async (): Promise<PublishedArticleCard[]> => {
-    const { data, error } = await supabaseAdmin
-      .from("articles")
-      .select(cardCols)
-      .eq("published", true)
-      .order("published_at", { ascending: false, nullsFirst: false });
-    if (error) throw new Error(error.message);
-    return (data ?? []) as PublishedArticleCard[];
+    try {
+      const { data, error } = await supabaseAdmin
+        .from("articles")
+        .select(cardCols)
+        .eq("published", true)
+        .order("published_at", { ascending: false, nullsFirst: false });
+      if (error) {
+        if (isPermissionError(error)) return [];
+        throw new Error(error.message);
+      }
+      return (data ?? []) as PublishedArticleCard[];
+    } catch {
+      return [];
+    }
   },
 );
 
 export const getPublishedArticleBySlug = createServerFn({ method: "GET" })
   .inputValidator((d: { slug: string }) => d)
   .handler(async ({ data }): Promise<PublishedArticleFull | null> => {
-    const { data: row, error } = await supabaseAdmin
-      .from("articles")
-      .select(
-        "id, slug, title, meta_description, excerpt, content, featured_image_url, reading_time_minutes, tags, published_at",
-      )
-      .eq("slug", data.slug)
-      .eq("published", true)
-      .maybeSingle();
-    if (error) throw new Error(error.message);
-    return (row as PublishedArticleFull | null) ?? null;
+    try {
+      const { data: row, error } = await supabaseAdmin
+        .from("articles")
+        .select(
+          "id, slug, title, meta_description, excerpt, content, featured_image_url, reading_time_minutes, tags, published_at",
+        )
+        .eq("slug", data.slug)
+        .eq("published", true)
+        .maybeSingle();
+      if (error) {
+        if (isPermissionError(error)) return null;
+        throw new Error(error.message);
+      }
+      return (row as PublishedArticleFull | null) ?? null;
+    } catch {
+      return null;
+    }
   });
 
 export const listSitemapArticles = createServerFn({ method: "GET" }).handler(
   async (): Promise<Array<{ slug: string; published_at: string | null }>> => {
-    const { data, error } = await supabaseAdmin
-      .from("articles")
-      .select("slug, published_at")
-      .eq("published", true)
-      .order("published_at", { ascending: false });
-    if (error) throw new Error(error.message);
-    return data ?? [];
+    try {
+      const { data, error } = await supabaseAdmin
+        .from("articles")
+        .select("slug, published_at")
+        .eq("published", true)
+        .order("published_at", { ascending: false });
+      if (error) {
+        if (isPermissionError(error)) return [];
+        throw new Error(error.message);
+      }
+      return data ?? [];
+    } catch {
+      return [];
+    }
   },
 );

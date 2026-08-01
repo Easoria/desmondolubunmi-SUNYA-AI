@@ -43,10 +43,12 @@ function GatheringsRoutePage() {
 
 function GatheringsIndexPage() {
   const fetchGatherings = useServerFn(listPublishedGatherings);
-  const { data: gatherings = [], isLoading } = useQuery({
+  const { data: gatherings = [], isLoading, isError } = useQuery({
     queryKey: ["gatherings", "published"],
     queryFn: () => fetchGatherings(),
+    retry: 1,
   });
+  const showLoading = isLoading && !isError;
 
   const { upcoming, past } = useMemo(() => {
     const now = new Date();
@@ -81,7 +83,7 @@ function GatheringsIndexPage() {
         </header>
 
         <section className="mt-14">
-          {isLoading ? (
+          {showLoading ? (
             <div className="py-16 text-center text-sm text-[#b8d4e8]/60">Loading…</div>
           ) : upcoming.length === 0 ? (
             <div className="border-t border-white/10 pt-10">

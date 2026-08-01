@@ -70,22 +70,26 @@ CREATE POLICY "Public can read published gatherings"
 CREATE POLICY "Admin can read all gatherings"
   ON public.gatherings
   FOR SELECT
+  TO authenticated
   USING (public.is_blog_admin());
 
 CREATE POLICY "Admin can insert gatherings"
   ON public.gatherings
   FOR INSERT
+  TO authenticated
   WITH CHECK (public.is_blog_admin());
 
 CREATE POLICY "Admin can update gatherings"
   ON public.gatherings
   FOR UPDATE
+  TO authenticated
   USING (public.is_blog_admin())
   WITH CHECK (public.is_blog_admin());
 
 CREATE POLICY "Admin can delete gatherings"
   ON public.gatherings
   FOR DELETE
+  TO authenticated
   USING (public.is_blog_admin());
 
 DROP TRIGGER IF EXISTS gatherings_set_updated_at ON public.gatherings;
