@@ -50,42 +50,6 @@ export const Route = createFileRoute("/practices/$leverSlug/$practiceSlug")({
   },
 });
 
-function normalizeProtocolText(text: string) {
-  return text.replace(/\r\n/g, "\n").replace(/\s*\n\s*/g, " ").replace(/\s{2,}/g, " ").trim();
-}
-
-function splitProtocolSubsteps(text: string) {
-  const normalized = normalizeProtocolText(text);
-  if (!normalized) return [];
-
-  const extract = (parts: string[]) =>
-    parts.map((part) => part.trim()).filter(Boolean);
-
-  const numbered = extract(normalized.split(/\s*(?=\d+[\).\s])/));
-  if (numbered.length > 1 && /^\d+[\).]/.test(numbered[0])) return numbered;
-
-  const bulleted = extract(normalized.split(/\s*[•●▪·]\s+/));
-  if (bulleted.length > 1) return bulleted;
-
-  const semicolon = extract(normalized.split(/;\s+/));
-  if (semicolon.length > 1) return semicolon;
-
-  // Long protocol lines from PDF extraction are easier to follow when each
-  // sentence is presented as its own actionable sub-step.
-  if (normalized.length > 210) {
-    const sentenceParts = extract(normalized.split(/(?<=[.!?])\s+(?=[A-Z(\["“])/));
-    if (sentenceParts.length > 1) return sentenceParts;
-  }
-
-  return [normalized];
-}
-
-function splitProtocolLabel(text: string) {
-  const match = text.match(/^([A-Z][^:]{2,52}):\s+(.*)$/);
-  if (!match) return null;
-  return { label: match[1].trim(), rest: match[2].trim() };
-}
-
 function PracticeDetailPage() {
   const { lever, practice } = Route.useLoaderData();
   const related = practice.relatedPractices
@@ -162,10 +126,7 @@ function PracticeDetailPage() {
               <h2 className="display text-2xl text-white">Protocol</h2>
               <ol className="mt-4 space-y-4">
                 {practice.protocol.map((step, index) => {
-                    const baseChunks = splitProtocolSubsteps(step.text);
-                    const firstChunk = baseChunks[0] ?? "";
-                    const labelled = splitProtocolLabel(firstChunk);
-                    const chunks = labelled ? [labelled.rest, ...baseChunks.slice(1)] : baseChunks;
+                    const protocolText = step.text.replace(/\r\n/g, "\n").trim();
 
                     return (
                       <li
@@ -177,22 +138,7 @@ function PracticeDetailPage() {
                             {String(index + 1).padStart(2, "0")}
                           </span>
                           <div className="min-w-0 flex-1 space-y-3">
-                            {labelled ? (
-                              <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[#9ddcf2]">
-                                {labelled.label}
-                              </p>
-                            ) : null}
-                            {chunks.length > 1 ? (
-                              <ul className="space-y-2 pl-5">
-                                {chunks.map((chunk, chunkIndex) => (
-                                  <li key={chunkIndex} className="list-disc marker:text-[#7ec8e3]">
-                                    {chunk}
-                                  </li>
-                                ))}
-                              </ul>
-                            ) : (
-                              <p>{chunks[0]}</p>
-                            )}
+                            <p className="whitespace-pre-line">{protocolText}</p>
                             {step.emphasis ? (
                               <em className="block text-[#b8d4e8]/90">{step.emphasis}</em>
                             ) : null}
