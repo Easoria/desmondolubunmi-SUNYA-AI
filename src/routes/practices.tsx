@@ -23,7 +23,7 @@ export const Route = createFileRoute("/practices")({
       {
         name: "description",
         content:
-          "Twelve levers arrived at from first principles: every means by which a human being can transform their wellbeing, stripped of cultural form. One hundred and eleven practices across thirteen levers.",
+          "Twelve levers arrived at from first principles: every means by which a human being can transform their wellbeing, stripped of cultural form. One hundred and twelve practices across thirteen levers.",
       },
     ],
   }),

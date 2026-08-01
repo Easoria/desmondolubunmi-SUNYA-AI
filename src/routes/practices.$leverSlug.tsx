@@ -50,6 +50,10 @@ function LeverHubPage() {
   const practiceCount = getLeverPracticeCount(lever);
   const { previous, next } = getPreviousAndNextLevers(lever.slug as LeverSlug);
   const hasGroups = !!(lever.groups && lever.groups.length > 0);
+  const flatPractices = getAllLeverPractices(lever);
+  const hasExplicitSourceNumbers = flatPractices.some(
+    (practice) => typeof practice.sourceNumber === "number",
+  );
   const introParagraphs = formatNarrativeParagraphs(lever.intro);
 
   return (
@@ -126,12 +130,12 @@ function LeverHubPage() {
           ) : (
             <section className="mt-12">
               <div className="grid gap-3 sm:gap-4 md:grid-cols-2">
-                {getAllLeverPractices(lever).map((practice, index) => (
+                {flatPractices.map((practice, index) => (
                   <PracticeCard
                     key={practice.slug}
                     leverSlug={lever.slug}
                     practice={practice}
-                    sourceNumber={practice.sourceNumber ?? index + 1}
+                    sourceNumber={hasExplicitSourceNumbers ? practice.sourceNumber : index + 1}
                   />
                 ))}
               </div>
