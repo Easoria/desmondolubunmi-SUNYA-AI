@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, Outlet, useRouterState } from "@tanstack/react-router";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { Breadcrumb } from "@/components/site/Breadcrumb";
@@ -47,8 +47,21 @@ export const Route = createFileRoute("/essays")({
       ],
     };
   },
-  component: EssaysIndexPage,
+  component: EssaysRoutePage,
 });
+
+function EssaysRoutePage() {
+  const pathname = useRouterState({
+    select: (state) => state.location.pathname,
+  });
+
+  // Parent of `/essays/$slug`; render the index only on the exact path.
+  if (pathname !== "/essays" && pathname !== "/essays/") {
+    return <Outlet />;
+  }
+
+  return <EssaysIndexPage />;
+}
 
 function EssayRow({ essay }: { essay: Essay }) {
   const blurb = essayMetaDescription(essay, 140);

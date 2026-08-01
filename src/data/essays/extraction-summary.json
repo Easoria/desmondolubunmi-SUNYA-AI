@@ -1,51 +1,51 @@
 {
   "essayWordCounts": {
     "before-anything-existed": {
-      "actual": 597,
+      "actual": 609,
       "target": 620
     },
     "how-consciousness-becomes-world": {
-      "actual": 996,
+      "actual": 1017,
       "target": 990
     },
     "the-great-forgetting": {
-      "actual": 510,
+      "actual": 525,
       "target": 490
     },
     "what-limitation-makes-possible": {
-      "actual": 432,
+      "actual": 441,
       "target": 415
     },
     "the-three-shadows": {
-      "actual": 611,
+      "actual": 623,
       "target": 585
     },
     "the-three-forces": {
-      "actual": 980,
+      "actual": 1000,
       "target": 940
     },
     "a-first-glimpse-of-freedom": {
-      "actual": 402,
+      "actual": 410,
       "target": 380
     },
     "the-energy-body": {
-      "actual": 2775,
+      "actual": 2835,
       "target": 2650
     },
     "the-golden-cage": {
-      "actual": 339,
+      "actual": 347,
       "target": 320
     },
     "one-truth-many-religions": {
-      "actual": 1974,
+      "actual": 2006,
       "target": 2370
     },
     "what-actually-changes": {
-      "actual": 693,
+      "actual": 710,
       "target": 780
     },
     "the-grand-return": {
-      "actual": 944,
+      "actual": 966,
       "target": 910
     }
   },
@@ -60,5 +60,37 @@
     "The Twelve Levers"
   ],
   "unplacedRange2": [],
-  "parsedSectionCount": 73
+  "parsedSectionCount": 73,
+  "paragraphCounts": {
+    "before-anything-existed": 13,
+    "how-consciousness-becomes-world": 17,
+    "the-great-forgetting": 7,
+    "what-limitation-makes-possible": 8,
+    "the-three-shadows": 10,
+    "the-three-forces": 10,
+    "a-first-glimpse-of-freedom": 5,
+    "the-energy-body": 41,
+    "the-golden-cage": 6,
+    "one-truth-many-religions": 30,
+    "what-actually-changes": 30,
+    "the-grand-return": 12
+  },
+  "whereToBeginParagraphCounts": {
+    "1. The Governing Principle": 12,
+    "2. The Diagnostic Framework — Reading the State": 1,
+    "Zone 1 — Survival Crisis": 3,
+    "Zone 2 — Nervous System Collapse": 3,
+    "Zone 3 — Emotional Accumulation": 4,
+    "Zone 4 — Mental Fragmentation": 4,
+    "Zone 5 — The Hollow Seeker": 6,
+    "3. Phase One — The External Audit": 10,
+    "4. Phase Two — The Internal Entry Point": 13,
+    "5. Phase Three — Root Cause Work": 7,
+    "Step 1 — Establishing the Witness": 4,
+    "Step 2 — Disidentification": 4,
+    "Step 3 — Direct Self-Inquiry": 4,
+    "Step 4 — Resting as Awareness": 4,
+    "6. The Lever Map — Quick Reference": 18,
+    "7. Pacing, Safety, and the Kundalini Dimension": 32
+  }
 }

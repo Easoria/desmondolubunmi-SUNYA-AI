@@ -47,11 +47,11 @@ export function EssayProse({
                 {section.heading}
               </h2>
             )}
-            <div className={`${hideHeading ? "" : "mt-5"} space-y-5`}>
+            <div className={`${hideHeading ? "" : "mt-5"} space-y-6`}>
               {section.paragraphs.map((paragraph) => (
                 <p
                   key={`${section.heading}-${paragraph.slice(0, 48)}`}
-                  className="text-[17px] leading-[1.85] text-[#b8d4e8] sm:text-lg"
+                  className="text-[17px] leading-[1.9] text-[#b8d4e8] sm:text-lg"
                 >
                   {paragraph}
                 </p>
