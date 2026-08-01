@@ -5,12 +5,14 @@ import {
   useNavigate,
   useRouterState,
 } from "@tanstack/react-router";
+import { useQuery } from "@tanstack/react-query";
 import { useMemo } from "react";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { Breadcrumb } from "@/components/site/Breadcrumb";
 import { EmailCapture } from "@/components/site/EmailCapture";
-import { listPublishedArticles, type PublishedArticleCard } from "@/lib/articles.functions";
+import { fetchPublishedArticlesClient } from "@/lib/articles-browser";
+import type { PublishedArticleCard } from "@/lib/articles.functions";
 import {
   formatDate,
   isWritingCategory,
@@ -44,16 +46,10 @@ export const Route = createFileRoute("/writing")({
   loaderDeps: ({ search }: { search: WritingSearch }) => ({
     category: search.category,
   }),
-  loader: async ({
-    deps,
-  }: {
-    deps: { category?: WritingCategory };
-  }): Promise<{ articles: PublishedArticleCard[] }> => {
-    const articles = await listPublishedArticles({
-      data: deps.category ? { category: deps.category } : {},
-    });
-    return { articles };
-  },
+  // Instant SSR shell — Vercel→Supabase often hangs; browser anon reads are fast.
+  loader: async (): Promise<{ articles: PublishedArticleCard[] }> => ({
+    articles: [],
+  }),
   head: ({ matches, search }) => {
     if (!matches?.length || matches[matches.length - 1]?.routeId !== "/writing") {
       return {};
@@ -109,8 +105,16 @@ function WritingRoutePage() {
 
 function WritingIndexPage() {
   const { category, page: pageParam } = Route.useSearch();
-  const { articles } = Route.useLoaderData();
+  const { articles: initial } = Route.useLoaderData();
   const navigate = useNavigate({ from: "/writing" });
+
+  const { data: articles = initial, isPending } = useQuery({
+    queryKey: ["writing", "published", category ?? "all"],
+    queryFn: () =>
+      fetchPublishedArticlesClient(category ? { category } : undefined),
+    placeholderData: (previous) => previous ?? initial,
+    staleTime: 60_000,
+  });
 
   const totalPages = Math.max(1, Math.ceil(articles.length / PAGE_SIZE));
   const currentPage = Math.min(pageParam ?? 1, totalPages);
@@ -196,7 +200,7 @@ function WritingIndexPage() {
         <section className="mt-10">
           {articles.length === 0 ? (
             <div className="py-20 text-center text-sm text-[#b8d4e8]/70">
-              Nothing here yet.
+              {isPending ? "Loading…" : "Nothing here yet."}
             </div>
           ) : (
             <>
