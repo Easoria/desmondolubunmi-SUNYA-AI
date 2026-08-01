@@ -80,11 +80,11 @@ export const breathLever: Lever = {
           protocol: [
             { text: "Close your eyes and rest one hand on your belly." },
             {
-              text: "Inhale slowly through the nose, feeling the belly expand under your hand.",
+              text: "Inhale slowly through the nose, feeling the belly expand under your hand. Inwardly say:",
               emphasis: "I am safe.",
             },
             {
-              text: "Exhale gently through the nose or mouth, feeling the belly fall.",
+              text: "Exhale gently through the nose or mouth, feeling the belly fall. Inwardly say:",
               emphasis: "I am at peace.",
             },
             { text: "Continue for 3–5 minutes." },

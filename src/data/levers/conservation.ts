@@ -68,7 +68,7 @@ export const conservationLever: Lever = {
       ],
       protocol: [
         {
-          text: "Cut unnecessary input, take deliberate breaks from stimulation, and let the senses settle into quiet.",
+          text: "The practice is to withdraw them periodically: cut unnecessary input, take deliberate breaks from stimulation, and let the senses settle into quiet.",
         },
       ],
       layers: ["Mental Body", "Energetic Body", "Environment"],
@@ -142,7 +142,7 @@ export const conservationLever: Lever = {
       ],
       protocol: [
         {
-          text: "Conserving it — through moderation, or periods of continence — keeps that vital energy within the system, where it can rise and be put to higher use.",
+          text: "Its habitual, excessive discharge is a significant drain; conserving it — through moderation, or periods of continence — keeps that vital energy within the system, where it can rise and be put to higher use.",
         },
       ],
       layers: ["Energetic Body", "Physical Body"],
