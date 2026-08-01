@@ -11,6 +11,7 @@ import {
   readingMinutes,
 } from "@/data/essays";
 import type { Essay } from "@/data/essays/types";
+import { blockToText, blocksToParagraphs } from "@/data/essays/types";
 import {
   buildArticleSchema,
   buildBreadcrumbSchema,
@@ -97,13 +98,20 @@ function bodySections(essay: Essay) {
   return essay.sections
     .map((section, index) => {
       if (index !== 0) return section;
-      const paragraphs = section.paragraphs.filter(
-        (paragraph, paragraphIndex) =>
-          !(paragraphIndex === 0 && paragraph.trim() === standfirst),
-      );
-      return { ...section, paragraphs };
+      const blocks = (section.blocks ?? []).filter((block, blockIndex) => {
+        if (blockIndex !== 0) return true;
+        return blockToText(block).trim() !== standfirst;
+      });
+      return {
+        ...section,
+        blocks,
+        paragraphs: blocksToParagraphs(blocks),
+      };
     })
-    .filter((section) => section.paragraphs.length > 0);
+    .filter(
+      (section) =>
+        (section.blocks?.length ?? 0) > 0 || (section.paragraphs?.length ?? 0) > 0,
+    );
 }
 
 function EssayPage() {
