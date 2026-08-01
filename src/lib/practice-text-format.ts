@@ -4,6 +4,16 @@ type FormatOptions = {
   maxChunkChars?: number;
 };
 
+export type ProtocolStepLayout =
+  | {
+      kind: "paragraphs";
+      items: string[];
+    }
+  | {
+      kind: "ordered-list" | "unordered-list";
+      items: string[];
+    };
+
 function extractSentences(text: string) {
   return (
     text
@@ -55,4 +65,58 @@ export function formatNarrativeParagraphs(blocks: string[], options?: FormatOpti
     })
     .flatMap((paragraph) => splitLongParagraph(paragraph, options))
     .filter(Boolean);
+}
+
+function normalizeInline(text: string) {
+  return text.replace(/\s*\n\s*/g, " ").replace(/\s{2,}/g, " ").trim();
+}
+
+export function formatProtocolStepLayout(text: string): ProtocolStepLayout {
+  const normalized = text.replace(/\r\n/g, "\n").trim();
+  if (!normalized) return { kind: "paragraphs", items: [] };
+
+  const clean = (parts: string[]) => parts.map((part) => normalizeInline(part)).filter(Boolean);
+
+  const explicitParagraphs = clean(normalized.split(/\n\s*\n/g));
+  if (explicitParagraphs.length > 1) {
+    return { kind: "paragraphs", items: explicitParagraphs };
+  }
+
+  const explicitLineBullets = clean(normalized.split(/\n\s*[•●▪·\-]\s+/));
+  if (explicitLineBullets.length > 1) {
+    return { kind: "unordered-list", items: explicitLineBullets };
+  }
+
+  const singleLine = normalizeInline(normalized);
+
+  const numbered = clean(singleLine.split(/\s*(?=\d+[\).]\s+)/));
+  if (numbered.length > 1 && /^\d+[\).]\s+/.test(numbered[0])) {
+    return {
+      kind: "ordered-list",
+      items: numbered.map((item) => item.replace(/^\d+[\).]\s+/, "").trim()).filter(Boolean),
+    };
+  }
+
+  const symbolBullets = clean(singleLine.split(/\s*[•●▪·]\s+/));
+  if (symbolBullets.length > 1) {
+    return { kind: "unordered-list", items: symbolBullets };
+  }
+
+  const labelledSegments = clean(singleLine.split(/\s+(?=[A-Z][A-Za-z'’\- ]{2,60}:\s+)/));
+  if (labelledSegments.length > 1) {
+    return { kind: "unordered-list", items: labelledSegments };
+  }
+
+  const semicolonSegments = clean(singleLine.split(/;\s+/));
+  if (semicolonSegments.length > 1) {
+    return { kind: "unordered-list", items: semicolonSegments };
+  }
+
+  const paragraphChunks = formatNarrativeParagraphs([singleLine], {
+    minSentencesForSplit: 4,
+    minCharsForSplit: 420,
+    maxChunkChars: 360,
+  });
+
+  return { kind: "paragraphs", items: paragraphChunks.length ? paragraphChunks : [singleLine] };
 }
