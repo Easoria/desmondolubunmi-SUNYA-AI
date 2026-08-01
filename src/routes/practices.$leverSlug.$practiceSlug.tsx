@@ -50,6 +50,62 @@ export const Route = createFileRoute("/practices/$leverSlug/$practiceSlug")({
   },
 });
 
+function normalizeProtocolText(text: string) {
+  return text.replace(/\r\n/g, "\n").trim();
+}
+
+function splitSentenceGroups(text: string, groupSize = 2) {
+  const sentences =
+    text.match(/[^.!?]+[.!?]+(?:["”')\]]+)?|[^.!?]+$/g)?.map((part) => part.trim()).filter(Boolean) ?? [];
+  if (sentences.length < 3) return [text];
+
+  const grouped: string[] = [];
+  for (let index = 0; index < sentences.length; index += groupSize) {
+    grouped.push(sentences.slice(index, index + groupSize).join(" "));
+  }
+  return grouped;
+}
+
+function splitProtocolSubsteps(text: string) {
+  const normalized = normalizeProtocolText(text);
+  if (!normalized) return [];
+
+  const singleLine = normalized.replace(/\s*\n\s*/g, " ").replace(/\s{2,}/g, " ");
+  const clean = (parts: string[]) => parts.map((part) => part.trim()).filter(Boolean);
+
+  if (/\n\s*\n/.test(normalized)) {
+    const blocks = clean(normalized.split(/\n\s*\n/g));
+    if (blocks.length > 1) return blocks;
+  }
+
+  const lineBullets = clean(normalized.split(/\n\s*[•●▪·\-]\s+/));
+  if (lineBullets.length > 1) return lineBullets;
+
+  const numbered = clean(singleLine.split(/\s*(?=\d+[\).]\s+)/));
+  if (numbered.length > 1 && /^\d+[\).]\s+/.test(numbered[0])) return numbered;
+
+  const symbolBullets = clean(singleLine.split(/\s*[•●▪·]\s+/));
+  if (symbolBullets.length > 1) return symbolBullets;
+
+  const labelledSegments = clean(singleLine.split(/\s+(?=[A-Z][A-Za-z'’\- ]{2,50}:\s+)/));
+  if (labelledSegments.length > 1) return labelledSegments;
+
+  const semicolonParts = clean(singleLine.split(/;\s+/));
+  if (semicolonParts.length > 1) return semicolonParts;
+
+  if (singleLine.length > 240) {
+    return splitSentenceGroups(singleLine, 2);
+  }
+
+  return [singleLine];
+}
+
+function parseLeadingLabel(segment: string) {
+  const match = segment.match(/^([A-Z][A-Za-z'’\- ]{2,50}):\s*(.+)$/);
+  if (!match) return null;
+  return { label: match[1].trim(), text: match[2].trim() };
+}
+
 function PracticeDetailPage() {
   const { lever, practice } = Route.useLoaderData();
   const related = practice.relatedPractices
@@ -126,7 +182,7 @@ function PracticeDetailPage() {
               <h2 className="display text-2xl text-white">Protocol</h2>
               <ol className="mt-4 space-y-4">
                 {practice.protocol.map((step, index) => {
-                    const protocolText = step.text.replace(/\r\n/g, "\n").trim();
+                    const chunks = splitProtocolSubsteps(step.text);
 
                     return (
                       <li
@@ -138,7 +194,27 @@ function PracticeDetailPage() {
                             {String(index + 1).padStart(2, "0")}
                           </span>
                           <div className="min-w-0 flex-1 space-y-3">
-                            <p className="whitespace-pre-line">{protocolText}</p>
+                            {chunks.length > 1 ? (
+                              <ul className="space-y-2 pl-5">
+                                {chunks.map((chunk, chunkIndex) => {
+                                  const withLabel = parseLeadingLabel(chunk);
+                                  return (
+                                    <li key={chunkIndex} className="list-disc marker:text-[#7ec8e3]">
+                                      {withLabel ? (
+                                        <>
+                                          <span className="font-semibold text-[#9ddcf2]">{withLabel.label}:</span>{" "}
+                                          {withLabel.text}
+                                        </>
+                                      ) : (
+                                        chunk
+                                      )}
+                                    </li>
+                                  );
+                                })}
+                              </ul>
+                            ) : (
+                              <p className="whitespace-pre-line">{chunks[0]}</p>
+                            )}
                             {step.emphasis ? (
                               <em className="block text-[#b8d4e8]/90">{step.emphasis}</em>
                             ) : null}
