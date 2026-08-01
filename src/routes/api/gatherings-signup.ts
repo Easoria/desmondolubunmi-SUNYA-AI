@@ -23,10 +23,14 @@ export const Route = createFileRoute("/api/gatherings-signup")({
         }
 
         const apiKey = process.env.MAILERLITE_API_KEY;
-        const groupId = process.env.MAILERLITE_GATHERINGS_GROUP_ID;
+        // Prefer a dedicated gatherings group when set; otherwise reuse the
+        // existing community list so no new Mailerlite group is required.
+        const groupId =
+          process.env.MAILERLITE_GATHERINGS_GROUP_ID ||
+          process.env.MAILERLITE_COMMUNITY_GROUP_ID;
         if (!apiKey || !groupId) {
           console.error(
-            "Mailerlite env vars missing (MAILERLITE_API_KEY / MAILERLITE_GATHERINGS_GROUP_ID)",
+            "Mailerlite env vars missing (MAILERLITE_API_KEY / MAILERLITE_COMMUNITY_GROUP_ID)",
           );
           return Response.json(
             { error: "Email signup is not configured yet." },
