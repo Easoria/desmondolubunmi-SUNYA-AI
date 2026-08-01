@@ -51,21 +51,21 @@ function PracticesIndexPage() {
                 Beneath every tradition lies one science, working on one system in one direction.
                 This is that science gathered into its practical essence — the actual tools,
                 stripped of all cultural form, through which a human being can create lasting
-                happiness wellbeing in themselve.
+                wellbeing in themselves.
               </p>
               <p>
                 These twelve foundational levers were arrived at from first principles, by asking a
                 single question: what are all the possible means by which a human being can
-                transform their well-being? Every tradition was examined in answer — but so was
-                every therapy, every wellness practice, every modality of change. And they all
-                reduced to the same small set: six internal means of working on oneself, with every
-                known practice being one of these or a combination of them, and six external
-                conditions that support well-being from without.
+                transform their wellbeing? Every tradition was examined in answer — but so was
+                every therapy, every wellness practice, every modality of change. And beneath
+                their different languages and forms, they all reduced to the same small set: six
+                internal means of working on oneself, and six external conditions that support
+                wellbeing from without.
               </p>
             </div>
             <p className="display mx-auto mt-10 max-w-[700px] text-2xl leading-relaxed text-[#eaf6ff] sm:text-3xl">
-              There is almost no means of transforming a human being that is not already among
-              them, or built from them.
+              There is no means of transforming a human being that is not already among them, or
+              built from them.
             </p>
           </div>
 
