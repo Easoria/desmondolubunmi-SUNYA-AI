@@ -3,6 +3,7 @@ import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { Starfield } from "@/components/Starfield";
 import { getLeverBySlug, getPracticeBySlug } from "@/data/levers";
+import { formatNarrativeParagraphs } from "@/lib/practice-text-format";
 
 export const Route = createFileRoute("/practices/$leverSlug/$practiceSlug")({
   loader: ({ params }) => {
@@ -111,6 +112,20 @@ function PracticeDetailPage() {
   const related = practice.relatedPractices
     .map((slug) => getPracticeBySlug(lever, slug))
     .filter((entry): entry is NonNullable<typeof entry> => !!entry);
+  const essenceParagraphs = practice.essence
+    ? formatNarrativeParagraphs([practice.essence], {
+        minSentencesForSplit: 4,
+        minCharsForSplit: 420,
+        maxChunkChars: 360,
+      })
+    : [];
+  const mechanismParagraphs = practice.mechanism
+    ? formatNarrativeParagraphs(practice.mechanism, {
+        minSentencesForSplit: 4,
+        minCharsForSplit: 420,
+        maxChunkChars: 360,
+      })
+    : [];
 
   return (
     <div className="min-h-screen bg-[#0a1628] text-white">
@@ -149,27 +164,41 @@ function PracticeDetailPage() {
             </div>
           </div>
 
-          {practice.notes?.map((note, index) => (
-            <p
-              key={index}
-              className="mt-6 max-w-[72ch] rounded-2xl border border-[#dcb48d]/35 bg-[#dcb48d]/8 px-4 py-3 text-sm italic leading-relaxed text-[#f2decb]"
-            >
-              {note}
-            </p>
-          ))}
+          {practice.notes?.map((note, index) => {
+            const noteParagraphs = formatNarrativeParagraphs([note], {
+              minSentencesForSplit: 4,
+              minCharsForSplit: 420,
+              maxChunkChars: 360,
+            });
 
-          {practice.essence ? (
+            return (
+              <div
+                key={index}
+                className="mt-6 max-w-[72ch] space-y-3 rounded-2xl border border-[#dcb48d]/35 bg-[#dcb48d]/8 px-4 py-3 text-sm italic leading-relaxed text-[#f2decb]"
+              >
+                {noteParagraphs.map((paragraph, paragraphIndex) => (
+                  <p key={paragraphIndex}>{paragraph}</p>
+                ))}
+              </div>
+            );
+          })}
+
+          {essenceParagraphs.length ? (
             <section className="mt-8 max-w-[72ch]">
               <h2 className="label-eyebrow">Essence</h2>
-              <p className="mt-3 text-[15px] leading-7 text-[#b8d4e8] sm:text-base">{practice.essence}</p>
+              <div className="mt-3 space-y-4 text-[15px] leading-7 text-[#b8d4e8] sm:text-base">
+                {essenceParagraphs.map((paragraph, index) => (
+                  <p key={index}>{paragraph}</p>
+                ))}
+              </div>
             </section>
           ) : null}
 
-          {practice.mechanism?.length ? (
+          {mechanismParagraphs.length ? (
             <section className="mt-9 max-w-[72ch]">
               <h2 className="label-eyebrow">Mechanism</h2>
               <div className="mt-3 space-y-5 text-[15px] leading-7 text-[#b8d4e8] sm:text-base">
-                {practice.mechanism.map((paragraph, index) => (
+                {mechanismParagraphs.map((paragraph, index) => (
                   <p key={index}>{paragraph}</p>
                 ))}
               </div>

@@ -9,6 +9,7 @@ import {
   getPreviousAndNextLevers,
 } from "@/data/levers";
 import type { LeverSlug } from "@/data/levers";
+import { formatNarrativeParagraphs } from "@/lib/practice-text-format";
 
 export const Route = createFileRoute("/practices/$leverSlug")({
   loader: ({ params }) => {
@@ -27,51 +28,6 @@ export const Route = createFileRoute("/practices/$leverSlug")({
     ],
   }),
 });
-
-function extractSentences(text: string) {
-  return (
-    text
-      .match(/[^.!?]+[.!?]+(?:["”')\]]+)?|[^.!?]+$/g)
-      ?.map((sentence) => sentence.trim())
-      .filter(Boolean) ?? []
-  );
-}
-
-function splitLongParagraph(text: string) {
-  const normalized = text.replace(/\s*\n\s*/g, " ").replace(/\s{2,}/g, " ").trim();
-  const sentences = extractSentences(normalized);
-  if (sentences.length < 5 || normalized.length < 520) return [normalized];
-
-  const chunks: string[] = [];
-  let current = "";
-
-  for (const sentence of sentences) {
-    const next = current ? `${current} ${sentence}` : sentence;
-    if (current && next.length > 430) {
-      chunks.push(current.trim());
-      current = sentence;
-    } else {
-      current = next;
-    }
-  }
-
-  if (current) chunks.push(current.trim());
-  return chunks.filter(Boolean);
-}
-
-function formatLeverIntroParagraphs(blocks: string[]) {
-  return blocks
-    .flatMap((block) => {
-      const normalizedBlock = block.replace(/\r\n/g, "\n").trim();
-      if (!normalizedBlock) return [];
-      return normalizedBlock
-        .split(/\n\s*\n/g)
-        .map((paragraph) => paragraph.trim())
-        .filter(Boolean);
-    })
-    .flatMap((paragraph) => splitLongParagraph(paragraph))
-    .filter(Boolean);
-}
 
 function LeverRoutePage() {
   const { leverSlug } = Route.useParams();
@@ -94,7 +50,7 @@ function LeverHubPage() {
   const practiceCount = getLeverPracticeCount(lever);
   const { previous, next } = getPreviousAndNextLevers(lever.slug as LeverSlug);
   const hasGroups = !!(lever.groups && lever.groups.length > 0);
-  const introParagraphs = formatLeverIntroParagraphs(lever.intro);
+  const introParagraphs = formatNarrativeParagraphs(lever.intro);
 
   return (
     <div className="min-h-screen bg-[#0a1628] text-white">
@@ -143,11 +99,17 @@ function LeverHubPage() {
                       {group.qualifier}
                     </p>
                   ) : null}
-                  {group.description?.map((description, index) => (
-                    <p key={index} className="mt-3 text-sm leading-relaxed text-[#b8d4e8]">
-                      {description}
-                    </p>
-                  ))}
+                  {group.description
+                    ? formatNarrativeParagraphs(group.description, {
+                        minSentencesForSplit: 4,
+                        minCharsForSplit: 420,
+                        maxChunkChars: 360,
+                      }).map((description, index) => (
+                        <p key={index} className="mt-3 text-sm leading-relaxed text-[#b8d4e8]">
+                          {description}
+                        </p>
+                      ))
+                    : null}
                   <div className="mt-5 grid gap-3 sm:gap-4 md:grid-cols-2">
                     {group.practices.map((practice) => (
                       <PracticeCard
