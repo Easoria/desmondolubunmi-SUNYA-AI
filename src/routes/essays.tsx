@@ -110,6 +110,11 @@ function EssaysIndexPage() {
             separation, through the hidden system of the energy body, to what
             actually changes — and the grand return.
           </p>
+          <p className="mt-4 text-sm text-[#b8d4e8]/80">
+            <Link to="/writing" className="text-[#7ec8e3] transition hover:text-white">
+              Newer writing →
+            </Link>
+          </p>
         </header>
 
         <section className="mt-14">

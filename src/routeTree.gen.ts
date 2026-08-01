@@ -31,8 +31,10 @@ import { Route as SunyaAiRouteImport } from './routes/sunya-ai'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as VisionRouteImport } from './routes/vision'
 import { Route as WorkWithMeRouteImport } from './routes/work-with-me'
+import { Route as WritingRouteImport } from './routes/writing'
 import { Route as AdminBlogRouteImport } from './routes/admin.blog'
 import { Route as AdminPromptsRouteImport } from './routes/admin.prompts'
+import { Route as AdminWritingRouteImport } from './routes/admin.writing'
 import { Route as ApiChatRouteImport } from './routes/api/chat'
 import { Route as ApiCommunitySignupRouteImport } from './routes/api/community-signup'
 import { Route as ApiContributorSignupRouteImport } from './routes/api/contributor-signup'
@@ -43,6 +45,7 @@ import { Route as EssaysSlugRouteImport } from './routes/essays.$slug'
 import { Route as LeversLeverSlugRouteImport } from './routes/levers.$leverSlug'
 import { Route as PracticesLeverSlugRouteImport } from './routes/practices.$leverSlug'
 import { Route as PracticesWhereToBeginRouteImport } from './routes/practices.where-to-begin'
+import { Route as WritingSlugRouteImport } from './routes/writing.$slug'
 import { Route as LeversLeverSlugPracticeSlugRouteImport } from './routes/levers.$leverSlug.$practiceSlug'
 import { Route as LeversLeverSlugCompleteRouteImport } from './routes/levers.$leverSlug.complete'
 import { Route as PracticesLeverSlugPracticeSlugRouteImport } from './routes/practices.$leverSlug.$practiceSlug'
@@ -159,6 +162,11 @@ const WorkWithMeRoute = WorkWithMeRouteImport.update({
   path: '/work-with-me',
   getParentRoute: () => rootRouteImport,
 } as any)
+const WritingRoute = WritingRouteImport.update({
+  id: '/writing',
+  path: '/writing',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AdminBlogRoute = AdminBlogRouteImport.update({
   id: '/admin/blog',
   path: '/admin/blog',
@@ -167,6 +175,11 @@ const AdminBlogRoute = AdminBlogRouteImport.update({
 const AdminPromptsRoute = AdminPromptsRouteImport.update({
   id: '/admin/prompts',
   path: '/admin/prompts',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminWritingRoute = AdminWritingRouteImport.update({
+  id: '/admin/writing',
+  path: '/admin/writing',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiChatRoute = ApiChatRouteImport.update({
@@ -218,6 +231,11 @@ const PracticesWhereToBeginRoute = PracticesWhereToBeginRouteImport.update({
   id: '/where-to-begin',
   path: '/where-to-begin',
   getParentRoute: () => PracticesRoute,
+} as any)
+const WritingSlugRoute = WritingSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => WritingRoute,
 } as any)
 const LeversLeverSlugPracticeSlugRoute =
   LeversLeverSlugPracticeSlugRouteImport.update({
@@ -272,8 +290,10 @@ export interface FileRoutesByFullPath {
   '/terms': typeof TermsRoute
   '/vision': typeof VisionRoute
   '/work-with-me': typeof WorkWithMeRoute
+  '/writing': typeof WritingRouteWithChildren
   '/admin/blog': typeof AdminBlogRoute
   '/admin/prompts': typeof AdminPromptsRoute
+  '/admin/writing': typeof AdminWritingRoute
   '/api/chat': typeof ApiChatRoute
   '/api/community-signup': typeof ApiCommunitySignupRoute
   '/api/contributor-signup': typeof ApiContributorSignupRoute
@@ -284,6 +304,7 @@ export interface FileRoutesByFullPath {
   '/levers/$leverSlug': typeof LeversLeverSlugRouteWithChildren
   '/practices/$leverSlug': typeof PracticesLeverSlugRouteWithChildren
   '/practices/where-to-begin': typeof PracticesWhereToBeginRoute
+  '/writing/$slug': typeof WritingSlugRoute
   '/levers/$leverSlug/$practiceSlug': typeof LeversLeverSlugPracticeSlugRoute
   '/levers/$leverSlug/complete': typeof LeversLeverSlugCompleteRoute
   '/practices/$leverSlug/$practiceSlug': typeof PracticesLeverSlugPracticeSlugRoute
@@ -313,8 +334,10 @@ export interface FileRoutesByTo {
   '/terms': typeof TermsRoute
   '/vision': typeof VisionRoute
   '/work-with-me': typeof WorkWithMeRoute
+  '/writing': typeof WritingRouteWithChildren
   '/admin/blog': typeof AdminBlogRoute
   '/admin/prompts': typeof AdminPromptsRoute
+  '/admin/writing': typeof AdminWritingRoute
   '/api/chat': typeof ApiChatRoute
   '/api/community-signup': typeof ApiCommunitySignupRoute
   '/api/contributor-signup': typeof ApiContributorSignupRoute
@@ -325,6 +348,7 @@ export interface FileRoutesByTo {
   '/levers/$leverSlug': typeof LeversLeverSlugRouteWithChildren
   '/practices/$leverSlug': typeof PracticesLeverSlugRouteWithChildren
   '/practices/where-to-begin': typeof PracticesWhereToBeginRoute
+  '/writing/$slug': typeof WritingSlugRoute
   '/levers/$leverSlug/$practiceSlug': typeof LeversLeverSlugPracticeSlugRoute
   '/levers/$leverSlug/complete': typeof LeversLeverSlugCompleteRoute
   '/practices/$leverSlug/$practiceSlug': typeof PracticesLeverSlugPracticeSlugRoute
@@ -355,8 +379,10 @@ export interface FileRoutesById {
   '/terms': typeof TermsRoute
   '/vision': typeof VisionRoute
   '/work-with-me': typeof WorkWithMeRoute
+  '/writing': typeof WritingRouteWithChildren
   '/admin/blog': typeof AdminBlogRoute
   '/admin/prompts': typeof AdminPromptsRoute
+  '/admin/writing': typeof AdminWritingRoute
   '/api/chat': typeof ApiChatRoute
   '/api/community-signup': typeof ApiCommunitySignupRoute
   '/api/contributor-signup': typeof ApiContributorSignupRoute
@@ -367,6 +393,7 @@ export interface FileRoutesById {
   '/levers/$leverSlug': typeof LeversLeverSlugRouteWithChildren
   '/practices/$leverSlug': typeof PracticesLeverSlugRouteWithChildren
   '/practices/where-to-begin': typeof PracticesWhereToBeginRoute
+  '/writing/$slug': typeof WritingSlugRoute
   '/levers/$leverSlug/$practiceSlug': typeof LeversLeverSlugPracticeSlugRoute
   '/levers/$leverSlug/complete': typeof LeversLeverSlugCompleteRoute
   '/practices/$leverSlug/$practiceSlug': typeof PracticesLeverSlugPracticeSlugRoute
@@ -398,8 +425,10 @@ export interface FileRouteTypes {
     | '/terms'
     | '/vision'
     | '/work-with-me'
+    | '/writing'
     | '/admin/blog'
     | '/admin/prompts'
+    | '/admin/writing'
     | '/api/chat'
     | '/api/community-signup'
     | '/api/contributor-signup'
@@ -410,6 +439,7 @@ export interface FileRouteTypes {
     | '/levers/$leverSlug'
     | '/practices/$leverSlug'
     | '/practices/where-to-begin'
+    | '/writing/$slug'
     | '/levers/$leverSlug/$practiceSlug'
     | '/levers/$leverSlug/complete'
     | '/practices/$leverSlug/$practiceSlug'
@@ -439,8 +469,10 @@ export interface FileRouteTypes {
     | '/terms'
     | '/vision'
     | '/work-with-me'
+    | '/writing'
     | '/admin/blog'
     | '/admin/prompts'
+    | '/admin/writing'
     | '/api/chat'
     | '/api/community-signup'
     | '/api/contributor-signup'
@@ -451,6 +483,7 @@ export interface FileRouteTypes {
     | '/levers/$leverSlug'
     | '/practices/$leverSlug'
     | '/practices/where-to-begin'
+    | '/writing/$slug'
     | '/levers/$leverSlug/$practiceSlug'
     | '/levers/$leverSlug/complete'
     | '/practices/$leverSlug/$practiceSlug'
@@ -480,8 +513,10 @@ export interface FileRouteTypes {
     | '/terms'
     | '/vision'
     | '/work-with-me'
+    | '/writing'
     | '/admin/blog'
     | '/admin/prompts'
+    | '/admin/writing'
     | '/api/chat'
     | '/api/community-signup'
     | '/api/contributor-signup'
@@ -492,6 +527,7 @@ export interface FileRouteTypes {
     | '/levers/$leverSlug'
     | '/practices/$leverSlug'
     | '/practices/where-to-begin'
+    | '/writing/$slug'
     | '/levers/$leverSlug/$practiceSlug'
     | '/levers/$leverSlug/complete'
     | '/practices/$leverSlug/$practiceSlug'
@@ -522,8 +558,10 @@ export interface RootRouteChildren {
   TermsRoute: typeof TermsRoute
   VisionRoute: typeof VisionRoute
   WorkWithMeRoute: typeof WorkWithMeRoute
+  WritingRoute: typeof WritingRouteWithChildren
   AdminBlogRoute: typeof AdminBlogRoute
   AdminPromptsRoute: typeof AdminPromptsRoute
+  AdminWritingRoute: typeof AdminWritingRoute
   ApiChatRoute: typeof ApiChatRoute
   ApiCommunitySignupRoute: typeof ApiCommunitySignupRoute
   ApiContributorSignupRoute: typeof ApiContributorSignupRoute
@@ -688,6 +726,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof WorkWithMeRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/writing': {
+      id: '/writing'
+      path: '/writing'
+      fullPath: '/writing'
+      preLoaderRoute: typeof WritingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/admin/blog': {
       id: '/admin/blog'
       path: '/admin/blog'
@@ -700,6 +745,13 @@ declare module '@tanstack/react-router' {
       path: '/admin/prompts'
       fullPath: '/admin/prompts'
       preLoaderRoute: typeof AdminPromptsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/writing': {
+      id: '/admin/writing'
+      path: '/admin/writing'
+      fullPath: '/admin/writing'
+      preLoaderRoute: typeof AdminWritingRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/chat': {
@@ -771,6 +823,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/practices/where-to-begin'
       preLoaderRoute: typeof PracticesWhereToBeginRouteImport
       parentRoute: typeof PracticesRoute
+    }
+    '/writing/$slug': {
+      id: '/writing/$slug'
+      path: '/$slug'
+      fullPath: '/writing/$slug'
+      preLoaderRoute: typeof WritingSlugRouteImport
+      parentRoute: typeof WritingRoute
     }
     '/levers/$leverSlug/$practiceSlug': {
       id: '/levers/$leverSlug/$practiceSlug'
@@ -883,6 +942,17 @@ const PracticesRouteWithChildren = PracticesRoute._addFileChildren(
   PracticesRouteChildren,
 )
 
+interface WritingRouteChildren {
+  WritingSlugRoute: typeof WritingSlugRoute
+}
+
+const WritingRouteChildren: WritingRouteChildren = {
+  WritingSlugRoute: WritingSlugRoute,
+}
+
+const WritingRouteWithChildren =
+  WritingRoute._addFileChildren(WritingRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
@@ -906,8 +976,10 @@ const rootRouteChildren: RootRouteChildren = {
   TermsRoute: TermsRoute,
   VisionRoute: VisionRoute,
   WorkWithMeRoute: WorkWithMeRoute,
+  WritingRoute: WritingRouteWithChildren,
   AdminBlogRoute: AdminBlogRoute,
   AdminPromptsRoute: AdminPromptsRoute,
+  AdminWritingRoute: AdminWritingRoute,
   ApiChatRoute: ApiChatRoute,
   ApiCommunitySignupRoute: ApiCommunitySignupRoute,
   ApiContributorSignupRoute: ApiContributorSignupRoute,

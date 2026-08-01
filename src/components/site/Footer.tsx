@@ -12,6 +12,7 @@ export function Footer() {
           <Link to="/" className="hover:text-white">Home</Link>
           <Link to="/philosophy" className="hover:text-white">Philosophy</Link>
           <Link to="/essays" className="hover:text-white">Essays</Link>
+          <Link to="/writing" className="hover:text-white">Writing</Link>
           <Link to="/sunya-ai" className="hover:text-white">Sunya AI</Link>
           <Link to="/work-with-me" className="hover:text-white">Work With Me</Link>
           <Link to="/vision" className="hover:text-white">Vision</Link>
@@ -23,7 +24,6 @@ export function Footer() {
             <span aria-hidden className="text-[#7ec8e3]">✦</span>
             <span>Practices</span>
           </Link>
-          <Link to="/blog" className="hover:text-white">Blog</Link>
         </nav>
       </div>
 

@@ -98,8 +98,8 @@ function AdminPromptsPage() {
             <p className="text-xs text-slate-500">Signed in as {user?.email}</p>
           </div>
           <div className="flex items-center gap-3">
-            <Link to="/admin/blog" className="text-sm text-blue-600 hover:underline">
-              Blog admin →
+            <Link to="/admin/writing" className="text-sm text-blue-600 hover:underline">
+              Writing admin →
             </Link>
             <button
               onClick={copyAll}
