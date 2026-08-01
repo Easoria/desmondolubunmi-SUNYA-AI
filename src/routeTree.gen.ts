@@ -16,6 +16,7 @@ import { Route as AccountRouteImport } from './routes/account'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as BookedRouteImport } from './routes/booked'
 import { Route as DashboardRouteImport } from './routes/dashboard'
+import { Route as EssaysRouteImport } from './routes/essays'
 import { Route as ForgotPasswordRouteImport } from './routes/forgot-password'
 import { Route as JoinRouteImport } from './routes/join'
 import { Route as LeversRouteImport } from './routes/levers'
@@ -38,8 +39,10 @@ import { Route as ApiContributorSignupRouteImport } from './routes/api/contribut
 import { Route as ApiSessionTitleRouteImport } from './routes/api/session-title'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as CheckoutReturnRouteImport } from './routes/checkout.return'
+import { Route as EssaysSlugRouteImport } from './routes/essays.$slug'
 import { Route as LeversLeverSlugRouteImport } from './routes/levers.$leverSlug'
 import { Route as PracticesLeverSlugRouteImport } from './routes/practices.$leverSlug'
+import { Route as PracticesWhereToBeginRouteImport } from './routes/practices.where-to-begin'
 import { Route as LeversLeverSlugPracticeSlugRouteImport } from './routes/levers.$leverSlug.$practiceSlug'
 import { Route as LeversLeverSlugCompleteRouteImport } from './routes/levers.$leverSlug.complete'
 import { Route as PracticesLeverSlugPracticeSlugRouteImport } from './routes/practices.$leverSlug.$practiceSlug'
@@ -79,6 +82,11 @@ const BookedRoute = BookedRouteImport.update({
 const DashboardRoute = DashboardRouteImport.update({
   id: '/dashboard',
   path: '/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EssaysRoute = EssaysRouteImport.update({
+  id: '/essays',
+  path: '/essays',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ForgotPasswordRoute = ForgotPasswordRouteImport.update({
@@ -191,6 +199,11 @@ const CheckoutReturnRoute = CheckoutReturnRouteImport.update({
   path: '/checkout/return',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EssaysSlugRoute = EssaysSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => EssaysRoute,
+} as any)
 const LeversLeverSlugRoute = LeversLeverSlugRouteImport.update({
   id: '/$leverSlug',
   path: '/$leverSlug',
@@ -199,6 +212,11 @@ const LeversLeverSlugRoute = LeversLeverSlugRouteImport.update({
 const PracticesLeverSlugRoute = PracticesLeverSlugRouteImport.update({
   id: '/$leverSlug',
   path: '/$leverSlug',
+  getParentRoute: () => PracticesRoute,
+} as any)
+const PracticesWhereToBeginRoute = PracticesWhereToBeginRouteImport.update({
+  id: '/where-to-begin',
+  path: '/where-to-begin',
   getParentRoute: () => PracticesRoute,
 } as any)
 const LeversLeverSlugPracticeSlugRoute =
@@ -238,6 +256,7 @@ export interface FileRoutesByFullPath {
   '/blog': typeof BlogRouteWithChildren
   '/booked': typeof BookedRoute
   '/dashboard': typeof DashboardRoute
+  '/essays': typeof EssaysRouteWithChildren
   '/forgot-password': typeof ForgotPasswordRoute
   '/index': typeof Char91indexChar93Route
   '/join': typeof JoinRoute
@@ -261,8 +280,10 @@ export interface FileRoutesByFullPath {
   '/api/session-title': typeof ApiSessionTitleRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/checkout/return': typeof CheckoutReturnRoute
+  '/essays/$slug': typeof EssaysSlugRoute
   '/levers/$leverSlug': typeof LeversLeverSlugRouteWithChildren
   '/practices/$leverSlug': typeof PracticesLeverSlugRouteWithChildren
+  '/practices/where-to-begin': typeof PracticesWhereToBeginRoute
   '/levers/$leverSlug/$practiceSlug': typeof LeversLeverSlugPracticeSlugRoute
   '/levers/$leverSlug/complete': typeof LeversLeverSlugCompleteRoute
   '/practices/$leverSlug/$practiceSlug': typeof PracticesLeverSlugPracticeSlugRoute
@@ -276,6 +297,7 @@ export interface FileRoutesByTo {
   '/blog': typeof BlogRouteWithChildren
   '/booked': typeof BookedRoute
   '/dashboard': typeof DashboardRoute
+  '/essays': typeof EssaysRouteWithChildren
   '/forgot-password': typeof ForgotPasswordRoute
   '/index': typeof Char91indexChar93Route
   '/join': typeof JoinRoute
@@ -299,8 +321,10 @@ export interface FileRoutesByTo {
   '/api/session-title': typeof ApiSessionTitleRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/checkout/return': typeof CheckoutReturnRoute
+  '/essays/$slug': typeof EssaysSlugRoute
   '/levers/$leverSlug': typeof LeversLeverSlugRouteWithChildren
   '/practices/$leverSlug': typeof PracticesLeverSlugRouteWithChildren
+  '/practices/where-to-begin': typeof PracticesWhereToBeginRoute
   '/levers/$leverSlug/$practiceSlug': typeof LeversLeverSlugPracticeSlugRoute
   '/levers/$leverSlug/complete': typeof LeversLeverSlugCompleteRoute
   '/practices/$leverSlug/$practiceSlug': typeof PracticesLeverSlugPracticeSlugRoute
@@ -315,6 +339,7 @@ export interface FileRoutesById {
   '/blog': typeof BlogRouteWithChildren
   '/booked': typeof BookedRoute
   '/dashboard': typeof DashboardRoute
+  '/essays': typeof EssaysRouteWithChildren
   '/forgot-password': typeof ForgotPasswordRoute
   '/index': typeof Char91indexChar93Route
   '/join': typeof JoinRoute
@@ -338,8 +363,10 @@ export interface FileRoutesById {
   '/api/session-title': typeof ApiSessionTitleRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/checkout/return': typeof CheckoutReturnRoute
+  '/essays/$slug': typeof EssaysSlugRoute
   '/levers/$leverSlug': typeof LeversLeverSlugRouteWithChildren
   '/practices/$leverSlug': typeof PracticesLeverSlugRouteWithChildren
+  '/practices/where-to-begin': typeof PracticesWhereToBeginRoute
   '/levers/$leverSlug/$practiceSlug': typeof LeversLeverSlugPracticeSlugRoute
   '/levers/$leverSlug/complete': typeof LeversLeverSlugCompleteRoute
   '/practices/$leverSlug/$practiceSlug': typeof PracticesLeverSlugPracticeSlugRoute
@@ -355,6 +382,7 @@ export interface FileRouteTypes {
     | '/blog'
     | '/booked'
     | '/dashboard'
+    | '/essays'
     | '/forgot-password'
     | '/index'
     | '/join'
@@ -378,8 +406,10 @@ export interface FileRouteTypes {
     | '/api/session-title'
     | '/blog/$slug'
     | '/checkout/return'
+    | '/essays/$slug'
     | '/levers/$leverSlug'
     | '/practices/$leverSlug'
+    | '/practices/where-to-begin'
     | '/levers/$leverSlug/$practiceSlug'
     | '/levers/$leverSlug/complete'
     | '/practices/$leverSlug/$practiceSlug'
@@ -393,6 +423,7 @@ export interface FileRouteTypes {
     | '/blog'
     | '/booked'
     | '/dashboard'
+    | '/essays'
     | '/forgot-password'
     | '/index'
     | '/join'
@@ -416,8 +447,10 @@ export interface FileRouteTypes {
     | '/api/session-title'
     | '/blog/$slug'
     | '/checkout/return'
+    | '/essays/$slug'
     | '/levers/$leverSlug'
     | '/practices/$leverSlug'
+    | '/practices/where-to-begin'
     | '/levers/$leverSlug/$practiceSlug'
     | '/levers/$leverSlug/complete'
     | '/practices/$leverSlug/$practiceSlug'
@@ -431,6 +464,7 @@ export interface FileRouteTypes {
     | '/blog'
     | '/booked'
     | '/dashboard'
+    | '/essays'
     | '/forgot-password'
     | '/index'
     | '/join'
@@ -454,8 +488,10 @@ export interface FileRouteTypes {
     | '/api/session-title'
     | '/blog/$slug'
     | '/checkout/return'
+    | '/essays/$slug'
     | '/levers/$leverSlug'
     | '/practices/$leverSlug'
+    | '/practices/where-to-begin'
     | '/levers/$leverSlug/$practiceSlug'
     | '/levers/$leverSlug/complete'
     | '/practices/$leverSlug/$practiceSlug'
@@ -470,6 +506,7 @@ export interface RootRouteChildren {
   BlogRoute: typeof BlogRouteWithChildren
   BookedRoute: typeof BookedRoute
   DashboardRoute: typeof DashboardRoute
+  EssaysRoute: typeof EssaysRouteWithChildren
   ForgotPasswordRoute: typeof ForgotPasswordRoute
   Char91indexChar93Route: typeof Char91indexChar93Route
   JoinRoute: typeof JoinRoute
@@ -544,6 +581,13 @@ declare module '@tanstack/react-router' {
       path: '/dashboard'
       fullPath: '/dashboard'
       preLoaderRoute: typeof DashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/essays': {
+      id: '/essays'
+      path: '/essays'
+      fullPath: '/essays'
+      preLoaderRoute: typeof EssaysRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/forgot-password': {
@@ -700,6 +744,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CheckoutReturnRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/essays/$slug': {
+      id: '/essays/$slug'
+      path: '/$slug'
+      fullPath: '/essays/$slug'
+      preLoaderRoute: typeof EssaysSlugRouteImport
+      parentRoute: typeof EssaysRoute
+    }
     '/levers/$leverSlug': {
       id: '/levers/$leverSlug'
       path: '/$leverSlug'
@@ -712,6 +763,13 @@ declare module '@tanstack/react-router' {
       path: '/$leverSlug'
       fullPath: '/practices/$leverSlug'
       preLoaderRoute: typeof PracticesLeverSlugRouteImport
+      parentRoute: typeof PracticesRoute
+    }
+    '/practices/where-to-begin': {
+      id: '/practices/where-to-begin'
+      path: '/where-to-begin'
+      fullPath: '/practices/where-to-begin'
+      preLoaderRoute: typeof PracticesWhereToBeginRouteImport
       parentRoute: typeof PracticesRoute
     }
     '/levers/$leverSlug/$practiceSlug': {
@@ -762,6 +820,17 @@ const BlogRouteChildren: BlogRouteChildren = {
 
 const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
 
+interface EssaysRouteChildren {
+  EssaysSlugRoute: typeof EssaysSlugRoute
+}
+
+const EssaysRouteChildren: EssaysRouteChildren = {
+  EssaysSlugRoute: EssaysSlugRoute,
+}
+
+const EssaysRouteWithChildren =
+  EssaysRoute._addFileChildren(EssaysRouteChildren)
+
 interface LeversLeverSlugRouteChildren {
   LeversLeverSlugPracticeSlugRoute: typeof LeversLeverSlugPracticeSlugRoute
   LeversLeverSlugCompleteRoute: typeof LeversLeverSlugCompleteRoute
@@ -802,10 +871,12 @@ const PracticesLeverSlugRouteWithChildren =
 
 interface PracticesRouteChildren {
   PracticesLeverSlugRoute: typeof PracticesLeverSlugRouteWithChildren
+  PracticesWhereToBeginRoute: typeof PracticesWhereToBeginRoute
 }
 
 const PracticesRouteChildren: PracticesRouteChildren = {
   PracticesLeverSlugRoute: PracticesLeverSlugRouteWithChildren,
+  PracticesWhereToBeginRoute: PracticesWhereToBeginRoute,
 }
 
 const PracticesRouteWithChildren = PracticesRoute._addFileChildren(
@@ -819,6 +890,7 @@ const rootRouteChildren: RootRouteChildren = {
   BlogRoute: BlogRouteWithChildren,
   BookedRoute: BookedRoute,
   DashboardRoute: DashboardRoute,
+  EssaysRoute: EssaysRouteWithChildren,
   ForgotPasswordRoute: ForgotPasswordRoute,
   Char91indexChar93Route: Char91indexChar93Route,
   JoinRoute: JoinRoute,

@@ -492,3 +492,39 @@ export const whereToBegin: WhereToBegin = {
   ]
 };
 
+export function getEssayBySlug(slug: string): Essay | undefined {
+  return essays.find((essay) => essay.slug === slug);
+}
+
+export function getAdjacentEssays(slug: string): {
+  prev: Essay | null;
+  next: Essay | null;
+} {
+  const index = essays.findIndex((essay) => essay.slug === slug);
+  if (index < 0) return { prev: null, next: null };
+  return {
+    prev: index > 0 ? essays[index - 1]! : null,
+    next: index < essays.length - 1 ? essays[index + 1]! : null,
+  };
+}
+
+export function essaysByGroup() {
+  return {
+    origin: essays.filter((essay) => essay.group === "THE ORIGIN AND THE FALL"),
+    system: essays.filter((essay) => essay.group === "THE SYSTEM AND THE END"),
+  };
+}
+
+export function essayMetaDescription(essay: Essay, maxLen = 155): string {
+  const text = essay.standfirst.replace(/\s+/g, " ").trim();
+  if (text.length <= maxLen) return text;
+  const truncated = text.slice(0, maxLen - 1);
+  const lastSpace = truncated.lastIndexOf(" ");
+  const base = (lastSpace > 80 ? truncated.slice(0, lastSpace) : truncated).trim();
+  return `${base}…`;
+}
+
+export function readingMinutes(wordCount: number): number {
+  return Math.max(1, Math.round(wordCount / 220));
+}
+

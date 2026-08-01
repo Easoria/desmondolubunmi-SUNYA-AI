@@ -1035,6 +1035,17 @@ Most people are in one of five zones. Find yours.`}
             {`Most people sit across two zones. When that happens, identify which one — if
 addressed — would most rapidly improve the other. Start there.`}
           </p>
+          <div className="mt-8 flex flex-col items-center gap-3 text-sm sm:flex-row sm:justify-center">
+            <Link
+              to="/practices/where-to-begin"
+              className="text-[#7ec8e3] transition hover:text-white"
+            >
+              Read the full order of operations →
+            </Link>
+            <Link to="/essays" className="text-[#7ec8e3]/80 transition hover:text-white">
+              Or begin the essays →
+            </Link>
+          </div>
         </div>
       </section>
 

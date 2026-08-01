@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
+import { essays } from "@/data/essays";
 import { getAllLeverPractices, getLeversInOrder } from "@/data/levers";
 import { supabaseAdmin } from "@/integrations/supabase/client.server";
 import { SITE_URL } from "@/lib/blog";
@@ -20,14 +21,23 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/", lastmod: generatedAt, changefreq: "weekly", priority: "1.0" },
           { path: "/about", lastmod: generatedAt, changefreq: "monthly", priority: "0.8" },
           { path: "/philosophy", lastmod: generatedAt, changefreq: "monthly", priority: "0.9" },
+          { path: "/essays", lastmod: generatedAt, changefreq: "monthly", priority: "0.9" },
           { path: "/practices", lastmod: generatedAt, changefreq: "weekly", priority: "0.9" },
+          { path: "/practices/where-to-begin", lastmod: generatedAt, changefreq: "monthly", priority: "0.85" },
           { path: "/sunya-ai", lastmod: generatedAt, changefreq: "weekly", priority: "0.8" },
           { path: "/privacy", lastmod: generatedAt, changefreq: "yearly", priority: "0.5" },
           { path: "/terms", lastmod: generatedAt, changefreq: "yearly", priority: "0.5" },
           { path: "/work-with-me", lastmod: generatedAt, changefreq: "monthly", priority: "0.8" },
           { path: "/vision", lastmod: generatedAt, changefreq: "monthly", priority: "0.8" },
-          { path: "/blog", lastmod: generatedAt, changefreq: "weekly", priority: "0.8" },
+          { path: "/blog", lastmod: generatedAt, changefreq: "weekly", priority: "0.7" },
         ];
+
+        const essayEntries: SitemapEntry[] = essays.map((essay) => ({
+          path: `/essays/${essay.slug}`,
+          lastmod: generatedAt,
+          changefreq: "monthly",
+          priority: "0.8",
+        }));
 
         const practiceEntries: SitemapEntry[] = getLeversInOrder().flatMap((lever) => [
           {
@@ -63,7 +73,7 @@ export const Route = createFileRoute("/sitemap.xml")({
           priority: "0.7",
         }));
 
-        const all = [...staticEntries, ...practiceEntries, ...dynamic];
+        const all = [...staticEntries, ...essayEntries, ...practiceEntries, ...dynamic];
 
         const urls = all
           .map((e) =>

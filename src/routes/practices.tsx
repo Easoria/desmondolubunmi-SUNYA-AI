@@ -144,16 +144,21 @@ function PracticesIndexPage() {
           </div>
 
           <p className="mx-auto mt-12 max-w-3xl text-center text-sm text-[#b8d4e8]">
-            Not sure where to start? The five zones on the philosophy page identify which lever
-            matters most for you right now.
+            Not sure where to start? Use the order of operations — which zone you are in, which
+            lever matters first, and what can wait.
           </p>
-          <div className="mt-4 text-center">
+          <div className="mt-4 flex flex-col items-center gap-3 text-center sm:flex-row sm:justify-center">
             <Link
-              to="/philosophy"
-              hash="zones"
+              to="/practices/where-to-begin"
               className="inline-flex items-center gap-2 text-sm text-[#7ec8e3] transition hover:text-white"
             >
-              Find your starting point →
+              Where to begin →
+            </Link>
+            <Link
+              to="/essays"
+              className="inline-flex items-center gap-2 text-sm text-[#7ec8e3]/80 transition hover:text-white"
+            >
+              Read the essays →
             </Link>
           </div>
         </div>
