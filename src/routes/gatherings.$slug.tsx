@@ -35,9 +35,14 @@ type LoaderData = {
 };
 
 export const Route = createFileRoute("/gatherings/$slug")({
-  validateSearch: (search: Record<string, unknown>) => ({
-    preview: search.preview === "1" || search.preview === 1 || search.preview === true,
-  }),
+  validateSearch: (search: Record<string, unknown>) => {
+    const preview =
+      search.preview === "1" ||
+      search.preview === 1 ||
+      search.preview === true;
+    // Only include preview when true so URLs stay clean (no ?preview=false).
+    return preview ? { preview: true as const } : {};
+  },
   loaderDeps: ({ search }: { search: { preview?: boolean } }) => ({
     preview: !!search.preview,
   }),
