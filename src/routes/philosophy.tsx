@@ -6,6 +6,7 @@ import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { Breadcrumb } from "@/components/site/Breadcrumb";
 import { SacredGeometry, Orbs } from "@/components/site/Decor";
+import type { LeverSlug } from "@/data/levers";
 
 export const Route = createFileRoute("/philosophy")({
   component: PhilosophyPage,
@@ -179,7 +180,24 @@ type Zone = {
   description: string;
   signs: string[];
   startHere: string;
+  startHereLinks: { label: string; slug: LeverSlug }[];
   note: string;
+};
+
+const LEVER_SLUG_BY_NUMBER: Record<number, LeverSlug> = {
+  0: "conservation",
+  1: "breath",
+  2: "movement",
+  3: "mind",
+  4: "sound",
+  5: "heart",
+  6: "awareness",
+  7: "sleep",
+  8: "nutrition",
+  9: "connection",
+  10: "environment",
+  11: "nature",
+  12: "sustenance",
 };
 
 const ZONES: Zone[] = [
@@ -196,6 +214,7 @@ const ZONES: Zone[] = [
       "No capacity for inner practice",
     ],
     startHere: "Sustenance — Lever 12",
+    startHereLinks: [{ label: "Sustenance — Lever 12", slug: "sustenance" }],
     note: "No inner practice takes root while the system is locked in survival mode. Address the material foundation first. Always.",
   },
   {
@@ -211,6 +230,7 @@ const ZONES: Zone[] = [
       "Frequent illness",
     ],
     startHere: "Sleep — Lever 7",
+    startHereLinks: [{ label: "Sleep — Lever 7", slug: "sleep" }],
     note: "An exhausted nervous system cannot hold inner practice. Stabilise the nightly reset first, with Breath as immediate support.",
   },
   {
@@ -225,6 +245,7 @@ const ZONES: Zone[] = [
       "Emotional numbness",
     ],
     startHere: "Heart — Lever 5",
+    startHereLinks: [{ label: "Heart — Lever 5", slug: "heart" }],
     note: "Emotional presence, heart coherence, and forgiveness work — with Breath to open the system first.",
   },
   {
@@ -239,6 +260,7 @@ const ZONES: Zone[] = [
       "Mental exhaustion despite physical rest",
     ],
     startHere: "Awareness — Lever 6",
+    startHereLinks: [{ label: "Awareness — Lever 6", slug: "awareness" }],
     note: "Breath awareness, body scan, and pure observation — to establish the witness.",
   },
   {
@@ -253,6 +275,10 @@ const ZONES: Zone[] = [
       "Something essential missing despite having everything",
     ],
     startHere: "Awareness — Lever 6, and Conservation — Lever 0",
+    startHereLinks: [
+      { label: "Awareness — Lever 6", slug: "awareness" },
+      { label: "Conservation — Lever 0", slug: "conservation" },
+    ],
     note: "Often ready for the deepest practices in the framework. The bottleneck is not capacity. It is direction.",
   },
 ];
@@ -301,7 +327,20 @@ function ZonePanel({ zone }: { zone: Zone }) {
         </ul>
         <div className="mt-6 rounded-2xl border border-[#7ec8e3]/50 bg-[#7ec8e3]/10 p-4">
           <div className="label-eyebrow">Start here</div>
-          <p className="mt-2 display text-2xl text-white">{zone.startHere}</p>
+          <p className="mt-2 display text-2xl text-white">
+            {zone.startHereLinks.map((item, index) => (
+              <span key={item.slug}>
+                <Link
+                  to="/practices/$leverSlug"
+                  params={{ leverSlug: item.slug }}
+                  className="underline-offset-4 hover:underline"
+                >
+                  {item.label}
+                </Link>
+                {index < zone.startHereLinks.length - 1 ? ", and " : null}
+              </span>
+            ))}
+          </p>
           <p className="mt-3 text-xs leading-relaxed text-[#b8d4e8]/80">{zone.note}</p>
         </div>
       </div>
@@ -721,7 +760,7 @@ reactions running. This is why the framework works from both directions at once.
       </section>
 
       {/* 7 Layers */}
-      <section className="relative overflow-hidden bg-[#0a1628] py-32">
+      <section id="zones" className="relative overflow-hidden bg-[#0a1628] py-32">
         <SacredGeometry className="-right-40 top-1/3 h-[700px] w-[700px]" />
         <div className="relative z-10 mx-auto max-w-6xl px-6">
           <div className="text-center">
@@ -878,9 +917,16 @@ most subtle. Each one prepares the ground for the next.`}
                                 </li>
                               ))}
                             </ul>
+                            <Link
+                              to="/practices/$leverSlug"
+                              params={{ leverSlug: LEVER_SLUG_BY_NUMBER[l.n] }}
+                              className="mt-5 inline-flex items-center gap-2 text-sm text-[#7ec8e3] transition hover:text-white"
+                            >
+                              See all practices <ArrowRight className="h-4 w-4" />
+                            </Link>
                             <button
                               onClick={() => tryLever(l)}
-                              className="mt-5 inline-flex items-center gap-2 text-sm text-[#7ec8e3] transition hover:text-white"
+                              className="mt-3 inline-flex items-center gap-2 text-sm text-[#7ec8e3] transition hover:text-white"
                             >
                               Work on this with Sunya AI <ArrowRight className="h-4 w-4" />
                             </button>

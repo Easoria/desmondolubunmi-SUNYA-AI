@@ -31,10 +31,12 @@ export type PracticeGeneratedFields = {
 };
 
 export type Practice = {
+  sourceNumber?: number;
   slug: string;
   name: string;
   sanskritName?: string;
   subtitle?: string;
+  notes?: string[];
   essence?: string;
   mechanism?: string[];
   protocol?: ProtocolStep[];
@@ -62,6 +64,7 @@ export type Lever = {
   name: string;
   subtitle?: string;
   layerLine: string;
+  summaryLine?: string;
   intro: string[];
   groups?: PracticeGroup[];
   practices?: Practice[];

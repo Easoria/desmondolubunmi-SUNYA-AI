@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
+import { getAllLeverPractices, getLeversInOrder } from "@/data/levers";
 import { supabaseAdmin } from "@/integrations/supabase/client.server";
 import { SITE_URL } from "@/lib/blog";
 
@@ -17,11 +18,25 @@ export const Route = createFileRoute("/sitemap.xml")({
         const staticEntries: SitemapEntry[] = [
           { path: "/", changefreq: "weekly", priority: "1.0" },
           { path: "/philosophy", changefreq: "monthly", priority: "0.9" },
+          { path: "/practices", changefreq: "weekly", priority: "0.9" },
           { path: "/sunya-ai", changefreq: "weekly", priority: "0.9" },
           { path: "/work-with-me", changefreq: "monthly", priority: "0.8" },
           { path: "/vision", changefreq: "monthly", priority: "0.8" },
           { path: "/blog", changefreq: "weekly", priority: "0.8" },
         ];
+
+        const practiceEntries: SitemapEntry[] = getLeversInOrder().flatMap((lever) => [
+          {
+            path: `/practices/${lever.slug}`,
+            changefreq: "monthly",
+            priority: "0.8",
+          },
+          ...getAllLeverPractices(lever).map((practice) => ({
+            path: `/practices/${lever.slug}/${practice.slug}`,
+            changefreq: "monthly" as const,
+            priority: "0.7",
+          })),
+        ]);
 
         const { data: articles } = await supabaseAdmin
           .from("articles")
@@ -35,7 +50,7 @@ export const Route = createFileRoute("/sitemap.xml")({
           priority: "0.7",
         }));
 
-        const all = [...staticEntries, ...dynamic];
+        const all = [...staticEntries, ...practiceEntries, ...dynamic];
 
         const urls = all
           .map((e) =>

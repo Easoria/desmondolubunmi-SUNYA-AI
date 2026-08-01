@@ -2,11 +2,12 @@ import { Link, useNavigate } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { ArrowRight, Menu, X, LogOut, LayoutDashboard, History, Settings } from "lucide-react";
 import { useAuth } from "@/hooks/use-auth";
+import { useSubscription } from "@/hooks/useSubscription";
 import { oneToOneNavLabel } from "@/lib/one-to-one-offer";
 
 const NAV = [
   { label: "Philosophy", to: "/philosophy" as const },
-  { label: "Sunya AI", to: "/sunya-ai" as const },
+  { label: "Practices", to: "/practices" as const },
   { label: oneToOneNavLabel(), to: "/work-with-me" as const },
   { label: "Vision", to: "/vision" as const },
 ];
@@ -105,9 +106,11 @@ function AccountAvatar() {
 
 export function Nav() {
   const { user, signOut } = useAuth();
+  const { isActive: hasPaidSubscription } = useSubscription();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
+  const ctaLabel = hasPaidSubscription ? "Sunya AI" : "Try Sunya AI";
 
   useEffect(() => {
     const on = () => setScrolled(window.scrollY > 30);
@@ -141,28 +144,22 @@ export function Nav() {
               {n.label}
             </Link>
           ))}
-          {user ? (
-            <AccountAvatar />
-          ) : (
-            <Link
-              to="/sunya-ai"
-              className="glow-btn inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium"
-            >
-              Try Sunya AI <ArrowRight className="h-3.5 w-3.5" />
-            </Link>
-          )}
+          <Link
+            to="/sunya-ai"
+            className="glow-btn inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium"
+          >
+            {ctaLabel} <ArrowRight className="h-3.5 w-3.5" />
+          </Link>
+          {user ? <AccountAvatar /> : null}
         </div>
         <div className="flex items-center gap-2 md:hidden">
-          {user ? (
-            <AccountAvatar />
-          ) : (
-            <Link
-              to="/sunya-ai"
-              className="glow-btn inline-flex items-center gap-1.5 rounded-full px-3.5 py-2 text-xs font-medium"
-            >
-              Try Sunya AI <ArrowRight className="h-3 w-3" />
-            </Link>
-          )}
+          <Link
+            to="/sunya-ai"
+            className="glow-btn inline-flex items-center gap-1.5 rounded-full px-3.5 py-2 text-xs font-medium"
+          >
+            {ctaLabel} <ArrowRight className="h-3 w-3" />
+          </Link>
+          {user ? <AccountAvatar /> : null}
           <div className="flex flex-col items-center">
             <button
               aria-label="Menu"
@@ -193,6 +190,13 @@ export function Nav() {
             {user ? (
               <>
                 <Link
+                  to="/sunya-ai"
+                  onClick={() => setOpen(false)}
+                  className="glow-btn mt-2 inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-medium"
+                >
+                  {ctaLabel} <ArrowRight className="h-3.5 w-3.5" />
+                </Link>
+                <Link
                   to="/dashboard"
                   onClick={() => setOpen(false)}
                   className="rounded-lg px-2 py-3 text-[#b8d4e8] hover:bg-white/5 hover:text-white"
@@ -216,7 +220,7 @@ export function Nav() {
                 onClick={() => setOpen(false)}
                 className="glow-btn mt-2 inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-medium"
               >
-                Try Sunya AI <ArrowRight className="h-3.5 w-3.5" />
+                {ctaLabel} <ArrowRight className="h-3.5 w-3.5" />
               </Link>
             )}
           </div>
