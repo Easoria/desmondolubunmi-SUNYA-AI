@@ -111,7 +111,11 @@ export function formatProtocolStepLayout(text: string): ProtocolStepLayout {
     return { kind: "unordered-list", items: symbolBullets };
   }
 
-  const labelledSegments = clean(singleLine.split(/\s+(?=[A-Z][A-Za-z'’\- ]{2,60}:\s+)/));
+  // Split inline labeled segments only when they are not attached to an em-dash/hyphen
+  // lead-in (e.g. "The ignition — Bhav: ..."), which should stay unified.
+  const labelledSegments = clean(
+    singleLine.split(/(?<![—-])\s+(?=[A-Z][A-Za-z'’\- ]{2,60}:\s+)/),
+  );
   if (labelledSegments.length > 1) {
     return { kind: "paragraphs", items: labelledSegments };
   }

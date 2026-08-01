@@ -52,7 +52,7 @@ export const Route = createFileRoute("/practices/$leverSlug/$practiceSlug")({
 });
 
 function splitProtocolLeadIn(text: string) {
-  const match = text.match(/^([A-Za-z0-9][A-Za-z0-9'’()\-\/&, ]{1,84})([:;])\s+(.+)$/);
+  const match = text.match(/^([A-Za-z0-9][A-Za-z0-9'’()\-\/&, —–]{1,84})(:)\s+(.+)$/);
   if (!match) return null;
   return {
     leadIn: match[1].trim(),
