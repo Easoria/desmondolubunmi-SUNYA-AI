@@ -74,9 +74,6 @@ function Hero() {
           </div>
         </div>
       </div>
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
-        <ChevronDown className="chev h-6 w-6 text-[#b8d4e8]/60" />
-      </div>
     </section>
   );
 }

@@ -486,9 +486,6 @@ function PhilosophyPage() {
           <p className="mx-auto mt-8 max-w-2xl text-lg text-[#b8d4e8]">
             Built on first principles. Belonging to no tradition. Valid for every human being.
           </p>
-          <div className="mt-10">
-            <ChevronDown className="chev mx-auto h-6 w-6 text-[#b8d4e8]/60" />
-          </div>
         </div>
       </section>
 
