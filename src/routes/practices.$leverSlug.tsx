@@ -1,5 +1,4 @@
-import { Link, createFileRoute, notFound } from "@tanstack/react-router";
-import { ArrowRight } from "lucide-react";
+import { Link, Outlet, createFileRoute, notFound, useRouterState } from "@tanstack/react-router";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { Starfield } from "@/components/Starfield";
@@ -17,7 +16,7 @@ export const Route = createFileRoute("/practices/$leverSlug")({
     if (!lever) throw notFound();
     return { lever };
   },
-  component: LeverHubPage,
+  component: LeverRoutePage,
   head: ({ loaderData }) => ({
     meta: [
       { title: loaderData.lever.metaTitle },
@@ -29,11 +28,31 @@ export const Route = createFileRoute("/practices/$leverSlug")({
   }),
 });
 
+function LeverRoutePage() {
+  const { leverSlug } = Route.useParams();
+  const pathname = useRouterState({
+    select: (state) => state.location.pathname,
+  });
+  const exactPath = `/practices/${leverSlug}`;
+
+  // This route is a parent of practice-detail and complete routes.
+  // Render the hub only on the exact lever URL.
+  if (pathname !== exactPath && pathname !== `${exactPath}/`) {
+    return <Outlet />;
+  }
+
+  return <LeverHubPage />;
+}
+
 function LeverHubPage() {
   const { lever } = Route.useLoaderData();
   const practiceCount = getLeverPracticeCount(lever);
   const { previous, next } = getPreviousAndNextLevers(lever.slug as LeverSlug);
   const hasGroups = !!(lever.groups && lever.groups.length > 0);
+  const introParagraphs = lever.intro
+    .flatMap((block) => block.split(/\n\s*\n/g))
+    .map((paragraph) => paragraph.replace(/\s*\n\s*/g, " ").replace(/\s{2,}/g, " ").trim())
+    .filter(Boolean);
 
   return (
     <div className="min-h-screen bg-[#0a1628] text-white">
@@ -42,6 +61,11 @@ function LeverHubPage() {
         <Starfield density={0.35} />
         <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6">
           <div className="text-center">
+            <div className="mb-5 text-left sm:mb-6">
+              <Link to="/practices" className="text-sm text-[#7ec8e3] transition hover:text-white">
+                ← Back to all practices
+              </Link>
+            </div>
             <div className="label-eyebrow">LEVER {String(lever.number).padStart(2, "0")}</div>
             <h1 className="display mt-5 text-3xl text-white sm:text-5xl md:text-6xl">
               {lever.name}
@@ -59,9 +83,9 @@ function LeverHubPage() {
             </div>
           </div>
 
-          <div className="mx-auto mt-8 max-w-4xl space-y-4 text-[#b8d4e8] sm:mt-10">
-            {lever.intro.map((paragraph, index) => (
-              <p key={index} className="text-[15px] leading-relaxed">
+          <div className="mx-auto mt-8 max-w-4xl space-y-6 text-[#b8d4e8] sm:mt-10">
+            {introParagraphs.map((paragraph, index) => (
+              <p key={index} className="text-[15px] leading-8 sm:text-base">
                 {paragraph}
               </p>
             ))}
@@ -109,16 +133,6 @@ function LeverHubPage() {
               </div>
             </section>
           )}
-
-          <div className="mt-10 text-center">
-            <Link
-              to="/practices/$leverSlug/complete"
-              params={{ leverSlug: lever.slug }}
-              className="inline-flex items-center gap-2 text-sm text-[#7ec8e3] transition hover:text-white"
-            >
-              Read the complete lever edition <ArrowRight className="h-4 w-4" />
-            </Link>
-          </div>
 
           <div className="mt-12 grid gap-3 text-sm text-[#b8d4e8] sm:mt-14 sm:grid-cols-2 sm:gap-4">
             {previous ? (
