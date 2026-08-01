@@ -16,6 +16,7 @@ export type Database = {
     Tables: {
       articles: {
         Row: {
+          category: string | null
           content: string
           created_at: string
           excerpt: string | null
@@ -26,11 +27,13 @@ export type Database = {
           published_at: string | null
           reading_time_minutes: number | null
           slug: string
+          subtitle: string | null
           tags: string[]
           title: string
           updated_at: string
         }
         Insert: {
+          category?: string | null
           content?: string
           created_at?: string
           excerpt?: string | null
@@ -41,11 +44,13 @@ export type Database = {
           published_at?: string | null
           reading_time_minutes?: number | null
           slug: string
+          subtitle?: string | null
           tags?: string[]
           title: string
           updated_at?: string
         }
         Update: {
+          category?: string | null
           content?: string
           created_at?: string
           excerpt?: string | null
@@ -56,6 +61,7 @@ export type Database = {
           published_at?: string | null
           reading_time_minutes?: number | null
           slug?: string
+          subtitle?: string | null
           tags?: string[]
           title?: string
           updated_at?: string
