@@ -827,8 +827,7 @@ export const essays: Essay[] = [
       {
         "heading": "The Energy Body — The Hidden System",
         "paragraphs": [
-          "Consider something striking. A Christian monk in silent prayer, a yogi holding his breath, a",
-          "Sufi turning in ecstatic dance, a Zen master sitting motionless — all of them, through completely different methods, arrive at the same inner dimension: the same stillness, the same falling away of the separate self, the same peace. Their beliefs differ entirely, yet they reach the same place. This is no coincidence. It is because they are all, in their own ways, working on a single shared human system — and that system is the energy body.",
+          "Consider something striking. A Christian monk in silent prayer, a yogi holding his breath, a Sufi turning in ecstatic dance, a Zen master sitting motionless — all of them, through completely different methods, arrive at the same inner dimension: the same stillness, the same falling away of the separate self, the same peace. Their beliefs differ entirely, yet they reach the same place. This is no coincidence. It is because they are all, in their own ways, working on a single shared human system — and that system is the energy body.",
           "We met it only briefly before, when we spoke of contraction. Now we need to understand it fully — because it is what this entire path, and every genuine path before it, actually works upon.",
           "But the energy body does not stand alone. It sits within a larger anatomy — the whole of a human being, from the silent core of consciousness out to the physical world. So we begin with the complete map, and then move to its living heart."
         ],
@@ -837,15 +836,7 @@ export const essays: Essay[] = [
             "type": "paragraph",
             "spans": [
               {
-                "text": "Consider something striking. A Christian monk in silent prayer, a yogi holding his breath, a"
-              }
-            ]
-          },
-          {
-            "type": "paragraph",
-            "spans": [
-              {
-                "text": "Sufi turning in ecstatic dance, a Zen master sitting motionless — all of them, through completely different methods, arrive at the same inner dimension: the same stillness, the same falling away of the separate self, the same peace. Their beliefs differ entirely, yet they reach the same place. This is no coincidence. It is because they are all, in their own ways, working on a single shared human system — and that system is the energy body."
+                "text": "Consider something striking. A Christian monk in silent prayer, a yogi holding his breath, a Sufi turning in ecstatic dance, a Zen master sitting motionless — all of them, through completely different methods, arrive at the same inner dimension: the same stillness, the same falling away of the separate self, the same peace. Their beliefs differ entirely, yet they reach the same place. This is no coincidence. It is because they are all, in their own ways, working on a single shared human system — and that system is the energy body."
               }
             ]
           },
@@ -1230,7 +1221,7 @@ export const essays: Essay[] = [
       }
     ],
     "wordCount": 2835,
-    "standfirst": "Consider something striking. A Christian monk in silent prayer, a yogi holding his breath, a"
+    "standfirst": "Consider something striking. A Christian monk in silent prayer, a yogi holding his breath, a Sufi turning in ecstatic dance, a Zen master sitting motionless — all of them, through completely different methods, arrive at the same inner dimension: the same stillness, the same falling away of the separate self, the same peace. Their beliefs differ entirely, yet they reach the same place. This is no coincidence. It is because they are all, in their own ways, working on a single shared human system — and that system is the energy body."
   },
   {
     "number": 9,
@@ -1479,8 +1470,7 @@ export const essays: Essay[] = [
           "Consider sound. Almost every tradition uses the voice not only to speak but to transform: the chanting of Om, the Gregorian chant of the monasteries, the repeated remembrance of the name of God in Sufism, the mantras and devotional singing of the East. The body is a resonator, and the sustained sound of the voice sends a deep vibration through the system from within — overriding the noise of the thinking mind and shaking open the blockages in the energy, so that it flows freely once more.",
           "Consider posture. When human beings turn toward the sacred, they instinctively place their bodies into the same few shapes: the prostration of Islam, the kneeling of the Christian, the postures of the yogi, the standing forms of qi gong. These are not arbitrary marks of respect. They are precise positions that redirect the flow of energy through the body and along the spine, and settle the whole system into a state of safety and surrender.",
           "Consider the breath. The yogi shapes it deliberately; the monk binds his prayer to its rhythm; the meditator simply watches it rise and fall. Every tradition discovered, sooner or later, the same secret: that the breath is the one lever reaching directly into the involuntary nervous system. Slow the breath, and the entire system shifts out of survival and into rest — the body’s own doorway from contraction toward calm.",
-          "Consider the prayer-beads. The rosary of the Catholic, the mala of the Hindu and the",
-          "Buddhist, the beads of the Muslim — the same simple object, invented over and over by peoples with no contact between them. The rhythmic passing of the beads occupies the restless hands and holds the wandering mind in a single loop, so that the life force can gather and build, instead of leaking away in distraction.",
+          "Consider the prayer-beads. The rosary of the Catholic, the mala of the Hindu and the Buddhist, the beads of the Muslim — the same simple object, invented over and over by peoples with no contact between them. The rhythmic passing of the beads occupies the restless hands and holds the wandering mind in a single loop, so that the life force can gather and build, instead of leaking away in distraction.",
           "And beneath all of these lies the inner gesture of surrender, whose other face we have already seen. At the level of the body and the energy, surrender is something wonderfully concrete: the release of resistance itself. I want tightens the whole system; let it be releases it. To surrender is to let go of the inner “no” — and as that “no” lets go, the contraction it was holding lets go with it. It is the direct undoing, in a single movement, of the very resistance and contraction that lie at the heart of suffering.",
           "The outer forms could hardly look more different — the chant, the kneeling, the posture, the beads of a dozen faiths. That is the packaging: the language, the names of God, the architecture, all of it cultural and bound to a time and a place. But beneath the packaging, the actual work is one and the same. Whether a tradition explains what it does through the language of God, or grace, or emptiness, or the rising of energy up the spine, they are all, in the end, doing the same thing to the same system: opening the energy, and loosening the grip of the separate self."
         ],
@@ -1529,15 +1519,7 @@ export const essays: Essay[] = [
             "type": "paragraph",
             "spans": [
               {
-                "text": "Consider the prayer-beads. The rosary of the Catholic, the mala of the Hindu and the"
-              }
-            ]
-          },
-          {
-            "type": "paragraph",
-            "spans": [
-              {
-                "text": "Buddhist, the beads of the Muslim — the same simple object, invented over and over by peoples with no contact between them. The rhythmic passing of the beads occupies the restless hands and holds the wandering mind in a single loop, so that the life force can gather and build, instead of leaking away in distraction."
+                "text": "Consider the prayer-beads. The rosary of the Catholic, the mala of the Hindu and the Buddhist, the beads of the Muslim — the same simple object, invented over and over by peoples with no contact between them. The rhythmic passing of the beads occupies the restless hands and holds the wandering mind in a single loop, so that the life force can gather and build, instead of leaking away in distraction."
               }
             ]
           },

@@ -259,6 +259,40 @@ def blocks_to_paragraphs(blocks):
     return [paragraph for paragraph in paragraphs if paragraph]
 
 
+CONT_END = re.compile(
+    r"(?i)\b(a|an|the|of|and|or|to|for|with|from|into|as|by|in|on|at|onto|upon|"
+    r"over|under|between|through|without|within|than|then|but|nor|so|yet|"
+    r"if|when|while|where|which|who|whom|whose|that|this|these|those|"
+    r"my|your|his|her|its|our|their|not|no|every|each|some|any|all|"
+    r"both|either|neither|such|other|another|same|own)$"
+)
+
+
+def merge_broken_paragraph_blocks(blocks, *, allow_label_break: bool):
+    """Join PDF soft-wrap leftovers that were wrongly split mid-sentence."""
+    out = []
+    for block in blocks:
+        if block["type"] != "paragraph" or not out or out[-1]["type"] != "paragraph":
+            out.append(block)
+            continue
+        prev = "".join(span["text"] for span in out[-1]["spans"]).rstrip()
+        cur = "".join(span["text"] for span in block["spans"]).lstrip()
+        if SENTENCE_END.search(prev):
+            out.append(block)
+            continue
+        if allow_label_break and should_break_before(cur):
+            out.append(block)
+            continue
+        if CONT_END.search(prev) or prev.endswith((",", ";", ":", "—", "–", "-")) or (
+            cur and cur[0].islower()
+        ):
+            merged = join_line_spans(out[-1]["spans"], block["spans"])
+            out[-1] = {"type": "paragraph", "spans": merged}
+            continue
+        out.append(block)
+    return out
+
+
 def main():
     start_page = None
     for index in range(DOC.page_count):
@@ -426,6 +460,7 @@ def main():
                 )
             else:
                 clean_blocks.append({"type": block["type"], "spans": slim_spans(block["spans"])})
+        clean_blocks = merge_broken_paragraph_blocks(clean_blocks, allow_label_break=True)
         wto_sections.append(
             {
                 "heading": section["heading"],
@@ -446,6 +481,13 @@ def main():
                 {"type": "paragraph", "spans": [{"text": paragraph}]}
                 for paragraph in section["paragraphs"]
             ]
+            section["blocks"] = merge_broken_paragraph_blocks(
+                section["blocks"], allow_label_break=False
+            )
+            section["paragraphs"] = blocks_to_paragraphs(section["blocks"])
+        all_paras = [p for section in essay["sections"] for p in section["paragraphs"]]
+        essay["standfirst"] = all_paras[0] if all_paras else essay.get("standfirst", "")
+        essay["wordCount"] = sum(len(p.split()) for p in all_paras)
 
     where_to_begin = {
         "slug": "where-to-begin",
