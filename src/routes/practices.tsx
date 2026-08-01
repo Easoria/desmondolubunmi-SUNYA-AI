@@ -68,7 +68,7 @@ function PracticesIndexPage() {
             <h2 className="display mb-6 text-center text-2xl text-[#d6effb] sm:text-3xl">
               6 Internal Practices.
             </h2>
-            <div className="rounded-3xl border border-[#7ec8e3]/25 bg-[#7ec8e3]/[0.05] p-3 sm:p-4">
+            <div className="rounded-3xl border border-[#7ec8e3]/40 bg-[#7ec8e3]/[0.08] p-3 shadow-[0_0_42px_-24px_rgba(126,200,227,0.85)] sm:p-4">
               <div className="grid gap-3 sm:gap-4 md:grid-cols-2 xl:grid-cols-3">
                 {internal.map((lever, index) => (
                   <LeverCard key={lever.slug} lever={lever} band="internal" index={index} />
@@ -133,14 +133,14 @@ function LeverCard({
     band === "prerequisite"
       ? `${shared} mt-5 border-[#dcb48d]/45 bg-[#120f1a]/85 shadow-[0_0_38px_-18px_rgba(220,180,141,0.65)]`
       : band === "internal"
-        ? `${shared} border-[#7ec8e3]/40 ring-1 ring-[#7ec8e3]/20`
+        ? `${shared} border-[#7ec8e3]/55 ring-1 ring-[#7ec8e3]/35`
         : `${shared} border-[#dcb48d]/35 bg-[#070f1f]/88 ring-1 ring-[#dcb48d]/20 shadow-[0_0_24px_-18px_rgba(220,180,141,0.45)]`;
 
   const style =
     band === "internal"
       ? {
           backgroundColor: `rgba(10, 22, 40, ${0.67 - internalTint})`,
-          boxShadow: `0 0 ${18 + index * 3}px -14px rgba(126, 200, 227, ${internalGlow * 0.45})`,
+          boxShadow: `0 0 ${24 + index * 4}px -14px rgba(126, 200, 227, ${internalGlow * 0.6})`,
         }
       : undefined;
 
@@ -149,11 +149,11 @@ function LeverCard({
 
   return (
     <Link to={leverHubPath(lever.slug)} className={className} style={style}>
-      <div className="pointer-events-none absolute left-2.5 top-0.5 font-display text-5xl text-[#7ec8e3]/20 sm:left-3 sm:top-1 sm:text-6xl">
+      <div className="pointer-events-none absolute right-3 top-2 font-display text-3xl text-[#7ec8e3]/18 sm:text-4xl">
         {number}
       </div>
       <div className="relative z-10">
-        <h2 className={`display mt-4 text-2xl sm:mt-5 sm:text-3xl ${headingClass}`}>{lever.name}</h2>
+        <h2 className={`display mt-2 text-2xl sm:mt-3 sm:text-3xl ${headingClass}`}>{lever.name}</h2>
         <p className="mt-1 text-xs italic text-[#b8d4e8]/80">{lever.layerLine}</p>
         <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-[#b8d4e8]">{summary}</p>
         <p className="mt-5 text-xs uppercase tracking-[0.24em] text-[#7ec8e3]/85">
