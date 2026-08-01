@@ -48,16 +48,16 @@ export function Footer() {
 
           <div className="grid flex-1 gap-10 sm:grid-cols-3">
             <FooterColumn label="The Work">
+              <FooterLink to="/practices">Practices</FooterLink>
               <FooterLink to="/philosophy">Philosophy</FooterLink>
               <FooterLink to="/timeless-solution">The Timeless Solution</FooterLink>
-              <FooterLink to="/practices">Practices</FooterLink>
               <FooterLink to="/writing">Writing</FooterLink>
             </FooterColumn>
 
             <FooterColumn label="Work With Me">
-              <FooterLink to="/sunya-ai">Sunya AI</FooterLink>
               <FooterLink to="/work-with-me">1-on-1 Sessions</FooterLink>
               <FooterLink to="/gatherings">Gatherings</FooterLink>
+              <FooterLink to="/sunya-ai">Sunya AI</FooterLink>
             </FooterColumn>
 
             <FooterColumn label="About">

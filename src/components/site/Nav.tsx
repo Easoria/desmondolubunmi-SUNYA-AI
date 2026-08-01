@@ -8,18 +8,13 @@ import { oneToOneNavLabel } from "@/lib/one-to-one-offer";
 // Navbar is capped at 4 items + CTA. Do not add more.
 // New sections go in the footer and are surfaced contextually
 // from related pages. A navbar with 7 items has no hierarchy.
+// Mobile menu matches desktop primary links only — Timeless Solution,
+// Writing, Gatherings, and About stay in the footer for focus.
 const NAV_PRIMARY = [
   { label: "Philosophy", to: "/philosophy" as const },
   { label: "Practices", to: "/practices" as const },
   { label: oneToOneNavLabel(), to: "/work-with-me" as const },
   { label: "Vision", to: "/vision" as const },
-];
-
-const NAV_SECONDARY = [
-  { label: "The Timeless Solution", to: "/timeless-solution" as const },
-  { label: "Writing", to: "/writing" as const },
-  { label: "Gatherings", to: "/gatherings" as const },
-  { label: "About", to: "/about" as const },
 ];
 
 function initials(name?: string | null, email?: string | null) {
@@ -207,15 +202,6 @@ export function Nav() {
         <div className="border-t border-white/10 bg-[#0a1628]/95 backdrop-blur-xl md:hidden">
           <div className="flex flex-col gap-1 px-6 py-4">
             {NAV_PRIMARY.map((n) => (
-              <MobileLink
-                key={n.to}
-                to={n.to}
-                label={n.label}
-                onClick={() => setOpen(false)}
-              />
-            ))}
-            <div className="my-2 h-px bg-white/10" />
-            {NAV_SECONDARY.map((n) => (
               <MobileLink
                 key={n.to}
                 to={n.to}
