@@ -47,6 +47,7 @@ import { Route as GatheringsSlugRouteImport } from './routes/gatherings.$slug'
 import { Route as LeversLeverSlugRouteImport } from './routes/levers.$leverSlug'
 import { Route as PracticesLeverSlugRouteImport } from './routes/practices.$leverSlug'
 import { Route as PracticesWhereToBeginRouteImport } from './routes/practices.where-to-begin'
+import { Route as ApiAdminBootstrapGatheringsRouteImport } from './routes/api/admin/bootstrap-gatherings'
 import { Route as LeversLeverSlugPracticeSlugRouteImport } from './routes/levers.$leverSlug.$practiceSlug'
 import { Route as LeversLeverSlugCompleteRouteImport } from './routes/levers.$leverSlug.complete'
 import { Route as PracticesLeverSlugPracticeSlugRouteImport } from './routes/practices.$leverSlug.$practiceSlug'
@@ -243,6 +244,12 @@ const PracticesWhereToBeginRoute = PracticesWhereToBeginRouteImport.update({
   path: '/where-to-begin',
   getParentRoute: () => PracticesRoute,
 } as any)
+const ApiAdminBootstrapGatheringsRoute =
+  ApiAdminBootstrapGatheringsRouteImport.update({
+    id: '/api/admin/bootstrap-gatherings',
+    path: '/api/admin/bootstrap-gatherings',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const LeversLeverSlugPracticeSlugRoute =
   LeversLeverSlugPracticeSlugRouteImport.update({
     id: '/$practiceSlug',
@@ -312,6 +319,7 @@ export interface FileRoutesByFullPath {
   '/levers/$leverSlug': typeof LeversLeverSlugRouteWithChildren
   '/practices/$leverSlug': typeof PracticesLeverSlugRouteWithChildren
   '/practices/where-to-begin': typeof PracticesWhereToBeginRoute
+  '/api/admin/bootstrap-gatherings': typeof ApiAdminBootstrapGatheringsRoute
   '/levers/$leverSlug/$practiceSlug': typeof LeversLeverSlugPracticeSlugRoute
   '/levers/$leverSlug/complete': typeof LeversLeverSlugCompleteRoute
   '/practices/$leverSlug/$practiceSlug': typeof PracticesLeverSlugPracticeSlugRoute
@@ -357,6 +365,7 @@ export interface FileRoutesByTo {
   '/levers/$leverSlug': typeof LeversLeverSlugRouteWithChildren
   '/practices/$leverSlug': typeof PracticesLeverSlugRouteWithChildren
   '/practices/where-to-begin': typeof PracticesWhereToBeginRoute
+  '/api/admin/bootstrap-gatherings': typeof ApiAdminBootstrapGatheringsRoute
   '/levers/$leverSlug/$practiceSlug': typeof LeversLeverSlugPracticeSlugRoute
   '/levers/$leverSlug/complete': typeof LeversLeverSlugCompleteRoute
   '/practices/$leverSlug/$practiceSlug': typeof PracticesLeverSlugPracticeSlugRoute
@@ -403,6 +412,7 @@ export interface FileRoutesById {
   '/levers/$leverSlug': typeof LeversLeverSlugRouteWithChildren
   '/practices/$leverSlug': typeof PracticesLeverSlugRouteWithChildren
   '/practices/where-to-begin': typeof PracticesWhereToBeginRoute
+  '/api/admin/bootstrap-gatherings': typeof ApiAdminBootstrapGatheringsRoute
   '/levers/$leverSlug/$practiceSlug': typeof LeversLeverSlugPracticeSlugRoute
   '/levers/$leverSlug/complete': typeof LeversLeverSlugCompleteRoute
   '/practices/$leverSlug/$practiceSlug': typeof PracticesLeverSlugPracticeSlugRoute
@@ -450,6 +460,7 @@ export interface FileRouteTypes {
     | '/levers/$leverSlug'
     | '/practices/$leverSlug'
     | '/practices/where-to-begin'
+    | '/api/admin/bootstrap-gatherings'
     | '/levers/$leverSlug/$practiceSlug'
     | '/levers/$leverSlug/complete'
     | '/practices/$leverSlug/$practiceSlug'
@@ -495,6 +506,7 @@ export interface FileRouteTypes {
     | '/levers/$leverSlug'
     | '/practices/$leverSlug'
     | '/practices/where-to-begin'
+    | '/api/admin/bootstrap-gatherings'
     | '/levers/$leverSlug/$practiceSlug'
     | '/levers/$leverSlug/complete'
     | '/practices/$leverSlug/$practiceSlug'
@@ -540,6 +552,7 @@ export interface FileRouteTypes {
     | '/levers/$leverSlug'
     | '/practices/$leverSlug'
     | '/practices/where-to-begin'
+    | '/api/admin/bootstrap-gatherings'
     | '/levers/$leverSlug/$practiceSlug'
     | '/levers/$leverSlug/complete'
     | '/practices/$leverSlug/$practiceSlug'
@@ -580,6 +593,7 @@ export interface RootRouteChildren {
   ApiGatheringsSignupRoute: typeof ApiGatheringsSignupRoute
   ApiSessionTitleRoute: typeof ApiSessionTitleRoute
   CheckoutReturnRoute: typeof CheckoutReturnRoute
+  ApiAdminBootstrapGatheringsRoute: typeof ApiAdminBootstrapGatheringsRoute
   ApiPublicPaymentsWebhookRoute: typeof ApiPublicPaymentsWebhookRoute
 }
 
@@ -851,6 +865,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PracticesWhereToBeginRouteImport
       parentRoute: typeof PracticesRoute
     }
+    '/api/admin/bootstrap-gatherings': {
+      id: '/api/admin/bootstrap-gatherings'
+      path: '/api/admin/bootstrap-gatherings'
+      fullPath: '/api/admin/bootstrap-gatherings'
+      preLoaderRoute: typeof ApiAdminBootstrapGatheringsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/levers/$leverSlug/$practiceSlug': {
       id: '/levers/$leverSlug/$practiceSlug'
       path: '/$practiceSlug'
@@ -1007,6 +1028,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiGatheringsSignupRoute: ApiGatheringsSignupRoute,
   ApiSessionTitleRoute: ApiSessionTitleRoute,
   CheckoutReturnRoute: CheckoutReturnRoute,
+  ApiAdminBootstrapGatheringsRoute: ApiAdminBootstrapGatheringsRoute,
   ApiPublicPaymentsWebhookRoute: ApiPublicPaymentsWebhookRoute,
 }
 export const routeTree = rootRouteImport
