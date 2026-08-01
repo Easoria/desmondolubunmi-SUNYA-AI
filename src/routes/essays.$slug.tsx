@@ -140,7 +140,7 @@ function EssayPage() {
           <p className="mt-4 text-sm text-[#b8d4e8]/70">
             {minutes} min read · Desmond Olubunmi
           </p>
-          <p className="mx-auto mt-8 max-w-2xl text-left text-[17px] leading-[1.85] text-[#e8eef4] sm:text-lg">
+          <p className="mx-auto mt-8 max-w-2xl text-left text-[17px] leading-[1.85] text-[#b8d4e8] sm:text-lg">
             {essay.standfirst}
           </p>
         </header>

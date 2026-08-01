@@ -37,7 +37,7 @@ function RichText({ spans }: { spans: TextSpan[] }) {
 function BlockView({ block }: { block: ContentBlock }) {
   if (block.type === "subheading") {
     return (
-      <h3 className="text-[15px] font-semibold tracking-wide text-[#7ec8e3] sm:text-base">
+      <h3 className="text-[15px] font-semibold tracking-wide text-white sm:text-base">
         <RichText spans={block.spans} />
       </h3>
     );
@@ -45,7 +45,7 @@ function BlockView({ block }: { block: ContentBlock }) {
 
   if (block.type === "list") {
     return (
-      <ul className="list-disc space-y-2 pl-5 text-[17px] leading-[1.9] text-[#e8eef4] marker:text-[#7ec8e3] sm:text-lg">
+      <ul className="list-disc space-y-2 pl-5 text-[17px] leading-[1.9] text-[#b8d4e8] marker:text-[#7ec8e3] sm:text-lg">
         {block.items.map((item, index) => (
           <li key={`${spansKey(item)}-${index}`} className="pl-1">
             <RichText spans={item} />
@@ -56,7 +56,7 @@ function BlockView({ block }: { block: ContentBlock }) {
   }
 
   return (
-    <p className="text-[17px] leading-[1.9] text-[#e8eef4] sm:text-lg">
+    <p className="text-[17px] leading-[1.9] text-[#b8d4e8] sm:text-lg">
       <RichText spans={block.spans} />
     </p>
   );
@@ -103,7 +103,7 @@ export function EssayProse({
             {!hideHeading && (
               <h2
                 className={`display text-2xl sm:text-3xl ${
-                  emphasized ? "text-[#f0dcc8]" : "text-[#7ec8e3]"
+                  emphasized ? "text-[#f0dcc8]" : "text-white"
                 }`}
               >
                 {section.heading}
