@@ -28,6 +28,51 @@ export const Route = createFileRoute("/practices/$leverSlug")({
   }),
 });
 
+function extractSentences(text: string) {
+  return (
+    text
+      .match(/[^.!?]+[.!?]+(?:["”')\]]+)?|[^.!?]+$/g)
+      ?.map((sentence) => sentence.trim())
+      .filter(Boolean) ?? []
+  );
+}
+
+function splitLongParagraph(text: string) {
+  const normalized = text.replace(/\s*\n\s*/g, " ").replace(/\s{2,}/g, " ").trim();
+  const sentences = extractSentences(normalized);
+  if (sentences.length < 5 || normalized.length < 520) return [normalized];
+
+  const chunks: string[] = [];
+  let current = "";
+
+  for (const sentence of sentences) {
+    const next = current ? `${current} ${sentence}` : sentence;
+    if (current && next.length > 430) {
+      chunks.push(current.trim());
+      current = sentence;
+    } else {
+      current = next;
+    }
+  }
+
+  if (current) chunks.push(current.trim());
+  return chunks.filter(Boolean);
+}
+
+function formatLeverIntroParagraphs(blocks: string[]) {
+  return blocks
+    .flatMap((block) => {
+      const normalizedBlock = block.replace(/\r\n/g, "\n").trim();
+      if (!normalizedBlock) return [];
+      return normalizedBlock
+        .split(/\n\s*\n/g)
+        .map((paragraph) => paragraph.trim())
+        .filter(Boolean);
+    })
+    .flatMap((paragraph) => splitLongParagraph(paragraph))
+    .filter(Boolean);
+}
+
 function LeverRoutePage() {
   const { leverSlug } = Route.useParams();
   const pathname = useRouterState({
@@ -49,10 +94,7 @@ function LeverHubPage() {
   const practiceCount = getLeverPracticeCount(lever);
   const { previous, next } = getPreviousAndNextLevers(lever.slug as LeverSlug);
   const hasGroups = !!(lever.groups && lever.groups.length > 0);
-  const introParagraphs = lever.intro
-    .flatMap((block) => block.split(/\n\s*\n/g))
-    .map((paragraph) => paragraph.replace(/\s*\n\s*/g, " ").replace(/\s{2,}/g, " ").trim())
-    .filter(Boolean);
+  const introParagraphs = formatLeverIntroParagraphs(lever.intro);
 
   return (
     <div className="min-h-screen bg-[#0a1628] text-white">
