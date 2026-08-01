@@ -1,4 +1,4 @@
-import { Link, createFileRoute } from "@tanstack/react-router";
+import { Link, Outlet, createFileRoute, useRouterState } from "@tanstack/react-router";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { Starfield } from "@/components/Starfield";
@@ -16,7 +16,7 @@ const EXTERNAL_SLUGS = [
 ] as const;
 
 export const Route = createFileRoute("/practices")({
-  component: PracticesIndexPage,
+  component: PracticesRoutePage,
   head: () => ({
     meta: [
       { title: "The Practices — The Complete Sunya Library" },
@@ -28,6 +28,20 @@ export const Route = createFileRoute("/practices")({
     ],
   }),
 });
+
+function PracticesRoutePage() {
+  const pathname = useRouterState({
+    select: (state) => state.location.pathname,
+  });
+
+  // This route is a parent of deeper practice routes; render the index only
+  // on the exact `/practices` path, and delegate child URLs to <Outlet />.
+  if (pathname !== "/practices" && pathname !== "/practices/") {
+    return <Outlet />;
+  }
+
+  return <PracticesIndexPage />;
+}
 
 function PracticesIndexPage() {
   const levers = getLeversInOrder();
