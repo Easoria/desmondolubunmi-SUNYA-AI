@@ -5,6 +5,7 @@ export const Route = createFileRoute("/levers/$leverSlug/complete")({
     throw redirect({
       to: "/practices/$leverSlug/complete",
       params: { leverSlug: params.leverSlug },
+      statusCode: 308,
     });
   },
 });

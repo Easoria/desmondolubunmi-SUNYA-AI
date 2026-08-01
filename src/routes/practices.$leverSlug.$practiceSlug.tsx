@@ -2,7 +2,12 @@ import { Link, createFileRoute, notFound } from "@tanstack/react-router";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { Starfield } from "@/components/Starfield";
-import { getLeverBySlug, getPracticeBySlug } from "@/data/levers";
+import {
+  getAllLeverPractices,
+  getLeverBySlug,
+  getLeversInOrder,
+  getPracticeBySlug,
+} from "@/data/levers";
 import type { LeverSlug } from "@/data/levers";
 import { formatNarrativeParagraphs, formatProtocolStepLayout } from "@/lib/practice-text-format";
 import {
@@ -17,6 +22,18 @@ import {
 const CROSS_LEVER_RELATED: Record<string, { leverSlug: LeverSlug; practiceSlug: string }[]> = {
   "breath/4-7-8-breathing": [{ leverSlug: "sleep", practiceSlug: "the-somatic-runway" }],
 };
+const DUPLICATE_PRACTICE_NAMES = new Set(
+  Object.entries(
+    getLeversInOrder()
+      .flatMap((lever) => getAllLeverPractices(lever))
+      .reduce<Record<string, number>>((counts, practice) => {
+        counts[practice.name] = (counts[practice.name] ?? 0) + 1;
+        return counts;
+      }, {}),
+  )
+    .filter(([, count]) => count > 1)
+    .map(([name]) => name),
+);
 
 export const Route = createFileRoute("/practices/$leverSlug/$practiceSlug")({
   loader: ({ params }) => {
@@ -29,7 +46,10 @@ export const Route = createFileRoute("/practices/$leverSlug/$practiceSlug")({
   component: PracticeDetailPage,
   head: ({ loaderData }) => {
     const { lever, practice } = loaderData;
-    const title = buildPracticeMetaTitle(practice);
+    const title = buildPracticeMetaTitle(practice, {
+      includeLeverName: DUPLICATE_PRACTICE_NAMES.has(practice.name),
+      leverName: lever.name,
+    });
     const description = buildPracticeMetaDescription(practice);
     const path = `/practices/${lever.slug}/${practice.slug}`;
     const totalTime = parseDurationToIso(practice.duration);

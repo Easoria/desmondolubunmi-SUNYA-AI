@@ -95,18 +95,7 @@ function SunyaAIPage() {
     });
   }
 
-  if (resolving) {
-    return (
-      <div className="min-h-screen bg-[#0a1628] text-white">
-        <Nav />
-        <div className="flex min-h-[60vh] items-center justify-center">
-          <span className="inline-block h-2 w-2 animate-pulse rounded-full bg-[#7ec8e3]" />
-        </div>
-      </div>
-    );
-  }
-
-  if (isPaid) {
+  if (!resolving && isPaid) {
     return <PaidSubscriberView user={user} />;
   }
 

@@ -8,6 +8,7 @@ export const Route = createFileRoute("/levers/$leverSlug/$practiceSlug")({
         leverSlug: params.leverSlug,
         practiceSlug: params.practiceSlug,
       },
+      statusCode: 308,
     });
   },
 });

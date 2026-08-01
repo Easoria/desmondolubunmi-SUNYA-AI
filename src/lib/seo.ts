@@ -109,30 +109,6 @@ export function buildPracticeMetaDescription(practice: Practice) {
     return `${essenceLead} ${mechanismSentence}`.trim();
   }
 
-  const clauses = mechanismSentence.split(/(?<=[;:,.])\s+/).filter(Boolean);
-  let selected = "";
-  for (const clause of clauses) {
-    const candidate = selected ? `${selected} ${clause}` : clause;
-    if (candidate.length <= available) {
-      selected = candidate;
-      continue;
-    }
-    break;
-  }
-  if (!selected) {
-    const words = mechanismSentence.split(/\s+/);
-    for (const word of words) {
-      const candidate = selected ? `${selected} ${word}` : word;
-      if (candidate.length > available) break;
-      selected = candidate;
-    }
-  }
-  if (!selected) return essence;
-  selected = selected.replace(/[,:;]\s*$/, "");
-  if (!/[.!?]$/.test(selected)) selected = `${selected}.`;
-  const compact = `${essenceLead} ${selected}`.trim();
-  if (compact.length <= 155) return compact;
-
   return essence;
 }
 
@@ -166,11 +142,18 @@ export function buildLeverMetaTitle(lever: Lever, practiceCount: number) {
   return `${lever.name} Practices — ${practiceCount} Techniques for ${buildLeverIntentPhrase(lever)} | Sunya`;
 }
 
-export function buildPracticeMetaTitle(practice: Practice) {
+export function buildPracticeMetaTitle(
+  practice: Practice,
+  options?: { includeLeverName?: boolean; leverName?: string },
+) {
   const primaryName = practice.sanskritName
     ? `${practice.name} (${practice.sanskritName})`
     : practice.name;
-  return `${primaryName} — How to Practise It | Sunya`;
+  const scopedName =
+    options?.includeLeverName && options.leverName
+      ? `${primaryName} (${options.leverName})`
+      : primaryName;
+  return `${scopedName} — How to Practise It | Sunya`;
 }
 
 type BreadcrumbItem = {
