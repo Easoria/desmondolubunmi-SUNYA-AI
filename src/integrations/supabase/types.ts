@@ -16,7 +16,6 @@ export type Database = {
     Tables: {
       articles: {
         Row: {
-          category: string | null
           content: string
           created_at: string
           excerpt: string | null
@@ -27,13 +26,11 @@ export type Database = {
           published_at: string | null
           reading_time_minutes: number | null
           slug: string
-          subtitle: string | null
           tags: string[]
           title: string
           updated_at: string
         }
         Insert: {
-          category?: string | null
           content?: string
           created_at?: string
           excerpt?: string | null
@@ -44,13 +41,11 @@ export type Database = {
           published_at?: string | null
           reading_time_minutes?: number | null
           slug: string
-          subtitle?: string | null
           tags?: string[]
           title: string
           updated_at?: string
         }
         Update: {
-          category?: string | null
           content?: string
           created_at?: string
           excerpt?: string | null
@@ -61,10 +56,27 @@ export type Database = {
           published_at?: string | null
           reading_time_minutes?: number | null
           slug?: string
-          subtitle?: string | null
           tags?: string[]
           title?: string
           updated_at?: string
+        }
+        Relationships: []
+      }
+      fingerprint_sessions: {
+        Row: {
+          last_seen: string
+          sessions_used: number
+          visitor_id: string
+        }
+        Insert: {
+          last_seen?: string
+          sessions_used?: number
+          visitor_id: string
+        }
+        Update: {
+          last_seen?: string
+          sessions_used?: number
+          visitor_id?: string
         }
         Relationships: []
       }
@@ -152,24 +164,6 @@ export type Database = {
           venue_name?: string | null
           what_to_expect?: string | null
           who_its_for?: string | null
-        }
-        Relationships: []
-      }
-      fingerprint_sessions: {
-        Row: {
-          last_seen: string
-          sessions_used: number
-          visitor_id: string
-        }
-        Insert: {
-          last_seen?: string
-          sessions_used?: number
-          visitor_id: string
-        }
-        Update: {
-          last_seen?: string
-          sessions_used?: number
-          visitor_id?: string
         }
         Relationships: []
       }
