@@ -126,6 +126,29 @@ export const sleepLever: Lever = {
       mechanism: [
         "The modern stress response is rarely dramatic — it is a quiet, unconscious tension that lingers in the background of daily life. Unresolved conflict, chronic anxiety, and accumulated pressure train the body to remain in a state of low-grade vigilance. Even if you appear calm, the internal alarm is quietly active — keeping the breath shallow, the muscles slightly braced, and the nervous system primed. Because sleep fundamentally requires a felt sense of safety, this invisible holding makes deep rest impossible. You cannot think your way out of this physical state; the body must be spoken to directly. The six internal levers are the most powerful tools available for this. When sleep difficulties are linked to mental activity or nervous system dysregulation, work with the levers before bed rather than reaching for external solutions. The most directly relevant are: Breath — the physiological sigh, slow diaphragmatic breathing, and alternate nostril breathing are among the fastest ways to shift from a stress state to a rest state. Awareness — the body scan and NSDR practised lying down guide the system into deep physical release. Heart — Heart Coherence and Emotional Presence dissolve accumulated emotional tension that keeps the nervous system braced. Sound — the grounding and safety signal protocols (heavy rain, ocean, log fire, slow breath sounds) signal safety to the primal survival centres. Movement — gentle stretching, the somatic primer, or spinal loosening release physical tension stored in the body during the day. Use the lever that addresses the root of the disturbance on that particular night."
       ],
+      protocol: [
+        {
+          text: "Root diagnosis: Before bed, identify the dominant disturbance — mental overactivity, nervous-system bracing, emotional accumulation, or physical tension."
+        },
+        {
+          text: "Breath: Use the physiological sigh, slow diaphragmatic breathing, or alternate nostril breathing to shift from a stress state to a rest state."
+        },
+        {
+          text: "Awareness: Practise the body scan or NSDR lying down to guide the system into deep physical release."
+        },
+        {
+          text: "Heart: Use Heart Coherence or Emotional Presence to dissolve accumulated emotional tension that keeps the nervous system braced."
+        },
+        {
+          text: "Sound: Use grounding and safety signal protocols — heavy rain, ocean, log fire, or slow breath sounds — to signal safety to the primal survival centres."
+        },
+        {
+          text: "Movement: Use gentle stretching, the somatic primer, or spinal loosening to release physical tension stored in the body during the day."
+        },
+        {
+          text: "Night-by-night prescription: Use the lever that addresses the root of the disturbance on that particular night, before reaching for external solutions."
+        }
+      ],
       layers: [
         "Physical Body",
         "Energetic Body"

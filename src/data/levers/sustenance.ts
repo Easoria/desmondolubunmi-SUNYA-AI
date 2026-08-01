@@ -19,6 +19,23 @@ export const sustenanceLever: Lever = {
         "Understand the human network as a giant biological organism. In a physical",
         "body, which blood vessel receives the most blood, oxygen, and nutrients? The main arteries. Why? Because they are the conduits responsible for sustaining the rest of the system. A cell that tries to hoard resources for itself is starved, or treated as a cancer. But a vessel that efficiently moves life force to the rest of the body is continuously flooded with maximum resources by the innate intelligence of the system. The universal law of abundance is this: the ecosystem infinitely funds whatever serves its own expansion. If your goal is merely to pay your own bills and protect your isolated self, you will only ever receive the baseline sustenance of a single, small unit. But when you expand your scope of responsibility — when you position yourself to solve massive friction, elevate consciousness, or provide immense value for the collective — the conditions become overwhelmingly favourable for life to route enormous energy through you. You do not chase abundance; you build the conditions that make it natural. The three timeless principles: Absolute Mastery. You cannot be a massive conduit if your instrument is narrow or broken. You must forge a profound, undeniable competence in your chosen domain. Whether you are building software, creating art, healing trauma, or organizing logistics, you must eliminate the friction in your craft until you operate at the level of genuine excellence. The human ecosystem ignores mediocrity — it gravitates toward, and rewards, mastery. Infinite Leverage. You will never achieve abundant sustenance if your income is permanently tied to your physical exhaustion — trading one hour of time for one unit of survival. Build systems, write code, create media, design products, lead teams. Create a solution once and allow it to serve thousands or millions of people. Leverage is what transforms a small stream into an ocean. The Frictionless State. This is the ultimate key. Money and resources are forms of energy, and energy flows away from desperation. If you build while terrified of poverty, the frequency you broadcast repels the very abundance you seek. Pursue massive value creation from a state of Internal Saturation — working with fierce ambition but with zero desperate attachment to the outcome. The guaranteed formula: Absolute Mastery + Infinite Leverage + Frictionless State. When the Wave executes all three from a place of genuine service to the Water, the universe does not merely sustain it — it makes it an artery."
       ],
+      protocol: [
+        {
+          text: "Scope of responsibility: If your goal is merely to pay your own bills and protect your isolated self, you will only ever receive the baseline sustenance of a single, small unit. Expand your scope of responsibility by positioning yourself to solve massive friction, elevate consciousness, or provide immense value for the collective."
+        },
+        {
+          text: "Absolute Mastery: Forge profound, undeniable competence in your chosen domain. Whether you are building software, creating art, healing trauma, or organizing logistics, eliminate the friction in your craft until you operate at the level of genuine excellence."
+        },
+        {
+          text: "Infinite Leverage: Build systems, write code, create media, design products, or lead teams. Create a solution once and allow it to serve thousands or millions of people."
+        },
+        {
+          text: "The Frictionless State: Pursue massive value creation from a state of Internal Saturation — working with fierce ambition but with zero desperate attachment to the outcome."
+        },
+        {
+          text: "The guaranteed formula: Absolute Mastery + Infinite Leverage + Frictionless State. Execute all three from a place of genuine service to the Water."
+        }
+      ],
       layers: [
         "Mental Body",
         "Environment"
