@@ -56,7 +56,7 @@ export const Route = createFileRoute("/writing")({
         ? `${label} — Writing — Desmond Olubunmi`
         : "Writing — Desmond Olubunmi",
       description:
-        "Essays on consciousness, inner practice, and the world. New writing from Desmond Olubunmi, founder of Sunya.",
+        "Writing on consciousness, inner practice, and the world. New pieces from Desmond Olubunmi, founder of Sunya.",
       path,
       ogType: "website",
       imageKind: "blog",
@@ -134,12 +134,12 @@ function WritingIndexPage() {
             Thinking in public.
           </h1>
           <p className="mt-5 max-w-2xl text-sm leading-relaxed text-[#b8d4e8] sm:text-base">
-            Essays on consciousness, practice, and the world. Written as they come rather than
+            Writing on consciousness, practice, and the world. Written as they come rather than
             in order.
           </p>
           <p className="mt-4 text-sm text-[#b8d4e8]/80">
-            <Link to="/essays" className="text-[#7ec8e3] transition hover:text-white">
-              For the complete framework, start with the essays →
+            <Link to="/timeless-solution" className="text-[#7ec8e3] transition hover:text-white">
+              For the complete framework, start with the Timeless Solution →
             </Link>
           </p>
         </header>

@@ -11,7 +11,7 @@ export function Footer() {
         <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-[#b8d4e8]">
           <Link to="/" className="hover:text-white">Home</Link>
           <Link to="/philosophy" className="hover:text-white">Philosophy</Link>
-          <Link to="/essays" className="hover:text-white">Essays</Link>
+          <Link to="/timeless-solution" className="hover:text-white">The Timeless Solution</Link>
           <Link to="/writing" className="hover:text-white">Writing</Link>
           <Link to="/sunya-ai" className="hover:text-white">Sunya AI</Link>
           <Link to="/work-with-me" className="hover:text-white">Work With Me</Link>

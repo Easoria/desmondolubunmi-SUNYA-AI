@@ -29,6 +29,7 @@ import { Route as SessionsRouteImport } from './routes/sessions'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SunyaAiRouteImport } from './routes/sunya-ai'
 import { Route as TermsRouteImport } from './routes/terms'
+import { Route as TimelessSolutionRouteImport } from './routes/timeless-solution'
 import { Route as VisionRouteImport } from './routes/vision'
 import { Route as WorkWithMeRouteImport } from './routes/work-with-me'
 import { Route as WritingRouteImport } from './routes/writing'
@@ -45,6 +46,7 @@ import { Route as EssaysSlugRouteImport } from './routes/essays.$slug'
 import { Route as LeversLeverSlugRouteImport } from './routes/levers.$leverSlug'
 import { Route as PracticesLeverSlugRouteImport } from './routes/practices.$leverSlug'
 import { Route as PracticesWhereToBeginRouteImport } from './routes/practices.where-to-begin'
+import { Route as TimelessSolutionSlugRouteImport } from './routes/timeless-solution.$slug'
 import { Route as WritingSlugRouteImport } from './routes/writing.$slug'
 import { Route as LeversLeverSlugPracticeSlugRouteImport } from './routes/levers.$leverSlug.$practiceSlug'
 import { Route as LeversLeverSlugCompleteRouteImport } from './routes/levers.$leverSlug.complete'
@@ -152,6 +154,11 @@ const TermsRoute = TermsRouteImport.update({
   path: '/terms',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TimelessSolutionRoute = TimelessSolutionRouteImport.update({
+  id: '/timeless-solution',
+  path: '/timeless-solution',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const VisionRoute = VisionRouteImport.update({
   id: '/vision',
   path: '/vision',
@@ -232,6 +239,11 @@ const PracticesWhereToBeginRoute = PracticesWhereToBeginRouteImport.update({
   path: '/where-to-begin',
   getParentRoute: () => PracticesRoute,
 } as any)
+const TimelessSolutionSlugRoute = TimelessSolutionSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => TimelessSolutionRoute,
+} as any)
 const WritingSlugRoute = WritingSlugRouteImport.update({
   id: '/$slug',
   path: '/$slug',
@@ -288,6 +300,7 @@ export interface FileRoutesByFullPath {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sunya-ai': typeof SunyaAiRoute
   '/terms': typeof TermsRoute
+  '/timeless-solution': typeof TimelessSolutionRouteWithChildren
   '/vision': typeof VisionRoute
   '/work-with-me': typeof WorkWithMeRoute
   '/writing': typeof WritingRouteWithChildren
@@ -304,6 +317,7 @@ export interface FileRoutesByFullPath {
   '/levers/$leverSlug': typeof LeversLeverSlugRouteWithChildren
   '/practices/$leverSlug': typeof PracticesLeverSlugRouteWithChildren
   '/practices/where-to-begin': typeof PracticesWhereToBeginRoute
+  '/timeless-solution/$slug': typeof TimelessSolutionSlugRoute
   '/writing/$slug': typeof WritingSlugRoute
   '/levers/$leverSlug/$practiceSlug': typeof LeversLeverSlugPracticeSlugRoute
   '/levers/$leverSlug/complete': typeof LeversLeverSlugCompleteRoute
@@ -332,6 +346,7 @@ export interface FileRoutesByTo {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sunya-ai': typeof SunyaAiRoute
   '/terms': typeof TermsRoute
+  '/timeless-solution': typeof TimelessSolutionRouteWithChildren
   '/vision': typeof VisionRoute
   '/work-with-me': typeof WorkWithMeRoute
   '/writing': typeof WritingRouteWithChildren
@@ -348,6 +363,7 @@ export interface FileRoutesByTo {
   '/levers/$leverSlug': typeof LeversLeverSlugRouteWithChildren
   '/practices/$leverSlug': typeof PracticesLeverSlugRouteWithChildren
   '/practices/where-to-begin': typeof PracticesWhereToBeginRoute
+  '/timeless-solution/$slug': typeof TimelessSolutionSlugRoute
   '/writing/$slug': typeof WritingSlugRoute
   '/levers/$leverSlug/$practiceSlug': typeof LeversLeverSlugPracticeSlugRoute
   '/levers/$leverSlug/complete': typeof LeversLeverSlugCompleteRoute
@@ -377,6 +393,7 @@ export interface FileRoutesById {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sunya-ai': typeof SunyaAiRoute
   '/terms': typeof TermsRoute
+  '/timeless-solution': typeof TimelessSolutionRouteWithChildren
   '/vision': typeof VisionRoute
   '/work-with-me': typeof WorkWithMeRoute
   '/writing': typeof WritingRouteWithChildren
@@ -393,6 +410,7 @@ export interface FileRoutesById {
   '/levers/$leverSlug': typeof LeversLeverSlugRouteWithChildren
   '/practices/$leverSlug': typeof PracticesLeverSlugRouteWithChildren
   '/practices/where-to-begin': typeof PracticesWhereToBeginRoute
+  '/timeless-solution/$slug': typeof TimelessSolutionSlugRoute
   '/writing/$slug': typeof WritingSlugRoute
   '/levers/$leverSlug/$practiceSlug': typeof LeversLeverSlugPracticeSlugRoute
   '/levers/$leverSlug/complete': typeof LeversLeverSlugCompleteRoute
@@ -423,6 +441,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/sunya-ai'
     | '/terms'
+    | '/timeless-solution'
     | '/vision'
     | '/work-with-me'
     | '/writing'
@@ -439,6 +458,7 @@ export interface FileRouteTypes {
     | '/levers/$leverSlug'
     | '/practices/$leverSlug'
     | '/practices/where-to-begin'
+    | '/timeless-solution/$slug'
     | '/writing/$slug'
     | '/levers/$leverSlug/$practiceSlug'
     | '/levers/$leverSlug/complete'
@@ -467,6 +487,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/sunya-ai'
     | '/terms'
+    | '/timeless-solution'
     | '/vision'
     | '/work-with-me'
     | '/writing'
@@ -483,6 +504,7 @@ export interface FileRouteTypes {
     | '/levers/$leverSlug'
     | '/practices/$leverSlug'
     | '/practices/where-to-begin'
+    | '/timeless-solution/$slug'
     | '/writing/$slug'
     | '/levers/$leverSlug/$practiceSlug'
     | '/levers/$leverSlug/complete'
@@ -511,6 +533,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/sunya-ai'
     | '/terms'
+    | '/timeless-solution'
     | '/vision'
     | '/work-with-me'
     | '/writing'
@@ -527,6 +550,7 @@ export interface FileRouteTypes {
     | '/levers/$leverSlug'
     | '/practices/$leverSlug'
     | '/practices/where-to-begin'
+    | '/timeless-solution/$slug'
     | '/writing/$slug'
     | '/levers/$leverSlug/$practiceSlug'
     | '/levers/$leverSlug/complete'
@@ -556,6 +580,7 @@ export interface RootRouteChildren {
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SunyaAiRoute: typeof SunyaAiRoute
   TermsRoute: typeof TermsRoute
+  TimelessSolutionRoute: typeof TimelessSolutionRouteWithChildren
   VisionRoute: typeof VisionRoute
   WorkWithMeRoute: typeof WorkWithMeRoute
   WritingRoute: typeof WritingRouteWithChildren
@@ -712,6 +737,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TermsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/timeless-solution': {
+      id: '/timeless-solution'
+      path: '/timeless-solution'
+      fullPath: '/timeless-solution'
+      preLoaderRoute: typeof TimelessSolutionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/vision': {
       id: '/vision'
       path: '/vision'
@@ -823,6 +855,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/practices/where-to-begin'
       preLoaderRoute: typeof PracticesWhereToBeginRouteImport
       parentRoute: typeof PracticesRoute
+    }
+    '/timeless-solution/$slug': {
+      id: '/timeless-solution/$slug'
+      path: '/$slug'
+      fullPath: '/timeless-solution/$slug'
+      preLoaderRoute: typeof TimelessSolutionSlugRouteImport
+      parentRoute: typeof TimelessSolutionRoute
     }
     '/writing/$slug': {
       id: '/writing/$slug'
@@ -942,6 +981,17 @@ const PracticesRouteWithChildren = PracticesRoute._addFileChildren(
   PracticesRouteChildren,
 )
 
+interface TimelessSolutionRouteChildren {
+  TimelessSolutionSlugRoute: typeof TimelessSolutionSlugRoute
+}
+
+const TimelessSolutionRouteChildren: TimelessSolutionRouteChildren = {
+  TimelessSolutionSlugRoute: TimelessSolutionSlugRoute,
+}
+
+const TimelessSolutionRouteWithChildren =
+  TimelessSolutionRoute._addFileChildren(TimelessSolutionRouteChildren)
+
 interface WritingRouteChildren {
   WritingSlugRoute: typeof WritingSlugRoute
 }
@@ -974,6 +1024,7 @@ const rootRouteChildren: RootRouteChildren = {
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SunyaAiRoute: SunyaAiRoute,
   TermsRoute: TermsRoute,
+  TimelessSolutionRoute: TimelessSolutionRouteWithChildren,
   VisionRoute: VisionRoute,
   WorkWithMeRoute: WorkWithMeRoute,
   WritingRoute: WritingRouteWithChildren,
