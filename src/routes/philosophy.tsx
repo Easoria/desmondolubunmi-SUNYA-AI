@@ -5,6 +5,7 @@ import { Starfield } from "@/components/Starfield";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { Breadcrumb } from "@/components/site/Breadcrumb";
+import { EmailCapture } from "@/components/site/EmailCapture";
 import { SacredGeometry, Orbs } from "@/components/site/Decor";
 import type { LeverSlug } from "@/data/levers";
 import { buildSeoHead } from "@/lib/seo";
@@ -1081,8 +1082,14 @@ most for you right now.`}
             to="/sunya-ai"
             className="glow-btn mt-10 inline-flex items-center gap-2 rounded-full px-8 py-4 text-sm font-medium"
           >
-            Try Sunya AI Free <ArrowRight className="h-4 w-4" />
+            Try Sunya AI <ArrowRight className="h-4 w-4" />
           </Link>
+        </div>
+      </section>
+
+      <section className="relative overflow-hidden bg-[#060d1c] py-16">
+        <div className="relative z-10 mx-auto max-w-3xl px-6">
+          <EmailCapture variant="philosophy" />
         </div>
       </section>
 

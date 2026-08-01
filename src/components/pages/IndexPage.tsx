@@ -7,6 +7,7 @@ import { Starfield } from "@/components/Starfield";
 import { SunyaAI } from "@/components/SunyaAI";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
+import { EmailCapture } from "@/components/site/EmailCapture";
 import { Orbs, SacredGeometry } from "@/components/site/Decor";
 import { useSubscription } from "@/hooks/useSubscription";
 import { getNextUpcomingGathering } from "@/lib/gatherings.functions";
@@ -295,7 +296,7 @@ function AITeaser() {
 }
 
 function About() {
-  const ctaLabel = useSunyaCtaLabel(" Free");
+  const ctaLabel = useSunyaCtaLabel();
   const [expanded, setExpanded] = useState(false);
   return (
     <section
@@ -503,6 +504,11 @@ export function IndexPage() {
         <Reframe />
         <AITeaser />
         <About />
+        <section className="relative overflow-hidden bg-[#0a1628] py-16">
+          <div className="relative z-10 mx-auto max-w-3xl px-6">
+            <EmailCapture variant="home" />
+          </div>
+        </section>
         <NextGathering />
         <FinalCTA />
       </main>

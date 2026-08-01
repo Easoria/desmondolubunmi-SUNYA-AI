@@ -1,6 +1,7 @@
 import { Link, createFileRoute, notFound } from "@tanstack/react-router";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
+import { EmailCapture } from "@/components/site/EmailCapture";
 import { Starfield } from "@/components/Starfield";
 import {
   getAllLeverPractices,
@@ -347,6 +348,10 @@ function PracticeDetailPage() {
               </div>
             </section>
           ) : null}
+
+          <div className="mt-14 max-w-[72ch]">
+            <EmailCapture variant="practice" />
+          </div>
         </div>
       </section>
       <Footer />

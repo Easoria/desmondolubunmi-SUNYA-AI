@@ -41,6 +41,7 @@ import { Route as AdminWritingRouteImport } from './routes/admin.writing'
 import { Route as ApiChatRouteImport } from './routes/api/chat'
 import { Route as ApiCommunitySignupRouteImport } from './routes/api/community-signup'
 import { Route as ApiContributorSignupRouteImport } from './routes/api/contributor-signup'
+import { Route as ApiEmailCaptureRouteImport } from './routes/api/email-capture'
 import { Route as ApiGatheringsSignupRouteImport } from './routes/api/gatherings-signup'
 import { Route as ApiSessionTitleRouteImport } from './routes/api/session-title'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
@@ -219,6 +220,11 @@ const ApiContributorSignupRoute = ApiContributorSignupRouteImport.update({
   path: '/api/contributor-signup',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiEmailCaptureRoute = ApiEmailCaptureRouteImport.update({
+  id: '/api/email-capture',
+  path: '/api/email-capture',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiGatheringsSignupRoute = ApiGatheringsSignupRouteImport.update({
   id: '/api/gatherings-signup',
   path: '/api/gatherings-signup',
@@ -343,6 +349,7 @@ export interface FileRoutesByFullPath {
   '/api/chat': typeof ApiChatRoute
   '/api/community-signup': typeof ApiCommunitySignupRoute
   '/api/contributor-signup': typeof ApiContributorSignupRoute
+  '/api/email-capture': typeof ApiEmailCaptureRoute
   '/api/gatherings-signup': typeof ApiGatheringsSignupRoute
   '/api/session-title': typeof ApiSessionTitleRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -394,6 +401,7 @@ export interface FileRoutesByTo {
   '/api/chat': typeof ApiChatRoute
   '/api/community-signup': typeof ApiCommunitySignupRoute
   '/api/contributor-signup': typeof ApiContributorSignupRoute
+  '/api/email-capture': typeof ApiEmailCaptureRoute
   '/api/gatherings-signup': typeof ApiGatheringsSignupRoute
   '/api/session-title': typeof ApiSessionTitleRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -446,6 +454,7 @@ export interface FileRoutesById {
   '/api/chat': typeof ApiChatRoute
   '/api/community-signup': typeof ApiCommunitySignupRoute
   '/api/contributor-signup': typeof ApiContributorSignupRoute
+  '/api/email-capture': typeof ApiEmailCaptureRoute
   '/api/gatherings-signup': typeof ApiGatheringsSignupRoute
   '/api/session-title': typeof ApiSessionTitleRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -499,6 +508,7 @@ export interface FileRouteTypes {
     | '/api/chat'
     | '/api/community-signup'
     | '/api/contributor-signup'
+    | '/api/email-capture'
     | '/api/gatherings-signup'
     | '/api/session-title'
     | '/blog/$slug'
@@ -550,6 +560,7 @@ export interface FileRouteTypes {
     | '/api/chat'
     | '/api/community-signup'
     | '/api/contributor-signup'
+    | '/api/email-capture'
     | '/api/gatherings-signup'
     | '/api/session-title'
     | '/blog/$slug'
@@ -601,6 +612,7 @@ export interface FileRouteTypes {
     | '/api/chat'
     | '/api/community-signup'
     | '/api/contributor-signup'
+    | '/api/email-capture'
     | '/api/gatherings-signup'
     | '/api/session-title'
     | '/blog/$slug'
@@ -653,6 +665,7 @@ export interface RootRouteChildren {
   ApiChatRoute: typeof ApiChatRoute
   ApiCommunitySignupRoute: typeof ApiCommunitySignupRoute
   ApiContributorSignupRoute: typeof ApiContributorSignupRoute
+  ApiEmailCaptureRoute: typeof ApiEmailCaptureRoute
   ApiGatheringsSignupRoute: typeof ApiGatheringsSignupRoute
   ApiSessionTitleRoute: typeof ApiSessionTitleRoute
   CheckoutReturnRoute: typeof CheckoutReturnRoute
@@ -884,6 +897,13 @@ declare module '@tanstack/react-router' {
       path: '/api/contributor-signup'
       fullPath: '/api/contributor-signup'
       preLoaderRoute: typeof ApiContributorSignupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/email-capture': {
+      id: '/api/email-capture'
+      path: '/api/email-capture'
+      fullPath: '/api/email-capture'
+      preLoaderRoute: typeof ApiEmailCaptureRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/gatherings-signup': {
@@ -1148,6 +1168,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiChatRoute: ApiChatRoute,
   ApiCommunitySignupRoute: ApiCommunitySignupRoute,
   ApiContributorSignupRoute: ApiContributorSignupRoute,
+  ApiEmailCaptureRoute: ApiEmailCaptureRoute,
   ApiGatheringsSignupRoute: ApiGatheringsSignupRoute,
   ApiSessionTitleRoute: ApiSessionTitleRoute,
   CheckoutReturnRoute: CheckoutReturnRoute,

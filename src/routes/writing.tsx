@@ -9,6 +9,7 @@ import { useMemo } from "react";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { Breadcrumb } from "@/components/site/Breadcrumb";
+import { EmailCapture } from "@/components/site/EmailCapture";
 import { listPublishedArticles, type PublishedArticleCard } from "@/lib/articles.functions";
 import {
   formatDate,
@@ -230,6 +231,10 @@ function WritingIndexPage() {
               )}
             </>
           )}
+        </section>
+
+        <section className="mt-20">
+          <EmailCapture variant="writing" />
         </section>
       </main>
 
