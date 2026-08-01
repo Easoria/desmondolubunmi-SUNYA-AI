@@ -51,6 +51,31 @@ export const Route = createFileRoute("/practices/$leverSlug/$practiceSlug")({
   },
 });
 
+function splitProtocolLeadIn(text: string) {
+  const match = text.match(/^([A-Z][A-Za-z0-9'’()\-\/&, ]{2,72})([:;])\s+(.+)$/);
+  if (!match) return null;
+  return {
+    leadIn: match[1].trim(),
+    punctuation: match[2],
+    rest: match[3].trim(),
+  };
+}
+
+function renderProtocolText(text: string) {
+  const parsed = splitProtocolLeadIn(text);
+  if (!parsed) return text;
+
+  return (
+    <>
+      <span className="font-semibold text-[#9ddcf2]">
+        {parsed.leadIn}
+        {parsed.punctuation}
+      </span>{" "}
+      {parsed.rest}
+    </>
+  );
+}
+
 function PracticeDetailPage() {
   const { lever, practice } = Route.useLoaderData();
   const related = practice.relatedPractices
@@ -170,7 +195,7 @@ function PracticeDetailPage() {
                               <div className="space-y-3">
                                 {layout.items.map((paragraph, paragraphIndex) => (
                                   <p key={paragraphIndex} className="whitespace-pre-line">
-                                    {paragraph}
+                                    {renderProtocolText(paragraph)}
                                   </p>
                                 ))}
                               </div>
@@ -178,7 +203,7 @@ function PracticeDetailPage() {
                               <ol className="space-y-2 pl-5">
                                 {layout.items.map((item, itemIndex) => (
                                   <li key={itemIndex} className="list-decimal marker:text-[#7ec8e3]">
-                                    {item}
+                                    {renderProtocolText(item)}
                                   </li>
                                 ))}
                               </ol>
@@ -186,7 +211,7 @@ function PracticeDetailPage() {
                               <ul className="space-y-2 pl-5">
                                 {layout.items.map((item, itemIndex) => (
                                   <li key={itemIndex} className="list-disc marker:text-[#7ec8e3]">
-                                    {item}
+                                    {renderProtocolText(item)}
                                   </li>
                                 ))}
                               </ul>
