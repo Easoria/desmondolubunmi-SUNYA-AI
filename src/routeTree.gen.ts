@@ -30,11 +30,14 @@ import { Route as SessionsRouteImport } from './routes/sessions'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SunyaAiRouteImport } from './routes/sunya-ai'
 import { Route as TermsRouteImport } from './routes/terms'
+import { Route as TimelessSolutionRouteImport } from './routes/timeless-solution'
 import { Route as VisionRouteImport } from './routes/vision'
 import { Route as WorkWithMeRouteImport } from './routes/work-with-me'
+import { Route as WritingRouteImport } from './routes/writing'
 import { Route as AdminBlogRouteImport } from './routes/admin.blog'
 import { Route as AdminGatheringsRouteImport } from './routes/admin.gatherings'
 import { Route as AdminPromptsRouteImport } from './routes/admin.prompts'
+import { Route as AdminWritingRouteImport } from './routes/admin.writing'
 import { Route as ApiChatRouteImport } from './routes/api/chat'
 import { Route as ApiCommunitySignupRouteImport } from './routes/api/community-signup'
 import { Route as ApiContributorSignupRouteImport } from './routes/api/contributor-signup'
@@ -47,6 +50,8 @@ import { Route as GatheringsSlugRouteImport } from './routes/gatherings.$slug'
 import { Route as LeversLeverSlugRouteImport } from './routes/levers.$leverSlug'
 import { Route as PracticesLeverSlugRouteImport } from './routes/practices.$leverSlug'
 import { Route as PracticesWhereToBeginRouteImport } from './routes/practices.where-to-begin'
+import { Route as TimelessSolutionSlugRouteImport } from './routes/timeless-solution.$slug'
+import { Route as WritingSlugRouteImport } from './routes/writing.$slug'
 import { Route as ApiAdminBootstrapGatheringsRouteImport } from './routes/api/admin/bootstrap-gatherings'
 import { Route as LeversLeverSlugPracticeSlugRouteImport } from './routes/levers.$leverSlug.$practiceSlug'
 import { Route as LeversLeverSlugCompleteRouteImport } from './routes/levers.$leverSlug.complete'
@@ -159,6 +164,11 @@ const TermsRoute = TermsRouteImport.update({
   path: '/terms',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TimelessSolutionRoute = TimelessSolutionRouteImport.update({
+  id: '/timeless-solution',
+  path: '/timeless-solution',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const VisionRoute = VisionRouteImport.update({
   id: '/vision',
   path: '/vision',
@@ -167,6 +177,11 @@ const VisionRoute = VisionRouteImport.update({
 const WorkWithMeRoute = WorkWithMeRouteImport.update({
   id: '/work-with-me',
   path: '/work-with-me',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WritingRoute = WritingRouteImport.update({
+  id: '/writing',
+  path: '/writing',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AdminBlogRoute = AdminBlogRouteImport.update({
@@ -182,6 +197,11 @@ const AdminGatheringsRoute = AdminGatheringsRouteImport.update({
 const AdminPromptsRoute = AdminPromptsRouteImport.update({
   id: '/admin/prompts',
   path: '/admin/prompts',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminWritingRoute = AdminWritingRouteImport.update({
+  id: '/admin/writing',
+  path: '/admin/writing',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiChatRoute = ApiChatRouteImport.update({
@@ -244,6 +264,16 @@ const PracticesWhereToBeginRoute = PracticesWhereToBeginRouteImport.update({
   path: '/where-to-begin',
   getParentRoute: () => PracticesRoute,
 } as any)
+const TimelessSolutionSlugRoute = TimelessSolutionSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => TimelessSolutionRoute,
+} as any)
+const WritingSlugRoute = WritingSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => WritingRoute,
+} as any)
 const ApiAdminBootstrapGatheringsRoute =
   ApiAdminBootstrapGatheringsRouteImport.update({
     id: '/api/admin/bootstrap-gatherings',
@@ -302,11 +332,14 @@ export interface FileRoutesByFullPath {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sunya-ai': typeof SunyaAiRoute
   '/terms': typeof TermsRoute
+  '/timeless-solution': typeof TimelessSolutionRouteWithChildren
   '/vision': typeof VisionRoute
   '/work-with-me': typeof WorkWithMeRoute
+  '/writing': typeof WritingRouteWithChildren
   '/admin/blog': typeof AdminBlogRoute
   '/admin/gatherings': typeof AdminGatheringsRoute
   '/admin/prompts': typeof AdminPromptsRoute
+  '/admin/writing': typeof AdminWritingRoute
   '/api/chat': typeof ApiChatRoute
   '/api/community-signup': typeof ApiCommunitySignupRoute
   '/api/contributor-signup': typeof ApiContributorSignupRoute
@@ -319,6 +352,8 @@ export interface FileRoutesByFullPath {
   '/levers/$leverSlug': typeof LeversLeverSlugRouteWithChildren
   '/practices/$leverSlug': typeof PracticesLeverSlugRouteWithChildren
   '/practices/where-to-begin': typeof PracticesWhereToBeginRoute
+  '/timeless-solution/$slug': typeof TimelessSolutionSlugRoute
+  '/writing/$slug': typeof WritingSlugRoute
   '/api/admin/bootstrap-gatherings': typeof ApiAdminBootstrapGatheringsRoute
   '/levers/$leverSlug/$practiceSlug': typeof LeversLeverSlugPracticeSlugRoute
   '/levers/$leverSlug/complete': typeof LeversLeverSlugCompleteRoute
@@ -348,11 +383,14 @@ export interface FileRoutesByTo {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sunya-ai': typeof SunyaAiRoute
   '/terms': typeof TermsRoute
+  '/timeless-solution': typeof TimelessSolutionRouteWithChildren
   '/vision': typeof VisionRoute
   '/work-with-me': typeof WorkWithMeRoute
+  '/writing': typeof WritingRouteWithChildren
   '/admin/blog': typeof AdminBlogRoute
   '/admin/gatherings': typeof AdminGatheringsRoute
   '/admin/prompts': typeof AdminPromptsRoute
+  '/admin/writing': typeof AdminWritingRoute
   '/api/chat': typeof ApiChatRoute
   '/api/community-signup': typeof ApiCommunitySignupRoute
   '/api/contributor-signup': typeof ApiContributorSignupRoute
@@ -365,6 +403,8 @@ export interface FileRoutesByTo {
   '/levers/$leverSlug': typeof LeversLeverSlugRouteWithChildren
   '/practices/$leverSlug': typeof PracticesLeverSlugRouteWithChildren
   '/practices/where-to-begin': typeof PracticesWhereToBeginRoute
+  '/timeless-solution/$slug': typeof TimelessSolutionSlugRoute
+  '/writing/$slug': typeof WritingSlugRoute
   '/api/admin/bootstrap-gatherings': typeof ApiAdminBootstrapGatheringsRoute
   '/levers/$leverSlug/$practiceSlug': typeof LeversLeverSlugPracticeSlugRoute
   '/levers/$leverSlug/complete': typeof LeversLeverSlugCompleteRoute
@@ -395,11 +435,14 @@ export interface FileRoutesById {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sunya-ai': typeof SunyaAiRoute
   '/terms': typeof TermsRoute
+  '/timeless-solution': typeof TimelessSolutionRouteWithChildren
   '/vision': typeof VisionRoute
   '/work-with-me': typeof WorkWithMeRoute
+  '/writing': typeof WritingRouteWithChildren
   '/admin/blog': typeof AdminBlogRoute
   '/admin/gatherings': typeof AdminGatheringsRoute
   '/admin/prompts': typeof AdminPromptsRoute
+  '/admin/writing': typeof AdminWritingRoute
   '/api/chat': typeof ApiChatRoute
   '/api/community-signup': typeof ApiCommunitySignupRoute
   '/api/contributor-signup': typeof ApiContributorSignupRoute
@@ -412,6 +455,8 @@ export interface FileRoutesById {
   '/levers/$leverSlug': typeof LeversLeverSlugRouteWithChildren
   '/practices/$leverSlug': typeof PracticesLeverSlugRouteWithChildren
   '/practices/where-to-begin': typeof PracticesWhereToBeginRoute
+  '/timeless-solution/$slug': typeof TimelessSolutionSlugRoute
+  '/writing/$slug': typeof WritingSlugRoute
   '/api/admin/bootstrap-gatherings': typeof ApiAdminBootstrapGatheringsRoute
   '/levers/$leverSlug/$practiceSlug': typeof LeversLeverSlugPracticeSlugRoute
   '/levers/$leverSlug/complete': typeof LeversLeverSlugCompleteRoute
@@ -443,11 +488,14 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/sunya-ai'
     | '/terms'
+    | '/timeless-solution'
     | '/vision'
     | '/work-with-me'
+    | '/writing'
     | '/admin/blog'
     | '/admin/gatherings'
     | '/admin/prompts'
+    | '/admin/writing'
     | '/api/chat'
     | '/api/community-signup'
     | '/api/contributor-signup'
@@ -460,6 +508,8 @@ export interface FileRouteTypes {
     | '/levers/$leverSlug'
     | '/practices/$leverSlug'
     | '/practices/where-to-begin'
+    | '/timeless-solution/$slug'
+    | '/writing/$slug'
     | '/api/admin/bootstrap-gatherings'
     | '/levers/$leverSlug/$practiceSlug'
     | '/levers/$leverSlug/complete'
@@ -489,11 +539,14 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/sunya-ai'
     | '/terms'
+    | '/timeless-solution'
     | '/vision'
     | '/work-with-me'
+    | '/writing'
     | '/admin/blog'
     | '/admin/gatherings'
     | '/admin/prompts'
+    | '/admin/writing'
     | '/api/chat'
     | '/api/community-signup'
     | '/api/contributor-signup'
@@ -506,6 +559,8 @@ export interface FileRouteTypes {
     | '/levers/$leverSlug'
     | '/practices/$leverSlug'
     | '/practices/where-to-begin'
+    | '/timeless-solution/$slug'
+    | '/writing/$slug'
     | '/api/admin/bootstrap-gatherings'
     | '/levers/$leverSlug/$practiceSlug'
     | '/levers/$leverSlug/complete'
@@ -535,11 +590,14 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/sunya-ai'
     | '/terms'
+    | '/timeless-solution'
     | '/vision'
     | '/work-with-me'
+    | '/writing'
     | '/admin/blog'
     | '/admin/gatherings'
     | '/admin/prompts'
+    | '/admin/writing'
     | '/api/chat'
     | '/api/community-signup'
     | '/api/contributor-signup'
@@ -552,6 +610,8 @@ export interface FileRouteTypes {
     | '/levers/$leverSlug'
     | '/practices/$leverSlug'
     | '/practices/where-to-begin'
+    | '/timeless-solution/$slug'
+    | '/writing/$slug'
     | '/api/admin/bootstrap-gatherings'
     | '/levers/$leverSlug/$practiceSlug'
     | '/levers/$leverSlug/complete'
@@ -582,11 +642,14 @@ export interface RootRouteChildren {
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SunyaAiRoute: typeof SunyaAiRoute
   TermsRoute: typeof TermsRoute
+  TimelessSolutionRoute: typeof TimelessSolutionRouteWithChildren
   VisionRoute: typeof VisionRoute
   WorkWithMeRoute: typeof WorkWithMeRoute
+  WritingRoute: typeof WritingRouteWithChildren
   AdminBlogRoute: typeof AdminBlogRoute
   AdminGatheringsRoute: typeof AdminGatheringsRoute
   AdminPromptsRoute: typeof AdminPromptsRoute
+  AdminWritingRoute: typeof AdminWritingRoute
   ApiChatRoute: typeof ApiChatRoute
   ApiCommunitySignupRoute: typeof ApiCommunitySignupRoute
   ApiContributorSignupRoute: typeof ApiContributorSignupRoute
@@ -746,6 +809,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TermsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/timeless-solution': {
+      id: '/timeless-solution'
+      path: '/timeless-solution'
+      fullPath: '/timeless-solution'
+      preLoaderRoute: typeof TimelessSolutionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/vision': {
       id: '/vision'
       path: '/vision'
@@ -758,6 +828,13 @@ declare module '@tanstack/react-router' {
       path: '/work-with-me'
       fullPath: '/work-with-me'
       preLoaderRoute: typeof WorkWithMeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/writing': {
+      id: '/writing'
+      path: '/writing'
+      fullPath: '/writing'
+      preLoaderRoute: typeof WritingRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/admin/blog': {
@@ -779,6 +856,13 @@ declare module '@tanstack/react-router' {
       path: '/admin/prompts'
       fullPath: '/admin/prompts'
       preLoaderRoute: typeof AdminPromptsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/writing': {
+      id: '/admin/writing'
+      path: '/admin/writing'
+      fullPath: '/admin/writing'
+      preLoaderRoute: typeof AdminWritingRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/chat': {
@@ -864,6 +948,20 @@ declare module '@tanstack/react-router' {
       fullPath: '/practices/where-to-begin'
       preLoaderRoute: typeof PracticesWhereToBeginRouteImport
       parentRoute: typeof PracticesRoute
+    }
+    '/timeless-solution/$slug': {
+      id: '/timeless-solution/$slug'
+      path: '/$slug'
+      fullPath: '/timeless-solution/$slug'
+      preLoaderRoute: typeof TimelessSolutionSlugRouteImport
+      parentRoute: typeof TimelessSolutionRoute
+    }
+    '/writing/$slug': {
+      id: '/writing/$slug'
+      path: '/$slug'
+      fullPath: '/writing/$slug'
+      preLoaderRoute: typeof WritingSlugRouteImport
+      parentRoute: typeof WritingRoute
     }
     '/api/admin/bootstrap-gatherings': {
       id: '/api/admin/bootstrap-gatherings'
@@ -995,6 +1093,28 @@ const PracticesRouteWithChildren = PracticesRoute._addFileChildren(
   PracticesRouteChildren,
 )
 
+interface TimelessSolutionRouteChildren {
+  TimelessSolutionSlugRoute: typeof TimelessSolutionSlugRoute
+}
+
+const TimelessSolutionRouteChildren: TimelessSolutionRouteChildren = {
+  TimelessSolutionSlugRoute: TimelessSolutionSlugRoute,
+}
+
+const TimelessSolutionRouteWithChildren =
+  TimelessSolutionRoute._addFileChildren(TimelessSolutionRouteChildren)
+
+interface WritingRouteChildren {
+  WritingSlugRoute: typeof WritingSlugRoute
+}
+
+const WritingRouteChildren: WritingRouteChildren = {
+  WritingSlugRoute: WritingSlugRoute,
+}
+
+const WritingRouteWithChildren =
+  WritingRoute._addFileChildren(WritingRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
@@ -1017,11 +1137,14 @@ const rootRouteChildren: RootRouteChildren = {
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SunyaAiRoute: SunyaAiRoute,
   TermsRoute: TermsRoute,
+  TimelessSolutionRoute: TimelessSolutionRouteWithChildren,
   VisionRoute: VisionRoute,
   WorkWithMeRoute: WorkWithMeRoute,
+  WritingRoute: WritingRouteWithChildren,
   AdminBlogRoute: AdminBlogRoute,
   AdminGatheringsRoute: AdminGatheringsRoute,
   AdminPromptsRoute: AdminPromptsRoute,
+  AdminWritingRoute: AdminWritingRoute,
   ApiChatRoute: ApiChatRoute,
   ApiCommunitySignupRoute: ApiCommunitySignupRoute,
   ApiContributorSignupRoute: ApiContributorSignupRoute,

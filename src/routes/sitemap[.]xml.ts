@@ -21,7 +21,7 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/", lastmod: generatedAt, changefreq: "weekly", priority: "1.0" },
           { path: "/about", lastmod: generatedAt, changefreq: "monthly", priority: "0.8" },
           { path: "/philosophy", lastmod: generatedAt, changefreq: "monthly", priority: "0.9" },
-          { path: "/essays", lastmod: generatedAt, changefreq: "monthly", priority: "0.9" },
+          { path: "/timeless-solution", lastmod: generatedAt, changefreq: "monthly", priority: "0.9" },
           { path: "/practices", lastmod: generatedAt, changefreq: "weekly", priority: "0.9" },
           { path: "/practices/where-to-begin", lastmod: generatedAt, changefreq: "monthly", priority: "0.85" },
           { path: "/sunya-ai", lastmod: generatedAt, changefreq: "weekly", priority: "0.8" },
@@ -30,11 +30,14 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/work-with-me", lastmod: generatedAt, changefreq: "monthly", priority: "0.8" },
           { path: "/vision", lastmod: generatedAt, changefreq: "monthly", priority: "0.8" },
           { path: "/gatherings", lastmod: generatedAt, changefreq: "weekly", priority: "0.8" },
-          { path: "/blog", lastmod: generatedAt, changefreq: "weekly", priority: "0.7" },
+          { path: "/writing", lastmod: generatedAt, changefreq: "weekly", priority: "0.7" },
+          { path: "/writing?category=practice", lastmod: generatedAt, changefreq: "weekly", priority: "0.6" },
+          { path: "/writing?category=philosophy", lastmod: generatedAt, changefreq: "weekly", priority: "0.6" },
+          { path: "/writing?category=world", lastmod: generatedAt, changefreq: "weekly", priority: "0.6" },
         ];
 
         const essayEntries: SitemapEntry[] = essays.map((essay) => ({
-          path: `/essays/${essay.slug}`,
+          path: `/timeless-solution/${essay.slug}`,
           lastmod: generatedAt,
           changefreq: "monthly",
           priority: "0.8",
@@ -64,11 +67,11 @@ export const Route = createFileRoute("/sitemap.xml")({
             .eq("published", true);
           articles = data ?? [];
         } catch (error) {
-          console.warn("Sitemap: skipping blog article fetch due to missing Supabase admin env.", error);
+          console.warn("Sitemap: skipping writing article fetch due to missing Supabase admin env.", error);
         }
 
         const dynamic: SitemapEntry[] = articles.map((a) => ({
-          path: `/blog/${a.slug}`,
+          path: `/writing/${a.slug}`,
           lastmod: (a.updated_at ?? a.published_at ?? generatedAt) as string,
           changefreq: "monthly",
           priority: "0.7",

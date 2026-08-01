@@ -3569,6 +3569,7 @@ export function getEssayBySlug(slug: string): Essay | undefined {
   return essays.find((essay) => essay.slug === slug);
 }
 
+/** Adjacent parts across the full 01–12 arc (array order). */
 export function getAdjacentEssays(slug: string): {
   prev: Essay | null;
   next: Essay | null;
@@ -3600,4 +3601,35 @@ export function essayMetaDescription(essay: Essay, maxLen = 155): string {
 export function readingMinutes(wordCount: number): number {
   return Math.max(1, Math.round(wordCount / 220));
 }
+
+const PART_WORDS = [
+  "ONE",
+  "TWO",
+  "THREE",
+  "FOUR",
+  "FIVE",
+  "SIX",
+  "SEVEN",
+  "EIGHT",
+  "NINE",
+  "TEN",
+  "ELEVEN",
+  "TWELVE",
+] as const;
+
+/** "PART THREE" — for the part page kicker. */
+export function partLabel(number: number): string {
+  const word = PART_WORDS[number - 1];
+  return word ? `PART ${word}` : `PART ${number}`;
+}
+
+/** First sentence of the standfirst — extracted, not rewritten. */
+export function firstSentenceFromStandfirst(essay: Essay): string {
+  const normalized = essay.standfirst.replace(/\s+/g, " ").trim();
+  const match = normalized.match(/^.+?[.!?](?:["”')\]]+)?(?=\s|$)/);
+  return (match ? match[0] : normalized).trim();
+}
+
+export const TIMELESS_SOLUTION_TOTAL = essays.length;
+export const TIMELESS_SOLUTION_FIRST_SLUG = essays[0]?.slug ?? "before-anything-existed";
 

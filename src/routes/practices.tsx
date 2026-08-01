@@ -155,10 +155,10 @@ function PracticesIndexPage() {
               Where to begin →
             </Link>
             <Link
-              to="/essays"
+              to="/timeless-solution"
               className="inline-flex items-center gap-2 text-sm text-[#7ec8e3]/80 transition hover:text-white"
             >
-              Read the essays →
+              Read the Timeless Solution →
             </Link>
           </div>
         </div>

@@ -483,6 +483,14 @@ function FinalCTA() {
         >
           {ctaLabel} <ArrowUpRight className="h-5 w-5" />
         </Link>
+        <p className="mt-10 text-sm text-[#b8d4e8]/75">
+          <Link
+            to="/timeless-solution"
+            className="text-[#7ec8e3]/90 transition hover:text-white"
+          >
+            Read the complete framework — The Timeless Solution →
+          </Link>
+        </p>
       </div>
     </section>
   );

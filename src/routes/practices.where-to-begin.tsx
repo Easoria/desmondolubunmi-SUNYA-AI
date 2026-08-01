@@ -138,8 +138,8 @@ function WhereToBeginPage() {
             </Link>
           </div>
           <div>
-            <Link to="/essays" className="text-[#7ec8e3] transition hover:text-white">
-              Read the essays →
+            <Link to="/timeless-solution" className="text-[#7ec8e3] transition hover:text-white">
+              Read the Timeless Solution →
             </Link>
           </div>
           <div>

@@ -1042,8 +1042,8 @@ addressed — would most rapidly improve the other. Start there.`}
             >
               Read the full order of operations →
             </Link>
-            <Link to="/essays" className="text-[#7ec8e3]/80 transition hover:text-white">
-              Or begin the essays →
+            <Link to="/timeless-solution" className="text-[#7ec8e3]/80 transition hover:text-white">
+              Or begin the Timeless Solution →
             </Link>
           </div>
         </div>

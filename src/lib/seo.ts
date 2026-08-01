@@ -178,10 +178,14 @@ export function buildArticleSchema({
   headline,
   description,
   sectionName,
+  datePublished,
+  articleSection,
 }: {
   headline: string;
   description: string;
   sectionName?: string;
+  datePublished?: string | null;
+  articleSection?: string;
 }) {
   return {
     "@context": "https://schema.org",
@@ -198,6 +202,8 @@ export function buildArticleSchema({
       name: "Sunya",
       url: CANONICAL_ORIGIN,
     },
+    ...(datePublished ? { datePublished } : {}),
+    ...(articleSection ? { articleSection } : {}),
     ...(sectionName
       ? {
           isPartOf: {
