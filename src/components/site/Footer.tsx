@@ -1,31 +1,77 @@
+import type { ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
+
+function FooterColumn({
+  label,
+  children,
+}: {
+  label: string;
+  children: ReactNode;
+}) {
+  return (
+    <div>
+      <div className="text-[11px] uppercase tracking-[0.24em] text-[#b8d4e8]/55">
+        {label}
+      </div>
+      <nav className="mt-4 flex flex-col gap-2.5 text-sm text-[#b8d4e8]">
+        {children}
+      </nav>
+    </div>
+  );
+}
+
+function FooterLink({
+  to,
+  children,
+}: {
+  to: string;
+  children: ReactNode;
+}) {
+  return (
+    <Link to={to} className="transition hover:text-white">
+      {children}
+    </Link>
+  );
+}
 
 export function Footer() {
   return (
     <footer className="border-t border-white/10 bg-[#060d1c]">
-      <div className="mx-auto grid max-w-7xl gap-8 px-6 py-12 md:grid-cols-2 md:items-center">
-        <div>
-          <div className="display text-xl tracking-[0.4em] text-white">SUNYA</div>
-          <div className="mt-1 text-xs italic text-[#b8d4e8]/70">by Desmond Olubunmi</div>
+      <div className="mx-auto max-w-7xl px-6 py-12">
+        <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between lg:gap-16">
+          <div className="shrink-0">
+            <Link to="/" className="inline-block">
+              <div className="display text-xl tracking-[0.4em] text-white">SUNYA</div>
+              <div className="mt-1 text-xs italic text-[#b8d4e8]/70">by Desmond Olubunmi</div>
+            </Link>
+          </div>
+
+          <div className="grid flex-1 gap-10 sm:grid-cols-3">
+            <FooterColumn label="The Work">
+              <FooterLink to="/philosophy">Philosophy</FooterLink>
+              <FooterLink to="/timeless-solution">The Timeless Solution</FooterLink>
+              <FooterLink to="/practices">Practices</FooterLink>
+              <FooterLink to="/writing">Writing</FooterLink>
+            </FooterColumn>
+
+            <FooterColumn label="Work With Me">
+              <FooterLink to="/sunya-ai">Sunya AI</FooterLink>
+              <FooterLink to="/work-with-me">1-on-1 Sessions</FooterLink>
+              <FooterLink to="/gatherings">Gatherings</FooterLink>
+            </FooterColumn>
+
+            <FooterColumn label="About">
+              <FooterLink to="/about">About Desmond</FooterLink>
+              <FooterLink to="/vision">Vision</FooterLink>
+              <a
+                href="mailto:hello@desmondolubunmi.com"
+                className="transition hover:text-white"
+              >
+                Contact
+              </a>
+            </FooterColumn>
+          </div>
         </div>
-        <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-[#b8d4e8]">
-          <Link to="/" className="hover:text-white">Home</Link>
-          <Link to="/philosophy" className="hover:text-white">Philosophy</Link>
-          <Link to="/timeless-solution" className="hover:text-white">The Timeless Solution</Link>
-          <Link to="/writing" className="hover:text-white">Writing</Link>
-          <Link to="/gatherings" className="hover:text-white">Gatherings</Link>
-          <Link to="/sunya-ai" className="hover:text-white">Sunya AI</Link>
-          <Link to="/work-with-me" className="hover:text-white">Work With Me</Link>
-          <Link to="/vision" className="hover:text-white">Vision</Link>
-          <Link to="/about" className="hover:text-white">About</Link>
-          <Link
-            to="/practices"
-            className="group inline-flex items-center gap-1.5 rounded-full border border-[#7ec8e3]/40 bg-white/5 px-3 py-1 text-[#e8f4fb] shadow-[0_0_18px_-4px_rgba(126,200,227,0.55)] backdrop-blur-sm transition hover:border-[#7ec8e3]/70 hover:bg-white/10 hover:shadow-[0_0_24px_-2px_rgba(126,200,227,0.8)]"
-          >
-            <span aria-hidden className="text-[#7ec8e3]">✦</span>
-            <span>Practices</span>
-          </Link>
-        </nav>
       </div>
 
       <div className="border-t border-white/5 px-6 py-6">

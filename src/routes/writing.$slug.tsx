@@ -4,6 +4,7 @@ import remarkGfm from "remark-gfm";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { Breadcrumb } from "@/components/site/Breadcrumb";
+import { EmailCapture } from "@/components/site/EmailCapture";
 import {
   getArticleBySlugForPreview,
   getPublishedArticleBySlug,
@@ -183,7 +184,11 @@ function WritingArticlePage() {
           </ReactMarkdown>
         </div>
 
-        <div className="mx-auto mt-16 max-w-[680px] border-t border-white/10 pt-10 text-center">
+        <div className="mx-auto mt-16 max-w-[680px]">
+          <EmailCapture variant="writing" />
+        </div>
+
+        <div className="mx-auto mt-12 max-w-[680px] border-t border-white/10 pt-10 text-center">
           <Link
             to="/timeless-solution"
             className="text-sm text-[#7ec8e3] transition hover:text-white"

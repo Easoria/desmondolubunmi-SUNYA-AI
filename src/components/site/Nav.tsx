@@ -5,14 +5,21 @@ import { useAuth } from "@/hooks/use-auth";
 import { useSubscription } from "@/hooks/useSubscription";
 import { oneToOneNavLabel } from "@/lib/one-to-one-offer";
 
-const NAV = [
+// Navbar is capped at 4 items + CTA. Do not add more.
+// New sections go in the footer and are surfaced contextually
+// from related pages. A navbar with 7 items has no hierarchy.
+const NAV_PRIMARY = [
   { label: "Philosophy", to: "/philosophy" as const },
-  { label: "Timeless Solution", to: "/timeless-solution" as const },
   { label: "Practices", to: "/practices" as const },
-  { label: "Writing", to: "/writing" as const },
-  { label: "Gatherings", to: "/gatherings" as const },
   { label: oneToOneNavLabel(), to: "/work-with-me" as const },
   { label: "Vision", to: "/vision" as const },
+];
+
+const NAV_SECONDARY = [
+  { label: "The Timeless Solution", to: "/timeless-solution" as const },
+  { label: "Writing", to: "/writing" as const },
+  { label: "Gatherings", to: "/gatherings" as const },
+  { label: "About", to: "/about" as const },
 ];
 
 function initials(name?: string | null, email?: string | null) {
@@ -107,6 +114,26 @@ function AccountAvatar() {
   );
 }
 
+function MobileLink({
+  to,
+  label,
+  onClick,
+}: {
+  to: string;
+  label: string;
+  onClick: () => void;
+}) {
+  return (
+    <Link
+      to={to}
+      onClick={onClick}
+      className="rounded-lg px-2 py-3 text-[#b8d4e8] transition hover:bg-white/5 hover:text-white"
+    >
+      {label}
+    </Link>
+  );
+}
+
 export function Nav() {
   const { user, signOut } = useAuth();
   const { isActive: hasPaidSubscription } = useSubscription();
@@ -122,7 +149,6 @@ export function Nav() {
     return () => window.removeEventListener("scroll", on);
   }, []);
 
-
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
@@ -137,7 +163,7 @@ export function Nav() {
           </span>
         </Link>
         <div className="hidden items-center gap-9 md:flex">
-          {NAV.map((n) => (
+          {NAV_PRIMARY.map((n) => (
             <Link
               key={n.to}
               to={n.to}
@@ -180,25 +206,33 @@ export function Nav() {
       {open && (
         <div className="border-t border-white/10 bg-[#0a1628]/95 backdrop-blur-xl md:hidden">
           <div className="flex flex-col gap-1 px-6 py-4">
-            {NAV.map((n) => (
-              <Link
+            {NAV_PRIMARY.map((n) => (
+              <MobileLink
                 key={n.to}
                 to={n.to}
+                label={n.label}
                 onClick={() => setOpen(false)}
-                className="rounded-lg px-2 py-3 text-[#b8d4e8] transition hover:bg-white/5 hover:text-white"
-              >
-                {n.label}
-              </Link>
+              />
             ))}
+            <div className="my-2 h-px bg-white/10" />
+            {NAV_SECONDARY.map((n) => (
+              <MobileLink
+                key={n.to}
+                to={n.to}
+                label={n.label}
+                onClick={() => setOpen(false)}
+              />
+            ))}
+            <div className="my-2 h-px bg-white/10" />
+            <Link
+              to="/sunya-ai"
+              onClick={() => setOpen(false)}
+              className="glow-btn mt-1 inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-medium"
+            >
+              {ctaLabel} <ArrowRight className="h-3.5 w-3.5" />
+            </Link>
             {user ? (
               <>
-                <Link
-                  to="/sunya-ai"
-                  onClick={() => setOpen(false)}
-                  className="glow-btn mt-2 inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-medium"
-                >
-                  {ctaLabel} <ArrowRight className="h-3.5 w-3.5" />
-                </Link>
                 <Link
                   to="/dashboard"
                   onClick={() => setOpen(false)}
@@ -217,15 +251,7 @@ export function Nav() {
                   Sign out
                 </button>
               </>
-            ) : (
-              <Link
-                to="/sunya-ai"
-                onClick={() => setOpen(false)}
-                className="glow-btn mt-2 inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-medium"
-              >
-                {ctaLabel} <ArrowRight className="h-3.5 w-3.5" />
-              </Link>
-            )}
+            ) : null}
           </div>
         </div>
       )}

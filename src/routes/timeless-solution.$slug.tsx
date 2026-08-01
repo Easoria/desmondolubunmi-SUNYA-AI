@@ -4,6 +4,7 @@ import { EssayProse } from "@/components/essays/EssayProse";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { Breadcrumb } from "@/components/site/Breadcrumb";
+import { EmailCapture } from "@/components/site/EmailCapture";
 import {
   essayMetaDescription,
   getAdjacentEssays,
@@ -202,6 +203,10 @@ function TimelessSolutionPartPage() {
             </div>
           )}
         </nav>
+
+        <div className="mt-12">
+          <EmailCapture variant="framework" />
+        </div>
 
         <div className="mt-12 space-y-3 text-center text-sm text-[#b8d4e8]/85">
           <div>
