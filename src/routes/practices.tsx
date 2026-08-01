@@ -45,7 +45,7 @@ function PracticesIndexPage() {
           <div className="text-center">
             <div className="label-eyebrow">THE PRACTICES</div>
             <h1 className="display mt-5 text-3xl text-white sm:mt-6 sm:text-6xl">
-              Thirteen levers. One system.
+              Twelve levers. One system.
             </h1>
             <p className="mx-auto mt-6 max-w-3xl text-sm leading-relaxed text-[#b8d4e8] sm:mt-7 sm:text-base">
               Every practice here works on the same human machine. What differs is which part it
@@ -65,6 +65,9 @@ function PracticesIndexPage() {
 
           <div className="mt-12">
             <div className="label-eyebrow mb-6 text-center">THINGS YOU DO</div>
+            <h2 className="display mb-6 text-center text-2xl text-white sm:text-3xl">
+              6 internal practices.
+            </h2>
             <div className="grid gap-3 sm:gap-4 md:grid-cols-2 xl:grid-cols-3">
               {internal.map((lever, index) => (
                 <LeverCard key={lever.slug} lever={lever} band="internal" index={index} />
@@ -74,6 +77,9 @@ function PracticesIndexPage() {
 
           <div className="mt-14">
             <div className="label-eyebrow mb-6 text-center">CONDITIONS YOU LIVE IN</div>
+            <h2 className="display mb-6 text-center text-2xl text-white sm:text-3xl">
+              6 external pillars.
+            </h2>
             <div className="grid gap-3 sm:gap-4 md:grid-cols-2 xl:grid-cols-3">
               {external.map((lever) => (
                 <LeverCard key={lever.slug} lever={lever} band="external" />
@@ -143,8 +149,7 @@ function LeverCard({
         {number}
       </div>
       <div className="relative z-10">
-        <div className="font-display text-xs tracking-[0.25em] text-[#7ec8e3]">{number}</div>
-        <h2 className={`display mt-1.5 text-2xl sm:mt-2 sm:text-3xl ${headingClass}`}>{lever.name}</h2>
+        <h2 className={`display mt-4 text-2xl sm:mt-5 sm:text-3xl ${headingClass}`}>{lever.name}</h2>
         <p className="mt-1 text-xs italic text-[#b8d4e8]/80">{lever.layerLine}</p>
         <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-[#b8d4e8]">{summary}</p>
         <p className="mt-5 text-xs uppercase tracking-[0.24em] text-[#7ec8e3]/85">
