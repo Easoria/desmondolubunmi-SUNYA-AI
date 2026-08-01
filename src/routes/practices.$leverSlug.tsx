@@ -67,19 +67,6 @@ function LeverHubPage() {
             ))}
           </div>
 
-          {lever.leadEssence ? (
-            <div className="glass-strong mx-auto mt-12 max-w-5xl border border-[#dcb48d]/40 p-6 sm:p-8">
-              <h2 className="display text-3xl text-white">The prerequisite</h2>
-              <p className="mt-4 text-[15px] leading-relaxed text-[#b8d4e8]">{lever.leadEssence}</p>
-              {lever.leadMechanism ? (
-                <p className="mt-4 text-[15px] leading-relaxed text-[#b8d4e8]">{lever.leadMechanism}</p>
-              ) : null}
-              {lever.leadBridgeLine ? (
-                <p className="mt-4 text-sm italic text-[#dcb48d]/90">{lever.leadBridgeLine}</p>
-              ) : null}
-            </div>
-          ) : null}
-
           {hasGroups ? (
             <div className="mt-12 space-y-10">
               {lever.groups!.map((group) => (
@@ -176,9 +163,6 @@ function PracticeCard({
   };
   sourceNumber?: number;
 }) {
-  const essencePreview = practice.essence
-    ? practice.essence.match(/[^.!?]+[.!?]/)?.[0] ?? practice.essence
-    : "";
   return (
     <Link
       to="/practices/$leverSlug/$practiceSlug"
@@ -198,11 +182,8 @@ function PracticeCard({
         {practice.subtitle ? (
           <p className="mt-2 text-sm text-[#7ec8e3]/90">{practice.subtitle}</p>
         ) : null}
-        {essencePreview ? (
-          <p className="mt-3 text-sm leading-relaxed text-[#b8d4e8]">{essencePreview}</p>
-        ) : null}
-        {practice.duration ? (
-          <p className="mt-4 text-xs uppercase tracking-[0.2em] text-[#7ec8e3]/85">{practice.duration}</p>
+        {practice.essence ? (
+          <p className="mt-3 text-sm leading-relaxed text-[#b8d4e8]">{practice.essence}</p>
         ) : null}
       </div>
     </Link>

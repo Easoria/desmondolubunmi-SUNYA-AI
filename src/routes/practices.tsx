@@ -23,7 +23,7 @@ export const Route = createFileRoute("/practices")({
       {
         name: "description",
         content:
-          "One hundred and eleven practices across thirteen levers. Breath, movement, mind, sound, heart, awareness, and the six external pillars of human wellbeing.",
+          "Twelve levers arrived at from first principles: every means by which a human being can transform their wellbeing, stripped of cultural form. One hundred and eleven practices across thirteen levers.",
       },
     ],
   }),
@@ -46,17 +46,38 @@ function PracticesIndexPage() {
             <h1 className="display mt-5 text-3xl text-white sm:mt-6 sm:text-6xl">
               Twelve levers. One system.
             </h1>
-            <p className="mx-auto mt-6 max-w-3xl text-sm leading-relaxed text-[#b8d4e8] sm:mt-7 sm:text-base">
-              Every practice here works on the same human machine. What differs is which part it
-              reaches, and how directly. The internal levers are things you do. The external
-              pillars are conditions you live in. Both are necessary, and neither works properly
-              without the other.
+            <div className="mx-auto mt-6 max-w-[700px] space-y-5 text-sm leading-relaxed text-[#b8d4e8] sm:mt-7 sm:text-base">
+              <p>
+                Beneath every tradition lies one science, working on one system in one direction.
+                This is that science gathered into its practical essence — the actual tools,
+                stripped of all cultural form, through which a human being can create lasting
+                happiness wellbeing in themselve.
+              </p>
+              <p>
+                These twelve foundational levers were arrived at from first principles, by asking a
+                single question: what are all the possible means by which a human being can
+                transform their well-being? Every tradition was examined in answer — but so was
+                every therapy, every wellness practice, every modality of change. And they all
+                reduced to the same small set: six internal means of working on oneself, with every
+                known practice being one of these or a combination of them, and six external
+                conditions that support well-being from without.
+              </p>
+            </div>
+            <p className="display mx-auto mt-10 max-w-[700px] text-2xl leading-relaxed text-[#eaf6ff] sm:text-3xl">
+              There is almost no means of transforming a human being that is not already among
+              them, or built from them.
             </p>
           </div>
 
           {conservation && (
             <div className="mx-auto mt-14 max-w-5xl">
               <div className="label-eyebrow text-center">THE PREREQUISITE</div>
+              <h2 className="display mb-4 mt-4 text-center text-2xl text-[#f0dcc8] sm:text-3xl">
+                Conservation
+              </h2>
+              <p className="mx-auto mb-6 max-w-3xl text-center text-sm text-[#dcb48d]/92 sm:text-base">
+                Before you raise more energy, stop losing the energy you have.
+              </p>
               <LeverCard lever={conservation} band="prerequisite" />
               <div className="mx-auto mt-9 h-px w-full bg-gradient-to-r from-transparent via-[#dcb48d]/40 to-transparent" />
             </div>
@@ -65,8 +86,12 @@ function PracticesIndexPage() {
           <div className="mt-12">
             <div className="label-eyebrow mb-6 text-center">THINGS YOU DO</div>
             <h2 className="display mb-6 text-center text-2xl text-[#d6effb] sm:text-3xl">
-              6 Internal Practices.
+              The Six Internal Levers
             </h2>
+            <p className="mx-auto mb-6 max-w-3xl text-center text-sm text-[#b8d4e8] sm:text-base">
+              Your own faculties — breath, movement, mind, sound, heart, and awareness. These are
+              the things you do.
+            </p>
             <div className="rounded-3xl border border-[#7ec8e3]/40 bg-[#7ec8e3]/[0.08] p-3 shadow-[0_0_42px_-24px_rgba(126,200,227,0.85)] sm:p-4">
               <div className="grid gap-3 sm:gap-4 md:grid-cols-2 xl:grid-cols-3">
                 {internal.map((lever, index) => (
@@ -79,8 +104,12 @@ function PracticesIndexPage() {
           <div className="mt-14">
             <div className="label-eyebrow mb-6 text-center">CONDITIONS YOU LIVE IN</div>
             <h2 className="display mb-6 text-center text-2xl text-[#f0dcc8] sm:text-3xl">
-              6 External Pillars.
+              The Six External Pillars
             </h2>
+            <p className="mx-auto mb-6 max-w-3xl text-center text-sm text-[#b8d4e8] sm:text-base">
+              Sleep, nutrition, connection, environment, nature, and sustenance. These are not
+              practices. They are the ground everything else stands on.
+            </p>
             <div className="rounded-3xl border border-[#dcb48d]/25 bg-[#dcb48d]/[0.05] p-3 sm:p-4">
               <div className="grid gap-3 sm:gap-4 md:grid-cols-2 xl:grid-cols-3">
                 {external.map((lever) => (
@@ -90,7 +119,15 @@ function PracticesIndexPage() {
             </div>
           </div>
 
-          <p className="mx-auto mt-14 max-w-3xl text-center text-sm text-[#b8d4e8]">
+          <div className="mx-auto mt-14 max-w-3xl space-y-4 text-center text-sm text-[#b8d4e8] sm:text-base">
+            <p>
+              Every lever reaches several layers of being at once. But they all converge on one —
+              the energy body. That is the common ground of the entire method.
+            </p>
+            <p>Two go even further. Awareness and the heart work directly on the separate self itself.</p>
+          </div>
+
+          <p className="mx-auto mt-12 max-w-3xl text-center text-sm text-[#b8d4e8]">
             Not sure where to start? The five zones on the philosophy page identify which lever
             matters most for you right now.
           </p>
@@ -157,7 +194,7 @@ function LeverCard({
         {number}
       </div>
       <div className="relative z-10">
-        <h2 className={`display mt-2 text-2xl sm:mt-3 sm:text-3xl ${headingClass}`}>{lever.name}</h2>
+        <h2 className={`display mt-4 text-2xl sm:mt-5 sm:text-3xl ${headingClass}`}>{lever.name}</h2>
         <p className="mt-1 text-xs italic text-[#b8d4e8]/80">{lever.layerLine}</p>
         <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-[#b8d4e8]">{summary}</p>
         <p className="mt-5 text-xs uppercase tracking-[0.24em] text-[#7ec8e3]/85">
