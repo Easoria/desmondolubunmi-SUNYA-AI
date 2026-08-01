@@ -1,6 +1,13 @@
+import dns from "node:dns";
+import "./lib/ssr-shims";
 import "./lib/error-capture";
 import { consumeLastCapturedError } from "./lib/error-capture";
 import { renderErrorPage } from "./lib/error-page";
+
+// Prefer IPv4: AAAA-first DNS can hang ~7s on some serverless networks.
+if (typeof dns.setDefaultResultOrder === "function") {
+  dns.setDefaultResultOrder("ipv4first");
+}
 
 type ServerEntry = {
   fetch: (request: Request, env: unknown, context: unknown) => Promise<Response> | Response;
