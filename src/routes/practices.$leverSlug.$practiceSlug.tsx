@@ -72,7 +72,7 @@ function PracticeDetailPage() {
             </Link>
           </div>
 
-          <div className="mt-6">
+          <div className="mt-6 max-w-[72ch]">
             <div className="label-eyebrow">LEVER {String(lever.number).padStart(2, "0")}</div>
             <h1 className="display mt-4 text-3xl text-white sm:text-5xl">{practice.name}</h1>
             {practice.sanskritName ? (
@@ -97,23 +97,23 @@ function PracticeDetailPage() {
           {practice.notes?.map((note, index) => (
             <p
               key={index}
-              className="mt-6 rounded-2xl border border-[#dcb48d]/35 bg-[#dcb48d]/8 px-4 py-3 text-sm italic leading-relaxed text-[#f2decb]"
+              className="mt-6 max-w-[72ch] rounded-2xl border border-[#dcb48d]/35 bg-[#dcb48d]/8 px-4 py-3 text-sm italic leading-relaxed text-[#f2decb]"
             >
               {note}
             </p>
           ))}
 
           {practice.essence ? (
-            <section className="mt-8">
+            <section className="mt-8 max-w-[72ch]">
               <h2 className="label-eyebrow">Essence</h2>
-              <p className="mt-3 text-[15px] leading-relaxed text-[#b8d4e8]">{practice.essence}</p>
+              <p className="mt-3 text-[15px] leading-7 text-[#b8d4e8] sm:text-base">{practice.essence}</p>
             </section>
           ) : null}
 
           {practice.mechanism?.length ? (
-            <section className="mt-9">
+            <section className="mt-9 max-w-[72ch]">
               <h2 className="label-eyebrow">Mechanism</h2>
-              <div className="mt-3 space-y-4 text-[15px] leading-relaxed text-[#b8d4e8]">
+              <div className="mt-3 space-y-5 text-[15px] leading-7 text-[#b8d4e8] sm:text-base">
                 {practice.mechanism.map((paragraph, index) => (
                   <p key={index}>{paragraph}</p>
                 ))}
@@ -122,13 +122,13 @@ function PracticeDetailPage() {
           ) : null}
 
           {practice.protocol?.length ? (
-            <section className="mt-9">
+            <section className="mt-10 max-w-[72ch]">
               <h2 className="display text-2xl text-white">Protocol</h2>
-              <ol className="mt-3 space-y-4">
+              <ol className="mt-4 space-y-4">
                 {practice.protocol.map((step, index) => (
                   <li
                     key={index}
-                    className="glass-card rounded-2xl border border-[#7ec8e3]/35 bg-[#7ec8e3]/[0.09] p-4 text-[15px] leading-relaxed text-[#f2f9fe] sm:p-5"
+                    className="glass-card rounded-2xl border border-[#7ec8e3]/35 bg-[#7ec8e3]/[0.09] p-4 text-[15px] leading-7 text-[#f2f9fe] sm:p-5 sm:text-base"
                   >
                     <span className="mr-2 font-display text-sm text-[#7ec8e3]">
                       {String(index + 1).padStart(2, "0")}
@@ -142,7 +142,7 @@ function PracticeDetailPage() {
           ) : null}
 
           {related.length ? (
-            <section className="mt-10">
+            <section className="mt-12 max-w-[72ch]">
               <h2 className="label-eyebrow">Related practices</h2>
               <div className="mt-4 grid gap-3 sm:grid-cols-2">
                 {related.map((item) => (

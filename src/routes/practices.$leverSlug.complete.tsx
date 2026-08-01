@@ -46,7 +46,7 @@ function CompleteLeverPage() {
         </h1>
         <p className="mt-2 text-sm italic text-[#b8d4e8]/80">Reader&apos;s edition</p>
 
-        <div className="mt-8 space-y-4 text-[15px] leading-relaxed text-[#b8d4e8]">
+        <div className="mt-8 max-w-[72ch] space-y-5 text-[15px] leading-7 text-[#b8d4e8] sm:text-base">
           {lever.intro.map((paragraph, index) => (
             <p key={index}>{paragraph}</p>
           ))}
@@ -113,35 +113,35 @@ function PracticeFull({
       {practice.notes?.map((note, index) => (
         <p
           key={index}
-          className="mt-4 rounded-xl border border-[#dcb48d]/35 bg-[#dcb48d]/8 px-3 py-2 text-sm italic text-[#f2decb]"
+          className="mt-4 max-w-[72ch] rounded-xl border border-[#dcb48d]/35 bg-[#dcb48d]/8 px-3 py-2 text-sm italic leading-relaxed text-[#f2decb]"
         >
           {note}
         </p>
       ))}
       {practice.essence ? (
-        <p className="mt-4 text-sm leading-relaxed text-[#e8f4fb]">
+        <p className="mt-4 max-w-[72ch] text-[15px] leading-7 text-[#e8f4fb] sm:text-base">
           <span className="label-eyebrow mr-2">Essence</span>
           {practice.essence}
         </p>
       ) : null}
       {practice.mechanism?.length ? (
-        <div className="mt-4 space-y-3">
+        <div className="mt-5 max-w-[72ch] space-y-4">
           <p className="label-eyebrow">Mechanism</p>
           {practice.mechanism.map((paragraph, index) => (
-            <p key={index} className="text-sm leading-relaxed text-[#b8d4e8]">
+            <p key={index} className="text-[15px] leading-7 text-[#b8d4e8] sm:text-base">
               {paragraph}
             </p>
           ))}
         </div>
       ) : null}
       {practice.protocol?.length ? (
-        <div className="mt-4 space-y-3">
+        <div className="mt-6 max-w-[72ch] space-y-3">
           <p className="display text-xl text-white">Protocol</p>
-          <ol className="space-y-3">
+          <ol className="space-y-4">
             {practice.protocol.map((step, index) => (
               <li
                 key={index}
-                className="rounded-xl border border-[#7ec8e3]/30 bg-[#7ec8e3]/[0.08] px-3 py-2.5 text-sm leading-relaxed text-[#f2f9fe]"
+                className="rounded-xl border border-[#7ec8e3]/30 bg-[#7ec8e3]/[0.08] px-3 py-2.5 text-[15px] leading-7 text-[#f2f9fe] sm:text-base"
               >
                 <span className="font-display text-[#7ec8e3]">{String(index + 1).padStart(2, "0")}.</span>{" "}
                 <span>{step.text}</span>
