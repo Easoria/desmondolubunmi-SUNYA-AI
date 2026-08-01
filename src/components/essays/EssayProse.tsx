@@ -23,7 +23,7 @@ function RichText({ spans }: { spans: TextSpan[] }) {
         if (span.italic) node = <em key={`i-${index}`}>{node}</em>;
         if (span.bold) {
           node = (
-            <strong key={`b-${index}`} className="font-semibold text-[#7ec8e3]">
+            <strong key={`b-${index}`} className="font-semibold text-white">
               {node}
             </strong>
           );
