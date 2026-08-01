@@ -48,6 +48,28 @@ function PracticesIndexPage() {
             </h1>
           </div>
 
+          <div className="mx-auto mt-6 max-w-[700px] space-y-5 text-sm leading-relaxed text-[#b8d4e8] sm:mt-7 sm:text-base">
+            <p>
+              Beneath every tradition lies one science, working on one system in one direction.
+              This is that science gathered into its practical essence — the actual tools, stripped
+              of all cultural form, through which a human being can create lasting wellbeing in
+              themselves.
+            </p>
+            <p>
+              These twelve foundational levers were arrived at from first principles, by asking a
+              single question: what are all the possible means by which a human being can
+              transform their wellbeing? Every tradition was examined in answer — but so was
+              every therapy, every wellness practice, every modality of change. And beneath their
+              different languages and forms, they all reduced to the same small set: six internal
+              means of working on oneself, and six external conditions that support wellbeing from
+              without.
+            </p>
+          </div>
+          <p className="display mx-auto mb-14 mt-10 max-w-[700px] text-2xl leading-relaxed text-[#eaf6ff] sm:mb-16 sm:text-3xl">
+            There is no means of transforming a human being that is not already among them, or
+            built from them.
+          </p>
+
           {conservation && (
             <div className="mx-auto mt-14 max-w-5xl">
               <div className="label-eyebrow text-center">THE PREREQUISITE</div>
@@ -85,14 +107,6 @@ function PracticesIndexPage() {
                 ))}
               </div>
             </div>
-          </div>
-
-          <div className="mx-auto mt-14 max-w-3xl space-y-4 text-center text-sm text-[#b8d4e8] sm:text-base">
-            <p>
-              Every lever reaches several layers of being at once. But they all converge on one —
-              the energy body. That is the common ground of the entire method.
-            </p>
-            <p>Two go even further. Awareness and the heart work directly on the separate self itself.</p>
           </div>
 
           <p className="mx-auto mt-12 max-w-3xl text-center text-sm text-[#b8d4e8]">
