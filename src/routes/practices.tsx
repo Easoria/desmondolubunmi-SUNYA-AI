@@ -39,13 +39,15 @@ function PracticesIndexPage() {
   return (
     <div className="min-h-screen bg-[#0a1628] text-white">
       <Nav />
-      <section className="relative overflow-hidden pb-24 pt-32">
+      <section className="relative overflow-hidden pb-20 pt-28 sm:pb-24 sm:pt-32">
         <Starfield density={0.4} />
-        <div className="relative z-10 mx-auto max-w-7xl px-6">
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6">
           <div className="text-center">
             <div className="label-eyebrow">THE PRACTICES</div>
-            <h1 className="display mt-6 text-4xl text-white sm:text-6xl">Thirteen levers. One system.</h1>
-            <p className="mx-auto mt-7 max-w-3xl text-[#b8d4e8]">
+            <h1 className="display mt-5 text-3xl text-white sm:mt-6 sm:text-6xl">
+              Thirteen levers. One system.
+            </h1>
+            <p className="mx-auto mt-6 max-w-3xl text-sm leading-relaxed text-[#b8d4e8] sm:mt-7 sm:text-base">
               Every practice here works on the same human machine. What differs is which part it
               reaches, and how directly. The internal levers are things you do. The external
               pillars are conditions you live in. Both are necessary, and neither works properly
@@ -63,7 +65,7 @@ function PracticesIndexPage() {
 
           <div className="mt-12">
             <div className="label-eyebrow mb-6 text-center">THINGS YOU DO</div>
-            <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+            <div className="grid gap-3 sm:gap-4 md:grid-cols-2 xl:grid-cols-3">
               {internal.map((lever, index) => (
                 <LeverCard key={lever.slug} lever={lever} band="internal" index={index} />
               ))}
@@ -72,7 +74,7 @@ function PracticesIndexPage() {
 
           <div className="mt-14">
             <div className="label-eyebrow mb-6 text-center">CONDITIONS YOU LIVE IN</div>
-            <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+            <div className="grid gap-3 sm:gap-4 md:grid-cols-2 xl:grid-cols-3">
               {external.map((lever) => (
                 <LeverCard key={lever.slug} lever={lever} band="external" />
               ))}
@@ -115,7 +117,7 @@ function LeverCard({
   const internalGlow = 0.38 + index * 0.09;
 
   const shared =
-    "group relative block overflow-hidden rounded-2xl border p-5 transition duration-300 hover:-translate-y-0.5";
+    "group relative block overflow-hidden rounded-2xl border p-4 sm:p-5 transition duration-300 hover:-translate-y-0.5";
 
   const className =
     band === "prerequisite"
@@ -137,14 +139,14 @@ function LeverCard({
 
   return (
     <Link to={leverHubPath(lever.slug)} className={className} style={style}>
-      <div className="pointer-events-none absolute left-3 top-1 font-display text-6xl text-[#7ec8e3]/20">
+      <div className="pointer-events-none absolute left-2.5 top-0.5 font-display text-5xl text-[#7ec8e3]/20 sm:left-3 sm:top-1 sm:text-6xl">
         {number}
       </div>
       <div className="relative z-10">
         <div className="font-display text-xs tracking-[0.25em] text-[#7ec8e3]">{number}</div>
-        <h2 className={`display mt-2 text-3xl ${headingClass}`}>{lever.name}</h2>
+        <h2 className={`display mt-1.5 text-2xl sm:mt-2 sm:text-3xl ${headingClass}`}>{lever.name}</h2>
         <p className="mt-1 text-xs italic text-[#b8d4e8]/80">{lever.layerLine}</p>
-        <p className="mt-4 line-clamp-3 text-sm leading-relaxed text-[#b8d4e8]">{summary}</p>
+        <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-[#b8d4e8]">{summary}</p>
         <p className="mt-5 text-xs uppercase tracking-[0.24em] text-[#7ec8e3]/85">
           {practiceCount} practices
         </p>

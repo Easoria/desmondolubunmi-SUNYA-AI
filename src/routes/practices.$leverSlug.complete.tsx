@@ -28,20 +28,20 @@ function CompleteLeverPage() {
   return (
     <div className="min-h-screen bg-[#0a1628] text-white">
       <Nav />
-      <main className="mx-auto max-w-5xl px-6 pb-24 pt-32">
-        <div className="text-sm text-[#b8d4e8]/80">
+      <main className="mx-auto max-w-5xl px-4 pb-20 pt-28 sm:px-6 sm:pb-24 sm:pt-32">
+        <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-[#b8d4e8]/80">
           <Link to="/practices" className="hover:text-white">
             Practices
           </Link>
-          <span className="mx-2">/</span>
+          <span>/</span>
           <Link to="/practices/$leverSlug" params={{ leverSlug: lever.slug }} className="hover:text-white">
             {lever.name}
           </Link>
-          <span className="mx-2">/</span>
+          <span>/</span>
           <span>Complete</span>
         </div>
 
-        <h1 className="display mt-6 text-4xl text-white sm:text-5xl">
+        <h1 className="display mt-5 text-3xl text-white sm:mt-6 sm:text-5xl">
           Lever {String(lever.number).padStart(2, "0")} — {lever.name}
         </h1>
         <p className="mt-2 text-sm italic text-[#b8d4e8]/80">Reader&apos;s edition</p>
@@ -101,8 +101,8 @@ function PracticeFull({
   };
 }) {
   return (
-    <article className="glass-card rounded-2xl border border-white/10 p-6">
-      <h3 className="display text-3xl text-white">
+    <article className="glass-card rounded-2xl border border-white/10 p-4 sm:p-6">
+      <h3 className="display text-[1.7rem] leading-tight text-white sm:text-3xl">
         {practice.sourceNumber ? `${String(practice.sourceNumber).padStart(2, "0")} · ` : null}
         {practice.name}
       </h3>
@@ -136,12 +136,15 @@ function PracticeFull({
       ) : null}
       {practice.protocol?.length ? (
         <div className="mt-4 space-y-3">
-          <p className="label-eyebrow">Protocol</p>
-          <ol className="space-y-2">
+          <p className="display text-xl text-white">Protocol</p>
+          <ol className="space-y-3">
             {practice.protocol.map((step, index) => (
-              <li key={index} className="text-sm leading-relaxed text-[#e8f4fb]">
+              <li
+                key={index}
+                className="rounded-xl border border-[#7ec8e3]/30 bg-[#7ec8e3]/[0.08] px-3 py-2.5 text-sm leading-relaxed text-[#f2f9fe]"
+              >
                 <span className="font-display text-[#7ec8e3]">{String(index + 1).padStart(2, "0")}.</span>{" "}
-                {step.text}
+                <span>{step.text}</span>
                 {step.emphasis ? <em className="block pt-1 text-[#b8d4e8]/90">{step.emphasis}</em> : null}
               </li>
             ))}

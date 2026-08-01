@@ -59,14 +59,14 @@ function PracticeDetailPage() {
   return (
     <div className="min-h-screen bg-[#0a1628] text-white">
       <Nav />
-      <section className="relative overflow-hidden pb-24 pt-32">
+      <section className="relative overflow-hidden pb-20 pt-28 sm:pb-24 sm:pt-32">
         <Starfield density={0.28} />
-        <div className="relative z-10 mx-auto max-w-4xl px-6">
-          <div className="text-sm text-[#b8d4e8]/80">
+        <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6">
+          <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-[#b8d4e8]/80">
             <Link to="/practices" className="hover:text-white">
               Practices
             </Link>
-            <span className="mx-2">/</span>
+            <span>/</span>
             <Link to="/practices/$leverSlug" params={{ leverSlug: lever.slug }} className="hover:text-white">
               {lever.name}
             </Link>
@@ -74,14 +74,14 @@ function PracticeDetailPage() {
 
           <div className="mt-6">
             <div className="label-eyebrow">LEVER {String(lever.number).padStart(2, "0")}</div>
-            <h1 className="display mt-4 text-4xl text-white sm:text-5xl">{practice.name}</h1>
+            <h1 className="display mt-4 text-3xl text-white sm:text-5xl">{practice.name}</h1>
             {practice.sanskritName ? (
               <p className="mt-2 text-sm italic text-[#b8d4e8]/85">{practice.sanskritName}</p>
             ) : null}
             {practice.subtitle ? (
               <p className="mt-3 text-sm text-[#7ec8e3]/90">{practice.subtitle}</p>
             ) : null}
-            <div className="mt-4 flex flex-wrap items-center gap-2 text-xs uppercase tracking-[0.2em] text-[#b8d4e8]/70">
+            <div className="mt-4 flex flex-wrap items-center gap-2 text-[11px] uppercase leading-relaxed tracking-[0.14em] text-[#b8d4e8]/70 sm:text-xs sm:tracking-[0.2em]">
               <span>{lever.name}</span>
               <span>·</span>
               <span>{practice.layers.join(" + ")}</span>
@@ -123,12 +123,12 @@ function PracticeDetailPage() {
 
           {practice.protocol?.length ? (
             <section className="mt-9">
-              <h2 className="label-eyebrow">Protocol</h2>
+              <h2 className="display text-2xl text-white">Protocol</h2>
               <ol className="mt-3 space-y-4">
                 {practice.protocol.map((step, index) => (
                   <li
                     key={index}
-                    className="glass-card rounded-2xl border border-[#7ec8e3]/25 bg-white/[0.03] p-4 text-[15px] leading-relaxed text-[#e8f4fb]"
+                    className="glass-card rounded-2xl border border-[#7ec8e3]/35 bg-[#7ec8e3]/[0.09] p-4 text-[15px] leading-relaxed text-[#f2f9fe] sm:p-5"
                   >
                     <span className="mr-2 font-display text-sm text-[#7ec8e3]">
                       {String(index + 1).padStart(2, "0")}

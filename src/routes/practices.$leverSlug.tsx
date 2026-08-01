@@ -39,12 +39,12 @@ function LeverHubPage() {
   return (
     <div className="min-h-screen bg-[#0a1628] text-white">
       <Nav />
-      <section className="relative overflow-hidden pb-24 pt-32">
+      <section className="relative overflow-hidden pb-20 pt-28 sm:pb-24 sm:pt-32">
         <Starfield density={0.35} />
-        <div className="relative z-10 mx-auto max-w-6xl px-6">
+        <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6">
           <div className="text-center">
             <div className="label-eyebrow">LEVER {String(lever.number).padStart(2, "0")}</div>
-            <h1 className="display mt-6 text-4xl text-white sm:text-5xl md:text-6xl">
+            <h1 className="display mt-5 text-3xl text-white sm:text-5xl md:text-6xl">
               {lever.name}
             </h1>
             <p className="mt-3 text-sm italic text-[#b8d4e8]/85">{lever.layerLine}</p>
@@ -60,7 +60,7 @@ function LeverHubPage() {
             </div>
           </div>
 
-          <div className="mx-auto mt-10 max-w-4xl space-y-4 text-[#b8d4e8]">
+          <div className="mx-auto mt-8 max-w-4xl space-y-4 text-[#b8d4e8] sm:mt-10">
             {lever.intro.map((paragraph, index) => (
               <p key={index} className="text-[15px] leading-relaxed">
                 {paragraph}
@@ -96,7 +96,7 @@ function LeverHubPage() {
                       {description}
                     </p>
                   ))}
-                  <div className="mt-5 grid gap-4 md:grid-cols-2">
+                  <div className="mt-5 grid gap-3 sm:gap-4 md:grid-cols-2">
                     {group.practices.map((practice) => (
                       <PracticeCard
                         key={practice.slug}
@@ -111,7 +111,7 @@ function LeverHubPage() {
             </div>
           ) : (
             <section className="mt-12">
-              <div className="grid gap-4 md:grid-cols-2">
+              <div className="grid gap-3 sm:gap-4 md:grid-cols-2">
                 {getAllLeverPractices(lever).map((practice, index) => (
                   <PracticeCard
                     key={practice.slug}
@@ -134,14 +134,12 @@ function LeverHubPage() {
             </Link>
           </div>
 
-          <div className="mt-14 grid gap-4 text-sm text-[#b8d4e8] sm:grid-cols-2">
+          <div className="mt-12 grid gap-3 text-sm text-[#b8d4e8] sm:mt-14 sm:grid-cols-2 sm:gap-4">
             {previous ? (
               <Link to={leverHubPath(previous.slug)} className="glass-card px-4 py-3 hover:text-white">
                 ← Lever {String(previous.number).padStart(2, "0")} · {previous.name}
               </Link>
-            ) : (
-              <div />
-            )}
+            ) : null}
             {next ? (
               <Link
                 to={leverHubPath(next.slug)}
@@ -181,15 +179,15 @@ function PracticeCard({
     <Link
       to="/practices/$leverSlug/$practiceSlug"
       params={{ leverSlug, practiceSlug: practice.slug }}
-      className="glass-card relative block overflow-hidden rounded-2xl border border-white/10 p-5 transition hover:border-[#7ec8e3]/45 hover:bg-white/[0.05]"
+      className="glass-card relative block overflow-hidden rounded-2xl border border-white/10 p-4 sm:p-5 transition hover:border-[#7ec8e3]/45 hover:bg-white/[0.05]"
     >
       {sourceNumber ? (
-        <div className="pointer-events-none absolute right-4 top-2 font-display text-5xl text-[#7ec8e3]/15">
+        <div className="pointer-events-none absolute right-3 top-1.5 font-display text-4xl text-[#7ec8e3]/15 sm:right-4 sm:top-2 sm:text-5xl">
           {String(sourceNumber).padStart(2, "0")}
         </div>
       ) : null}
       <div className="relative z-10">
-        <h3 className="display text-2xl text-white">{practice.name}</h3>
+        <h3 className="display text-[1.65rem] leading-tight text-white sm:text-2xl">{practice.name}</h3>
         {practice.sanskritName ? (
           <p className="mt-1 text-xs italic text-[#b8d4e8]/85">{practice.sanskritName}</p>
         ) : null}
