@@ -1,7 +1,7 @@
 // Shared blog constants and helpers (browser-safe)
 
 export const BLOG_ADMIN_EMAIL = "easoriaai@gmail.com";
-export const SITE_URL = "https://desmondolubunmisunya.lovable.app";
+export const SITE_URL = "https://www.desmondolubunmi.com";
 
 export function slugify(title: string): string {
   return title

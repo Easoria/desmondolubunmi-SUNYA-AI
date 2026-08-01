@@ -10,6 +10,12 @@ import {
 } from "@/data/levers";
 import type { LeverSlug } from "@/data/levers";
 import { formatNarrativeParagraphs } from "@/lib/practice-text-format";
+import {
+  buildArticleSchema,
+  buildBreadcrumbSchema,
+  buildLeverMetaTitle,
+  buildSeoHead,
+} from "@/lib/seo";
 
 export const Route = createFileRoute("/practices/$leverSlug")({
   loader: ({ params }) => {
@@ -18,15 +24,47 @@ export const Route = createFileRoute("/practices/$leverSlug")({
     return { lever };
   },
   component: LeverRoutePage,
-  head: ({ loaderData }) => ({
-    meta: [
-      { title: loaderData.lever.metaTitle },
-      {
-        name: "description",
-        content: loaderData.lever.metaDescription,
-      },
-    ],
-  }),
+  head: ({ loaderData, matches }) => {
+    if (!matches?.length || matches[matches.length - 1]?.routeId !== "/practices/$leverSlug") {
+      return {};
+    }
+
+    const { lever } = loaderData;
+    const practiceCount = getLeverPracticeCount(lever);
+    const title = buildLeverMetaTitle(lever, practiceCount);
+    const description = lever.metaDescription;
+    const path = `/practices/${lever.slug}`;
+
+    const articleSchema = buildArticleSchema({
+      headline: title,
+      description,
+      sectionName: lever.name,
+    });
+    const breadcrumbSchema = buildBreadcrumbSchema([
+      { name: "Practices", path: "/practices" },
+      { name: lever.name, path },
+    ]);
+
+    return {
+      ...buildSeoHead({
+        title,
+        description,
+        path,
+        ogType: "website",
+        imageKind: "lever",
+      }),
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify(articleSchema),
+        },
+        {
+          type: "application/ld+json",
+          children: JSON.stringify(breadcrumbSchema),
+        },
+      ],
+    };
+  },
 });
 
 function LeverRoutePage() {
@@ -75,6 +113,13 @@ function LeverHubPage() {
             <p className="mt-3 text-sm italic text-[#b8d4e8]/85">{lever.layerLine}</p>
             <p className="mt-3 text-xs uppercase tracking-[0.24em] text-[#7ec8e3]/85">
               {practiceCount} practices
+            </p>
+            <p className="mt-3 text-xs text-[#b8d4e8]/70">
+              Written by{" "}
+              <Link to="/about" className="underline decoration-[#7ec8e3]/45 underline-offset-2 hover:text-white">
+                Desmond Olubunmi
+              </Link>{" "}
+              · Founder of Sunya
             </p>
             <div className="mx-auto mt-4 flex max-w-md items-center justify-center gap-2 text-xs text-[#b8d4e8]/75">
               <Link to="/practices" className="hover:text-white">

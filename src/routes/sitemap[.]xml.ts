@@ -15,37 +15,50 @@ export const Route = createFileRoute("/sitemap.xml")({
   server: {
     handlers: {
       GET: async () => {
+        const generatedAt = new Date().toISOString();
         const staticEntries: SitemapEntry[] = [
-          { path: "/", changefreq: "weekly", priority: "1.0" },
-          { path: "/philosophy", changefreq: "monthly", priority: "0.9" },
-          { path: "/practices", changefreq: "weekly", priority: "0.9" },
-          { path: "/sunya-ai", changefreq: "weekly", priority: "0.9" },
-          { path: "/work-with-me", changefreq: "monthly", priority: "0.8" },
-          { path: "/vision", changefreq: "monthly", priority: "0.8" },
-          { path: "/blog", changefreq: "weekly", priority: "0.8" },
+          { path: "/", lastmod: generatedAt, changefreq: "weekly", priority: "1.0" },
+          { path: "/about", lastmod: generatedAt, changefreq: "monthly", priority: "0.8" },
+          { path: "/philosophy", lastmod: generatedAt, changefreq: "monthly", priority: "0.9" },
+          { path: "/practices", lastmod: generatedAt, changefreq: "weekly", priority: "0.9" },
+          { path: "/sunya-ai", lastmod: generatedAt, changefreq: "weekly", priority: "0.8" },
+          { path: "/privacy", lastmod: generatedAt, changefreq: "yearly", priority: "0.5" },
+          { path: "/terms", lastmod: generatedAt, changefreq: "yearly", priority: "0.5" },
+          { path: "/work-with-me", lastmod: generatedAt, changefreq: "monthly", priority: "0.8" },
+          { path: "/vision", lastmod: generatedAt, changefreq: "monthly", priority: "0.8" },
+          { path: "/blog", lastmod: generatedAt, changefreq: "weekly", priority: "0.8" },
         ];
 
         const practiceEntries: SitemapEntry[] = getLeversInOrder().flatMap((lever) => [
           {
             path: `/practices/${lever.slug}`,
+            lastmod: generatedAt,
             changefreq: "monthly",
             priority: "0.8",
           },
           ...getAllLeverPractices(lever).map((practice) => ({
             path: `/practices/${lever.slug}/${practice.slug}`,
+            lastmod: generatedAt,
             changefreq: "monthly" as const,
             priority: "0.7",
           })),
         ]);
 
-        const { data: articles } = await supabaseAdmin
-          .from("articles")
-          .select("slug, published_at, updated_at")
-          .eq("published", true);
+        let articles: Array<{ slug: string; published_at: string | null; updated_at: string | null }> =
+          [];
+        try {
+          const { data } = await supabaseAdmin
+            .from("articles")
+            .select("slug, published_at, updated_at")
+            .eq("published", true);
+          articles = data ?? [];
+        } catch (error) {
+          console.warn("Sitemap: skipping blog article fetch due to missing Supabase admin env.", error);
+        }
 
-        const dynamic: SitemapEntry[] = (articles ?? []).map((a) => ({
+        const dynamic: SitemapEntry[] = articles.map((a) => ({
           path: `/blog/${a.slug}`,
-          lastmod: (a.updated_at ?? a.published_at ?? undefined) as string | undefined,
+          lastmod: (a.updated_at ?? a.published_at ?? generatedAt) as string,
           changefreq: "monthly",
           priority: "0.7",
         }));

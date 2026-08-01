@@ -3,7 +3,20 @@ import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { Starfield } from "@/components/Starfield";
 import { getLeverBySlug, getPracticeBySlug } from "@/data/levers";
+import type { LeverSlug } from "@/data/levers";
 import { formatNarrativeParagraphs, formatProtocolStepLayout } from "@/lib/practice-text-format";
+import {
+  buildArticleSchema,
+  buildBreadcrumbSchema,
+  buildPracticeMetaDescription,
+  buildPracticeMetaTitle,
+  buildSeoHead,
+  parseDurationToIso,
+} from "@/lib/seo";
+
+const CROSS_LEVER_RELATED: Record<string, { leverSlug: LeverSlug; practiceSlug: string }[]> = {
+  "breath/4-7-8-breathing": [{ leverSlug: "sleep", practiceSlug: "the-somatic-runway" }],
+};
 
 export const Route = createFileRoute("/practices/$leverSlug/$practiceSlug")({
   loader: ({ params }) => {
@@ -15,14 +28,19 @@ export const Route = createFileRoute("/practices/$leverSlug/$practiceSlug")({
   },
   component: PracticeDetailPage,
   head: ({ loaderData }) => {
-    const { practice } = loaderData;
+    const { lever, practice } = loaderData;
+    const title = buildPracticeMetaTitle(practice);
+    const description = buildPracticeMetaDescription(practice);
+    const path = `/practices/${lever.slug}/${practice.slug}`;
+    const totalTime = parseDurationToIso(practice.duration);
     const howTo =
       practice.protocol && practice.protocol.length > 0
         ? {
             "@context": "https://schema.org",
             "@type": "HowTo",
             name: practice.name,
-            description: practice.essence ?? practice.metaDescription,
+            description: practice.essence ?? description,
+            ...(totalTime ? { totalTime } : {}),
             step: practice.protocol.map((step, index) => ({
               "@type": "HowToStep",
               position: index + 1,
@@ -30,23 +48,43 @@ export const Route = createFileRoute("/practices/$leverSlug/$practiceSlug")({
             })),
           }
         : null;
+    const articleSchema = buildArticleSchema({
+      headline: title,
+      description,
+      sectionName: lever.name,
+    });
+    const breadcrumbSchema = buildBreadcrumbSchema([
+      { name: "Practices", path: "/practices" },
+      { name: lever.name, path: `/practices/${lever.slug}` },
+      { name: practice.name, path },
+    ]);
 
     return {
-      meta: [
-        { title: practice.metaTitle },
+      ...buildSeoHead({
+        title,
+        description,
+        path,
+        ogType: "article",
+        imageKind: "practice",
+      }),
+      scripts: [
+        ...(howTo
+          ? [
+              {
+                type: "application/ld+json",
+                children: JSON.stringify(howTo),
+              },
+            ]
+          : []),
         {
-          name: "description",
-          content: practice.metaDescription,
+          type: "application/ld+json",
+          children: JSON.stringify(articleSchema),
+        },
+        {
+          type: "application/ld+json",
+          children: JSON.stringify(breadcrumbSchema),
         },
       ],
-      scripts: howTo
-        ? [
-            {
-              type: "application/ld+json",
-              children: JSON.stringify(howTo),
-            },
-          ]
-        : [],
     };
   },
 });
@@ -78,9 +116,29 @@ function renderProtocolText(text: string) {
 
 function PracticeDetailPage() {
   const { lever, practice } = Route.useLoaderData();
-  const related = practice.relatedPractices
-    .map((slug) => getPracticeBySlug(lever, slug))
-    .filter((entry): entry is NonNullable<typeof entry> => !!entry);
+  const sameLeverRelated = practice.relatedPractices
+    .map((slug) => {
+      const entry = getPracticeBySlug(lever, slug);
+      if (!entry) return null;
+      return { leverSlug: lever.slug, practiceSlug: entry.slug, name: entry.name };
+    })
+    .filter((entry): entry is { leverSlug: string; practiceSlug: string; name: string } => !!entry);
+  const crossLeverRelated = (CROSS_LEVER_RELATED[`${lever.slug}/${practice.slug}`] ?? [])
+    .map(({ leverSlug, practiceSlug }) => {
+      const relatedLever = getLeverBySlug(leverSlug);
+      if (!relatedLever) return null;
+      const relatedPractice = getPracticeBySlug(relatedLever, practiceSlug);
+      if (!relatedPractice) return null;
+      return { leverSlug: relatedLever.slug, practiceSlug: relatedPractice.slug, name: relatedPractice.name };
+    })
+    .filter((entry): entry is { leverSlug: string; practiceSlug: string; name: string } => !!entry);
+  const related = [...sameLeverRelated, ...crossLeverRelated].filter(
+    (entry, index, all) =>
+      all.findIndex(
+        (candidate) =>
+          candidate.leverSlug === entry.leverSlug && candidate.practiceSlug === entry.practiceSlug,
+      ) === index,
+  );
   const essenceParagraphs = practice.essence
     ? formatNarrativeParagraphs([practice.essence], {
         minSentencesForSplit: 4,
@@ -131,6 +189,13 @@ function PracticeDetailPage() {
                 </>
               ) : null}
             </div>
+            <p className="mt-3 text-xs text-[#b8d4e8]/70">
+              Written by{" "}
+              <Link to="/about" className="underline decoration-[#7ec8e3]/45 underline-offset-2 hover:text-white">
+                Desmond Olubunmi
+              </Link>{" "}
+              · Founder of Sunya
+            </p>
           </div>
 
           {practice.notes?.map((note, index) => {
@@ -228,15 +293,29 @@ function PracticeDetailPage() {
             </section>
           ) : null}
 
+          {lever.slug === "sleep" ? (
+            <p className="mt-6 max-w-[72ch] text-sm text-[#b8d4e8]/80">
+              Desmond has written more extensively on sleep in{" "}
+              <a
+                href="https://amzn.eu/d/0bzw0W4k"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline decoration-[#7ec8e3]/45 underline-offset-2 hover:text-white"
+              >
+                The Sleep Rhythm Reset, an Amazon #1 bestseller in its category.
+              </a>
+            </p>
+          ) : null}
+
           {related.length ? (
             <section className="mt-12 max-w-[72ch]">
               <h2 className="label-eyebrow">Related practices</h2>
               <div className="mt-4 grid gap-3 sm:grid-cols-2">
                 {related.map((item) => (
                   <Link
-                    key={item.slug}
+                    key={`${item.leverSlug}/${item.practiceSlug}`}
                     to="/practices/$leverSlug/$practiceSlug"
-                    params={{ leverSlug: lever.slug, practiceSlug: item.slug }}
+                    params={{ leverSlug: item.leverSlug, practiceSlug: item.practiceSlug }}
                     className="glass-card rounded-2xl border border-white/10 px-4 py-3 text-sm text-[#b8d4e8] hover:border-[#7ec8e3]/45 hover:text-white"
                   >
                     {item.name}

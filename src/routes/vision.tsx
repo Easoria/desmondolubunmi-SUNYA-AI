@@ -15,16 +15,19 @@ import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { Breadcrumb } from "@/components/site/Breadcrumb";
 import { EmailCapture } from "@/components/site/EmailCapture";
-import { pageMeta } from "@/lib/page-meta";
+import { buildSeoHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/vision")({
   component: VisionPage,
-  head: () => ({
-    meta: pageMeta(
-      "The Sunya Vision — A Civilisational Project",
-      "Imagine a world where every human being knows how to create wellbeing within themselves. The Sunya mission, the six arms of the ecosystem, and the legacy being built.",
-    ),
-  }),
+  head: () =>
+    buildSeoHead({
+      title: "The Sunya Vision — A Civilisational Project | Sunya",
+      description:
+        "Imagine a world where every human being knows how to create wellbeing within themselves. The Sunya mission, the six arms of the ecosystem, and the legacy being built.",
+      path: "/vision",
+      ogType: "website",
+      imageKind: "core",
+    }),
 });
 
 type EcoItem = {
@@ -41,7 +44,10 @@ const ECO: EcoItem[] = [
     c: "AI and technology in service of human wellbeing — for individuals, wellness creators, and organisations.",
     items: [
       { label: "Sunya AI →", to: "/sunya-ai" },
-      { label: "Sunya Sleep →", href: "https://sunyasleep.com/" },
+      {
+        label: "Sunya Sleep →",
+        href: "https://apps.apple.com/ie/app/sunya-sleep/id6764553926",
+      },
       { label: "Sunya Studio — Coming Soon", comingSoon: true },
     ],
   },
@@ -50,7 +56,10 @@ const ECO: EcoItem[] = [
     t: "Sunya Publishing",
     c: "Timeless written guides distilling the framework into accessible, practical wisdom.",
     items: [
-      { label: "The Sleep Rhythm Reset →", href: "https://amzn.eu/d/04G8jn0y" },
+      {
+        label: "The Sleep Rhythm Reset — an Amazon #1 bestseller in its category →",
+        href: "https://amzn.eu/d/0bzw0W4k",
+      },
       { label: "The Timeless Solution for Humanity", comingSoon: true },
     ],
   },

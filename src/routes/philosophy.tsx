@@ -7,19 +7,19 @@ import { Footer } from "@/components/site/Footer";
 import { Breadcrumb } from "@/components/site/Breadcrumb";
 import { SacredGeometry, Orbs } from "@/components/site/Decor";
 import type { LeverSlug } from "@/data/levers";
+import { buildSeoHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/philosophy")({
   component: PhilosophyPage,
-  head: () => ({
-    meta: [
-      { title: "The Sunya Philosophy — Why Humans Suffer and How They Become Free" },
-      {
-        name: "description",
-        content:
-          "Human suffering is a single structure built in a fixed order. The five links, the seven layers of being, and the twelve levers that undo it. Built on first principles, belonging to no tradition.",
-      },
-    ],
-  }),
+  head: () =>
+    buildSeoHead({
+      title: "The Sunya Philosophy — Why Humans Suffer and How They Become Free | Sunya",
+      description:
+        "Human suffering is a single structure built in a fixed order. The five links, the seven layers of being, and the twelve levers that undo it. Built on first principles, belonging to no tradition.",
+      path: "/philosophy",
+      ogType: "website",
+      imageKind: "core",
+    }),
 });
 
 type ChainLink = {

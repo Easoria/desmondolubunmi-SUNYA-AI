@@ -2,15 +2,18 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { Breadcrumb } from "@/components/site/Breadcrumb";
+import { buildSeoHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/terms")({
   component: TermsPage,
-  head: () => ({
-    meta: [
-      { title: "Terms of Service — Sunya" },
-      { name: "description", content: "The terms that govern your use of Sunya and Sunya AI." },
-    ],
-  }),
+  head: () =>
+    buildSeoHead({
+      title: "Terms of Service — Sunya",
+      description: "The terms that govern your use of Sunya and Sunya AI.",
+      path: "/terms",
+      ogType: "website",
+      imageKind: "core",
+    }),
 });
 
 function TermsPage() {

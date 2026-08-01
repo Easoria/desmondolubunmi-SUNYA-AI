@@ -4,5 +4,6 @@ Disallow: /admin
 Disallow: /dashboard
 Disallow: /account
 Disallow: /sessions
+Disallow: /booked
 
-Sitemap: https://desmondolubunmisunya.lovable.app/sitemap.xml
+Sitemap: https://www.desmondolubunmi.com/sitemap.xml

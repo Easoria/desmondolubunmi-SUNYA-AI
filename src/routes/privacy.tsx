@@ -2,15 +2,18 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { Breadcrumb } from "@/components/site/Breadcrumb";
+import { buildSeoHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/privacy")({
   component: PrivacyPage,
-  head: () => ({
-    meta: [
-      { title: "Privacy Policy — Sunya" },
-      { name: "description", content: "How Sunya collects, stores, and protects your data." },
-    ],
-  }),
+  head: () =>
+    buildSeoHead({
+      title: "Privacy Policy — Sunya",
+      description: "How Sunya collects, stores, and protects your data.",
+      path: "/privacy",
+      ogType: "website",
+      imageKind: "core",
+    }),
 });
 
 function PrivacyPage() {

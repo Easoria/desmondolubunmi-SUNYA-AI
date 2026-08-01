@@ -6,7 +6,7 @@ import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { Breadcrumb } from "@/components/site/Breadcrumb";
 import desmondImg from "@/assets/desmond.jpg";
-import { pageMeta } from "@/lib/page-meta";
+import { buildSeoHead } from "@/lib/seo";
 import {
   oneToOneBookingLeadLine,
   oneToOneBookingCtaLabel,
@@ -18,9 +18,14 @@ import {
 
 export const Route = createFileRoute("/work-with-me")({
   component: WorkPage,
-  head: () => ({
-    meta: pageMeta("Work With Desmond — 1-on-1 Sunya Sessions", oneToOneWorkDescription()),
-  }),
+  head: () =>
+    buildSeoHead({
+      title: "Work With Desmond — 1-on-1 Sunya Sessions | Sunya",
+      description: oneToOneWorkDescription(),
+      path: "/work-with-me",
+      ogType: "website",
+      imageKind: "core",
+    }),
 });
 
 const CALENDLY_URL = "https://calendly.com/easoriaai/reset_session";

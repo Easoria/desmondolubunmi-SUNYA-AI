@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Sunya Practices</title>
+  <desc id="desc">Sunya lever hub share image</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a1628" />
+      <stop offset="100%" stop-color="#274b75" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <text x="100" y="250" fill="#7ec8e3" font-family="Georgia, serif" font-size="34" letter-spacing="6">SUNYA PRACTICES</text>
+  <text x="100" y="332" fill="#ffffff" font-family="Georgia, serif" font-size="70">The Twelve Levers</text>
+  <text x="100" y="394" fill="#d8eefb" font-family="Arial, sans-serif" font-size="36">One practical system for wellbeing</text>
+</svg>

@@ -12,19 +12,19 @@ import { useSubscription } from "@/hooks/useSubscription";
 import { useAuth } from "@/hooks/use-auth";
 import { useNavigate } from "@tanstack/react-router";
 import { SUNYA_FOUNDING_PRICE_ID } from "@/lib/stripe";
+import { buildSeoHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/sunya-ai")({
   component: SunyaAIPage,
-  head: () => ({
-    meta: [
-      { title: "Sunya AI — Personal diagnostic intelligence for inner transformation" },
-      {
-        name: "description",
-        content:
-          "Describe what you're experiencing. Sunya AI diagnoses the mechanics behind it and gives you the precise tools to address it — drawn from the complete Sunya framework.",
-      },
-    ],
-  }),
+  head: () =>
+    buildSeoHead({
+      title: "Sunya AI — Personal diagnostic intelligence for inner transformation | Sunya",
+      description:
+        "Describe what you're experiencing. Sunya AI diagnoses the mechanics behind it and gives you the precise tools to address it — drawn from the complete Sunya framework.",
+      path: "/sunya-ai",
+      ogType: "website",
+      imageKind: "core",
+    }),
 });
 
 const STEPS = [

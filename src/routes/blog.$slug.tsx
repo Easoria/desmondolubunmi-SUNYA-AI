@@ -12,6 +12,7 @@ import {
 } from "@/lib/articles.functions";
 import type { PublishedArticleCard, PublishedArticleFull } from "@/lib/articles.functions";
 import { SITE_URL, formatDate } from "@/lib/blog";
+import { buildBreadcrumbSchema, buildSeoHead, canonicalUrl } from "@/lib/seo";
 
 type LoaderData = { article: PublishedArticleFull; related: PublishedArticleCard[] };
 
@@ -32,42 +33,49 @@ export const Route = createFileRoute("/blog/$slug")({
   head: ({ loaderData, params }) => {
     const a = loaderData?.article;
     const url = `${SITE_URL}/blog/${params.slug}`;
-    const title = a ? `${a.title} — Sunya` : "Article — Sunya";
+    const title = a ? `${a.title} | Sunya` : "Article | Sunya";
     const description = a?.meta_description ?? a?.excerpt ?? "";
+    const breadcrumbSchema = buildBreadcrumbSchema([
+      { name: "Blog", path: "/blog" },
+      { name: a?.title ?? "Article", path: `/blog/${params.slug}` },
+    ]);
     return {
-      meta: [
-        { title },
-        { name: "description", content: description },
-        { property: "og:title", content: title },
-        { property: "og:description", content: description },
-        { property: "og:type", content: "article" },
-        { property: "og:url", content: url },
-        ...(a?.featured_image_url
+      ...buildSeoHead({
+        title,
+        description,
+        path: `/blog/${params.slug}`,
+        ogType: "article",
+        imageKind: "blog",
+        imageUrl: a?.featured_image_url,
+      }),
+      scripts: [
+        ...(a
           ? [
-              { property: "og:image", content: a.featured_image_url },
-              { name: "twitter:image", content: a.featured_image_url },
+              {
+                type: "application/ld+json",
+                children: JSON.stringify({
+                  "@context": "https://schema.org",
+                  "@type": "Article",
+                  headline: a.title,
+                  description,
+                  image: a.featured_image_url || undefined,
+                  datePublished: a.published_at,
+                  author: {
+                    "@type": "Person",
+                    name: "Desmond Olubunmi",
+                    url: canonicalUrl("/about"),
+                  },
+                  publisher: { "@type": "Organization", name: "Sunya", url: canonicalUrl("/") },
+                  mainEntityOfPage: url,
+                }),
+              },
             ]
           : []),
+        {
+          type: "application/ld+json",
+          children: JSON.stringify(breadcrumbSchema),
+        },
       ],
-      links: [{ rel: "canonical", href: url }],
-      scripts: a
-        ? [
-            {
-              type: "application/ld+json",
-              children: JSON.stringify({
-                "@context": "https://schema.org",
-                "@type": "Article",
-                headline: a.title,
-                description,
-                image: a.featured_image_url || undefined,
-                datePublished: a.published_at,
-                author: { "@type": "Person", name: "Desmond Olubunmi" },
-                publisher: { "@type": "Organization", name: "Sunya" },
-                mainEntityOfPage: url,
-              }),
-            },
-          ]
-        : [],
     };
   },
   component: ArticlePage,

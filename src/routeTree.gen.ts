@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as Char91indexChar93RouteImport } from './routes/[index]'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as AccountRouteImport } from './routes/account'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as BookedRouteImport } from './routes/booked'
@@ -53,6 +54,11 @@ const Char91indexChar93Route = Char91indexChar93RouteImport.update({
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AccountRoute = AccountRouteImport.update({
@@ -227,6 +233,7 @@ const ApiPublicPaymentsWebhookRoute =
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/account': typeof AccountRoute
   '/blog': typeof BlogRouteWithChildren
   '/booked': typeof BookedRoute
@@ -264,6 +271,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/account': typeof AccountRoute
   '/blog': typeof BlogRouteWithChildren
   '/booked': typeof BookedRoute
@@ -302,6 +310,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/account': typeof AccountRoute
   '/blog': typeof BlogRouteWithChildren
   '/booked': typeof BookedRoute
@@ -341,6 +350,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/about'
     | '/account'
     | '/blog'
     | '/booked'
@@ -378,6 +388,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/about'
     | '/account'
     | '/blog'
     | '/booked'
@@ -415,6 +426,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/about'
     | '/account'
     | '/blog'
     | '/booked'
@@ -453,6 +465,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
   AccountRoute: typeof AccountRoute
   BlogRoute: typeof BlogRouteWithChildren
   BookedRoute: typeof BookedRoute
@@ -496,6 +509,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/account': {
@@ -794,6 +814,7 @@ const PracticesRouteWithChildren = PracticesRoute._addFileChildren(
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
   AccountRoute: AccountRoute,
   BlogRoute: BlogRouteWithChildren,
   BookedRoute: BookedRoute,

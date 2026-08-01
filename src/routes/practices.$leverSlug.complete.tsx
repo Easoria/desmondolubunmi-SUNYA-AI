@@ -2,6 +2,7 @@ import { Link, createFileRoute, notFound } from "@tanstack/react-router";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { getAllLeverPractices, getLeverBySlug } from "@/data/levers";
+import { buildBreadcrumbSchema, buildSeoHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/practices/$leverSlug/complete")({
   loader: ({ params }) => {
@@ -10,16 +11,34 @@ export const Route = createFileRoute("/practices/$leverSlug/complete")({
     return { lever };
   },
   component: CompleteLeverPage,
-  head: ({ loaderData }) => ({
-    meta: [
-      { title: `${loaderData.lever.metaTitle} — Complete` },
-      {
-        name: "description",
-        content: `Complete reader's edition of ${loaderData.lever.name}.`,
-      },
-      { name: "robots", content: "noindex, nofollow" },
-    ],
-  }),
+  head: ({ loaderData }) => {
+    const { lever } = loaderData;
+    const title = `${lever.name} Complete Reader's Edition | Sunya`;
+    const description = `Complete reader's edition of ${lever.name}.`;
+    const path = `/practices/${lever.slug}/complete`;
+    const breadcrumbSchema = buildBreadcrumbSchema([
+      { name: "Practices", path: "/practices" },
+      { name: lever.name, path: `/practices/${lever.slug}` },
+      { name: "Complete", path },
+    ]);
+
+    return {
+      ...buildSeoHead({
+        title,
+        description,
+        path,
+        ogType: "website",
+        imageKind: "lever",
+        extraMeta: [{ name: "robots", content: "noindex, follow" }],
+      }),
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify(breadcrumbSchema),
+        },
+      ],
+    };
+  },
 });
 
 function CompleteLeverPage() {

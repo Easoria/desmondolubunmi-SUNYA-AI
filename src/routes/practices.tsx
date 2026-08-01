@@ -4,6 +4,7 @@ import { Footer } from "@/components/site/Footer";
 import { Starfield } from "@/components/Starfield";
 import { getLeversInOrder, getLeverPracticeCount } from "@/data/levers";
 import type { Lever } from "@/data/levers/types";
+import { buildSeoHead, canonicalUrl } from "@/lib/seo";
 
 const INTERNAL_SLUGS = ["breath", "movement", "mind", "sound", "heart", "awareness"] as const;
 const EXTERNAL_SLUGS = [
@@ -17,16 +18,43 @@ const EXTERNAL_SLUGS = [
 
 export const Route = createFileRoute("/practices")({
   component: PracticesRoutePage,
-  head: () => ({
-    meta: [
-      { title: "The Practices — The Complete Sunya Library" },
-      {
-        name: "description",
-        content:
-          "Twelve levers arrived at from first principles: every means by which a human being can transform their wellbeing, stripped of cultural form. One hundred and twelve practices across thirteen levers.",
-      },
-    ],
-  }),
+  head: ({ matches }) => {
+    if (!matches?.length || matches[matches.length - 1]?.routeId !== "/practices") {
+      return {};
+    }
+
+    const title = "The Practices — The Complete Sunya Library | Sunya";
+    const description =
+      "Twelve levers arrived at from first principles: every means by which a human being can transform their wellbeing, stripped of cultural form. One hundred and twelve practices across thirteen levers.";
+    const levers = getLeversInOrder();
+
+    const itemListSchema = {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      itemListElement: levers.map((lever, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: lever.name,
+        url: canonicalUrl(`/practices/${lever.slug}`),
+      })),
+    };
+
+    return {
+      ...buildSeoHead({
+        title,
+        description,
+        path: "/practices",
+        ogType: "website",
+        imageKind: "lever",
+      }),
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify(itemListSchema),
+        },
+      ],
+    };
+  },
 });
 
 function PracticesRoutePage() {

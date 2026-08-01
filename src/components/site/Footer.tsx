@@ -1,10 +1,9 @@
 import { Link } from "@tanstack/react-router";
-import { Instagram, Youtube } from "lucide-react";
 
 export function Footer() {
   return (
     <footer className="border-t border-white/10 bg-[#060d1c]">
-      <div className="mx-auto grid max-w-7xl gap-8 px-6 py-12 md:grid-cols-3 md:items-center">
+      <div className="mx-auto grid max-w-7xl gap-8 px-6 py-12 md:grid-cols-2 md:items-center">
         <div>
           <div className="display text-xl tracking-[0.4em] text-white">SUNYA</div>
           <div className="mt-1 text-xs italic text-[#b8d4e8]/70">by Desmond Olubunmi</div>
@@ -15,6 +14,7 @@ export function Footer() {
           <Link to="/sunya-ai" className="hover:text-white">Sunya AI</Link>
           <Link to="/work-with-me" className="hover:text-white">Work With Me</Link>
           <Link to="/vision" className="hover:text-white">Vision</Link>
+          <Link to="/about" className="hover:text-white">About</Link>
           <Link
             to="/practices"
             className="group inline-flex items-center gap-1.5 rounded-full border border-[#7ec8e3]/40 bg-white/5 px-3 py-1 text-[#e8f4fb] shadow-[0_0_18px_-4px_rgba(126,200,227,0.55)] backdrop-blur-sm transition hover:border-[#7ec8e3]/70 hover:bg-white/10 hover:shadow-[0_0_24px_-2px_rgba(126,200,227,0.8)]"
@@ -30,19 +30,6 @@ export function Footer() {
             <span>Blog</span>
           </Link>
         </nav>
-        <div className="flex justify-start gap-3 md:justify-end">
-          {/* TODO: Replace placeholder # links with Desmond's real Instagram and TikTok URLs. */}
-          {[Instagram, Youtube].map((Ic, i) => (
-            <a
-              key={i}
-              href="#"
-              aria-label="social"
-              className="rounded-full border border-white/10 p-2.5 text-[#b8d4e8] transition hover:border-[#7ec8e3]/40 hover:text-white"
-            >
-              <Ic className="h-4 w-4" />
-            </a>
-          ))}
-        </div>
       </div>
 
       <div className="border-t border-white/5 px-6 py-6">

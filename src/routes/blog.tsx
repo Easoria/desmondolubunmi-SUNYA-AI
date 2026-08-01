@@ -8,30 +8,27 @@ import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { Breadcrumb } from "@/components/site/Breadcrumb";
 import { listPublishedArticles, type PublishedArticleCard } from "@/lib/articles.functions";
-import { ALL_TAGS, SITE_URL, formatDate } from "@/lib/blog";
+import { ALL_TAGS, formatDate } from "@/lib/blog";
+import { buildSeoHead } from "@/lib/seo";
 
 const PAGE_SIZE = 9;
 
 export const Route = createFileRoute("/blog")({
   component: BlogIndex,
-  head: () => ({
-    meta: [
-      { title: "Sunya Blog — Insights on Inner Transformation and Human Wellbeing" },
-      {
-        name: "description",
-        content:
-          "Practical insights on anxiety, nervous system regulation, breathwork, sleep, and consciousness — written by Desmond Olubunmi.",
-      },
-      { property: "og:title", content: "Sunya Blog — Insights on Inner Transformation" },
-      {
-        property: "og:description",
-        content: "Practical writing on anxiety, the nervous system, breathwork, sleep, and awareness.",
-      },
-      { property: "og:url", content: `${SITE_URL}/blog` },
-      { property: "og:type", content: "website" },
-    ],
-    links: [{ rel: "canonical", href: `${SITE_URL}/blog` }],
-  }),
+  head: ({ matches }) => {
+    if (!matches?.length || matches[matches.length - 1]?.routeId !== "/blog") {
+      return {};
+    }
+
+    return buildSeoHead({
+      title: "Sunya Blog — Insights on Inner Transformation and Human Wellbeing | Sunya",
+      description:
+        "Practical insights on anxiety, nervous system regulation, breathwork, sleep, and consciousness — written by Desmond Olubunmi.",
+      path: "/blog",
+      ogType: "website",
+      imageKind: "blog",
+    });
+  },
 });
 
 function BlogIndex() {
