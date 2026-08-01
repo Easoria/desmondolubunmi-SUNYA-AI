@@ -358,7 +358,7 @@ export const heartLever: Lever = {
       ],
       protocol: [
         {
-          text: "Part 1 — Dropping the effort to be separate Resistance is the energy expended to maintain the illusion of being an isolated entity fighting the universe. Begin by dropping it from three layers:"
+          text: "Part 1 — Dropping the effort to be separate: Resistance is the energy expended to maintain the illusion of being an isolated entity fighting the universe. Begin by dropping it from three layers:"
         },
         {
           text: "Drop the mental model: The life force knots when there is a gap between what is and what you think should be. Drop the demand. Drop the rigidity that says “this moment is wrong” or “I need to be somewhere else.” When the mental model is released, the inner noise quiets."
@@ -367,7 +367,7 @@ export const heartLever: Lever = {
           text: "Drop the armour: Over years, we hold fear and trauma by tightening the muscles and channels — building a literal shell. Let the belly go soft. Let the jaw unclench. Let the shoulders drop. Stop burning energy maintaining a fortress that is not under attack."
         },
         {
-          text: "Drop the Doer: Release the belief that “I am doing this” — that you are breathing yourself, beating your own heart. Drop the illusion of control over processes that are actually happening through you. This relaxes the separate self at its root and allows the central channel to open. Part 2 — Surrendering to the intelligence keeping you alive You are not surrendering to a foreign power or admitting defeat. You are surrendering to the intelligence of life taking charge:"
+          text: "Drop the Doer: Release the belief that “I am doing this” — that you are breathing yourself, beating your own heart. Drop the illusion of control over processes that are actually happening through you. This relaxes the separate self at its root and allows the central channel to open. Part 2 — Surrendering to the intelligence keeping you alive You are not surrendering to a foreign power or admitting defeat. You are surrendering to the intelligence of life taking charge."
         },
         {
           text: "Surrender to gravity: Physically yield the full weight of your body to the pull of the earth. Stop holding yourself up. This discharges accumulated tension instantly into the ground."

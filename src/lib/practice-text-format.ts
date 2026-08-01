@@ -111,10 +111,11 @@ export function formatProtocolStepLayout(text: string): ProtocolStepLayout {
     return { kind: "unordered-list", items: symbolBullets };
   }
 
-  // Split inline labeled segments only when they are not attached to an em-dash/hyphen
-  // lead-in (e.g. "The ignition — Bhav: ..."), which should stay unified.
+  // Split inline labeled segments only when they begin a new sentence.
+  // This avoids artificial breaks like "Drop the" + "Doer:" while still
+  // allowing true sentence-level lead-ins such as "... open. Part 2 — ...".
   const labelledSegments = clean(
-    singleLine.split(/(?<![—-])\s+(?=[A-Z][A-Za-z'’\- ]{2,60}:\s+)/),
+    singleLine.split(/(?<=[.!?])\s+(?=[A-Z][A-Za-z0-9'’()\-\/&, —–]{2,84}:\s+)/),
   );
   if (labelledSegments.length > 1) {
     return { kind: "paragraphs", items: labelledSegments };
