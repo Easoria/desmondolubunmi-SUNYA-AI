@@ -46,27 +46,6 @@ function PracticesIndexPage() {
             <h1 className="display mt-5 text-3xl text-white sm:mt-6 sm:text-6xl">
               Twelve levers. One system.
             </h1>
-            <div className="mx-auto mt-6 max-w-[700px] space-y-5 text-sm leading-relaxed text-[#b8d4e8] sm:mt-7 sm:text-base">
-              <p>
-                Beneath every tradition lies one science, working on one system in one direction.
-                This is that science gathered into its practical essence — the actual tools,
-                stripped of all cultural form, through which a human being can create lasting
-                wellbeing in themselves.
-              </p>
-              <p>
-                These twelve foundational levers were arrived at from first principles, by asking a
-                single question: what are all the possible means by which a human being can
-                transform their wellbeing? Every tradition was examined in answer — but so was
-                every therapy, every wellness practice, every modality of change. And beneath
-                their different languages and forms, they all reduced to the same small set: six
-                internal means of working on oneself, and six external conditions that support
-                wellbeing from without.
-              </p>
-            </div>
-            <p className="display mx-auto mt-10 max-w-[700px] text-2xl leading-relaxed text-[#eaf6ff] sm:text-3xl">
-              There is no means of transforming a human being that is not already among them, or
-              built from them.
-            </p>
           </div>
 
           {conservation && (
@@ -75,9 +54,6 @@ function PracticesIndexPage() {
               <h2 className="display mb-4 mt-4 text-center text-2xl text-[#f0dcc8] sm:text-3xl">
                 Conservation
               </h2>
-              <p className="mx-auto mb-6 max-w-3xl text-center text-sm text-[#dcb48d]/92 sm:text-base">
-                Before you raise more energy, stop losing the energy you have.
-              </p>
               <LeverCard lever={conservation} band="prerequisite" />
               <div className="mx-auto mt-9 h-px w-full bg-gradient-to-r from-transparent via-[#dcb48d]/40 to-transparent" />
             </div>
@@ -88,10 +64,6 @@ function PracticesIndexPage() {
             <h2 className="display mb-6 text-center text-2xl text-[#d6effb] sm:text-3xl">
               The Six Internal Levers
             </h2>
-            <p className="mx-auto mb-6 max-w-3xl text-center text-sm text-[#b8d4e8] sm:text-base">
-              Your own faculties — breath, movement, mind, sound, heart, and awareness. These are
-              the things you do.
-            </p>
             <div className="rounded-3xl border border-[#7ec8e3]/40 bg-[#7ec8e3]/[0.08] p-3 shadow-[0_0_42px_-24px_rgba(126,200,227,0.85)] sm:p-4">
               <div className="grid gap-3 sm:gap-4 md:grid-cols-2 xl:grid-cols-3">
                 {internal.map((lever, index) => (
@@ -106,10 +78,6 @@ function PracticesIndexPage() {
             <h2 className="display mb-6 text-center text-2xl text-[#f0dcc8] sm:text-3xl">
               The Six External Pillars
             </h2>
-            <p className="mx-auto mb-6 max-w-3xl text-center text-sm text-[#b8d4e8] sm:text-base">
-              Sleep, nutrition, connection, environment, nature, and sustenance. These are not
-              practices. They are the ground everything else stands on.
-            </p>
             <div className="rounded-3xl border border-[#dcb48d]/25 bg-[#dcb48d]/[0.05] p-3 sm:p-4">
               <div className="grid gap-3 sm:gap-4 md:grid-cols-2 xl:grid-cols-3">
                 {external.map((lever) => (
