@@ -7,6 +7,17 @@ const cardCols =
 
 const fullCols = "*";
 
+/** Table missing / schema not yet migrated — treat as empty, not fatal. */
+function isMissingRelation(error: { code?: string; message?: string } | null): boolean {
+  if (!error) return false;
+  return (
+    error.code === "PGRST205" ||
+    error.code === "42P01" ||
+    /could not find the table/i.test(error.message ?? "") ||
+    /relation .* does not exist/i.test(error.message ?? "")
+  );
+}
+
 export const listPublishedGatherings = createServerFn({ method: "GET" }).handler(
   async (): Promise<GatheringCard[]> => {
     const { data, error } = await supabaseAdmin
@@ -14,7 +25,10 @@ export const listPublishedGatherings = createServerFn({ method: "GET" }).handler
       .select(cardCols)
       .eq("published", true)
       .order("starts_at", { ascending: true });
-    if (error) throw new Error(error.message);
+    if (error) {
+      if (isMissingRelation(error)) return [];
+      throw new Error(error.message);
+    }
     return (data ?? []) as GatheringCard[];
   },
 );
@@ -30,7 +44,10 @@ export const getNextUpcomingGathering = createServerFn({ method: "GET" }).handle
       .order("starts_at", { ascending: true })
       .limit(1)
       .maybeSingle();
-    if (error) throw new Error(error.message);
+    if (error) {
+      if (isMissingRelation(error)) return null;
+      throw new Error(error.message);
+    }
     return (data as GatheringCard | null) ?? null;
   },
 );
@@ -44,7 +61,10 @@ export const getPublishedGatheringBySlug = createServerFn({ method: "GET" })
       .eq("slug", data.slug)
       .eq("published", true)
       .maybeSingle();
-    if (error) throw new Error(error.message);
+    if (error) {
+      if (isMissingRelation(error)) return null;
+      throw new Error(error.message);
+    }
     return (row as Gathering | null) ?? null;
   });
 
@@ -56,7 +76,10 @@ export const getGatheringBySlugForPreview = createServerFn({ method: "GET" })
       .select(fullCols)
       .eq("slug", data.slug)
       .maybeSingle();
-    if (error) throw new Error(error.message);
+    if (error) {
+      if (isMissingRelation(error)) return null;
+      throw new Error(error.message);
+    }
     return (row as Gathering | null) ?? null;
   });
 
@@ -74,7 +97,10 @@ export const listRelatedGatherings = createServerFn({ method: "GET" })
       .gte("starts_at", now)
       .order("starts_at", { ascending: true })
       .limit(limit);
-    if (upErr) throw new Error(upErr.message);
+    if (upErr) {
+      if (isMissingRelation(upErr)) return [];
+      throw new Error(upErr.message);
+    }
 
     const rows = (upcoming ?? []) as GatheringCard[];
     if (rows.length >= limit) return rows;
@@ -87,7 +113,10 @@ export const listRelatedGatherings = createServerFn({ method: "GET" })
       .lt("starts_at", now)
       .order("starts_at", { ascending: false })
       .limit(limit - rows.length);
-    if (pastErr) throw new Error(pastErr.message);
+    if (pastErr) {
+      if (isMissingRelation(pastErr)) return rows;
+      throw new Error(pastErr.message);
+    }
 
     return [...rows, ...((past ?? []) as GatheringCard[])];
   });
@@ -99,7 +128,10 @@ export const listSitemapGatherings = createServerFn({ method: "GET" }).handler(
       .select("slug, updated_at, starts_at")
       .eq("published", true)
       .order("starts_at", { ascending: false });
-    if (error) throw new Error(error.message);
+    if (error) {
+      if (isMissingRelation(error)) return [];
+      throw new Error(error.message);
+    }
     return data ?? [];
   },
 );
