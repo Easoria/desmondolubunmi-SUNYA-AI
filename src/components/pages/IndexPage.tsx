@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
+import { useQuery } from "@tanstack/react-query";
+import { useServerFn } from "@tanstack/react-start";
 import { ArrowRight, ArrowUpRight, ChevronDown } from "lucide-react";
 import { Starfield } from "@/components/Starfield";
 import { SunyaAI } from "@/components/SunyaAI";
@@ -7,6 +9,11 @@ import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { Orbs, SacredGeometry } from "@/components/site/Decor";
 import { useSubscription } from "@/hooks/useSubscription";
+import { getNextUpcomingGathering } from "@/lib/gatherings.functions";
+import {
+  formatGatheringCardWhen,
+  gatheringLocationLine,
+} from "@/lib/gatherings";
 import desmondImg from "@/assets/desmond.jpg";
 
 function useSunyaCtaLabel(freeSuffix = "") {
@@ -418,6 +425,39 @@ function About() {
   );
 }
 
+function NextGathering() {
+  const fetchNext = useServerFn(getNextUpcomingGathering);
+  const { data: gathering, isLoading } = useQuery({
+    queryKey: ["gatherings", "next-upcoming"],
+    queryFn: () => fetchNext(),
+  });
+
+  if (isLoading || !gathering) return null;
+
+  const location = gatheringLocationLine(gathering);
+
+  return (
+    <section className="relative overflow-hidden bg-[#0a1628] py-20">
+      <div className="relative z-10 mx-auto max-w-3xl px-6 text-center">
+        <div className="label-eyebrow">Next gathering</div>
+        <p className="mt-5 font-display text-lg tracking-wide text-white sm:text-xl">
+          {formatGatheringCardWhen(gathering.starts_at, gathering.timezone)} · {gathering.title}
+        </p>
+        {location ? (
+          <p className="mt-3 text-sm text-[#b8d4e8]/80">{location}</p>
+        ) : null}
+        <Link
+          to="/gatherings/$slug"
+          params={{ slug: gathering.slug }}
+          className="mt-6 inline-flex text-sm text-[#7ec8e3] transition hover:text-white"
+        >
+          Details →
+        </Link>
+      </div>
+    </section>
+  );
+}
+
 function FinalCTA() {
   const ctaLabel = useSunyaCtaLabel();
   return (
@@ -458,6 +498,7 @@ export function IndexPage() {
         <Reframe />
         <AITeaser />
         <About />
+        <NextGathering />
         <FinalCTA />
       </main>
       <Footer />

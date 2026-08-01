@@ -29,6 +29,7 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/terms", lastmod: generatedAt, changefreq: "yearly", priority: "0.5" },
           { path: "/work-with-me", lastmod: generatedAt, changefreq: "monthly", priority: "0.8" },
           { path: "/vision", lastmod: generatedAt, changefreq: "monthly", priority: "0.8" },
+          { path: "/gatherings", lastmod: generatedAt, changefreq: "weekly", priority: "0.8" },
           { path: "/blog", lastmod: generatedAt, changefreq: "weekly", priority: "0.7" },
         ];
 
@@ -73,7 +74,31 @@ export const Route = createFileRoute("/sitemap.xml")({
           priority: "0.7",
         }));
 
-        const all = [...staticEntries, ...essayEntries, ...practiceEntries, ...dynamic];
+        let gatherings: Array<{ slug: string; updated_at: string | null; starts_at: string }> = [];
+        try {
+          const { data } = await supabaseAdmin
+            .from("gatherings")
+            .select("slug, updated_at, starts_at")
+            .eq("published", true);
+          gatherings = data ?? [];
+        } catch (error) {
+          console.warn("Sitemap: skipping gatherings fetch due to missing Supabase admin env.", error);
+        }
+
+        const gatheringEntries: SitemapEntry[] = gatherings.map((g) => ({
+          path: `/gatherings/${g.slug}`,
+          lastmod: (g.updated_at ?? g.starts_at ?? generatedAt) as string,
+          changefreq: "monthly",
+          priority: "0.75",
+        }));
+
+        const all = [
+          ...staticEntries,
+          ...essayEntries,
+          ...practiceEntries,
+          ...dynamic,
+          ...gatheringEntries,
+        ];
 
         const urls = all
           .map((e) =>

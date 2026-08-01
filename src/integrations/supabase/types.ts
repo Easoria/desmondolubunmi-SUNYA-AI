@@ -62,6 +62,93 @@ export type Database = {
         }
         Relationships: []
       }
+      gatherings: {
+        Row: {
+          address: string | null
+          capacity_note: string | null
+          city: string | null
+          created_at: string
+          description: string
+          ends_at: string | null
+          featured_image_url: string | null
+          format: string
+          id: string
+          latitude: number | null
+          longitude: number | null
+          platform: string | null
+          practical_notes: string | null
+          price_label: string | null
+          published: boolean
+          registration_platform: string | null
+          registration_url: string | null
+          slug: string
+          starts_at: string
+          subtitle: string | null
+          timezone: string
+          title: string
+          updated_at: string
+          venue_name: string | null
+          what_to_expect: string | null
+          who_its_for: string | null
+        }
+        Insert: {
+          address?: string | null
+          capacity_note?: string | null
+          city?: string | null
+          created_at?: string
+          description?: string
+          ends_at?: string | null
+          featured_image_url?: string | null
+          format: string
+          id?: string
+          latitude?: number | null
+          longitude?: number | null
+          platform?: string | null
+          practical_notes?: string | null
+          price_label?: string | null
+          published?: boolean
+          registration_platform?: string | null
+          registration_url?: string | null
+          slug: string
+          starts_at: string
+          subtitle?: string | null
+          timezone?: string
+          title: string
+          updated_at?: string
+          venue_name?: string | null
+          what_to_expect?: string | null
+          who_its_for?: string | null
+        }
+        Update: {
+          address?: string | null
+          capacity_note?: string | null
+          city?: string | null
+          created_at?: string
+          description?: string
+          ends_at?: string | null
+          featured_image_url?: string | null
+          format?: string
+          id?: string
+          latitude?: number | null
+          longitude?: number | null
+          platform?: string | null
+          practical_notes?: string | null
+          price_label?: string | null
+          published?: boolean
+          registration_platform?: string | null
+          registration_url?: string | null
+          slug?: string
+          starts_at?: string
+          subtitle?: string | null
+          timezone?: string
+          title?: string
+          updated_at?: string
+          venue_name?: string | null
+          what_to_expect?: string | null
+          who_its_for?: string | null
+        }
+        Relationships: []
+      }
       fingerprint_sessions: {
         Row: {
           last_seen: string
