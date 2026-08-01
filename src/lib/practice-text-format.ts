@@ -89,6 +89,15 @@ export function formatProtocolStepLayout(text: string): ProtocolStepLayout {
 
   const singleLine = normalizeInline(normalized);
 
+  const timelineSegments = clean(
+    singleLine.split(
+      /\s+(?=(?:\d{1,3}\s*(?:minute|minutes|hour|hours)\s+(?:before|after)\s+[A-Za-z][^:]{0,36}:))/i,
+    ),
+  );
+  if (timelineSegments.length > 1) {
+    return { kind: "paragraphs", items: timelineSegments };
+  }
+
   const numbered = clean(singleLine.split(/\s*(?=\d+[\).]\s+)/));
   if (numbered.length > 1 && /^\d+[\).]\s+/.test(numbered[0])) {
     return {
@@ -104,12 +113,7 @@ export function formatProtocolStepLayout(text: string): ProtocolStepLayout {
 
   const labelledSegments = clean(singleLine.split(/\s+(?=[A-Z][A-Za-z'’\- ]{2,60}:\s+)/));
   if (labelledSegments.length > 1) {
-    return { kind: "unordered-list", items: labelledSegments };
-  }
-
-  const semicolonSegments = clean(singleLine.split(/;\s+/));
-  if (semicolonSegments.length > 1) {
-    return { kind: "unordered-list", items: semicolonSegments };
+    return { kind: "paragraphs", items: labelledSegments };
   }
 
   const paragraphChunks = formatNarrativeParagraphs([singleLine], {
