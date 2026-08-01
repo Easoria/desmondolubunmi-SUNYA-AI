@@ -1,0 +1,64 @@
+{
+  "essayWordCounts": {
+    "before-anything-existed": {
+      "actual": 597,
+      "target": 620
+    },
+    "how-consciousness-becomes-world": {
+      "actual": 996,
+      "target": 990
+    },
+    "the-great-forgetting": {
+      "actual": 510,
+      "target": 490
+    },
+    "what-limitation-makes-possible": {
+      "actual": 432,
+      "target": 415
+    },
+    "the-three-shadows": {
+      "actual": 611,
+      "target": 585
+    },
+    "the-three-forces": {
+      "actual": 980,
+      "target": 940
+    },
+    "a-first-glimpse-of-freedom": {
+      "actual": 402,
+      "target": 380
+    },
+    "the-energy-body": {
+      "actual": 2775,
+      "target": 2650
+    },
+    "the-golden-cage": {
+      "actual": 339,
+      "target": 320
+    },
+    "one-truth-many-religions": {
+      "actual": 1974,
+      "target": 2370
+    },
+    "what-actually-changes": {
+      "actual": 693,
+      "target": 780
+    },
+    "the-grand-return": {
+      "actual": 944,
+      "target": 910
+    }
+  },
+  "unplacedRange1": [
+    "The Biological Tax — The Ground Beneath It All",
+    "The First Link — Unconsciousness",
+    "The Second Link — Identification and the Separate Self",
+    "The Third Link — Resistance",
+    "The Fourth Link — Energetic Contraction",
+    "The Fifth Link — Chronic Insufficiency",
+    "The Reversal — How the Chain Unwinds",
+    "The Twelve Levers"
+  ],
+  "unplacedRange2": [],
+  "parsedSectionCount": 73
+}
