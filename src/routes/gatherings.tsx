@@ -1,19 +1,21 @@
 import { createFileRoute, Outlet, useRouterState } from "@tanstack/react-router";
+import { useQuery } from "@tanstack/react-query";
 import { useMemo } from "react";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { Breadcrumb } from "@/components/site/Breadcrumb";
 import { GatheringCard } from "@/components/gatherings/GatheringCard";
 import { GatheringInterestCapture } from "@/components/gatherings/GatheringInterestCapture";
-import { listPublishedGatherings } from "@/lib/gatherings.functions";
+import { DUBLIN_GATHERING_CARD } from "@/data/gatherings/dublin-seed";
+import { fetchPublishedGatheringsClient } from "@/lib/gatherings-browser";
 import { isGatheringUpcoming, type GatheringCard as GatheringCardData } from "@/lib/gatherings";
 import { buildSeoHead, canonicalUrl } from "@/lib/seo";
 
 export const Route = createFileRoute("/gatherings")({
-  loader: async (): Promise<{ gatherings: GatheringCardData[] }> => {
-    const gatherings = await listPublishedGatherings();
-    return { gatherings };
-  },
+  // Instant SSR shell — Vercel→Supabase often hangs; browser anon reads are fast.
+  loader: async (): Promise<{ gatherings: GatheringCardData[] }> => ({
+    gatherings: [DUBLIN_GATHERING_CARD],
+  }),
   head: ({ matches, loaderData }) => {
     if (!matches?.length || matches[matches.length - 1]?.routeId !== "/gatherings") {
       return {};
@@ -65,7 +67,15 @@ function GatheringsRoutePage() {
 }
 
 function GatheringsIndexPage() {
-  const { gatherings } = Route.useLoaderData();
+  const { gatherings: initial } = Route.useLoaderData();
+  const { data: gatherings = initial } = useQuery({
+    queryKey: ["gatherings", "published"],
+    queryFn: fetchPublishedGatheringsClient,
+    // Seed paints instantly; mark stale so browser Supabase refreshes immediately.
+    initialData: initial,
+    initialDataUpdatedAt: 0,
+    staleTime: 60_000,
+  });
 
   const { upcoming, past } = useMemo(() => {
     const now = new Date();

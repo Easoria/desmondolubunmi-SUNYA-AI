@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
-import { useServerFn } from "@tanstack/react-start";
 import { ArrowRight, ArrowUpRight, ChevronDown } from "lucide-react";
 import { Starfield } from "@/components/Starfield";
 import { SunyaAI } from "@/components/SunyaAI";
@@ -10,7 +9,7 @@ import { Footer } from "@/components/site/Footer";
 import { EmailCapture } from "@/components/site/EmailCapture";
 import { Orbs, SacredGeometry } from "@/components/site/Decor";
 import { useSubscription } from "@/hooks/useSubscription";
-import { getNextUpcomingGathering } from "@/lib/gatherings.functions";
+import { fetchNextUpcomingGatheringClient } from "@/lib/gatherings-browser";
 import {
   formatGatheringCardWhen,
   gatheringLocationLine,
@@ -424,10 +423,10 @@ function About() {
 }
 
 function NextGathering() {
-  const fetchNext = useServerFn(getNextUpcomingGathering);
   const { data: gathering, isLoading } = useQuery({
     queryKey: ["gatherings", "next-upcoming"],
-    queryFn: () => fetchNext(),
+    queryFn: fetchNextUpcomingGatheringClient,
+    staleTime: 60_000,
   });
 
   if (isLoading || !gathering) return null;
