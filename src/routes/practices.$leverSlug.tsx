@@ -10,7 +10,6 @@ import {
   getPreviousAndNextLevers,
 } from "@/data/levers";
 import type { LeverSlug } from "@/data/levers";
-import { leverHubPath } from "@/lib/practice-library";
 
 export const Route = createFileRoute("/practices/$leverSlug")({
   loader: ({ params }) => {
@@ -136,13 +135,18 @@ function LeverHubPage() {
 
           <div className="mt-12 grid gap-3 text-sm text-[#b8d4e8] sm:mt-14 sm:grid-cols-2 sm:gap-4">
             {previous ? (
-              <Link to={leverHubPath(previous.slug)} className="glass-card px-4 py-3 hover:text-white">
+              <Link
+                to="/practices/$leverSlug"
+                params={{ leverSlug: previous.slug }}
+                className="glass-card px-4 py-3 hover:text-white"
+              >
                 ← Lever {String(previous.number).padStart(2, "0")} · {previous.name}
               </Link>
             ) : null}
             {next ? (
               <Link
-                to={leverHubPath(next.slug)}
+                to="/practices/$leverSlug"
+                params={{ leverSlug: next.slug }}
                 className="glass-card px-4 py-3 text-right hover:text-white"
               >
                 Lever {String(next.number).padStart(2, "0")} · {next.name} →

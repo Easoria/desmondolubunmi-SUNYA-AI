@@ -4,7 +4,6 @@ import { Footer } from "@/components/site/Footer";
 import { Starfield } from "@/components/Starfield";
 import { getLeversInOrder, getLeverPracticeCount } from "@/data/levers";
 import type { Lever } from "@/data/levers/types";
-import { leverHubPath } from "@/lib/practice-library";
 
 const INTERNAL_SLUGS = ["breath", "movement", "mind", "sound", "heart", "awareness"] as const;
 const EXTERNAL_SLUGS = [
@@ -148,7 +147,12 @@ function LeverCard({
   const summary = lever.summaryLine ?? lever.intro[0];
 
   return (
-    <Link to={leverHubPath(lever.slug)} className={className} style={style}>
+    <Link
+      to="/practices/$leverSlug"
+      params={{ leverSlug: lever.slug }}
+      className={className}
+      style={style}
+    >
       <div className="pointer-events-none absolute right-3 top-2 font-display text-3xl text-[#7ec8e3]/18 sm:text-4xl">
         {number}
       </div>
