@@ -177,7 +177,7 @@ function GatheringPage() {
           <div className="mt-10 -mx-6 sm:mx-0">
             <img
               src={gathering.featured_image_url}
-              alt=""
+              alt={gathering.title}
               className="h-auto w-full object-cover sm:rounded-none"
             />
           </div>

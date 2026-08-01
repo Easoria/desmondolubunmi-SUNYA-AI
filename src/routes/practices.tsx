@@ -23,9 +23,9 @@ export const Route = createFileRoute("/practices")({
       return {};
     }
 
-    const title = "The Practices — The Complete Sunya Library | Sunya";
+    const title = "The Practices — Conservation + 12 Levers, 112 Techniques | Sunya";
     const description =
-      "Twelve levers arrived at from first principles: every means by which a human being can transform their wellbeing, stripped of cultural form. One hundred and twelve practices across thirteen levers.";
+      "Conservation plus twelve levers arrived at from first principles: every means by which a human being can transform their wellbeing, stripped of cultural form. 112 practices across the complete Sunya library.";
     const levers = getLeversInOrder();
 
     const itemListSchema = {

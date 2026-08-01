@@ -86,8 +86,11 @@ export const Route = createFileRoute("/writing/$slug")({
                     headline: a.title,
                     description,
                     datePublished: a.published_at,
+                    dateModified: a.published_at,
                     articleSection: sectionLabel,
                     sectionName: "Writing",
+                    path,
+                    imageUrl: a.featured_image_url,
                   }),
                 ),
               },
@@ -166,7 +169,7 @@ function WritingArticlePage() {
           <div className="mt-10 overflow-hidden">
             <img
               src={article.featured_image_url}
-              alt=""
+              alt={article.title}
               className="h-auto w-full object-cover"
             />
           </div>

@@ -6,8 +6,6 @@ import {
   useRouterState,
 } from "@tanstack/react-router";
 import { useMemo } from "react";
-import { useQuery } from "@tanstack/react-query";
-import { useServerFn } from "@tanstack/react-start";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { Breadcrumb } from "@/components/site/Breadcrumb";
@@ -20,7 +18,7 @@ import {
   type WritingCategory,
   writingCategoryLabel,
 } from "@/lib/writing";
-import { buildSeoHead } from "@/lib/seo";
+import { buildSeoHead, canonicalUrl } from "@/lib/seo";
 
 const PAGE_SIZE = 9;
 
@@ -42,25 +40,56 @@ export const Route = createFileRoute("/writing")({
     const page = Number.isFinite(pageNum) && pageNum > 1 ? Math.floor(pageNum) : undefined;
     return { category, page };
   },
+  loaderDeps: ({ search }: { search: WritingSearch }) => ({
+    category: search.category,
+  }),
+  loader: async ({
+    deps,
+  }: {
+    deps: { category?: WritingCategory };
+  }): Promise<{ articles: PublishedArticleCard[] }> => {
+    const articles = await listPublishedArticles({
+      data: deps.category ? { category: deps.category } : {},
+    });
+    return { articles };
+  },
   head: ({ matches, search }) => {
     if (!matches?.length || matches[matches.length - 1]?.routeId !== "/writing") {
       return {};
     }
 
     const category = search?.category;
-    const path = category ? `/writing?category=${category}` : "/writing";
     const label = category ? WRITING_CATEGORY_LABELS[category] : null;
+    // Canonical stays on /writing so category filters don't create thin duplicates.
+    const path = "/writing";
 
-    return buildSeoHead({
-      title: label
-        ? `${label} — Writing — Desmond Olubunmi`
-        : "Writing — Desmond Olubunmi",
-      description:
-        "Writing on consciousness, inner practice, and the world. New pieces from Desmond Olubunmi, founder of Sunya.",
-      path,
-      ogType: "website",
-      imageKind: "blog",
-    });
+    const itemListSchema = {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      name: label ? `${label} — Writing` : "Writing — Desmond Olubunmi",
+      itemListOrder: "https://schema.org/ItemListUnordered",
+      url: canonicalUrl(path),
+    };
+
+    return {
+      ...buildSeoHead({
+        title: label
+          ? `${label} Writing — Desmond Olubunmi | Sunya`
+          : "Writing — Consciousness, Practice, and the World | Sunya",
+        description: label
+          ? `${label} writing from Desmond Olubunmi, founder of Sunya — on consciousness, inner practice, and the world.`
+          : "Writing on consciousness, inner practice, and the world. New pieces from Desmond Olubunmi, founder of Sunya.",
+        path,
+        ogType: "website",
+        imageKind: "blog",
+      }),
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify(itemListSchema),
+        },
+      ],
+    };
   },
   component: WritingRoutePage,
 });
@@ -79,12 +108,8 @@ function WritingRoutePage() {
 
 function WritingIndexPage() {
   const { category, page: pageParam } = Route.useSearch();
+  const { articles } = Route.useLoaderData();
   const navigate = useNavigate({ from: "/writing" });
-  const fetchArticles = useServerFn(listPublishedArticles);
-  const { data: articles = [], isLoading } = useQuery({
-    queryKey: ["writing", "published", category ?? "all"],
-    queryFn: () => fetchArticles({ data: category ? { category } : {} }),
-  });
 
   const totalPages = Math.max(1, Math.ceil(articles.length / PAGE_SIZE));
   const currentPage = Math.min(pageParam ?? 1, totalPages);
@@ -168,9 +193,7 @@ function WritingIndexPage() {
         </div>
 
         <section className="mt-10">
-          {isLoading ? (
-            <div className="py-20 text-center text-sm text-[#b8d4e8]/60">Loading…</div>
-          ) : articles.length === 0 ? (
+          {articles.length === 0 ? (
             <div className="py-20 text-center text-sm text-[#b8d4e8]/70">
               Nothing here yet.
             </div>
@@ -228,7 +251,7 @@ function ArticleCard({ article }: { article: PublishedArticleCard }) {
         <div className="mb-5 overflow-hidden">
           <img
             src={article.featured_image_url}
-            alt=""
+            alt={article.title}
             loading="lazy"
             className="aspect-[16/10] w-full object-cover transition duration-500 group-hover:scale-[1.015]"
           />

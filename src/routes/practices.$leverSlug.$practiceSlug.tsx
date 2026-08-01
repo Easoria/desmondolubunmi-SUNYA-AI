@@ -16,6 +16,7 @@ import {
   buildPracticeMetaDescription,
   buildPracticeMetaTitle,
   buildSeoHead,
+  canonicalUrl,
   parseDurationToIso,
 } from "@/lib/seo";
 
@@ -72,6 +73,8 @@ export const Route = createFileRoute("/practices/$leverSlug/$practiceSlug")({
       headline: title,
       description,
       sectionName: lever.name,
+      path,
+      imageUrl: canonicalUrl("/og/practice.jpg"),
     });
     const breadcrumbSchema = buildBreadcrumbSchema([
       { name: "Practices", path: "/practices" },

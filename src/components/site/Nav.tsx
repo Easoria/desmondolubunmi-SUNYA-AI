@@ -7,7 +7,10 @@ import { oneToOneNavLabel } from "@/lib/one-to-one-offer";
 
 const NAV = [
   { label: "Philosophy", to: "/philosophy" as const },
+  { label: "Timeless Solution", to: "/timeless-solution" as const },
   { label: "Practices", to: "/practices" as const },
+  { label: "Writing", to: "/writing" as const },
+  { label: "Gatherings", to: "/gatherings" as const },
   { label: oneToOneNavLabel(), to: "/work-with-me" as const },
   { label: "Vision", to: "/vision" as const },
 ];

@@ -6,8 +6,9 @@ import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { Breadcrumb } from "@/components/site/Breadcrumb";
 import desmondImg from "@/assets/desmond.jpg";
-import { buildSeoHead } from "@/lib/seo";
+import { buildSeoHead, buildServiceSchema } from "@/lib/seo";
 import {
+  ONE_TO_ONE_OFFER,
   oneToOneBookingLeadLine,
   oneToOneBookingCtaLabel,
   oneToOneHeroOfferLine,
@@ -18,14 +19,29 @@ import {
 
 export const Route = createFileRoute("/work-with-me")({
   component: WorkPage,
-  head: () =>
-    buildSeoHead({
+  head: () => ({
+    ...buildSeoHead({
       title: "Work With Desmond — 1-on-1 Sunya Sessions | Sunya",
       description: oneToOneWorkDescription(),
       path: "/work-with-me",
       ogType: "website",
       imageKind: "core",
     }),
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(
+          buildServiceSchema({
+            name: "1-on-1 Sunya Session with Desmond Olubunmi",
+            description: oneToOneWorkDescription(),
+            path: "/work-with-me",
+            price: ONE_TO_ONE_OFFER.free ? 0 : ONE_TO_ONE_OFFER.priceEur,
+            durationMinutes: ONE_TO_ONE_OFFER.durationMinutes,
+          }),
+        ),
+      },
+    ],
+  }),
 });
 
 const CALENDLY_URL = "https://calendly.com/easoriaai/reset_session";

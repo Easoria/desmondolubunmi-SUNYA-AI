@@ -3,10 +3,10 @@ import type { Lever, Practice } from "@/data/levers/types";
 export const CANONICAL_ORIGIN = "https://www.desmondolubunmi.com";
 
 const FALLBACK_OG_IMAGE_BY_KIND = {
-  core: "/og/core.svg",
-  lever: "/og/lever.svg",
-  practice: "/og/practice.svg",
-  blog: "/og/practice.svg",
+  core: "/og/core.jpg",
+  lever: "/og/lever.jpg",
+  practice: "/og/practice.jpg",
+  blog: "/og/practice.jpg",
 } as const;
 
 const SUNYA_TITLE_SUFFIX = /\s*\|\s*Sunya\s*$/i;
@@ -77,6 +77,8 @@ export function buildSeoHead({
       { property: "og:site_name", content: "Sunya" },
       { property: "og:locale", content: "en_IE" },
       { property: "og:image", content: ogImage },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: socialTitle },
       { name: "twitter:description", content: description },
@@ -179,14 +181,21 @@ export function buildArticleSchema({
   description,
   sectionName,
   datePublished,
+  dateModified,
   articleSection,
+  path,
+  imageUrl,
 }: {
   headline: string;
   description: string;
   sectionName?: string;
   datePublished?: string | null;
+  dateModified?: string | null;
   articleSection?: string;
+  path?: string;
+  imageUrl?: string | null;
 }) {
+  const url = path ? canonicalUrl(path) : undefined;
   return {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -201,8 +210,23 @@ export function buildArticleSchema({
       "@type": "Organization",
       name: "Sunya",
       url: CANONICAL_ORIGIN,
+      logo: {
+        "@type": "ImageObject",
+        url: canonicalUrl("/og/core.jpg"),
+      },
     },
+    ...(url
+      ? {
+          url,
+          mainEntityOfPage: {
+            "@type": "WebPage",
+            "@id": url,
+          },
+        }
+      : {}),
+    ...(imageUrl ? { image: [imageUrl] } : { image: [canonicalUrl("/og/practice.jpg")] }),
     ...(datePublished ? { datePublished } : {}),
+    ...(dateModified ? { dateModified } : datePublished ? { dateModified: datePublished } : {}),
     ...(articleSection ? { articleSection } : {}),
     ...(sectionName
       ? {
@@ -211,6 +235,80 @@ export function buildArticleSchema({
             name: sectionName,
           },
         }
+      : {}),
+  };
+}
+
+export function buildFaqSchema(items: Array<{ q: string; a: string }>) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.a,
+      },
+    })),
+  };
+}
+
+export function buildWebSiteSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Sunya",
+    alternateName: ["Desmond Olubunmi", "Sunya by Desmond Olubunmi"],
+    url: CANONICAL_ORIGIN,
+    description:
+      "A complete, practical framework for human wellbeing — rooted in the timeless mechanics of consciousness.",
+    inLanguage: "en-IE",
+    publisher: {
+      "@type": "Organization",
+      name: "Sunya",
+      url: CANONICAL_ORIGIN,
+    },
+  };
+}
+
+export function buildServiceSchema({
+  name,
+  description,
+  path,
+  price,
+  priceCurrency = "EUR",
+  durationMinutes,
+}: {
+  name: string;
+  description: string;
+  path: string;
+  price: number;
+  priceCurrency?: string;
+  durationMinutes?: number;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name,
+    description,
+    url: canonicalUrl(path),
+    provider: {
+      "@type": "Person",
+      name: "Desmond Olubunmi",
+      url: canonicalUrl("/about"),
+    },
+    areaServed: "Worldwide",
+    serviceType: "1-on-1 spiritual diagnostic session",
+    offers: {
+      "@type": "Offer",
+      price: String(price),
+      priceCurrency,
+      availability: "https://schema.org/InStock",
+      url: canonicalUrl(path),
+    },
+    ...(durationMinutes
+      ? { termsOfService: `${durationMinutes}-minute private session` }
       : {}),
   };
 }
@@ -236,6 +334,7 @@ export const PERSON_SCHEMA = {
   description:
     "Founder of Sunya, a universal system for inner transformation. Author of The Sleep Rhythm Reset, an Amazon #1 bestseller in its category.",
   url: canonicalUrl("/about"),
+  image: canonicalUrl("/og/core.jpg"),
   sameAs: [
     "https://amzn.eu/d/0bzw0W4k",
     "https://apps.apple.com/ie/app/sunya-sleep/id6764553926",
@@ -246,5 +345,18 @@ export const ORGANIZATION_SCHEMA = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Sunya",
+  legalName: "Sunya",
   url: CANONICAL_ORIGIN,
+  logo: canonicalUrl("/og/core.jpg"),
+  description:
+    "A universal system for inner transformation — philosophy, practices, gatherings, writing, and Sunya AI.",
+  founder: {
+    "@type": "Person",
+    name: "Desmond Olubunmi",
+    url: canonicalUrl("/about"),
+  },
+  sameAs: [
+    "https://amzn.eu/d/0bzw0W4k",
+    "https://apps.apple.com/ie/app/sunya-sleep/id6764553926",
+  ],
 };

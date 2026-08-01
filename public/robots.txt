@@ -5,5 +5,11 @@ Disallow: /dashboard
 Disallow: /account
 Disallow: /sessions
 Disallow: /booked
+Disallow: /login
+Disallow: /forgot-password
+Disallow: /reset-password
+Disallow: /checkout
+Disallow: /join
+Disallow: /api/
 
 Sitemap: https://www.desmondolubunmi.com/sitemap.xml

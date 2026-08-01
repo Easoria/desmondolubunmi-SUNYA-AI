@@ -7,26 +7,47 @@ import { GatheringCard } from "@/components/gatherings/GatheringCard";
 import { GatheringInterestCapture } from "@/components/gatherings/GatheringInterestCapture";
 import { listPublishedGatherings } from "@/lib/gatherings.functions";
 import { isGatheringUpcoming, type GatheringCard as GatheringCardData } from "@/lib/gatherings";
-import { buildSeoHead } from "@/lib/seo";
+import { buildSeoHead, canonicalUrl } from "@/lib/seo";
 
 export const Route = createFileRoute("/gatherings")({
   loader: async (): Promise<{ gatherings: GatheringCardData[] }> => {
     const gatherings = await listPublishedGatherings();
     return { gatherings };
   },
-  head: ({ matches }) => {
+  head: ({ matches, loaderData }) => {
     if (!matches?.length || matches[matches.length - 1]?.routeId !== "/gatherings") {
       return {};
     }
 
-    return buildSeoHead({
-      title: "Gatherings — In Person and Online with Desmond Olubunmi",
-      description:
-        "Small gatherings in Dublin and online for people curious about consciousness, inner life, and genuine human connection. Free and open to anyone.",
-      path: "/gatherings",
-      ogType: "website",
-      imageKind: "core",
-    });
+    const gatherings = loaderData?.gatherings ?? [];
+    const itemListSchema = {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      name: "Sunya Gatherings",
+      itemListElement: gatherings.map((g, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: g.title,
+        url: canonicalUrl(`/gatherings/${g.slug}`),
+      })),
+    };
+
+    return {
+      ...buildSeoHead({
+        title: "Gatherings in Dublin & Online — Desmond Olubunmi | Sunya",
+        description:
+          "Small gatherings in Dublin and online for people curious about consciousness, inner life, and genuine human connection. Free and open to anyone.",
+        path: "/gatherings",
+        ogType: "website",
+        imageKind: "core",
+      }),
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify(itemListSchema),
+        },
+      ],
+    };
   },
   component: GatheringsRoutePage,
 });

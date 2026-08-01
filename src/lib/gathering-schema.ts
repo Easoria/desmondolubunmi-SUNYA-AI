@@ -2,6 +2,7 @@ import type { Gathering } from "@/lib/gatherings";
 import {
   firstMarkdownParagraph,
   gatheringLocationLine,
+  isGatheringUpcoming,
   parsePriceForSchema,
 } from "@/lib/gatherings";
 import { canonicalUrl } from "@/lib/seo";
@@ -9,6 +10,7 @@ import { canonicalUrl } from "@/lib/seo";
 export function buildGatheringEventSchema(gathering: Gathering) {
   const description = firstMarkdownParagraph(gathering.description);
   const isOnline = gathering.format === "online";
+  const upcoming = isGatheringUpcoming(gathering);
   const price = gathering.registration_url
     ? parsePriceForSchema(gathering.price_label)
     : null;
@@ -48,7 +50,9 @@ export function buildGatheringEventSchema(gathering: Gathering) {
     eventAttendanceMode: isOnline
       ? "https://schema.org/OnlineEventAttendanceMode"
       : "https://schema.org/OfflineEventAttendanceMode",
-    eventStatus: "https://schema.org/EventScheduled",
+    eventStatus: upcoming
+      ? "https://schema.org/EventScheduled"
+      : "https://schema.org/EventCompleted",
     location,
     organizer: {
       "@type": "Person",
@@ -56,7 +60,10 @@ export function buildGatheringEventSchema(gathering: Gathering) {
       url: canonicalUrl("/about"),
     },
     description,
-    ...(gathering.featured_image_url ? { image: gathering.featured_image_url } : {}),
+    url: canonicalUrl(`/gatherings/${gathering.slug}`),
+    ...(gathering.featured_image_url
+      ? { image: gathering.featured_image_url }
+      : { image: canonicalUrl("/og/core.jpg") }),
     ...(gathering.registration_url && price
       ? {
           offers: {
@@ -64,7 +71,9 @@ export function buildGatheringEventSchema(gathering: Gathering) {
             price: price.price,
             priceCurrency: price.priceCurrency,
             url: gathering.registration_url,
-            availability: "https://schema.org/InStock",
+            availability: upcoming
+              ? "https://schema.org/InStock"
+              : "https://schema.org/SoldOut",
           },
         }
       : {}),
