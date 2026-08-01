@@ -129,8 +129,7 @@ function PracticeDetailPage() {
           </div>
 
           <div className="mt-6 max-w-[72ch]">
-            <div className="label-eyebrow">LEVER {String(lever.number).padStart(2, "0")}</div>
-            <h1 className="display mt-4 text-3xl text-white sm:text-5xl">{practice.name}</h1>
+            <h1 className="display text-3xl text-white sm:text-5xl">{practice.name}</h1>
             {practice.sanskritName ? (
               <p className="mt-2 text-sm italic text-[#b8d4e8]/85">{practice.sanskritName}</p>
             ) : null}
