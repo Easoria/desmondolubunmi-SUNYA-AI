@@ -12,6 +12,7 @@ export function Footer() {
           <Link to="/" className="hover:text-white">Home</Link>
           <Link to="/philosophy" className="hover:text-white">Philosophy</Link>
           <Link to="/essays" className="hover:text-white">Essays</Link>
+          <Link to="/gatherings" className="hover:text-white">Gatherings</Link>
           <Link to="/sunya-ai" className="hover:text-white">Sunya AI</Link>
           <Link to="/work-with-me" className="hover:text-white">Work With Me</Link>
           <Link to="/vision" className="hover:text-white">Vision</Link>

@@ -18,6 +18,7 @@ import { Route as BookedRouteImport } from './routes/booked'
 import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as EssaysRouteImport } from './routes/essays'
 import { Route as ForgotPasswordRouteImport } from './routes/forgot-password'
+import { Route as GatheringsRouteImport } from './routes/gatherings'
 import { Route as JoinRouteImport } from './routes/join'
 import { Route as LeversRouteImport } from './routes/levers'
 import { Route as LoginRouteImport } from './routes/login'
@@ -32,14 +33,17 @@ import { Route as TermsRouteImport } from './routes/terms'
 import { Route as VisionRouteImport } from './routes/vision'
 import { Route as WorkWithMeRouteImport } from './routes/work-with-me'
 import { Route as AdminBlogRouteImport } from './routes/admin.blog'
+import { Route as AdminGatheringsRouteImport } from './routes/admin.gatherings'
 import { Route as AdminPromptsRouteImport } from './routes/admin.prompts'
 import { Route as ApiChatRouteImport } from './routes/api/chat'
 import { Route as ApiCommunitySignupRouteImport } from './routes/api/community-signup'
 import { Route as ApiContributorSignupRouteImport } from './routes/api/contributor-signup'
+import { Route as ApiGatheringsSignupRouteImport } from './routes/api/gatherings-signup'
 import { Route as ApiSessionTitleRouteImport } from './routes/api/session-title'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as CheckoutReturnRouteImport } from './routes/checkout.return'
 import { Route as EssaysSlugRouteImport } from './routes/essays.$slug'
+import { Route as GatheringsSlugRouteImport } from './routes/gatherings.$slug'
 import { Route as LeversLeverSlugRouteImport } from './routes/levers.$leverSlug'
 import { Route as PracticesLeverSlugRouteImport } from './routes/practices.$leverSlug'
 import { Route as PracticesWhereToBeginRouteImport } from './routes/practices.where-to-begin'
@@ -92,6 +96,11 @@ const EssaysRoute = EssaysRouteImport.update({
 const ForgotPasswordRoute = ForgotPasswordRouteImport.update({
   id: '/forgot-password',
   path: '/forgot-password',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GatheringsRoute = GatheringsRouteImport.update({
+  id: '/gatherings',
+  path: '/gatherings',
   getParentRoute: () => rootRouteImport,
 } as any)
 const JoinRoute = JoinRouteImport.update({
@@ -164,6 +173,11 @@ const AdminBlogRoute = AdminBlogRouteImport.update({
   path: '/admin/blog',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminGatheringsRoute = AdminGatheringsRouteImport.update({
+  id: '/admin/gatherings',
+  path: '/admin/gatherings',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AdminPromptsRoute = AdminPromptsRouteImport.update({
   id: '/admin/prompts',
   path: '/admin/prompts',
@@ -182,6 +196,11 @@ const ApiCommunitySignupRoute = ApiCommunitySignupRouteImport.update({
 const ApiContributorSignupRoute = ApiContributorSignupRouteImport.update({
   id: '/api/contributor-signup',
   path: '/api/contributor-signup',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiGatheringsSignupRoute = ApiGatheringsSignupRouteImport.update({
+  id: '/api/gatherings-signup',
+  path: '/api/gatherings-signup',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiSessionTitleRoute = ApiSessionTitleRouteImport.update({
@@ -203,6 +222,11 @@ const EssaysSlugRoute = EssaysSlugRouteImport.update({
   id: '/$slug',
   path: '/$slug',
   getParentRoute: () => EssaysRoute,
+} as any)
+const GatheringsSlugRoute = GatheringsSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => GatheringsRoute,
 } as any)
 const LeversLeverSlugRoute = LeversLeverSlugRouteImport.update({
   id: '/$leverSlug',
@@ -258,6 +282,7 @@ export interface FileRoutesByFullPath {
   '/dashboard': typeof DashboardRoute
   '/essays': typeof EssaysRouteWithChildren
   '/forgot-password': typeof ForgotPasswordRoute
+  '/gatherings': typeof GatheringsRouteWithChildren
   '/index': typeof Char91indexChar93Route
   '/join': typeof JoinRoute
   '/levers': typeof LeversRouteWithChildren
@@ -273,14 +298,17 @@ export interface FileRoutesByFullPath {
   '/vision': typeof VisionRoute
   '/work-with-me': typeof WorkWithMeRoute
   '/admin/blog': typeof AdminBlogRoute
+  '/admin/gatherings': typeof AdminGatheringsRoute
   '/admin/prompts': typeof AdminPromptsRoute
   '/api/chat': typeof ApiChatRoute
   '/api/community-signup': typeof ApiCommunitySignupRoute
   '/api/contributor-signup': typeof ApiContributorSignupRoute
+  '/api/gatherings-signup': typeof ApiGatheringsSignupRoute
   '/api/session-title': typeof ApiSessionTitleRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/checkout/return': typeof CheckoutReturnRoute
   '/essays/$slug': typeof EssaysSlugRoute
+  '/gatherings/$slug': typeof GatheringsSlugRoute
   '/levers/$leverSlug': typeof LeversLeverSlugRouteWithChildren
   '/practices/$leverSlug': typeof PracticesLeverSlugRouteWithChildren
   '/practices/where-to-begin': typeof PracticesWhereToBeginRoute
@@ -299,6 +327,7 @@ export interface FileRoutesByTo {
   '/dashboard': typeof DashboardRoute
   '/essays': typeof EssaysRouteWithChildren
   '/forgot-password': typeof ForgotPasswordRoute
+  '/gatherings': typeof GatheringsRouteWithChildren
   '/index': typeof Char91indexChar93Route
   '/join': typeof JoinRoute
   '/levers': typeof LeversRouteWithChildren
@@ -314,14 +343,17 @@ export interface FileRoutesByTo {
   '/vision': typeof VisionRoute
   '/work-with-me': typeof WorkWithMeRoute
   '/admin/blog': typeof AdminBlogRoute
+  '/admin/gatherings': typeof AdminGatheringsRoute
   '/admin/prompts': typeof AdminPromptsRoute
   '/api/chat': typeof ApiChatRoute
   '/api/community-signup': typeof ApiCommunitySignupRoute
   '/api/contributor-signup': typeof ApiContributorSignupRoute
+  '/api/gatherings-signup': typeof ApiGatheringsSignupRoute
   '/api/session-title': typeof ApiSessionTitleRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/checkout/return': typeof CheckoutReturnRoute
   '/essays/$slug': typeof EssaysSlugRoute
+  '/gatherings/$slug': typeof GatheringsSlugRoute
   '/levers/$leverSlug': typeof LeversLeverSlugRouteWithChildren
   '/practices/$leverSlug': typeof PracticesLeverSlugRouteWithChildren
   '/practices/where-to-begin': typeof PracticesWhereToBeginRoute
@@ -341,6 +373,7 @@ export interface FileRoutesById {
   '/dashboard': typeof DashboardRoute
   '/essays': typeof EssaysRouteWithChildren
   '/forgot-password': typeof ForgotPasswordRoute
+  '/gatherings': typeof GatheringsRouteWithChildren
   '/index': typeof Char91indexChar93Route
   '/join': typeof JoinRoute
   '/levers': typeof LeversRouteWithChildren
@@ -356,14 +389,17 @@ export interface FileRoutesById {
   '/vision': typeof VisionRoute
   '/work-with-me': typeof WorkWithMeRoute
   '/admin/blog': typeof AdminBlogRoute
+  '/admin/gatherings': typeof AdminGatheringsRoute
   '/admin/prompts': typeof AdminPromptsRoute
   '/api/chat': typeof ApiChatRoute
   '/api/community-signup': typeof ApiCommunitySignupRoute
   '/api/contributor-signup': typeof ApiContributorSignupRoute
+  '/api/gatherings-signup': typeof ApiGatheringsSignupRoute
   '/api/session-title': typeof ApiSessionTitleRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/checkout/return': typeof CheckoutReturnRoute
   '/essays/$slug': typeof EssaysSlugRoute
+  '/gatherings/$slug': typeof GatheringsSlugRoute
   '/levers/$leverSlug': typeof LeversLeverSlugRouteWithChildren
   '/practices/$leverSlug': typeof PracticesLeverSlugRouteWithChildren
   '/practices/where-to-begin': typeof PracticesWhereToBeginRoute
@@ -384,6 +420,7 @@ export interface FileRouteTypes {
     | '/dashboard'
     | '/essays'
     | '/forgot-password'
+    | '/gatherings'
     | '/index'
     | '/join'
     | '/levers'
@@ -399,14 +436,17 @@ export interface FileRouteTypes {
     | '/vision'
     | '/work-with-me'
     | '/admin/blog'
+    | '/admin/gatherings'
     | '/admin/prompts'
     | '/api/chat'
     | '/api/community-signup'
     | '/api/contributor-signup'
+    | '/api/gatherings-signup'
     | '/api/session-title'
     | '/blog/$slug'
     | '/checkout/return'
     | '/essays/$slug'
+    | '/gatherings/$slug'
     | '/levers/$leverSlug'
     | '/practices/$leverSlug'
     | '/practices/where-to-begin'
@@ -425,6 +465,7 @@ export interface FileRouteTypes {
     | '/dashboard'
     | '/essays'
     | '/forgot-password'
+    | '/gatherings'
     | '/index'
     | '/join'
     | '/levers'
@@ -440,14 +481,17 @@ export interface FileRouteTypes {
     | '/vision'
     | '/work-with-me'
     | '/admin/blog'
+    | '/admin/gatherings'
     | '/admin/prompts'
     | '/api/chat'
     | '/api/community-signup'
     | '/api/contributor-signup'
+    | '/api/gatherings-signup'
     | '/api/session-title'
     | '/blog/$slug'
     | '/checkout/return'
     | '/essays/$slug'
+    | '/gatherings/$slug'
     | '/levers/$leverSlug'
     | '/practices/$leverSlug'
     | '/practices/where-to-begin'
@@ -466,6 +510,7 @@ export interface FileRouteTypes {
     | '/dashboard'
     | '/essays'
     | '/forgot-password'
+    | '/gatherings'
     | '/index'
     | '/join'
     | '/levers'
@@ -481,14 +526,17 @@ export interface FileRouteTypes {
     | '/vision'
     | '/work-with-me'
     | '/admin/blog'
+    | '/admin/gatherings'
     | '/admin/prompts'
     | '/api/chat'
     | '/api/community-signup'
     | '/api/contributor-signup'
+    | '/api/gatherings-signup'
     | '/api/session-title'
     | '/blog/$slug'
     | '/checkout/return'
     | '/essays/$slug'
+    | '/gatherings/$slug'
     | '/levers/$leverSlug'
     | '/practices/$leverSlug'
     | '/practices/where-to-begin'
@@ -508,6 +556,7 @@ export interface RootRouteChildren {
   DashboardRoute: typeof DashboardRoute
   EssaysRoute: typeof EssaysRouteWithChildren
   ForgotPasswordRoute: typeof ForgotPasswordRoute
+  GatheringsRoute: typeof GatheringsRouteWithChildren
   Char91indexChar93Route: typeof Char91indexChar93Route
   JoinRoute: typeof JoinRoute
   LeversRoute: typeof LeversRouteWithChildren
@@ -523,10 +572,12 @@ export interface RootRouteChildren {
   VisionRoute: typeof VisionRoute
   WorkWithMeRoute: typeof WorkWithMeRoute
   AdminBlogRoute: typeof AdminBlogRoute
+  AdminGatheringsRoute: typeof AdminGatheringsRoute
   AdminPromptsRoute: typeof AdminPromptsRoute
   ApiChatRoute: typeof ApiChatRoute
   ApiCommunitySignupRoute: typeof ApiCommunitySignupRoute
   ApiContributorSignupRoute: typeof ApiContributorSignupRoute
+  ApiGatheringsSignupRoute: typeof ApiGatheringsSignupRoute
   ApiSessionTitleRoute: typeof ApiSessionTitleRoute
   CheckoutReturnRoute: typeof CheckoutReturnRoute
   ApiPublicPaymentsWebhookRoute: typeof ApiPublicPaymentsWebhookRoute
@@ -595,6 +646,13 @@ declare module '@tanstack/react-router' {
       path: '/forgot-password'
       fullPath: '/forgot-password'
       preLoaderRoute: typeof ForgotPasswordRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gatherings': {
+      id: '/gatherings'
+      path: '/gatherings'
+      fullPath: '/gatherings'
+      preLoaderRoute: typeof GatheringsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/join': {
@@ -695,6 +753,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminBlogRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin/gatherings': {
+      id: '/admin/gatherings'
+      path: '/admin/gatherings'
+      fullPath: '/admin/gatherings'
+      preLoaderRoute: typeof AdminGatheringsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/admin/prompts': {
       id: '/admin/prompts'
       path: '/admin/prompts'
@@ -721,6 +786,13 @@ declare module '@tanstack/react-router' {
       path: '/api/contributor-signup'
       fullPath: '/api/contributor-signup'
       preLoaderRoute: typeof ApiContributorSignupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/gatherings-signup': {
+      id: '/api/gatherings-signup'
+      path: '/api/gatherings-signup'
+      fullPath: '/api/gatherings-signup'
+      preLoaderRoute: typeof ApiGatheringsSignupRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/session-title': {
@@ -750,6 +822,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/essays/$slug'
       preLoaderRoute: typeof EssaysSlugRouteImport
       parentRoute: typeof EssaysRoute
+    }
+    '/gatherings/$slug': {
+      id: '/gatherings/$slug'
+      path: '/$slug'
+      fullPath: '/gatherings/$slug'
+      preLoaderRoute: typeof GatheringsSlugRouteImport
+      parentRoute: typeof GatheringsRoute
     }
     '/levers/$leverSlug': {
       id: '/levers/$leverSlug'
@@ -831,6 +910,18 @@ const EssaysRouteChildren: EssaysRouteChildren = {
 const EssaysRouteWithChildren =
   EssaysRoute._addFileChildren(EssaysRouteChildren)
 
+interface GatheringsRouteChildren {
+  GatheringsSlugRoute: typeof GatheringsSlugRoute
+}
+
+const GatheringsRouteChildren: GatheringsRouteChildren = {
+  GatheringsSlugRoute: GatheringsSlugRoute,
+}
+
+const GatheringsRouteWithChildren = GatheringsRoute._addFileChildren(
+  GatheringsRouteChildren,
+)
+
 interface LeversLeverSlugRouteChildren {
   LeversLeverSlugPracticeSlugRoute: typeof LeversLeverSlugPracticeSlugRoute
   LeversLeverSlugCompleteRoute: typeof LeversLeverSlugCompleteRoute
@@ -892,6 +983,7 @@ const rootRouteChildren: RootRouteChildren = {
   DashboardRoute: DashboardRoute,
   EssaysRoute: EssaysRouteWithChildren,
   ForgotPasswordRoute: ForgotPasswordRoute,
+  GatheringsRoute: GatheringsRouteWithChildren,
   Char91indexChar93Route: Char91indexChar93Route,
   JoinRoute: JoinRoute,
   LeversRoute: LeversRouteWithChildren,
@@ -907,10 +999,12 @@ const rootRouteChildren: RootRouteChildren = {
   VisionRoute: VisionRoute,
   WorkWithMeRoute: WorkWithMeRoute,
   AdminBlogRoute: AdminBlogRoute,
+  AdminGatheringsRoute: AdminGatheringsRoute,
   AdminPromptsRoute: AdminPromptsRoute,
   ApiChatRoute: ApiChatRoute,
   ApiCommunitySignupRoute: ApiCommunitySignupRoute,
   ApiContributorSignupRoute: ApiContributorSignupRoute,
+  ApiGatheringsSignupRoute: ApiGatheringsSignupRoute,
   ApiSessionTitleRoute: ApiSessionTitleRoute,
   CheckoutReturnRoute: CheckoutReturnRoute,
   ApiPublicPaymentsWebhookRoute: ApiPublicPaymentsWebhookRoute,
