@@ -1,17 +1,19 @@
 import { createFileRoute, Outlet, useRouterState } from "@tanstack/react-router";
 import { useMemo } from "react";
-import { useQuery } from "@tanstack/react-query";
-import { useServerFn } from "@tanstack/react-start";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { Breadcrumb } from "@/components/site/Breadcrumb";
 import { GatheringCard } from "@/components/gatherings/GatheringCard";
 import { GatheringInterestCapture } from "@/components/gatherings/GatheringInterestCapture";
 import { listPublishedGatherings } from "@/lib/gatherings.functions";
-import { isGatheringUpcoming } from "@/lib/gatherings";
+import { isGatheringUpcoming, type GatheringCard as GatheringCardData } from "@/lib/gatherings";
 import { buildSeoHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/gatherings")({
+  loader: async (): Promise<{ gatherings: GatheringCardData[] }> => {
+    const gatherings = await listPublishedGatherings();
+    return { gatherings };
+  },
   head: ({ matches }) => {
     if (!matches?.length || matches[matches.length - 1]?.routeId !== "/gatherings") {
       return {};
@@ -42,13 +44,7 @@ function GatheringsRoutePage() {
 }
 
 function GatheringsIndexPage() {
-  const fetchGatherings = useServerFn(listPublishedGatherings);
-  const { data: gatherings = [], isLoading, isError } = useQuery({
-    queryKey: ["gatherings", "published"],
-    queryFn: () => fetchGatherings(),
-    retry: 1,
-  });
-  const showLoading = isLoading && !isError;
+  const { gatherings } = Route.useLoaderData();
 
   const { upcoming, past } = useMemo(() => {
     const now = new Date();
@@ -83,9 +79,7 @@ function GatheringsIndexPage() {
         </header>
 
         <section className="mt-14">
-          {showLoading ? (
-            <div className="py-16 text-center text-sm text-[#b8d4e8]/60">Loading…</div>
-          ) : upcoming.length === 0 ? (
+          {upcoming.length === 0 ? (
             <div className="border-t border-white/10 pt-10">
               <p className="text-center text-lg text-white">Nothing scheduled right now.</p>
               <p className="mx-auto mt-4 max-w-xl text-center text-sm leading-relaxed text-[#b8d4e8]">
