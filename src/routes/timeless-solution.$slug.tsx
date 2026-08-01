@@ -61,6 +61,7 @@ export const Route = createFileRoute("/timeless-solution/$slug")({
                     description,
                     sectionName: "The Timeless Solution",
                     articleSection: "The Timeless Solution",
+                    path: `/timeless-solution/${params.slug}`,
                   }),
                 ),
               },

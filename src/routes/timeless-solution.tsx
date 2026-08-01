@@ -22,7 +22,7 @@ export const Route = createFileRoute("/timeless-solution")({
 
     return {
       ...buildSeoHead({
-        title: "The Timeless Solution — The Complete Framework",
+        title: "The Timeless Solution — Complete Sunya Framework | Sunya",
         description:
           "The whole arc in twelve parts: where everything came from, how the human condition arose, and what it takes to return. The complete Sunya framework by Desmond Olubunmi.",
         path: "/timeless-solution",

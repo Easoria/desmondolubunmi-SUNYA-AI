@@ -12,26 +12,7 @@ import { useSubscription } from "@/hooks/useSubscription";
 import { useAuth } from "@/hooks/use-auth";
 import { useNavigate } from "@tanstack/react-router";
 import { SUNYA_FOUNDING_PRICE_ID } from "@/lib/stripe";
-import { buildSeoHead } from "@/lib/seo";
-
-export const Route = createFileRoute("/sunya-ai")({
-  component: SunyaAIPage,
-  head: () =>
-    buildSeoHead({
-      title: "Sunya AI — Personal diagnostic intelligence for inner transformation | Sunya",
-      description:
-        "Describe what you're experiencing. Sunya AI diagnoses the mechanics behind it and gives you the precise tools to address it — drawn from the complete Sunya framework.",
-      path: "/sunya-ai",
-      ogType: "website",
-      imageKind: "core",
-    }),
-});
-
-const STEPS = [
-  { n: "1", t: "Describe your situation", c: "In your own words, no jargon required." },
-  { n: "2", t: "Receive your diagnosis", c: "The root mechanical cause identified across the 4 principles and 7 layers." },
-  { n: "3", t: "Get your protocol", c: "The specific levers and practices most relevant to you right now." },
-];
+import { buildFaqSchema, buildSeoHead } from "@/lib/seo";
 
 const FAQ = [
   {
@@ -50,6 +31,32 @@ const FAQ = [
     q: "What if I want to go deeper than the tool can take me?",
     a: "That's what the 1-on-1 sessions with Desmond are for.",
   },
+];
+
+export const Route = createFileRoute("/sunya-ai")({
+  component: SunyaAIPage,
+  head: () => ({
+    ...buildSeoHead({
+      title: "Sunya AI — Personal Diagnostic Intelligence | Sunya",
+      description:
+        "Describe what you're experiencing. Sunya AI diagnoses the mechanics behind it and gives you the precise tools to address it — drawn from the complete Sunya framework.",
+      path: "/sunya-ai",
+      ogType: "website",
+      imageKind: "core",
+    }),
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(buildFaqSchema(FAQ)),
+      },
+    ],
+  }),
+});
+
+const STEPS = [
+  { n: "1", t: "Describe your situation", c: "In your own words, no jargon required." },
+  { n: "2", t: "Receive your diagnosis", c: "The root mechanical cause identified across the 4 principles and 7 layers." },
+  { n: "3", t: "Get your protocol", c: "The specific levers and practices most relevant to you right now." },
 ];
 
 function getGreeting() {

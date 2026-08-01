@@ -11,15 +11,34 @@ import { buildSeoHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/philosophy")({
   component: PhilosophyPage,
-  head: () =>
-    buildSeoHead({
-      title: "The Sunya Philosophy — Why Humans Suffer and How They Become Free | Sunya",
+  head: () => ({
+    ...buildSeoHead({
+      title: "Sunya Philosophy — Why Humans Suffer and How Freedom Works | Sunya",
       description:
         "Human suffering is a single structure built in a fixed order. The five links, the seven layers of being, and the twelve levers that undo it. Built on first principles, belonging to no tradition.",
       path: "/philosophy",
       ogType: "website",
       imageKind: "core",
     }),
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          name: "The Sunya Philosophy",
+          description:
+            "Human suffering is a single structure built in a fixed order. The five links, the seven layers of being, and the twelve levers that undo it.",
+          url: "https://www.desmondolubunmi.com/philosophy",
+          isPartOf: {
+            "@type": "WebSite",
+            name: "Sunya",
+            url: "https://www.desmondolubunmi.com",
+          },
+        }),
+      },
+    ],
+  }),
 });
 
 type ChainLink = {
