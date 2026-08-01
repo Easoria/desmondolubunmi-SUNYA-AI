@@ -26,8 +26,28 @@ function createSupabaseAdminClient() {
     );
   }
 
+  const FETCH_TIMEOUT_MS = 3000;
+
+  const fetchWithTimeout: typeof fetch = (input, init) => {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
+    const parentSignal = init?.signal;
+    if (parentSignal) {
+      if (parentSignal.aborted) controller.abort();
+      else {
+        parentSignal.addEventListener("abort", () => controller.abort(), {
+          once: true,
+        });
+      }
+    }
+    return fetch(input, { ...init, signal: controller.signal }).finally(() => {
+      clearTimeout(timer);
+    });
+  };
+
   return createClient<Database>(SUPABASE_URL, key, {
     auth: { storage: undefined, persistSession: false, autoRefreshToken: false },
+    global: { fetch: fetchWithTimeout },
   });
 }
 
