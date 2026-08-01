@@ -50,25 +50,17 @@ function PracticesIndexPage() {
 
           <div className="mx-auto mt-6 max-w-[700px] space-y-5 text-sm leading-relaxed text-[#b8d4e8] sm:mt-7 sm:text-base">
             <p>
-              Beneath every tradition lies one science, working on one system in one direction.
-              This is that science gathered into its practical essence — the actual tools, stripped
-              of all cultural form, through which a human being can create lasting wellbeing in
-              themselves.
+              Every tradition, every therapy, every method of change ever devised — examined
+              against one question: what are all the possible ways a human being can transform
+              their wellbeing?
             </p>
             <p>
-              These twelve foundational levers were arrived at from first principles, by asking a
-              single question: what are all the possible means by which a human being can
-              transform their wellbeing? Every tradition was examined in answer — but so was
-              every therapy, every wellness practice, every modality of change. And beneath their
-              different languages and forms, they all reduced to the same small set: six internal
-              means of working on oneself, and six external conditions that support wellbeing from
-              without.
+              Beneath their different languages and forms, they reduced to twelve. Six internal
+              means of working on yourself. Six external conditions that hold you steady from
+              without. There is no means of transforming a human being that is not already among
+              them, or built from them.
             </p>
           </div>
-          <p className="display mx-auto mb-14 mt-10 max-w-[700px] text-2xl leading-relaxed text-[#eaf6ff] sm:mb-16 sm:text-3xl">
-            There is no means of transforming a human being that is not already among them, or
-            built from them.
-          </p>
 
           {conservation && (
             <div className="mx-auto mt-14 max-w-5xl">
