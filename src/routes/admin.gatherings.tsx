@@ -1,7 +1,8 @@
-import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import { AdminGate } from "@/components/admin/AdminGate";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/hooks/use-auth";
 import {
@@ -62,29 +63,18 @@ function emptyGathering(): Gathering {
 }
 
 function AdminGatheringsPage() {
-  const { user, loading } = useAuth();
-  const navigate = useNavigate();
-  const [isAdmin, setIsAdmin] = useState<boolean | null>(null);
+  return (
+    <AdminGate title="Gatherings Admin">
+      <AdminGatheringsInner />
+    </AdminGate>
+  );
+}
+
+function AdminGatheringsInner() {
+  const { user } = useAuth();
   const [items, setItems] = useState<Gathering[]>([]);
   const [editing, setEditing] = useState<Gathering | null>(null);
   const [fetchErr, setFetchErr] = useState<string | null>(null);
-
-  useEffect(() => {
-    if (!user) {
-      if (!loading) setIsAdmin(false);
-      return;
-    }
-    supabase
-      .from("user_profiles")
-      .select("is_admin")
-      .eq("id", user.id)
-      .single()
-      .then(({ data }) => setIsAdmin(!!data?.is_admin));
-  }, [user, loading]);
-
-  useEffect(() => {
-    if (!loading && isAdmin === false) navigate({ to: "/" });
-  }, [loading, isAdmin, navigate]);
 
   async function refresh() {
     const { data, error } = await supabase.from("gatherings").select("*");
@@ -107,16 +97,8 @@ function AdminGatheringsPage() {
   }
 
   useEffect(() => {
-    if (isAdmin) void refresh();
-  }, [isAdmin]);
-
-  if (loading || isAdmin !== true) {
-    return (
-      <div className="flex min-h-screen items-center justify-center bg-slate-50 text-slate-500">
-        Loading…
-      </div>
-    );
-  }
+    void refresh();
+  }, []);
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900">
