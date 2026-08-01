@@ -65,25 +65,29 @@ function PracticesIndexPage() {
 
           <div className="mt-12">
             <div className="label-eyebrow mb-6 text-center">THINGS YOU DO</div>
-            <h2 className="display mb-6 text-center text-2xl text-white sm:text-3xl">
-              6 internal practices.
+            <h2 className="display mb-6 text-center text-2xl text-[#d6effb] sm:text-3xl">
+              6 Internal Practices.
             </h2>
-            <div className="grid gap-3 sm:gap-4 md:grid-cols-2 xl:grid-cols-3">
-              {internal.map((lever, index) => (
-                <LeverCard key={lever.slug} lever={lever} band="internal" index={index} />
-              ))}
+            <div className="rounded-3xl border border-[#7ec8e3]/25 bg-[#7ec8e3]/[0.05] p-3 sm:p-4">
+              <div className="grid gap-3 sm:gap-4 md:grid-cols-2 xl:grid-cols-3">
+                {internal.map((lever, index) => (
+                  <LeverCard key={lever.slug} lever={lever} band="internal" index={index} />
+                ))}
+              </div>
             </div>
           </div>
 
           <div className="mt-14">
             <div className="label-eyebrow mb-6 text-center">CONDITIONS YOU LIVE IN</div>
-            <h2 className="display mb-6 text-center text-2xl text-white sm:text-3xl">
-              6 external pillars.
+            <h2 className="display mb-6 text-center text-2xl text-[#f0dcc8] sm:text-3xl">
+              6 External Pillars.
             </h2>
-            <div className="grid gap-3 sm:gap-4 md:grid-cols-2 xl:grid-cols-3">
-              {external.map((lever) => (
-                <LeverCard key={lever.slug} lever={lever} band="external" />
-              ))}
+            <div className="rounded-3xl border border-[#dcb48d]/25 bg-[#dcb48d]/[0.05] p-3 sm:p-4">
+              <div className="grid gap-3 sm:gap-4 md:grid-cols-2 xl:grid-cols-3">
+                {external.map((lever) => (
+                  <LeverCard key={lever.slug} lever={lever} band="external" />
+                ))}
+              </div>
             </div>
           </div>
 
@@ -129,8 +133,8 @@ function LeverCard({
     band === "prerequisite"
       ? `${shared} mt-5 border-[#dcb48d]/45 bg-[#120f1a]/85 shadow-[0_0_38px_-18px_rgba(220,180,141,0.65)]`
       : band === "internal"
-        ? `${shared} border-[#7ec8e3]/30`
-        : `${shared} border-white/15 bg-[#070f1f]/88 shadow-[0_0_24px_-18px_rgba(0,0,0,0.85)]`;
+        ? `${shared} border-[#7ec8e3]/40 ring-1 ring-[#7ec8e3]/20`
+        : `${shared} border-[#dcb48d]/35 bg-[#070f1f]/88 ring-1 ring-[#dcb48d]/20 shadow-[0_0_24px_-18px_rgba(220,180,141,0.45)]`;
 
   const style =
     band === "internal"
