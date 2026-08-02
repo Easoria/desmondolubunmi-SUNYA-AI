@@ -110,6 +110,14 @@ function Pain() {
             <br />
             Your inner state doesn't have to be.
           </p>
+          <div className="mt-6 text-center">
+            <Link
+              to="/practices"
+              className="inline-flex items-center gap-2 text-sm text-[#b8d4e8] transition hover:text-white"
+            >
+              Explore transformative practices →
+            </Link>
+          </div>
         </div>
       </div>
     </section>
