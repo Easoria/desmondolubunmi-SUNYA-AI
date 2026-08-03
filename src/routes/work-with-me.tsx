@@ -51,7 +51,7 @@ const STEPS = [
   "Identification of where your system is actually contracted — which is rarely where you think",
   "The single lever that matters most for you right now, and why the others can wait",
   "A personalised protocol built for your actual life, not a generic programme",
-  "ongoing support you if needed.",
+  "ongoing support if needed.",
 ];
 
 const ZONES = [
