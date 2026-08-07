@@ -98,20 +98,21 @@ function firstSentence(text: string) {
 export function buildPracticeMetaDescription(practice: Practice) {
   const essence = (practice.essence ?? "").replace(/\s+/g, " ").trim();
   if (!essence) return practice.metaDescription;
-  if (essence.length >= 100 || !practice.mechanism?.length) return essence;
 
-  const mechanismSentence = firstSentence(practice.mechanism[0] ?? "");
-  if (!mechanismSentence) return essence;
+  // First sentence of Essence if under 155 chars; otherwise truncate at a
+  // sentence boundary (never invent a new description).
+  const sentence = firstSentence(essence);
+  if (sentence.length <= 155) return sentence;
 
-  const essenceLead = `${essence.replace(/[.!?]\s*$/, "")}.`;
-  const available = 155 - (essenceLead.length + 1);
-  if (available <= 20) return essence;
-
-  if (mechanismSentence.length <= available) {
-    return `${essenceLead} ${mechanismSentence}`.trim();
+  const sentences =
+    essence.match(/.+?[.!?](?:["”')\]]+)?(?=\s|$)/g)?.map((s) => s.trim()) ?? [essence];
+  let out = "";
+  for (const part of sentences) {
+    const next = out ? `${out} ${part}` : part;
+    if (next.length > 155) break;
+    out = next;
   }
-
-  return essence;
+  return out || sentence.slice(0, 155).trim();
 }
 
 function escapeRegex(value: string) {

@@ -63,11 +63,15 @@ export const Route = createFileRoute("/practices/$leverSlug/$practiceSlug")({
             name: practice.name,
             description: practice.essence ?? description,
             ...(totalTime ? { totalTime } : {}),
-            step: practice.protocol.map((step, index) => ({
-              "@type": "HowToStep",
-              position: index + 1,
-              text: step.text,
-            })),
+            step: practice.protocol.map((step, index) => {
+              const parsed = splitProtocolLeadIn(step.text);
+              return {
+                "@type": "HowToStep",
+                position: index + 1,
+                // Body only — lead-in phrases are UI chrome, not the instruction.
+                text: parsed?.rest ?? step.text,
+              };
+            }),
           }
         : null;
     const articleSchema = buildArticleSchema({
