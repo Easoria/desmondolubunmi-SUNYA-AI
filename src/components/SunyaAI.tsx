@@ -8,6 +8,12 @@ import { AuthModal } from "@/components/site/AuthModal";
 import { SolutionCard } from "@/components/SolutionCard";
 import { parseSolution, type Solution } from "@/lib/parse-solution";
 import { SUNYA_FOUNDING_PRICE_ID } from "@/lib/stripe";
+import {
+  WEEKLY_FREE_LIMIT,
+  currentIsoWeekKey,
+  nextWeeklyResetLabel,
+  weeklyCountForProfile,
+} from "@/lib/sunya-session-limits";
 
 const PROMPTS = [
   "I feel anxious",
@@ -21,9 +27,9 @@ const PROMPTS = [
   "Something feels off",
 ];
 
-const MONTHLY_LIMIT = 2;
-const GUEST_LIMIT = 2;
-const GUEST_KEY = "sunya_guest_sessions_used";
+const GUEST_WEEK_KEY = "sunya_guest_week";
+const GUEST_USED_KEY = "sunya_guest_sessions_used";
+const GUEST_FIRST_KEY = "sunya_guest_first_used";
 const FP_KEY = "sunya_fp_id";
 const READY_MARKER = "[SUNYA_READY]";
 const MIN_REFLECT_MS = 2000;
@@ -31,8 +37,26 @@ const MIN_REFLECT_MS = 2000;
 type Msg = { role: "user" | "assistant"; content: string };
 type Phase = "chat" | "reflecting" | "solution";
 
-function currentMonthKey() {
-  return new Date().toISOString().slice(0, 7); // YYYY-MM
+function readGuestUsage() {
+  try {
+    const week = currentIsoWeekKey();
+    const storedWeek = localStorage.getItem(GUEST_WEEK_KEY);
+    if (storedWeek !== week) {
+      localStorage.setItem(GUEST_WEEK_KEY, week);
+      localStorage.setItem(GUEST_USED_KEY, "0");
+      return {
+        weekCount: 0,
+        firstUsed: localStorage.getItem(GUEST_FIRST_KEY) === "1",
+      };
+    }
+    const n = parseInt(localStorage.getItem(GUEST_USED_KEY) || "0", 10);
+    return {
+      weekCount: Number.isFinite(n) ? n : 0,
+      firstUsed: localStorage.getItem(GUEST_FIRST_KEY) === "1",
+    };
+  } catch {
+    return { weekCount: 0, firstUsed: false };
+  }
 }
 
 export function SunyaAI({ hideSessionCounter = false }: { hideSessionCounter?: boolean } = {}) {
@@ -44,8 +68,10 @@ export function SunyaAI({ hideSessionCounter = false }: { hideSessionCounter?: b
   const [loading, setLoading] = useState(false);
   const [messages, setMessages] = useState<Msg[]>([]);
   const [error, setError] = useState("");
-  const [guestUsed, setGuestUsed] = useState(0);
-  const [monthCount, setMonthCount] = useState(0);
+  const [guestWeekCount, setGuestWeekCount] = useState(0);
+  const [guestFirstUsed, setGuestFirstUsed] = useState(false);
+  const [weekCount, setWeekCount] = useState(0);
+  const [hasUsedFirstSession, setHasUsedFirstSession] = useState(false);
   const [sessionsThisRun, setSessionsThisRun] = useState(0);
   const [sessionId, setSessionId] = useState<string | null>(null);
   const [showAuthPrompt, setShowAuthPrompt] = useState(false);
@@ -57,8 +83,9 @@ export function SunyaAI({ hideSessionCounter = false }: { hideSessionCounter?: b
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const v = parseInt(localStorage.getItem(GUEST_KEY) || "0", 10);
-    setGuestUsed(isNaN(v) ? 0 : v);
+    const guest = readGuestUsage();
+    setGuestWeekCount(guest.weekCount);
+    setGuestFirstUsed(guest.firstUsed);
     try {
       const prefill = sessionStorage.getItem("sunya_prefill");
       if (prefill) {
@@ -68,7 +95,7 @@ export function SunyaAI({ hideSessionCounter = false }: { hideSessionCounter?: b
     } catch {}
   }, []);
 
-  // FingerprintJS: identify device, sync session count across storage resets
+  // FingerprintJS: identify device (abuse signal); weekly limits live in localStorage.
   useEffect(() => {
     let cancelled = false;
     (async () => {
@@ -83,20 +110,6 @@ export function SunyaAI({ hideSessionCounter = false }: { hideSessionCounter?: b
         }
         if (cancelled || !id) return;
         setVisitorId(id);
-
-        const { supabase } = await import("@/integrations/supabase/client");
-        const { data } = await supabase
-          .from("fingerprint_sessions")
-          .select("sessions_used")
-          .eq("visitor_id", id)
-          .maybeSingle();
-        const remote = data?.sessions_used ?? 0;
-        const local = parseInt(localStorage.getItem(GUEST_KEY) || "0", 10) || 0;
-        const merged = Math.max(remote, local);
-        if (merged !== local) {
-          try { localStorage.setItem(GUEST_KEY, String(merged)); } catch {}
-        }
-        if (!cancelled) setGuestUsed(merged);
       } catch {
         /* fingerprint failures are non-blocking */
       }
@@ -104,19 +117,19 @@ export function SunyaAI({ hideSessionCounter = false }: { hideSessionCounter?: b
     return () => { cancelled = true; };
   }, []);
 
-  // Load monthly session count for logged-in free users
+  // Load weekly session count for logged-in free users
   useEffect(() => {
     if (!user) return;
     (async () => {
       const { supabase } = await import("@/integrations/supabase/client");
       const { data } = await supabase
         .from("user_profiles")
-        .select("sessions_this_month,last_session_month")
+        .select("sessions_this_week,week_start,has_used_first_session")
         .eq("id", user.id)
         .single();
       if (data) {
-        const m = currentMonthKey();
-        setMonthCount(data.last_session_month === m ? (data.sessions_this_month ?? 0) : 0);
+        setWeekCount(weeklyCountForProfile(data));
+        setHasUsedFirstSession(Boolean(data.has_used_first_session));
       }
     })();
   }, [user]);
@@ -125,11 +138,14 @@ export function SunyaAI({ hideSessionCounter = false }: { hideSessionCounter?: b
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
   }, [messages, loading]);
 
-  // Hard wall: guest used >= 2; free user month >= 2; paid never blocked
-  const usedCount = user ? monthCount : guestUsed;
-  const limit = user ? MONTHLY_LIMIT : GUEST_LIMIT;
-  const hardWall = !isPaid && usedCount >= limit;
+  // Free tier: first session ever uncounted; then 2 per ISO week. Paid never blocked.
+  const usedCount = user ? weekCount : guestWeekCount;
+  const firstUsed = user ? hasUsedFirstSession : guestFirstUsed;
+  const limit = WEEKLY_FREE_LIMIT;
+  const hardWall = !isPaid && firstUsed && usedCount >= limit;
   const exhausted = hardWall;
+  const showSessionCounter = !hideSessionCounter && !isPaid && firstUsed;
+  const resetDayLabel = nextWeeklyResetLabel();
 
   function handleUpgrade() {
     openCheckout({
@@ -198,17 +214,30 @@ export function SunyaAI({ hideSessionCounter = false }: { hideSessionCounter?: b
     // Increment ONLY when a solution card is generated.
     setSessionsThisRun((n) => n + 1);
     if (!user) {
-      const next = guestUsed + 1;
-      setGuestUsed(next);
+      const week = currentIsoWeekKey();
       try {
-        localStorage.setItem(GUEST_KEY, String(next));
+        if (localStorage.getItem(GUEST_FIRST_KEY) !== "1") {
+          localStorage.setItem(GUEST_FIRST_KEY, "1");
+          localStorage.setItem(GUEST_WEEK_KEY, week);
+          setGuestFirstUsed(true);
+          return;
+        }
+        const storedWeek = localStorage.getItem(GUEST_WEEK_KEY);
+        const base =
+          storedWeek === week
+            ? parseInt(localStorage.getItem(GUEST_USED_KEY) || "0", 10) || 0
+            : 0;
+        const next = base + 1;
+        localStorage.setItem(GUEST_WEEK_KEY, week);
+        localStorage.setItem(GUEST_USED_KEY, String(next));
+        setGuestWeekCount(next);
       } catch {}
       if (visitorId) {
         try {
           const { supabase } = await import("@/integrations/supabase/client");
           await supabase.from("fingerprint_sessions").upsert({
             visitor_id: visitorId,
-            sessions_used: next,
+            sessions_used: guestWeekCount + 1,
             last_seen: new Date().toISOString(),
           });
         } catch { /* non-blocking */ }
@@ -217,19 +246,34 @@ export function SunyaAI({ hideSessionCounter = false }: { hideSessionCounter?: b
     }
     if (isPaid) return;
     const { supabase } = await import("@/integrations/supabase/client");
-    const m = currentMonthKey();
+    const week = currentIsoWeekKey();
     const { data: prof } = await supabase
       .from("user_profiles")
-      .select("sessions_this_month,last_session_month")
+      .select("sessions_this_week,week_start,has_used_first_session")
       .eq("id", user.id)
       .single();
-    const base = prof?.last_session_month === m ? (prof?.sessions_this_month ?? 0) : 0;
+
+    if (!prof?.has_used_first_session) {
+      await supabase
+        .from("user_profiles")
+        .update({
+          has_used_first_session: true,
+          week_start: week,
+          sessions_this_week: 0,
+        })
+        .eq("id", user.id);
+      setHasUsedFirstSession(true);
+      setWeekCount(0);
+      return;
+    }
+
+    const base = weeklyCountForProfile(prof);
     const next = base + 1;
     await supabase
       .from("user_profiles")
-      .update({ sessions_this_month: next, last_session_month: m })
+      .update({ sessions_this_week: next, week_start: week })
       .eq("id", user.id);
-    setMonthCount(next);
+    setWeekCount(next);
   }
 
   async function callChat(history: Msg[], token: string | undefined): Promise<Response> {
@@ -319,7 +363,9 @@ export function SunyaAI({ hideSessionCounter = false }: { hideSessionCounter?: b
       if (res.status === 429) {
         const j = await res.json().catch(() => ({}));
         if (j?.error === "limit") {
-          setError("You've used your free sessions. Upgrade for unlimited access.");
+          setError(
+            `You've used your free sessions for this week. Your allowance resets on ${resetDayLabel}. Upgrade for unlimited access.`,
+          );
         } else {
           setError("The system is at capacity. Please try again in a moment.");
         }
@@ -402,6 +448,7 @@ export function SunyaAI({ hideSessionCounter = false }: { hideSessionCounter?: b
           <UpgradePrompt
             variant={variant}
             user={!!user}
+            resetDayLabel={resetDayLabel}
             onUpgrade={handleUpgrade}
             onSignIn={() => setShowAuthPrompt(true)}
           />
@@ -470,10 +517,10 @@ export function SunyaAI({ hideSessionCounter = false }: { hideSessionCounter?: b
               <Plus className="h-3 w-3" /> New
             </button>
           )}
-          {!hideSessionCounter && !isPaid && (
+          {showSessionCounter && (
             <div className="flex flex-col items-end leading-tight text-[#b8d4e8]/60 sm:flex-row sm:items-baseline sm:gap-1">
               <span className="text-xs">{Math.max(0, limit - usedCount)} / {limit}</span>
-              <span className="text-[10px] sm:text-xs">free</span>
+              <span className="text-[10px] sm:text-xs">this week</span>
             </div>
           )}
         </div>
@@ -483,6 +530,7 @@ export function SunyaAI({ hideSessionCounter = false }: { hideSessionCounter?: b
         <UpgradePrompt
           variant="wall"
           user={!!user}
+          resetDayLabel={resetDayLabel}
           onUpgrade={handleUpgrade}
           onSignIn={() => setShowAuthPrompt(true)}
         />
@@ -632,28 +680,22 @@ export function SunyaAI({ hideSessionCounter = false }: { hideSessionCounter?: b
             const { data: u } = await supabase.auth.getUser();
             const uid = u.user?.id;
             if (uid) {
-              // Carry forward guest usage tracked against this device fingerprint
-              // so creating a new account doesn't reset free-tier limits.
-              const fpId = localStorage.getItem(FP_KEY) || visitorId;
-              if (fpId) {
-                try {
-                  const { data: fp } = await supabase
-                    .from("fingerprint_sessions")
-                    .select("sessions_used")
-                    .eq("visitor_id", fpId)
-                    .maybeSingle();
-                  const used = fp?.sessions_used ?? 0;
-                  if (used >= GUEST_LIMIT) {
-                    await supabase
-                      .from("user_profiles")
-                      .update({
-                        sessions_this_month: used,
-                        last_session_month: currentMonthKey(),
-                      })
-                      .eq("id", uid);
-                  }
-                } catch { /* non-blocking */ }
-              }
+              // Carry forward guest weekly usage so a new account can't dodge the wall.
+              try {
+                const guest = readGuestUsage();
+                if (guest.firstUsed && guest.weekCount >= WEEKLY_FREE_LIMIT) {
+                  await supabase
+                    .from("user_profiles")
+                    .update({
+                      has_used_first_session: true,
+                      sessions_this_week: guest.weekCount,
+                      week_start: currentIsoWeekKey(),
+                    })
+                    .eq("id", uid);
+                  setHasUsedFirstSession(true);
+                  setWeekCount(guest.weekCount);
+                }
+              } catch { /* non-blocking */ }
               if (messages.length > 0) {
                 const { data: sess } = await supabase
                   .from("sessions")
@@ -685,16 +727,21 @@ export function SunyaAI({ hideSessionCounter = false }: { hideSessionCounter?: b
 function UpgradePrompt({
   variant,
   user,
+  resetDayLabel,
   onUpgrade,
   onSignIn,
 }: {
   variant: "soft" | "final" | "wall";
   user: boolean;
+  resetDayLabel?: string;
   onUpgrade: () => void;
   onSignIn: () => void;
 }) {
   const isWall = variant === "wall";
   const isFinal = variant === "final";
+  const resetLine = resetDayLabel
+    ? ` Your free sessions reset on ${resetDayLabel}.`
+    : " Your free sessions reset weekly.";
   return (
     <div className="glass-strong mx-auto mt-6 max-w-2xl rounded-3xl border border-[#7ec8e3]/30 p-7 text-center shadow-[0_0_60px_-20px_rgba(126,200,227,0.55)]">
       <div className="display text-xl text-white sm:text-2xl">
@@ -706,9 +753,9 @@ function UpgradePrompt({
       </div>
       <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-[#b8d4e8]">
         {isWall
-          ? "You've used your free sessions. Get full access for unlimited sessions, permanent reading history, and PDF downloads."
+          ? `You've used your free sessions for this week.${resetLine} Get full access for unlimited sessions, permanent reading history, and PDF downloads.`
           : isFinal
-            ? "Unlock unlimited access to Sunya AI — save every reading, download PDFs, and return whenever you need clarity."
+            ? `Unlock unlimited access to Sunya AI — save every reading, download PDFs, and return whenever you need clarity.${resetLine}`
             : "Save your readings permanently, download PDFs, and get unlimited sessions whenever you need them."}
       </p>
       <p className="mt-3 text-xs text-[#b8d4e8]/70">€19/month · Cancel anytime</p>

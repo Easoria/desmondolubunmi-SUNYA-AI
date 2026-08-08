@@ -58,18 +58,18 @@ function Hero() {
               Work with me 1-on-1
             </Link>
             <Link
-              to="/sunya-ai"
+              to="/practices"
               className="inline-flex w-full items-center justify-center rounded-full border border-[#7ec8e3]/45 bg-white/[0.02] px-7 py-3.5 text-sm font-medium tracking-wide text-[#dcecf7] transition hover:border-[#7ec8e3]/70 hover:bg-white/[0.06] hover:shadow-[0_0_26px_-10px_rgba(126,200,227,0.75)] sm:w-auto"
             >
-              Try Sunya AI
+              Explore the practices
             </Link>
           </div>
           <div className="mt-4 text-center">
             <Link
-              to="/philosophy"
+              to="/gatherings"
               className="inline-flex items-center gap-2 text-sm text-[#b8d4e8] transition hover:text-white"
             >
-              Explore the philosophy →
+              Upcoming gatherings →
             </Link>
           </div>
         </div>
@@ -115,7 +115,7 @@ function Pain() {
               to="/practices"
               className="inline-flex items-center gap-2 text-sm text-[#b8d4e8] transition hover:text-white"
             >
-              Explore transformative practices →
+              Explore the practices →
             </Link>
           </div>
         </div>

@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 import { Link, useRouter } from "@tanstack/react-router";
 import { ArrowRight, Eye, EyeOff, Lock, Mail, Loader2, X } from "lucide-react";
+import {
+  flushMailerliteConsent,
+  setMailerliteConsentPending,
+} from "@/lib/mailerlite-consent";
 
 type Props = {
   open: boolean;
@@ -23,6 +27,7 @@ export function AuthModal({
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [marketingConsent, setMarketingConsent] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [info, setInfo] = useState("");
@@ -33,6 +38,7 @@ export function AuthModal({
       setMode(defaultMode);
       setError("");
       setInfo("");
+      setMarketingConsent(false);
     }
   }, [open, defaultMode]);
 
@@ -54,12 +60,14 @@ export function AuthModal({
         return;
       }
       if (mode === "signup") {
+        setMailerliteConsentPending(marketingConsent);
         const { error } = await supabase.auth.signUp({
           email,
           password,
           options: { emailRedirectTo: `${window.location.origin}/dashboard` },
         });
         if (error) throw error;
+        if (marketingConsent) await flushMailerliteConsent(email);
       } else {
         const { error } = await supabase.auth.signInWithPassword({ email, password });
         if (error) throw error;
@@ -78,6 +86,8 @@ export function AuthModal({
     setError("");
     setLoading(true);
     try {
+      // Consent applies when creating an account; sign-in ignores an unticked box.
+      if (mode === "signup") setMailerliteConsentPending(marketingConsent);
       const { supabase } = await import("@/integrations/supabase/client");
       const { error } = await supabase.auth.signInWithOAuth({
         provider: "google",
@@ -128,13 +138,27 @@ export function AuthModal({
           )}
         </div>
 
+        {isSignUp && (
+          <label className="mt-5 flex cursor-pointer items-start gap-3 rounded-2xl border border-white/10 bg-white/[0.03] px-3 py-3 text-xs leading-relaxed text-[#b8d4e8]">
+            <input
+              type="checkbox"
+              checked={marketingConsent}
+              onChange={(e) => setMarketingConsent(e.target.checked)}
+              className="mt-0.5 h-4 w-4 shrink-0 rounded border-white/30 bg-transparent text-[#7ec8e3] focus:ring-[#7ec8e3]/40"
+            />
+            <span>
+              Send me occasional writing, new practices, and gathering announcements.
+            </span>
+          </label>
+        )}
+
         {!isForgot && (
           <>
             <button
               type="button"
               onClick={handleGoogle}
               disabled={loading}
-              className="mt-6 flex w-full items-center justify-center gap-3 rounded-full bg-white px-5 py-3 text-sm font-medium text-[#1f1f1f] shadow-sm transition hover:bg-white/95 disabled:opacity-60"
+              className={`${isSignUp ? "mt-4" : "mt-6"} flex w-full items-center justify-center gap-3 rounded-full bg-white px-5 py-3 text-sm font-medium text-[#1f1f1f] shadow-sm transition hover:bg-white/95 disabled:opacity-60`}
             >
               <GoogleIcon />
               Continue with Google

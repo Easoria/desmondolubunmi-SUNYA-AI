@@ -48,9 +48,9 @@ export function Footer() {
 
           <div className="grid flex-1 gap-10 sm:grid-cols-3">
             <FooterColumn label="The Work">
-              <FooterLink to="/practices">Practices</FooterLink>
               <FooterLink to="/philosophy">Philosophy</FooterLink>
               <FooterLink to="/timeless-solution">The Timeless Solution</FooterLink>
+              <FooterLink to="/practices">Practices</FooterLink>
               <FooterLink to="/writing">Writing</FooterLink>
             </FooterColumn>
 

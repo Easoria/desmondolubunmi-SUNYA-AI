@@ -10,6 +10,11 @@ import { createPortalSession } from "@/utils/payments.functions";
 import { getStripeEnvironment, SUNYA_FOUNDING_PRICE_ID } from "@/lib/stripe";
 import { SolutionCard } from "@/components/SolutionCard";
 import type { Solution } from "@/lib/parse-solution";
+import {
+  WEEKLY_FREE_LIMIT,
+  nextWeeklyResetLabel,
+  weeklyCountForProfile,
+} from "@/lib/sunya-session-limits";
 
 export const Route = createFileRoute("/dashboard")({
   component: DashboardPage,
@@ -21,8 +26,9 @@ export const Route = createFileRoute("/dashboard")({
 type Profile = {
   first_name: string | null;
   subscription_status: string;
-  sessions_today: number;
-  last_session_date: string | null;
+  sessions_this_week: number;
+  week_start: string | null;
+  has_used_first_session: boolean;
   created_at: string;
 };
 type SessionRow = {
@@ -38,12 +44,6 @@ type SubRow = {
   cancel_at_period_end: boolean | null;
   current_period_end: string | null;
 };
-
-const FREE_LIMIT = 2;
-
-function todayStr() {
-  return new Date().toISOString().slice(0, 10);
-}
 
 function DashboardPage() {
   const { user, loading } = useAuth();
@@ -95,7 +95,9 @@ function DashboardPage() {
       const [{ data: prof }, { data: sess }, { data: subRow }] = await Promise.all([
         supabase
           .from("user_profiles")
-          .select("first_name,subscription_status,sessions_today,last_session_date,created_at")
+          .select(
+            "first_name,subscription_status,sessions_this_week,week_start,has_used_first_session,created_at",
+          )
           .eq("id", user.id)
           .single(),
         supabase
@@ -152,10 +154,10 @@ function DashboardPage() {
   }
 
   const isPaid = profile.subscription_status === "paid";
-  const todaysCount =
-    profile.last_session_date === todayStr() ? profile.sessions_today : 0;
-  const remaining = Math.max(0, FREE_LIMIT - todaysCount);
+  const weekCount = weeklyCountForProfile(profile);
+  const remaining = Math.max(0, WEEKLY_FREE_LIMIT - weekCount);
   const firstName = profile.first_name?.trim() || user.email?.split("@")[0] || "there";
+  const resetDay = nextWeeklyResetLabel();
 
   return (
     <div className="min-h-screen bg-[#0a1628] text-white">
@@ -171,8 +173,13 @@ function DashboardPage() {
               <>
                 Full access active. <Sparkles className="ml-1 inline h-3.5 w-3.5 text-[#7ec8e3]" />
               </>
+            ) : profile.has_used_first_session ? (
+              <>
+                You have {remaining} free session{remaining === 1 ? "" : "s"} remaining this week
+                (resets {resetDay}).
+              </>
             ) : (
-              <>You have {remaining} free session{remaining === 1 ? "" : "s"} remaining today.</>
+              <>Your first session is free — then two per week.</>
             )}
           </p>
         </div>
@@ -347,9 +354,13 @@ function DashboardPage() {
                   <dd className="text-white">{isPaid ? "Full Access" : "Free"}</dd>
                 </div>
                 <div className="flex justify-between gap-3">
-                  <dt className="text-[#b8d4e8]">Sessions today</dt>
+                  <dt className="text-[#b8d4e8]">Sessions this week</dt>
                   <dd className="text-white">
-                    {isPaid ? "Unlimited" : `${todaysCount} / ${FREE_LIMIT}`}
+                    {isPaid
+                      ? "Unlimited"
+                      : profile.has_used_first_session
+                        ? `${weekCount} / ${WEEKLY_FREE_LIMIT}`
+                        : "First session free"}
                   </dd>
                 </div>
                 <div className="flex justify-between gap-3">

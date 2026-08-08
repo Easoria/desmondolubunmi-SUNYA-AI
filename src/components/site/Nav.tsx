@@ -2,19 +2,24 @@ import { Link, useNavigate } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { ArrowRight, Menu, X, LogOut, LayoutDashboard, History, Settings } from "lucide-react";
 import { useAuth } from "@/hooks/use-auth";
-import { useSubscription } from "@/hooks/useSubscription";
 import { oneToOneNavLabel } from "@/lib/one-to-one-offer";
 
 // Navbar is capped at 4 items + CTA. Do not add more.
-// New sections go in the footer and are surfaced contextually
-// from related pages. A navbar with 7 items has no hierarchy.
-// Mobile menu matches desktop primary links only — Timeless Solution,
-// Writing, Gatherings, and About stay in the footer for focus.
+// Sunya AI is deliberately NOT in the navbar — it is surfaced
+// contextually inside the practices, where a diagnostic makes sense.
+// New sections go in the footer and are cross-linked from related pages.
 const NAV_PRIMARY = [
   { label: "Philosophy", to: "/philosophy" as const },
-  { label: "Practices", to: "/practices" as const },
+  { label: "Gatherings", to: "/gatherings" as const },
   { label: oneToOneNavLabel(), to: "/work-with-me" as const },
   { label: "Vision", to: "/vision" as const },
+];
+
+const NAV_SECONDARY = [
+  { label: "The Timeless Solution", to: "/timeless-solution" as const },
+  { label: "Writing", to: "/writing" as const },
+  { label: "Sunya AI", to: "/sunya-ai" as const },
+  { label: "About", to: "/about" as const },
 ];
 
 function initials(name?: string | null, email?: string | null) {
@@ -131,11 +136,9 @@ function MobileLink({
 
 export function Nav() {
   const { user, signOut } = useAuth();
-  const { isActive: hasPaidSubscription } = useSubscription();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
-  const ctaLabel = hasPaidSubscription ? "Sunya AI" : "Try Sunya AI";
 
   useEffect(() => {
     const on = () => setScrolled(window.scrollY > 30);
@@ -169,19 +172,19 @@ export function Nav() {
             </Link>
           ))}
           <Link
-            to="/sunya-ai"
+            to="/practices"
             className="glow-btn inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium"
           >
-            {ctaLabel} <ArrowRight className="h-3.5 w-3.5" />
+            Practices <ArrowRight className="h-3.5 w-3.5" />
           </Link>
           {user ? <AccountAvatar /> : null}
         </div>
         <div className="flex items-center gap-2 md:hidden">
           <Link
-            to="/sunya-ai"
+            to="/practices"
             className="glow-btn inline-flex items-center gap-1.5 rounded-full px-3.5 py-2 text-xs font-medium"
           >
-            {ctaLabel} <ArrowRight className="h-3 w-3" />
+            Practices <ArrowRight className="h-3 w-3" />
           </Link>
           {user ? <AccountAvatar /> : null}
           <div className="flex flex-col items-center">
@@ -201,7 +204,17 @@ export function Nav() {
       {open && (
         <div className="border-t border-white/10 bg-[#0a1628]/95 backdrop-blur-xl md:hidden">
           <div className="flex flex-col gap-1 px-6 py-4">
-            {NAV_PRIMARY.map((n) => (
+            <MobileLink to="/philosophy" label="Philosophy" onClick={() => setOpen(false)} />
+            <MobileLink to="/practices" label="Practices" onClick={() => setOpen(false)} />
+            <MobileLink to="/gatherings" label="Gatherings" onClick={() => setOpen(false)} />
+            <MobileLink
+              to="/work-with-me"
+              label={oneToOneNavLabel()}
+              onClick={() => setOpen(false)}
+            />
+            <MobileLink to="/vision" label="Vision" onClick={() => setOpen(false)} />
+            <div className="my-2 h-px bg-white/10" />
+            {NAV_SECONDARY.map((n) => (
               <MobileLink
                 key={n.to}
                 to={n.to}
@@ -211,11 +224,11 @@ export function Nav() {
             ))}
             <div className="my-2 h-px bg-white/10" />
             <Link
-              to="/sunya-ai"
+              to="/practices"
               onClick={() => setOpen(false)}
               className="glow-btn mt-1 inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-medium"
             >
-              {ctaLabel} <ArrowRight className="h-3.5 w-3.5" />
+              Explore the practices <ArrowRight className="h-3.5 w-3.5" />
             </Link>
             {user ? (
               <>

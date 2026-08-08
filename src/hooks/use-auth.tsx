@@ -21,11 +21,22 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       const { data: { subscription } } = supabase.auth.onAuthStateChange((_e, s) => {
         setSession(s);
         setLoading(false);
+        // Flush Mailerlite consent after Google (or other) OAuth returns.
+        if (s?.user?.email) {
+          void import("@/lib/mailerlite-consent").then(({ flushMailerliteConsent }) =>
+            flushMailerliteConsent(s.user.email),
+          );
+        }
       });
       unsubscribe = () => subscription.unsubscribe();
       supabase.auth.getSession().then(({ data }) => {
         setSession(data.session);
         setLoading(false);
+        if (data.session?.user?.email) {
+          void import("@/lib/mailerlite-consent").then(({ flushMailerliteConsent }) =>
+            flushMailerliteConsent(data.session!.user.email),
+          );
+        }
       });
     });
 
