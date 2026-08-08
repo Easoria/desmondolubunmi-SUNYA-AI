@@ -1,0 +1,16 @@
+{
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "desmondolubunmi.com"
+        }
+      ],
+      "destination": "https://www.desmondolubunmi.com/:path*",
+      "permanent": true
+    }
+  ]
+}

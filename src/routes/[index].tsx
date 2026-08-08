@@ -1,6 +1,11 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { IndexPage } from "@/components/pages/IndexPage";
+import { createFileRoute, redirect } from "@tanstack/react-router";
 
+// Legacy /index URL served the homepage shell without SEO tags — 301 to "/".
 export const Route = createFileRoute("/index")({
-  component: IndexPage,
+  beforeLoad: () => {
+    throw redirect({
+      to: "/",
+      statusCode: 301,
+    });
+  },
 });

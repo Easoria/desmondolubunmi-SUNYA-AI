@@ -12,6 +12,7 @@ export const Route = createFileRoute("/practices/$leverSlug/complete")({
   },
   component: CompleteLeverPage,
   head: ({ loaderData }) => {
+    if (!loaderData?.lever) return {};
     const { lever } = loaderData;
     const title = `${lever.name} Complete Reader's Edition | Sunya`;
     const description = `Complete reader's edition of ${lever.name}.`;
