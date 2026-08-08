@@ -204,7 +204,15 @@ export function Nav() {
       {open && (
         <div className="border-t border-white/10 bg-[#0a1628]/95 backdrop-blur-xl md:hidden">
           <div className="flex flex-col gap-1 px-6 py-4">
+            {/*
+              Practices appears in this primary list AND as the CTA below.
+              Do not remove it from the list as a "duplicate": the mobile menu
+              reads as a complete index of the site. Omitting Practices from
+              the listed items can make visitors conclude it does not exist.
+              The CTA is additional emphasis, not a replacement for the list item.
+            */}
             <MobileLink to="/philosophy" label="Philosophy" onClick={() => setOpen(false)} />
+            <MobileLink to="/practices" label="Practices" onClick={() => setOpen(false)} />
             <MobileLink to="/gatherings" label="Gatherings" onClick={() => setOpen(false)} />
             <MobileLink
               to="/work-with-me"
