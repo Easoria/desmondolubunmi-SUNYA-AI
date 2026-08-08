@@ -3,7 +3,7 @@ import type {} from "@tanstack/react-start";
 import { essays } from "@/data/essays";
 import { getAllLeverPractices, getLeversInOrder } from "@/data/levers";
 import { supabaseAdmin } from "@/integrations/supabase/client.server";
-import { SITE_URL } from "@/lib/blog";
+import { CANONICAL_ORIGIN, normalizePath } from "@/lib/seo";
 
 interface SitemapEntry {
   path: string;
@@ -101,18 +101,19 @@ export const Route = createFileRoute("/sitemap.xml")({
         ];
 
         const urls = all
-          .map((e) =>
-            [
+          .map((e) => {
+            const loc = `${CANONICAL_ORIGIN}${normalizePath(e.path)}`;
+            return [
               `  <url>`,
-              `    <loc>${SITE_URL}${e.path}</loc>`,
+              `    <loc>${loc}</loc>`,
               e.lastmod ? `    <lastmod>${new Date(e.lastmod).toISOString()}</lastmod>` : null,
               e.changefreq ? `    <changefreq>${e.changefreq}</changefreq>` : null,
               e.priority ? `    <priority>${e.priority}</priority>` : null,
               `  </url>`,
             ]
               .filter(Boolean)
-              .join("\n"),
-          )
+              .join("\n");
+          })
           .join("\n");
 
         const xml = [

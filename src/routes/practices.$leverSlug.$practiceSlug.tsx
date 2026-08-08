@@ -47,6 +47,7 @@ export const Route = createFileRoute("/practices/$leverSlug/$practiceSlug")({
   },
   component: PracticeDetailPage,
   head: ({ loaderData }) => {
+    if (!loaderData?.lever || !loaderData?.practice) return {};
     const { lever, practice } = loaderData;
     const title = buildPracticeMetaTitle(practice, {
       includeLeverName: DUPLICATE_PRACTICE_NAMES.has(practice.name),

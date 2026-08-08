@@ -228,7 +228,7 @@ export function SolutionCard({
         if (block.classList.contains("pdf-footer-block")) {
           const linkH = Math.min(8, blockHmm * 0.45);
           pdf.link(marginX, cursorY + blockHmm - linkH, contentW, linkH, {
-            url: "https://desmondolubunmi.com",
+            url: "https://www.desmondolubunmi.com",
           });
         }
         cursorY += blockHmm + gap;

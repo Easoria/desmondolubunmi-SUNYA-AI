@@ -29,6 +29,7 @@ export const Route = createFileRoute("/practices/$leverSlug")({
     if (!matches?.length || matches[matches.length - 1]?.routeId !== "/practices/$leverSlug") {
       return {};
     }
+    if (!loaderData?.lever) return {};
 
     const { lever } = loaderData;
     const practiceCount = getLeverPracticeCount(lever);

@@ -39,9 +39,36 @@ export type SeoHeadInput = {
   extraMeta?: Array<Record<string, string>>;
 };
 
-function normalizePath(path: string) {
-  if (!path || path === "/") return "/";
-  return path.startsWith("/") ? path : `/${path}`;
+/**
+ * Normalize a site path for canonical / og:url use.
+ * - Homepage is exactly "/".
+ * - All other paths are absolute, with no trailing slash, query, or hash.
+ * - Empty / undefined paths must NOT silently become the homepage (that caused
+ *   GSC "user-declared canonical = homepage" on non-home URLs).
+ */
+export function normalizePath(path: string) {
+  if (path === "/") return "/";
+  if (typeof path !== "string" || path.trim() === "") {
+    throw new Error(`SEO path is required; received ${JSON.stringify(path)}`);
+  }
+
+  let normalized = path.trim();
+  if (/^https?:\/\//i.test(normalized)) {
+    try {
+      normalized = new URL(normalized).pathname || "/";
+    } catch {
+      // Keep original string; validation below will surface bad input.
+    }
+  }
+
+  const queryIndex = normalized.indexOf("?");
+  if (queryIndex !== -1) normalized = normalized.slice(0, queryIndex);
+  const hashIndex = normalized.indexOf("#");
+  if (hashIndex !== -1) normalized = normalized.slice(0, hashIndex);
+
+  if (!normalized.startsWith("/")) normalized = `/${normalized}`;
+  if (normalized.length > 1) normalized = normalized.replace(/\/+$/, "");
+  return normalized || "/";
 }
 
 export function canonicalUrl(path: string) {
