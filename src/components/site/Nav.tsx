@@ -4,16 +4,23 @@ import { ArrowRight, Menu, X, LogOut, LayoutDashboard, History, Settings } from 
 import { useAuth } from "@/hooks/use-auth";
 import { oneToOneNavLabel } from "@/lib/one-to-one-offer";
 
-// Navbar is capped at 4 items + CTA. Do not add more.
+// Navbar is capped at 5 items + CTA. Do not add a sixth.
+// Practices appears as a plain list item AND as the CTA ("Explore practices").
+// That is deliberate — not a duplicate to remove: the list item establishes
+// the destination as a standard part of the site; the button indicates where
+// a first-time visitor should start. Different wording is intentional.
 // Sunya AI is deliberately NOT in the navbar — it is surfaced
 // contextually inside the practices, where a diagnostic makes sense.
 // New sections go in the footer and are cross-linked from related pages.
 const NAV_PRIMARY = [
   { label: "Philosophy", to: "/philosophy" as const },
+  { label: "Practices", to: "/practices" as const },
   { label: "Gatherings", to: "/gatherings" as const },
   { label: oneToOneNavLabel(), to: "/work-with-me" as const },
   { label: "Vision", to: "/vision" as const },
 ];
+
+const PRACTICES_CTA_LABEL = "Explore practices";
 
 const NAV_SECONDARY = [
   { label: "The Timeless Solution", to: "/timeless-solution" as const },
@@ -175,7 +182,7 @@ export function Nav() {
             to="/practices"
             className="glow-btn inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium"
           >
-            Practices <ArrowRight className="h-3.5 w-3.5" />
+            {PRACTICES_CTA_LABEL} <ArrowRight className="h-3.5 w-3.5" />
           </Link>
           {user ? <AccountAvatar /> : null}
         </div>
@@ -184,7 +191,7 @@ export function Nav() {
             to="/practices"
             className="glow-btn inline-flex items-center gap-1.5 rounded-full px-3.5 py-2 text-xs font-medium"
           >
-            Practices <ArrowRight className="h-3 w-3" />
+            {PRACTICES_CTA_LABEL} <ArrowRight className="h-3 w-3" />
           </Link>
           {user ? <AccountAvatar /> : null}
           <div className="flex flex-col items-center">
@@ -205,11 +212,11 @@ export function Nav() {
         <div className="border-t border-white/10 bg-[#0a1628]/95 backdrop-blur-xl md:hidden">
           <div className="flex flex-col gap-1 px-6 py-4">
             {/*
-              Practices appears in this primary list AND as the CTA below.
-              Do not remove it from the list as a "duplicate": the mobile menu
-              reads as a complete index of the site. Omitting Practices from
-              the listed items can make visitors conclude it does not exist.
-              The CTA is additional emphasis, not a replacement for the list item.
+              Practices appears in this primary list AND as the CTA below
+              ("Explore practices"). Do not remove either as a "duplicate":
+              the list item establishes the destination; the button shows
+              where a first-time visitor should start. Different wording is
+              deliberate. On mobile the menu also reads as a complete site index.
             */}
             <MobileLink to="/philosophy" label="Philosophy" onClick={() => setOpen(false)} />
             <MobileLink to="/practices" label="Practices" onClick={() => setOpen(false)} />
@@ -235,7 +242,7 @@ export function Nav() {
               onClick={() => setOpen(false)}
               className="glow-btn mt-1 inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-medium"
             >
-              Practices <ArrowRight className="h-3.5 w-3.5" />
+              {PRACTICES_CTA_LABEL} <ArrowRight className="h-3.5 w-3.5" />
             </Link>
             {user ? (
               <>
