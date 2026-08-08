@@ -89,7 +89,7 @@ export const SOLUTION_PARSER_RULES = `After the model returns the solution respo
 7. Reject practice blocks that look like paragraphs (longer than 90 characters, multiple sentences, or no short name). If a block has no description but a valid short name, the name is used as the description.
 8. The final parsed Solution object is { mirror, insight, practices[], reframe, raw }.`;
 
-export const CHAT_LIMIT_LOGIC = `Authenticated free users are allowed up to 3 sessions per day. The chat route checks the request's bearer token against the user_profiles table. If subscription_status is not "paid" and the user has already sent 1 message today (today === last_session_date) and sessions_today >= 3, the route returns HTTP 429 with error code "limit" before calling the model. This limit is enforced on the server; the UI displays the remaining quota and blocks the input when the limit is reached.`;
+export const CHAT_LIMIT_LOGIC = `Authenticated free users get one uncounted first session ever, then up to 2 sessions per ISO week (week_start like 2026-W32). The chat route checks the bearer token against user_profiles: if subscription_status is not "paid", has_used_first_session is true, and sessions_this_week for the current week is >= 2 on the first user turn, it returns HTTP 429 with error code "limit". The UI hides the counter until after the first session, then shows remaining sessions this week and names the weekly reset day when the wall is hit.`;
 
 export const COMBINED_PROMPT_EXPORT = (transcript = "[PASTE TRANSCRIPT HERE]") => `=== SUNYA AI — MAIN CHAT SYSTEM PROMPT ===
 Model: claude-sonnet-4-6

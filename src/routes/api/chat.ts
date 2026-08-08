@@ -40,7 +40,7 @@ export const Route = createFileRoute("/api/chat")({
                   const u = (await userRes.json()) as { id?: string };
                   if (u.id) {
                     const profRes = await fetch(
-                      `${supabaseUrl}/rest/v1/user_profiles?id=eq.${u.id}&select=subscription_status,sessions_today,last_session_date`,
+                      `${supabaseUrl}/rest/v1/user_profiles?id=eq.${u.id}&select=subscription_status,sessions_this_week,week_start,has_used_first_session`,
                       {
                         headers: {
                           apikey: anon,
@@ -52,16 +52,30 @@ export const Route = createFileRoute("/api/chat")({
                     if (profRes.ok) {
                       const rows = (await profRes.json()) as Array<{
                         subscription_status: string;
-                        sessions_today: number;
-                        last_session_date: string | null;
+                        sessions_this_week: number | null;
+                        week_start: string | null;
+                        has_used_first_session: boolean | null;
                       }>;
                       const p = rows[0];
                       if (p && p.subscription_status !== "paid") {
-                        const today = new Date().toISOString().slice(0, 10);
-                        const todays = p.last_session_date === today ? p.sessions_today : 0;
-                        // First user-turn of a session counts. We approximate by counting only first message.
+                        // ISO week key, e.g. 2026-W32
+                        const now = new Date();
+                        const utc = new Date(
+                          Date.UTC(now.getFullYear(), now.getMonth(), now.getDate()),
+                        );
+                        const dayNum = utc.getUTCDay() || 7;
+                        utc.setUTCDate(utc.getUTCDate() + 4 - dayNum);
+                        const yearStart = new Date(Date.UTC(utc.getUTCFullYear(), 0, 1));
+                        const weekNo = Math.ceil(
+                          ((utc.getTime() - yearStart.getTime()) / 86400000 + 1) / 7,
+                        );
+                        const week = `${utc.getUTCFullYear()}-W${String(weekNo).padStart(2, "0")}`;
+                        const weekly =
+                          p.week_start === week ? (p.sessions_this_week ?? 0) : 0;
+                        const firstUsed = Boolean(p.has_used_first_session);
+                        // First-ever session is free; then 2/week.
                         const userTurns = messages.filter((m) => m.role === "user").length;
-                        if (userTurns <= 1 && todays >= 3) {
+                        if (userTurns <= 1 && firstUsed && weekly >= 2) {
                           return Response.json({ error: "limit" }, { status: 429 });
                         }
                       }

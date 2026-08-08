@@ -355,6 +355,25 @@ function PracticeDetailPage() {
 
           <div className="mt-14 max-w-[72ch]">
             <EmailCapture variant="practice" />
+            <p className="mt-8 text-sm leading-relaxed text-[#b8d4e8]/85">
+              Not sure this is the right practice for you?{" "}
+              <Link
+                to="/sunya-ai"
+                className="text-[#7ec8e3] underline decoration-[#7ec8e3]/35 underline-offset-2 transition hover:text-white hover:decoration-white/50"
+              >
+                Sunya AI
+              </Link>{" "}
+              will identify where your system is contracted and which practice matters most right
+              now.
+            </p>
+            <p className="mt-4 text-sm text-[#b8d4e8]/65">
+              <Link
+                to="/work-with-me"
+                className="transition hover:text-white"
+              >
+                Or work with Desmond directly, one-to-one →
+              </Link>
+            </p>
           </div>
         </div>
       </section>

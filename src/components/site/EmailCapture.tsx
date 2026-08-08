@@ -7,10 +7,11 @@ export type EmailCaptureVariant =
   | "philosophy"
   | "home"
   | "writing"
-  | "vision";
+  | "vision"
+  | "sunya-ai";
 
 const COPY: Record<
-  Exclude<EmailCaptureVariant, "vision">,
+  Exclude<EmailCaptureVariant, "vision" | "sunya-ai">,
   { title: string; body: string; button: string }
 > = {
   framework: {

@@ -349,20 +349,24 @@ export type Database = {
           id: string
           is_admin: boolean
           last_name: string | null
+          has_used_first_session: boolean
           last_session_date: string | null
           last_session_month: string | null
           notifications_enabled: boolean
           sessions_this_month: number
+          sessions_this_week: number
           sessions_today: number
           stripe_customer_id: string | null
           subscription_start: string | null
           subscription_status: string
+          week_start: string | null
         }
         Insert: {
           avatar_url?: string | null
           created_at?: string
           email?: string | null
           first_name?: string | null
+          has_used_first_session?: boolean
           id: string
           is_admin?: boolean
           last_name?: string | null
@@ -370,16 +374,19 @@ export type Database = {
           last_session_month?: string | null
           notifications_enabled?: boolean
           sessions_this_month?: number
+          sessions_this_week?: number
           sessions_today?: number
           stripe_customer_id?: string | null
           subscription_start?: string | null
           subscription_status?: string
+          week_start?: string | null
         }
         Update: {
           avatar_url?: string | null
           created_at?: string
           email?: string | null
           first_name?: string | null
+          has_used_first_session?: boolean
           id?: string
           is_admin?: boolean
           last_name?: string | null
@@ -387,10 +394,12 @@ export type Database = {
           last_session_month?: string | null
           notifications_enabled?: boolean
           sessions_this_month?: number
+          sessions_this_week?: number
           sessions_today?: number
           stripe_customer_id?: string | null
           subscription_start?: string | null
           subscription_status?: string
+          week_start?: string | null
         }
         Relationships: []
       }
