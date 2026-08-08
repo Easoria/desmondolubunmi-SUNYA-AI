@@ -353,7 +353,13 @@ function PracticeDetailPage() {
             </section>
           ) : null}
 
-          <div className="mt-14 max-w-[72ch]">
+          {/* Section break: practice content above; onward actions below. */}
+          <div
+            className="my-20 max-w-[72ch] border-t border-[#7ec8e3]/25"
+            aria-hidden="true"
+          />
+
+          <div className="max-w-[72ch]">
             <EmailCapture variant="practice" />
             <p className="mt-8 text-sm leading-relaxed text-[#b8d4e8]/85">
               Not sure this is the right practice for you?{" "}

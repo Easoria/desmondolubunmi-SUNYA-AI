@@ -205,7 +205,6 @@ export function Nav() {
         <div className="border-t border-white/10 bg-[#0a1628]/95 backdrop-blur-xl md:hidden">
           <div className="flex flex-col gap-1 px-6 py-4">
             <MobileLink to="/philosophy" label="Philosophy" onClick={() => setOpen(false)} />
-            <MobileLink to="/practices" label="Practices" onClick={() => setOpen(false)} />
             <MobileLink to="/gatherings" label="Gatherings" onClick={() => setOpen(false)} />
             <MobileLink
               to="/work-with-me"
