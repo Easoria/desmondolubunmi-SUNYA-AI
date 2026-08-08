@@ -50,7 +50,8 @@ type Props = {
 
 export function EmailCapture({ variant, id, className = "" }: Props) {
   const source: EmailCaptureVariant = variant ?? "vision";
-  const copy = source === "vision" ? null : COPY[source];
+  const copy =
+    source === "vision" || source === "sunya-ai" ? null : COPY[source];
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
   const [done, setDone] = useState(false);
