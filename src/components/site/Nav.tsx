@@ -205,7 +205,6 @@ export function Nav() {
         <div className="border-t border-white/10 bg-[#0a1628]/95 backdrop-blur-xl md:hidden">
           <div className="flex flex-col gap-1 px-6 py-4">
             <MobileLink to="/philosophy" label="Philosophy" onClick={() => setOpen(false)} />
-            <MobileLink to="/practices" label="Practices" onClick={() => setOpen(false)} />
             <MobileLink to="/gatherings" label="Gatherings" onClick={() => setOpen(false)} />
             <MobileLink
               to="/work-with-me"
@@ -228,7 +227,7 @@ export function Nav() {
               onClick={() => setOpen(false)}
               className="glow-btn mt-1 inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-medium"
             >
-              Explore the practices <ArrowRight className="h-3.5 w-3.5" />
+              Practices <ArrowRight className="h-3.5 w-3.5" />
             </Link>
             {user ? (
               <>
