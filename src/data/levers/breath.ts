@@ -49,7 +49,11 @@ export const breathLever: Lever = {
           relatedPractices: ["coherent-breathing", "deep-belly-breathing", "spinal-breathing"],
           metaTitle: "Alternate-Nostril Breathing — How to Practise It | Sunya",
           metaDescription:
-            "The most powerful of the breaths for cleansing the energy pathways — and, by working both sides in turn, a balancer of the whole system.",
+            "The most powerful of the breaths for cleansing the energy pathways — and, by working both sides in turn, a balancer of the whole system."
+          families: ["H4", "M4"],
+          directions: ["calm", "stabilise"],
+          problems: [],
+,
           generated: {
             layersSource: "STATED",
             durationSource: "STATED",
@@ -99,7 +103,11 @@ export const breathLever: Lever = {
             "alternate-nostril-breathing",
           ],
           metaTitle: "Deep Belly Breathing — How to Practise It | Sunya",
-          metaDescription: "A return to the body’s natural, default rhythm.",
+          metaDescription: "A return to the body’s natural, default rhythm."
+          families: ["H1", "H4"],
+          directions: ["ground", "calm"],
+          problems: [],
+,
           generated: {
             layersSource: "STATED",
             durationSource: "STATED",
@@ -144,7 +152,11 @@ export const breathLever: Lever = {
             "breath-retention",
           ],
           metaTitle: "Coherent Breathing — How to Practise It | Sunya",
-          metaDescription: "Bringing the heart and mind into a single, even rhythm.",
+          metaDescription: "Bringing the heart and mind into a single, even rhythm."
+          families: ["H4", "M4"],
+          directions: ["calm", "stabilise"],
+          problems: [],
+,
           generated: {
             layersSource: "STATED",
             durationSource: "STATED",
@@ -197,7 +209,11 @@ export const breathLever: Lever = {
           groupSlug: "the-sedatives",
           relatedPractices: ["4-7-8-breathing", "deep-belly-breathing", "coherent-breathing"],
           metaTitle: "The Physiological Sigh — How to Practise It | Sunya",
-          metaDescription: "The fastest way to stop panic in real time.",
+          metaDescription: "The fastest way to stop panic in real time."
+          families: ["H1", "H4"],
+          directions: ["calm", "contain", "slow"],
+          problems: [],
+,
           generated: {
             layersSource: "STATED",
             durationSource: "OMITTED",
@@ -241,7 +257,11 @@ export const breathLever: Lever = {
           groupSlug: "the-sedatives",
           relatedPractices: ["the-physiological-sigh", "coherent-breathing", "breath-retention"],
           metaTitle: "4-7-8 Breathing — How to Practise It | Sunya",
-          metaDescription: "Deep sedation, for sleep or intense anxiety.",
+          metaDescription: "Deep sedation, for sleep or intense anxiety."
+          families: ["H4", "H1"],
+          directions: ["calm", "slow", "contain"],
+          problems: [],
+,
           generated: {
             layersSource: "STATED",
             durationSource: "OMITTED",
@@ -301,7 +321,11 @@ export const breathLever: Lever = {
             "coherent-breathing",
           ],
           metaTitle: "Bellows Breath — How to Practise It | Sunya",
-          metaDescription: "A vigorous pump that floods the system with energy and heat.",
+          metaDescription: "A vigorous pump that floods the system with energy and heat."
+          families: ["L3", "L4"],
+          directions: ["energise", "uplift", "initiate"],
+          problems: [],
+,
           generated: {
             layersSource: "STATED",
             durationSource: "OMITTED",
@@ -348,7 +372,11 @@ export const breathLever: Lever = {
             "the-physiological-sigh",
           ],
           metaTitle: "Skull-Shining Breath — How to Practise It | Sunya",
-          metaDescription: "Clearing the head and brightening the whole system.",
+          metaDescription: "Clearing the head and brightening the whole system."
+          families: ["L3", "L4"],
+          directions: ["energise", "uplift", "clarify"],
+          problems: [],
+,
           generated: {
             layersSource: "STATED",
             durationSource: "OMITTED",
@@ -394,7 +422,11 @@ export const breathLever: Lever = {
           groupSlug: "the-activators",
           relatedPractices: ["bellows-breath", "skull-shining-breath", "coherent-breathing"],
           metaTitle: "Cyclic Hyperventilation — How to Practise It | Sunya",
-          metaDescription: "A powerful surge of energy, heat, and elevated mood.",
+          metaDescription: "A powerful surge of energy, heat, and elevated mood."
+          families: ["L3", "L4"],
+          directions: ["energise", "uplift", "initiate"],
+          problems: [],
+,
           generated: {
             layersSource: "STATED",
             durationSource: "OMITTED",
@@ -459,7 +491,11 @@ export const breathLever: Lever = {
           relatedPractices: ["alternate-nostril-breathing", "breath-retention", "the-great-lock"],
           metaTitle: "Spinal Breathing — How to Practise It | Sunya",
           metaDescription:
-            "The deepest and most complete of all the breath practices: opening the central channel and drawing the life force upward.",
+            "The deepest and most complete of all the breath practices: opening the central channel and drawing the life force upward."
+          families: ["L3", "M4"],
+          directions: ["initiate", "stabilise", "clarify"],
+          problems: [],
+,
           generated: {
             layersSource: "STATED",
             durationSource: "OMITTED",
@@ -515,7 +551,11 @@ export const breathLever: Lever = {
           relatedPractices: ["the-great-lock", "spinal-breathing", "4-7-8-breathing"],
           metaTitle: "Breath Retention — How to Practise It | Sunya",
           metaDescription:
-            "The conscious, deliberate pause — where the breath stops and the system opens, settles, and falls quiet.",
+            "The conscious, deliberate pause — where the breath stops and the system opens, settles, and falls quiet."
+          families: ["H4"],
+          directions: ["calm", "contain", "slow"],
+          problems: [],
+,
           generated: {
             layersSource: "STATED",
             durationSource: "OMITTED",
@@ -569,7 +609,11 @@ export const breathLever: Lever = {
           relatedPractices: ["the-root-lock", "breath-retention", "spinal-breathing"],
           metaTitle: "The Great Lock — How to Practise It | Sunya",
           metaDescription:
-            "The most powerful of the sealing practices: pressurising the central channel to drive the life force upward.",
+            "The most powerful of the sealing practices: pressurising the central channel to drive the life force upward."
+          families: ["L3"],
+          directions: ["contain", "initiate"],
+          problems: [],
+,
           generated: {
             layersSource: "STATED",
             durationSource: "OMITTED",
