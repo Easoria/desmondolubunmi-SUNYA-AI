@@ -30,6 +30,44 @@ export type PracticeGeneratedFields = {
   relatedPracticeRationale: RelatedPracticeLink[];
 };
 
+/**
+ * Diagnostic family codes for the Problems layer.
+ * PRIVATE — must never appear in rendered HTML, copy, meta, alt, URLs, or schema.
+ */
+export type FamilyCode =
+  | "H1"
+  | "H2"
+  | "H3"
+  | "H4"
+  | "L1"
+  | "L2"
+  | "L3"
+  | "L4"
+  | "M1"
+  | "M2"
+  | "M3"
+  | "M4";
+
+/** Intervention directions — PRIVATE; used only for filtering/sequencing. */
+export type Direction =
+  | "calm"
+  | "ground"
+  | "contain"
+  | "slow"
+  | "simplify"
+  | "reduce"
+  | "discharge"
+  | "release"
+  | "soften"
+  | "restore"
+  | "reconnect"
+  | "energise"
+  | "initiate"
+  | "uplift"
+  | "clarify"
+  | "structure"
+  | "stabilise";
+
 export type Practice = {
   sourceNumber?: number;
   slug: string;
@@ -47,6 +85,12 @@ export type Practice = {
   relatedPractices: string[];
   metaTitle: string;
   metaDescription: string;
+  /** PRIVATE diagnostic families — never render these codes. */
+  families?: FamilyCode[];
+  /** PRIVATE intervention directions — never render. */
+  directions?: Direction[];
+  /** Problem-page slugs this practice may serve (e.g. "insomnia"). */
+  problems?: string[];
   generated: PracticeGeneratedFields;
 };
 
