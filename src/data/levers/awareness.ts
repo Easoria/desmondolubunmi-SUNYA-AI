@@ -37,11 +37,10 @@ export const awarenessLever: Lever = {
         "body-scan"
       ],
       metaTitle: "Breath Awareness — How to Practise It | Sunya",
-      metaDescription: "The foundational practice of inner observation — and one of the oldest in recorded human history."
+      metaDescription: "The foundational practice of inner observation — and one of the oldest in recorded human history.",
       families: ["H4"],
       directions: ["calm", "ground", "slow"],
       problems: [],
-,
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
@@ -83,11 +82,10 @@ export const awarenessLever: Lever = {
         "non-sleep-deep-rest"
       ],
       metaTitle: "Inner Gaze — How to Practise It | Sunya",
-      metaDescription: "Directing the mental gaze upward and inward — to the space between the eyebrows — creating a single, neutral anchor point that draws the life force upward and inward."
+      metaDescription: "Directing the mental gaze upward and inward — to the space between the eyebrows — creating a single, neutral anchor point that draws the life force upward and inward.",
       families: ["H4"],
       directions: ["calm", "contain"],
       problems: [],
-,
       generated: {
         layersSource: "INFERRED",
         durationSource: "STATED",
@@ -132,11 +130,10 @@ export const awarenessLever: Lever = {
         "energy-body-awareness"
       ],
       metaTitle: "Body Scan — How to Practise It | Sunya",
-      metaDescription: "Moving awareness slowly through the body, from feet to head, turning unconscious tension into conscious relaxation."
+      metaDescription: "Moving awareness slowly through the body, from feet to head, turning unconscious tension into conscious relaxation.",
       families: ["H3", "H1"],
       directions: ["soften", "release", "ground"],
       problems: [],
-,
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
@@ -180,11 +177,10 @@ export const awarenessLever: Lever = {
         "holistic-subtle-bodies-awareness"
       ],
       metaTitle: "Non-Sleep Deep Rest (NSDR) — How to Practise It | Sunya",
-      metaDescription: "A practice of guided rest rooted in the ancient tradition of Yoga Nidra."
+      metaDescription: "A practice of guided rest rooted in the ancient tradition of Yoga Nidra.",
       families: ["L1", "H4"],
       directions: ["restore", "calm", "release"],
       problems: [],
-,
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
@@ -231,11 +227,10 @@ export const awarenessLever: Lever = {
         "compassionate-presence"
       ],
       metaTitle: "Energy Body Awareness — How to Practise It | Sunya",
-      metaDescription: "Holding awareness on the entire energy body as a unified whole — the most powerful practice for direct inner transformation."
+      metaDescription: "Holding awareness on the entire energy body as a unified whole — the most powerful practice for direct inner transformation.",
       families: ["L2", "M4"],
       directions: ["reconnect", "stabilise"],
       problems: [],
-,
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
@@ -285,11 +280,10 @@ export const awarenessLever: Lever = {
         "deep-listening-meditation"
       ],
       metaTitle: "Holistic Subtle Bodies Awareness — How to Practise It | Sunya",
-      metaDescription: "Shining the light of awareness on the entire layers of being at once — physical, emotional, mental, and energetic simultaneously."
+      metaDescription: "Shining the light of awareness on the entire layers of being at once — physical, emotional, mental, and energetic simultaneously.",
       families: ["M4"],
       directions: ["ground", "stabilise"],
       problems: [],
-,
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
@@ -342,11 +336,10 @@ export const awarenessLever: Lever = {
         "pure-observation"
       ],
       metaTitle: "Compassionate Presence — How to Practise It | Sunya",
-      metaDescription: "The simple act of being with whatever is arising in you, without judgment or avoidance."
+      metaDescription: "The simple act of being with whatever is arising in you, without judgment or avoidance.",
       families: ["M2", "H1"],
       directions: ["soften", "ground"],
       problems: [],
-,
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
@@ -390,11 +383,10 @@ export const awarenessLever: Lever = {
         "disidentifying"
       ],
       metaTitle: "Deep Listening Meditation — How to Practise It | Sunya",
-      metaDescription: "A meditation on sound and silence."
+      metaDescription: "A meditation on sound and silence.",
       families: ["H4"],
       directions: ["soften", "calm"],
       problems: [],
-,
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
@@ -451,11 +443,10 @@ export const awarenessLever: Lever = {
         "self-inquiry"
       ],
       metaTitle: "Pure Observation — How to Practise It | Sunya",
-      metaDescription: "The solution to compulsive thinking is not suppression — it is consciousness."
+      metaDescription: "The solution to compulsive thinking is not suppression — it is consciousness.",
       families: ["H4"],
       directions: ["calm", "clarify"],
       problems: [],
-,
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
@@ -518,11 +509,10 @@ export const awarenessLever: Lever = {
         "ultimate-self-inquiry"
       ],
       metaTitle: "Disidentifying — How to Practise It | Sunya",
-      metaDescription: "Finding the truth by discarding what is false."
+      metaDescription: "Finding the truth by discarding what is false.",
       families: ["H1", "M2"],
       directions: ["clarify", "soften"],
       problems: [],
-,
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
@@ -579,11 +569,10 @@ export const awarenessLever: Lever = {
         "non-doing"
       ],
       metaTitle: "Self-Inquiry — How to Practise It | Sunya",
-      metaDescription: "To become free from constant fear, worry, and desire by bringing awareness into the very nature of the self — and enquiring, with complete sincerity: “Who am I?”"
+      metaDescription: "To become free from constant fear, worry, and desire by bringing awareness into the very nature of the self — and enquiring, with complete sincerity: “Who am I?”",
       families: ["H1"],
       directions: ["clarify"],
       problems: [],
-,
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
@@ -640,11 +629,10 @@ export const awarenessLever: Lever = {
         "aware-of-awareness"
       ],
       metaTitle: "Ultimate Self-Inquiry — How to Practise It | Sunya",
-      metaDescription: "Meditating on the nature of death, on what existed before birth, and on the ending of time — to cut through the illusion of the separate self at its deepest root and realise pure consciousness."
+      metaDescription: "Meditating on the nature of death, on what existed before birth, and on the ending of time — to cut through the illusion of the separate self at its deepest root and realise pure consciousness.",
       families: ["H1"],
       directions: ["clarify"],
       problems: [],
-,
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
@@ -704,11 +692,10 @@ export const awarenessLever: Lever = {
         "the-shunya"
       ],
       metaTitle: "Non-Doing — How to Practise It | Sunya",
-      metaDescription: "Dropping all sense of doing and simply being."
+      metaDescription: "Dropping all sense of doing and simply being.",
       families: ["H4"],
       directions: ["soften", "calm", "release"],
       problems: [],
-,
       generated: {
         layersSource: "INFERRED",
         durationSource: "STATED",
@@ -764,11 +751,10 @@ export const awarenessLever: Lever = {
         "the-shunya"
       ],
       metaTitle: "Aware of Awareness — How to Practise It | Sunya",
-      metaDescription: "Shifting attention away from the objects of experience — thoughts, feelings, perceptions — and directing it toward the knowing presence itself."
+      metaDescription: "Shifting attention away from the objects of experience — thoughts, feelings, perceptions — and directing it toward the knowing presence itself.",
       families: ["H4"],
       directions: ["calm", "clarify"],
       problems: [],
-,
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
@@ -807,11 +793,10 @@ export const awarenessLever: Lever = {
         "aware-of-awareness"
       ],
       metaTitle: "The Shunya — How to Practise It | Sunya",
-      metaDescription: "The practice of being absolutely nothing inwardly."
+      metaDescription: "The practice of being absolutely nothing inwardly.",
       families: ["H4"],
       directions: ["calm", "soften", "release"],
       problems: [],
-,
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",

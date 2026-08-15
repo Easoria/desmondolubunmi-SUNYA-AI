@@ -49,11 +49,10 @@ export const conservationLever: Lever = {
       relatedPractices: ["sensory-rest", "deep-belly-breathing", "coherent-breathing"],
       metaTitle: "Silence — How to Practise It | Sunya",
       metaDescription:
-        "Speech is one of the largest drains of life force there is, because your speech is a projection of your energy — it runs on it."
+        "Speech is one of the largest drains of life force there is, because your speech is a projection of your energy — it runs on it.",
       families: ["L1", "H2", "H4"],
       directions: ["restore", "reduce", "calm"],
       problems: [],
-,
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
@@ -107,11 +106,10 @@ export const conservationLever: Lever = {
       relatedPractices: ["silence", "coherent-breathing", "alternate-nostril-breathing"],
       metaTitle: "Sensory Rest — How to Practise It | Sunya",
       metaDescription:
-        "The senses reach outward all day toward stimulation — screens, noise, endless input — and pour energy out as they go."
+        "The senses reach outward all day toward stimulation — screens, noise, endless input — and pour energy out as they go.",
       families: ["H2", "H4"],
       directions: ["reduce", "simplify", "calm"],
       problems: [],
-,
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
@@ -165,11 +163,10 @@ export const conservationLever: Lever = {
       leverSlug: "conservation",
       relatedPractices: ["sexual-conservation", "deep-belly-breathing", "coherent-breathing"],
       metaTitle: "Fasting — How to Practise It | Sunya",
-      metaDescription: "A great deal of the body’s energy goes into digestion."
+      metaDescription: "A great deal of the body’s energy goes into digestion.",
       families: ["L1", "H2"],
       directions: ["restore", "reduce"],
       problems: [],
-,
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
@@ -233,11 +230,10 @@ export const conservationLever: Lever = {
       leverSlug: "conservation",
       relatedPractices: ["the-root-lock", "fasting", "spinal-breathing"],
       metaTitle: "Sexual Conservation — How to Practise It | Sunya",
-      metaDescription: "Sexual energy is among the most concentrated forms of the life force."
+      metaDescription: "Sexual energy is among the most concentrated forms of the life force.",
       families: ["L1"],
       directions: ["contain", "restore", "reduce"],
       problems: [],
-,
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
@@ -292,11 +288,10 @@ export const conservationLever: Lever = {
       leverSlug: "conservation",
       relatedPractices: ["breath-retention", "the-great-lock", "spinal-breathing"],
       metaTitle: "The Root Lock — How to Practise It | Sunya",
-      metaDescription: "A contraction at the base of the body that seals energy in and turns it upward."
+      metaDescription: "A contraction at the base of the body that seals energy in and turns it upward.",
       families: ["L1", "L3"],
       directions: ["contain", "initiate"],
       problems: [],
-,
       generated: {
         layersSource: "STATED",
         durationSource: "OMITTED",

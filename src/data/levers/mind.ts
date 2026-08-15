@@ -53,11 +53,10 @@ export const mindLever: Lever = {
         "conscious-creation"
       ],
       metaTitle: "Input Control — How to Practise It | Sunya",
-      metaDescription: "The content of the mind is not the truth — it is accumulated data."
+      metaDescription: "The content of the mind is not the truth — it is accumulated data.",
       families: ["H2"],
       directions: ["reduce", "simplify"],
       problems: [],
-,
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
@@ -110,11 +109,10 @@ export const mindLever: Lever = {
         "laser-focus"
       ],
       metaTitle: "Clarity of Purpose — How to Practise It | Sunya",
-      metaDescription: "When you do not know where you are going, the mind falls into confusion and scatters attention in every direction."
+      metaDescription: "When you do not know where you are going, the mind falls into confusion and scatters attention in every direction.",
       families: ["M1", "M3"],
       directions: ["clarify", "structure"],
       problems: [],
-,
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
@@ -171,11 +169,10 @@ export const mindLever: Lever = {
         "journaling"
       ],
       metaTitle: "Conscious Creation — How to Practise It | Sunya",
-      metaDescription: "Using the mind as a creative force — stepping into the role of the conscious creator by combining deep, focused visualization with sustained determination and strategic action."
+      metaDescription: "Using the mind as a creative force — stepping into the role of the conscious creator by combining deep, focused visualization with sustained determination and strategic action.",
       families: ["L3", "M3"],
       directions: ["initiate", "structure"],
       problems: [],
-,
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
@@ -236,11 +233,10 @@ export const mindLever: Lever = {
         "conscious-affirmation"
       ],
       metaTitle: "Laser Focus — How to Practise It | Sunya",
-      metaDescription: "Training the mind to sustain unwavering attention on a single point."
+      metaDescription: "Training the mind to sustain unwavering attention on a single point.",
       families: ["H2", "M3"],
       directions: ["contain", "structure", "simplify"],
       problems: [],
-,
       generated: {
         layersSource: "INFERRED",
         durationSource: "STATED",
@@ -295,11 +291,10 @@ export const mindLever: Lever = {
         "mindful-reflection"
       ],
       metaTitle: "Journaling — How to Practise It | Sunya",
-      metaDescription: "Transferring internal mental chaos into external physical form."
+      metaDescription: "Transferring internal mental chaos into external physical form.",
       families: ["H4", "M3"],
       directions: ["calm", "structure", "clarify"],
       problems: [],
-,
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
@@ -356,11 +351,10 @@ export const mindLever: Lever = {
         "mindful-reflection"
       ],
       metaTitle: "Conscious Affirmation — How to Practise It | Sunya",
-      metaDescription: "Transforming your mind by deliberately tuning it to a chosen state, pattern, and disposition."
+      metaDescription: "Transforming your mind by deliberately tuning it to a chosen state, pattern, and disposition.",
       families: ["M2"],
       directions: ["soften", "clarify"],
       problems: [],
-,
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
@@ -408,11 +402,10 @@ export const mindLever: Lever = {
         "conscious-affirmation"
       ],
       metaTitle: "Mindful Reflection — How to Practise It | Sunya",
-      metaDescription: "Gaining profound wisdom and mental maturity by observing the network of your past actions, radically accepting your present position, and strategically directing your future."
+      metaDescription: "Gaining profound wisdom and mental maturity by observing the network of your past actions, radically accepting your present position, and strategically directing your future.",
       families: ["H1", "M2", "M1"],
       directions: ["soften", "clarify", "calm"],
       problems: [],
-,
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
