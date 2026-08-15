@@ -76,6 +76,15 @@ export function getPracticeBySlug(lever: Lever, practiceSlug: string) {
   return getAllLeverPractices(lever).find((practice) => practice.slug === practiceSlug) ?? null;
 }
 
+/** Resolve a practice slug across the full library (unique slugs). */
+export function findPracticeInLibrary(practiceSlug: string) {
+  for (const lever of getLeversInOrder()) {
+    const practice = getPracticeBySlug(lever, practiceSlug);
+    if (practice) return { lever, practice };
+  }
+  return null;
+}
+
 export function getPreviousAndNextLevers(slug: LeverSlug) {
   const index = LEVER_ORDER.indexOf(slug);
   const previous = index > 0 ? leverLibrary[LEVER_ORDER[index - 1]] : null;

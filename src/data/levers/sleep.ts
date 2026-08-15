@@ -47,7 +47,7 @@ export const sleepLever: Lever = {
       metaDescription: "Sleep is not a switch to be forced — it is a natural biological rhythm to be honoured.",
       families: ["M3", "M4"],
       directions: ["structure", "stabilise", "reduce"],
-      problems: [],
+      problems: ["insomnia"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
@@ -103,7 +103,7 @@ export const sleepLever: Lever = {
       metaDescription: "Breaking the cycle of stress and sleeplessness by removing the performance pressure of sleep.",
       families: ["H4", "H1"],
       directions: ["calm", "slow", "contain", "soften"],
-      problems: [],
+      problems: ["insomnia"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
@@ -169,7 +169,7 @@ export const sleepLever: Lever = {
       metaDescription: "Shifting the body from a state of survival into a state of rest and repair by manually signalling safety to the nervous system.",
       families: ["H1", "H3", "H4"],
       directions: ["ground", "calm", "soften", "release"],
-      problems: [],
+      problems: ["insomnia"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
@@ -229,7 +229,7 @@ export const sleepLever: Lever = {
       metaDescription: "Architecting your internal chemistry to support the natural descent into sleep.",
       families: ["H2", "M3"],
       directions: ["reduce", "simplify"],
-      problems: [],
+      problems: ["insomnia"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
@@ -290,7 +290,7 @@ export const sleepLever: Lever = {
       metaDescription: "Reclaiming your natural sleep rhythm by controlling the two most powerful environmental signals that shape your biological clock — light and sound.",
       families: ["H1", "H4"],
       directions: ["reduce", "ground", "calm"],
-      problems: [],
+      problems: ["insomnia"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "STATED",
@@ -357,7 +357,7 @@ export const sleepLever: Lever = {
       metaDescription: "Transforming the bedroom from a chaotic, multi-purpose room into a single- purpose sanctuary — an environment engineered to passively pull the body into deep, restorative rest.",
       families: ["H2", "H1"],
       directions: ["simplify", "reduce", "calm"],
-      problems: [],
+      problems: ["insomnia"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "STATED",
@@ -415,7 +415,7 @@ export const sleepLever: Lever = {
       metaDescription: "Using the body’s physical energy to build the chemical drive for sleep during the day, while downshifting the nervous system in the evening.",
       families: ["H3", "H4"],
       directions: ["discharge", "release", "calm"],
-      problems: [],
+      problems: ["insomnia"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
@@ -590,7 +590,7 @@ export const sleepLever: Lever = {
       metaDescription: "Maintaining the core principles of circadian rhythm and nervous system regulation when faced with the irregular demands of modern life — travel, shift work, and new parenthood.",
       families: ["H1", "M4"],
       directions: ["stabilise", "soften", "calm"],
-      problems: [],
+      problems: ["insomnia"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
@@ -708,7 +708,7 @@ export const sleepLever: Lever = {
       metaDescription: "A structured 60-minute sequence that systematically transitions the nervous system from the demands of the day to the threshold of deep sleep.",
       families: ["H4", "H1", "M3"],
       directions: ["slow", "calm", "contain", "structure"],
-      problems: [],
+      problems: ["insomnia"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "STATED",

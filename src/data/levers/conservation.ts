@@ -109,7 +109,7 @@ export const conservationLever: Lever = {
         "The senses reach outward all day toward stimulation — screens, noise, endless input — and pour energy out as they go.",
       families: ["H2", "H4"],
       directions: ["reduce", "simplify", "calm"],
-      problems: [],
+      problems: ["insomnia"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",

@@ -40,7 +40,7 @@ export const awarenessLever: Lever = {
       metaDescription: "The foundational practice of inner observation — and one of the oldest in recorded human history.",
       families: ["H4"],
       directions: ["calm", "ground", "slow"],
-      problems: [],
+      problems: ["insomnia"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
@@ -133,7 +133,7 @@ export const awarenessLever: Lever = {
       metaDescription: "Moving awareness slowly through the body, from feet to head, turning unconscious tension into conscious relaxation.",
       families: ["H3", "H1"],
       directions: ["soften", "release", "ground"],
-      problems: [],
+      problems: ["insomnia"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
@@ -180,7 +180,7 @@ export const awarenessLever: Lever = {
       metaDescription: "A practice of guided rest rooted in the ancient tradition of Yoga Nidra.",
       families: ["L1", "H4"],
       directions: ["restore", "calm", "release"],
-      problems: [],
+      problems: ["insomnia"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
@@ -695,7 +695,7 @@ export const awarenessLever: Lever = {
       metaDescription: "Dropping all sense of doing and simply being.",
       families: ["H4"],
       directions: ["soften", "calm", "release"],
-      problems: [],
+      problems: ["insomnia"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "STATED",

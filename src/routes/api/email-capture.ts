@@ -10,6 +10,7 @@ const VARIANTS = [
   "writing",
   "vision",
   "sunya-ai",
+  "problem",
 ] as const;
 
 const Body = z.object({

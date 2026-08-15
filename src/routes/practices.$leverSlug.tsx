@@ -135,6 +135,17 @@ function LeverHubPage() {
           </div>
 
           <div className="mx-auto mt-8 max-w-4xl space-y-6 text-[#b8d4e8] sm:mt-10">
+            {lever.slug === "sleep" ? (
+              <p className="text-[15px] leading-8 sm:text-base">
+                <Link
+                  to="/problems/$slug"
+                  params={{ slug: "insomnia" }}
+                  className="text-[#7ec8e3] underline decoration-[#7ec8e3]/35 underline-offset-4 transition hover:text-white hover:decoration-white/50"
+                >
+                  Can’t sleep? Start with the problem, not the lever →
+                </Link>
+              </p>
+            ) : null}
             {introParagraphs.map((paragraph, index) => (
               <p key={index} className="text-[15px] leading-8 sm:text-base">
                 {paragraph}

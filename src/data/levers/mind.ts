@@ -294,7 +294,7 @@ export const mindLever: Lever = {
       metaDescription: "Transferring internal mental chaos into external physical form.",
       families: ["H4", "M3"],
       directions: ["calm", "structure", "clarify"],
-      problems: [],
+      problems: ["insomnia"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",

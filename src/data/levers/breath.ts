@@ -105,7 +105,7 @@ export const breathLever: Lever = {
           metaDescription: "A return to the body’s natural, default rhythm.",
           families: ["H1", "H4"],
           directions: ["ground", "calm"],
-          problems: [],
+          problems: ["insomnia"],
           generated: {
             layersSource: "STATED",
             durationSource: "STATED",
@@ -153,7 +153,7 @@ export const breathLever: Lever = {
           metaDescription: "Bringing the heart and mind into a single, even rhythm.",
           families: ["H4", "M4"],
           directions: ["calm", "stabilise"],
-          problems: [],
+          problems: ["insomnia"],
           generated: {
             layersSource: "STATED",
             durationSource: "STATED",
@@ -209,7 +209,7 @@ export const breathLever: Lever = {
           metaDescription: "The fastest way to stop panic in real time.",
           families: ["H1", "H4"],
           directions: ["calm", "contain", "slow"],
-          problems: [],
+          problems: ["insomnia"],
           generated: {
             layersSource: "STATED",
             durationSource: "OMITTED",
@@ -256,7 +256,7 @@ export const breathLever: Lever = {
           metaDescription: "Deep sedation, for sleep or intense anxiety.",
           families: ["H4", "H1"],
           directions: ["calm", "slow", "contain"],
-          problems: [],
+          problems: ["insomnia"],
           generated: {
             layersSource: "STATED",
             durationSource: "OMITTED",
