@@ -53,7 +53,7 @@ function Hero() {
           Sunya is a complete map of human wellbeing — what goes wrong, why, and exactly what to do about it. 112 practices, and a way of knowing which one you need.
         </p>
         <div className="reveal mx-auto mt-8 max-w-3xl sm:mt-12">
-          <div className="flex flex-col items-center gap-2.5">
+          <div className="flex flex-col items-center gap-5 sm:gap-6">
             <Link
               to="/work-with-me"
               className="glow-btn inline-flex w-full items-center justify-center rounded-full px-7 py-3.5 text-sm font-medium tracking-wide sm:w-auto"
