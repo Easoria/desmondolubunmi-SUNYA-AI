@@ -44,7 +44,7 @@ function Hero() {
           />
           <p className="mt-2 text-sm text-[#b8d4e8]">Founded by Desmond Olubunmi</p>
         </div>
-        <h1 className="display reveal mt-5 text-[1.85rem] leading-[1.15] text-white sm:mt-8 sm:text-5xl md:text-6xl lg:text-[3.75rem]">
+        <h1 className="display reveal mt-8 text-[1.5rem] leading-[1.2] text-white sm:mt-10 sm:text-5xl sm:leading-[1.15] md:text-6xl lg:text-[3.75rem]">
           Every difficult state has a way out.
         </h1>
         <p className="reveal mx-auto mt-3 max-w-2xl text-base leading-relaxed text-[#b8d4e8] sm:mt-5 sm:text-lg">
@@ -65,7 +65,7 @@ function Hero() {
           <div className="mt-4 text-center">
             <Link
               to="/gatherings"
-              className="inline-flex items-center gap-2 text-sm text-[#b8d4e8] transition hover:text-white"
+              className="inline-flex items-center gap-2 text-sm font-semibold tracking-wide text-[#7ec8e3] transition hover:text-white"
             >
               Upcoming gatherings →
             </Link>
