@@ -50,7 +50,7 @@ export const breathLever: Lever = {
           metaTitle: "Alternate-Nostril Breathing — How to Practise It | Sunya",
           metaDescription:
             "The most powerful of the breaths for cleansing the energy pathways — and, by working both sides in turn, a balancer of the whole system.",
-          families: ["M4"],
+          families: ["H4", "M4"],
           directions: ["calm", "stabilise"],
           problems: [],
           generated: {
@@ -151,7 +151,7 @@ export const breathLever: Lever = {
           ],
           metaTitle: "Coherent Breathing — How to Practise It | Sunya",
           metaDescription: "Bringing the heart and mind into a single, even rhythm.",
-          families: ["M4"],
+          families: ["H4", "M4"],
           directions: ["calm", "stabilise"],
           problems: ["insomnia"],
           generated: {

@@ -178,7 +178,7 @@ export const awarenessLever: Lever = {
       ],
       metaTitle: "Non-Sleep Deep Rest (NSDR) — How to Practise It | Sunya",
       metaDescription: "A practice of guided rest rooted in the ancient tradition of Yoga Nidra.",
-      families: ["L1"],
+      families: ["L1", "H4"],
       directions: ["restore", "calm", "release"],
       problems: ["insomnia"],
       generated: {
@@ -384,6 +384,7 @@ export const awarenessLever: Lever = {
       ],
       metaTitle: "Deep Listening Meditation — How to Practise It | Sunya",
       metaDescription: "A meditation on sound and silence.",
+      families: ["H4"],
       directions: ["soften", "calm"],
       problems: [],
       generated: {
@@ -793,6 +794,7 @@ export const awarenessLever: Lever = {
       ],
       metaTitle: "The Shunya — How to Practise It | Sunya",
       metaDescription: "The practice of being absolutely nothing inwardly.",
+      families: ["H4"],
       directions: ["calm", "soften", "release"],
       problems: [],
       generated: {
