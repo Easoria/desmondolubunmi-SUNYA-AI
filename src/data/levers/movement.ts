@@ -35,6 +35,7 @@ export const movementLever: Lever = {
       ],
       metaTitle: "Progressive Muscle Relaxation — How to Practise It | Sunya",
       metaDescription: "The most accessible practice of all, and a fine place to begin: you tense each part of the body in turn, then let it go — teaching the body, by contrast, the felt difference between holding and releasing.",
+      families: ["P1"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
@@ -77,6 +78,7 @@ export const movementLever: Lever = {
       ],
       metaTitle: "Joint Rotations — How to Practise It | Sunya",
       metaDescription: "The simplest warm-up of all, and the minimum before any deeper practice: a slow rotation through every joint in the body, finishing at the neck.",
+      families: ["P2"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
@@ -165,6 +167,7 @@ export const movementLever: Lever = {
       ],
       metaTitle: "The Somatic Primer — How to Practise It | Sunya",
       metaDescription: "The complete mobility practice: a structured sequence that works the joints, frees the neck, fortifies the spine, and balances the system with the breath.",
+      families: ["P2", "P3", "H4"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "STATED",
@@ -220,6 +223,7 @@ export const movementLever: Lever = {
       ],
       metaTitle: "Spinal Loosening — How to Practise It | Sunya",
       metaDescription: "A focused sequence for loosening the spine — the central axis along which the life force rises.",
+      families: ["P2", "P3"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "STATED",
@@ -351,6 +355,7 @@ export const movementLever: Lever = {
       ],
       metaTitle: "The Full Practice — How to Practise It | Sunya",
       metaDescription: "A complete whole-body session — the full arc of the Movement practice in a single sitting.",
+      families: ["P1", "P2", "P3"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "STATED",
@@ -409,6 +414,7 @@ export const movementLever: Lever = {
       ],
       metaTitle: "The Dance of Dissolution — How to Practise It | Sunya",
       metaDescription: "Using spontaneous, non-linear movement to dissolve the separate self through the body — bypassing the analytical mind entirely and opening the channels that structured practice cannot reach.",
+      families: ["P1", "P2", "M3"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "STATED",
@@ -498,6 +504,7 @@ export const movementLever: Lever = {
       ],
       metaTitle: "The Deep Squat — How to Practise It | Sunya",
       metaDescription: "The body’s original resting position — a natural release for the lower spine and a direct connection to the ground.",
+      families: ["P2", "P1"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "STATED",
@@ -543,6 +550,7 @@ export const movementLever: Lever = {
       ],
       metaTitle: "The Prostration (Sujud / Balasana — How to Practise It | Sunya",
       metaDescription: "The geometry of complete surrender — using the body to enact what the mind is being asked to do.",
+      families: ["H1"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
@@ -631,6 +639,7 @@ export const movementLever: Lever = {
       ],
       metaTitle: "The Consciousness Seal — How to Practise It | Sunya",
       metaDescription: "A simple, stabilising loop that focuses the mind and redirects the flow of energy.",
+      families: ["M3"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
@@ -670,6 +679,7 @@ export const movementLever: Lever = {
       ],
       metaTitle: "The Primal Seal — How to Practise It | Sunya",
       metaDescription: "A grounding, stabilising seal — the primordial hand position of the human being.",
+      families: ["M3"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
