@@ -10,9 +10,9 @@ import {
 export const Route = createFileRoute("/")({
   component: IndexPage,
   head: () => {
-    const title = "Sunya — A Universal System for Inner Transformation";
+    const title = "Sunya — A Universal System for Human Wellbeing";
     const description =
-      "You are not broken. You are contracted. Sunya is a complete, practical framework for human wellbeing — rooted in the timeless mechanics of consciousness.";
+      "Every difficult state has a way out. A complete framework for human wellbeing, rooted in the timeless mechanics of consciousness. 112 practices, and a way of knowing which one you need.";
 
     return {
       ...buildSeoHead({
