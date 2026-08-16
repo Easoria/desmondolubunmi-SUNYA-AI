@@ -43,11 +43,11 @@ function Hero() {
             className="h-24 w-24 rounded-full object-cover ring-2 ring-[#7ec8e3]/45 shadow-[0_0_36px_-10px_rgba(126,200,227,0.85)] transition hover:ring-[#7ec8e3]/65 hover:shadow-[0_0_46px_-10px_rgba(126,200,227,0.95)] sm:h-[120px] sm:w-[120px]"
           />
         </div>
-        <h1 className="display reveal mt-8 text-[1.5rem] leading-[1.2] text-white sm:mt-10 sm:text-5xl sm:leading-[1.15] md:text-6xl lg:text-[3.75rem]">
-          Every difficult state has a way out.
+        <h1 className="display reveal mt-8 text-[1.05rem] leading-[1.2] text-white sm:mt-10 sm:text-5xl sm:leading-[1.15] md:text-6xl lg:text-[3.75rem]">
+          Whatever you're struggling with, there is a way out.
         </h1>
         <p className="reveal mx-auto mt-3 max-w-2xl text-base leading-relaxed text-[#b8d4e8] sm:mt-5 sm:text-lg">
-          A complete map of human wellbeing — what goes wrong, why, and exactly what to do about it. 112 practices, and a way of knowing which one you need.
+          Sunya is a complete map of human wellbeing — what goes wrong, why, and exactly what to do about it. 112 practices, and a way of knowing which one you need.
         </p>
         <div className="reveal mx-auto mt-8 max-w-3xl sm:mt-12">
           <div className="flex flex-col gap-2.5 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-3">
