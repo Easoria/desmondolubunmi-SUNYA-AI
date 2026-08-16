@@ -32,7 +32,31 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/gatherings", lastmod: generatedAt, changefreq: "weekly", priority: "0.8" },
           { path: "/writing", lastmod: generatedAt, changefreq: "weekly", priority: "0.7" },
           { path: "/problems/insomnia", lastmod: generatedAt, changefreq: "monthly", priority: "0.85" },
+          { path: "/framework", lastmod: generatedAt, changefreq: "monthly", priority: "0.9" },
+          { path: "/problems", lastmod: generatedAt, changefreq: "weekly", priority: "0.9" },
         ];
+
+        const familyProblemEntries: SitemapEntry[] = (
+          [
+            "anxiety-and-worry",
+            "feeling-overwhelmed",
+            "anger-and-frustration",
+            "a-racing-mind",
+            "exhaustion",
+            "numbness-and-disconnection",
+            "avoidance-and-procrastination",
+            "low-mood-and-heaviness",
+            "feeling-torn",
+            "self-criticism",
+            "a-scattered-mind",
+            "burnout",
+          ] as const
+        ).map((slug) => ({
+          path: `/problems/${slug}`,
+          lastmod: generatedAt,
+          changefreq: "monthly" as const,
+          priority: "0.7",
+        }));
 
         const essayEntries: SitemapEntry[] = essays.map((essay) => ({
           path: `/timeless-solution/${essay.slug}`,
@@ -95,6 +119,7 @@ export const Route = createFileRoute("/sitemap.xml")({
 
         const all = [
           ...staticEntries,
+          ...familyProblemEntries,
           ...essayEntries,
           ...practiceEntries,
           ...dynamic,

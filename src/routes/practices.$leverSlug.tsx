@@ -9,6 +9,7 @@ import {
   getPreviousAndNextLevers,
 } from "@/data/levers";
 import type { LeverSlug } from "@/data/levers";
+import { toPublicLever } from "@/lib/family-labels";
 import { formatNarrativeParagraphs } from "@/lib/practice-text-format";
 import {
   buildArticleSchema,
@@ -22,7 +23,7 @@ export const Route = createFileRoute("/practices/$leverSlug")({
   loader: ({ params }) => {
     const lever = getLeverBySlug(params.leverSlug);
     if (!lever) throw notFound();
-    return { lever };
+    return { lever: toPublicLever(lever) };
   },
   component: LeverRoutePage,
   head: ({ loaderData, matches }) => {

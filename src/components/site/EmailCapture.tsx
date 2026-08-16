@@ -9,7 +9,8 @@ export type EmailCaptureVariant =
   | "writing"
   | "vision"
   | "sunya-ai"
-  | "problem";
+  | "problem"
+  | "problems";
 
 const COPY: Record<
   Exclude<EmailCaptureVariant, "vision" | "sunya-ai">,
@@ -44,6 +45,11 @@ const COPY: Record<
     title: "When the night is hard",
     body: "Occasional notes on sleep, practice, and what actually helps — quiet, useful, no noise.",
     button: "Send it to me",
+  },
+  problems: {
+    title: "Start where you are",
+    body: "Occasional notes when a new problem page lands — practical, quiet, no noise.",
+    button: "Notify me",
   },
 };
 

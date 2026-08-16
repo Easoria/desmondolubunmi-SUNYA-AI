@@ -20,6 +20,7 @@ import {
   canonicalUrl,
   parseDurationToIso,
 } from "@/lib/seo";
+import { FAMILY_STATE_COLOUR, getWhatItsForTags, toPublicLever, toPublicPractice } from "@/lib/family-labels";
 
 const CROSS_LEVER_RELATED: Record<string, { leverSlug: LeverSlug; practiceSlug: string }[]> = {
   "breath/4-7-8-breathing": [{ leverSlug: "sleep", practiceSlug: "the-somatic-runway" }],
@@ -43,7 +44,12 @@ export const Route = createFileRoute("/practices/$leverSlug/$practiceSlug")({
     if (!lever) throw notFound();
     const practice = getPracticeBySlug(lever, params.practiceSlug);
     if (!practice) throw notFound();
-    return { lever, practice };
+    const whatItsFor = getWhatItsForTags(practice.families);
+    return {
+      lever: toPublicLever(lever),
+      practice: toPublicPractice(practice),
+      whatItsFor,
+    };
   },
   component: PracticeDetailPage,
   head: ({ loaderData }) => {
@@ -144,7 +150,7 @@ function renderProtocolText(text: string) {
 }
 
 function PracticeDetailPage() {
-  const { lever, practice } = Route.useLoaderData();
+  const { lever, practice, whatItsFor } = Route.useLoaderData();
   const sameLeverRelated = practice.relatedPractices
     .map((slug) => {
       const entry = getPracticeBySlug(lever, slug);
@@ -207,13 +213,38 @@ function PracticeDetailPage() {
             {practice.subtitle ? (
               <p className="mt-3 text-sm text-[#7ec8e3]/90">{practice.subtitle}</p>
             ) : null}
-            <div className="mt-4 flex flex-wrap items-center gap-2 text-[11px] uppercase leading-relaxed tracking-[0.14em] text-[#b8d4e8]/70 sm:text-xs sm:tracking-[0.2em]">
+            <div className="mt-4 flex flex-wrap items-center gap-x-2 gap-y-2 text-[11px] uppercase leading-relaxed tracking-[0.14em] text-[#b8d4e8]/70 sm:text-xs sm:tracking-[0.2em]">
               <span>{lever.name}</span>
-              <span>·</span>
-              <span>{practice.layers.join(" + ")}</span>
+              {whatItsFor.length > 0 ? (
+                <>
+                  <span aria-hidden>·</span>
+                  {whatItsFor.map((tag, index) => (
+                    <span key={tag.slug} className="inline-flex items-center gap-2 normal-case tracking-normal">
+                      {index > 0 ? <span className="uppercase tracking-[0.14em] sm:tracking-[0.2em]">·</span> : null}
+                      <Link
+                        to="/problems/$slug"
+                        params={{ slug: tag.slug }}
+                        className="inline-flex items-center gap-1.5 text-[11px] normal-case tracking-normal text-[#d5e6f2] transition hover:text-white sm:text-xs"
+                      >
+                        <span
+                          className="h-1.5 w-1.5 shrink-0 rounded-full"
+                          style={{ backgroundColor: FAMILY_STATE_COLOUR[tag.state] }}
+                          aria-hidden
+                        />
+                        <span
+                          className="border-b border-transparent pb-px"
+                          style={{ borderBottomColor: `${FAMILY_STATE_COLOUR[tag.state]}66` }}
+                        >
+                          {tag.label}
+                        </span>
+                      </Link>
+                    </span>
+                  ))}
+                </>
+              ) : null}
               {practice.duration ? (
                 <>
-                  <span>·</span>
+                  <span aria-hidden>·</span>
                   <span>{practice.duration}</span>
                 </>
               ) : null}

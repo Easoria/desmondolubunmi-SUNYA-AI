@@ -5,60 +5,153 @@ import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { EmailCapture } from "@/components/site/EmailCapture";
 import { getProblemBySlug } from "@/data/problems";
-import type { ProblemVariant } from "@/data/problems/types";
-
-type PublicProblemVariant = Omit<ProblemVariant, "families">;
-import { findPracticeInLibrary } from "@/data/levers";
+import type { Problem, ProblemVariant } from "@/data/problems/types";
+import {
+  findPracticeInLibrary,
+  getAllLeverPractices,
+  getLeversInOrder,
+} from "@/data/levers";
+import {
+  getFamilyCodeByProblemSlug,
+  getFamilyProblemMeta,
+  simpleProblemIntro,
+} from "@/lib/family-labels";
 import {
   buildArticleSchema,
   buildBreadcrumbSchema,
   buildSeoHead,
 } from "@/lib/seo";
 
+type PublicProblemVariant = Omit<ProblemVariant, "families">;
+
+type PublicFullProblem = Omit<Problem, "variants"> & {
+  variants: PublicProblemVariant[];
+};
+
+type SimpleProblemData = {
+  slug: string;
+  phrase: string;
+  label: string;
+  intro: string;
+  groups: Array<{
+    leverName: string;
+    leverSlug: string;
+    practices: Array<{ slug: string; name: string; essence?: string }>;
+  }>;
+};
+
+type LoaderData =
+  | { kind: "full"; problem: PublicFullProblem }
+  | { kind: "simple"; problem: SimpleProblemData };
+
+function buildSimpleProblem(slug: string): SimpleProblemData | null {
+  const code = getFamilyCodeByProblemSlug(slug);
+  if (!code) return null;
+  const meta = getFamilyProblemMeta(code);
+
+  const groups: SimpleProblemData["groups"] = [];
+  for (const lever of getLeversInOrder()) {
+    const practices = getAllLeverPractices(lever)
+      .filter((practice) => practice.families?.includes(code))
+      .map((practice) => ({
+        slug: practice.slug,
+        name: practice.name,
+        essence: practice.essence,
+      }));
+    if (practices.length > 0) {
+      groups.push({
+        leverName: lever.name,
+        leverSlug: lever.slug,
+        practices,
+      });
+    }
+  }
+
+  return {
+    slug: meta.slug,
+    phrase: meta.phrase,
+    label: meta.label,
+    intro: simpleProblemIntro(meta.phrase),
+    groups,
+  };
+}
+
 export const Route = createFileRoute("/problems/$slug")({
-  loader: ({ params }) => {
-    const problem = getProblemBySlug(params.slug);
-    if (!problem) throw notFound();
-    // Strip private diagnostic codes before any HTML/client serialization.
-    return {
-      problem: {
-        ...problem,
-        variants: problem.variants.map(({ families: _families, ...variant }) => variant),
-      },
-    };
+  loader: ({ params }): LoaderData => {
+    const full = getProblemBySlug(params.slug);
+    if (full) {
+      return {
+        kind: "full",
+        problem: {
+          ...full,
+          variants: full.variants.map(({ families: _families, ...variant }) => variant),
+        },
+      };
+    }
+
+    const simple = buildSimpleProblem(params.slug);
+    if (simple) return { kind: "simple", problem: simple };
+
+    throw notFound();
   },
   head: ({ loaderData, params }) => {
-    if (!loaderData?.problem) return {};
-    const { problem } = loaderData;
+    if (!loaderData) return {};
     const path = `/problems/${params.slug}`;
+
+    if (loaderData.kind === "full") {
+      const { problem } = loaderData;
+      return {
+        ...buildSeoHead({
+          title: problem.metaTitle,
+          description: problem.metaDescription,
+          path,
+          ogType: "article",
+          imageKind: "core",
+        }),
+        scripts: [
+          {
+            type: "application/ld+json",
+            children: JSON.stringify(
+              buildArticleSchema({
+                headline: problem.metaTitle,
+                description: problem.metaDescription,
+                sectionName: "Problems",
+                articleSection: "Problems",
+                path,
+              }),
+            ),
+          },
+          {
+            type: "application/ld+json",
+            children: JSON.stringify(
+              buildBreadcrumbSchema([
+                { name: "Problems", path: "/problems" },
+                { name: problem.title, path },
+              ]),
+            ),
+          },
+        ],
+      };
+    }
+
+    const { problem } = loaderData;
+    const title = `${problem.label} — Practices | Sunya`;
+    const description = problem.intro;
     return {
       ...buildSeoHead({
-        title: problem.metaTitle,
-        description: problem.metaDescription,
+        title,
+        description,
         path,
-        ogType: "article",
-        imageKind: "core",
+        ogType: "website",
+        imageKind: "practice",
       }),
       scripts: [
         {
           type: "application/ld+json",
           children: JSON.stringify(
-            buildArticleSchema({
-              headline: problem.metaTitle,
-              description: problem.metaDescription,
-              sectionName: "Problems",
-              articleSection: "Problems",
-              path,
-            }),
-          ),
-        },
-        {
-          type: "application/ld+json",
-          children: JSON.stringify(
             buildBreadcrumbSchema([
-              { name: "Practices", path: "/practices" },
-              { name: "Sleep", path: "/practices/sleep" },
-              { name: problem.title, path },
+              { name: "Problems", path: "/problems" },
+              { name: problem.label, path },
             ]),
           ),
         },
@@ -69,9 +162,13 @@ export const Route = createFileRoute("/problems/$slug")({
 });
 
 function ProblemPage() {
-  const { problem } = Route.useLoaderData();
-  const [activeSlug, setActiveSlug] = useState(problem.variants[0]?.slug ?? "");
+  const data = Route.useLoaderData();
+  if (data.kind === "simple") return <SimpleProblemPage problem={data.problem} />;
+  return <FullProblemPage problem={data.problem} />;
+}
 
+function FullProblemPage({ problem }: { problem: PublicFullProblem }) {
+  const [activeSlug, setActiveSlug] = useState(problem.variants[0]?.slug ?? "");
   const activeVariant =
     problem.variants.find((variant) => variant.slug === activeSlug) ??
     problem.variants[0];
@@ -123,7 +220,6 @@ function ProblemPage() {
         <section className="mt-14">
           <h2 className="display text-3xl text-white sm:text-4xl">Which is yours?</h2>
 
-          {/* Desktop: selector + panel */}
           <div className="mt-8 hidden gap-8 lg:grid lg:grid-cols-[240px_minmax(0,1fr)]">
             <div className="space-y-2">
               {problem.variants.map((variant) => {
@@ -147,7 +243,6 @@ function ProblemPage() {
             {activeVariant ? <VariantPanel variant={activeVariant} /> : null}
           </div>
 
-          {/* Mobile: accordion, one open */}
           <div className="mt-8 space-y-3 lg:hidden">
             {problem.variants.map((variant) => {
               const selected = variant.slug === activeSlug;
@@ -224,10 +319,84 @@ function ProblemPage() {
   );
 }
 
+function SimpleProblemPage({ problem }: { problem: SimpleProblemData }) {
+  return (
+    <div className="min-h-screen bg-[#07101c] text-white">
+      <Nav />
+      <main className="mx-auto max-w-3xl px-4 pb-24 pt-28 sm:px-6 sm:pb-28 sm:pt-32">
+        <p className="text-xs uppercase tracking-[0.22em] text-[#7ec8e3]/75">Practices</p>
+        <h1 className="display mt-4 text-4xl leading-tight text-white sm:text-5xl">
+          {problem.label}
+        </h1>
+        <p className="mt-6 text-[17px] leading-8 text-[#d5e6f2] sm:text-lg sm:leading-9">
+          {problem.intro}
+        </p>
+
+        {problem.groups.length === 0 ? (
+          <p className="mt-12 text-[#b8d4e8]/80">Practices for this pattern are being tagged.</p>
+        ) : (
+          <div className="mt-12 space-y-10">
+            {problem.groups.map((group) => (
+              <section key={group.leverSlug}>
+                <h2 className="text-xs uppercase tracking-[0.22em] text-[#7ec8e3]/80">
+                  {group.leverName}
+                </h2>
+                <ul className="mt-4 space-y-3">
+                  {group.practices.map((practice) => (
+                    <li key={practice.slug}>
+                      <Link
+                        to="/practices/$leverSlug/$practiceSlug"
+                        params={{
+                          leverSlug: group.leverSlug,
+                          practiceSlug: practice.slug,
+                        }}
+                        className="block rounded-xl border border-white/10 px-4 py-4 transition hover:border-[#7ec8e3]/35 hover:bg-white/[0.03]"
+                      >
+                        <span className="display text-xl text-white">{practice.name}</span>
+                        {practice.essence ? (
+                          <p className="mt-2 text-[15px] leading-7 text-[#b8d4e8]/9">
+                            {practice.essence}
+                          </p>
+                        ) : null}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            ))}
+          </div>
+        )}
+
+        <div className="mt-16 border-t border-white/10 pt-10">
+          <Link
+            to="/problems"
+            className="text-sm text-[#7ec8e3] underline decoration-[#7ec8e3]/35 underline-offset-4 hover:text-white"
+          >
+            ← All problems
+          </Link>
+        </div>
+      </main>
+      <Footer />
+    </div>
+  );
+}
+
 function VariantPanel({ variant }: { variant: PublicProblemVariant }) {
   const practices = variant.practiceSlugs
     .map((slug) => findPracticeInLibrary(slug))
-    .filter((item): item is NonNullable<typeof item> => Boolean(item));
+    .flatMap((item) => {
+      if (!item) return [];
+      return [
+        {
+          leverSlug: item.lever.slug,
+          practice: {
+            slug: item.practice.slug,
+            name: item.practice.name,
+            essence: item.practice.essence,
+          },
+        },
+      ];
+    });
 
   return (
     <div>
@@ -253,15 +422,15 @@ function VariantPanel({ variant }: { variant: PublicProblemVariant }) {
         </p>
       ) : null}
 
-      <h4 className="mt-10 text-xs uppercase tracking-[0.22em] text-[#7ec8e3]/8">
+      <h4 className="mt-10 text-xs uppercase tracking-[0.22em] text-[#7ec8e3]/80">
         What to do — in order
       </h4>
       <ol className="mt-4 space-y-3">
-        {practices.map(({ lever, practice }, index) => (
+        {practices.map(({ leverSlug, practice }, index) => (
           <li key={practice.slug}>
             <Link
               to="/practices/$leverSlug/$practiceSlug"
-              params={{ leverSlug: lever.slug, practiceSlug: practice.slug }}
+              params={{ leverSlug, practiceSlug: practice.slug }}
               className="block rounded-xl border border-white/10 px-4 py-4 transition hover:border-[#7ec8e3]/35 hover:bg-white/[0.03]"
             >
               <div className="flex items-baseline gap-3">

@@ -26,6 +26,7 @@ import { Route as LoginRouteImport } from './routes/login'
 import { Route as LeversRouteImport } from './routes/levers'
 import { Route as JoinRouteImport } from './routes/join'
 import { Route as GatheringsRouteImport } from './routes/gatherings'
+import { Route as FrameworkRouteImport } from './routes/framework'
 import { Route as ForgotPasswordRouteImport } from './routes/forgot-password'
 import { Route as EssaysRouteImport } from './routes/essays'
 import { Route as DashboardRouteImport } from './routes/dashboard'
@@ -34,6 +35,7 @@ import { Route as BlogRouteImport } from './routes/blog'
 import { Route as AccountRouteImport } from './routes/account'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ProblemsIndexRouteImport } from './routes/problems.index'
 import { Route as WritingSlugRouteImport } from './routes/writing.$slug'
 import { Route as TimelessSolutionSlugRouteImport } from './routes/timeless-solution.$slug'
 import { Route as ProblemsSlugRouteImport } from './routes/problems.$slug'
@@ -146,6 +148,11 @@ const GatheringsRoute = GatheringsRouteImport.update({
   path: '/gatherings',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FrameworkRoute = FrameworkRouteImport.update({
+  id: '/framework',
+  path: '/framework',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ForgotPasswordRoute = ForgotPasswordRouteImport.update({
   id: '/forgot-password',
   path: '/forgot-password',
@@ -184,6 +191,11 @@ const AboutRoute = AboutRouteImport.update({
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProblemsIndexRoute = ProblemsIndexRouteImport.update({
+  id: '/problems/',
+  path: '/problems/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const WritingSlugRoute = WritingSlugRouteImport.update({
@@ -331,6 +343,7 @@ export interface FileRoutesByFullPath {
   '/dashboard': typeof DashboardRoute
   '/essays': typeof EssaysRouteWithChildren
   '/forgot-password': typeof ForgotPasswordRoute
+  '/framework': typeof FrameworkRoute
   '/gatherings': typeof GatheringsRouteWithChildren
   '/index': typeof Char91indexChar93Route
   '/join': typeof JoinRoute
@@ -368,6 +381,7 @@ export interface FileRoutesByFullPath {
   '/problems/$slug': typeof ProblemsSlugRoute
   '/timeless-solution/$slug': typeof TimelessSolutionSlugRoute
   '/writing/$slug': typeof WritingSlugRoute
+  '/problems/': typeof ProblemsIndexRoute
   '/api/admin/bootstrap-gatherings': typeof ApiAdminBootstrapGatheringsRoute
   '/levers/$leverSlug/$practiceSlug': typeof LeversLeverSlugPracticeSlugRoute
   '/levers/$leverSlug/complete': typeof LeversLeverSlugCompleteRoute
@@ -384,6 +398,7 @@ export interface FileRoutesByTo {
   '/dashboard': typeof DashboardRoute
   '/essays': typeof EssaysRouteWithChildren
   '/forgot-password': typeof ForgotPasswordRoute
+  '/framework': typeof FrameworkRoute
   '/gatherings': typeof GatheringsRouteWithChildren
   '/index': typeof Char91indexChar93Route
   '/join': typeof JoinRoute
@@ -421,6 +436,7 @@ export interface FileRoutesByTo {
   '/problems/$slug': typeof ProblemsSlugRoute
   '/timeless-solution/$slug': typeof TimelessSolutionSlugRoute
   '/writing/$slug': typeof WritingSlugRoute
+  '/problems': typeof ProblemsIndexRoute
   '/api/admin/bootstrap-gatherings': typeof ApiAdminBootstrapGatheringsRoute
   '/levers/$leverSlug/$practiceSlug': typeof LeversLeverSlugPracticeSlugRoute
   '/levers/$leverSlug/complete': typeof LeversLeverSlugCompleteRoute
@@ -438,6 +454,7 @@ export interface FileRoutesById {
   '/dashboard': typeof DashboardRoute
   '/essays': typeof EssaysRouteWithChildren
   '/forgot-password': typeof ForgotPasswordRoute
+  '/framework': typeof FrameworkRoute
   '/gatherings': typeof GatheringsRouteWithChildren
   '/index': typeof Char91indexChar93Route
   '/join': typeof JoinRoute
@@ -475,6 +492,7 @@ export interface FileRoutesById {
   '/problems/$slug': typeof ProblemsSlugRoute
   '/timeless-solution/$slug': typeof TimelessSolutionSlugRoute
   '/writing/$slug': typeof WritingSlugRoute
+  '/problems/': typeof ProblemsIndexRoute
   '/api/admin/bootstrap-gatherings': typeof ApiAdminBootstrapGatheringsRoute
   '/levers/$leverSlug/$practiceSlug': typeof LeversLeverSlugPracticeSlugRoute
   '/levers/$leverSlug/complete': typeof LeversLeverSlugCompleteRoute
@@ -493,6 +511,7 @@ export interface FileRouteTypes {
     | '/dashboard'
     | '/essays'
     | '/forgot-password'
+    | '/framework'
     | '/gatherings'
     | '/index'
     | '/join'
@@ -530,6 +549,7 @@ export interface FileRouteTypes {
     | '/problems/$slug'
     | '/timeless-solution/$slug'
     | '/writing/$slug'
+    | '/problems/'
     | '/api/admin/bootstrap-gatherings'
     | '/levers/$leverSlug/$practiceSlug'
     | '/levers/$leverSlug/complete'
@@ -546,6 +566,7 @@ export interface FileRouteTypes {
     | '/dashboard'
     | '/essays'
     | '/forgot-password'
+    | '/framework'
     | '/gatherings'
     | '/index'
     | '/join'
@@ -583,6 +604,7 @@ export interface FileRouteTypes {
     | '/problems/$slug'
     | '/timeless-solution/$slug'
     | '/writing/$slug'
+    | '/problems'
     | '/api/admin/bootstrap-gatherings'
     | '/levers/$leverSlug/$practiceSlug'
     | '/levers/$leverSlug/complete'
@@ -599,6 +621,7 @@ export interface FileRouteTypes {
     | '/dashboard'
     | '/essays'
     | '/forgot-password'
+    | '/framework'
     | '/gatherings'
     | '/index'
     | '/join'
@@ -636,6 +659,7 @@ export interface FileRouteTypes {
     | '/problems/$slug'
     | '/timeless-solution/$slug'
     | '/writing/$slug'
+    | '/problems/'
     | '/api/admin/bootstrap-gatherings'
     | '/levers/$leverSlug/$practiceSlug'
     | '/levers/$leverSlug/complete'
@@ -653,6 +677,7 @@ export interface RootRouteChildren {
   DashboardRoute: typeof DashboardRoute
   EssaysRoute: typeof EssaysRouteWithChildren
   ForgotPasswordRoute: typeof ForgotPasswordRoute
+  FrameworkRoute: typeof FrameworkRoute
   GatheringsRoute: typeof GatheringsRouteWithChildren
   Char91indexChar93Route: typeof Char91indexChar93Route
   JoinRoute: typeof JoinRoute
@@ -682,6 +707,7 @@ export interface RootRouteChildren {
   ApiSessionTitleRoute: typeof ApiSessionTitleRoute
   CheckoutReturnRoute: typeof CheckoutReturnRoute
   ProblemsSlugRoute: typeof ProblemsSlugRoute
+  ProblemsIndexRoute: typeof ProblemsIndexRoute
   ApiAdminBootstrapGatheringsRoute: typeof ApiAdminBootstrapGatheringsRoute
   ApiPublicPaymentsWebhookRoute: typeof ApiPublicPaymentsWebhookRoute
 }
@@ -807,6 +833,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GatheringsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/framework': {
+      id: '/framework'
+      path: '/framework'
+      fullPath: '/framework'
+      preLoaderRoute: typeof FrameworkRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/forgot-password': {
       id: '/forgot-password'
       path: '/forgot-password'
@@ -861,6 +894,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/problems/': {
+      id: '/problems/'
+      path: '/problems'
+      fullPath: '/problems/'
+      preLoaderRoute: typeof ProblemsIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/writing/$slug': {
@@ -1164,6 +1204,7 @@ const rootRouteChildren: RootRouteChildren = {
   DashboardRoute: DashboardRoute,
   EssaysRoute: EssaysRouteWithChildren,
   ForgotPasswordRoute: ForgotPasswordRoute,
+  FrameworkRoute: FrameworkRoute,
   GatheringsRoute: GatheringsRouteWithChildren,
   Char91indexChar93Route: Char91indexChar93Route,
   JoinRoute: JoinRoute,
@@ -1193,6 +1234,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiSessionTitleRoute: ApiSessionTitleRoute,
   CheckoutReturnRoute: CheckoutReturnRoute,
   ProblemsSlugRoute: ProblemsSlugRoute,
+  ProblemsIndexRoute: ProblemsIndexRoute,
   ApiAdminBootstrapGatheringsRoute: ApiAdminBootstrapGatheringsRoute,
   ApiPublicPaymentsWebhookRoute: ApiPublicPaymentsWebhookRoute,
 }

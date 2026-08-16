@@ -2,13 +2,14 @@ import { Link, createFileRoute, notFound } from "@tanstack/react-router";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { getAllLeverPractices, getLeverBySlug } from "@/data/levers";
+import { toPublicLever } from "@/lib/family-labels";
 import { buildBreadcrumbSchema, buildSeoHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/practices/$leverSlug/complete")({
   loader: ({ params }) => {
     const lever = getLeverBySlug(params.leverSlug);
     if (!lever) throw notFound();
-    return { lever };
+    return { lever: toPublicLever(lever) };
   },
   component: CompleteLeverPage,
   head: ({ loaderData }) => {
