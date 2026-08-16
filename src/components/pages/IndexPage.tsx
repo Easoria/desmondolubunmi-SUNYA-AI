@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
-import { ArrowRight, ArrowUpRight, ChevronDown } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { Starfield } from "@/components/Starfield";
 import { SunyaAI } from "@/components/SunyaAI";
 import { Nav } from "@/components/site/Nav";
