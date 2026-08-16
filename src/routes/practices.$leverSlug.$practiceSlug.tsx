@@ -21,6 +21,7 @@ import {
   parseDurationToIso,
 } from "@/lib/seo";
 import { FAMILY_STATE_COLOUR, getWhatItsForTags, TAGGABLE_LEVER_SLUGS, toPublicLever, toPublicPractice } from "@/lib/family-labels";
+import { problemTagLinkState, rememberProblemBackOrigin } from "@/lib/problem-back";
 
 const CROSS_LEVER_RELATED: Record<string, { leverSlug: LeverSlug; practiceSlug: string }[]> = {
   "breath/4-7-8-breathing": [{ leverSlug: "sleep", practiceSlug: "the-somatic-runway" }],
@@ -264,6 +265,13 @@ function PracticeDetailPage() {
                       <Link
                         to="/problems/$slug"
                         params={{ slug: tag.slug }}
+                        state={problemTagLinkState(practice.name, lever.slug, practice.slug) as never}
+                        onClick={() =>
+                          rememberProblemBackOrigin({
+                            name: practice.name,
+                            path: `/practices/${lever.slug}/${practice.slug}`,
+                          })
+                        }
                         className="inline-flex items-center gap-1.5 text-[11px] normal-case tracking-normal text-[#d5e6f2] transition hover:text-white sm:text-xs"
                       >
                         <span

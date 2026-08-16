@@ -6,7 +6,7 @@ export const Route = createFileRoute("/framework")({
     buildSeoHead({
       title: "The Sunya Framework — Philosophy and Practice",
       description:
-        "The complete framework for human wellbeing. The philosophy explains why we suffer; the practices are what to do about it. One hundred and twelve practices across twelve levers.",
+        "The complete framework for human wellbeing. The philosophy explains why we suffer; the practices are what to do about it. 112 practices across twelve levers.",
       path: "/framework",
       ogType: "website",
       imageKind: "core",
@@ -21,7 +21,7 @@ function FrameworkHubPage() {
       <div className="flex min-h-[100dvh] flex-col lg:hidden">
         <Link
           to="/philosophy"
-          className="group relative flex min-h-0 flex-1 flex-col justify-center px-6 py-8"
+          className="group relative flex min-h-0 flex-1 cursor-pointer flex-col justify-center px-6 py-8"
         >
           <div
             className="pointer-events-none absolute inset-0 opacity-40 transition group-hover:opacity-70"
@@ -41,6 +41,9 @@ function FrameworkHubPage() {
               The five-link chain, the seven layers of being, and the complete map of the human
               condition.
             </p>
+            <p className="mt-4 text-sm text-[#7ec8e3] transition group-hover:text-white">
+              Explore the philosophy →
+            </p>
           </div>
         </Link>
 
@@ -55,7 +58,7 @@ function FrameworkHubPage() {
 
         <Link
           to="/practices"
-          className="group relative flex min-h-0 flex-1 flex-col justify-center px-6 py-8"
+          className="group relative flex min-h-0 flex-1 cursor-pointer flex-col justify-center px-6 py-8"
         >
           <div
             className="pointer-events-none absolute inset-0 opacity-40 transition group-hover:opacity-70"
@@ -69,11 +72,14 @@ function FrameworkHubPage() {
               The Practices
             </p>
             <h2 className="display mt-2 text-2xl leading-tight text-white sm:text-3xl">
-              One hundred and twelve practices.
+              112 practices.
             </h2>
             <p className="mt-3 text-sm leading-relaxed text-[#b8d4e8]/90">
               Twelve levers, arrived at from first principles. Every means by which a human being
               can transform their wellbeing.
+            </p>
+            <p className="mt-4 text-sm text-[#7ec8e3] transition group-hover:text-white">
+              Explore the practices →
             </p>
           </div>
         </Link>
@@ -83,7 +89,7 @@ function FrameworkHubPage() {
       <div className="relative hidden min-h-[100dvh] lg:grid lg:grid-cols-2">
         <Link
           to="/philosophy"
-          className="group relative flex flex-col justify-center px-12 xl:px-20"
+          className="group relative flex cursor-pointer flex-col justify-center px-12 xl:px-20"
         >
           <div
             className="pointer-events-none absolute inset-0 opacity-35 transition duration-500 group-hover:opacity-70"
@@ -101,6 +107,9 @@ function FrameworkHubPage() {
               The five-link chain, the seven layers of being, and the complete map of the human
               condition.
             </p>
+            <p className="mt-6 text-sm text-[#7ec8e3] transition group-hover:text-white">
+              Explore the philosophy →
+            </p>
           </div>
         </Link>
 
@@ -116,7 +125,7 @@ function FrameworkHubPage() {
 
         <Link
           to="/practices"
-          className="group relative flex flex-col justify-center px-12 xl:px-20"
+          className="group relative flex cursor-pointer flex-col justify-center px-12 xl:px-20"
         >
           <div
             className="pointer-events-none absolute inset-0 opacity-35 transition duration-500 group-hover:opacity-70"
@@ -128,11 +137,14 @@ function FrameworkHubPage() {
           <div className="relative z-10 ml-auto max-w-md text-right">
             <p className="text-xs uppercase tracking-[0.3em] text-[#c4a574]/90">The Practices</p>
             <h2 className="display mt-5 text-4xl leading-[1.15] text-white xl:text-5xl">
-              One hundred and twelve practices.
+              112 practices.
             </h2>
             <p className="mt-6 text-base leading-relaxed text-[#b8d4e8]">
               Twelve levers, arrived at from first principles. Every means by which a human being
               can transform their wellbeing.
+            </p>
+            <p className="mt-6 text-sm text-[#7ec8e3] transition group-hover:text-white">
+              Explore the practices →
             </p>
           </div>
         </Link>

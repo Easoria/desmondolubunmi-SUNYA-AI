@@ -216,7 +216,6 @@ function LeverCard({
       </div>
       <div className="relative z-10">
         <h2 className={`display mt-4 text-2xl sm:mt-5 sm:text-3xl ${headingClass}`}>{lever.name}</h2>
-        <p className="mt-1 text-xs italic text-[#b8d4e8]/80">{lever.layerLine}</p>
         <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-[#b8d4e8]">{summary}</p>
         <p className="mt-5 text-xs uppercase tracking-[0.24em] text-[#7ec8e3]/85">
           {practiceCount} practices
