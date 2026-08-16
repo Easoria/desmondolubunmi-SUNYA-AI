@@ -201,6 +201,12 @@ export function Nav() {
           {user ? <AccountAvatar /> : null}
         </div>
         <div className="relative z-10 flex items-center gap-2 md:hidden">
+          <Link
+            to="/problems"
+            className="glow-btn inline-flex items-center gap-1.5 rounded-full px-3.5 py-2 text-xs font-medium"
+          >
+            {PROBLEMS_CTA_LABEL} <ArrowRight className="h-3 w-3" />
+          </Link>
           {user ? <AccountAvatar /> : null}
           <button
             type="button"
