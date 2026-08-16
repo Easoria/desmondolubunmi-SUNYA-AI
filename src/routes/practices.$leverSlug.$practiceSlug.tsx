@@ -349,54 +349,41 @@ function PracticeDetailPage() {
           {practice.protocol?.length ? (
             <section className="mt-10 max-w-[72ch]">
               <h2 className="display text-2xl text-white">Protocol</h2>
-              <ol className="mt-4 space-y-4">
-                {practice.protocol.map((step, index) => {
+              <div className="glass-card mt-4 rounded-2xl border border-[#7ec8e3]/35 bg-[#7ec8e3]/[0.09] p-4 text-[15px] leading-7 text-[#f2f9fe] sm:p-5 sm:text-base">
+                <div className="space-y-5">
+                  {practice.protocol.map((step, index) => {
                     const layout = formatProtocolStepLayout(step.text);
+                    // Prefer bullets over auto-numbering — step order is clear from sequence.
+                    const listKind =
+                      layout.kind === "ordered-list" ? "unordered-list" : layout.kind;
 
                     return (
-                      <li
-                        key={index}
-                        className="glass-card rounded-2xl border border-[#7ec8e3]/35 bg-[#7ec8e3]/[0.09] p-4 text-[15px] leading-7 text-[#f2f9fe] sm:p-5 sm:text-base"
-                      >
-                        <div className="flex gap-3">
-                          <span className="mt-0.5 font-display text-sm text-[#7ec8e3]">
-                            {String(index + 1).padStart(2, "0")}
-                          </span>
-                          <div className="min-w-0 flex-1 space-y-3">
-                            {layout.kind === "paragraphs" ? (
-                              <div className="space-y-3">
-                                {layout.items.map((paragraph, paragraphIndex) => (
-                                  <p key={paragraphIndex} className="whitespace-pre-line">
-                                    {renderProtocolText(paragraph)}
-                                  </p>
-                                ))}
-                              </div>
-                            ) : layout.kind === "ordered-list" ? (
-                              <ol className="space-y-2 pl-5">
-                                {layout.items.map((item, itemIndex) => (
-                                  <li key={itemIndex} className="list-decimal marker:text-[#7ec8e3]">
-                                    {renderProtocolText(item)}
-                                  </li>
-                                ))}
-                              </ol>
-                            ) : (
-                              <ul className="space-y-2 pl-5">
-                                {layout.items.map((item, itemIndex) => (
-                                  <li key={itemIndex} className="list-disc marker:text-[#7ec8e3]">
-                                    {renderProtocolText(item)}
-                                  </li>
-                                ))}
-                              </ul>
-                            )}
-                            {step.emphasis ? (
-                              <em className="block text-[#b8d4e8]/90">{step.emphasis}</em>
-                            ) : null}
+                      <div key={index} className="space-y-3">
+                        {listKind === "paragraphs" ? (
+                          <div className="space-y-3">
+                            {layout.items.map((paragraph, paragraphIndex) => (
+                              <p key={paragraphIndex} className="whitespace-pre-line">
+                                {renderProtocolText(paragraph)}
+                              </p>
+                            ))}
                           </div>
-                        </div>
-                      </li>
+                        ) : (
+                          <ul className="space-y-2 pl-5">
+                            {layout.items.map((item, itemIndex) => (
+                              <li key={itemIndex} className="list-disc marker:text-[#7ec8e3]">
+                                {renderProtocolText(item)}
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                        {step.emphasis ? (
+                          <em className="block text-[#b8d4e8]/90">{step.emphasis}</em>
+                        ) : null}
+                      </div>
                     );
                   })}
-              </ol>
+                </div>
+              </div>
             </section>
           ) : null}
 
