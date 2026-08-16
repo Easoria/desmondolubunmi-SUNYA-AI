@@ -136,7 +136,7 @@ function Reframe() {
     {
       n: "04",
       name: "Contraction",
-      line: "The bracing stops being a thought and becomes physical — restricting the flow of life through the system, felt as tension, anger, unease.",
+      line: "The bracing stops being a thought and becomes physical — restricting the flow of life through the system, felt as tension, unease and dissatisfaction.",
     },
     {
       n: "05",
