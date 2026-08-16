@@ -151,8 +151,8 @@ export const breathLever: Lever = {
           ],
           metaTitle: "Coherent Breathing — How to Practise It | Sunya",
           metaDescription: "Bringing the heart and mind into a single, even rhythm.",
-          families: ["H4", "M4"],
-          directions: ["calm", "stabilise"],
+          families: ["H3", "H4", "M4"],
+          directions: ["calm", "stabilise", "soften"],
           problems: ["insomnia"],
           generated: {
             layersSource: "STATED",
