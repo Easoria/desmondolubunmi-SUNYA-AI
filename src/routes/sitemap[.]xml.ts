@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 import { essays } from "@/data/essays";
 import { getAllLeverPractices, getLeversInOrder } from "@/data/levers";
+import { getAllTagProblemSlugs } from "@/lib/family-labels";
 import { supabaseAdmin } from "@/integrations/supabase/client.server";
 import { CANONICAL_ORIGIN, normalizePath } from "@/lib/seo";
 
@@ -36,22 +37,7 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/problems", lastmod: generatedAt, changefreq: "weekly", priority: "0.9" },
         ];
 
-        const familyProblemEntries: SitemapEntry[] = (
-          [
-            "anxiety-and-worry",
-            "feeling-overwhelmed",
-            "anger-and-frustration",
-            "a-racing-mind",
-            "exhaustion",
-            "numbness-and-disconnection",
-            "avoidance-and-procrastination",
-            "low-mood-and-heaviness",
-            "feeling-torn",
-            "self-criticism",
-            "a-scattered-mind",
-            "burnout",
-          ] as const
-        ).map((slug) => ({
+        const familyProblemEntries: SitemapEntry[] = getAllTagProblemSlugs().map((slug) => ({
           path: `/problems/${slug}`,
           lastmod: generatedAt,
           changefreq: "monthly" as const,

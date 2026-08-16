@@ -179,11 +179,10 @@ export function buildPracticeMetaTitle(
   const primaryName = practice.sanskritName
     ? `${practice.name} (${practice.sanskritName})`
     : practice.name;
-  const scopedName =
-    options?.includeLeverName && options.leverName
-      ? `${primaryName} (${options.leverName})`
-      : primaryName;
-  return `${scopedName} — How to Practise It | Sunya`;
+  if (options?.includeLeverName && options.leverName) {
+    return `${primaryName} — How to Practise It | ${options.leverName} | Sunya`;
+  }
+  return `${primaryName} — How to Practise It | Sunya`;
 }
 
 type BreadcrumbItem = {

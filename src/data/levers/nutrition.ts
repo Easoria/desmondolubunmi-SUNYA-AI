@@ -254,7 +254,7 @@ export const nutritionLever: Lever = {
         "the-alchemy-of-the-void",
         "energetic-imprinting"
       ],
-      metaTitle: "Conscious Consumption — How to Practise It | Sunya",
+      metaTitle: "Conscious Consumption — How to Practise It | Nutrition | Sunya",
       metaDescription: "Shifting the body into the precise physiological state required to fully extract nourishment from food.",
       generated: {
         layersSource: "INFERRED",

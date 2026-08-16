@@ -20,7 +20,7 @@ import {
   canonicalUrl,
   parseDurationToIso,
 } from "@/lib/seo";
-import { FAMILY_STATE_COLOUR, getWhatItsForTags, toPublicLever, toPublicPractice } from "@/lib/family-labels";
+import { FAMILY_STATE_COLOUR, getWhatItsForTags, TAGGABLE_LEVER_SLUGS, toPublicLever, toPublicPractice } from "@/lib/family-labels";
 
 const CROSS_LEVER_RELATED: Record<string, { leverSlug: LeverSlug; practiceSlug: string }[]> = {
   "breath/4-7-8-breathing": [{ leverSlug: "sleep", practiceSlug: "the-somatic-runway" }],
@@ -44,11 +44,14 @@ export const Route = createFileRoute("/practices/$leverSlug/$practiceSlug")({
     if (!lever) throw notFound();
     const practice = getPracticeBySlug(lever, params.practiceSlug);
     if (!practice) throw notFound();
-    const whatItsFor = getWhatItsForTags(practice.families);
+    const whatItsFor = TAGGABLE_LEVER_SLUGS.has(lever.slug)
+      ? getWhatItsForTags(practice.families)
+      : [];
     return {
       lever: toPublicLever(lever),
       practice: toPublicPractice(practice),
       whatItsFor,
+      showLeverQualifier: DUPLICATE_PRACTICE_NAMES.has(practice.name),
     };
   },
   component: PracticeDetailPage,
@@ -150,23 +153,55 @@ function renderProtocolText(text: string) {
 }
 
 function PracticeDetailPage() {
-  const { lever, practice, whatItsFor } = Route.useLoaderData();
+  const { lever, practice, whatItsFor, showLeverQualifier } = Route.useLoaderData();
   const sameLeverRelated = practice.relatedPractices
     .map((slug) => {
       const entry = getPracticeBySlug(lever, slug);
       if (!entry) return null;
-      return { leverSlug: lever.slug, practiceSlug: entry.slug, name: entry.name };
+      return {
+        leverSlug: lever.slug,
+        leverName: lever.name,
+        practiceSlug: entry.slug,
+        name: entry.name,
+        showLever: DUPLICATE_PRACTICE_NAMES.has(entry.name),
+      };
     })
-    .filter((entry): entry is { leverSlug: string; practiceSlug: string; name: string } => !!entry);
+    .filter(
+      (
+        entry,
+      ): entry is {
+        leverSlug: string;
+        leverName: string;
+        practiceSlug: string;
+        name: string;
+        showLever: boolean;
+      } => !!entry,
+    );
   const crossLeverRelated = (CROSS_LEVER_RELATED[`${lever.slug}/${practice.slug}`] ?? [])
     .map(({ leverSlug, practiceSlug }) => {
       const relatedLever = getLeverBySlug(leverSlug);
       if (!relatedLever) return null;
       const relatedPractice = getPracticeBySlug(relatedLever, practiceSlug);
       if (!relatedPractice) return null;
-      return { leverSlug: relatedLever.slug, practiceSlug: relatedPractice.slug, name: relatedPractice.name };
+      return {
+        leverSlug: relatedLever.slug,
+        leverName: relatedLever.name,
+        practiceSlug: relatedPractice.slug,
+        name: relatedPractice.name,
+        showLever: DUPLICATE_PRACTICE_NAMES.has(relatedPractice.name),
+      };
     })
-    .filter((entry): entry is { leverSlug: string; practiceSlug: string; name: string } => !!entry);
+    .filter(
+      (
+        entry,
+      ): entry is {
+        leverSlug: string;
+        leverName: string;
+        practiceSlug: string;
+        name: string;
+        showLever: boolean;
+      } => !!entry,
+    );
   const related = [...sameLeverRelated, ...crossLeverRelated].filter(
     (entry, index, all) =>
       all.findIndex(
@@ -207,6 +242,11 @@ function PracticeDetailPage() {
 
           <div className="mt-6 max-w-[72ch]">
             <h1 className="display text-3xl text-white sm:text-5xl">{practice.name}</h1>
+            {showLeverQualifier ? (
+              <p className="mt-2 text-sm font-medium tracking-wide text-[#7ec8e3]">
+                {lever.name} practice
+              </p>
+            ) : null}
             {practice.sanskritName ? (
               <p className="mt-2 text-sm italic text-[#b8d4e8]/85">{practice.sanskritName}</p>
             ) : null}
@@ -378,7 +418,10 @@ function PracticeDetailPage() {
                     params={{ leverSlug: item.leverSlug, practiceSlug: item.practiceSlug }}
                     className="glass-card rounded-2xl border border-white/10 px-4 py-3 text-sm text-[#b8d4e8] hover:border-[#7ec8e3]/45 hover:text-white"
                   >
-                    {item.name}
+                    <span className="block text-white">{item.name}</span>
+                    {item.showLever ? (
+                      <span className="mt-1 block text-xs text-[#7ec8e3]/85">{item.leverName}</span>
+                    ) : null}
                   </Link>
                 ))}
               </div>

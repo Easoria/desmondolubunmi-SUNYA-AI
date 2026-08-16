@@ -33,6 +33,8 @@ export type PracticeGeneratedFields = {
 /**
  * Diagnostic family codes for the Problems layer.
  * PRIVATE — must never appear in rendered HTML, copy, meta, alt, URLs, or schema.
+ * H/L/M = mental/energetic state families.
+ * P = physical tags (Movement lever only).
  */
 export type FamilyCode =
   | "H1"
@@ -46,7 +48,10 @@ export type FamilyCode =
   | "M1"
   | "M2"
   | "M3"
-  | "M4";
+  | "M4"
+  | "P1"
+  | "P2"
+  | "P3";
 
 /** Intervention directions — PRIVATE; used only for filtering/sequencing. */
 export type Direction =

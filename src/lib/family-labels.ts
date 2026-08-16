@@ -1,5 +1,16 @@
 import type { FamilyCode } from "@/data/levers/types";
 
+/** Levers that may carry "what it's for" tags. External pillars are never tagged. */
+export const TAGGABLE_LEVER_SLUGS = new Set([
+  "conservation",
+  "breath",
+  "movement",
+  "mind",
+  "sound",
+  "heart",
+  "awareness",
+]);
+
 /** Plain-language "what it's for" labels — never render FamilyCode or family names. */
 export type FamilyProblemMeta = {
   /** URL slug under /problems/[slug] */
@@ -8,8 +19,8 @@ export type FamilyProblemMeta = {
   phrase: string;
   /** Strip label, e.g. "For a racing mind" */
   label: string;
-  /** Underlying state for colour only — never shown as text. */
-  state: "over" | "under" | "mixed";
+  /** Underlying category for colour only — never shown as text. */
+  state: "over" | "under" | "mixed" | "physical";
 };
 
 export const FAMILY_PROBLEM_META: Record<FamilyCode, FamilyProblemMeta> = {
@@ -85,13 +96,32 @@ export const FAMILY_PROBLEM_META: Record<FamilyCode, FamilyProblemMeta> = {
     label: "For burnout",
     state: "mixed",
   },
+  P1: {
+    slug: "physical-tension",
+    phrase: "physical tension",
+    label: "For physical tension",
+    state: "physical",
+  },
+  P2: {
+    slug: "stiffness-and-immobility",
+    phrase: "stiffness and immobility",
+    label: "For stiffness and immobility",
+    state: "physical",
+  },
+  P3: {
+    slug: "low-physical-energy",
+    phrase: "low physical energy",
+    label: "For low physical energy",
+    state: "physical",
+  },
 };
 
-/** Muted border/dot colours by underlying state — never labelled in UI. */
+/** Muted border/dot colours by underlying category — never labelled in UI. */
 export const FAMILY_STATE_COLOUR: Record<FamilyProblemMeta["state"], string> = {
   over: "#c4a574", // warm gold-amber, muted
   under: "#5b7fa8", // cool deep blue
   mixed: "#8b8cc7", // soft violet-blue
+  physical: "#5a9e8f", // soft green-teal
 };
 
 const CODE_BY_SLUG = Object.fromEntries(
@@ -106,6 +136,10 @@ export function getFamilyCodeByProblemSlug(slug: string): FamilyCode | undefined
 
 export function getFamilyProblemMeta(code: FamilyCode): FamilyProblemMeta {
   return FAMILY_PROBLEM_META[code];
+}
+
+export function getAllTagProblemSlugs(): string[] {
+  return Object.values(FAMILY_PROBLEM_META).map((meta) => meta.slug);
 }
 
 /**

@@ -353,6 +353,9 @@ function SimpleProblemPage({ problem }: { problem: SimpleProblemData }) {
                         className="block rounded-xl border border-white/10 px-4 py-4 transition hover:border-[#7ec8e3]/35 hover:bg-white/[0.03]"
                       >
                         <span className="display text-xl text-white">{practice.name}</span>
+                        <span className="mt-1 block text-xs uppercase tracking-[0.18em] text-[#7ec8e3]/75">
+                          {group.leverName}
+                        </span>
                         {practice.essence ? (
                           <p className="mt-2 text-[15px] leading-7 text-[#b8d4e8]/9">
                             {practice.essence}
@@ -389,6 +392,7 @@ function VariantPanel({ variant }: { variant: PublicProblemVariant }) {
       return [
         {
           leverSlug: item.lever.slug,
+          leverName: item.lever.name,
           practice: {
             slug: item.practice.slug,
             name: item.practice.name,
@@ -426,8 +430,8 @@ function VariantPanel({ variant }: { variant: PublicProblemVariant }) {
         What to do — in order
       </h4>
       <ol className="mt-4 space-y-3">
-        {practices.map(({ leverSlug, practice }, index) => (
-          <li key={practice.slug}>
+        {practices.map(({ leverSlug, leverName, practice }, index) => (
+          <li key={`${leverSlug}/${practice.slug}`}>
             <Link
               to="/practices/$leverSlug/$practiceSlug"
               params={{ leverSlug, practiceSlug: practice.slug }}
@@ -437,7 +441,12 @@ function VariantPanel({ variant }: { variant: PublicProblemVariant }) {
                 <span className="text-xs tabular-nums text-[#7ec8e3]/70">
                   {String(index + 1).padStart(2, "0")}
                 </span>
-                <span className="display text-xl text-white">{practice.name}</span>
+                <div>
+                  <span className="display text-xl text-white">{practice.name}</span>
+                  <span className="mt-0.5 block text-xs uppercase tracking-[0.18em] text-[#7ec8e3]/75">
+                    {leverName}
+                  </span>
+                </div>
               </div>
               {practice.essence ? (
                 <p className="mt-2 pl-8 text-[15px] leading-7 text-[#b8d4e8]/9">

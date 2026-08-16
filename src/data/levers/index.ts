@@ -76,13 +76,34 @@ export function getPracticeBySlug(lever: Lever, practiceSlug: string) {
   return getAllLeverPractices(lever).find((practice) => practice.slug === practiceSlug) ?? null;
 }
 
-/** Resolve a practice slug across the full library (unique slugs). */
-export function findPracticeInLibrary(practiceSlug: string) {
+/** Resolve a practice slug across the full library.
+ * Slugs are unique per lever, not globally — when the same slug exists
+ * under more than one lever, pass preferredLeverSlug to disambiguate.
+ * Without a preference, returns the first match in lever order.
+ */
+export function findPracticeInLibrary(practiceSlug: string, preferredLeverSlug?: string) {
+  if (preferredLeverSlug) {
+    const preferred = getLeverBySlug(preferredLeverSlug);
+    if (preferred) {
+      const practice = getPracticeBySlug(preferred, practiceSlug);
+      if (practice) return { lever: preferred, practice };
+    }
+  }
   for (const lever of getLeversInOrder()) {
     const practice = getPracticeBySlug(lever, practiceSlug);
     if (practice) return { lever, practice };
   }
   return null;
+}
+
+/** All practices sharing a slug (e.g. Conscious Consumption under Sleep and Nutrition). */
+export function findAllPracticesBySlug(practiceSlug: string) {
+  const matches: Array<{ lever: Lever; practice: NonNullable<ReturnType<typeof getPracticeBySlug>> }> = [];
+  for (const lever of getLeversInOrder()) {
+    const practice = getPracticeBySlug(lever, practiceSlug);
+    if (practice) matches.push({ lever, practice });
+  }
+  return matches;
 }
 
 export function getPreviousAndNextLevers(slug: LeverSlug) {

@@ -45,7 +45,6 @@ export const sleepLever: Lever = {
       ],
       metaTitle: "The Circadian Architecture — How to Practise It | Sunya",
       metaDescription: "Sleep is not a switch to be forced — it is a natural biological rhythm to be honoured.",
-      families: ["M3", "M4"],
       directions: ["structure", "stabilise", "reduce"],
       problems: ["insomnia"],
       generated: {
@@ -101,7 +100,6 @@ export const sleepLever: Lever = {
       ],
       metaTitle: "Cognitive De-Escalation — How to Practise It | Sunya",
       metaDescription: "Breaking the cycle of stress and sleeplessness by removing the performance pressure of sleep.",
-      families: ["H4", "H1"],
       directions: ["calm", "slow", "contain", "soften"],
       problems: ["insomnia"],
       generated: {
@@ -167,7 +165,6 @@ export const sleepLever: Lever = {
       ],
       metaTitle: "Somatic Regulation — How to Practise It | Sunya",
       metaDescription: "Shifting the body from a state of survival into a state of rest and repair by manually signalling safety to the nervous system.",
-      families: ["H1", "H3", "H4"],
       directions: ["ground", "calm", "soften", "release"],
       problems: ["insomnia"],
       generated: {
@@ -225,9 +222,8 @@ export const sleepLever: Lever = {
         "environmental-architecture",
         "the-sleep-sanctuary"
       ],
-      metaTitle: "Conscious Consumption — How to Practise It | Sunya",
+      metaTitle: "Conscious Consumption — How to Practise It | Sleep | Sunya",
       metaDescription: "Architecting your internal chemistry to support the natural descent into sleep.",
-      families: ["H2", "M3"],
       directions: ["reduce", "simplify"],
       problems: ["insomnia"],
       generated: {
@@ -288,7 +284,6 @@ export const sleepLever: Lever = {
       ],
       metaTitle: "Environmental Architecture — How to Practise It | Sunya",
       metaDescription: "Reclaiming your natural sleep rhythm by controlling the two most powerful environmental signals that shape your biological clock — light and sound.",
-      families: ["H1", "H4"],
       directions: ["reduce", "ground", "calm"],
       problems: ["insomnia"],
       generated: {
@@ -355,7 +350,6 @@ export const sleepLever: Lever = {
       ],
       metaTitle: "The Sleep Sanctuary — How to Practise It | Sunya",
       metaDescription: "Transforming the bedroom from a chaotic, multi-purpose room into a single- purpose sanctuary — an environment engineered to passively pull the body into deep, restorative rest.",
-      families: ["H2", "H1"],
       directions: ["simplify", "reduce", "calm"],
       problems: ["insomnia"],
       generated: {
@@ -413,7 +407,6 @@ export const sleepLever: Lever = {
       ],
       metaTitle: "Strategic Somatic Movement — How to Practise It | Sunya",
       metaDescription: "Using the body’s physical energy to build the chemical drive for sleep during the day, while downshifting the nervous system in the evening.",
-      families: ["H3", "H4"],
       directions: ["discharge", "release", "calm"],
       problems: ["insomnia"],
       generated: {
@@ -470,7 +463,6 @@ export const sleepLever: Lever = {
       ],
       metaTitle: "Somatic Alignment — How to Practise It | Sunya",
       metaDescription: "Consciously placing the body in a posture that honours its natural design — supporting the spine, keeping airways open, and allowing the nightly repair work to proceed without physical friction.",
-      families: ["H3"],
       directions: ["soften", "release"],
       problems: [],
       generated: {
@@ -531,7 +523,6 @@ export const sleepLever: Lever = {
       ],
       metaTitle: "The Morning Ignition — How to Practise It | Sunya",
       metaDescription: "Leveraging the first hour of waking to fuel the day and biologically anchor the subsequent night’s rest.",
-      families: ["L3", "M4"],
       directions: ["energise", "initiate", "stabilise"],
       problems: [],
       generated: {
@@ -588,7 +579,6 @@ export const sleepLever: Lever = {
       ],
       metaTitle: "Biological Adaptability — How to Practise It | Sunya",
       metaDescription: "Maintaining the core principles of circadian rhythm and nervous system regulation when faced with the irregular demands of modern life — travel, shift work, and new parenthood.",
-      families: ["H1", "M4"],
       directions: ["stabilise", "soften", "calm"],
       problems: ["insomnia"],
       generated: {
@@ -648,7 +638,6 @@ export const sleepLever: Lever = {
       ],
       metaTitle: "Relational Ecology — How to Practise It | Sunya",
       metaDescription: "Protecting the sleep quality of both people in a shared sleep environment — through honest communication, structural solutions, and the willingness to prioritise restoration over social habit.",
-      families: ["M1", "M3"],
       directions: ["clarify", "structure", "simplify"],
       problems: [],
       generated: {
@@ -706,7 +695,6 @@ export const sleepLever: Lever = {
       ],
       metaTitle: "The Somatic Runway — How to Practise It | Sunya",
       metaDescription: "A structured 60-minute sequence that systematically transitions the nervous system from the demands of the day to the threshold of deep sleep.",
-      families: ["H4", "H1", "M3"],
       directions: ["slow", "calm", "contain", "structure"],
       problems: ["insomnia"],
       generated: {
@@ -756,7 +744,6 @@ export const sleepLever: Lever = {
       ],
       metaTitle: "Data and Intuition — How to Practise It | Sunya",
       metaDescription: "Using sleep data as a tool for honest self-knowledge — without allowing the numbers to become a new source of sleep anxiety.",
-      families: ["M2", "H1"],
       directions: ["soften", "clarify"],
       problems: [],
       generated: {
@@ -804,7 +791,6 @@ export const sleepLever: Lever = {
       ],
       metaTitle: "The Threshold of Awakening — How to Practise It | Sunya",
       metaDescription: "A more advanced practice that builds on everything in this lever — bringing a thread of gentle awareness to the natural process of falling asleep, without trying to do anything at all.",
-      families: ["H4"],
       directions: ["soften", "calm", "release", "slow"],
       problems: [],
       generated: {
