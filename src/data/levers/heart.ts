@@ -44,6 +44,9 @@ export const heartLever: Lever = {
       ],
       metaTitle: "Heart Coherence — How to Practise It | Sunya",
       metaDescription: "The baseline practice of the Heart lever — creating a state of biological safety and inner calm by directing the breath and attention to the heart centre and actively generating a feeling of genuine appreciation.",
+      families: ["L2"],
+      directions: ["reconnect", "open"],
+      problems: [],
       generated: {
         layersSource: "INFERRED",
         durationSource: "STATED",
@@ -99,6 +102,9 @@ export const heartLever: Lever = {
       ],
       metaTitle: "Emotional Presence — How to Practise It | Sunya",
       metaDescription: "The practice of digesting difficult emotions completely rather than suppressing or being overwhelmed by them.",
+      families: ["L2"],
+      directions: ["reconnect", "release"],
+      problems: [],
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
@@ -154,6 +160,9 @@ export const heartLever: Lever = {
       ],
       metaTitle: "Holding Love as Vibration — How to Practise It | Sunya",
       metaDescription: "Rather than directing love at someone or something, you learn to inhabit it as a self-generated state — consciously choosing to immerse yourself in the feeling of love by deliberate inner attention.",
+      families: ["L2"],
+      directions: ["reconnect", "open"],
+      problems: [],
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
@@ -213,6 +222,9 @@ export const heartLever: Lever = {
       ],
       metaTitle: "Loving-Kindness — How to Practise It | Sunya",
       metaDescription: "A systematic practice of extending compassion and goodwill outward in concentric circles — from yourself, to those you love, to strangers, to those who have caused you pain, and finally to all living beings.",
+      families: ["H3", "L2"],
+      directions: ["soften", "open"],
+      problems: [],
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
@@ -272,6 +284,9 @@ export const heartLever: Lever = {
       ],
       metaTitle: "Giving and Receiving — How to Practise It | Sunya",
       metaDescription: "A practice of breathing in suffering and breathing out relief — the deliberate opening of the heart to what it would normally close against.",
+      families: ["L2"],
+      directions: ["open", "soften"],
+      problems: [],
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
@@ -328,6 +343,9 @@ export const heartLever: Lever = {
       ],
       metaTitle: "Ecstatic Chanting — How to Practise It | Sunya",
       metaDescription: "Using melody, repetition, and fierce emotional intensity to override the analytical mind and open the heart completely.",
+      families: ["L2"],
+      directions: ["open", "reconnect"],
+      problems: [],
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
@@ -393,6 +411,9 @@ export const heartLever: Lever = {
       ],
       metaTitle: "Surrendering — How to Practise It | Sunya",
       metaDescription: "Quieting the overthinking mind and calming the nervous system by surrendering completely to the present moment — to what is, and to the flow of life.",
+      families: ["H3"],
+      directions: ["soften", "release"],
+      problems: [],
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
