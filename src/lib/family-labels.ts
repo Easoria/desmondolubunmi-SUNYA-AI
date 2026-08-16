@@ -133,11 +133,12 @@ export const FAMILY_PROBLEM_META: Record<FamilyCode, FamilyProblemMeta> = {
   },
 };
 
-/** Muted border/dot colours by underlying category — never labelled in UI. */
+/** Muted border/dot colours by underlying category — never labelled in UI.
+ *  Tuned for clear separation on dark backgrounds (esp. under vs mixed). */
 export const FAMILY_STATE_COLOUR: Record<FamilyProblemMeta["state"], string> = {
   over: "#c4a574", // warm gold-amber, muted
-  under: "#5b7fa8", // cool deep blue
-  mixed: "#8b8cc7", // soft violet-blue
+  under: "#3d8ec9", // clear cool blue
+  mixed: "#b07aad", // muted mauve-violet (magenta-leaning, not blue)
   physical: "#5a9e8f", // soft green-teal
 };
 
