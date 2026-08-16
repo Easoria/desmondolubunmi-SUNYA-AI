@@ -12,7 +12,7 @@ export const Route = createFileRoute("/")({
   head: () => {
     const title = "Sunya — A Universal System for Human Wellbeing";
     const description =
-      "Every difficult state has a way out. A complete framework for human wellbeing, rooted in the timeless mechanics of consciousness. 112 practices, and a way of knowing which one you need.";
+      "Every difficult state has a way out. A complete map of human wellbeing — what goes wrong, why, and exactly what to do about it. 112 practices, and a way of knowing which one you need.";
 
     return {
       ...buildSeoHead({
