@@ -189,29 +189,29 @@ function ProblemPageView() {
   return (
     <div className="min-h-screen bg-[#07101c] text-white">
       <Nav />
-      <main className="mx-auto max-w-3xl px-4 pb-24 pt-28 sm:px-6 sm:pb-28 sm:pt-32">
+      <main className="mx-auto max-w-3xl px-4 pb-20 pt-28 sm:px-6 sm:pb-24 sm:pt-32">
         <ProblemBackLink />
 
-        <h1 className="display mt-8 text-4xl leading-tight text-white sm:text-5xl">
+        <h1 className="display mt-6 text-3xl leading-tight text-white sm:mt-8 sm:text-4xl">
           {problem.title}
         </h1>
 
-        <p className="mt-8 text-xl leading-relaxed text-[#d5e6f2] sm:text-2xl sm:leading-9">
+        <p className="mt-5 text-[15px] leading-7 text-[#b8d4e8] sm:mt-6 sm:text-base sm:leading-7">
           {problem.opening}
         </p>
 
-        <p className="display mt-10 text-2xl leading-snug text-[#7ec8e3] sm:text-3xl">
-          → {problem.stateLine}
+        <p className="display mt-6 text-xl leading-snug text-[#7ec8e3] sm:mt-7 sm:text-2xl">
+          → {problem.turnLine}
         </p>
 
-        <ul className="mt-10 space-y-3">
+        <ul className="mt-6 space-y-2.5 sm:mt-7">
           {problem.bullets.map((bullet) => (
             <li
               key={bullet}
-              className="flex gap-3 text-[16px] leading-7 text-[#c5dceb] sm:text-[17px]"
+              className="flex gap-3 text-[15px] leading-7 text-[#b8d4e8] sm:text-base sm:leading-7"
             >
               <span
-                className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#7ec8e3]/75"
+                className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#7ec8e3]/75"
                 aria-hidden
               />
               <span className="min-w-0">{bullet}</span>
@@ -219,32 +219,32 @@ function ProblemPageView() {
           ))}
         </ul>
 
-        <section className="mt-14">
-          <h2 className="display text-2xl text-white sm:text-3xl">What&apos;s actually happening</h2>
-          <p className="mt-5 text-[17px] leading-8 text-[#d5e6f2] sm:text-lg sm:leading-9">
+        <section className="mt-10 sm:mt-12">
+          <h2 className="display text-2xl text-white">What&apos;s actually happening</h2>
+          <p className="mt-3 text-[15px] leading-7 text-[#b8d4e8] sm:text-base sm:leading-7">
             {problem.mechanism}
           </p>
         </section>
 
-        <section className="mt-16 border-t border-white/10 pt-12">
-          <h2 className="display text-3xl text-white">Practices</h2>
+        <section className="mt-12 border-t border-white/10 pt-8 sm:mt-14 sm:pt-10">
+          <h2 className="display text-2xl text-white">Practices</h2>
           {practiceCount > 1 ? (
-            <p className="mt-4 text-[15px] leading-7 text-[#b8d4e8]/85">
+            <p className="mt-3 text-sm leading-6 text-[#b8d4e8]/85 sm:text-[15px] sm:leading-7">
               Start with whichever is most available to you right now. The first groups tend to work
               soonest; the later ones build over time.
             </p>
           ) : null}
 
           {groups.length === 0 ? (
-            <p className="mt-8 text-[#b8d4e8]/80">Practices for this pattern are being tagged.</p>
+            <p className="mt-6 text-sm text-[#b8d4e8]/80">Practices for this pattern are being tagged.</p>
           ) : (
-            <div className="mt-8 space-y-10">
+            <div className="mt-6 space-y-8">
               {groups.map((group) => (
                 <div key={group.leverSlug}>
                   <h3 className="text-xs uppercase tracking-[0.22em] text-[#7ec8e3]/80">
                     {group.leverName}
                   </h3>
-                  <ul className="mt-4 space-y-3">
+                  <ul className="mt-3 space-y-2.5">
                     {group.practices.map((practice) => (
                       <li key={practice.slug}>
                         <Link
@@ -253,11 +253,11 @@ function ProblemPageView() {
                             leverSlug: group.leverSlug,
                             practiceSlug: practice.slug,
                           }}
-                          className="block rounded-xl border border-white/10 px-4 py-4 transition hover:border-[#7ec8e3]/35 hover:bg-white/[0.03]"
+                          className="block rounded-xl border border-white/10 px-4 py-3 transition hover:border-[#7ec8e3]/35 hover:bg-white/[0.03]"
                         >
-                          <span className="display text-xl text-white">{practice.name}</span>
+                          <span className="display text-lg text-white sm:text-xl">{practice.name}</span>
                           {practice.essence ? (
-                            <p className="mt-2 text-[15px] leading-7 text-[#b8d4e8]/9">
+                            <p className="mt-1.5 text-sm leading-6 text-[#b8d4e8]/9">
                               {practice.essence}
                             </p>
                           ) : null}
@@ -271,23 +271,23 @@ function ProblemPageView() {
           )}
         </section>
 
-        <section className="mt-20 border-t border-white/10 pt-12">
-          <h2 className="display text-3xl text-white">Why this works</h2>
-          <p className="mt-5">
+        <section className="mt-12 border-t border-white/10 pt-8 sm:mt-14 sm:pt-10">
+          <h2 className="display text-2xl text-white">Why this works</h2>
+          <p className="mt-3">
             <Link
               to="/framework"
-              className="inline-flex min-h-12 items-center text-[#7ec8e3] underline decoration-[#7ec8e3]/35 underline-offset-4 transition hover:text-white"
+              className="inline-flex min-h-11 items-center text-sm font-semibold tracking-wide text-[#7ec8e3] transition hover:text-white"
             >
               Explore the framework →
             </Link>
           </p>
         </section>
 
-        <div className="my-16 max-w-full border-t border-[#7ec8e3]/20" aria-hidden="true" />
+        <div className="my-12 max-w-full border-t border-[#7ec8e3]/20" aria-hidden="true" />
 
         <div>
           <EmailCapture variant="problem" />
-          <p className="mt-8 text-sm text-[#b8d4e8]/65">
+          <p className="mt-6 text-sm text-[#b8d4e8]/65">
             <Link to="/work-with-me" className="transition hover:text-white">
               Or work through this directly with Desmond, one-to-one →
             </Link>
