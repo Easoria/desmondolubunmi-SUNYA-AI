@@ -22,6 +22,10 @@ function useSunyaCtaLabel(freeSuffix = "") {
   return freeSuffix ? `Try Sunya AI${freeSuffix}` : "Try Sunya AI";
 }
 
+/** Homepage section CTAs — same treatment as hero Upcoming gatherings. */
+const sectionCtaClass =
+  "inline-flex items-center gap-2 text-sm font-semibold tracking-wide text-[#7ec8e3] transition hover:text-white";
+
 
 function Hero() {
   return (
@@ -58,7 +62,7 @@ function Hero() {
             </Link>
             <Link
               to="/gatherings"
-              className="inline-flex items-center gap-2 text-sm font-semibold tracking-wide text-[#7ec8e3] transition hover:text-white"
+              className={sectionCtaClass}
             >
               Upcoming gatherings →
             </Link>
@@ -101,7 +105,7 @@ function Pain() {
           <div className="mt-6 text-center">
             <Link
               to="/practices"
-              className="inline-flex items-center gap-2 text-sm text-[#b8d4e8] transition hover:text-white"
+              className={sectionCtaClass}
             >
               Explore the practices →
             </Link>
@@ -231,7 +235,7 @@ function Reframe() {
         <div className="mt-8 text-center">
           <Link
             to="/philosophy"
-            className="inline-flex items-center gap-2 text-sm text-[#7ec8e3] transition hover:text-white"
+            className={sectionCtaClass}
           >
             Explore the full philosophy →
           </Link>
@@ -279,9 +283,9 @@ function AITeaser() {
           <div className="mt-8 text-center">
             <Link
               to="/sunya-ai"
-              className="inline-flex items-center gap-2 text-sm text-[#7ec8e3] transition hover:text-white"
+              className={sectionCtaClass}
             >
-              Want to go deeper? Explore the full experience <ArrowRight className="h-4 w-4" />
+              Want to go deeper? Explore the full experience →
             </Link>
           </div>
         </div>
@@ -401,19 +405,19 @@ function About() {
               />
             </button>
           </div>
-          <div className="mt-9 flex flex-wrap gap-4">
+          <div className="mt-9 flex flex-col items-start gap-4 sm:flex-row sm:flex-wrap sm:items-center sm:gap-6">
             <Link
               to="/work-with-me"
               hash="booking"
-              className="glow-btn inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium"
+              className={sectionCtaClass}
             >
-              Work With Me 1-on-1 <ArrowRight className="h-4 w-4" />
+              Work With Me 1-on-1 →
             </Link>
             <Link
               to="/sunya-ai"
-              className="inline-flex items-center gap-2 rounded-full border border-white/15 px-6 py-3 text-sm text-white transition hover:border-[#7ec8e3]/50 hover:bg-white/5"
+              className={sectionCtaClass}
             >
-              {ctaLabel} <ArrowRight className="h-4 w-4" />
+              {ctaLabel} →
             </Link>
           </div>
         </div>
@@ -446,7 +450,7 @@ function NextGathering() {
         <Link
           to="/gatherings/$slug"
           params={{ slug: gathering.slug }}
-          className="mt-6 inline-flex text-sm text-[#7ec8e3] transition hover:text-white"
+          className={`mt-6 ${sectionCtaClass}`}
         >
           Details →
         </Link>
@@ -476,14 +480,14 @@ function FinalCTA() {
         </p>
         <Link
           to="/sunya-ai"
-          className="glow-btn mt-12 inline-flex items-center gap-2 rounded-full px-10 py-5 text-base font-medium"
+          className={`mt-12 ${sectionCtaClass}`}
         >
-          {ctaLabel} <ArrowUpRight className="h-5 w-5" />
+          {ctaLabel} →
         </Link>
         <p className="mt-10 text-sm text-[#b8d4e8]/75">
           <Link
             to="/timeless-solution"
-            className="text-[#7ec8e3]/90 transition hover:text-white"
+            className={sectionCtaClass}
           >
             Read the complete framework — The Timeless Solution →
           </Link>
