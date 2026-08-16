@@ -254,11 +254,10 @@ function PracticeDetailPage() {
             {practice.subtitle ? (
               <p className="mt-3 text-sm text-[#7ec8e3]/90">{practice.subtitle}</p>
             ) : null}
+            {whatItsFor.length > 0 || practice.duration ? (
             <div className="mt-4 flex flex-wrap items-center gap-x-2 gap-y-2 text-[11px] uppercase leading-relaxed tracking-[0.14em] text-[#b8d4e8]/70 sm:text-xs sm:tracking-[0.2em]">
-              <span>{lever.name}</span>
               {whatItsFor.length > 0 ? (
                 <>
-                  <span aria-hidden>·</span>
                   {whatItsFor.map((tag, index) => (
                     <span key={tag.slug} className="inline-flex items-center gap-2 normal-case tracking-normal">
                       {index > 0 ? <span className="uppercase tracking-[0.14em] sm:tracking-[0.2em]">·</span> : null}
@@ -292,17 +291,17 @@ function PracticeDetailPage() {
               ) : null}
               {practice.duration ? (
                 <>
-                  <span aria-hidden>·</span>
+                  {whatItsFor.length > 0 ? <span aria-hidden>·</span> : null}
                   <span>{practice.duration}</span>
                 </>
               ) : null}
             </div>
+            ) : null}
             <p className="mt-3 text-xs text-[#b8d4e8]/70">
               Written by{" "}
               <Link to="/about" className="underline decoration-[#7ec8e3]/45 underline-offset-2 hover:text-white">
                 Desmond Olubunmi
-              </Link>{" "}
-              · Founder of Sunya
+              </Link>
             </p>
           </div>
 
