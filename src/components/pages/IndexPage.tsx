@@ -188,7 +188,7 @@ function Reframe() {
       <SacredGeometry className="right-[-200px] top-1/4 h-[800px] w-[800px]" />
       <div className="relative z-10 mx-auto max-w-5xl px-6">
         <div className="text-center">
-          <div className="label-eyebrow">THE REFRAME</div>
+          <div className="label-eyebrow">Understanding suffering</div>
           <h2 className="display mt-6 text-4xl text-white sm:text-5xl">
             Every form of human suffering traces back to a single root.
           </h2>
