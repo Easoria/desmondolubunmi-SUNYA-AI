@@ -36,9 +36,9 @@ export const Route = createFileRoute("/gatherings")({
 
     return {
       ...buildSeoHead({
-        title: "Gatherings in Dublin & Online — Desmond Olubunmi | Sunya",
+        title: "Meditation Events in Dublin and Online — Sunya Gatherings",
         description:
-          "Small gatherings in Dublin and online for people curious about consciousness, inner life, and genuine human connection. Free and open to anyone.",
+          "Free meditation and wellbeing events in Dublin and online. Small gatherings for people curious about consciousness, inner life, and genuine human connection.",
         path: "/gatherings",
         ogType: "website",
         imageKind: "core",

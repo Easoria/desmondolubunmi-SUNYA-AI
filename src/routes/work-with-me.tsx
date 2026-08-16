@@ -295,12 +295,14 @@ function WorkPage() {
             and depth with each person.
           </p>
           <p className="mt-6 text-center text-sm text-[#b8d4e8]/80">
+            Prefer a group? Explore{" "}
             <Link
               to="/gatherings"
               className="text-[#7ec8e3] transition hover:text-white"
             >
-              Prefer a group? Gatherings happen monthly, in Dublin and online →
+              meditation events in Dublin and online
             </Link>
+            .
           </p>
         </div>
       </section>

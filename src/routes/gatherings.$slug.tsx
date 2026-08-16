@@ -16,7 +16,7 @@ import {
   firstSentence,
   formatBadge,
   formatGatheringDetailsWhen,
-  formatGatheringMetaDate,
+  buildGatheringMetaTitle,
   gatheringLocationLine,
   googleMapsEmbedUrl,
   googleMapsSearchUrl,
@@ -69,12 +69,7 @@ export const Route = createFileRoute("/gatherings/$slug")({
   head: ({ loaderData, params }) => {
     const g = loaderData?.gathering;
     const path = `/gatherings/${params.slug}`;
-    const dateLabel = g
-      ? formatGatheringMetaDate(g.starts_at, g.timezone)
-      : "";
-    const title = g
-      ? `${g.title} — ${dateLabel} | Gatherings`
-      : "Gatherings";
+    const title = g ? buildGatheringMetaTitle(g) : "Gatherings";
     const description = g
       ? g.subtitle?.trim() ||
         firstSentence(firstMarkdownParagraph(g.description)) ||

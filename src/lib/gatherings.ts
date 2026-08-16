@@ -123,6 +123,41 @@ export function formatGatheringMetaDate(
   return `${z.day} ${z.month} ${z.year}`;
 }
 
+/** Strip a trailing " — City" / " - City" so SEO titles do not double the place. */
+export function gatheringTitleForMeta(
+  title: string,
+  city: string | null | undefined,
+): string {
+  const trimmed = title.trim();
+  const place = city?.trim();
+  if (!place) return trimmed;
+  const suffix = new RegExp(
+    `\\s+[—–-]\\s+${place.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}$`,
+    "i",
+  );
+  return trimmed.replace(suffix, "").trim() || trimmed;
+}
+
+/**
+ * Individual gathering document title for search.
+ * In person: "[Title] — [City] Meditation Event, [Date] | Sunya"
+ * Online:    "[Title] — Online Meditation Event, [Date] | Sunya"
+ */
+export function buildGatheringMetaTitle(
+  gathering: Pick<Gathering, "title" | "format" | "city" | "starts_at" | "timezone">,
+): string {
+  const base = gatheringTitleForMeta(gathering.title, gathering.city);
+  const dateLabel = formatGatheringMetaDate(
+    gathering.starts_at,
+    gathering.timezone,
+  );
+  if (gathering.format === "online") {
+    return `${base} — Online Meditation Event, ${dateLabel} | Sunya`;
+  }
+  const city = gathering.city?.trim() || "Dublin";
+  return `${base} — ${city} Meditation Event, ${dateLabel} | Sunya`;
+}
+
 export function gatheringLocationLine(
   gathering: Pick<
     Gathering,

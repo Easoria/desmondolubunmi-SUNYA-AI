@@ -61,8 +61,13 @@ function Hero() {
             <Link to="/problems" className={secondaryBtn}>
               Find what helps
             </Link>
-            <Link to="/gatherings" className={secondaryBtn}>
-              Upcoming gatherings
+          </div>
+          <div className="mt-4 text-center">
+            <Link
+              to="/gatherings"
+              className="inline-flex items-center gap-2 text-sm text-[#b8d4e8] transition hover:text-white"
+            >
+              Upcoming gatherings →
             </Link>
           </div>
         </div>

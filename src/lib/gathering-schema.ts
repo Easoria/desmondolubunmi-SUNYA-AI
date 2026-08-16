@@ -11,14 +11,18 @@ export function buildGatheringEventSchema(gathering: Gathering) {
   const description = firstMarkdownParagraph(gathering.description);
   const isOnline = gathering.format === "online";
   const upcoming = isGatheringUpcoming(gathering);
-  const price = gathering.registration_url
-    ? parsePriceForSchema(gathering.price_label)
-    : null;
+  const pageUrl = canonicalUrl(`/gatherings/${gathering.slug}`);
+  const offerUrl = gathering.registration_url || pageUrl;
+  const price =
+    parsePriceForSchema(gathering.price_label) ?? {
+      price: "0",
+      priceCurrency: "EUR",
+    };
 
   const location = isOnline
     ? {
         "@type": "VirtualLocation",
-        url: gathering.registration_url || canonicalUrl(`/gatherings/${gathering.slug}`),
+        url: offerUrl,
         name: gatheringLocationLine(gathering),
       }
     : {
@@ -27,7 +31,7 @@ export function buildGatheringEventSchema(gathering: Gathering) {
         address: {
           "@type": "PostalAddress",
           ...(gathering.address ? { streetAddress: gathering.address } : {}),
-          ...(gathering.city ? { addressLocality: gathering.city } : {}),
+          addressLocality: gathering.city?.trim() || "Dublin",
           addressCountry: "IE",
         },
         ...(gathering.latitude != null && gathering.longitude != null
@@ -60,22 +64,18 @@ export function buildGatheringEventSchema(gathering: Gathering) {
       url: canonicalUrl("/about"),
     },
     description,
-    url: canonicalUrl(`/gatherings/${gathering.slug}`),
-    ...(gathering.featured_image_url
-      ? { image: gathering.featured_image_url }
-      : { image: canonicalUrl("/og/core.jpg") }),
-    ...(gathering.registration_url && price
-      ? {
-          offers: {
-            "@type": "Offer",
-            price: price.price,
-            priceCurrency: price.priceCurrency,
-            url: gathering.registration_url,
-            availability: upcoming
-              ? "https://schema.org/InStock"
-              : "https://schema.org/SoldOut",
-          },
-        }
-      : {}),
+    url: pageUrl,
+    image: gathering.featured_image_url
+      ? gathering.featured_image_url
+      : canonicalUrl("/og/core.jpg"),
+    offers: {
+      "@type": "Offer",
+      price: price.price,
+      priceCurrency: price.priceCurrency,
+      url: offerUrl,
+      availability: upcoming
+        ? "https://schema.org/InStock"
+        : "https://schema.org/SoldOut",
+    },
   };
 }
