@@ -24,33 +24,34 @@ function useSunyaCtaLabel(freeSuffix = "") {
 
 
 function Hero() {
+  const secondaryBtn =
+    "inline-flex w-full items-center justify-center rounded-full border border-[#7ec8e3]/45 bg-white/[0.02] px-7 py-3.5 text-sm font-medium tracking-wide text-[#dcecf7] transition hover:border-[#7ec8e3]/70 hover:bg-white/[0.06] hover:shadow-[0_0_26px_-10px_rgba(126,200,227,0.75)] sm:w-auto";
+
   return (
-    <section className="relative flex min-h-screen items-center justify-center overflow-hidden pt-24">
+    <section className="relative flex min-h-screen items-center justify-center overflow-hidden pt-16 sm:pt-24">
       <Starfield density={1.2} />
       <Orbs />
       <SacredGeometry className="inset-0 m-auto h-[700px] w-[700px]" />
       <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
-        <div className="label-eyebrow reveal">A universal system for inner transformation</div>
-        <div className="reveal mt-6 flex flex-col items-center">
+        <div className="label-eyebrow reveal">A universal system for human wellbeing</div>
+        <div className="reveal mt-4 flex flex-col items-center sm:mt-6">
           <img
             src={desmondImg}
             alt="Desmond Olubunmi"
-            width={88}
-            height={88}
-            className="h-[72px] w-[72px] rounded-full object-cover ring-2 ring-[#7ec8e3]/45 shadow-[0_0_36px_-10px_rgba(126,200,227,0.85)] transition hover:ring-[#7ec8e3]/65 hover:shadow-[0_0_46px_-10px_rgba(126,200,227,0.95)] sm:h-[88px] sm:w-[88px]"
+            width={120}
+            height={120}
+            className="h-24 w-24 rounded-full object-cover ring-2 ring-[#7ec8e3]/45 shadow-[0_0_36px_-10px_rgba(126,200,227,0.85)] transition hover:ring-[#7ec8e3]/65 hover:shadow-[0_0_46px_-10px_rgba(126,200,227,0.95)] sm:h-[120px] sm:w-[120px]"
           />
           <p className="mt-2 text-sm text-[#b8d4e8]">Founded by Desmond Olubunmi</p>
         </div>
-        <h1 className="display reveal mt-9 text-4xl leading-[1.1] text-white sm:text-7xl md:text-[5.5rem]">
-          <span className="block whitespace-nowrap">You are not broken.</span>
-          <span className="display-italic block whitespace-nowrap text-[#b8d4e8]">You are contracted.</span>
+        <h1 className="display reveal mt-5 text-[1.85rem] leading-[1.15] text-white sm:mt-8 sm:text-5xl md:text-6xl lg:text-[3.75rem]">
+          Every difficult state has a way out.
         </h1>
-        <p className="reveal mx-auto mt-7 max-w-2xl text-base leading-relaxed text-[#b8d4e8] sm:text-lg">
-          Sunya is a complete, practical framework for human wellbeing — rooted in the timeless mechanics
-          of consciousness, not belief, not religion, not dogma. Just the truth of how you work.
+        <p className="reveal mx-auto mt-3 max-w-2xl text-base leading-relaxed text-[#b8d4e8] sm:mt-5 sm:text-lg">
+          A complete framework for human wellbeing, rooted in the timeless mechanics of consciousness. 112 practices, and a way of knowing which one you need.
         </p>
-        <div className="reveal mx-auto mt-7 max-w-2xl">
-          <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
+        <div className="reveal mx-auto mt-4 max-w-3xl sm:mt-6">
+          <div className="flex flex-col gap-2.5 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-3">
             <Link
               to="/work-with-me"
               className="glow-btn inline-flex w-full items-center justify-center rounded-full px-7 py-3.5 text-sm font-medium tracking-wide sm:w-auto"
@@ -58,18 +59,14 @@ function Hero() {
               Work with me 1-on-1
             </Link>
             <Link
-              to="/practices"
-              className="inline-flex w-full items-center justify-center rounded-full border border-[#7ec8e3]/45 bg-white/[0.02] px-7 py-3.5 text-sm font-medium tracking-wide text-[#dcecf7] transition hover:border-[#7ec8e3]/70 hover:bg-white/[0.06] hover:shadow-[0_0_26px_-10px_rgba(126,200,227,0.75)] sm:w-auto"
+              // /problems ships with the Find What Helps stack (still draft on main).
+              to={"/problems" as "/"}
+              className={secondaryBtn}
             >
-              Explore the practices
+              Find what helps
             </Link>
-          </div>
-          <div className="mt-4 text-center">
-            <Link
-              to="/gatherings"
-              className="inline-flex items-center gap-2 text-sm text-[#b8d4e8] transition hover:text-white"
-            >
-              Upcoming gatherings →
+            <Link to="/gatherings" className={secondaryBtn}>
+              Upcoming gatherings
             </Link>
           </div>
         </div>
