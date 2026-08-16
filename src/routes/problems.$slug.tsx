@@ -185,10 +185,6 @@ function ProblemBackLink() {
 
 function ProblemPageView() {
   const { problem, groups, practiceCount } = Route.useLoaderData();
-  const code = getFamilyCodeByProblemSlug(problem.slug);
-  const stateColour = code
-    ? FAMILY_STATE_COLOUR[FAMILY_PROBLEM_META[code].state]
-    : "#7ec8e3";
 
   return (
     <div className="min-h-screen bg-[#07101c] text-white">
@@ -196,14 +192,7 @@ function ProblemPageView() {
       <main className="mx-auto max-w-3xl px-4 pb-20 pt-28 sm:px-6 sm:pb-24 sm:pt-32">
         <ProblemBackLink />
 
-        <h1
-          className="display mt-6 inline-block text-3xl leading-tight text-white sm:mt-8 sm:text-4xl"
-          style={{
-            textShadow: `0 0 28px ${stateColour}55`,
-            borderBottom: `2px solid ${stateColour}`,
-            paddingBottom: "0.35rem",
-          }}
-        >
+        <h1 className="display mt-6 text-3xl leading-tight text-white sm:mt-8 sm:text-4xl">
           {problem.title}
         </h1>
 
@@ -211,10 +200,7 @@ function ProblemPageView() {
           {problem.opening}
         </p>
 
-        <p
-          className="display mt-6 text-xl leading-snug sm:mt-7 sm:text-2xl"
-          style={{ color: stateColour }}
-        >
+        <p className="display mt-6 text-xl leading-snug text-[#7ec8e3] sm:mt-7 sm:text-2xl">
           → {problem.stateLine}
         </p>
 
@@ -225,8 +211,7 @@ function ProblemPageView() {
               className="flex gap-3 text-[15px] leading-7 text-[#b8d4e8] sm:text-base sm:leading-7"
             >
               <span
-                className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full"
-                style={{ backgroundColor: `${stateColour}bf` }}
+                className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#7ec8e3]/75"
                 aria-hidden
               />
               <span className="min-w-0">{bullet}</span>
