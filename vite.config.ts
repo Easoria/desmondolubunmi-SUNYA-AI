@@ -33,5 +33,7 @@ export default defineConfig({
   server: {
     host: true,
     port: 5173,
+    // Allow Cloudflare quick-tunnel hostnames for laptop preview from cloud agents.
+    allowedHosts: true,
   },
 });
