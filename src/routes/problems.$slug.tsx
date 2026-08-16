@@ -218,21 +218,6 @@ function ProblemBackLink() {
   );
 }
 
-function ProblemSunyaAiLine() {
-  return (
-    <p className="text-base leading-relaxed text-[#b8d4e8]/85">
-      Not sure which of these to start with?{" "}
-      <Link
-        to="/sunya-ai"
-        className="text-[#7ec8e3] underline decoration-[#7ec8e3]/35 underline-offset-2 transition hover:text-white hover:decoration-white/50"
-      >
-        Sunya AI
-      </Link>{" "}
-      will identify what is actually happening in your system and which practice fits it.
-    </p>
-  );
-}
-
 function FullProblemPage({ problem }: { problem: PublicFullProblem }) {
   const [activeSlug, setActiveSlug] = useState(problem.variants[0]?.slug ?? "");
   const activeVariant =
@@ -363,11 +348,18 @@ function FullProblemPage({ problem }: { problem: PublicFullProblem }) {
         <div className="my-16 max-w-full border-t border-[#7ec8e3]/20" aria-hidden="true" />
 
         <div>
-          <ProblemSunyaAiLine />
-          <div className="mt-10">
-            <EmailCapture variant="problem" />
-          </div>
-          <p className="mt-8 text-base text-[#b8d4e8]/65">
+          <EmailCapture variant="problem" />
+          <p className="mt-8 text-base leading-relaxed text-[#b8d4e8]/85">
+            Not sure which pattern is yours?{" "}
+            <Link
+              to="/sunya-ai"
+              className="text-[#7ec8e3] underline decoration-[#7ec8e3]/35 underline-offset-2 transition hover:text-white"
+            >
+              Sunya AI
+            </Link>{" "}
+            can help identify where your system is contracted and what matters most right now.
+          </p>
+          <p className="mt-4 text-base text-[#b8d4e8]/65">
             <Link to="/work-with-me" className="transition hover:text-white">
               Or work with Desmond directly, one-to-one →
             </Link>
@@ -432,23 +424,12 @@ function SimpleProblemPage({ problem }: { problem: SimpleProblemData }) {
         )}
 
         <div className="mt-16 border-t border-white/10 pt-10">
-          <ProblemSunyaAiLine />
-          <div className="mt-10">
-            <EmailCapture variant="problems" />
-          </div>
-          <p className="mt-8 text-base text-[#b8d4e8]/65">
-            <Link to="/work-with-me" className="transition hover:text-white">
-              Or work with Desmond directly, one-to-one →
-            </Link>
-          </p>
-          <p className="mt-10">
-            <Link
-              to="/problems"
-              className="text-sm text-[#7ec8e3] underline decoration-[#7ec8e3]/35 underline-offset-4 hover:text-white"
-            >
-              ← All problems
-            </Link>
-          </p>
+          <Link
+            to="/problems"
+            className="text-sm text-[#7ec8e3] underline decoration-[#7ec8e3]/35 underline-offset-4 hover:text-white"
+          >
+            ← All problems
+          </Link>
         </div>
       </main>
       <Footer />

@@ -119,7 +119,19 @@ function ProblemsIndexPage() {
         </ul>
 
         <div className="mt-16 border-t border-white/10 pt-12">
-          <EmailCapture variant="problems" />
+          <p className="text-base leading-relaxed text-[#b8d4e8]/85 sm:text-[17px] sm:leading-8">
+            Not sure which of these fits? Describe what you&apos;re experiencing and{" "}
+            <Link
+              to="/sunya-ai"
+              className="text-[#7ec8e3] underline decoration-[#7ec8e3]/35 underline-offset-2 transition hover:text-white hover:decoration-white/50"
+            >
+              Sunya AI
+            </Link>{" "}
+            will identify what is actually happening in your system, and which practices fit it.
+          </p>
+          <div className="mt-10">
+            <EmailCapture variant="problems" />
+          </div>
         </div>
       </main>
       <Footer />
