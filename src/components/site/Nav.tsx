@@ -170,11 +170,11 @@ export function Nav() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
+      className={`pointer-events-none fixed inset-x-0 top-0 z-[100] transition-all duration-500 ${
         scrolled || open ? "border-b border-white/10 bg-[#0a1628]/70 backdrop-blur-xl" : ""
       }`}
     >
-      <nav className="relative z-10 mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
+      <nav className="pointer-events-auto relative z-10 mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
         <Link to="/" className="group flex flex-col leading-tight">
           <span className="display text-2xl tracking-[0.4em] text-white">SUNYA</span>
           <span className="text-[10px] italic text-[#b8d4e8]/70 sm:text-xs">
@@ -213,13 +213,17 @@ export function Nav() {
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             aria-controls="mobile-nav-menu"
-            className="inline-flex min-h-11 min-w-11 flex-col items-center justify-center gap-0.5 rounded-xl px-2 py-1.5 text-white transition hover:bg-[#7ec8e3]/10 active:bg-[#7ec8e3]/15"
-            onClick={() => setOpen((v) => !v)}
+            className="relative z-[110] inline-flex min-h-11 min-w-11 flex-col items-center justify-center gap-0.5 rounded-xl px-2 py-1.5 text-white transition hover:bg-[#7ec8e3]/10 active:bg-[#7ec8e3]/15"
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              setOpen((v) => !v);
+            }}
           >
-            <span className="inline-flex items-center justify-center rounded-full border border-[#7ec8e3]/40 bg-[#7ec8e3]/10 p-2 shadow-[0_0_18px_-2px_rgba(126,200,227,0.6)]">
+            <span className="pointer-events-none inline-flex items-center justify-center rounded-full border border-[#7ec8e3]/40 bg-[#7ec8e3]/10 p-2 shadow-[0_0_18px_-2px_rgba(126,200,227,0.6)]">
               {open ? <X className="h-5 w-5" aria-hidden /> : <Menu className="h-5 w-5" aria-hidden />}
             </span>
-            <span className="text-[9px] uppercase tracking-[0.2em] text-[#b8d4e8]/80">
+            <span className="pointer-events-none text-[9px] uppercase tracking-[0.2em] text-[#b8d4e8]/80">
               {open ? "Close" : "View Menu"}
             </span>
           </button>
@@ -228,7 +232,7 @@ export function Nav() {
       {open ? (
         <div
           id="mobile-nav-menu"
-          className="relative z-10 max-h-[min(70vh,calc(100dvh-5.5rem))] overflow-y-auto border-t border-white/10 bg-[#0a1628]/95 backdrop-blur-xl md:hidden"
+          className="pointer-events-auto relative z-10 max-h-[min(70vh,calc(100dvh-5.5rem))] overflow-y-auto border-t border-white/10 bg-[#0a1628]/95 backdrop-blur-xl md:hidden"
         >
           <div className="flex flex-col gap-1 px-6 py-4">
             <MobileLink to="/framework" label="Sunya Framework" onClick={() => setOpen(false)} />
