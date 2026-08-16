@@ -295,7 +295,6 @@ function AITeaser() {
 }
 
 function About() {
-  const ctaLabel = useSunyaCtaLabel();
   const [expanded, setExpanded] = useState(false);
   return (
     <section
