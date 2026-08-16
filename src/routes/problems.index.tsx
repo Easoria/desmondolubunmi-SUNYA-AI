@@ -3,14 +3,26 @@ import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { EmailCapture } from "@/components/site/EmailCapture";
 import { getAllProblemPages } from "@/data/problems";
+import {
+  FAMILY_PROBLEM_META,
+  FAMILY_STATE_COLOUR,
+  type FamilyProblemMeta,
+} from "@/lib/family-labels";
 import { buildSeoHead } from "@/lib/seo";
+
+const STATE_ORDER: FamilyProblemMeta["state"][] = ["over", "under", "mixed", "physical"];
+
+function stateForSlug(slug: string): FamilyProblemMeta["state"] {
+  const meta = Object.values(FAMILY_PROBLEM_META).find((entry) => entry.slug === slug);
+  return meta?.state ?? "mixed";
+}
 
 export const Route = createFileRoute("/problems/")({
   head: () =>
     buildSeoHead({
       title: "Find What Helps — Start Where You Actually Are | Sunya",
       description:
-        "Most advice fails because it treats every version of a problem the same way. Find what is actually happening, and the practice that fits it.",
+        "These are the fifteen difficult states a human system falls into. Find yours, and the practices that work on it.",
       path: "/problems",
       ogType: "website",
       imageKind: "core",
@@ -19,7 +31,9 @@ export const Route = createFileRoute("/problems/")({
 });
 
 function ProblemsIndexPage() {
-  const pages = getAllProblemPages();
+  const pages = [...getAllProblemPages()].sort(
+    (a, b) => STATE_ORDER.indexOf(stateForSlug(a.slug)) - STATE_ORDER.indexOf(stateForSlug(b.slug)),
+  );
 
   return (
     <div className="min-h-screen bg-[#07101c] text-white">
@@ -29,24 +43,33 @@ function ProblemsIndexPage() {
           Start where you actually are.
         </h1>
         <p className="mt-6 text-[17px] leading-8 text-[#d5e6f2] sm:text-lg sm:leading-9">
-          Most advice fails because it treats every version of a problem the same way. A racing mind
-          and a depleted one both keep you awake, and they need opposite things. Find what is
-          actually happening, and the practice that fits it.
+          These are the fifteen difficult states a human system falls into. There are no others.
+        </p>
+        <p className="mt-4 text-[17px] leading-8 text-[#d5e6f2] sm:text-lg sm:leading-9">
+          Find yours, and the practices that work on it.
         </p>
 
         <ul className="mt-12 space-y-3">
-          {pages.map((page) => (
-            <li key={page.slug}>
-              <Link
-                to="/problems/$slug"
-                params={{ slug: page.slug }}
-                className="block rounded-xl border border-[#7ec8e3]/35 bg-[#7ec8e3]/[0.06] px-5 py-5 transition hover:border-[#7ec8e3]/55 hover:bg-[#7ec8e3]/10"
-              >
-                <h2 className="display text-2xl text-white">{page.title}</h2>
-                <p className="mt-2 text-[15px] leading-7 text-[#b8d4e8]">{page.opening}</p>
-              </Link>
-            </li>
-          ))}
+          {pages.map((page) => {
+            const colour = FAMILY_STATE_COLOUR[stateForSlug(page.slug)];
+            return (
+              <li key={page.slug}>
+                <Link
+                  to="/problems/$slug"
+                  params={{ slug: page.slug }}
+                  className="relative block overflow-hidden rounded-xl border border-[#7ec8e3]/35 bg-[#7ec8e3]/[0.06] px-5 py-5 transition hover:border-[#7ec8e3]/55 hover:bg-[#7ec8e3]/10"
+                >
+                  <span
+                    className="absolute inset-y-0 left-0 w-[3px]"
+                    style={{ backgroundColor: colour }}
+                    aria-hidden
+                  />
+                  <h2 className="display text-2xl text-white">{page.title}</h2>
+                  <p className="mt-2 text-[15px] leading-7 text-[#b8d4e8]">{page.opening}</p>
+                </Link>
+              </li>
+            );
+          })}
         </ul>
 
         <div className="mt-16 border-t border-white/10 pt-12">
