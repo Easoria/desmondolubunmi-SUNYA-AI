@@ -24,9 +24,6 @@ function useSunyaCtaLabel(freeSuffix = "") {
 
 
 function Hero() {
-  const secondaryBtn =
-    "inline-flex w-full items-center justify-center rounded-full border border-[#7ec8e3]/45 bg-white/[0.02] px-7 py-3.5 text-sm font-medium tracking-wide text-[#dcecf7] transition hover:border-[#7ec8e3]/70 hover:bg-white/[0.06] hover:shadow-[0_0_26px_-10px_rgba(126,200,227,0.75)] sm:w-auto";
-
   return (
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden pt-16 sm:pt-24">
       <Starfield density={1.2} />
