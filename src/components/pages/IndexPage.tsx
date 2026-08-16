@@ -413,10 +413,10 @@ function About() {
               Work With Me 1-on-1 →
             </Link>
             <Link
-              to="/sunya-ai"
+              to="/framework"
               className={sectionCtaClass}
             >
-              {ctaLabel} →
+              Explore the Sunya framework →
             </Link>
           </div>
         </div>
