@@ -24,11 +24,6 @@ import {
   buildBreadcrumbSchema,
   buildSeoHead,
 } from "@/lib/seo";
-import {
-  FAMILY_PROBLEM_META,
-  FAMILY_STATE_COLOUR,
-  getFamilyCodeByProblemSlug,
-} from "@/lib/family-labels";
 
 type PublicPracticeCard = {
   slug: string;
