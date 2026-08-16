@@ -71,5 +71,11 @@ export function Starfield({ density = 1, className = "" }: { density?: number; c
     };
   }, [density]);
 
-  return <canvas ref={ref} className={`absolute inset-0 h-full w-full ${className}`} aria-hidden />;
+  return (
+    <canvas
+      ref={ref}
+      className={`pointer-events-none absolute inset-0 h-full w-full ${className}`}
+      aria-hidden
+    />
+  );
 }
