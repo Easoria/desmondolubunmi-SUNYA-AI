@@ -15,10 +15,12 @@ export const TAGGABLE_LEVER_SLUGS = new Set([
 export type FamilyProblemMeta = {
   /** URL slug under /problems/[slug] */
   slug: string;
-  /** Phrase used in "Practices for [phrase]." */
+  /** Phrase used in simple intro / meta helpers */
   phrase: string;
-  /** Strip label, e.g. "For a racing mind" */
+  /** Strip label, e.g. "For anxiety and worry" */
   label: string;
+  /** Page title */
+  title: string;
   /** Underlying category for colour only — never shown as text. */
   state: "over" | "under" | "mixed" | "physical";
 };
@@ -28,90 +30,105 @@ export const FAMILY_PROBLEM_META: Record<FamilyCode, FamilyProblemMeta> = {
     slug: "anxiety-and-worry",
     phrase: "anxiety and worry",
     label: "For anxiety and worry",
+    title: "Anxiety and worry",
     state: "over",
   },
   H2: {
-    slug: "feeling-overwhelmed",
-    phrase: "feeling overwhelmed",
-    label: "For feeling overwhelmed",
+    slug: "overwhelm",
+    phrase: "overwhelm",
+    label: "For overwhelm",
+    title: "Overwhelm",
     state: "over",
   },
   H3: {
     slug: "anger-and-frustration",
     phrase: "anger and frustration",
     label: "For anger and frustration",
+    title: "Anger and frustration",
     state: "over",
   },
   H4: {
-    slug: "a-racing-mind",
-    phrase: "a racing mind",
-    label: "For a racing mind",
+    slug: "a-mind-that-wont-switch-off",
+    phrase: "a mind that won't switch off",
+    label: "For a mind that won't switch off",
+    title: "A mind that won't switch off",
     state: "over",
   },
   L1: {
     slug: "exhaustion",
     phrase: "exhaustion",
     label: "For exhaustion",
+    title: "Exhaustion",
     state: "under",
   },
   L2: {
-    slug: "numbness-and-disconnection",
-    phrase: "numbness and disconnection",
-    label: "For numbness and disconnection",
+    slug: "emotional-numbness",
+    phrase: "emotional numbness",
+    label: "For emotional numbness",
+    title: "Emotional numbness",
     state: "under",
   },
   L3: {
-    slug: "avoidance-and-procrastination",
-    phrase: "avoidance and procrastination",
-    label: "For avoidance and procrastination",
+    slug: "procrastination-and-avoidance",
+    phrase: "procrastination and avoidance",
+    label: "For procrastination and avoidance",
+    title: "Procrastination and avoidance",
     state: "under",
   },
   L4: {
     slug: "low-mood-and-heaviness",
     phrase: "low mood and heaviness",
     label: "For low mood and heaviness",
+    title: "Low mood and heaviness",
     state: "under",
   },
   M1: {
     slug: "feeling-torn",
     phrase: "feeling torn",
     label: "For feeling torn",
+    title: "Feeling torn",
     state: "mixed",
   },
   M2: {
-    slug: "self-criticism",
-    phrase: "self-criticism",
-    label: "For self-criticism",
+    slug: "self-criticism-and-shame",
+    phrase: "self-criticism and shame",
+    label: "For self-criticism and shame",
+    title: "Self-criticism and shame",
     state: "mixed",
   },
   M3: {
     slug: "a-scattered-mind",
     phrase: "a scattered mind",
     label: "For a scattered mind",
+    title: "A scattered mind",
     state: "mixed",
   },
   M4: {
-    slug: "burnout",
-    phrase: "burnout",
-    label: "For burnout",
+    slug: "burnout-cycles",
+    phrase: "burnout cycles",
+    label: "For burnout cycles",
+    title: "Burnout cycles",
     state: "mixed",
   },
   P1: {
     slug: "physical-tension",
     phrase: "physical tension",
     label: "For physical tension",
+    title: "Physical tension",
     state: "physical",
   },
   P2: {
     slug: "stiffness-and-immobility",
     phrase: "stiffness and immobility",
     label: "For stiffness and immobility",
+    title: "Stiffness and immobility",
     state: "physical",
   },
   P3: {
     slug: "low-physical-energy",
     phrase: "low physical energy",
     label: "For low physical energy",
+    title: "Low physical energy",
     state: "physical",
   },
 };
@@ -190,4 +207,15 @@ export function toPublicLever<
 
 export function simpleProblemIntro(phrase: string) {
   return `Practices for ${phrase}. Each one works on the same underlying pattern in a different way — start with whichever is most available to you right now.`;
+}
+
+/** Meta description from opening copy: truncate at a sentence boundary under 155 chars. */
+export function metaDescriptionFromOpening(opening: string): string {
+  const max = 155;
+  if (opening.length <= max) return opening;
+  const slice = opening.slice(0, max + 1);
+  const lastStop = Math.max(slice.lastIndexOf(". "), slice.lastIndexOf("? "), slice.lastIndexOf("! "));
+  if (lastStop > 40) return opening.slice(0, lastStop + 1).trim();
+  const lastSpace = opening.lastIndexOf(" ", max);
+  return `${opening.slice(0, lastSpace > 40 ? lastSpace : max).trim()}…`;
 }

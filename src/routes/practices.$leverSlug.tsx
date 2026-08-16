@@ -140,7 +140,7 @@ function LeverHubPage() {
               <p className="text-[15px] leading-8 sm:text-base">
                 <Link
                   to="/problems/$slug"
-                  params={{ slug: "insomnia" }}
+                  params={{ slug: "a-mind-that-wont-switch-off" }}
                   className="text-[#7ec8e3] underline decoration-[#7ec8e3]/35 underline-offset-4 transition hover:text-white hover:decoration-white/50"
                 >
                   Can’t sleep? Start with the problem, not the lever →

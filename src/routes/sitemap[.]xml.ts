@@ -32,16 +32,15 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/vision", lastmod: generatedAt, changefreq: "monthly", priority: "0.8" },
           { path: "/gatherings", lastmod: generatedAt, changefreq: "weekly", priority: "0.8" },
           { path: "/writing", lastmod: generatedAt, changefreq: "weekly", priority: "0.7" },
-          { path: "/problems/insomnia", lastmod: generatedAt, changefreq: "monthly", priority: "0.85" },
-          { path: "/framework", lastmod: generatedAt, changefreq: "monthly", priority: "0.9" },
           { path: "/problems", lastmod: generatedAt, changefreq: "weekly", priority: "0.9" },
+          { path: "/framework", lastmod: generatedAt, changefreq: "monthly", priority: "0.9" },
         ];
 
         const familyProblemEntries: SitemapEntry[] = getAllTagProblemSlugs().map((slug) => ({
           path: `/problems/${slug}`,
           lastmod: generatedAt,
           changefreq: "monthly" as const,
-          priority: "0.7",
+          priority: "0.85",
         }));
 
         const essayEntries: SitemapEntry[] = essays.map((essay) => ({

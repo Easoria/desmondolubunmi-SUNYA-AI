@@ -1,13 +1,13 @@
-import { insomniaProblem } from "@/data/problems/insomnia";
-import type { Problem } from "@/data/problems/types";
+import { PROBLEM_PAGES, PROBLEM_PAGE_BY_SLUG, type ProblemPage } from "@/data/problems/pages";
 
-/** Problem pages ship one at a time; insomnia is the pilot. */
-export const problems: Problem[] = [insomniaProblem];
+export type { ProblemPage };
+export { PROBLEM_PAGES, PROBLEM_PAGE_BY_SLUG } from "@/data/problems/pages";
+export { PROBLEM_SLUG_REDIRECTS, PROBLEM_PRACTICE_LEVER_ORDER } from "@/data/problems/pages";
 
-export function getProblemBySlug(slug: string): Problem | undefined {
-  return problems.find((problem) => problem.slug === slug);
+export function getProblemPageBySlug(slug: string): ProblemPage | undefined {
+  return PROBLEM_PAGE_BY_SLUG[slug];
 }
 
-export function getAllProblems(): Problem[] {
-  return problems;
+export function getAllProblemPages(): ProblemPage[] {
+  return PROBLEM_PAGES;
 }
