@@ -146,49 +146,6 @@ function Hero() {
   );
 }
 
-function Pain() {
-  return (
-    <section className="relative overflow-hidden bg-[#060d1c] py-32">
-      <Starfield density={0.4} />
-      <div className="relative z-10 mx-auto max-w-5xl px-6">
-        <div className="text-center">
-          <div className="label-eyebrow">Something is missing</div>
-          <h2 className="display mt-6 text-4xl text-white sm:text-5xl md:text-6xl">
-            You can't name it. But you feel it.
-          </h2>
-          <div className="mx-auto mt-10 max-w-[640px] space-y-8 text-[#b8d4e8]">
-            <p>
-              You've tried everything. More achievement. More experiences. More stimulation. And it
-              works briefly. Then the dissatisfaction returns.
-            </p>
-            <p>You're trying to fill an infinite inner need with finite external things.</p>
-            <p>
-              It cannot work. Not because you are broken, but because you cannot reach infinity by
-              adding.
-            </p>
-          </div>
-        </div>
-        <div className="mx-auto mt-16 max-w-2xl">
-          <div className="mx-auto h-px w-24 bg-gradient-to-r from-transparent via-[#7ec8e3]/50 to-transparent" />
-          <p className="mt-8 text-center text-xs uppercase leading-relaxed tracking-[0.3em] text-[#b8d4e8]">
-            The world will always be unstable.
-            <br />
-            Your inner state doesn't have to be.
-          </p>
-          <div className="mt-6 text-center">
-            <Link
-              to="/practices"
-              className={sectionCtaClass}
-            >
-              Explore the practices →
-            </Link>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 function Reframe() {
   const chainLinks = [
     {
@@ -199,12 +156,12 @@ function Reframe() {
     {
       n: "02",
       name: "Identification",
-      line: "So we take ourselves to be the nearest things: the body, our thoughts, what we accumulate. And every identification draws a boundary.",
+      line: "So we take ourselves to be the nearest things: the body, our thoughts, what we accumulate. And identification with form makes life feel limited.",
     },
     {
       n: "03",
       name: "Resistance",
-      line: "Inside that boundary we live in fear, bracing against everything that threatens our limited sense of self.",
+      line: "Due to a limited sense of self, we live in fear, bracing against everything that threatens it.",
     },
     {
       n: "04",
@@ -257,17 +214,13 @@ function Reframe() {
   const mobileWidthClasses = ["w-full", "w-[98%]", "w-[96%]", "w-[94%]", "w-[92%]"];
 
   return (
-    <section ref={sectionRef} className="relative overflow-hidden bg-[#0a1628] py-32">
+    <section ref={sectionRef} className="relative overflow-hidden bg-[#0a1628] pb-32 pt-44 md:pt-52">
       <SacredGeometry className="right-[-200px] top-1/4 h-[800px] w-[800px]" />
       <div className="relative z-10 mx-auto max-w-5xl px-6">
         <div className="text-center">
-          <div className="label-eyebrow">Understanding suffering</div>
-          <h2 className="display mt-6 text-4xl text-white sm:text-5xl">
+          <h2 className="display text-4xl text-white sm:text-5xl">
             Every form of human suffering traces back to a single root.
           </h2>
-          <p className="mx-auto mt-6 max-w-3xl text-[#b8d4e8]">
-            Not a set of separate problems. One chain, built in a fixed order, where each link produces the next.
-          </p>
         </div>
         <div className="relative mx-auto mt-14 max-w-4xl md:max-w-none">
           <div className="pointer-events-none absolute left-[10%] right-[10%] top-12 hidden md:block">
@@ -303,14 +256,14 @@ function Reframe() {
           </div>
         </div>
         <p className="display mx-auto mt-12 max-w-3xl text-center text-3xl text-white sm:text-4xl">
-          Pull the root, and every link lets go at once.
+          The solution is to become conscious of the source of life within, and to live in harmony with the intelligence of life.
         </p>
         <div className="mt-8 text-center">
           <Link
-            to="/philosophy"
+            to="/framework"
             className={sectionCtaClass}
           >
-            Explore the full philosophy →
+            Explore the Sunya framework →
           </Link>
         </div>
       </div>
@@ -575,7 +528,6 @@ export function IndexPage() {
       <Nav overHero />
       <main>
         <Hero />
-        <Pain />
         <Reframe />
         <AITeaser />
         <About />
