@@ -156,12 +156,12 @@ function Reframe() {
     {
       n: "02",
       name: "Identification",
-      line: "So we take ourselves to be the nearest things: the body, our thoughts, what we accumulate. And every identification draws a boundary.",
+      line: "So we take ourselves to be the nearest things: the body, our thoughts, what we accumulate. And identification with form makes life feel limited.",
     },
     {
       n: "03",
       name: "Resistance",
-      line: "Inside that boundary we live in fear, bracing against everything that threatens our limited sense of self.",
+      line: "Due to a limited sense of self, we live in fear, bracing against everything that threatens it.",
     },
     {
       n: "04",
