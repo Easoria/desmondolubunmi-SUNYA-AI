@@ -21,6 +21,10 @@ import hero960Jpg from "@/assets/desmond-hero-960.jpg";
 import hero960Webp from "@/assets/desmond-hero-960.webp";
 import hero640Jpg from "@/assets/desmond-hero-640.jpg";
 import hero640Webp from "@/assets/desmond-hero-640.webp";
+import heroMobileJpg from "@/assets/desmond-hero-mobile.jpg";
+import heroMobileWebp from "@/assets/desmond-hero-mobile.webp";
+import heroMobile640Jpg from "@/assets/desmond-hero-mobile-640.jpg";
+import heroMobile640Webp from "@/assets/desmond-hero-mobile-640.webp";
 
 function useSunyaCtaLabel(freeSuffix = "") {
   const { isActive } = useSubscription();
@@ -46,6 +50,20 @@ function HeroPhoto({
 }) {
   return (
     <picture>
+      {/* Mobile: face-forward crop for the short stacked strip */}
+      <source
+        media="(max-width: 767px)"
+        type="image/webp"
+        srcSet={`${heroMobile640Webp} 640w, ${heroMobileWebp} 960w`}
+        sizes={sizes}
+      />
+      <source
+        media="(max-width: 767px)"
+        type="image/jpeg"
+        srcSet={`${heroMobile640Jpg} 640w, ${heroMobileJpg} 960w`}
+        sizes={sizes}
+      />
+      {/* Desktop: left-biased landscape — subject left, sea open for copy */}
       <source
         type="image/webp"
         srcSet={`${hero640Webp} 640w, ${hero960Webp} 960w, ${heroWebp} 1280w`}
@@ -93,7 +111,7 @@ function Hero() {
         <HeroPhoto
           priority
           sizes="100vw"
-          className="absolute inset-0 h-full w-full object-cover object-left"
+          className="absolute inset-0 h-full w-full object-cover object-[center_28%] md:object-left md:object-center"
         />
       </div>
 
