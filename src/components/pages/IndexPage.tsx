@@ -111,7 +111,7 @@ function Hero() {
         <HeroPhoto
           priority
           sizes="100vw"
-          className="absolute inset-0 h-full w-full object-cover object-[center_12%] md:object-[left_18%]"
+          className="absolute inset-0 h-full w-full object-cover object-[center_32%] md:object-[left_40%]"
         />
       </div>
 
