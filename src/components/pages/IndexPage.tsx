@@ -87,14 +87,14 @@ function HeroPhoto({
 function HeroCopy({ className = "" }: { className?: string }) {
   return (
     <div className={className}>
-      <h1 className="display text-[2.35rem] leading-[1.12] text-white sm:text-5xl md:text-6xl lg:text-[4.25rem]">
+      <h1 className="display text-[2.15rem] leading-[1.15] text-white sm:text-[2.5rem] md:whitespace-nowrap md:text-[2.15rem] md:leading-none lg:text-[2.45rem] xl:text-[2.75rem]">
         You are the happiness you seek.
       </h1>
-      <p className="mt-8 max-w-xl text-base leading-relaxed text-[#d5e6f2] sm:text-lg sm:leading-8 md:text-[1.2rem] md:leading-9">
+      <p className="mt-6 max-w-xl text-base leading-relaxed text-[#d5e6f2] sm:text-lg sm:leading-8 md:mt-7 md:text-[1.1rem] md:leading-8">
         A complete path to human wellbeing that is timeless and universal. Teachings, practices, and
         gatherings.
       </p>
-      <div className="mt-12">
+      <div className="mt-10 md:mt-11">
         <Link to="/gatherings" className={heroGatheringsBtn}>
           Upcoming gatherings
         </Link>
@@ -111,7 +111,7 @@ function Hero() {
         <HeroPhoto
           priority
           sizes="100vw"
-          className="absolute inset-0 h-full w-full object-cover object-[center_32%] md:object-[left_40%]"
+          className="absolute inset-0 h-full w-full object-cover object-[center_32%] md:object-[left_58%]"
         />
       </div>
 
@@ -126,7 +126,7 @@ function Hero() {
       />
 
       <div className="relative z-10 md:flex md:h-full md:items-center">
-        <div className="bg-[#0a1628] px-6 py-12 md:ml-[52%] md:w-full md:max-w-[520px] md:bg-transparent md:px-6 md:py-0 md:pr-10 lg:pr-16">
+        <div className="bg-[#0a1628] px-6 py-12 md:ml-[46%] md:w-full md:max-w-[640px] md:bg-transparent md:px-6 md:py-0 md:pr-10 lg:pr-14">
           <HeroCopy />
         </div>
       </div>
