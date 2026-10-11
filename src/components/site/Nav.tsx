@@ -136,7 +136,18 @@ function MobileLink({
   );
 }
 
-export function Nav() {
+const navCtaClass =
+  "inline-flex items-center gap-2 rounded-full border border-[#7ec8e3]/55 bg-transparent px-5 py-2.5 text-sm font-medium text-[#dcecf7] transition hover:border-[#7ec8e3]/85 hover:bg-white/[0.06] hover:text-white";
+
+const navCtaClassMobile =
+  "inline-flex shrink-0 items-center gap-1 whitespace-nowrap rounded-full border border-[#7ec8e3]/55 bg-transparent px-2.5 py-1.5 text-[11px] font-medium leading-none text-[#dcecf7] transition hover:border-[#7ec8e3]/85 hover:bg-white/[0.06] hover:text-white";
+
+type NavProps = {
+  /** Homepage photographic hero — top scrim while the nav sits over the image. */
+  overHero?: boolean;
+};
+
+export function Nav({ overHero = false }: NavProps) {
   const { user } = useAuth();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
@@ -168,17 +179,23 @@ export function Nav() {
     };
   }, [open]);
 
+  const solidChrome = scrolled || open;
+  const heroScrim = overHero && !solidChrome;
+
   return (
     <header
       className={`pointer-events-none fixed inset-x-0 top-0 z-[100] transition-all duration-500 ${
-        scrolled || open ? "border-b border-white/10 bg-[#0a1628]/70 backdrop-blur-xl" : ""
+        solidChrome
+          ? "border-b border-white/10 bg-[#0a1628]/70 backdrop-blur-xl"
+          : heroScrim
+            ? "bg-gradient-to-b from-[rgba(10,22,40,0.62)] via-[rgba(10,22,40,0.28)] to-transparent"
+            : ""
       }`}
     >
-      <nav className="pointer-events-auto relative z-10 mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
-        <Link to="/" className="group flex flex-col leading-tight">
-          <span className="display text-2xl tracking-[0.4em] text-white">SUNYA</span>
-          <span className="text-[10px] italic text-[#b8d4e8]/70 sm:text-xs">
-            by Desmond Olubunmi
+      <nav className="pointer-events-auto relative z-10 mx-auto flex max-w-7xl items-center justify-between gap-2 px-4 py-4 sm:px-6 sm:py-5">
+        <Link to="/" className="group min-w-0 shrink leading-tight">
+          <span className="display whitespace-nowrap text-[1.05rem] tracking-wide text-white sm:text-2xl">
+            Desmond Olubunmi
           </span>
         </Link>
         <div className="hidden items-center gap-9 md:flex">
@@ -192,20 +209,14 @@ export function Nav() {
               {n.label}
             </Link>
           ))}
-          <Link
-            to="/problems"
-            className="glow-btn inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium"
-          >
+          <Link to="/problems" className={navCtaClass}>
             {PROBLEMS_CTA_LABEL} <ArrowRight className="h-3.5 w-3.5" />
           </Link>
           {user ? <AccountAvatar /> : null}
         </div>
-        <div className="relative z-10 flex items-center gap-2 md:hidden">
-          <Link
-            to="/problems"
-            className="glow-btn inline-flex items-center gap-1.5 rounded-full px-3.5 py-2 text-xs font-medium"
-          >
-            {PROBLEMS_CTA_LABEL} <ArrowRight className="h-3 w-3" />
+        <div className="relative z-10 flex shrink-0 items-center gap-1.5 md:hidden">
+          <Link to="/problems" className={navCtaClassMobile}>
+            {PROBLEMS_CTA_LABEL} <ArrowRight className="h-3 w-3 shrink-0" />
           </Link>
           {user ? <AccountAvatar /> : null}
           <button
@@ -213,17 +224,21 @@ export function Nav() {
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             aria-controls="mobile-nav-menu"
-            className="relative z-[110] inline-flex min-h-11 min-w-11 flex-col items-center justify-center gap-0.5 rounded-xl px-2 py-1.5 text-white transition hover:bg-[#7ec8e3]/10 active:bg-[#7ec8e3]/15"
+            className="relative z-[110] -mr-1 inline-flex min-h-11 min-w-11 flex-col items-center justify-center gap-0.5 rounded-xl px-1.5 py-1 text-white transition hover:bg-[#7ec8e3]/10 active:bg-[#7ec8e3]/15"
             onClick={(e) => {
               e.preventDefault();
               e.stopPropagation();
               setOpen((v) => !v);
             }}
           >
-            <span className="pointer-events-none inline-flex items-center justify-center rounded-full border border-[#7ec8e3]/40 bg-[#7ec8e3]/10 p-2 shadow-[0_0_18px_-2px_rgba(126,200,227,0.6)]">
-              {open ? <X className="h-5 w-5" aria-hidden /> : <Menu className="h-5 w-5" aria-hidden />}
+            <span className="pointer-events-none inline-flex items-center justify-center rounded-full border border-[#7ec8e3]/55 bg-[#7ec8e3]/15 p-2 shadow-[0_0_18px_-2px_rgba(126,200,227,0.6)]">
+              {open ? (
+                <X className="h-[18px] w-[18px]" aria-hidden />
+              ) : (
+                <Menu className="h-[18px] w-[18px]" aria-hidden />
+              )}
             </span>
-            <span className="pointer-events-none text-[9px] uppercase tracking-[0.2em] text-[#b8d4e8]/80">
+            <span className="pointer-events-none text-[9px] font-medium uppercase tracking-[0.16em] text-white">
               {open ? "Close" : "View Menu"}
             </span>
           </button>
@@ -256,7 +271,7 @@ export function Nav() {
             <Link
               to="/problems"
               onClick={() => setOpen(false)}
-              className="glow-btn mt-1 inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-medium"
+              className={`${navCtaClass} mt-1 justify-center`}
             >
               {PROBLEMS_CTA_LABEL} <ArrowRight className="h-3.5 w-3.5" />
             </Link>

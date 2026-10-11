@@ -6,22 +6,35 @@ import {
   ORGANIZATION_SCHEMA,
   PERSON_SCHEMA,
 } from "@/lib/seo";
+import heroWebp from "@/assets/desmond-hero.webp";
 
 export const Route = createFileRoute("/")({
   component: IndexPage,
   head: () => {
-    const title = "Sunya — A Universal System for Human Wellbeing";
+    const title = "Desmond Olubunmi — Sunya";
     const description =
-      "Whatever you're struggling with, there is a way out. Sunya is a complete map of human wellbeing — what goes wrong, why, and exactly what to do about it. 112 practices, and a way of knowing which one you need.";
+      "You are the happiness you seek. A complete path to human wellbeing that is timeless and universal. Teachings, practices, and gatherings.";
+
+    const seo = buildSeoHead({
+      title,
+      description,
+      path: "/",
+      ogType: "website",
+      imageKind: "core",
+      imageUrl: heroWebp,
+    });
 
     return {
-      ...buildSeoHead({
-        title,
-        description,
-        path: "/",
-        ogType: "website",
-        imageKind: "core",
-      }),
+      ...seo,
+      links: [
+        ...(seo.links ?? []),
+        {
+          rel: "preload",
+          as: "image",
+          href: heroWebp,
+          type: "image/webp",
+        },
+      ],
       scripts: [
         {
           type: "application/ld+json",

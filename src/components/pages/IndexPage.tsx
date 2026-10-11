@@ -15,6 +15,16 @@ import {
   gatheringLocationLine,
 } from "@/lib/gatherings";
 import desmondImg from "@/assets/desmond.jpg";
+import heroJpg from "@/assets/desmond-hero.jpg";
+import heroWebp from "@/assets/desmond-hero.webp";
+import hero960Jpg from "@/assets/desmond-hero-960.jpg";
+import hero960Webp from "@/assets/desmond-hero-960.webp";
+import hero640Jpg from "@/assets/desmond-hero-640.jpg";
+import hero640Webp from "@/assets/desmond-hero-640.webp";
+import heroMobileJpg from "@/assets/desmond-hero-mobile.jpg";
+import heroMobileWebp from "@/assets/desmond-hero-mobile.webp";
+import heroMobile640Jpg from "@/assets/desmond-hero-mobile-640.jpg";
+import heroMobile640Webp from "@/assets/desmond-hero-mobile-640.webp";
 
 function useSunyaCtaLabel(freeSuffix = "") {
   const { isActive } = useSubscription();
@@ -22,51 +32,114 @@ function useSunyaCtaLabel(freeSuffix = "") {
   return freeSuffix ? `Try Sunya AI${freeSuffix}` : "Try Sunya AI";
 }
 
-/** Homepage section CTAs — same treatment as hero Upcoming gatherings. */
+/** Homepage section CTAs — quiet text links below the hero. */
 const sectionCtaClass =
   "inline-flex items-center gap-2 text-sm font-semibold tracking-wide text-[#7ec8e3] transition hover:text-white";
 
+const heroGatheringsBtn =
+  "inline-flex items-center justify-center rounded-full border border-white/45 bg-transparent px-8 py-3.5 text-sm font-medium tracking-wide text-white transition hover:border-white/80 hover:bg-white/10";
+
+function HeroPhoto({
+  className,
+  sizes,
+  priority = false,
+}: {
+  className?: string;
+  sizes: string;
+  priority?: boolean;
+}) {
+  return (
+    <picture>
+      {/* Mobile: face-forward crop for the short stacked strip */}
+      <source
+        media="(max-width: 767px)"
+        type="image/webp"
+        srcSet={`${heroMobile640Webp} 640w, ${heroMobileWebp} 960w`}
+        sizes={sizes}
+      />
+      <source
+        media="(max-width: 767px)"
+        type="image/jpeg"
+        srcSet={`${heroMobile640Jpg} 640w, ${heroMobileJpg} 960w`}
+        sizes={sizes}
+      />
+      {/* Desktop: left-biased landscape — subject left, sea open for copy */}
+      <source
+        type="image/webp"
+        srcSet={`${hero640Webp} 640w, ${hero960Webp} 960w, ${heroWebp} 1280w`}
+        sizes={sizes}
+      />
+      <img
+        src={heroJpg}
+        srcSet={`${hero640Jpg} 640w, ${hero960Jpg} 960w, ${heroJpg} 1280w`}
+        sizes={sizes}
+        alt="Desmond Olubunmi"
+        width={1280}
+        height={720}
+        decoding={priority ? "sync" : "async"}
+        fetchPriority={priority ? "high" : "auto"}
+        className={className}
+      />
+    </picture>
+  );
+}
+
+function HeroCopy({ className = "" }: { className?: string }) {
+  return (
+    <div className={className}>
+      <h1 className="display whitespace-nowrap text-[clamp(1.55rem,6.4vw,1.78rem)] leading-none tracking-[-0.02em] text-white sm:text-[1.9rem] md:text-[2.15rem] lg:text-[2.45rem] xl:text-[2.7rem]">
+        You are the happiness you seek.
+      </h1>
+      <p className="mt-3 max-w-xl text-[0.95rem] leading-relaxed text-[#d5e6f2] sm:mt-4 sm:text-lg sm:leading-8 md:mt-7 md:max-w-[36rem] md:text-[1.2rem] md:leading-8">
+        A complete path to human wellbeing that is timeless and universal. Teachings, practices, and
+        gatherings.
+      </p>
+      <div className="mt-8 md:mt-11">
+        <Link
+          to="/gatherings"
+          className={`${heroGatheringsBtn} md:px-9 md:py-4 md:text-[0.95rem]`}
+        >
+          Upcoming gatherings
+        </Link>
+      </div>
+    </div>
+  );
+}
 
 function Hero() {
   return (
-    <section className="relative flex min-h-screen items-center justify-center overflow-hidden pt-16 sm:pt-24">
-      <Starfield density={1.2} />
-      <Orbs />
-      <SacredGeometry className="inset-0 m-auto h-[700px] w-[700px]" />
-      <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
-        <div className="label-eyebrow reveal">A universal system for human wellbeing</div>
-        <div className="reveal mt-4 flex flex-col items-center sm:mt-6">
-          <img
-            src={desmondImg}
-            alt="Desmond Olubunmi"
-            width={120}
-            height={120}
-            className="h-24 w-24 rounded-full object-cover ring-2 ring-[#7ec8e3]/45 shadow-[0_0_36px_-10px_rgba(126,200,227,0.85)] transition hover:ring-[#7ec8e3]/65 hover:shadow-[0_0_46px_-10px_rgba(126,200,227,0.95)] sm:h-[120px] sm:w-[120px]"
-          />
-        </div>
-        <h1 className="display reveal mt-8 text-[1.5rem] leading-[1.2] text-white sm:mt-10 sm:text-5xl sm:leading-[1.15] md:text-6xl lg:text-[3.75rem]">
-          Whatever you're struggling with,
-          <br />
-          there is a way out.
-        </h1>
-        <p className="reveal mx-auto mt-3 max-w-2xl text-base leading-relaxed text-[#b8d4e8] sm:mt-5 sm:text-lg">
-          Sunya is a complete map of human wellbeing — what goes wrong, why, and exactly what to do about it. 112 practices, and a way of knowing which one you need.
-        </p>
-        <div className="reveal mx-auto mt-8 max-w-3xl sm:mt-12">
-          <div className="flex flex-col items-center gap-5 sm:gap-6">
-            <Link
-              to="/work-with-me"
-              className="glow-btn inline-flex w-full items-center justify-center rounded-full px-7 py-3.5 text-sm font-medium tracking-wide sm:w-auto"
-            >
-              Work with me 1-on-1
-            </Link>
-            <Link
-              to="/gatherings"
-              className={sectionCtaClass}
-            >
-              Upcoming gatherings →
-            </Link>
-          </div>
+    <section className="relative isolate w-full overflow-hidden bg-[#0a1628] md:h-[100dvh]">
+      {/* One photograph — stacked crop on mobile, full-bleed cover on desktop */}
+      <div className="relative h-[56vh] w-full overflow-hidden md:absolute md:inset-0 md:h-full">
+        <HeroPhoto
+          priority
+          sizes="100vw"
+          className="absolute inset-0 h-full w-full object-cover object-[center_52%] md:-translate-x-[15%] md:origin-left md:scale-[1.15] md:object-[left_85%]"
+        />
+        {/* Soft fade pulled lower — more face/torso clear above; covers lower edge */}
+        <div
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-24 md:h-32"
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(10,22,40,0) 0%, rgba(10,22,40,0.22) 45%, rgba(10,22,40,0.7) 78%, #0a1628 100%)",
+          }}
+          aria-hidden
+        />
+      </div>
+
+      {/* Desktop right-edge contrast scrim — transparent until ~40% */}
+      <div
+        className="pointer-events-none absolute inset-0 hidden md:block"
+        style={{
+          background:
+            "linear-gradient(90deg, rgba(10,22,40,0) 38%, rgba(10,22,40,0.28) 52%, rgba(10,22,40,0.62) 70%, rgba(10,22,40,0.78) 100%)",
+        }}
+        aria-hidden
+      />
+
+      <div className="relative z-10 md:flex md:h-full md:items-center">
+        <div className="bg-gradient-to-b from-[#0a1628] via-[#0c1a2e] to-[#0a1628] px-5 pb-10 pt-5 sm:px-6 sm:pb-12 sm:pt-6 md:ml-[44%] md:w-full md:max-w-[720px] md:translate-x-[25%] md:translate-y-[30%] md:bg-none md:bg-transparent md:px-6 md:py-0 md:pr-10 lg:pr-14">
+          <HeroCopy />
         </div>
       </div>
     </section>
@@ -499,7 +572,7 @@ function FinalCTA() {
 export function IndexPage() {
   return (
     <div className="min-h-screen bg-[#0a1628] text-white">
-      <Nav />
+      <Nav overHero />
       <main>
         <Hero />
         <Pain />
