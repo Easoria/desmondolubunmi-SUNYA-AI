@@ -87,10 +87,10 @@ function HeroPhoto({
 function HeroCopy({ className = "" }: { className?: string }) {
   return (
     <div className={className}>
-      <h1 className="display whitespace-nowrap text-[1.2rem] leading-none tracking-tight text-white sm:text-[1.55rem] md:text-[2.15rem] lg:text-[2.45rem] xl:text-[2.7rem]">
+      <h1 className="display whitespace-nowrap text-[clamp(1.35rem,5.6vw,1.55rem)] leading-none tracking-[-0.02em] text-white sm:text-[1.75rem] md:text-[2.15rem] lg:text-[2.45rem] xl:text-[2.7rem]">
         You are the happiness you seek.
       </h1>
-      <p className="mt-3 max-w-xl text-base leading-relaxed text-[#d5e6f2] sm:mt-4 sm:text-lg sm:leading-8 md:mt-7 md:max-w-[36rem] md:text-[1.2rem] md:leading-8">
+      <p className="mt-3 max-w-xl text-[0.95rem] leading-relaxed text-[#d5e6f2] sm:mt-4 sm:text-lg sm:leading-8 md:mt-7 md:max-w-[36rem] md:text-[1.2rem] md:leading-8">
         A complete path to human wellbeing that is timeless and universal. Teachings, practices, and
         gatherings.
       </p>
@@ -116,6 +116,15 @@ function Hero() {
           sizes="100vw"
           className="absolute inset-0 h-full w-full object-cover object-[center_58%] md:-translate-x-[15%] md:origin-left md:scale-[1.15] md:object-[left_85%]"
         />
+        {/* Mobile: soft fade from photo into the copy band below */}
+        <div
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-28 md:hidden"
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(10,22,40,0) 0%, rgba(10,22,40,0.35) 42%, rgba(10,22,40,0.78) 72%, #0a1628 100%)",
+          }}
+          aria-hidden
+        />
       </div>
 
       {/* Desktop right-edge contrast scrim — transparent until ~40% */}
@@ -129,7 +138,7 @@ function Hero() {
       />
 
       <div className="relative z-10 md:flex md:h-full md:items-center">
-        <div className="bg-[#0a1628] px-5 py-10 sm:px-6 sm:py-12 md:ml-[44%] md:w-full md:max-w-[720px] md:translate-x-[25%] md:translate-y-[30%] md:bg-transparent md:px-6 md:py-0 md:pr-10 lg:pr-14">
+        <div className="bg-gradient-to-b from-[#0a1628] via-[#0c1a2e] to-[#0a1628] px-5 pb-10 pt-2 sm:px-6 sm:pb-12 sm:pt-3 md:ml-[44%] md:w-full md:max-w-[720px] md:translate-x-[25%] md:translate-y-[30%] md:bg-none md:bg-transparent md:px-6 md:py-0 md:pr-10 lg:pr-14">
           <HeroCopy />
         </div>
       </div>
