@@ -140,7 +140,7 @@ const navCtaClass =
   "inline-flex items-center gap-2 rounded-full border border-[#7ec8e3]/55 bg-transparent px-5 py-2.5 text-sm font-medium text-[#dcecf7] transition hover:border-[#7ec8e3]/85 hover:bg-white/[0.06] hover:text-white";
 
 const navCtaClassMobile =
-  "inline-flex items-center gap-1.5 rounded-full border border-[#7ec8e3]/55 bg-transparent px-3.5 py-2 text-xs font-medium text-[#dcecf7] transition hover:border-[#7ec8e3]/85 hover:bg-white/[0.06] hover:text-white";
+  "inline-flex shrink-0 items-center gap-1 whitespace-nowrap rounded-full border border-[#7ec8e3]/55 bg-transparent px-2.5 py-1.5 text-[11px] font-medium leading-none text-[#dcecf7] transition hover:border-[#7ec8e3]/85 hover:bg-white/[0.06] hover:text-white";
 
 type NavProps = {
   /** Homepage photographic hero — top scrim while the nav sits over the image. */
@@ -192,9 +192,9 @@ export function Nav({ overHero = false }: NavProps) {
             : ""
       }`}
     >
-      <nav className="pointer-events-auto relative z-10 mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
-        <Link to="/" className="group min-w-0 leading-tight">
-          <span className="display whitespace-nowrap text-[1.25rem] tracking-wide text-white sm:text-2xl">
+      <nav className="pointer-events-auto relative z-10 mx-auto flex max-w-7xl items-center justify-between gap-2 px-4 py-4 sm:px-6 sm:py-5">
+        <Link to="/" className="group min-w-0 shrink leading-tight">
+          <span className="display whitespace-nowrap text-[1.05rem] tracking-wide text-white sm:text-2xl">
             Desmond Olubunmi
           </span>
         </Link>
@@ -214,9 +214,9 @@ export function Nav({ overHero = false }: NavProps) {
           </Link>
           {user ? <AccountAvatar /> : null}
         </div>
-        <div className="relative z-10 flex items-center gap-2 md:hidden">
+        <div className="relative z-10 flex shrink-0 items-center gap-1.5 md:hidden">
           <Link to="/problems" className={navCtaClassMobile}>
-            {PROBLEMS_CTA_LABEL} <ArrowRight className="h-3 w-3" />
+            {PROBLEMS_CTA_LABEL} <ArrowRight className="h-3 w-3 shrink-0" />
           </Link>
           {user ? <AccountAvatar /> : null}
           <button
@@ -224,17 +224,17 @@ export function Nav({ overHero = false }: NavProps) {
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             aria-controls="mobile-nav-menu"
-            className="relative z-[110] inline-flex min-h-11 min-w-11 flex-col items-center justify-center gap-0.5 rounded-xl px-2 py-1.5 text-white transition hover:bg-[#7ec8e3]/10 active:bg-[#7ec8e3]/15"
+            className="relative z-[110] -mr-1 inline-flex min-h-10 min-w-10 flex-col items-center justify-center gap-0.5 rounded-xl px-1.5 py-1 text-white transition hover:bg-[#7ec8e3]/10 active:bg-[#7ec8e3]/15"
             onClick={(e) => {
               e.preventDefault();
               e.stopPropagation();
               setOpen((v) => !v);
             }}
           >
-            <span className="pointer-events-none inline-flex items-center justify-center rounded-full border border-[#7ec8e3]/40 bg-[#7ec8e3]/10 p-2 shadow-[0_0_18px_-2px_rgba(126,200,227,0.6)]">
-              {open ? <X className="h-5 w-5" aria-hidden /> : <Menu className="h-5 w-5" aria-hidden />}
+            <span className="pointer-events-none inline-flex items-center justify-center rounded-full border border-[#7ec8e3]/40 bg-[#7ec8e3]/10 p-1.5 shadow-[0_0_18px_-2px_rgba(126,200,227,0.6)]">
+              {open ? <X className="h-4 w-4" aria-hidden /> : <Menu className="h-4 w-4" aria-hidden />}
             </span>
-            <span className="pointer-events-none text-[9px] uppercase tracking-[0.2em] text-[#b8d4e8]/80">
+            <span className="pointer-events-none text-[8px] uppercase tracking-[0.16em] text-[#b8d4e8]/80">
               {open ? "Close" : "View Menu"}
             </span>
           </button>
