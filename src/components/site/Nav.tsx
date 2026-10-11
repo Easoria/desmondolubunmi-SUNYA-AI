@@ -193,8 +193,8 @@ export function Nav({ overHero = false }: NavProps) {
       }`}
     >
       <nav className="pointer-events-auto relative z-10 mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
-        <Link to="/" className="group leading-tight">
-          <span className="display text-[1.65rem] tracking-wide text-white sm:text-2xl">
+        <Link to="/" className="group min-w-0 leading-tight">
+          <span className="display whitespace-nowrap text-[1.25rem] tracking-wide text-white sm:text-2xl">
             Desmond Olubunmi
           </span>
         </Link>
