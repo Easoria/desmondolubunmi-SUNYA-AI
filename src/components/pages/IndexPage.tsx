@@ -105,13 +105,13 @@ function HeroCopy({ className = "" }: { className?: string }) {
 
 function Hero() {
   return (
-    <section className="relative isolate w-full overflow-hidden bg-[#0a1628] md:min-h-[88vh]">
+    <section className="relative isolate w-full overflow-hidden bg-[#0a1628] md:min-h-[100dvh]">
       {/* One photograph — stacked crop on mobile, full-bleed cover on desktop */}
-      <div className="relative h-[45vh] w-full overflow-hidden md:absolute md:inset-0 md:h-full">
+      <div className="relative h-[48vh] w-full overflow-hidden md:absolute md:inset-0 md:h-full">
         <HeroPhoto
           priority
           sizes="100vw"
-          className="absolute inset-0 h-full w-full object-cover object-[center_22%] md:object-left md:object-center"
+          className="absolute inset-0 h-full w-full object-cover object-[center_18%] md:object-[left_28%]"
         />
       </div>
 
@@ -125,7 +125,7 @@ function Hero() {
         aria-hidden
       />
 
-      <div className="relative z-10 md:flex md:min-h-[88vh] md:items-center">
+      <div className="relative z-10 md:flex md:min-h-[100dvh] md:items-center">
         <div className="bg-[#0a1628] px-6 py-12 md:ml-[52%] md:w-full md:max-w-[520px] md:bg-transparent md:px-6 md:py-0 md:pr-10 lg:pr-16">
           <HeroCopy />
         </div>
