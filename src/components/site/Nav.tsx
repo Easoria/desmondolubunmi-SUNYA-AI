@@ -136,7 +136,18 @@ function MobileLink({
   );
 }
 
-export function Nav() {
+const navCtaClass =
+  "inline-flex items-center gap-2 rounded-full border border-[#7ec8e3]/55 bg-transparent px-5 py-2.5 text-sm font-medium text-[#dcecf7] transition hover:border-[#7ec8e3]/85 hover:bg-white/[0.06] hover:text-white";
+
+const navCtaClassMobile =
+  "inline-flex items-center gap-1.5 rounded-full border border-[#7ec8e3]/55 bg-transparent px-3.5 py-2 text-xs font-medium text-[#dcecf7] transition hover:border-[#7ec8e3]/85 hover:bg-white/[0.06] hover:text-white";
+
+type NavProps = {
+  /** Homepage photographic hero — top scrim while the nav sits over the image. */
+  overHero?: boolean;
+};
+
+export function Nav({ overHero = false }: NavProps) {
   const { user } = useAuth();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
@@ -168,17 +179,23 @@ export function Nav() {
     };
   }, [open]);
 
+  const solidChrome = scrolled || open;
+  const heroScrim = overHero && !solidChrome;
+
   return (
     <header
       className={`pointer-events-none fixed inset-x-0 top-0 z-[100] transition-all duration-500 ${
-        scrolled || open ? "border-b border-white/10 bg-[#0a1628]/70 backdrop-blur-xl" : ""
+        solidChrome
+          ? "border-b border-white/10 bg-[#0a1628]/70 backdrop-blur-xl"
+          : heroScrim
+            ? "bg-gradient-to-b from-[rgba(10,22,40,0.62)] via-[rgba(10,22,40,0.28)] to-transparent"
+            : ""
       }`}
     >
       <nav className="pointer-events-auto relative z-10 mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
-        <Link to="/" className="group flex flex-col leading-tight">
-          <span className="display text-2xl tracking-[0.4em] text-white">SUNYA</span>
-          <span className="text-[10px] italic text-[#b8d4e8]/70 sm:text-xs">
-            by Desmond Olubunmi
+        <Link to="/" className="group leading-tight">
+          <span className="display text-[1.65rem] tracking-wide text-white sm:text-2xl">
+            Desmond Olubunmi
           </span>
         </Link>
         <div className="hidden items-center gap-9 md:flex">
@@ -192,19 +209,13 @@ export function Nav() {
               {n.label}
             </Link>
           ))}
-          <Link
-            to="/problems"
-            className="glow-btn inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium"
-          >
+          <Link to="/problems" className={navCtaClass}>
             {PROBLEMS_CTA_LABEL} <ArrowRight className="h-3.5 w-3.5" />
           </Link>
           {user ? <AccountAvatar /> : null}
         </div>
         <div className="relative z-10 flex items-center gap-2 md:hidden">
-          <Link
-            to="/problems"
-            className="glow-btn inline-flex items-center gap-1.5 rounded-full px-3.5 py-2 text-xs font-medium"
-          >
+          <Link to="/problems" className={navCtaClassMobile}>
             {PROBLEMS_CTA_LABEL} <ArrowRight className="h-3 w-3" />
           </Link>
           {user ? <AccountAvatar /> : null}
@@ -256,7 +267,7 @@ export function Nav() {
             <Link
               to="/problems"
               onClick={() => setOpen(false)}
-              className="glow-btn mt-1 inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-medium"
+              className={`${navCtaClass} mt-1 justify-center`}
             >
               {PROBLEMS_CTA_LABEL} <ArrowRight className="h-3.5 w-3.5" />
             </Link>
