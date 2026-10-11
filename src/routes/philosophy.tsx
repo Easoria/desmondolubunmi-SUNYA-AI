@@ -322,6 +322,17 @@ even fear, without the deep and particular anguish we are tracing here.`,
 turns plain physical pressure into human suffering is what happens next.`,
 ];
 
+function normalizeLineBreaks(text: string): string {
+  return text.replace(/\n/g, " ").replace(/\s+/g, " ").trim();
+}
+
+function splitIntoParagraphs(text: string): string[] {
+  return text
+    .trim()
+    .split(/\n\s*\n/)
+    .map((paragraph) => normalizeLineBreaks(paragraph));
+}
+
 function ZonePanel({ zone }: { zone: Zone }) {
   return (
     <div
@@ -521,8 +532,8 @@ function PhilosophyPage() {
           <div className="mx-auto mt-12 h-px w-24 bg-gradient-to-r from-transparent via-[#7ec8e3]/40 to-transparent" />
           <div className="mt-12 space-y-6 text-[15px] leading-loose text-[#b8d4e8] sm:text-base">
             {GROUND_PARAGRAPHS.map((paragraph) => (
-              <p key={paragraph} className="whitespace-pre-line">
-                {paragraph}
+              <p key={paragraph}>
+                {normalizeLineBreaks(paragraph)}
               </p>
             ))}
           </div>
@@ -541,13 +552,13 @@ function PhilosophyPage() {
             </h2>
           </div>
           <div className="mx-auto mt-10 max-w-3xl space-y-5 text-center text-[15px] leading-relaxed text-[#b8d4e8] sm:text-base">
-            <p className="whitespace-pre-line">
-              {`Human suffering is not a collection of separate problems. It is a single
-structure, built in a fixed order, where each link produces the next.`}
+            <p>
+              {normalizeLineBreaks(`Human suffering is not a collection of separate problems. It is a single
+structure, built in a fixed order, where each link produces the next.`)}
             </p>
-            <p className="whitespace-pre-line">
-              {`Read it downward. Each one follows from the one above with a hard and
-simple logic.`}
+            <p>
+              {normalizeLineBreaks(`Read it downward. Each one follows from the one above with a hard and
+simple logic.`)}
             </p>
           </div>
 
@@ -622,9 +633,11 @@ simple logic.`}
                     <div className="grid [grid-template-rows:0fr] overflow-hidden transition-all duration-500 ease-out group-open:[grid-template-rows:1fr]">
                       <div className="min-h-0 overflow-hidden">
                         <div className={`px-5 pb-6 sm:px-8 sm:pb-8 ${bodyPaddingClass}`}>
-                          <p className="whitespace-pre-line text-[15px] leading-relaxed text-[#b8d4e8]">
-                            {link.body}
-                          </p>
+                          <div className="space-y-4 text-[15px] leading-relaxed text-[#b8d4e8]">
+                            {splitIntoParagraphs(link.body).map((paragraph) => (
+                              <p key={`${link.n}-${paragraph}`}>{paragraph}</p>
+                            ))}
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -679,18 +692,22 @@ simple logic.`}
           </div>
 
           <div className="mx-auto mt-16 max-w-4xl space-y-8 text-center">
-            <p className="display whitespace-pre-line text-3xl leading-tight text-white sm:text-4xl">
-              {`Trace it backward and every human suffering —
+            <div className="space-y-4">
+              {splitIntoParagraphs(`Trace it backward and every human suffering —
 from the most private ache to the largest crises of our species —
 grows from a single root.
 
-The forgetting of what we are.`}
-            </p>
-            <p className="mx-auto max-w-3xl whitespace-pre-line text-[15px] leading-relaxed text-[#b8d4e8]">
-              {`When billions of contracted selves reach outward at once, each trying to fill
+The forgetting of what we are.`).map((paragraph) => (
+                <p key={paragraph} className="display text-3xl leading-tight text-white sm:text-4xl">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+            <p className="mx-auto max-w-3xl text-[15px] leading-relaxed text-[#b8d4e8]">
+              {normalizeLineBreaks(`When billions of contracted selves reach outward at once, each trying to fill
 an infinite void with finite things, it becomes an entire civilisation built on
 extraction. Our great outer crises are not separate from the inner void.
-They are that void, written large across the world.`}
+They are that void, written large across the world.`)}
             </p>
           </div>
         </div>
@@ -711,8 +728,8 @@ They are that void, written large across the world.`}
           <h2 className="display mt-6 text-4xl text-white sm:text-5xl md:text-6xl">
             One root. One place it comes undone.
           </h2>
-          <p className="mx-auto mt-10 whitespace-pre-line text-[15px] leading-loose text-[#b8d4e8] sm:text-base">
-            {`This is the most hopeful fact in all of it. A structure with a single root has
+          <div className="mx-auto mt-10 space-y-6 text-[15px] leading-loose text-[#b8d4e8] sm:text-base">
+            {splitIntoParagraphs(`This is the most hopeful fact in all of it. A structure with a single root has
 a single place where it can be dismantled.
 
 Suppose you were to fully remember, in this moment, that you are the boundless
@@ -723,8 +740,10 @@ separate self, resistance falls away — no one is braced against life, nothing
 is left to refuse. As resistance falls away, the contraction releases — the
 clenched energy opens, and the closed system opens with it. And as the system
 opens, the void fills — not from anything gained, but because you have
-recognised the infinite life you always were.`}
-          </p>
+recognised the infinite life you always were.`).map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+          </div>
           <p
             ref={reversalPulseRef}
             className={`display mt-12 text-3xl text-white sm:text-4xl ${
@@ -743,10 +762,10 @@ recognised the infinite life you always were.`}
                 <h3 className="display relative z-10 text-3xl text-white">
                   Recognition — from above
                 </h3>
-                <p className="relative z-10 mt-5 whitespace-pre-line text-[15px] leading-relaxed text-[#b8d4e8]">
-                  {`Seeing directly through the mistaken identity. Awareness turning back on itself
+                <p className="relative z-10 mt-5 text-[15px] leading-relaxed text-[#b8d4e8]">
+                  {normalizeLineBreaks(`Seeing directly through the mistaken identity. Awareness turning back on itself
 and recognising what it actually is. This is the work of the Awareness lever —
-observation, disidentification, self-inquiry.`}
+observation, disidentification, self-inquiry.`)}
                 </p>
               </div>
               <div className="glass-card relative overflow-hidden p-7 lg:translate-y-4">
@@ -754,23 +773,23 @@ observation, disidentification, self-inquiry.`}
                 <h3 className="display relative z-10 text-3xl text-white">
                   Restoration — from below
                 </h3>
-                <p className="relative z-10 mt-5 whitespace-pre-line text-[15px] leading-relaxed text-[#b8d4e8]">
-                  {`Working directly on the energy body — releasing contraction, restoring the free
+                <p className="relative z-10 mt-5 text-[15px] leading-relaxed text-[#b8d4e8]">
+                  {normalizeLineBreaks(`Working directly on the energy body — releasing contraction, restoring the free
 flow of life force. This is the work of breath, movement, sound, heart, sleep,
-and the conditions you live in.`}
+and the conditions you live in.`)}
                 </p>
               </div>
             </div>
-            <p className="mx-auto mt-16 max-w-4xl whitespace-pre-line text-center text-[15px] leading-relaxed text-[#b8d4e8]">
-              {`These are the two great movements of the path, and they feed each other
+            <p className="mx-auto mt-16 max-w-4xl text-center text-[15px] leading-relaxed text-[#b8d4e8]">
+              {normalizeLineBreaks(`These are the two great movements of the path, and they feed each other
 endlessly. Every release in the body makes recognition easier. Every taste of
-recognition releases the body further.`}
+recognition releases the body further.`)}
             </p>
-            <p className="mx-auto mt-8 max-w-4xl whitespace-pre-line text-center text-sm leading-relaxed text-[#b8d4e8]/75">
-              {`Recognition alone is rarely enough. Contraction settles into tissue and nervous
+            <p className="mx-auto mt-8 max-w-4xl text-center text-sm leading-relaxed text-[#b8d4e8]/75">
+              {normalizeLineBreaks(`Recognition alone is rarely enough. Contraction settles into tissue and nervous
 system over years, and does not always release the moment understanding dawns.
 You can see your true nature clearly and still find the chest tight and the old
-reactions running. This is why the framework works from both directions at once.`}
+reactions running. This is why the framework works from both directions at once.`)}
             </p>
           </div>
         </div>
@@ -869,9 +888,9 @@ reactions running. This is why the framework works from both directions at once.
               The precise tools for working on the human system. Each lever corresponds to specific
               layers of being. Together, they form a complete system for inner freedom.
             </p>
-            <p className="mx-auto mt-5 max-w-2xl whitespace-pre-line text-sm text-[#b8d4e8]/90">
-              {`The order matters. The levers move from the most immediate and physical to the
-most subtle. Each one prepares the ground for the next.`}
+            <p className="mx-auto mt-5 max-w-2xl text-sm text-[#b8d4e8]/90">
+              {normalizeLineBreaks(`The order matters. The levers move from the most immediate and physical to the
+most subtle. Each one prepares the ground for the next.`)}
             </p>
           </div>
 
@@ -886,9 +905,11 @@ most subtle. Each one prepares the ground for the next.`}
                 <p className="mt-1 text-xs uppercase tracking-[0.25em] text-[#dcb48d]/90">
                   The prerequisite for all twelve
                 </p>
-                <p className="mt-5 whitespace-pre-line text-[15px] leading-relaxed text-[#b8d4e8]">
-                  {LEVER_ZERO.body}
-                </p>
+                <div className="mt-5 space-y-4 text-[15px] leading-relaxed text-[#b8d4e8]">
+                  {splitIntoParagraphs(LEVER_ZERO.body).map((paragraph) => (
+                    <p key={paragraph}>{paragraph}</p>
+                  ))}
+                </div>
               </div>
             </div>
             <div className="mx-auto mt-8 h-px w-full max-w-5xl bg-gradient-to-r from-transparent via-[#dcb48d]/40 to-transparent" />
@@ -967,8 +988,8 @@ most subtle. Each one prepares the ground for the next.`}
             <h2 className="display mt-6 text-4xl text-white sm:text-5xl md:text-6xl">
               Twelve levers. But only one matters right now.
             </h2>
-            <p className="mx-auto mt-8 max-w-3xl whitespace-pre-line text-[15px] leading-loose text-[#b8d4e8]">
-              {`The instinct when someone is suffering is to prescribe everything at once. The
+            <div className="mx-auto mt-8 max-w-3xl space-y-6 text-[15px] leading-loose text-[#b8d4e8]">
+              {splitIntoParagraphs(`The instinct when someone is suffering is to prescribe everything at once. The
 result is overwhelm, abandonment, and the false conclusion that the tools don't
 work. The tools work. Over-prescription fails.
 
@@ -976,8 +997,10 @@ Every human system has a single point of greatest friction at any given time.
 Address anything other than that bottleneck and it silently defeats every other
 intervention. Address it directly and the whole system shifts.
 
-Most people are in one of five zones. Find yours.`}
-            </p>
+Most people are in one of five zones. Find yours.`).map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </div>
           </div>
 
           <div className="mt-14 hidden gap-8 lg:grid lg:grid-cols-[260px_minmax(0,1fr)]">
@@ -1048,9 +1071,9 @@ Most people are in one of five zones. Find yours.`}
             </div>
           </noscript>
 
-          <p className="mx-auto mt-14 max-w-3xl whitespace-pre-line text-center text-sm leading-relaxed text-[#b8d4e8]/85">
-            {`Most people sit across two zones. When that happens, identify which one — if
-addressed — would most rapidly improve the other. Start there.`}
+          <p className="mx-auto mt-14 max-w-3xl text-center text-sm leading-relaxed text-[#b8d4e8]/85">
+            {normalizeLineBreaks(`Most people sit across two zones. When that happens, identify which one — if
+addressed — would most rapidly improve the other. Start there.`)}
           </p>
           <div className="mt-8 flex flex-col items-center gap-3 text-sm sm:flex-row sm:justify-center">
             <Link
@@ -1073,10 +1096,10 @@ addressed — would most rapidly improve the other. Start there.`}
           <h2 className="display text-4xl text-white sm:text-5xl">
             Not sure which zone you're in?
           </h2>
-          <p className="mx-auto mt-6 max-w-xl whitespace-pre-line text-[#b8d4e8]">
-            {`Describe what you're actually experiencing. Sunya AI will identify where your
+          <p className="mx-auto mt-6 max-w-xl text-[#b8d4e8]">
+            {normalizeLineBreaks(`Describe what you're actually experiencing. Sunya AI will identify where your
 system is contracted, which zone you're in, and the single lever that matters
-most for you right now.`}
+most for you right now.`)}
           </p>
           <Link
             to="/sunya-ai"
