@@ -224,17 +224,21 @@ export function Nav({ overHero = false }: NavProps) {
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             aria-controls="mobile-nav-menu"
-            className="relative z-[110] -mr-1 inline-flex min-h-10 min-w-10 flex-col items-center justify-center gap-0.5 rounded-xl px-1.5 py-1 text-white transition hover:bg-[#7ec8e3]/10 active:bg-[#7ec8e3]/15"
+            className="relative z-[110] -mr-1 inline-flex min-h-11 min-w-11 flex-col items-center justify-center gap-0.5 rounded-xl px-1.5 py-1 text-white transition hover:bg-[#7ec8e3]/10 active:bg-[#7ec8e3]/15"
             onClick={(e) => {
               e.preventDefault();
               e.stopPropagation();
               setOpen((v) => !v);
             }}
           >
-            <span className="pointer-events-none inline-flex items-center justify-center rounded-full border border-[#7ec8e3]/40 bg-[#7ec8e3]/10 p-1.5 shadow-[0_0_18px_-2px_rgba(126,200,227,0.6)]">
-              {open ? <X className="h-4 w-4" aria-hidden /> : <Menu className="h-4 w-4" aria-hidden />}
+            <span className="pointer-events-none inline-flex items-center justify-center rounded-full border border-[#7ec8e3]/55 bg-[#7ec8e3]/15 p-2 shadow-[0_0_18px_-2px_rgba(126,200,227,0.6)]">
+              {open ? (
+                <X className="h-[18px] w-[18px]" aria-hidden />
+              ) : (
+                <Menu className="h-[18px] w-[18px]" aria-hidden />
+              )}
             </span>
-            <span className="pointer-events-none text-[8px] uppercase tracking-[0.16em] text-[#b8d4e8]/80">
+            <span className="pointer-events-none text-[9px] font-medium uppercase tracking-[0.16em] text-white">
               {open ? "Close" : "View Menu"}
             </span>
           </button>

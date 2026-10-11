@@ -110,11 +110,11 @@ function Hero() {
   return (
     <section className="relative isolate w-full overflow-hidden bg-[#0a1628] md:h-[100dvh]">
       {/* One photograph — stacked crop on mobile, full-bleed cover on desktop */}
-      <div className="relative h-[44vh] w-full overflow-hidden md:absolute md:inset-0 md:h-full">
+      <div className="relative h-[50vh] w-full overflow-hidden md:absolute md:inset-0 md:h-full">
         <HeroPhoto
           priority
           sizes="100vw"
-          className="absolute inset-0 h-full w-full object-cover object-center md:-translate-x-[15%] md:origin-left md:scale-[1.15] md:object-[left_85%]"
+          className="absolute inset-0 h-full w-full object-cover object-[center_58%] md:-translate-x-[15%] md:origin-left md:scale-[1.15] md:object-[left_85%]"
         />
       </div>
 
