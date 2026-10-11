@@ -258,14 +258,6 @@ function Reframe() {
         <p className="display mx-auto mt-12 max-w-3xl text-center text-3xl text-white sm:text-4xl">
           The solution is to become conscious of the source of life within, and to live in harmony with the intelligence of life.
         </p>
-        <div className="mx-auto mt-12 max-w-2xl">
-          <div className="mx-auto h-px w-24 bg-gradient-to-r from-transparent via-[#7ec8e3]/50 to-transparent" />
-          <p className="mt-8 text-center text-xs uppercase leading-relaxed tracking-[0.3em] text-[#b8d4e8]">
-            The world will always be unstable.
-            <br />
-            Your inner state doesn't have to be.
-          </p>
-        </div>
         <div className="mt-8 text-center">
           <Link
             to="/framework"
