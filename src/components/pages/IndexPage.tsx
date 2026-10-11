@@ -114,7 +114,7 @@ function Hero() {
         <HeroPhoto
           priority
           sizes="100vw"
-          className="absolute inset-0 h-full w-full object-cover object-[center_32%] md:origin-left md:scale-[1.15] md:object-[left_85%]"
+          className="absolute inset-0 h-full w-full object-cover object-[center_32%] md:-translate-x-[15%] md:origin-left md:scale-[1.15] md:object-[left_85%]"
         />
       </div>
 
@@ -129,7 +129,7 @@ function Hero() {
       />
 
       <div className="relative z-10 md:flex md:h-full md:items-center">
-        <div className="bg-[#0a1628] px-6 py-12 md:ml-[44%] md:w-full md:max-w-[720px] md:translate-x-[15%] md:translate-y-[15%] md:bg-transparent md:px-6 md:py-0 md:pr-10 lg:pr-14">
+        <div className="bg-[#0a1628] px-6 py-12 md:ml-[44%] md:w-full md:max-w-[720px] md:translate-x-[25%] md:translate-y-[30%] md:bg-transparent md:px-6 md:py-0 md:pr-10 lg:pr-14">
           <HeroCopy />
         </div>
       </div>
