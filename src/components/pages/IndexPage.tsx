@@ -114,14 +114,14 @@ function Hero() {
         <HeroPhoto
           priority
           sizes="100vw"
-          className="absolute inset-0 h-full w-full object-cover object-[center_68%] md:-translate-x-[15%] md:origin-left md:scale-[1.15] md:object-[left_85%]"
+          className="absolute inset-0 h-full w-full object-cover object-[center_52%] md:-translate-x-[15%] md:origin-left md:scale-[1.15] md:object-[left_85%]"
         />
-        {/* Soft fade from photo into the band below — mobile + desktop */}
+        {/* Soft fade pulled lower — more face/torso clear above; covers lower edge */}
         <div
-          className="pointer-events-none absolute inset-x-0 bottom-0 h-36 md:h-44"
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-24 md:h-32"
           style={{
             background:
-              "linear-gradient(180deg, rgba(10,22,40,0) 0%, rgba(10,22,40,0.28) 38%, rgba(10,22,40,0.72) 70%, #0a1628 100%)",
+              "linear-gradient(180deg, rgba(10,22,40,0) 0%, rgba(10,22,40,0.22) 45%, rgba(10,22,40,0.7) 78%, #0a1628 100%)",
           }}
           aria-hidden
         />
