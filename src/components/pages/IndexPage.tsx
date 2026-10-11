@@ -87,15 +87,18 @@ function HeroPhoto({
 function HeroCopy({ className = "" }: { className?: string }) {
   return (
     <div className={className}>
-      <h1 className="display text-[2.15rem] leading-[1.15] text-white sm:text-[2.5rem] md:whitespace-nowrap md:text-[1.85rem] md:leading-none lg:text-[2.1rem] xl:text-[2.35rem]">
+      <h1 className="display text-[2.15rem] leading-[1.15] text-white sm:text-[2.5rem] md:whitespace-nowrap md:text-[2.15rem] md:leading-none lg:text-[2.45rem] xl:text-[2.7rem]">
         You are the happiness you seek.
       </h1>
-      <p className="mt-6 max-w-xl text-base leading-relaxed text-[#d5e6f2] sm:text-lg sm:leading-8 md:mt-6 md:max-w-[34rem] md:text-[1.05rem] md:leading-8">
+      <p className="mt-6 max-w-xl text-base leading-relaxed text-[#d5e6f2] sm:text-lg sm:leading-8 md:mt-7 md:max-w-[36rem] md:text-[1.2rem] md:leading-8">
         A complete path to human wellbeing that is timeless and universal. Teachings, practices, and
         gatherings.
       </p>
-      <div className="mt-10 md:mt-10">
-        <Link to="/gatherings" className={heroGatheringsBtn}>
+      <div className="mt-10 md:mt-11">
+        <Link
+          to="/gatherings"
+          className={`${heroGatheringsBtn} md:px-9 md:py-4 md:text-[0.95rem]`}
+        >
           Upcoming gatherings
         </Link>
       </div>
@@ -111,7 +114,7 @@ function Hero() {
         <HeroPhoto
           priority
           sizes="100vw"
-          className="absolute inset-0 h-full w-full object-cover object-[center_32%] md:object-[left_70%]"
+          className="absolute inset-0 h-full w-full object-cover object-[center_32%] md:origin-left md:scale-[1.15] md:object-[left_85%]"
         />
       </div>
 
@@ -126,7 +129,7 @@ function Hero() {
       />
 
       <div className="relative z-10 md:flex md:h-full md:items-center">
-        <div className="bg-[#0a1628] px-6 py-12 md:ml-[44%] md:w-full md:max-w-[680px] md:bg-transparent md:px-6 md:py-0 md:pr-10 lg:pr-14">
+        <div className="bg-[#0a1628] px-6 py-12 md:ml-[44%] md:w-full md:max-w-[720px] md:translate-x-[15%] md:translate-y-[15%] md:bg-transparent md:px-6 md:py-0 md:pr-10 lg:pr-14">
           <HeroCopy />
         </div>
       </div>
