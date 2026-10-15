@@ -164,7 +164,7 @@ const WHY_CAUSE_CARDS = [
   {
     n: "02",
     name: "Identification",
-    line: "So we take ourselves to be the nearest things: the body, our thoughts, what we accumulate. And identification with form makes life feel limited.",
+    line: "So we take ourselves to be the nearest things: the body, our thoughts, what we accumulate.",
   },
 ] as const;
 
@@ -213,25 +213,20 @@ function WhyWeSufferBranches({ reduceMotion }: { reduceMotion: boolean }) {
   return (
     <div
       ref={blockRef}
-      className="relative z-10 pt-10 pb-16"
       tabIndex={cycleLayout ? 0 : undefined}
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       onFocus={() => setPaused(true)}
       onBlur={() => setPaused(false)}
     >
-      <p className="text-base leading-relaxed text-[#b8d4e8] sm:text-lg">
-        Due to identification with form, physical and mental, we suffer in endless ways —
-      </p>
-
       {/*
         All six lines stay in the HTML for indexing and no-JS / reduced-motion fallbacks.
         Cycling only changes opacity; aria-live stays off so AT reads the full list.
       */}
-      <div aria-live="off" className={cycleLayout ? "relative mt-5" : "mt-5 space-y-3"}>
+      <div aria-live="off" className={cycleLayout ? "relative" : "space-y-3"}>
         {cycleLayout && (
           <p
-            className="invisible whitespace-pre-wrap italic text-base leading-relaxed text-[#b8d4e8] sm:text-lg"
+            className="invisible whitespace-pre-wrap italic text-sm leading-relaxed text-[#b8d4e8] sm:text-[0.95rem]"
             aria-hidden
           >
             {longest}
@@ -242,10 +237,10 @@ function WhyWeSufferBranches({ reduceMotion }: { reduceMotion: boolean }) {
             key={line}
             className={
               cycleLayout
-                ? `absolute inset-x-0 top-0 italic text-base leading-relaxed text-[#b8d4e8] transition-opacity duration-[600ms] ease-in-out sm:text-lg ${
+                ? `absolute inset-x-0 top-0 italic text-sm leading-relaxed text-[#b8d4e8] transition-opacity duration-[600ms] ease-in-out sm:text-[0.95rem] ${
                     index === active ? "opacity-100" : "pointer-events-none opacity-0"
                   }`
-                : "italic text-base leading-relaxed text-[#b8d4e8] sm:text-lg"
+                : "italic text-sm leading-relaxed text-[#b8d4e8] sm:text-[0.95rem]"
             }
           >
             {line}
@@ -253,7 +248,7 @@ function WhyWeSufferBranches({ reduceMotion }: { reduceMotion: boolean }) {
         ))}
       </div>
 
-      <p className="mt-5 text-sm tracking-wide text-[#b8d4e8]/55">and on, and on</p>
+      <p className="mt-4 text-sm tracking-wide text-[#b8d4e8]/55">and on, and on</p>
     </div>
   );
 }
@@ -309,14 +304,14 @@ function Reframe() {
         {/* Separator between baseline and the causal stack */}
         <div className="mx-auto mt-4 h-px w-full max-w-2xl bg-gradient-to-r from-transparent via-white/20 to-transparent" />
 
-        {/* Cards + branches share one vertical connector that never reaches the baseline */}
-        <div className="relative mx-auto mt-10 max-w-2xl">
+        {/* Cards 01–03 share one vertical connector that never reaches the baseline */}
+        <div className="relative mx-auto mt-10 max-w-2xl pb-14">
           <div
             className="pointer-events-none absolute bottom-0 left-[1.15rem] top-6 w-px md:left-[1.35rem]"
             aria-hidden
             style={{
               background:
-                "linear-gradient(180deg, rgba(126,200,227,0.55) 0%, rgba(126,200,227,0.35) 55%, rgba(126,200,227,0.12) 82%, rgba(126,200,227,0) 100%)",
+                "linear-gradient(180deg, rgba(126,200,227,0.55) 0%, rgba(126,200,227,0.38) 58%, rgba(126,200,227,0.14) 82%, rgba(126,200,227,0) 100%)",
             }}
           />
 
@@ -332,9 +327,23 @@ function Reframe() {
                 <p className="mt-3 text-sm leading-relaxed text-[#b8d4e8]">{link.line}</p>
               </div>
             ))}
-          </div>
 
-          <WhyWeSufferBranches reduceMotion={reduceMotion} />
+            <div
+              className="glass-card relative z-10 flex flex-col p-5 md:p-6"
+              style={{ backgroundColor: "rgba(10, 22, 40, 0.62)" }}
+            >
+              <div className="font-display text-xl tracking-[0.16em] text-[#7ec8e3]/45">03</div>
+              <h3 className="display mt-2 text-2xl text-white">Suffering</h3>
+              <p className="mt-3 text-sm leading-relaxed text-[#b8d4e8]">
+                Identification with form makes life feel limited, and leads to suffering in endless
+                ways.
+              </p>
+              <div className="mt-5 h-px w-full bg-gradient-to-r from-transparent via-white/15 to-transparent" />
+              <div className="mt-5">
+                <WhyWeSufferBranches reduceMotion={reduceMotion} />
+              </div>
+            </div>
+          </div>
         </div>
 
         <p className="display mx-auto mt-16 max-w-3xl text-center text-3xl text-white sm:text-4xl">
