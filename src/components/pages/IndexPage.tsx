@@ -146,39 +146,121 @@ function Hero() {
   );
 }
 
-function Reframe() {
-  const chainLinks = [
-    {
-      n: "01",
-      name: "Unconsciousness",
-      line: "We are born with our senses turned outward for survival — unaware of the source of life within.",
-    },
-    {
-      n: "02",
-      name: "Identification",
-      line: "So we take ourselves to be the nearest things: the body, our thoughts, what we accumulate. And identification with form makes life feel limited.",
-    },
-    {
-      n: "03",
-      name: "Resistance",
-      line: "Due to a limited sense of self, we live in fear, bracing against everything that threatens it.",
-    },
-    {
-      n: "04",
-      name: "Contraction",
-      line: "The bracing stops being a thought and becomes physical — restricting the flow of life through the system, felt as tension, unease and dissatisfaction.",
-    },
-    {
-      n: "05",
-      name: "Insufficiency",
-      line: "A closed system runs low. So we reach outward, trying to fill an infinite emptiness with finite things.",
-    },
-  ];
-  const sectionRef = useRef<HTMLElement | null>(null);
-  const [reduceMotion, setReduceMotion] = useState(
-    () => typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+const WHY_BRANCH_LINES = [
+  "we ruminate over the past and worry about the future, never in the now",
+  "we feel divided from others, and from that division comes conflict and fear",
+  "we experience ourselves as finite, time-bound creatures living under the fear of death",
+  "we chase sense gratification endlessly",
+  "we feel permanently insufficient, because we have identified ourselves with limited things",
+  "we seek salvation in external things, or in the future, rather than in the presence always here",
+] as const;
+
+const WHY_CAUSE_CARDS = [
+  {
+    n: "01",
+    name: "Unconsciousness",
+    line: "We are born with our senses turned outward for survival — unaware of the source of life within.",
+  },
+  {
+    n: "02",
+    name: "Identification",
+    line: "So we take ourselves to be the nearest things: the body, our thoughts, what we accumulate. And identification with form makes life feel limited.",
+  },
+] as const;
+
+function WhyWeSufferBranches({ reduceMotion }: { reduceMotion: boolean }) {
+  const blockRef = useRef<HTMLDivElement | null>(null);
+  const [enhanced, setEnhanced] = useState(false);
+  const [inView, setInView] = useState(false);
+  const [active, setActive] = useState(0);
+  const [paused, setPaused] = useState(false);
+  // SSR / no-JS / reduced-motion: stacked static list. Motion clients: fixed-height crossfade.
+  const cycleLayout = enhanced && !reduceMotion;
+  const cycling = cycleLayout && inView;
+
+  useEffect(() => {
+    setEnhanced(true);
+  }, []);
+
+  useEffect(() => {
+    if (!cycleLayout) return;
+    const node = blockRef.current;
+    if (!node) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.35 },
+    );
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, [cycleLayout]);
+
+  useEffect(() => {
+    if (!cycling || paused) return;
+    // 4s hold + ~600ms crossfade before the next advance
+    const id = window.setInterval(() => {
+      setActive((i) => (i + 1) % WHY_BRANCH_LINES.length);
+    }, 4600);
+    return () => window.clearInterval(id);
+  }, [cycling, paused]);
+
+  const longest = WHY_BRANCH_LINES.reduce((a, b) => (a.length >= b.length ? a : b));
+
+  return (
+    <div
+      ref={blockRef}
+      className="relative z-10 pt-10 pb-16"
+      tabIndex={cycleLayout ? 0 : undefined}
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+      onFocus={() => setPaused(true)}
+      onBlur={() => setPaused(false)}
+    >
+      <p className="text-base leading-relaxed text-[#b8d4e8] sm:text-lg">
+        Due to identification with form, physical and mental, we suffer in endless ways —
+      </p>
+
+      {/*
+        All six lines stay in the HTML for indexing and no-JS / reduced-motion fallbacks.
+        Cycling only changes opacity; aria-live stays off so AT reads the full list.
+      */}
+      <div aria-live="off" className={cycleLayout ? "relative mt-5" : "mt-5 space-y-3"}>
+        {cycleLayout && (
+          <p
+            className="invisible whitespace-pre-wrap italic text-base leading-relaxed text-[#b8d4e8] sm:text-lg"
+            aria-hidden
+          >
+            {longest}
+          </p>
+        )}
+        {WHY_BRANCH_LINES.map((line, index) => (
+          <p
+            key={line}
+            className={
+              cycleLayout
+                ? `absolute inset-x-0 top-0 italic text-base leading-relaxed text-[#b8d4e8] transition-opacity duration-[600ms] ease-in-out sm:text-lg ${
+                    index === active ? "opacity-100" : "pointer-events-none opacity-0"
+                  }`
+                : "italic text-base leading-relaxed text-[#b8d4e8] sm:text-lg"
+            }
+          >
+            {line}
+          </p>
+        ))}
+      </div>
+
+      <p className="mt-5 text-sm tracking-wide text-[#b8d4e8]/55">and on, and on</p>
+    </div>
   );
-  const [revealed, setRevealed] = useState(
+}
+
+function Reframe() {
+  const [baselineOpen, setBaselineOpen] = useState(false);
+  const [reduceMotion, setReduceMotion] = useState(
     () => typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches,
   );
 
@@ -190,63 +272,60 @@ function Reframe() {
     return () => media.removeEventListener("change", onChange);
   }, []);
 
-  useEffect(() => {
-    if (reduceMotion) {
-      setRevealed(true);
-      return;
-    }
-    const node = sectionRef.current;
-    if (!node) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setRevealed(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.24 },
-    );
-    observer.observe(node);
-    return () => observer.disconnect();
-  }, [reduceMotion]);
-
-  const desktopStepClasses = ["md:mt-0", "md:mt-1", "md:mt-2", "md:mt-3", "md:mt-4"];
-  const mobileWidthClasses = ["w-full", "w-[98%]", "w-[96%]", "w-[94%]", "w-[92%]"];
-
   return (
-    <section ref={sectionRef} className="relative overflow-hidden bg-[#0a1628] pb-32 pt-44 md:pt-52">
+    <section className="relative overflow-hidden bg-[#0a1628] pb-32 pt-44 md:pt-52">
       <SacredGeometry className="right-[-200px] top-1/4 h-[800px] w-[800px]" />
-      <div className="relative z-10 mx-auto max-w-5xl px-6">
+      <div className="relative z-10 mx-auto max-w-3xl px-6">
         <div className="text-center">
-          <h2 className="display text-4xl text-white sm:text-5xl">
-            Every form of human suffering traces back to a single root.
-          </h2>
+          <h2 className="display text-4xl text-white sm:text-5xl">Why we suffer</h2>
         </div>
-        <div className="relative mx-auto mt-14 max-w-4xl md:max-w-none">
-          <div className="pointer-events-none absolute left-[10%] right-[10%] top-12 hidden md:block">
-            <div className="h-px w-full bg-gradient-to-r from-transparent via-[#7ec8e3]/50 to-transparent" />
-            {!reduceMotion && (
-              <div className="reframe-connector-pulse absolute left-0 top-1/2 h-[2px] w-24 -translate-y-1/2 rounded-full bg-gradient-to-r from-transparent via-[#7ec8e3]/80 to-transparent blur-[1px]" />
-            )}
+
+        {/* Baseline — ground, not step zero. Outside the connector. */}
+        <div className="mx-auto mt-12 max-w-2xl">
+          <button
+            type="button"
+            aria-expanded={baselineOpen}
+            onClick={() => setBaselineOpen((o) => !o)}
+            className="flex w-full items-center justify-between gap-4 py-2 text-left text-sm text-[#b8d4e8]/55 transition hover:text-[#b8d4e8]/75 sm:text-[0.9rem]"
+          >
+            <span>The body&apos;s own demands</span>
+            <ChevronDown
+              className={`h-4 w-4 shrink-0 transition-transform duration-300 ${baselineOpen ? "rotate-180" : ""}`}
+              aria-hidden
+            />
+          </button>
+          <div
+            className="grid transition-[grid-template-rows] duration-300 ease-out"
+            style={{ gridTemplateRows: baselineOpen ? "1fr" : "0fr" }}
+          >
+            <div className="overflow-hidden">
+              <p className="pb-3 pt-1 text-[0.8rem] leading-relaxed text-[#b8d4e8]/45 sm:text-[0.85rem]">
+                The body has its own limitations and constant demands — food, shelter, sleep. It is also subject to illness, and to time. This is the constant underlying pressure of the physical body. We are less able to meet the demands of life when we are unconscious.
+              </p>
+            </div>
           </div>
-          <div className="pointer-events-none absolute bottom-12 left-1/2 top-12 block w-px -translate-x-1/2 md:hidden">
-            <div className="h-full w-full bg-gradient-to-b from-transparent via-[#7ec8e3]/45 to-transparent" />
-            {!reduceMotion && (
-              <div className="reframe-connector-pulse-mobile absolute left-1/2 top-0 h-16 w-[2px] -translate-x-1/2 rounded-full bg-gradient-to-b from-transparent via-[#7ec8e3]/75 to-transparent blur-[1px]" />
-            )}
-          </div>
-          <div className="flex flex-col items-center gap-4 md:grid md:grid-cols-5 md:items-stretch md:gap-4">
-            {chainLinks.map((link, index) => (
+        </div>
+
+        {/* Separator between baseline and the causal stack */}
+        <div className="mx-auto mt-4 h-px w-full max-w-2xl bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+
+        {/* Cards + branches share one vertical connector that never reaches the baseline */}
+        <div className="relative mx-auto mt-10 max-w-2xl">
+          <div
+            className="pointer-events-none absolute bottom-0 left-[1.15rem] top-6 w-px md:left-[1.35rem]"
+            aria-hidden
+            style={{
+              background:
+                "linear-gradient(180deg, rgba(126,200,227,0.55) 0%, rgba(126,200,227,0.35) 55%, rgba(126,200,227,0.12) 82%, rgba(126,200,227,0) 100%)",
+            }}
+          />
+
+          <div className="space-y-5">
+            {WHY_CAUSE_CARDS.map((link) => (
               <div
                 key={link.name}
-                className={`${mobileWidthClasses[index]} ${desktopStepClasses[index]} glass-card relative z-10 flex h-full flex-col p-5 transition-all duration-700 md:w-full ${
-                  revealed ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0"
-                }`}
-                style={{
-                  transitionDelay: reduceMotion ? "0ms" : `${index * 120}ms`,
-                  transitionDuration: reduceMotion ? "0ms" : "700ms",
-                  backgroundColor: `rgba(10, 22, 40, ${0.56 + index * 0.05})`,
-                }}
+                className="glass-card relative z-10 flex flex-col p-5 md:p-6"
+                style={{ backgroundColor: "rgba(10, 22, 40, 0.62)" }}
               >
                 <div className="font-display text-xl tracking-[0.16em] text-[#7ec8e3]/45">{link.n}</div>
                 <h3 className="display mt-2 text-2xl text-white">{link.name}</h3>
@@ -254,39 +333,30 @@ function Reframe() {
               </div>
             ))}
           </div>
+
+          <WhyWeSufferBranches reduceMotion={reduceMotion} />
         </div>
-        <p className="display mx-auto mt-12 max-w-3xl text-center text-3xl text-white sm:text-4xl">
-          The solution is to become conscious of the source of life within, and to live in harmony with the intelligence of life.
+
+        <p className="display mx-auto mt-16 max-w-3xl text-center text-3xl text-white sm:text-4xl">
+          The solution is to become conscious of the source of life within, and to live in harmony
+          with the intelligence of life.
         </p>
-        <div className="mt-8 text-center">
-          <Link
-            to="/framework"
-            className={sectionCtaClass}
-          >
+
+        <div className="mx-auto mt-12 max-w-2xl">
+          <div className="mx-auto h-px w-24 bg-gradient-to-r from-transparent via-[#7ec8e3]/50 to-transparent" />
+          <p className="mt-8 text-center text-xs uppercase leading-relaxed tracking-[0.3em] text-[#b8d4e8]">
+            The world will always be unstable.
+            <br />
+            Your inner state doesn&apos;t have to be.
+          </p>
+        </div>
+
+        <div className="mt-10 text-center">
+          <Link to="/framework" className={sectionCtaClass}>
             Explore the Sunya framework →
           </Link>
         </div>
       </div>
-      <style>{`
-        @keyframes reframeConnectorPulse {
-          0% { transform: translateX(0); opacity: 0.25; }
-          50% { opacity: 0.7; }
-          100% { transform: translateX(calc(100% - 6rem)); opacity: 0.2; }
-        }
-        @keyframes reframeConnectorPulseMobile {
-          0% { transform: translate(-50%, 0); opacity: 0.3; }
-          50% { opacity: 0.7; }
-          100% { transform: translate(-50%, calc(100% - 4rem)); opacity: 0.2; }
-        }
-        .reframe-connector-pulse { animation: reframeConnectorPulse 3.6s ease-in-out infinite; }
-        .reframe-connector-pulse-mobile { animation: reframeConnectorPulseMobile 3.6s ease-in-out infinite; }
-        @media (prefers-reduced-motion: reduce) {
-          .reframe-connector-pulse,
-          .reframe-connector-pulse-mobile {
-            animation: none !important;
-          }
-        }
-      `}</style>
     </section>
   );
 }
