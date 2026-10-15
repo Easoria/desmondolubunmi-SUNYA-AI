@@ -42,10 +42,6 @@ function PrivacyPage() {
               store your email address and an encrypted password hash. Optionally your name if you
               provide it.
             </p>
-            <p className="mt-3">
-              <span className="text-white">Payment information:</span> Payments are processed
-              entirely by Stripe. We never see, store, or have access to your payment card details.
-            </p>
           </section>
 
           <section>
@@ -60,8 +56,8 @@ function PrivacyPage() {
           <section>
             <h2 className="display text-2xl text-white">Third-Party Services</h2>
             <p className="mt-3">
-              We use Supabase for authentication and database, and Stripe for payment processing.
-              Each of these providers operates under their own privacy obligations.
+              We use Supabase for authentication and database. It operates under its own privacy
+              obligations.
             </p>
           </section>
 

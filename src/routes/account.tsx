@@ -4,9 +4,6 @@ import { ArrowLeft, Loader2, Download, Trash2 } from "lucide-react";
 import { useAuth } from "@/hooks/use-auth";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
-import { createPortalSession } from "@/utils/payments.functions";
-import { getStripeEnvironment } from "@/lib/stripe";
-import { useSubscription } from "@/hooks/useSubscription";
 
 export const Route = createFileRoute("/account")({
   component: AccountPage,
@@ -18,7 +15,6 @@ export const Route = createFileRoute("/account")({
 type Profile = {
   email: string | null;
   first_name: string | null;
-  subscription_status: string;
   notifications_enabled: boolean;
   created_at: string;
 };
@@ -29,25 +25,6 @@ function AccountPage() {
   const [profile, setProfile] = useState<Profile | null>(null);
   const [savingNotif, setSavingNotif] = useState(false);
   const [resetSent, setResetSent] = useState(false);
-  const [portalLoading, setPortalLoading] = useState(false);
-  const { isActive } = useSubscription();
-
-  async function openPortal() {
-    setPortalLoading(true);
-    try {
-      const url = await createPortalSession({
-        data: {
-          environment: getStripeEnvironment(),
-          returnUrl: window.location.href,
-        },
-      });
-      if (url) window.open(url, "_blank");
-    } catch (e) {
-      console.error(e);
-    } finally {
-      setPortalLoading(false);
-    }
-  }
 
   useEffect(() => {
     if (!loading && !user) navigate({ to: "/login" });
@@ -59,7 +36,7 @@ function AccountPage() {
       const { supabase } = await import("@/integrations/supabase/client");
       const { data } = await supabase
         .from("user_profiles")
-        .select("email,first_name,subscription_status,notifications_enabled,created_at")
+        .select("email,first_name,notifications_enabled,created_at")
         .eq("id", user.id)
         .single();
       setProfile((data as Profile) ?? null);
@@ -71,10 +48,7 @@ function AccountPage() {
     setSavingNotif(true);
     const { supabase } = await import("@/integrations/supabase/client");
     const next = !profile.notifications_enabled;
-    await supabase
-      .from("user_profiles")
-      .update({ notifications_enabled: next })
-      .eq("id", user.id);
+    await supabase.from("user_profiles").update({ notifications_enabled: next }).eq("id", user.id);
     setProfile({ ...profile, notifications_enabled: next });
     setSavingNotif(false);
   }
@@ -111,7 +85,6 @@ function AccountPage() {
     )
       return;
     const { supabase } = await import("@/integrations/supabase/client");
-    // Clean leftover rows from retired chat tables if any remain.
     await supabase.from("messages").delete().eq("user_id", user.id);
     await supabase.from("sessions").delete().eq("user_id", user.id);
     await supabase.from("user_profiles").delete().eq("id", user.id);
@@ -127,9 +100,7 @@ function AccountPage() {
     );
   }
 
-  const isPaid = isActive || profile.subscription_status === "paid";
   const isEmailUser = user.app_metadata?.provider === "email";
-
 
   return (
     <div className="min-h-screen bg-[#0a1628] text-white">
@@ -162,20 +133,8 @@ function AccountPage() {
           </Section>
         )}
 
-        <Section title="Membership">
+        <Section title="Account">
           <Row label="Member since" value={new Date(profile.created_at).toLocaleDateString()} />
-          {isPaid && (
-            <div className="mt-4">
-              <button
-                onClick={openPortal}
-                disabled={portalLoading}
-                className="inline-flex items-center gap-2 rounded-full border border-white/15 px-4 py-2.5 text-sm text-white hover:border-[#7ec8e3]/40 disabled:opacity-60"
-              >
-                {portalLoading && <Loader2 className="h-3.5 w-3.5 animate-spin" />}
-                Manage subscription
-              </button>
-            </div>
-          )}
         </Section>
 
         <Section title="Notifications">

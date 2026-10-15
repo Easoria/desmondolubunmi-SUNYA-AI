@@ -41,7 +41,6 @@ import { Route as ApiContributorSignupRouteImport } from './routes/api/contribut
 import { Route as ApiEmailCaptureRouteImport } from './routes/api/email-capture'
 import { Route as ApiGatheringsSignupRouteImport } from './routes/api/gatherings-signup'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
-import { Route as CheckoutReturnRouteImport } from './routes/checkout.return'
 import { Route as EssaysSlugRouteImport } from './routes/essays.$slug'
 import { Route as GatheringsSlugRouteImport } from './routes/gatherings.$slug'
 import { Route as LeversLeverSlugRouteImport } from './routes/levers.$leverSlug'
@@ -56,7 +55,6 @@ import { Route as LeversLeverSlugPracticeSlugRouteImport } from './routes/levers
 import { Route as LeversLeverSlugCompleteRouteImport } from './routes/levers.$leverSlug.complete'
 import { Route as PracticesLeverSlugPracticeSlugRouteImport } from './routes/practices.$leverSlug.$practiceSlug'
 import { Route as PracticesLeverSlugCompleteRouteImport } from './routes/practices.$leverSlug.complete'
-import { Route as ApiPublicPaymentsWebhookRouteImport } from './routes/api/public/payments/webhook'
 
 const Char91indexChar93Route = Char91indexChar93RouteImport.update({
   id: '/index',
@@ -218,11 +216,6 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
   path: '/$slug',
   getParentRoute: () => BlogRoute,
 } as any)
-const CheckoutReturnRoute = CheckoutReturnRouteImport.update({
-  id: '/checkout/return',
-  path: '/checkout/return',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const EssaysSlugRoute = EssaysSlugRouteImport.update({
   id: '/$slug',
   path: '/$slug',
@@ -297,12 +290,6 @@ const PracticesLeverSlugCompleteRoute =
     path: '/complete',
     getParentRoute: () => PracticesLeverSlugRoute,
   } as any)
-const ApiPublicPaymentsWebhookRoute =
-  ApiPublicPaymentsWebhookRouteImport.update({
-    id: '/api/public/payments/webhook',
-    path: '/api/public/payments/webhook',
-    getParentRoute: () => rootRouteImport,
-  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -337,7 +324,6 @@ export interface FileRoutesByFullPath {
   '/api/email-capture': typeof ApiEmailCaptureRoute
   '/api/gatherings-signup': typeof ApiGatheringsSignupRoute
   '/blog/$slug': typeof BlogSlugRoute
-  '/checkout/return': typeof CheckoutReturnRoute
   '/essays/$slug': typeof EssaysSlugRoute
   '/gatherings/$slug': typeof GatheringsSlugRoute
   '/levers/$leverSlug': typeof LeversLeverSlugRouteWithChildren
@@ -352,7 +338,6 @@ export interface FileRoutesByFullPath {
   '/levers/$leverSlug/complete': typeof LeversLeverSlugCompleteRoute
   '/practices/$leverSlug/$practiceSlug': typeof PracticesLeverSlugPracticeSlugRoute
   '/practices/$leverSlug/complete': typeof PracticesLeverSlugCompleteRoute
-  '/api/public/payments/webhook': typeof ApiPublicPaymentsWebhookRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -387,7 +372,6 @@ export interface FileRoutesByTo {
   '/api/email-capture': typeof ApiEmailCaptureRoute
   '/api/gatherings-signup': typeof ApiGatheringsSignupRoute
   '/blog/$slug': typeof BlogSlugRoute
-  '/checkout/return': typeof CheckoutReturnRoute
   '/essays/$slug': typeof EssaysSlugRoute
   '/gatherings/$slug': typeof GatheringsSlugRoute
   '/levers/$leverSlug': typeof LeversLeverSlugRouteWithChildren
@@ -402,7 +386,6 @@ export interface FileRoutesByTo {
   '/levers/$leverSlug/complete': typeof LeversLeverSlugCompleteRoute
   '/practices/$leverSlug/$practiceSlug': typeof PracticesLeverSlugPracticeSlugRoute
   '/practices/$leverSlug/complete': typeof PracticesLeverSlugCompleteRoute
-  '/api/public/payments/webhook': typeof ApiPublicPaymentsWebhookRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -438,7 +421,6 @@ export interface FileRoutesById {
   '/api/email-capture': typeof ApiEmailCaptureRoute
   '/api/gatherings-signup': typeof ApiGatheringsSignupRoute
   '/blog/$slug': typeof BlogSlugRoute
-  '/checkout/return': typeof CheckoutReturnRoute
   '/essays/$slug': typeof EssaysSlugRoute
   '/gatherings/$slug': typeof GatheringsSlugRoute
   '/levers/$leverSlug': typeof LeversLeverSlugRouteWithChildren
@@ -453,7 +435,6 @@ export interface FileRoutesById {
   '/levers/$leverSlug/complete': typeof LeversLeverSlugCompleteRoute
   '/practices/$leverSlug/$practiceSlug': typeof PracticesLeverSlugPracticeSlugRoute
   '/practices/$leverSlug/complete': typeof PracticesLeverSlugCompleteRoute
-  '/api/public/payments/webhook': typeof ApiPublicPaymentsWebhookRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -490,7 +471,6 @@ export interface FileRouteTypes {
     | '/api/email-capture'
     | '/api/gatherings-signup'
     | '/blog/$slug'
-    | '/checkout/return'
     | '/essays/$slug'
     | '/gatherings/$slug'
     | '/levers/$leverSlug'
@@ -505,7 +485,6 @@ export interface FileRouteTypes {
     | '/levers/$leverSlug/complete'
     | '/practices/$leverSlug/$practiceSlug'
     | '/practices/$leverSlug/complete'
-    | '/api/public/payments/webhook'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -540,7 +519,6 @@ export interface FileRouteTypes {
     | '/api/email-capture'
     | '/api/gatherings-signup'
     | '/blog/$slug'
-    | '/checkout/return'
     | '/essays/$slug'
     | '/gatherings/$slug'
     | '/levers/$leverSlug'
@@ -555,7 +533,6 @@ export interface FileRouteTypes {
     | '/levers/$leverSlug/complete'
     | '/practices/$leverSlug/$practiceSlug'
     | '/practices/$leverSlug/complete'
-    | '/api/public/payments/webhook'
   id:
     | '__root__'
     | '/'
@@ -590,7 +567,6 @@ export interface FileRouteTypes {
     | '/api/email-capture'
     | '/api/gatherings-signup'
     | '/blog/$slug'
-    | '/checkout/return'
     | '/essays/$slug'
     | '/gatherings/$slug'
     | '/levers/$leverSlug'
@@ -605,7 +581,6 @@ export interface FileRouteTypes {
     | '/levers/$leverSlug/complete'
     | '/practices/$leverSlug/$practiceSlug'
     | '/practices/$leverSlug/complete'
-    | '/api/public/payments/webhook'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -640,11 +615,9 @@ export interface RootRouteChildren {
   ApiContributorSignupRoute: typeof ApiContributorSignupRoute
   ApiEmailCaptureRoute: typeof ApiEmailCaptureRoute
   ApiGatheringsSignupRoute: typeof ApiGatheringsSignupRoute
-  CheckoutReturnRoute: typeof CheckoutReturnRoute
   ProblemsSlugRoute: typeof ProblemsSlugRoute
   ProblemsIndexRoute: typeof ProblemsIndexRoute
   ApiAdminBootstrapGatheringsRoute: typeof ApiAdminBootstrapGatheringsRoute
-  ApiPublicPaymentsWebhookRoute: typeof ApiPublicPaymentsWebhookRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -873,13 +846,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogSlugRouteImport
       parentRoute: typeof BlogRoute
     }
-    '/checkout/return': {
-      id: '/checkout/return'
-      path: '/checkout/return'
-      fullPath: '/checkout/return'
-      preLoaderRoute: typeof CheckoutReturnRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/essays/$slug': {
       id: '/essays/$slug'
       path: '/$slug'
@@ -977,13 +943,6 @@ declare module '@tanstack/react-router' {
       fullPath: '/practices/$leverSlug/complete'
       preLoaderRoute: typeof PracticesLeverSlugCompleteRouteImport
       parentRoute: typeof PracticesLeverSlugRoute
-    }
-    '/api/public/payments/webhook': {
-      id: '/api/public/payments/webhook'
-      path: '/api/public/payments/webhook'
-      fullPath: '/api/public/payments/webhook'
-      preLoaderRoute: typeof ApiPublicPaymentsWebhookRouteImport
-      parentRoute: typeof rootRouteImport
     }
   }
 }
@@ -1127,11 +1086,9 @@ const rootRouteChildren: RootRouteChildren = {
   ApiContributorSignupRoute: ApiContributorSignupRoute,
   ApiEmailCaptureRoute: ApiEmailCaptureRoute,
   ApiGatheringsSignupRoute: ApiGatheringsSignupRoute,
-  CheckoutReturnRoute: CheckoutReturnRoute,
   ProblemsSlugRoute: ProblemsSlugRoute,
   ProblemsIndexRoute: ProblemsIndexRoute,
   ApiAdminBootstrapGatheringsRoute: ApiAdminBootstrapGatheringsRoute,
-  ApiPublicPaymentsWebhookRoute: ApiPublicPaymentsWebhookRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
