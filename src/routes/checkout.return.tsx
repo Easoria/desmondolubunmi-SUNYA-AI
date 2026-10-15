@@ -31,7 +31,7 @@ function CheckoutReturn() {
         <p className="mt-4 text-[#b8d4e8]">
           {isBooking
             ? "Your 1-on-1 session is paid. Next: pick a time below to lock in your slot."
-            : "You're in. Founding Access is active."}
+            : "Payment received. Thank you."}
         </p>
         <div className="mt-10 flex flex-wrap justify-center gap-3">
           {isBooking ? (
@@ -45,16 +45,16 @@ function CheckoutReturn() {
           ) : (
             <>
               <Link
-                to="/practices"
+                to="/dashboard"
                 className="glow-btn inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium"
               >
-                Explore the practices <ArrowRight className="h-4 w-4" />
+                Go to dashboard <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
-                to="/dashboard"
+                to="/practices"
                 className="inline-flex items-center gap-2 rounded-full border border-white/15 px-6 py-3 text-sm text-white hover:border-[#7ec8e3]/40"
               >
-                Go to dashboard
+                Explore the practices
               </Link>
             </>
           )}

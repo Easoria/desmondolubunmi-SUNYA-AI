@@ -67,11 +67,11 @@ function TermsPage() {
           </section>
 
           <section>
-            <h2 className="display text-2xl text-white">5. Subscriptions and Payments</h2>
+            <h2 className="display text-2xl text-white">5. Payments</h2>
             <p className="mt-3">
-              Paid subscriptions are billed monthly via Stripe. You may cancel at any time from your
-              account dashboard. Cancellation takes effect at the end of the current billing
-              period. We do not offer pro-rated refunds for partial periods.
+              Payments for 1-on-1 sessions and other paid offerings are processed via Stripe. Where
+              a recurring subscription applies, you may cancel at any time from your account. We do
+              not offer pro-rated refunds for partial periods unless required by law.
             </p>
           </section>
 

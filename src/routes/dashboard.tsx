@@ -3,10 +3,8 @@ import { useEffect, useState } from "react";
 import { useAuth } from "@/hooks/use-auth";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
-import { UpgradeModal } from "@/components/site/UpgradeModal";
-import { useStripeCheckout } from "@/hooks/useStripeCheckout";
 import { createPortalSession } from "@/utils/payments.functions";
-import { getStripeEnvironment, SUNYA_FOUNDING_PRICE_ID } from "@/lib/stripe";
+import { getStripeEnvironment } from "@/lib/stripe";
 
 export const Route = createFileRoute("/dashboard")({
   component: DashboardPage,
@@ -31,19 +29,7 @@ function DashboardPage() {
   const navigate = useNavigate();
   const [profile, setProfile] = useState<Profile | null>(null);
   const [loadingData, setLoadingData] = useState(true);
-  const [showUpgrade, setShowUpgrade] = useState(false);
   const [sub, setSub] = useState<SubRow | null>(null);
-  const { openCheckout, checkoutElement } = useStripeCheckout();
-
-  function handleUnlock() {
-    if (!user) return;
-    openCheckout({
-      priceId: SUNYA_FOUNDING_PRICE_ID,
-      customerEmail: user.email,
-      userId: user.id,
-      returnUrl: `${window.location.origin}/checkout/return?session_id={CHECKOUT_SESSION_ID}`,
-    });
-  }
 
   async function handleManage() {
     try {
@@ -56,7 +42,6 @@ function DashboardPage() {
       if (url) window.open(url, "_blank");
     } catch (e) {
       console.error(e);
-      setShowUpgrade(true);
     }
   }
 
@@ -119,7 +104,7 @@ function DashboardPage() {
       <Nav />
       <main className="mx-auto max-w-3xl px-6 pb-24 pt-16">
         <h1 className="display text-4xl text-white sm:text-5xl">Welcome, {firstName}</h1>
-        <p className="mt-3 text-[#b8d4e8]">Your account and membership.</p>
+        <p className="mt-3 text-[#b8d4e8]">Your account.</p>
 
         {isPaid && sub?.cancel_at_period_end && (
           <div className="mt-6 rounded-2xl border border-amber-400/30 bg-amber-500/10 p-4 text-sm text-amber-100">
@@ -129,19 +114,18 @@ function DashboardPage() {
               : ""}
             . You can{" "}
             <button onClick={handleManage} className="underline hover:text-white">
-              reactivate from Stripe
+              manage it in Stripe
             </button>
             .
           </div>
         )}
         {isPaid && sub?.status === "past_due" && (
           <div className="mt-6 rounded-2xl border border-red-400/30 bg-red-500/10 p-4 text-sm text-red-100">
-            Your last payment failed. Stripe is retrying automatically — you still have access for
-            now. Please{" "}
+            Your last payment failed. Please{" "}
             <button onClick={handleManage} className="underline hover:text-white">
               update your payment method
-            </button>{" "}
-            to avoid interruption.
+            </button>
+            .
           </div>
         )}
 
@@ -149,32 +133,18 @@ function DashboardPage() {
           <h2 className="display text-2xl text-white">Your account</h2>
           <dl className="mt-5 space-y-3 text-sm">
             <div className="flex justify-between gap-3">
-              <dt className="text-[#b8d4e8]">Plan</dt>
-              <dd className="text-white">{isPaid ? "Full Access" : "Free"}</dd>
-            </div>
-            <div className="flex justify-between gap-3">
               <dt className="text-[#b8d4e8]">Member since</dt>
               <dd className="text-white">{new Date(profile.created_at).toLocaleDateString()}</dd>
             </div>
           </dl>
-          {!isPaid && (
-            <div className="mt-5 rounded-2xl border border-[#7ec8e3]/30 bg-[#7ec8e3]/5 p-4 text-center">
-              <div className="text-xs uppercase tracking-[0.25em] text-[#7ec8e3]">
-                ✦ Founding Access
-              </div>
-              <div className="mt-1 text-sm text-white">€19/month · Cancel anytime</div>
-            </div>
+          {isPaid && (
+            <button
+              onClick={handleManage}
+              className="mt-6 w-full rounded-full border border-white/15 px-4 py-2.5 text-sm text-white hover:border-[#7ec8e3]/40"
+            >
+              Manage subscription
+            </button>
           )}
-          <button
-            onClick={isPaid ? handleManage : handleUnlock}
-            className={
-              isPaid
-                ? "mt-6 w-full rounded-full border border-white/15 px-4 py-2.5 text-sm text-white hover:border-[#7ec8e3]/40"
-                : "glow-btn mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium"
-            }
-          >
-            {isPaid ? "Manage subscription" : "Unlock Full Access"}
-          </button>
           <div className="mt-6 space-y-2 border-t border-white/10 pt-5 text-sm">
             <Link to="/account" className="block text-[#b8d4e8] hover:text-white">
               Account settings →
@@ -193,8 +163,6 @@ function DashboardPage() {
         </div>
       </main>
       <Footer />
-      <UpgradeModal open={showUpgrade} onClose={() => setShowUpgrade(false)} />
-      {checkoutElement}
     </div>
   );
 }

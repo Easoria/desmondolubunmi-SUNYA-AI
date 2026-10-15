@@ -1,6 +1,6 @@
--- Sunya AI free tier: weekly limits + first-session exemption.
+-- Legacy chat free-tier columns (feature retired; columns retained).
 -- sessions_this_week + week_start (ISO week, e.g. 2026-W32)
--- has_used_first_session: first ever session does not count against the weekly quota.
+-- has_used_first_session: first ever session did not count against the weekly quota.
 
 ALTER TABLE public.user_profiles
   ADD COLUMN IF NOT EXISTS sessions_this_week integer NOT NULL DEFAULT 0;

@@ -6,8 +6,7 @@ CREATE TABLE public.fingerprint_sessions (
 
 ALTER TABLE public.fingerprint_sessions ENABLE ROW LEVEL SECURITY;
 
--- Public access: visitor IDs are anonymous device fingerprints used to
--- enforce free-tier session limits for guests. No PII stored.
+-- Legacy guest-limit table (feature retired; table retained). No PII stored.
 CREATE POLICY "Anyone can read fingerprint sessions"
   ON public.fingerprint_sessions FOR SELECT
   USING (true);

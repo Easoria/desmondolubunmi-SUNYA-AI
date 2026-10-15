@@ -40,8 +40,8 @@ type EcoItem = {
 const ECO: EcoItem[] = [
   {
     Icon: Sparkles,
-    t: "Sunya Superintelligence",
-    c: "AI and technology in service of human wellbeing — for individuals, wellness creators, and organisations.",
+    t: "Sunya Technology",
+    c: "Tools for human wellbeing — for individuals, wellness creators, and organisations.",
     items: [
       {
         label: "Sunya Sleep →",
@@ -262,9 +262,9 @@ function VisionPage() {
               Goodness that emerges from inner freedom rather than from fear of punishment.
             </p>
             <p>
-              And through AI and technology, the burden of survival lifts. Automation handles
-              what doesn't require the human spirit. People have more time — for creativity,
-              for connection, for inner exploration, for living fully.
+              And as technology eases the burden of survival, automation handles what doesn&apos;t
+              require the human spirit. People have more time — for creativity, for connection, for
+              inner exploration, for living fully.
             </p>
             <p className="display pt-2 text-center text-2xl font-semibold text-white sm:text-3xl">
               This is the world Sunya is building — conscious and genuinely human.

@@ -4,11 +4,9 @@ import { ArrowLeft, Loader2, Download, Trash2 } from "lucide-react";
 import { useAuth } from "@/hooks/use-auth";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
-import { UpgradeModal } from "@/components/site/UpgradeModal";
-import { useSubscription } from "@/hooks/useSubscription";
 import { createPortalSession } from "@/utils/payments.functions";
 import { getStripeEnvironment } from "@/lib/stripe";
-
+import { useSubscription } from "@/hooks/useSubscription";
 
 export const Route = createFileRoute("/account")({
   component: AccountPage,
@@ -31,7 +29,6 @@ function AccountPage() {
   const [profile, setProfile] = useState<Profile | null>(null);
   const [savingNotif, setSavingNotif] = useState(false);
   const [resetSent, setResetSent] = useState(false);
-  const [showUpgrade, setShowUpgrade] = useState(false);
   const [portalLoading, setPortalLoading] = useState(false);
   const { isActive } = useSubscription();
 
@@ -93,15 +90,10 @@ function AccountPage() {
 
   async function exportData() {
     const { supabase } = await import("@/integrations/supabase/client");
-    const [{ data: sess }, { data: msgs }, { data: prof }] = await Promise.all([
-      supabase.from("sessions").select("*"),
-      supabase.from("messages").select("*"),
-      supabase.from("user_profiles").select("*"),
-    ]);
-    const blob = new Blob(
-      [JSON.stringify({ profile: prof, sessions: sess, messages: msgs }, null, 2)],
-      { type: "application/json" },
-    );
+    const { data: prof } = await supabase.from("user_profiles").select("*");
+    const blob = new Blob([JSON.stringify({ profile: prof }, null, 2)], {
+      type: "application/json",
+    });
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
@@ -114,13 +106,14 @@ function AccountPage() {
     if (!user) return;
     if (
       !confirm(
-        "Are you sure?\n\nThis will permanently delete your account and all session history. This cannot be undone.",
+        "Are you sure?\n\nThis will permanently delete your account and associated data. This cannot be undone.",
       )
     )
       return;
     const { supabase } = await import("@/integrations/supabase/client");
-    await supabase.from("sessions").delete().eq("user_id", user.id);
+    // Clean leftover rows from retired chat tables if any remain.
     await supabase.from("messages").delete().eq("user_id", user.id);
+    await supabase.from("sessions").delete().eq("user_id", user.id);
     await supabase.from("user_profiles").delete().eq("id", user.id);
     await signOut();
     navigate({ to: "/" });
@@ -169,11 +162,10 @@ function AccountPage() {
           </Section>
         )}
 
-        <Section title="Subscription">
-          <Row label="Plan" value={isPaid ? "Full Access — €19 / month" : "Free"} />
+        <Section title="Membership">
           <Row label="Member since" value={new Date(profile.created_at).toLocaleDateString()} />
-          <div className="mt-4">
-            {isPaid ? (
+          {isPaid && (
+            <div className="mt-4">
               <button
                 onClick={openPortal}
                 disabled={portalLoading}
@@ -182,16 +174,8 @@ function AccountPage() {
                 {portalLoading && <Loader2 className="h-3.5 w-3.5 animate-spin" />}
                 Manage subscription
               </button>
-
-            ) : (
-              <button
-                onClick={() => setShowUpgrade(true)}
-                className="glow-btn inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium"
-              >
-                Upgrade to Full Access
-              </button>
-            )}
-          </div>
+            </div>
+          )}
         </Section>
 
         <Section title="Notifications">
@@ -249,7 +233,6 @@ function AccountPage() {
         </Section>
       </main>
       <Footer />
-      <UpgradeModal open={showUpgrade} onClose={() => setShowUpgrade(false)} />
     </div>
   );
 }
