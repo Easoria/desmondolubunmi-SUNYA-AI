@@ -99,7 +99,7 @@ function HeroCopy({ className = "" }: { className?: string }) {
 
 function Hero() {
   return (
-    <section className="relative isolate w-full overflow-hidden bg-[#152b44] md:h-[100dvh] md:bg-[#0a1628]">
+    <section className="relative isolate w-full overflow-hidden bg-[#0a1628] md:h-[100dvh]">
       {/* One photograph — stacked crop on mobile, full-bleed cover on desktop */}
       <div className="relative h-[56vh] w-full overflow-hidden md:absolute md:inset-0 md:h-full">
         <HeroPhoto
@@ -107,12 +107,12 @@ function Hero() {
           sizes="100vw"
           className="absolute inset-0 h-full w-full object-cover object-[center_52%] md:-translate-x-[15%] md:origin-left md:scale-[1.15] md:object-[left_85%]"
         />
-        {/* Soft fade into a lighter blue band (mobile headline field) */}
+        {/* Soft fade pulled lower — more face/torso clear above; covers lower edge */}
         <div
-          className="pointer-events-none absolute inset-x-0 bottom-0 h-28 md:h-32"
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-24 md:h-32"
           style={{
             background:
-              "linear-gradient(180deg, rgba(18,42,68,0) 0%, rgba(18,42,68,0.18) 40%, rgba(18,42,68,0.55) 72%, #152b44 100%)",
+              "linear-gradient(180deg, rgba(10,22,40,0) 0%, rgba(10,22,40,0.22) 45%, rgba(10,22,40,0.7) 78%, #0a1628 100%)",
           }}
           aria-hidden
         />
@@ -129,35 +129,8 @@ function Hero() {
       />
 
       <div className="relative z-10 md:flex md:h-full md:items-center">
-        {/*
-          Mobile: lighter blue, soft-blurred field behind the headline —
-          distinct from the deeper Why we suffer section below.
-          Desktop: transparent over the photo.
-        */}
-        <div className="relative overflow-hidden px-5 pb-12 pt-5 sm:px-6 sm:pb-14 sm:pt-6 md:ml-[44%] md:w-full md:max-w-[720px] md:translate-x-[25%] md:translate-y-[30%] md:overflow-visible md:bg-transparent md:px-6 md:py-0 md:pr-10 lg:pr-14">
-          <div
-            className="pointer-events-none absolute inset-0 md:hidden"
-            style={{
-              background:
-                "linear-gradient(180deg, #152b44 0%, #1a3552 42%, #17304a 78%, #142840 100%)",
-            }}
-            aria-hidden
-          />
-          <div
-            className="pointer-events-none absolute inset-x-0 top-0 h-16 md:hidden"
-            style={{
-              background:
-                "linear-gradient(180deg, rgba(21,43,68,0.0) 0%, rgba(21,43,68,0.35) 100%)",
-              backdropFilter: "blur(10px)",
-              WebkitBackdropFilter: "blur(10px)",
-              maskImage: "linear-gradient(180deg, transparent 0%, black 55%)",
-              WebkitMaskImage: "linear-gradient(180deg, transparent 0%, black 55%)",
-            }}
-            aria-hidden
-          />
-          <div className="relative">
-            <HeroCopy />
-          </div>
+        <div className="bg-gradient-to-b from-[#0a1628] via-[#0c1a2e] to-[#0a1628] px-5 pb-10 pt-5 sm:px-6 sm:pb-12 sm:pt-6 md:ml-[44%] md:w-full md:max-w-[720px] md:translate-x-[25%] md:translate-y-[30%] md:bg-none md:bg-transparent md:px-6 md:py-0 md:pr-10 lg:pr-14">
+          <HeroCopy />
         </div>
       </div>
     </section>
@@ -286,16 +259,7 @@ function Reframe() {
   }, []);
 
   return (
-    <section className="relative overflow-hidden bg-[#0a1628] pb-32 pt-36 md:pt-52">
-      {/* Soft bridge from the lighter hero band into this deeper section */}
-      <div
-        className="pointer-events-none absolute inset-x-0 top-0 h-40 md:h-24"
-        style={{
-          background:
-            "linear-gradient(180deg, #152b44 0%, rgba(21,43,68,0.55) 28%, rgba(10,22,40,0.35) 62%, rgba(10,22,40,0) 100%)",
-        }}
-        aria-hidden
-      />
+    <section className="relative overflow-hidden bg-[#0a1628] pb-32 pt-44 md:pt-52">
       <SacredGeometry className="right-[-200px] top-1/4 h-[800px] w-[800px]" />
       <div className="relative z-10 mx-auto max-w-3xl px-6">
         <div className="text-center">
