@@ -351,15 +351,6 @@ function Reframe() {
           with the intelligence of life.
         </p>
 
-        <div className="mx-auto mt-12 max-w-2xl">
-          <div className="mx-auto h-px w-24 bg-gradient-to-r from-transparent via-[#7ec8e3]/50 to-transparent" />
-          <p className="mt-8 text-center text-xs uppercase leading-relaxed tracking-[0.3em] text-[#b8d4e8]">
-            The world will always be unstable.
-            <br />
-            Your inner state doesn&apos;t have to be.
-          </p>
-        </div>
-
         <div className="mt-10 text-center">
           <Link to="/framework" className={sectionCtaClass}>
             Explore the Sunya framework →
