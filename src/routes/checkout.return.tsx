@@ -31,7 +31,7 @@ function CheckoutReturn() {
         <p className="mt-4 text-[#b8d4e8]">
           {isBooking
             ? "Your 1-on-1 session is paid. Next: pick a time below to lock in your slot."
-            : "You're in. Founding Access is active — unlimited Sunya AI sessions, saved history, and lever insights over time."}
+            : "You're in. Founding Access is active."}
         </p>
         <div className="mt-10 flex flex-wrap justify-center gap-3">
           {isBooking ? (
@@ -45,10 +45,10 @@ function CheckoutReturn() {
           ) : (
             <>
               <Link
-                to="/sunya-ai"
+                to="/practices"
                 className="glow-btn inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium"
               >
-                Start a session <ArrowRight className="h-4 w-4" />
+                Explore the practices <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
                 to="/dashboard"

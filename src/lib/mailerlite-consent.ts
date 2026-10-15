@@ -10,7 +10,7 @@ export function setMailerliteConsentPending(consent: boolean) {
   }
 }
 
-/** If consent was given at signup, add email to Mailerlite (source: sunya-ai). */
+/** If consent was given at signup, add email to Mailerlite (source: home). */
 export async function flushMailerliteConsent(email: string | null | undefined) {
   if (!email) return;
   try {
@@ -23,7 +23,7 @@ export async function flushMailerliteConsent(email: string | null | undefined) {
     await fetch("/api/email-capture", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email, source: "sunya-ai" }),
+      body: JSON.stringify({ email, source: "home" }),
     });
   } catch {
     /* non-blocking — account creation must succeed regardless */

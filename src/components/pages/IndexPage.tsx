@@ -2,13 +2,10 @@ import { useEffect, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { ChevronDown } from "lucide-react";
-import { Starfield } from "@/components/Starfield";
-import { SunyaAI } from "@/components/SunyaAI";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { EmailCapture } from "@/components/site/EmailCapture";
-import { Orbs, SacredGeometry } from "@/components/site/Decor";
-import { useSubscription } from "@/hooks/useSubscription";
+import { SacredGeometry } from "@/components/site/Decor";
 import { fetchNextUpcomingGatheringClient } from "@/lib/gatherings-browser";
 import {
   formatGatheringCardWhen,
@@ -25,12 +22,6 @@ import heroMobileJpg from "@/assets/desmond-hero-mobile.jpg";
 import heroMobileWebp from "@/assets/desmond-hero-mobile.webp";
 import heroMobile640Jpg from "@/assets/desmond-hero-mobile-640.jpg";
 import heroMobile640Webp from "@/assets/desmond-hero-mobile-640.webp";
-
-function useSunyaCtaLabel(freeSuffix = "") {
-  const { isActive } = useSubscription();
-  if (isActive) return "Use Sunya AI";
-  return freeSuffix ? `Try Sunya AI${freeSuffix}` : "Try Sunya AI";
-}
 
 /** Homepage section CTAs — quiet text links below the hero. */
 const sectionCtaClass =
@@ -291,35 +282,6 @@ function Reframe() {
   );
 }
 
-function AITeaser() {
-  return (
-    <section className="relative overflow-hidden bg-[#060d1c] py-32">
-      <Starfield density={0.6} />
-      <div className="relative z-10 mx-auto max-w-6xl px-6">
-        <div className="text-center">
-          <div className="label-eyebrow">Meet Sunya AI</div>
-          <h2 className="display mt-6 text-4xl text-white sm:text-6xl">
-            Your personal diagnostic
-            <br />
-            <span className="display-italic text-[#b8d4e8]">for inner transformation</span>
-          </h2>
-        </div>
-        <div className="mt-14">
-          <SunyaAI hideSessionCounter />
-          <div className="mt-8 text-center">
-            <Link
-              to="/sunya-ai"
-              className={sectionCtaClass}
-            >
-              Want to go deeper? Explore the full experience →
-            </Link>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 function About() {
   const [expanded, setExpanded] = useState(false);
   return (
@@ -485,7 +447,6 @@ function NextGathering() {
 }
 
 function FinalCTA() {
-  const ctaLabel = useSunyaCtaLabel();
   return (
     <section className="relative flex min-h-[80vh] items-center justify-center overflow-hidden bg-[#060d1c] py-32">
       <div
@@ -503,17 +464,11 @@ function FinalCTA() {
           Not because you've found a belief to hold onto.{" "}
           <span className="text-white">Because you've found the mechanism underneath all of them.</span>
         </p>
-        <Link
-          to="/sunya-ai"
-          className={`mt-12 ${sectionCtaClass}`}
-        >
-          {ctaLabel} →
+        <Link to="/framework" className={`mt-12 ${sectionCtaClass}`}>
+          Explore the Sunya framework →
         </Link>
         <p className="mt-10 text-sm text-[#b8d4e8]/75">
-          <Link
-            to="/timeless-solution"
-            className={sectionCtaClass}
-          >
+          <Link to="/timeless-solution" className={sectionCtaClass}>
             Read the complete framework — The Timeless Solution →
           </Link>
         </p>
@@ -529,7 +484,6 @@ export function IndexPage() {
       <main>
         <Hero />
         <Reframe />
-        <AITeaser />
         <About />
         <section className="relative overflow-hidden bg-[#0a1628] py-16">
           <div className="relative z-10 mx-auto max-w-3xl px-6">

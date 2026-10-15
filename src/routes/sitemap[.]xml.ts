@@ -25,7 +25,6 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/timeless-solution", lastmod: generatedAt, changefreq: "monthly", priority: "0.9" },
           { path: "/practices", lastmod: generatedAt, changefreq: "weekly", priority: "0.9" },
           { path: "/practices/where-to-begin", lastmod: generatedAt, changefreq: "monthly", priority: "0.85" },
-          { path: "/sunya-ai", lastmod: generatedAt, changefreq: "weekly", priority: "0.8" },
           { path: "/privacy", lastmod: generatedAt, changefreq: "yearly", priority: "0.5" },
           { path: "/terms", lastmod: generatedAt, changefreq: "yearly", priority: "0.5" },
           { path: "/work-with-me", lastmod: generatedAt, changefreq: "monthly", priority: "0.8" },

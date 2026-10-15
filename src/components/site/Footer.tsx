@@ -57,7 +57,7 @@ export function Footer() {
             <FooterColumn label="Work With Me">
               <FooterLink to="/work-with-me">1-on-1 Sessions</FooterLink>
               <FooterLink to="/gatherings">Gatherings</FooterLink>
-              <FooterLink to="/sunya-ai">Sunya AI</FooterLink>
+              <FooterLink to="/framework">Sunya Framework</FooterLink>
             </FooterColumn>
 
             <FooterColumn label="About">
@@ -76,7 +76,7 @@ export function Footer() {
 
       <div className="border-t border-white/5 px-6 py-6">
         <p className="mx-auto max-w-3xl text-center text-[11px] leading-relaxed text-[#b8d4e8]/60">
-          Sunya AI is a wellness and personal development tool. It is not a substitute for medical
+          Sunya is a wellness and personal development system. It is not a substitute for medical
           or mental health care. If you are in crisis or need professional support, please reach
           out to a qualified professional or crisis service — Ireland &amp; UK: Samaritans 116 123 ·
           US: 988.

@@ -43,7 +43,6 @@ const ECO: EcoItem[] = [
     t: "Sunya Superintelligence",
     c: "AI and technology in service of human wellbeing — for individuals, wellness creators, and organisations.",
     items: [
-      { label: "Sunya AI →", to: "/sunya-ai" },
       {
         label: "Sunya Sleep →",
         href: "https://apps.apple.com/ie/app/sunya-sleep/id6764553926",
@@ -280,10 +279,10 @@ function VisionPage() {
           </div>
           <div className="mt-10 text-center">
             <Link
-              to="/sunya-ai"
+              to="/join"
               className="glow-btn inline-flex items-center gap-2 rounded-full px-8 py-4 text-sm font-medium"
             >
-              Begin your part in this → Try Sunya AI
+              Begin your part in this → Join the vision
             </Link>
           </div>
         </div>
@@ -313,10 +312,10 @@ function VisionPage() {
                 I'm here for my own transformation
               </h3>
               <p className="mt-3 flex-1 text-sm text-[#b8d4e8]">
-                Start with Sunya AI or book a 1-on-1 session with Desmond.
+                Start with the practices, or book a 1-on-1 session with Desmond.
               </p>
               <Link
-                to="/sunya-ai"
+                to="/work-with-me"
                 className="mt-6 inline-flex items-center gap-2 text-sm text-[#7ec8e3] hover:text-white"
               >
                 Begin here <ArrowRight className="h-4 w-4" />

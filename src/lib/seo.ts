@@ -376,7 +376,7 @@ export const ORGANIZATION_SCHEMA = {
   url: CANONICAL_ORIGIN,
   logo: canonicalUrl("/og/core.jpg"),
   description:
-    "A universal system for inner transformation — philosophy, practices, gatherings, writing, and Sunya AI.",
+    "A universal system for inner transformation — philosophy, practices, gatherings, and writing.",
   founder: {
     "@type": "Person",
     name: "Desmond Olubunmi",

@@ -433,20 +433,14 @@ function PracticeDetailPage() {
             <p className="mt-8 text-sm leading-relaxed text-[#b8d4e8]/85">
               Not sure this is the right practice for you?{" "}
               <Link
-                to="/sunya-ai"
+                to="/problems"
                 className="text-[#7ec8e3] underline decoration-[#7ec8e3]/35 underline-offset-2 transition hover:text-white hover:decoration-white/50"
               >
-                Sunya AI
+                Start from what you&apos;re experiencing
               </Link>{" "}
-              will identify where your system is contracted and which practice matters most right
-              now.
-            </p>
-            <p className="mt-4 text-sm text-[#b8d4e8]/65">
-              <Link
-                to="/work-with-me"
-                className="transition hover:text-white"
-              >
-                Or work with Desmond directly, one-to-one →
+              — or work with Desmond directly,{" "}
+              <Link to="/work-with-me" className="transition hover:text-white">
+                one-to-one →
               </Link>
             </p>
           </div>

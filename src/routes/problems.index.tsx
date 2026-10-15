@@ -74,14 +74,21 @@ function ProblemsIndexPage() {
 
         <div className="mt-16 border-t border-white/10 pt-12">
           <p className="text-base leading-relaxed text-[#b8d4e8]/85 sm:text-[17px] sm:leading-8">
-            Not sure which of these fits? Describe what you&apos;re experiencing and{" "}
+            Not sure which of these fits?{" "}
             <Link
-              to="/sunya-ai"
+              to="/practices/where-to-begin"
               className="text-[#7ec8e3] underline decoration-[#7ec8e3]/35 underline-offset-2 transition hover:text-white hover:decoration-white/50"
             >
-              Sunya AI
+              Where to begin
             </Link>{" "}
-            will identify what is actually happening in your system, and which practices fit it.
+            maps the order of operations — or{" "}
+            <Link
+              to="/work-with-me"
+              className="text-[#7ec8e3] underline decoration-[#7ec8e3]/35 underline-offset-2 transition hover:text-white hover:decoration-white/50"
+            >
+              work with Desmond one-to-one
+            </Link>
+            .
           </p>
           <div className="mt-10">
             <EmailCapture variant="problems" />

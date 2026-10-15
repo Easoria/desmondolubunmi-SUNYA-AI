@@ -30,7 +30,7 @@ async function isAdminUser(userId: string): Promise<boolean> {
 async function handleSubscriptionCreated(subscription: any, env: StripeEnv) {
   const userId: string | null = subscription.metadata?.userId || null;
   if (!userId) {
-    // Sunya AI checkout requires sign-in — there should always be a userId.
+    // Checkout requires sign-in — there should always be a userId.
     // If missing, log and skip rather than auto-provisioning a guest account.
     console.error("Subscription created with no userId metadata", subscription.id);
     return;

@@ -1,13 +1,12 @@
 import { Link, useNavigate, useRouterState } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
-import { ArrowRight, Menu, X, LogOut, LayoutDashboard, History, Settings } from "lucide-react";
+import { ArrowRight, Menu, X, LogOut, LayoutDashboard, Settings } from "lucide-react";
 import { useAuth } from "@/hooks/use-auth";
 import { oneToOneNavLabel } from "@/lib/one-to-one-offer";
 
 // Navbar capped at 4 items + CTA.
 // Philosophy and Practices are deliberately merged behind /framework —
 // do not re-add them as separate items.
-// Sunya AI is deliberately not in the navbar. No floating chat button.
 const NAV_PRIMARY = [
   { label: "Sunya Framework", to: "/framework" as const },
   { label: "Gatherings", to: "/gatherings" as const },
@@ -20,7 +19,6 @@ const PROBLEMS_CTA_LABEL = "Find what helps";
 const NAV_SECONDARY = [
   { label: "The Timeless Solution", to: "/timeless-solution" as const },
   { label: "Writing", to: "/writing" as const },
-  { label: "Sunya AI", to: "/sunya-ai" as const },
   { label: "About", to: "/about" as const },
 ];
 
@@ -84,13 +82,6 @@ function AccountAvatar() {
             className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-[#b8d4e8] hover:bg-white/5 hover:text-white"
           >
             <LayoutDashboard className="h-4 w-4" /> Dashboard
-          </Link>
-          <Link
-            to="/sessions"
-            onClick={() => setMenuOpen(false)}
-            className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-[#b8d4e8] hover:bg-white/5 hover:text-white"
-          >
-            <History className="h-4 w-4" /> Session history
           </Link>
           <Link
             to="/account"

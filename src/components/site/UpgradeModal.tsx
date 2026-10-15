@@ -48,14 +48,10 @@ export function UpgradeModal({ open, onClose, variant = "default" }: Props) {
               <Sparkles className="h-4 w-4 text-[#7ec8e3]" />
             </div>
             <h3 className="display text-center text-2xl text-white">
-              {isLimit
-                ? "You've used your free sessions for today"
-                : "✦ Unlock Full Access"}
+              {isLimit ? "Unlock Full Access" : "✦ Unlock Full Access"}
             </h3>
             <p className="mt-3 text-center text-sm text-[#b8d4e8]">
-              Unlimited Sunya AI sessions for{" "}
-              <span className="text-white">€19/month</span> — saved history and lever tracking
-              over time.
+              Founding Access for <span className="text-white">€19/month</span> — cancel anytime.
             </p>
             <p className="mt-3 text-center text-xs italic text-[#b8d4e8]/70">
               Founding rate. Price increases as Sunya grows.
