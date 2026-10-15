@@ -31,14 +31,14 @@ function BookedPage() {
             You'll receive a confirmation email from Calendly with everything you need.
           </p>
           <p className="mt-4 text-[#b8d4e8]/80">
-            In the meantime — if you haven't already, try Sunya AI to begin exploring your
-            situation before the session. It will help you arrive with more clarity.
+            In the meantime — if you haven&apos;t already, browse the practices or read the
+            framework so you arrive with more clarity.
           </p>
           <Link
-            to="/sunya-ai"
+            to="/practices"
             className="glow-btn mt-10 inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium"
           >
-            Try Sunya AI <ArrowRight className="h-4 w-4" />
+            Explore the practices <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>

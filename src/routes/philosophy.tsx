@@ -1,4 +1,4 @@
-import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { Starfield } from "@/components/Starfield";
@@ -378,7 +378,6 @@ function PhilosophyPage() {
   const [activeLayer, setActiveLayer] = useState(0);
   const [openLever, setOpenLever] = useState<number | null>(null);
   const [activeZone, setActiveZone] = useState(1);
-  const navigate = useNavigate();
   const layer = LAYERS[activeLayer];
 
   useEffect(() => {
@@ -423,18 +422,6 @@ function PhilosophyPage() {
     observer.observe(reversalPulseRef.current);
     return () => observer.disconnect();
   }, [hasMounted, prefersReducedMotion]);
-
-  const tryLever = (lever: (typeof LEVERS)[number]) => {
-    try {
-      sessionStorage.setItem(
-        "sunya_prefill",
-        `I want to work on the lever of ${lever.t}. ${lever.what}\n\nWhere should I start?`,
-      );
-    } catch {
-      // Ignore storage failures and continue navigation.
-    }
-    navigate({ to: "/sunya-ai" });
-  };
 
   return (
     <div className="min-h-screen bg-[#0a1628] text-white">
@@ -941,12 +928,6 @@ most subtle. Each one prepares the ground for the next.`}
                             >
                               See all practices <ArrowRight className="h-4 w-4" />
                             </Link>
-                            <button
-                              onClick={() => tryLever(l)}
-                              className="mt-3 inline-flex items-center gap-2 text-sm text-[#7ec8e3] transition hover:text-white"
-                            >
-                              Work on this with Sunya AI <ArrowRight className="h-4 w-4" />
-                            </button>
                           </div>
                         )}
                       </div>
@@ -1073,17 +1054,24 @@ addressed — would most rapidly improve the other. Start there.`}
           <h2 className="display text-4xl text-white sm:text-5xl">
             Not sure which zone you're in?
           </h2>
-          <p className="mx-auto mt-6 max-w-xl whitespace-pre-line text-[#b8d4e8]">
-            {`Describe what you're actually experiencing. Sunya AI will identify where your
-system is contracted, which zone you're in, and the single lever that matters
-most for you right now.`}
+          <p className="mx-auto mt-6 max-w-xl text-[#b8d4e8]">
+            Start from what you&apos;re experiencing, or follow the order of operations for where
+            to begin.
           </p>
-          <Link
-            to="/sunya-ai"
-            className="glow-btn mt-10 inline-flex items-center gap-2 rounded-full px-8 py-4 text-sm font-medium"
-          >
-            Try Sunya AI <ArrowRight className="h-4 w-4" />
-          </Link>
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+            <Link
+              to="/problems"
+              className="glow-btn inline-flex items-center gap-2 rounded-full px-8 py-4 text-sm font-medium"
+            >
+              Find what helps <ArrowRight className="h-4 w-4" />
+            </Link>
+            <Link
+              to="/practices/where-to-begin"
+              className="inline-flex items-center gap-2 text-sm text-[#7ec8e3] transition hover:text-white"
+            >
+              Where to begin <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
         </div>
       </section>
 

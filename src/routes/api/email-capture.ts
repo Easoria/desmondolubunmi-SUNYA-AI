@@ -9,7 +9,6 @@ const VARIANTS = [
   "home",
   "writing",
   "vision",
-  "sunya-ai",
   "problem",
   "problems",
 ] as const;

@@ -4,11 +4,6 @@ import { ArrowLeft, Loader2, Download, Trash2 } from "lucide-react";
 import { useAuth } from "@/hooks/use-auth";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
-import { UpgradeModal } from "@/components/site/UpgradeModal";
-import { useSubscription } from "@/hooks/useSubscription";
-import { createPortalSession } from "@/utils/payments.functions";
-import { getStripeEnvironment } from "@/lib/stripe";
-
 
 export const Route = createFileRoute("/account")({
   component: AccountPage,
@@ -20,7 +15,6 @@ export const Route = createFileRoute("/account")({
 type Profile = {
   email: string | null;
   first_name: string | null;
-  subscription_status: string;
   notifications_enabled: boolean;
   created_at: string;
 };
@@ -31,26 +25,6 @@ function AccountPage() {
   const [profile, setProfile] = useState<Profile | null>(null);
   const [savingNotif, setSavingNotif] = useState(false);
   const [resetSent, setResetSent] = useState(false);
-  const [showUpgrade, setShowUpgrade] = useState(false);
-  const [portalLoading, setPortalLoading] = useState(false);
-  const { isActive } = useSubscription();
-
-  async function openPortal() {
-    setPortalLoading(true);
-    try {
-      const url = await createPortalSession({
-        data: {
-          environment: getStripeEnvironment(),
-          returnUrl: window.location.href,
-        },
-      });
-      if (url) window.open(url, "_blank");
-    } catch (e) {
-      console.error(e);
-    } finally {
-      setPortalLoading(false);
-    }
-  }
 
   useEffect(() => {
     if (!loading && !user) navigate({ to: "/login" });
@@ -62,7 +36,7 @@ function AccountPage() {
       const { supabase } = await import("@/integrations/supabase/client");
       const { data } = await supabase
         .from("user_profiles")
-        .select("email,first_name,subscription_status,notifications_enabled,created_at")
+        .select("email,first_name,notifications_enabled,created_at")
         .eq("id", user.id)
         .single();
       setProfile((data as Profile) ?? null);
@@ -74,10 +48,7 @@ function AccountPage() {
     setSavingNotif(true);
     const { supabase } = await import("@/integrations/supabase/client");
     const next = !profile.notifications_enabled;
-    await supabase
-      .from("user_profiles")
-      .update({ notifications_enabled: next })
-      .eq("id", user.id);
+    await supabase.from("user_profiles").update({ notifications_enabled: next }).eq("id", user.id);
     setProfile({ ...profile, notifications_enabled: next });
     setSavingNotif(false);
   }
@@ -93,15 +64,10 @@ function AccountPage() {
 
   async function exportData() {
     const { supabase } = await import("@/integrations/supabase/client");
-    const [{ data: sess }, { data: msgs }, { data: prof }] = await Promise.all([
-      supabase.from("sessions").select("*"),
-      supabase.from("messages").select("*"),
-      supabase.from("user_profiles").select("*"),
-    ]);
-    const blob = new Blob(
-      [JSON.stringify({ profile: prof, sessions: sess, messages: msgs }, null, 2)],
-      { type: "application/json" },
-    );
+    const { data: prof } = await supabase.from("user_profiles").select("*");
+    const blob = new Blob([JSON.stringify({ profile: prof }, null, 2)], {
+      type: "application/json",
+    });
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
@@ -114,13 +80,13 @@ function AccountPage() {
     if (!user) return;
     if (
       !confirm(
-        "Are you sure?\n\nThis will permanently delete your account and all session history. This cannot be undone.",
+        "Are you sure?\n\nThis will permanently delete your account and associated data. This cannot be undone.",
       )
     )
       return;
     const { supabase } = await import("@/integrations/supabase/client");
-    await supabase.from("sessions").delete().eq("user_id", user.id);
     await supabase.from("messages").delete().eq("user_id", user.id);
+    await supabase.from("sessions").delete().eq("user_id", user.id);
     await supabase.from("user_profiles").delete().eq("id", user.id);
     await signOut();
     navigate({ to: "/" });
@@ -134,9 +100,7 @@ function AccountPage() {
     );
   }
 
-  const isPaid = isActive || profile.subscription_status === "paid";
   const isEmailUser = user.app_metadata?.provider === "email";
-
 
   return (
     <div className="min-h-screen bg-[#0a1628] text-white">
@@ -169,29 +133,8 @@ function AccountPage() {
           </Section>
         )}
 
-        <Section title="Subscription">
-          <Row label="Plan" value={isPaid ? "Full Access — €19 / month" : "Free"} />
+        <Section title="Account">
           <Row label="Member since" value={new Date(profile.created_at).toLocaleDateString()} />
-          <div className="mt-4">
-            {isPaid ? (
-              <button
-                onClick={openPortal}
-                disabled={portalLoading}
-                className="inline-flex items-center gap-2 rounded-full border border-white/15 px-4 py-2.5 text-sm text-white hover:border-[#7ec8e3]/40 disabled:opacity-60"
-              >
-                {portalLoading && <Loader2 className="h-3.5 w-3.5 animate-spin" />}
-                Manage subscription
-              </button>
-
-            ) : (
-              <button
-                onClick={() => setShowUpgrade(true)}
-                className="glow-btn inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium"
-              >
-                Upgrade to Full Access
-              </button>
-            )}
-          </div>
         </Section>
 
         <Section title="Notifications">
@@ -249,7 +192,6 @@ function AccountPage() {
         </Section>
       </main>
       <Footer />
-      <UpgradeModal open={showUpgrade} onClose={() => setShowUpgrade(false)} />
     </div>
   );
 }

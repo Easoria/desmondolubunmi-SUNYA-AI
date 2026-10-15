@@ -208,13 +208,13 @@ function JoinPage() {
                   <p>Desmond reads every one of these personally.</p>
                   <p>You'll hear back when the time is right.</p>
                   <p className="pt-2">
-                    In the meantime — if you haven't already,{" "}
-                    <Link to="/sunya-ai" className="text-white underline-offset-4 hover:underline">
-                      try Sunya AI
-                    </Link>{" "}
-                    and stay connected via the{" "}
+                    In the meantime — stay connected via the{" "}
                     <Link to="/vision" className="text-white underline-offset-4 hover:underline">
                       Vision page
+                    </Link>
+                    , or explore the{" "}
+                    <Link to="/framework" className="text-white underline-offset-4 hover:underline">
+                      Sunya framework
                     </Link>
                     .
                   </p>

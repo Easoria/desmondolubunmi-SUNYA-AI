@@ -8,12 +8,11 @@ export type EmailCaptureVariant =
   | "home"
   | "writing"
   | "vision"
-  | "sunya-ai"
   | "problem"
   | "problems";
 
 const COPY: Record<
-  Exclude<EmailCaptureVariant, "vision" | "sunya-ai">,
+  Exclude<EmailCaptureVariant, "vision">,
   { title: string; body: string; button: string }
 > = {
   framework: {
@@ -62,8 +61,7 @@ type Props = {
 
 export function EmailCapture({ variant, id, className = "" }: Props) {
   const source: EmailCaptureVariant = variant ?? "vision";
-  const copy =
-    source === "vision" || source === "sunya-ai" ? null : COPY[source];
+  const copy = source === "vision" ? null : COPY[source];
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
   const [done, setDone] = useState(false);
