@@ -25,6 +25,10 @@ const horizontalDividerStyle = {
     "linear-gradient(90deg, transparent, rgba(126,200,227,0.15), rgba(232,244,251,0.55), rgba(126,200,227,0.15), transparent)",
 } as const;
 
+/** Same outlined treatment as homepage CTAs — visual affordance only; the whole panel is the link. */
+const doorBtnClass =
+  "mt-6 inline-flex items-center justify-center rounded-full border border-white/45 bg-transparent px-8 py-3.5 text-sm font-medium tracking-wide text-white transition group-hover:border-white/80 group-hover:bg-white/10";
+
 function FrameworkHubPage() {
   return (
     <div className="flex min-h-[100dvh] flex-col bg-[#060d1c] text-white">
@@ -57,9 +61,7 @@ function FrameworkHubPage() {
               The root of human suffering, the seven layers of being, and the complete map of the
               human condition.
             </p>
-            <p className="mt-4 text-sm text-[#7ec8e3] transition group-hover:text-white">
-              Explore the philosophy →
-            </p>
+            <span className={`${doorBtnClass} mt-4`}>Explore the philosophy</span>
           </div>
         </Link>
 
@@ -86,9 +88,7 @@ function FrameworkHubPage() {
             <p className="mt-3 text-sm leading-relaxed text-[#b8d4e8]/90">
               Fifteen difficult states, and the practices that work on each.
             </p>
-            <p className="mt-4 text-sm text-[#7ec8e3] transition group-hover:text-white">
-              Find what helps →
-            </p>
+            <span className={`${doorBtnClass} mt-4`}>Find what helps</span>
           </div>
         </Link>
 
@@ -116,9 +116,7 @@ function FrameworkHubPage() {
               Twelve levers, arrived at from first principles. Every means by which a human being
               can transform their wellbeing.
             </p>
-            <p className="mt-4 text-sm text-[#7ec8e3] transition group-hover:text-white">
-              Explore the practices →
-            </p>
+            <span className={`${doorBtnClass} mt-4`}>Explore the practices</span>
           </div>
         </Link>
       </div>
@@ -145,9 +143,7 @@ function FrameworkHubPage() {
               The root of human suffering, the seven layers of being, and the complete map of the
               human condition.
             </p>
-            <p className="mt-6 text-sm text-[#7ec8e3] transition group-hover:text-white">
-              Explore the philosophy →
-            </p>
+            <span className={doorBtnClass}>Explore the philosophy</span>
           </div>
         </Link>
 
@@ -176,9 +172,7 @@ function FrameworkHubPage() {
             <p className="mt-6 text-base leading-relaxed text-[#b8d4e8]">
               Fifteen difficult states, and the practices that work on each.
             </p>
-            <p className="mt-6 text-sm text-[#7ec8e3] transition group-hover:text-white">
-              Find what helps →
-            </p>
+            <span className={doorBtnClass}>Find what helps</span>
           </div>
         </Link>
 
@@ -208,9 +202,7 @@ function FrameworkHubPage() {
               Twelve levers, arrived at from first principles. Every means by which a human being
               can transform their wellbeing.
             </p>
-            <p className="mt-6 text-sm text-[#7ec8e3] transition group-hover:text-white">
-              Explore the practices →
-            </p>
+            <span className={doorBtnClass}>Explore the practices</span>
           </div>
         </Link>
       </div>
