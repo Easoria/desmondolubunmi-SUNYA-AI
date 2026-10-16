@@ -349,9 +349,9 @@ function Reframe() {
           with the intelligence of life.
         </p>
 
-        <div className="mt-10 text-center">
-          <Link to="/framework" className={sectionCtaClass}>
-            Explore the Sunya framework →
+        <div className="mt-10 flex justify-center">
+          <Link to="/framework" className={heroGatheringsBtn}>
+            Explore the Sunya framework
           </Link>
         </div>
       </div>
