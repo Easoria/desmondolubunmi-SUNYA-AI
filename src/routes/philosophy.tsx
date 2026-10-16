@@ -14,9 +14,9 @@ export const Route = createFileRoute("/philosophy")({
   component: PhilosophyPage,
   head: () => ({
     ...buildSeoHead({
-      title: "Sunya Philosophy — Why Humans Suffer and How Freedom Works | Sunya",
+      title: "The Sunya Philosophy — Why We Suffer and How It Ends",
       description:
-        "Human suffering is a single structure built in a fixed order. The five links, the seven layers of being, and the twelve levers that undo it. Built on first principles, belonging to no tradition.",
+        "Human suffering traced to a single root. Unconsciousness, identification, and the endless ways suffering follows — with the seven layers of being and the twelve levers that undo it.",
       path: "/philosophy",
       ogType: "website",
       imageKind: "core",
@@ -29,7 +29,7 @@ export const Route = createFileRoute("/philosophy")({
           "@type": "WebPage",
           name: "The Sunya Philosophy",
           description:
-            "Human suffering is a single structure built in a fixed order. The five links, the seven layers of being, and the twelve levers that undo it.",
+            "Human suffering traced to a single root. Unconsciousness, identification, and the endless ways suffering follows — with the seven layers of being and the twelve levers that undo it.",
           url: "https://www.desmondolubunmi.com/philosophy",
           isPartOf: {
             "@type": "WebSite",
@@ -42,118 +42,71 @@ export const Route = createFileRoute("/philosophy")({
   }),
 });
 
-type ChainLink = {
-  n: "01" | "02" | "03" | "04" | "05";
-  name: string;
-  essence: string;
-  body: string;
-};
-
-const CHAIN_LINKS: ChainLink[] = [
+const ROOT_CARDS = [
   {
     n: "01",
     name: "Unconsciousness",
-    essence: "You are born facing the wrong way.",
-    body: `No child arrives knowing itself as the boundless life. Each of us begins
-already asleep to what we are.
-
-And there is a reason this is the default, written into the design of a living
-creature. The senses face outward. The eyes look out, the ears turn to the
-world, the mind reaches toward what surrounds it. This is no accident — an
-organism must attend to the world to survive in it.
-
-So from the first moment, attention streams outward, and almost never turns
-back toward its own source. The world is vivid, loud, and insistent; the silent
-awareness behind it makes no sound at all. And so the louder thing eclipses the
-subtler one.
-
-We come to know everything except the one who knows.
-
-This is not a personal failing. It is the default condition of life itself.`,
+    line: "We are born with our senses turned outward for survival — unaware of the source of life within.",
   },
   {
     n: "02",
-    name: "Identification & the Separate Self",
-    essence: "Not knowing what you are, you become what is nearest.",
-    body: `You cannot live with no sense of being anyone at all. So not knowing your true
-nature, you reach for the nearest thing — the body. Then the mind, the
-memories, the story. Then possessions, work, name, nation, belief. Layer by
-layer, a self is assembled out of everything claimed as "me" and "mine."
-
-These are not two things. The separate self is nothing but a bundle of
-identifications. Strip them away and no separate self remains underneath. It
-was never a thing in the first place.
-
-And now the ground turns personal. The body's guaranteed death becomes your
-guaranteed death. Its fragility becomes your fragility. What was boundless and
-secure now experiences itself as small, separate, and permanently under threat.
-
-This is the fall from being into surviving.`,
+    name: "Identification",
+    line: "So we take ourselves to be the nearest things: the body, our thoughts, what we accumulate.",
   },
   {
     n: "03",
+    name: "Suffering",
+    line: "Identification with form makes life feel limited, and leads to suffering in endless ways.",
+  },
+] as const;
+
+const SUFFERING_BRANCHES = [
+  {
+    name: "Time",
+    line: "we ruminate over the past and worry about the future, never in the now",
+  },
+  {
+    name: "Linearity",
+    line: "identification with matter confines us to the space-time continuum, and to the movement of cause and effect. We are forced to move in a linear direction through time, towards a certain end.",
+  },
+  {
+    name: "Mortality",
+    line: "we experience ourselves as finite, time-bound creatures living under the fear of death",
+  },
+  {
+    name: "Division",
+    line: "we feel divided from others, and from that division comes conflict and fear",
+  },
+  {
     name: "Resistance",
-    essence: "A single, silent no.",
-    body: `A separate self, surrounded by everything that is not itself, has one automatic
-response to the world: refusal.
-
-It has two faces — pushing away what it does not want, and clutching at what it
-fears to lose — but they are one movement. Both say the same thing: this, as it
-is, is not acceptable.
-
-And this is not an occasional reaction. It is the standing condition. Beneath
-an ordinary day runs an almost ceaseless bracing against the flow of life as it
-actually arrives. We resist the situation. We resist what arises within us. And
-beneath both, most quietly, we resist the present moment itself.
-
-Here is the heart of it: pain comes from life. It arrives on its own.
-Suffering is the no we add to it.`,
+    line: "we resist things that are outside the boundaries of our limited identities. We resist the present moment. We resist what is. And to resist what is, is to be in conflict with life itself — because life only exists in the present moment.",
   },
   {
-    n: "04",
-    name: "Energetic Contraction",
-    essence: "The refusal becomes physical.",
-    body: `The no does not stay in the mind. When the self braces against life, it braces
-with its whole being.
-
-Between body and mind there is a flow of living energy — the vital force that
-makes a body alive rather than inert. The inner refusal and the energetic
-contraction are not two separate things. They are one movement seen from two
-sides. What the mind experiences as no, the energy body performs as tightening:
-channels narrowing, the open system clenching shut like a hand closing into a
-fist.
-
-And the body follows. The nervous system locks into a low, constant state of
-threat — braced, guarded, unable to settle even when nothing is actually wrong.
-You know this directly. The tight chest. The knotted stomach. The shallow
-breath. The shoulders that will not drop.
-
-Separation is no longer merely believed. It is lived in the flesh. And a
-contracted system is a closed one — sealed off from the open exchange it was
-built for.`,
+    name: "Contraction",
+    line: "out of fear and feeling threatened, we contract physically and hold tension. And contraction inhibits the flow of life, which leaves us exhausted, without vibrance and without aliveness.",
   },
   {
-    n: "05",
-    name: "Chronic Insufficiency",
-    essence: "A closed system runs low.",
-    body: `Sealed off, the system can no longer be replenished. And a system running low
-feels one very particular thing — emptiness. A quiet, persistent sense that
-something is missing. That this is not enough. That I am not enough.
-
-But nothing has gone missing from the world. What is missing is your own
-boundless nature — not because you ever stopped being it, but because you
-forgot it and contracted into something small. The hollow inside you is
-precisely the size and shape of what you have forgotten yourself to be.
-
-Not knowing this, you look in the one direction that can never work: outward.
-More money, more status, more achievement, more approval, more of anything at
-all. Each acquisition brings brief relief — the ache quiets for a moment — and
-then returns, often deeper than before.
-
-The emptiness is infinite, because it is the absence of your own infinity. And
-nothing finite, in any amount, can fill an infinite emptiness.`,
+    name: "Craving",
+    line: "we chase sense gratification endlessly",
   },
-];
+  {
+    name: "Insufficiency",
+    line: "we feel permanently insufficient, because we have identified ourselves with limited things",
+  },
+  {
+    name: "Seeking",
+    line: "we seek salvation in external things, or in the future, rather than in the presence always here",
+  },
+] as const;
+
+const JUICE_OF_LIFE_PARAGRAPHS = [
+  "Consciousness is there. Life itself is there. And from that dimension, if you stay in that dimension while experiencing the world, there is freedom, relief, insight, clarity — the ability to deal with the world, to take the right steps for the future, to have a calm mind, to live without conflict.",
+  "But the entire world operates on the movement of past, present and future. So the moment consciousness forgets its true nature and takes something within the world to be itself, it becomes modified and subjected to the ways of the world. You feel temporary. You feel limited. You feel confined. You feel small. You feel insufficient.",
+  "Consequently, you are always seeking to enjoy the senses in order to feel that life is meaningful — trying to squeeze every bit of joy out of them in order to feel some aliveness, some pleasure, some novelty. It is like licking the peel of the fruit instead of entering into the juice within. The juice is life itself, which we have forgotten that we are, and are now seeking happiness through the senses and the mind.",
+  "This is what we see in the world today. People become baffled. People become confused. People use drugs, people overdose, people commit crimes. All of it comes out of this need, this feeling of insufficiency — and from being bound in the movement and flow of this world of past, present and future, of action and reaction, from birth to death, stuck in the movement of time.",
+  "That is why consciousness must withdraw itself from being identified with the body, the mind and the senses. It must become aware of its own nature. It must rest in its own nature.",
+  "And only then can it live in a dimension that is timeless, free, infinite and formless — unconditioned, blissful, peaceful, without conflict and without duality. Always here and now. Absolutely real and true.",
+] as const;
 
 const LAYERS = [
   { n: 0, t: "Source", sub: "Pure Consciousness", color: "#fff8e0", size: 80, body: "The absolute core. The unchanging, silent observer. It has no form, no past, and no resistance. It simply is. This is what you truly are beneath everything else — Life itself." },
@@ -303,24 +256,8 @@ const ZONES: Zone[] = [
   },
 ];
 
-const GROUND_PARAGRAPHS = [
-  `To be embodied is to live under a standing pressure that never fully switches off.`,
-  `A body is not a solid, finished object. It is an ongoing process that must
-continuously rebuild and hold itself together, moment by moment, just to keep
-from falling apart. To do that it needs constant input — food, water, rest,
-shelter, warmth. And when those needs go unmet, the body has only one language
-to insist on them: pain.`,
-  `Yet even when every need is met perfectly, the body still wears down. It remains
-open to illness, to injury, to the slow erosion of ageing. And at the end,
-without a single exception, the vessel fails. Death is not a risk the body runs;
-it is a certainty built into having a body at all.`,
-  `This is the biological tax: the unavoidable cost of being a living thing.`,
-  `But notice carefully — this is not yet suffering. By itself it is simply the
-bare fact of embodiment, the neutral ground. A creature can feel hunger, pain,
-even fear, without the deep and particular anguish we are tracing here.`,
-  `The tax is only the stage of pressure on which that anguish will be built. What
-turns plain physical pressure into human suffering is what happens next.`,
-];
+const GROUND_BODY =
+  "The body has its own limitations and constant demands — food, shelter, sleep. It is also subject to illness and aging. This is the constant underlying pressure of the physical body. We are less able to meet the demands of life when we are unconscious.";
 
 function ZonePanel({ zone }: { zone: Zone }) {
   return (
@@ -371,8 +308,6 @@ function ZonePanel({ zone }: { zone: Zone }) {
 function PhilosophyPage() {
   const [hasMounted, setHasMounted] = useState(false);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
-  const [revealedChain, setRevealedChain] = useState<number[]>([]);
-  const chainRefs = useRef<Array<HTMLDivElement | null>>([]);
   const [reversalPulse, setReversalPulse] = useState(false);
   const reversalPulseRef = useRef<HTMLParagraphElement | null>(null);
   const [activeLayer, setActiveLayer] = useState(0);
@@ -389,23 +324,6 @@ function PhilosophyPage() {
     media.addEventListener("change", sync);
     return () => media.removeEventListener("change", sync);
   }, []);
-
-  useEffect(() => {
-    if (!hasMounted || prefersReducedMotion || typeof window === "undefined") return;
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          const index = Number(entry.target.getAttribute("data-chain-index"));
-          if (Number.isNaN(index)) return;
-          setRevealedChain((prev) => (prev.includes(index) ? prev : [...prev, index]));
-        });
-      },
-      { threshold: 0.2, rootMargin: "0px 0px -80px 0px" },
-    );
-    chainRefs.current.forEach((node) => node && observer.observe(node));
-    return () => observer.disconnect();
-  }, [hasMounted, prefersReducedMotion]);
 
   useEffect(() => {
     if (!hasMounted || prefersReducedMotion || typeof window === "undefined" || !reversalPulseRef.current)
@@ -427,16 +345,6 @@ function PhilosophyPage() {
     <div className="min-h-screen bg-[#0a1628] text-white">
       <style>
         {`
-          @keyframes chain-flow {
-            0% { transform: translate(-50%, -120%); opacity: 0; }
-            20% { opacity: 0.95; }
-            100% { transform: translate(-50%, 240%); opacity: 0; }
-          }
-          @keyframes chain-dissolve {
-            0% { transform: translateY(0) scale(1); opacity: 0; }
-            20% { opacity: 0.6; }
-            100% { transform: translateY(-24px) scale(0.7); opacity: 0; }
-          }
           @keyframes reversal-flow {
             0% { transform: translate(-50%, 220%); opacity: 0; }
             20% { opacity: 0.95; }
@@ -447,18 +355,6 @@ function PhilosophyPage() {
             40% { box-shadow: 0 0 0 14px rgba(126, 200, 227, 0.32); }
             100% { box-shadow: 0 0 0 34px rgba(126, 200, 227, 0); }
           }
-          .chain-card summary {
-            list-style: none;
-          }
-          .chain-card summary::-webkit-details-marker {
-            display: none;
-          }
-          .chain-connector-flow {
-            animation: chain-flow 3s ease-in-out infinite;
-          }
-          .chain-dissolve-dot {
-            animation: chain-dissolve 3.6s ease-out infinite;
-          }
           .reversal-connector-flow {
             animation: reversal-flow 3s ease-in-out infinite;
           }
@@ -466,8 +362,6 @@ function PhilosophyPage() {
             animation: release-pulse 1.1s ease-out 1;
           }
           @media (prefers-reduced-motion: reduce) {
-            .chain-connector-flow,
-            .chain-dissolve-dot,
             .reversal-connector-flow,
             .reversal-release-once {
               animation: none !important;
@@ -496,189 +390,103 @@ function PhilosophyPage() {
         </div>
       </section>
 
-      {/* The Ground */}
+      {/* Entropy */}
       <section className="relative overflow-hidden bg-[#0a1628] py-32">
         <div className="relative z-10 mx-auto max-w-3xl px-6">
           <div className="text-center">
-            <div className="label-eyebrow">THE GROUND</div>
-            <h2 className="display mt-6 text-4xl text-white sm:text-5xl">
-              Before suffering, there is only pressure.
-            </h2>
+            <h2 className="display text-4xl text-white sm:text-5xl">Entropy</h2>
           </div>
           <div className="mx-auto mt-12 h-px w-24 bg-gradient-to-r from-transparent via-[#7ec8e3]/40 to-transparent" />
-          <div className="mt-12 space-y-6 text-[15px] leading-loose text-[#b8d4e8] sm:text-base">
-            {GROUND_PARAGRAPHS.map((paragraph) => (
-              <p key={paragraph} className="whitespace-pre-line">
-                {paragraph}
-              </p>
-            ))}
+          <div className="mt-12 text-[15px] leading-loose text-[#b8d4e8] sm:text-base">
+            <p>{GROUND_BODY}</p>
           </div>
           <div className="mx-auto mt-16 h-px w-24 bg-gradient-to-r from-transparent via-[#7ec8e3]/40 to-transparent" />
         </div>
       </section>
 
-      {/* The Chain */}
+      {/* Why we suffer — widening trunk + branch canopy grid */}
       <section className="relative overflow-hidden bg-[#060d1c] py-32">
         <Starfield density={0.3} />
-        <div className="relative z-10 mx-auto max-w-6xl px-6">
+        <div className="relative z-10 mx-auto max-w-5xl px-6">
           <div className="text-center">
-            <div className="label-eyebrow">THE CHAIN</div>
-            <h2 className="display mt-6 text-4xl text-white sm:text-5xl md:text-6xl">
-              Five links. One root.
-            </h2>
-          </div>
-          <div className="mx-auto mt-10 max-w-3xl space-y-5 text-center text-[15px] leading-relaxed text-[#b8d4e8] sm:text-base">
-            <p className="whitespace-pre-line">
-              {`Human suffering is not a collection of separate problems. It is a single
-structure, built in a fixed order, where each link produces the next.`}
-            </p>
-            <p className="whitespace-pre-line">
-              {`Read it downward. Each one follows from the one above with a hard and
-simple logic.`}
-            </p>
+            <h2 className="display text-4xl text-white sm:text-5xl md:text-6xl">Why we suffer</h2>
           </div>
 
-          <div className="mx-auto mt-14 max-w-[760px]">
-            {CHAIN_LINKS.map((link, index) => {
-              const widthClass = [
-                "w-full",
-                "w-[98%] sm:w-[94%]",
-                "w-[96%] sm:w-[88%]",
-                "w-[94%] sm:w-[82%]",
-                "w-[92%] sm:w-[76%]",
-              ][index];
-              const edgeClass = [
-                "border-l-[#7ec8e3]/45",
-                "border-l-[#7ec8e3]/52",
-                "border-l-[#7ec8e3]/60",
-                "border-l-[#7ec8e3]/70",
-                "border-l-[#e8f4fb]/80",
-              ][index];
-              const cardSpacingClass = ["mt-0", "mt-8", "mt-7", "mt-6", "mt-5"][index];
-              const cardPaddingClass = [
-                "px-5 py-6 sm:px-8 sm:py-8",
-                "px-5 py-6 sm:px-8 sm:py-7",
-                "px-5 py-5 sm:px-8 sm:py-6",
-                "px-5 py-5 sm:px-8 sm:py-6",
-                "px-5 py-4 sm:px-8 sm:py-5",
-              ][index];
-              const bodyPaddingClass = [
-                "pt-5 sm:pt-6",
-                "pt-4 sm:pt-5",
-                "pt-4 sm:pt-5",
-                "pt-4 sm:pt-5",
-                "pt-3 sm:pt-4",
-              ][index];
-              const shouldAnimate = hasMounted && !prefersReducedMotion;
-              const visible = !shouldAnimate || revealedChain.includes(index);
+          <div className="relative mx-auto mt-14 pb-16">
+            {/* Trunk line — fades before the canopy grid */}
+            <div
+              className="pointer-events-none absolute left-1/2 top-8 h-[min(420px,55%)] w-px -translate-x-1/2"
+              aria-hidden
+              style={{
+                background:
+                  "linear-gradient(180deg, rgba(126,200,227,0.55) 0%, rgba(126,200,227,0.32) 62%, rgba(126,200,227,0) 100%)",
+              }}
+            />
 
-              return (
-                <div
-                  key={link.n}
-                  ref={(node) => {
-                    chainRefs.current[index] = node;
-                  }}
-                  data-chain-index={index}
-                  className={`relative mx-auto ${widthClass} ${cardSpacingClass} transform-gpu transition-all duration-700 ease-out ${
-                    visible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
-                  }`}
-                  style={{
-                    transitionDelay: shouldAnimate ? `${index * 120}ms` : undefined,
-                  }}
-                >
-                  <details
-                    className={`chain-card glass-card group relative overflow-hidden border-l-2 ${edgeClass}`}
-                    open={index === 0}
+            <div className="relative z-10 space-y-5">
+              {ROOT_CARDS.map((card, index) => {
+                const widthClass = [
+                  "w-[72%] sm:w-[55%]",
+                  "w-[84%] sm:w-[70%]",
+                  "w-[96%] sm:w-[88%]",
+                ][index];
+                const tint = 0.62 + index * 0.06;
+                const glow = 0.14 + index * 0.03;
+
+                return (
+                  <div
+                    key={card.n}
+                    className={`glass-card relative mx-auto overflow-hidden border-l-2 border-l-[#e8f4fb]/80 p-5 sm:p-6 md:p-7 ${widthClass}`}
                     style={{
-                      background: `linear-gradient(160deg, rgba(255,255,255,${0.09 - index * 0.01}), rgba(10,22,40,${0.42 + index * 0.08}))`,
-                      boxShadow: `0 0 ${48 - index * 6}px rgba(126,200,227,${0.24 - index * 0.02})`,
+                      background: `linear-gradient(160deg, rgba(255,255,255,0.05), rgba(10,22,40,${tint}))`,
+                      boxShadow: `0 0 ${22 + index * 6}px rgba(126,200,227,${glow})`,
                     }}
                   >
-                    <div className="pointer-events-none absolute left-4 top-1 font-display text-6xl text-white/10 sm:text-7xl">
-                      {link.n}
+                    <div className="pointer-events-none absolute left-3 top-1 font-display text-5xl text-white/10 sm:left-4 sm:text-6xl">
+                      {card.n}
                     </div>
-                    <summary className={`${cardPaddingClass} relative cursor-pointer`}>
-                      <div className="flex items-start gap-4">
-                        <div className="min-w-0 flex-1 pl-10 sm:pl-12">
-                          <h3 className="display text-3xl text-white sm:text-4xl">{link.name}</h3>
-                          <p className="display-italic mt-2 text-lg text-[#b8d4e8]">{link.essence}</p>
-                        </div>
-                        <ChevronDown className="mt-1 h-4 w-4 shrink-0 text-[#7ec8e3] transition-transform group-open:rotate-180" />
-                      </div>
-                    </summary>
-                    <div className="grid [grid-template-rows:0fr] overflow-hidden transition-all duration-500 ease-out group-open:[grid-template-rows:1fr]">
-                      <div className="min-h-0 overflow-hidden">
-                        <div className={`px-5 pb-6 sm:px-8 sm:pb-8 ${bodyPaddingClass}`}>
-                          <p className="whitespace-pre-line text-[15px] leading-relaxed text-[#b8d4e8]">
-                            {link.body}
-                          </p>
-                        </div>
-                      </div>
+                    <div className="relative pl-10 sm:pl-12">
+                      <h3 className="display text-2xl text-white sm:text-3xl">{card.name}</h3>
+                      <p className="mt-3 text-[15px] leading-relaxed text-[#b8d4e8] sm:text-base">
+                        {card.line}
+                      </p>
                     </div>
-                  </details>
-
-                  {index < CHAIN_LINKS.length - 1 && (
-                    <div
-                      className={`relative mx-auto mt-3 sm:mt-4 ${
-                        ["w-3 sm:w-4", "w-2.5 sm:w-3", "w-2 sm:w-2.5", "w-1.5 sm:w-2"][index]
-                      }`}
-                      style={{ height: [56, 50, 44, 38][index] }}
-                    >
-                      <div
-                        className="absolute inset-0 rounded-full"
-                        style={{
-                          background:
-                            index === 0
-                              ? "linear-gradient(to bottom, rgba(126,200,227,0.18), rgba(126,200,227,0.45), rgba(126,200,227,0.08))"
-                              : index === 1
-                                ? "linear-gradient(to bottom, rgba(126,200,227,0.22), rgba(126,200,227,0.52), rgba(126,200,227,0.08))"
-                                : index === 2
-                                  ? "linear-gradient(to bottom, rgba(126,200,227,0.25), rgba(126,200,227,0.62), rgba(126,200,227,0.12))"
-                                  : "linear-gradient(to bottom, rgba(232,244,251,0.28), rgba(232,244,251,0.78), rgba(232,244,251,0.12))",
-                        }}
-                      />
-                      {!prefersReducedMotion && (
-                        <span className="chain-connector-flow absolute left-1/2 top-0 h-10 w-1 rounded-full bg-gradient-to-b from-white via-[#7ec8e3] to-transparent" />
-                      )}
-                    </div>
-                  )}
-                </div>
-              );
-            })}
-
-            <div className="relative mx-auto mt-4 h-16 w-2">
-              <div className="absolute inset-x-0 top-0 h-12 rounded-full bg-gradient-to-b from-[#e8f4fb]/70 via-[#e8f4fb]/20 to-transparent" />
-              {prefersReducedMotion ? null : (
-                <div className="absolute inset-0">
-                  {[0, 1, 2, 3, 4].map((particle) => (
-                    <span
-                      key={particle}
-                      className="chain-dissolve-dot absolute left-1/2 top-8 h-1.5 w-1.5 rounded-full bg-[#e8f4fb]/60"
-                      style={{
-                        marginLeft: `${(particle - 2) * 6}px`,
-                        animationDelay: `${particle * 0.28}s`,
-                      }}
-                    />
-                  ))}
-                </div>
-              )}
+                  </div>
+                );
+              })}
             </div>
+
+            {/* Canopy — all nine branches visible as a set, no implied order */}
+            <div className="relative z-10 mt-14 grid grid-cols-1 gap-x-8 gap-y-10 sm:mt-16 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-10 lg:gap-y-12">
+              {SUFFERING_BRANCHES.map((branch) => (
+                <div key={branch.name}>
+                  <h3 className="display text-lg tracking-wide text-[#7ec8e3] sm:text-xl">
+                    {branch.name}
+                  </h3>
+                  <p className="mt-2 text-[15px] leading-relaxed text-[#b8d4e8] sm:text-base">
+                    {branch.line}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <p className="relative z-10 mt-12 text-center text-sm tracking-wide text-[#b8d4e8]/55 sm:mt-14">
+              and on, and on
+            </p>
           </div>
+        </div>
+      </section>
 
-          <div className="mx-auto mt-16 max-w-4xl space-y-8 text-center">
-            <p className="display whitespace-pre-line text-3xl leading-tight text-white sm:text-4xl">
-              {`Trace it backward and every human suffering —
-from the most private ache to the largest crises of our species —
-grows from a single root.
-
-The forgetting of what we are.`}
-            </p>
-            <p className="mx-auto max-w-3xl whitespace-pre-line text-[15px] leading-relaxed text-[#b8d4e8]">
-              {`When billions of contracted selves reach outward at once, each trying to fill
-an infinite void with finite things, it becomes an entire civilisation built on
-extraction. Our great outer crises are not separate from the inner void.
-They are that void, written large across the world.`}
-            </p>
+      {/* Enjoying the Juice of Life */}
+      <section className="relative bg-[#0a1628] py-28 sm:py-32">
+        <div className="relative z-10 mx-auto max-w-[680px] px-6">
+          <h2 className="display text-center text-3xl text-white sm:text-4xl md:text-5xl">
+            Enjoying the Juice of Life
+          </h2>
+          <div className="mt-12 space-y-6 text-[15px] leading-[1.85] text-[#b8d4e8] sm:text-base sm:leading-[1.9]">
+            {JUICE_OF_LIFE_PARAGRAPHS.map((paragraph) => (
+              <p key={paragraph.slice(0, 48)}>{paragraph}</p>
+            ))}
           </div>
         </div>
       </section>
