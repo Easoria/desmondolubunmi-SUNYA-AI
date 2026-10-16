@@ -5,7 +5,6 @@ import { ChevronDown } from "lucide-react";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { EmailCapture } from "@/components/site/EmailCapture";
-import { SacredGeometry } from "@/components/site/Decor";
 import { fetchNextUpcomingGatheringClient } from "@/lib/gatherings-browser";
 import {
   formatGatheringCardWhen,
@@ -192,10 +191,10 @@ function WhyWeSufferBranches({ reduceMotion }: { reduceMotion: boolean }) {
 
   useEffect(() => {
     if (!cycling || paused) return;
-    // 4s hold + ~600ms crossfade before the next advance
+    // 7s hold + ~600ms crossfade before the next advance
     const id = window.setInterval(() => {
       setActive((i) => (i + 1) % WHY_BRANCH_LINES.length);
-    }, 4600);
+    }, 7600);
     return () => window.clearInterval(id);
   }, [cycling, paused]);
 
@@ -259,8 +258,16 @@ function Reframe() {
   }, []);
 
   return (
-    <section className="relative overflow-hidden bg-[#0a1628] pb-32 pt-44 md:pt-52">
-      <SacredGeometry className="right-[-200px] top-1/4 h-[800px] w-[800px]" />
+    <section className="relative overflow-hidden bg-[#060d1c] pb-32 pt-44 md:pt-52">
+      <div
+        className="pointer-events-none absolute left-1/2 top-1/2 h-[800px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full"
+        style={{
+          background: "radial-gradient(circle, #7ec8e3 0%, #1b4f8a 25%, transparent 60%)",
+          filter: "blur(20px)",
+          opacity: 0.4,
+          animation: "pulse-glow 6s ease-in-out infinite",
+        }}
+      />
       <div className="relative z-10 mx-auto max-w-3xl px-6">
         <div className="text-center">
           <h2 className="display text-4xl text-white sm:text-5xl">Why we suffer</h2>
@@ -450,37 +457,6 @@ function NextGathering() {
   );
 }
 
-function FinalCTA() {
-  return (
-    <section className="relative flex min-h-[80vh] items-center justify-center overflow-hidden bg-[#060d1c] py-32">
-      <div
-        className="absolute left-1/2 top-1/2 h-[800px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full"
-        style={{
-          background: "radial-gradient(circle, #7ec8e3 0%, #1b4f8a 25%, transparent 60%)",
-          filter: "blur(20px)",
-          opacity: 0.4,
-          animation: "pulse-glow 6s ease-in-out infinite",
-        }}
-      />
-      <div className="relative z-10 mx-auto max-w-3xl px-6 text-center">
-        <h2 className="display text-5xl text-white sm:text-7xl md:text-8xl">The search ends here.</h2>
-        <p className="mx-auto mt-8 max-w-xl text-lg text-[#b8d4e8]">
-          Not because you've found a belief to hold onto.{" "}
-          <span className="text-white">Because you've found the mechanism underneath all of them.</span>
-        </p>
-        <Link to="/framework" className={`mt-12 ${sectionCtaClass}`}>
-          Explore the Sunya framework →
-        </Link>
-        <p className="mt-10 text-sm text-[#b8d4e8]/75">
-          <Link to="/timeless-solution" className={sectionCtaClass}>
-            Read the complete framework — The Timeless Solution →
-          </Link>
-        </p>
-      </div>
-    </section>
-  );
-}
-
 export function IndexPage() {
   return (
     <div className="min-h-screen bg-[#0a1628] text-white">
@@ -495,7 +471,6 @@ export function IndexPage() {
           </div>
         </section>
         <NextGathering />
-        <FinalCTA />
       </main>
       <Footer />
     </div>
