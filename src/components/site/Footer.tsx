@@ -64,7 +64,7 @@ export function Footer() {
               <FooterLink to="/about">About Desmond</FooterLink>
               <FooterLink to="/vision">Vision</FooterLink>
               <a
-                href="mailto:hello@desmondolubunmi.com"
+                href="mailto:sunyawellbeing@gmail.com"
                 className="transition hover:text-white"
               >
                 Contact
@@ -84,7 +84,7 @@ export function Footer() {
         <div className="mt-5 flex flex-col items-center justify-center gap-3 text-xs text-[#b8d4e8]/60 sm:flex-row sm:gap-6">
           <Link to="/privacy" className="hover:text-white">Privacy Policy</Link>
           <Link to="/terms" className="hover:text-white">Terms of Service</Link>
-          <a href="mailto:hello@desmondolubunmi.com" className="hover:text-white">hello@desmondolubunmi.com</a>
+          <a href="mailto:sunyawellbeing@gmail.com" className="hover:text-white">sunyawellbeing@gmail.com</a>
         </div>
         <div className="mt-4 text-center text-[10px] tracking-[0.3em] text-[#b8d4e8]/40">
           © 2026 DESMOND OLUBUNMI · BUILT ON TRUTH · POWERED BY SUNYA
