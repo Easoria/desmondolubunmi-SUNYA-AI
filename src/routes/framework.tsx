@@ -4,9 +4,9 @@ import { buildSeoHead } from "@/lib/seo";
 export const Route = createFileRoute("/framework")({
   head: () =>
     buildSeoHead({
-      title: "The Sunya Framework — Philosophy and Practice",
+      title: "The Sunya Framework — Philosophy, Practices, and Where to Start",
       description:
-        "The complete framework for human wellbeing. The philosophy explains why we suffer; the practices are what to do about it. 112 practices across twelve levers.",
+        "Three ways into the complete framework for human wellbeing: the philosophy of why we suffer, 112 practices across twelve levers, and a direct route from what you are struggling with to what helps.",
       path: "/framework",
       ogType: "website",
       imageKind: "core",
@@ -14,14 +14,30 @@ export const Route = createFileRoute("/framework")({
   component: FrameworkHubPage,
 });
 
+const verticalDividerStyle = {
+  background:
+    "linear-gradient(180deg, transparent 0%, rgba(126,200,227,0.12) 18%, rgba(232,244,251,0.65) 50%, rgba(126,200,227,0.12) 82%, transparent 100%)",
+  boxShadow: "0 0 24px 1px rgba(126,200,227,0.25)",
+} as const;
+
+const horizontalDividerStyle = {
+  background:
+    "linear-gradient(90deg, transparent, rgba(126,200,227,0.15), rgba(232,244,251,0.55), rgba(126,200,227,0.15), transparent)",
+} as const;
+
 function FrameworkHubPage() {
   return (
-    <div className="min-h-[100dvh] bg-[#060d1c] text-white">
-      {/* Mobile: stacked halves, both visible at 375px without scroll */}
-      <div className="flex min-h-[100dvh] flex-col lg:hidden">
+    <div className="flex min-h-[100dvh] flex-col bg-[#060d1c] text-white">
+      <div className="shrink-0 px-6 pb-4 pt-16 text-center sm:pt-20 lg:pb-2 lg:pt-16">
+        <h1 className="display text-2xl text-white sm:text-3xl">The Sunya Framework</h1>
+        <p className="mt-2 text-sm tracking-wide text-[#b8d4e8]/65">Three ways in.</p>
+      </div>
+
+      {/* Mobile: stacked panels — tall enough to read, not full-height */}
+      <div className="flex flex-col lg:hidden">
         <Link
           to="/philosophy"
-          className="group relative flex min-h-0 flex-1 cursor-pointer flex-col justify-center px-6 py-8"
+          className="group relative flex cursor-pointer flex-col justify-center px-6 py-10"
         >
           <div
             className="pointer-events-none absolute inset-0 opacity-40 transition group-hover:opacity-70"
@@ -34,12 +50,12 @@ function FrameworkHubPage() {
             <p className="text-[10px] uppercase tracking-[0.28em] text-[#7ec8e3]/80">
               The Philosophy
             </p>
-            <h1 className="display mt-2 text-2xl leading-tight text-white sm:text-3xl">
+            <h2 className="display mt-2 text-2xl leading-tight text-white sm:text-3xl">
               Why we suffer, and how it ends.
-            </h1>
+            </h2>
             <p className="mt-3 text-sm leading-relaxed text-[#b8d4e8]/90">
-              The five-link chain, the seven layers of being, and the complete map of the human
-              condition.
+              The root of human suffering, the seven layers of being, and the complete map of the
+              human condition.
             </p>
             <p className="mt-4 text-sm text-[#7ec8e3] transition group-hover:text-white">
               Explore the philosophy →
@@ -47,18 +63,40 @@ function FrameworkHubPage() {
           </div>
         </Link>
 
-        <div
-          className="relative h-px shrink-0"
-          style={{
-            background:
-              "linear-gradient(90deg, transparent, rgba(126,200,227,0.15), rgba(232,244,251,0.55), rgba(126,200,227,0.15), transparent)",
-          }}
-          aria-hidden
-        />
+        <div className="relative h-px shrink-0" style={horizontalDividerStyle} aria-hidden />
+
+        <Link
+          to="/problems"
+          className="group relative flex cursor-pointer flex-col justify-center px-6 py-10"
+        >
+          <div
+            className="pointer-events-none absolute inset-0 opacity-40 transition group-hover:opacity-70"
+            style={{
+              background:
+                "radial-gradient(ellipse 80% 70% at 50% 50%, rgba(158,201,192,0.18), transparent 70%)",
+            }}
+          />
+          <div className="relative z-10 mx-auto max-w-sm text-center">
+            <p className="text-[10px] uppercase tracking-[0.28em] text-[#9ec9c0]/90">
+              Find what helps
+            </p>
+            <h2 className="display mt-2 text-2xl leading-tight text-white sm:text-3xl">
+              Start where you actually are.
+            </h2>
+            <p className="mt-3 text-sm leading-relaxed text-[#b8d4e8]/90">
+              Fifteen difficult states, and the practices that work on each.
+            </p>
+            <p className="mt-4 text-sm text-[#7ec8e3] transition group-hover:text-white">
+              Find what helps →
+            </p>
+          </div>
+        </Link>
+
+        <div className="relative h-px shrink-0" style={horizontalDividerStyle} aria-hidden />
 
         <Link
           to="/practices"
-          className="group relative flex min-h-0 flex-1 cursor-pointer flex-col justify-center px-6 py-8"
+          className="group relative flex cursor-pointer flex-col justify-center px-6 py-10"
         >
           <div
             className="pointer-events-none absolute inset-0 opacity-40 transition group-hover:opacity-70"
@@ -85,11 +123,11 @@ function FrameworkHubPage() {
         </Link>
       </div>
 
-      {/* Desktop: equal split with vertical light divider */}
-      <div className="relative hidden min-h-[100dvh] lg:grid lg:grid-cols-2">
+      {/* Desktop: three equal panels with two vertical light dividers */}
+      <div className="relative hidden min-h-0 flex-1 lg:grid lg:grid-cols-3">
         <Link
           to="/philosophy"
-          className="group relative flex cursor-pointer flex-col justify-center px-12 xl:px-20"
+          className="group relative flex cursor-pointer flex-col justify-center px-10 xl:px-14"
         >
           <div
             className="pointer-events-none absolute inset-0 opacity-35 transition duration-500 group-hover:opacity-70"
@@ -100,12 +138,12 @@ function FrameworkHubPage() {
           />
           <div className="relative z-10 max-w-md">
             <p className="text-xs uppercase tracking-[0.3em] text-[#7ec8e3]/85">The Philosophy</p>
-            <h1 className="display mt-5 text-4xl leading-[1.15] text-white xl:text-5xl">
+            <h2 className="display mt-5 text-3xl leading-[1.15] text-white xl:text-4xl">
               Why we suffer, and how it ends.
-            </h1>
+            </h2>
             <p className="mt-6 text-base leading-relaxed text-[#b8d4e8]">
-              The five-link chain, the seven layers of being, and the complete map of the human
-              condition.
+              The root of human suffering, the seven layers of being, and the complete map of the
+              human condition.
             </p>
             <p className="mt-6 text-sm text-[#7ec8e3] transition group-hover:text-white">
               Explore the philosophy →
@@ -114,18 +152,45 @@ function FrameworkHubPage() {
         </Link>
 
         <div
-          className="pointer-events-none absolute inset-y-0 left-1/2 z-20 w-px -translate-x-1/2"
-          style={{
-            background:
-              "linear-gradient(180deg, transparent 0%, rgba(126,200,227,0.12) 18%, rgba(232,244,251,0.65) 50%, rgba(126,200,227,0.12) 82%, transparent 100%)",
-            boxShadow: "0 0 24px 1px rgba(126,200,227,0.25)",
-          }}
+          className="pointer-events-none absolute inset-y-0 left-1/3 z-20 w-px -translate-x-1/2"
+          style={verticalDividerStyle}
+          aria-hidden
+        />
+
+        <Link
+          to="/problems"
+          className="group relative flex cursor-pointer flex-col justify-center px-10 xl:px-14"
+        >
+          <div
+            className="pointer-events-none absolute inset-0 opacity-35 transition duration-500 group-hover:opacity-70"
+            style={{
+              background:
+                "radial-gradient(ellipse 70% 60% at 50% 50%, rgba(158,201,192,0.2), transparent 65%)",
+            }}
+          />
+          <div className="relative z-10 mx-auto max-w-md text-center">
+            <p className="text-xs uppercase tracking-[0.3em] text-[#9ec9c0]/90">Find what helps</p>
+            <h2 className="display mt-5 text-3xl leading-[1.15] text-white xl:text-4xl">
+              Start where you actually are.
+            </h2>
+            <p className="mt-6 text-base leading-relaxed text-[#b8d4e8]">
+              Fifteen difficult states, and the practices that work on each.
+            </p>
+            <p className="mt-6 text-sm text-[#7ec8e3] transition group-hover:text-white">
+              Find what helps →
+            </p>
+          </div>
+        </Link>
+
+        <div
+          className="pointer-events-none absolute inset-y-0 left-2/3 z-20 w-px -translate-x-1/2"
+          style={verticalDividerStyle}
           aria-hidden
         />
 
         <Link
           to="/practices"
-          className="group relative flex cursor-pointer flex-col justify-center px-12 xl:px-20"
+          className="group relative flex cursor-pointer flex-col justify-center px-10 xl:px-14"
         >
           <div
             className="pointer-events-none absolute inset-0 opacity-35 transition duration-500 group-hover:opacity-70"
@@ -136,7 +201,7 @@ function FrameworkHubPage() {
           />
           <div className="relative z-10 ml-auto max-w-md text-right">
             <p className="text-xs uppercase tracking-[0.3em] text-[#c4a574]/90">The Practices</p>
-            <h2 className="display mt-5 text-4xl leading-[1.15] text-white xl:text-5xl">
+            <h2 className="display mt-5 text-3xl leading-[1.15] text-white xl:text-4xl">
               112 practices.
             </h2>
             <p className="mt-6 text-base leading-relaxed text-[#b8d4e8]">
