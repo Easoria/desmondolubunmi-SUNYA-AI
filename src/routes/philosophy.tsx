@@ -361,14 +361,6 @@ function PhilosophyPage() {
           .reversal-release-once {
             animation: release-pulse 1.1s ease-out 1;
           }
-          .suffer-branch {
-            width: min(100%, var(--branch-mw));
-          }
-          @media (min-width: 640px) {
-            .suffer-branch {
-              width: min(100%, var(--branch-dw));
-            }
-          }
           @media (prefers-reduced-motion: reduce) {
             .reversal-connector-flow,
             .reversal-release-once {
@@ -398,14 +390,11 @@ function PhilosophyPage() {
         </div>
       </section>
 
-      {/* The Ground */}
+      {/* Entropy */}
       <section className="relative overflow-hidden bg-[#0a1628] py-32">
         <div className="relative z-10 mx-auto max-w-3xl px-6">
           <div className="text-center">
-            <div className="label-eyebrow">THE GROUND</div>
-            <h2 className="display mt-6 text-4xl text-white sm:text-5xl">
-              The body&apos;s own demands
-            </h2>
+            <h2 className="display text-4xl text-white sm:text-5xl">Entropy</h2>
           </div>
           <div className="mx-auto mt-12 h-px w-24 bg-gradient-to-r from-transparent via-[#7ec8e3]/40 to-transparent" />
           <div className="mt-12 text-[15px] leading-loose text-[#b8d4e8] sm:text-base">
@@ -415,80 +404,73 @@ function PhilosophyPage() {
         </div>
       </section>
 
-      {/* Why we suffer — root trunk + opening branches */}
+      {/* Why we suffer — widening trunk + branch canopy grid */}
       <section className="relative overflow-hidden bg-[#060d1c] py-32">
         <Starfield density={0.3} />
-        <div className="relative z-10 mx-auto max-w-6xl px-6">
+        <div className="relative z-10 mx-auto max-w-5xl px-6">
           <div className="text-center">
             <h2 className="display text-4xl text-white sm:text-5xl md:text-6xl">Why we suffer</h2>
           </div>
 
-          <div className="relative mx-auto mt-14 max-w-[760px] pb-20">
-            {/* Continuous descending line — fades out below the branches */}
+          <div className="relative mx-auto mt-14 pb-16">
+            {/* Trunk line — fades before the canopy grid */}
             <div
-              className="pointer-events-none absolute bottom-0 left-1/2 top-8 w-px -translate-x-1/2"
+              className="pointer-events-none absolute left-1/2 top-8 h-[min(420px,55%)] w-px -translate-x-1/2"
               aria-hidden
               style={{
                 background:
-                  "linear-gradient(180deg, rgba(126,200,227,0.55) 0%, rgba(126,200,227,0.38) 42%, rgba(126,200,227,0.18) 72%, rgba(126,200,227,0) 100%)",
+                  "linear-gradient(180deg, rgba(126,200,227,0.55) 0%, rgba(126,200,227,0.32) 62%, rgba(126,200,227,0) 100%)",
               }}
             />
 
             <div className="relative z-10 space-y-5">
-              {ROOT_CARDS.map((card) => (
-                <div
-                  key={card.n}
-                  className="glass-card relative mx-auto w-[90%] overflow-hidden border-l-2 border-l-[#e8f4fb]/80 p-5 sm:w-[70%] sm:p-6 md:p-7"
-                  style={{
-                    background:
-                      "linear-gradient(160deg, rgba(255,255,255,0.05), rgba(10,22,40,0.74))",
-                    boxShadow: "0 0 24px rgba(126,200,227,0.16)",
-                  }}
-                >
-                  <div className="pointer-events-none absolute left-3 top-1 font-display text-5xl text-white/10 sm:left-4 sm:text-6xl">
-                    {card.n}
-                  </div>
-                  <div className="relative pl-10 sm:pl-12">
-                    <h3 className="display text-2xl text-white sm:text-3xl">{card.name}</h3>
-                    <p className="mt-3 text-[15px] leading-relaxed text-[#b8d4e8] sm:text-base">
-                      {card.line}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="relative z-10 mt-10 space-y-8 sm:mt-12 sm:space-y-9">
-              {SUFFERING_BRANCHES.map((branch, index) => {
-                const t = index / (SUFFERING_BRANCHES.length - 1);
-                const widthPct = 90 + t * 10; // mobile: 90% → 100%
-                const widthPctSm = 70 + t * 30; // desktop: 70% → 100%
-                const tint = 0.42 - t * 0.34; // dark overlay lightens as we descend
-                const glow = 0.1 + t * 0.14; // glow opens outward
+              {ROOT_CARDS.map((card, index) => {
+                const widthClass = [
+                  "w-[72%] sm:w-[55%]",
+                  "w-[84%] sm:w-[70%]",
+                  "w-[96%] sm:w-[88%]",
+                ][index];
+                const tint = 0.62 + index * 0.06;
+                const glow = 0.14 + index * 0.03;
 
                 return (
                   <div
-                    key={branch.name}
-                    className="suffer-branch mx-auto px-1 py-1 sm:px-2 sm:py-2"
+                    key={card.n}
+                    className={`glass-card relative mx-auto overflow-hidden border-l-2 border-l-[#e8f4fb]/80 p-5 sm:p-6 md:p-7 ${widthClass}`}
                     style={{
-                      ["--branch-mw" as string]: `${widthPct}%`,
-                      ["--branch-dw" as string]: `${widthPctSm}%`,
-                      background: `linear-gradient(160deg, rgba(255,255,255,${0.04 + t * 0.04}), rgba(10,22,40,${tint}))`,
-                      boxShadow: `0 0 ${28 + t * 36}px rgba(126,200,227,${glow})`,
+                      background: `linear-gradient(160deg, rgba(255,255,255,0.05), rgba(10,22,40,${tint}))`,
+                      boxShadow: `0 0 ${22 + index * 6}px rgba(126,200,227,${glow})`,
                     }}
                   >
-                    <h3 className="display text-lg tracking-wide text-[#7ec8e3] sm:text-xl">
-                      {branch.name}
-                    </h3>
-                    <p className="mt-2 text-[15px] leading-relaxed text-[#b8d4e8] sm:text-base">
-                      {branch.line}
-                    </p>
+                    <div className="pointer-events-none absolute left-3 top-1 font-display text-5xl text-white/10 sm:left-4 sm:text-6xl">
+                      {card.n}
+                    </div>
+                    <div className="relative pl-10 sm:pl-12">
+                      <h3 className="display text-2xl text-white sm:text-3xl">{card.name}</h3>
+                      <p className="mt-3 text-[15px] leading-relaxed text-[#b8d4e8] sm:text-base">
+                        {card.line}
+                      </p>
+                    </div>
                   </div>
                 );
               })}
             </div>
 
-            <p className="relative z-10 mt-10 text-center text-sm tracking-wide text-[#b8d4e8]/55 sm:mt-12">
+            {/* Canopy — all nine branches visible as a set, no implied order */}
+            <div className="relative z-10 mt-14 grid grid-cols-1 gap-x-8 gap-y-10 sm:mt-16 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-10 lg:gap-y-12">
+              {SUFFERING_BRANCHES.map((branch) => (
+                <div key={branch.name}>
+                  <h3 className="display text-lg tracking-wide text-[#7ec8e3] sm:text-xl">
+                    {branch.name}
+                  </h3>
+                  <p className="mt-2 text-[15px] leading-relaxed text-[#b8d4e8] sm:text-base">
+                    {branch.line}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <p className="relative z-10 mt-12 text-center text-sm tracking-wide text-[#b8d4e8]/55 sm:mt-14">
               and on, and on
             </p>
           </div>
