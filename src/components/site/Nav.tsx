@@ -1,10 +1,12 @@
 import { Link, useNavigate, useRouterState } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
-import { ArrowRight, Menu, X, LogOut, LayoutDashboard, Settings } from "lucide-react";
+import { Menu, X, LogOut, LayoutDashboard, Settings } from "lucide-react";
 import { useAuth } from "@/hooks/use-auth";
 import { oneToOneNavLabel } from "@/lib/one-to-one-offer";
 
-// Navbar capped at 4 items + CTA.
+// Find what helps lives inside /framework as one of three doors.
+// Do not re-add it to the navbar.
+// No CTA pill — plain links only.
 // Philosophy and Practices are deliberately merged behind /framework —
 // do not re-add them as separate items.
 const NAV_PRIMARY = [
@@ -13,8 +15,6 @@ const NAV_PRIMARY = [
   { label: oneToOneNavLabel(), to: "/work-with-me" as const },
   { label: "Vision", to: "/vision" as const },
 ];
-
-const PROBLEMS_CTA_LABEL = "Find what helps";
 
 const NAV_SECONDARY = [
   { label: "The Timeless Solution", to: "/timeless-solution" as const },
@@ -127,12 +127,6 @@ function MobileLink({
   );
 }
 
-const navCtaClass =
-  "inline-flex items-center gap-2 rounded-full border border-[#7ec8e3]/55 bg-transparent px-5 py-2.5 text-sm font-medium text-[#dcecf7] transition hover:border-[#7ec8e3]/85 hover:bg-white/[0.06] hover:text-white";
-
-const navCtaClassMobile =
-  "inline-flex shrink-0 items-center gap-1 whitespace-nowrap rounded-full border border-[#7ec8e3]/55 bg-transparent px-2.5 py-1.5 text-[11px] font-medium leading-none text-[#dcecf7] transition hover:border-[#7ec8e3]/85 hover:bg-white/[0.06] hover:text-white";
-
 type NavProps = {
   /** Homepage photographic hero — top scrim while the nav sits over the image. */
   overHero?: boolean;
@@ -200,15 +194,9 @@ export function Nav({ overHero = false }: NavProps) {
               {n.label}
             </Link>
           ))}
-          <Link to="/problems" className={navCtaClass}>
-            {PROBLEMS_CTA_LABEL} <ArrowRight className="h-3.5 w-3.5" />
-          </Link>
           {user ? <AccountAvatar /> : null}
         </div>
         <div className="relative z-10 flex shrink-0 items-center gap-1.5 md:hidden">
-          <Link to="/problems" className={navCtaClassMobile}>
-            {PROBLEMS_CTA_LABEL} <ArrowRight className="h-3 w-3 shrink-0" />
-          </Link>
           {user ? <AccountAvatar /> : null}
           <button
             type="button"
@@ -258,14 +246,6 @@ export function Nav({ overHero = false }: NavProps) {
                 onClick={() => setOpen(false)}
               />
             ))}
-            <div className="my-2 h-px bg-white/10" />
-            <Link
-              to="/problems"
-              onClick={() => setOpen(false)}
-              className={`${navCtaClass} mt-1 justify-center`}
-            >
-              {PROBLEMS_CTA_LABEL} <ArrowRight className="h-3.5 w-3.5" />
-            </Link>
             {user ? (
               <>
                 <Link
