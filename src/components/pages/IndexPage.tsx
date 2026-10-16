@@ -395,20 +395,20 @@ function About() {
               of their inner being, and live it in their daily lives.
             </p>
             <p>
-              He is the author of <em className="display-italic">The Sleep Rhythm Reset</em>, an
-              Amazon #1 bestseller in its category, and the creator of the Sunya Sleep app. He
+              He is the author of{" "}
+              <em className="italic font-medium text-white">
+                The Sleep Rhythm Reset
+              </em>
+              , an Amazon #1 bestseller in its category, and the creator of the Sunya Sleep app. He
               currently teaches through writing, practice, and gatherings, in Dublin and online.
             </p>
           </div>
-          <div className="mt-9 flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:gap-3">
-            <Link to="/gatherings" className={sectionCtaClass}>
-              Upcoming gatherings →
+          <div className="mt-9 flex flex-col items-start gap-3">
+            <Link to="/gatherings" className={heroGatheringsBtn}>
+              Upcoming gatherings
             </Link>
-            <span className="hidden text-[#b8d4e8]/45 sm:inline" aria-hidden>
-              ·
-            </span>
-            <Link to="/work-with-me" className={sectionCtaClass}>
-              Work with Desmond →
+            <Link to="/work-with-me" className={heroGatheringsBtn}>
+              Work with Desmond
             </Link>
           </div>
         </div>
