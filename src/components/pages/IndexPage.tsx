@@ -191,10 +191,10 @@ function WhyWeSufferBranches({ reduceMotion }: { reduceMotion: boolean }) {
 
   useEffect(() => {
     if (!cycling || paused) return;
-    // 4s hold + ~600ms crossfade before the next advance
+    // 7s hold + ~600ms crossfade before the next advance
     const id = window.setInterval(() => {
       setActive((i) => (i + 1) % WHY_BRANCH_LINES.length);
-    }, 4600);
+    }, 7600);
     return () => window.clearInterval(id);
   }, [cycling, paused]);
 
