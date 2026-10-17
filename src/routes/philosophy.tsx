@@ -131,12 +131,12 @@ const SUFFERING_BRANCH_GROUPS = [
 ] as const;
 
 const JUICE_OF_LIFE_PARAGRAPHS = [
-  "Consciousness is there. Life itself is there. And from that dimension, if you stay in that dimension while experiencing the world, there is freedom, relief, insight, clarity — the ability to deal with the world, to take the right steps for the future, to have a calm mind, to live without conflict.",
-  "But the entire world operates on the movement of past, present and future. So the moment consciousness forgets its true nature and takes something within the world to be itself, it becomes modified and subjected to the ways of the world. You feel temporary. You feel limited. You feel confined. You feel small. You feel insufficient.",
-  "Consequently, you are always seeking to enjoy the senses in order to feel that life is meaningful — trying to squeeze every bit of joy out of them in order to feel some aliveness, some pleasure, some novelty. It is like licking the peel of the fruit instead of entering into the juice within. The juice is life itself, which we have forgotten that we are, and are now seeking happiness through the senses and the mind.",
-  "This is what we see in the world today. People become baffled. People become confused. People use drugs, people overdose, people commit crimes. All of it comes out of this need, this feeling of insufficiency — and from being bound in the movement and flow of this world of past, present and future, of action and reaction, from birth to death, stuck in the movement of time.",
-  "That is why consciousness must withdraw itself from being identified with the body, the mind and the senses. It must become aware of its own nature. It must rest in its own nature.",
-  "And only then can it live in a dimension that is timeless, free, infinite and formless — unconditioned, blissful, peaceful, without conflict and without duality. Always here and now. Absolutely real and true.",
+  "Consciousness is there. Life itself is there. And from that dimension, if you stay in that dimension while experiencing the world, there is freedom, relief, peace and happiness. Living from presence helps you meet the challenges of human life with wisdom and grace.",
+  "The moment you forget yourself as pure consciousness and identify with the contents of consciousness, you become subjected to the limited nature of the material world and suffer. Life feels like you versus the world. You feel small, confined and insufficient.",
+  "That's why you are always seeking to enjoy the senses in order to feel that life is meaningful. Trying to squeeze every bit of joy out of the senses in order to feel some aliveness, some pleasure, some novelty. It is like licking the peel of the fruit instead of entering into the juice within. The juice is life itself, which we have forgotten that we are, and are now seeking happiness through the senses and the mind.",
+  "This is what we see in the world today. People become baffled and confused. People use drugs, people overdose, people commit crimes. All of it comes out of this need, this feeling of insufficiency — and from being bound by the influence of time.",
+  "That is why consciousness must withdraw itself from being identified with the body, the mind and the senses. It must become aware of itself. It must rest in its own nature.",
+  "And only then can we live from a dimension that is timeless, free, infinite and formless — unconditioned, blissful, peaceful, without conflict and without duality. Always here and now. Absolutely real and true.",
 ] as const;
 
 const LAYERS = [
