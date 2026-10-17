@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { Starfield } from "@/components/Starfield";
 import { Nav } from "@/components/site/Nav";
@@ -131,7 +131,7 @@ const SUFFERING_BRANCH_GROUPS = [
 ] as const;
 
 const JUICE_OF_LIFE_PARAGRAPHS = [
-  "Consciousness is there. Life itself is there. And from that dimension, if you stay in that dimension while experiencing the world, there is freedom, relief, insight, clarity — the ability to deal with the world, to take the right steps for the future, to have a calm mind and live without conflict.",
+  "Consciousness is there. Life itself is there. And from that dimension, if you stay in that dimension while experiencing the world, there is freedom, relief, insight, clarity — the ability to deal with the world, to take the right steps for the future, to have a calm mind, to live without conflict.",
   "But the entire world operates on the movement of past, present and future. So the moment consciousness forgets its true nature and takes something within the world to be itself, it becomes modified and subjected to the ways of the world. You feel temporary. You feel limited. You feel confined. You feel small. You feel insufficient.",
   "Consequently, you are always seeking to enjoy the senses in order to feel that life is meaningful — trying to squeeze every bit of joy out of them in order to feel some aliveness, some pleasure, some novelty. It is like licking the peel of the fruit instead of entering into the juice within. The juice is life itself, which we have forgotten that we are, and are now seeking happiness through the senses and the mind.",
   "This is what we see in the world today. People become baffled. People become confused. People use drugs, people overdose, people commit crimes. All of it comes out of this need, this feeling of insufficiency — and from being bound in the movement and flow of this world of past, present and future, of action and reaction, from birth to death, stuck in the movement of time.",
@@ -337,17 +337,13 @@ function ZonePanel({ zone }: { zone: Zone }) {
 }
 
 function PhilosophyPage() {
-  const [hasMounted, setHasMounted] = useState(false);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
-  const [reversalPulse, setReversalPulse] = useState(false);
-  const reversalPulseRef = useRef<HTMLParagraphElement | null>(null);
   const [activeLayer, setActiveLayer] = useState(0);
   const [openLever, setOpenLever] = useState<number | null>(null);
   const [activeZone, setActiveZone] = useState(1);
   const layer = LAYERS[activeLayer];
 
   useEffect(() => {
-    setHasMounted(true);
     if (typeof window === "undefined" || !window.matchMedia) return;
     const media = window.matchMedia("(prefers-reduced-motion: reduce)");
     const sync = () => setPrefersReducedMotion(media.matches);
@@ -355,22 +351,6 @@ function PhilosophyPage() {
     media.addEventListener("change", sync);
     return () => media.removeEventListener("change", sync);
   }, []);
-
-  useEffect(() => {
-    if (!hasMounted || prefersReducedMotion || typeof window === "undefined" || !reversalPulseRef.current)
-      return;
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const entry = entries[0];
-        if (!entry?.isIntersecting) return;
-        setReversalPulse(true);
-        observer.disconnect();
-      },
-      { threshold: 0.8 },
-    );
-    observer.observe(reversalPulseRef.current);
-    return () => observer.disconnect();
-  }, [hasMounted, prefersReducedMotion]);
 
   return (
     <div className="min-h-screen bg-[#0a1628] text-white">
@@ -381,20 +361,11 @@ function PhilosophyPage() {
             20% { opacity: 0.95; }
             100% { transform: translate(-50%, -160%); opacity: 0; }
           }
-          @keyframes release-pulse {
-            0% { box-shadow: 0 0 0 0 rgba(126, 200, 227, 0); }
-            40% { box-shadow: 0 0 0 14px rgba(126, 200, 227, 0.32); }
-            100% { box-shadow: 0 0 0 34px rgba(126, 200, 227, 0); }
-          }
           .reversal-connector-flow {
             animation: reversal-flow 3s ease-in-out infinite;
           }
-          .reversal-release-once {
-            animation: release-pulse 1.1s ease-out 1;
-          }
           @media (prefers-reduced-motion: reduce) {
-            .reversal-connector-flow,
-            .reversal-release-once {
+            .reversal-connector-flow {
               animation: none !important;
             }
           }
@@ -522,24 +493,9 @@ function PhilosophyPage() {
         </div>
       </section>
 
-      {/* Enjoying the Juice of Life */}
-      <section className="relative bg-[#0a1628] py-28 sm:py-32">
-        <div className="relative z-10 mx-auto max-w-[680px] px-6">
-          <h2 className="display text-center text-3xl text-white sm:text-4xl md:text-5xl">
-            Enjoying the Juice of Life
-          </h2>
-          <div className="mt-12 space-y-6 text-[15px] leading-[1.85] text-[#b8d4e8] sm:text-base sm:leading-[1.9]">
-            {JUICE_OF_LIFE_PARAGRAPHS.map((paragraph) => (
-              <p key={paragraph.slice(0, 48)}>{paragraph}</p>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* The Reversal */}
+      {/* The Reversal — Enjoying the Juice of Life */}
       <section className="relative overflow-hidden bg-[#11253b] py-32">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,rgba(126,200,227,0.2),transparent_58%)]" />
-        <Starfield density={0.55} />
         <div className="relative z-10 mx-auto max-w-3xl px-6 text-center">
           <div className="relative mx-auto h-16 w-3">
             <div className="absolute inset-0 rounded-full bg-gradient-to-t from-[#7ec8e3]/25 to-[#e8f4fb]/75" />
@@ -547,71 +503,54 @@ function PhilosophyPage() {
               <span className="reversal-connector-flow absolute left-1/2 top-0 h-10 w-1 rounded-full bg-gradient-to-t from-transparent via-[#7ec8e3] to-white" />
             )}
           </div>
-          <div className="label-eyebrow">THE REVERSAL</div>
           <h2 className="display mt-6 text-4xl text-white sm:text-5xl md:text-6xl">
-            One root. One place it comes undone.
+            Enjoying the Juice of Life
           </h2>
-          <p className="mx-auto mt-10 whitespace-pre-line text-[15px] leading-loose text-[#b8d4e8] sm:text-base">
-            {`This is the most hopeful fact in all of it. A structure with a single root has
-a single place where it can be dismantled.
-
-Suppose you were to fully remember, in this moment, that you are the boundless
-life and not the small separate self. Watch what happens to the chain.
-
-The separate self dissolves — there is no longer anyone separate to be. With no
-separate self, resistance falls away — no one is braced against life, nothing
-is left to refuse. As resistance falls away, the contraction releases — the
-clenched energy opens, and the closed system opens with it. And as the system
-opens, the void fills — not from anything gained, but because you have
-recognised the infinite life you always were.`}
-          </p>
-          <p
-            ref={reversalPulseRef}
-            className={`display mt-12 text-3xl text-white sm:text-4xl ${
-              reversalPulse && !prefersReducedMotion ? "reversal-release-once" : ""
-            }`}
-          >
-            Pull the root, and every link lets go at once.
-          </p>
         </div>
 
-        <div className="relative left-1/2 mt-16 w-[108vw] -translate-x-1/2 px-6">
+        {/* Always-expanded reading panel — opaque enough for 4.5:1+ contrast */}
+        <div className="relative z-10 mx-auto mt-12 max-w-3xl px-6">
+          <div
+            className="rounded-2xl border border-white/12 px-6 py-10 sm:px-10 sm:py-12"
+            style={{
+              background: "rgba(8, 16, 30, 0.94)",
+              backdropFilter: "blur(24px)",
+              WebkitBackdropFilter: "blur(24px)",
+              boxShadow: "0 0 60px -24px rgba(126,200,227,0.28)",
+            }}
+          >
+            <div className="mx-auto max-w-[680px] space-y-6 text-left text-[15px] leading-[1.85] text-[#d5e6f2] sm:text-base sm:leading-[1.9]">
+              {JUICE_OF_LIFE_PARAGRAPHS.map((paragraph) => (
+                <p key={paragraph.slice(0, 48)}>{paragraph}</p>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="relative left-1/2 z-10 mt-16 w-[108vw] -translate-x-1/2 px-6">
           <div className="mx-auto max-w-6xl">
             <div className="grid gap-8 lg:grid-cols-2">
               <div className="glass-card relative overflow-hidden p-7 lg:-translate-y-4">
                 <div className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#7ec8e3]/22 to-transparent" />
                 <h3 className="display relative z-10 text-3xl text-white">
-                  Recognition — from above
+                  Become conscious of the source of life within
                 </h3>
-                <p className="relative z-10 mt-5 whitespace-pre-line text-[15px] leading-relaxed text-[#b8d4e8]">
-                  {`Seeing directly through the mistaken identity. Awareness turning back on itself
-and recognising what it actually is. This is the work of the Awareness lever —
-observation, disidentification, self-inquiry.`}
+                <p className="relative z-10 mt-5 text-[15px] leading-relaxed text-[#b8d4e8]">
+                  The essence of inner growth. Raising your consciousness, realising that you are
+                  life itself, and resting in your true nature.
                 </p>
               </div>
               <div className="glass-card relative overflow-hidden p-7 lg:translate-y-4">
                 <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#7ec8e3]/22 to-transparent" />
                 <h3 className="display relative z-10 text-3xl text-white">
-                  Restoration — from below
+                  Live in harmony with the intelligence of life
                 </h3>
-                <p className="relative z-10 mt-5 whitespace-pre-line text-[15px] leading-relaxed text-[#b8d4e8]">
-                  {`Working directly on the energy body — releasing contraction, restoring the free
-flow of life force. This is the work of breath, movement, sound, heart, sleep,
-and the conditions you live in.`}
+                <p className="relative z-10 mt-5 text-[15px] leading-relaxed text-[#b8d4e8]">
+                  Bringing the wisdom and light of consciousness into your daily life and
+                  relationships, and using it to meet the challenges of the world.
                 </p>
               </div>
             </div>
-            <p className="mx-auto mt-16 max-w-4xl whitespace-pre-line text-center text-[15px] leading-relaxed text-[#b8d4e8]">
-              {`These are the two great movements of the path, and they feed each other
-endlessly. Every release in the body makes recognition easier. Every taste of
-recognition releases the body further.`}
-            </p>
-            <p className="mx-auto mt-8 max-w-4xl whitespace-pre-line text-center text-sm leading-relaxed text-[#b8d4e8]/75">
-              {`Recognition alone is rarely enough. Contraction settles into tissue and nervous
-system over years, and does not always release the moment understanding dawns.
-You can see your true nature clearly and still find the chest tight and the old
-reactions running. This is why the framework works from both directions at once.`}
-            </p>
           </div>
         </div>
       </section>
