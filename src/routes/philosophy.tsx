@@ -530,7 +530,7 @@ function PhilosophyPage() {
         <div className="relative left-1/2 z-10 mt-16 w-[108vw] -translate-x-1/2 px-6">
           <div className="mx-auto max-w-6xl">
             <div className="grid gap-8 lg:grid-cols-2">
-              <div className="glass-card relative overflow-hidden p-7 lg:-translate-y-4">
+              <div className="glass-card relative overflow-hidden p-7">
                 <div className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#7ec8e3]/22 to-transparent" />
                 <h3 className="display relative z-10 text-3xl text-white">
                   Become conscious of the source of life within
@@ -540,7 +540,7 @@ function PhilosophyPage() {
                   life itself, and resting in your true nature.
                 </p>
               </div>
-              <div className="glass-card relative overflow-hidden p-7 lg:translate-y-4">
+              <div className="glass-card relative overflow-hidden p-7">
                 <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#7ec8e3]/22 to-transparent" />
                 <h3 className="display relative z-10 text-3xl text-white">
                   Live in harmony with the intelligence of life
