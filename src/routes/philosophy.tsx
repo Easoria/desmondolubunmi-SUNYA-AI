@@ -60,42 +60,73 @@ const ROOT_CARDS = [
   },
 ] as const;
 
-const SUFFERING_BRANCHES = [
+/** Quiet accents reused from practice-tag state colours — organisation only, never labelled. */
+const BRANCH_ROW_ACCENT = {
+  time: "#c4a574", // warm gold-amber, muted
+  separation: "#3d8ec9", // cool deep blue
+  lack: "#b07aad", // soft violet
+} as const;
+
+const SUFFERING_BRANCH_GROUPS = [
   {
-    name: "Time",
-    line: "we ruminate over the past and worry about the future, never in the now",
+    accent: BRANCH_ROW_ACCENT.time,
+    branches: [
+      {
+        name: "Time",
+        line: "we ruminate over the past and worry about the future, never in the now",
+        felt: "worry · regret · mental rumination",
+      },
+      {
+        name: "Linearity",
+        line: "identification with matter confines us to the space-time continuum, and to the movement of cause and effect. We are forced to move in a linear direction through time, towards a certain end.",
+        felt: "pressure · urgency · indecision",
+      },
+      {
+        name: "Mortality",
+        line: "we experience ourselves as finite, time-bound creatures living under the fear of death",
+        felt: "fear · dread · health anxiety",
+      },
+    ],
   },
   {
-    name: "Linearity",
-    line: "identification with matter confines us to the space-time continuum, and to the movement of cause and effect. We are forced to move in a linear direction through time, towards a certain end.",
+    accent: BRANCH_ROW_ACCENT.separation,
+    branches: [
+      {
+        name: "Division",
+        line: "we feel divided from others, and from that division comes conflict and fear",
+        felt: "loneliness · jealousy · conflict",
+      },
+      {
+        name: "Resistance",
+        line: "we resist things that are outside the boundaries of our limited identities. We resist the present moment. We resist what is. And to resist what is, is to be in conflict with life itself — because life only exists in the present moment.",
+        felt: "stress · frustration · anger",
+      },
+      {
+        name: "Contraction",
+        line: "out of fear and feeling threatened, we contract physically and hold tension. And contraction inhibits the flow of life, which leaves us exhausted, without vibrance and without aliveness.",
+        felt: "tension · exhaustion · burnout",
+      },
+    ],
   },
   {
-    name: "Mortality",
-    line: "we experience ourselves as finite, time-bound creatures living under the fear of death",
-  },
-  {
-    name: "Division",
-    line: "we feel divided from others, and from that division comes conflict and fear",
-  },
-  {
-    name: "Resistance",
-    line: "we resist things that are outside the boundaries of our limited identities. We resist the present moment. We resist what is. And to resist what is, is to be in conflict with life itself — because life only exists in the present moment.",
-  },
-  {
-    name: "Contraction",
-    line: "out of fear and feeling threatened, we contract physically and hold tension. And contraction inhibits the flow of life, which leaves us exhausted, without vibrance and without aliveness.",
-  },
-  {
-    name: "Craving",
-    line: "we chase sense gratification endlessly",
-  },
-  {
-    name: "Insufficiency",
-    line: "we feel permanently insufficient, because we have identified ourselves with limited things",
-  },
-  {
-    name: "Seeking",
-    line: "we seek salvation in external things, or in the future, rather than in the presence always here",
+    accent: BRANCH_ROW_ACCENT.lack,
+    branches: [
+      {
+        name: "Craving",
+        line: "we chase sense gratification endlessly",
+        felt: "addiction · restlessness · overconsumption",
+      },
+      {
+        name: "Insufficiency",
+        line: "we feel permanently insufficient, because we have identified ourselves with limited things",
+        felt: "low self-esteem · envy · never enough",
+      },
+      {
+        name: "Seeking",
+        line: "we seek salvation in external things, or in the future, rather than in the presence always here",
+        felt: "emptiness · dissatisfaction · meaninglessness",
+      },
+    ],
   },
 ] as const;
 
@@ -456,16 +487,30 @@ function PhilosophyPage() {
               })}
             </div>
 
-            {/* Canopy — all nine branches visible as a set, no implied order */}
-            <div className="relative z-10 mt-14 grid grid-cols-1 gap-x-8 gap-y-10 sm:mt-16 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-10 lg:gap-y-12">
-              {SUFFERING_BRANCHES.map((branch) => (
-                <div key={branch.name}>
-                  <h3 className="display text-lg tracking-wide text-[#7ec8e3] sm:text-xl">
-                    {branch.name}
-                  </h3>
-                  <p className="mt-2 text-[15px] leading-relaxed text-[#b8d4e8] sm:text-base">
-                    {branch.line}
-                  </p>
+            {/* Canopy — three unlabelled rows of three; grouping survives as single-column order on mobile */}
+            <div className="relative z-10 mt-14 space-y-10 sm:mt-16 sm:space-y-12">
+              {SUFFERING_BRANCH_GROUPS.map((group) => (
+                <div
+                  key={group.branches[0].name}
+                  className="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-3 sm:gap-x-8 lg:gap-x-10 lg:gap-y-12"
+                >
+                  {group.branches.map((branch) => (
+                    <div
+                      key={branch.name}
+                      className="border-l-2 pl-4 sm:pl-5"
+                      style={{ borderColor: `${group.accent}99` }}
+                    >
+                      <h3 className="display text-lg tracking-wide text-[#7ec8e3] sm:text-xl">
+                        {branch.name}
+                      </h3>
+                      <p className="mt-2 text-[15px] leading-relaxed text-[#b8d4e8] sm:text-base">
+                        {branch.line}
+                      </p>
+                      <p className="mt-2 text-[12px] leading-relaxed text-[#b8d4e8]/50 sm:text-[13px]">
+                        {branch.felt}
+                      </p>
+                    </div>
+                  ))}
                 </div>
               ))}
             </div>

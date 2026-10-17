@@ -281,7 +281,7 @@ function Reframe() {
             onClick={() => setBaselineOpen((o) => !o)}
             className="flex w-full items-center justify-between gap-4 py-2 text-left text-sm text-[#b8d4e8]/55 transition hover:text-[#b8d4e8]/75 sm:text-[0.9rem]"
           >
-            <span>The body&apos;s own demands</span>
+            <span>Entropy</span>
             <ChevronDown
               className={`h-4 w-4 shrink-0 transition-transform duration-300 ${baselineOpen ? "rotate-180" : ""}`}
               aria-hidden
