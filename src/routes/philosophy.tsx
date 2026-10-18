@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { Starfield } from "@/components/Starfield";
 import { Nav } from "@/components/site/Nav";
@@ -60,62 +60,93 @@ const ROOT_CARDS = [
   },
 ] as const;
 
-const SUFFERING_BRANCHES = [
+/** Quiet accents reused from practice-tag state colours — organisation only, never labelled. */
+const BRANCH_ROW_ACCENT = {
+  time: "#c4a574", // warm gold-amber, muted
+  separation: "#3d8ec9", // cool deep blue
+  lack: "#b07aad", // soft violet
+} as const;
+
+const SUFFERING_BRANCH_GROUPS = [
   {
-    name: "Time",
-    line: "we ruminate over the past and worry about the future, never in the now",
+    accent: BRANCH_ROW_ACCENT.time,
+    branches: [
+      {
+        name: "Time",
+        line: "we ruminate over the past and worry about the future, never in the now",
+        felt: "worry · regret · mental rumination",
+      },
+      {
+        name: "Linearity",
+        line: "identification with matter confines us to the space-time continuum, and to the movement of cause and effect. We are forced to move in a linear direction through time, towards a certain end.",
+        felt: "pressure · urgency · indecision",
+      },
+      {
+        name: "Mortality",
+        line: "we experience ourselves as finite, time-bound creatures living under the fear of death",
+        felt: "fear · dread · health anxiety",
+      },
+    ],
   },
   {
-    name: "Linearity",
-    line: "identification with matter confines us to the space-time continuum, and to the movement of cause and effect. We are forced to move in a linear direction through time, towards a certain end.",
+    accent: BRANCH_ROW_ACCENT.separation,
+    branches: [
+      {
+        name: "Division",
+        line: "we feel divided from others, and from that division comes conflict and fear",
+        felt: "loneliness · jealousy · conflict",
+      },
+      {
+        name: "Resistance",
+        line: "we resist things that are outside the boundaries of our limited identities. We resist the present moment. We resist what is. And to resist what is, is to be in conflict with life itself — because life only exists in the present moment.",
+        felt: "stress · frustration · anger",
+      },
+      {
+        name: "Contraction",
+        line: "out of fear and feeling threatened, we contract physically and hold tension. And contraction inhibits the flow of life, which leaves us exhausted, without vibrance and without aliveness.",
+        felt: "tension · exhaustion · burnout",
+      },
+    ],
   },
   {
-    name: "Mortality",
-    line: "we experience ourselves as finite, time-bound creatures living under the fear of death",
-  },
-  {
-    name: "Division",
-    line: "we feel divided from others, and from that division comes conflict and fear",
-  },
-  {
-    name: "Resistance",
-    line: "we resist things that are outside the boundaries of our limited identities. We resist the present moment. We resist what is. And to resist what is, is to be in conflict with life itself — because life only exists in the present moment.",
-  },
-  {
-    name: "Contraction",
-    line: "out of fear and feeling threatened, we contract physically and hold tension. And contraction inhibits the flow of life, which leaves us exhausted, without vibrance and without aliveness.",
-  },
-  {
-    name: "Craving",
-    line: "we chase sense gratification endlessly",
-  },
-  {
-    name: "Insufficiency",
-    line: "we feel permanently insufficient, because we have identified ourselves with limited things",
-  },
-  {
-    name: "Seeking",
-    line: "we seek salvation in external things, or in the future, rather than in the presence always here",
+    accent: BRANCH_ROW_ACCENT.lack,
+    branches: [
+      {
+        name: "Craving",
+        line: "we chase sense gratification endlessly",
+        felt: "addiction · restlessness · overconsumption",
+      },
+      {
+        name: "Insufficiency",
+        line: "we feel permanently insufficient, because we have identified ourselves with limited things",
+        felt: "low self-esteem · envy · never enough",
+      },
+      {
+        name: "Seeking",
+        line: "we seek salvation in external things, or in the future, rather than in the presence always here",
+        felt: "emptiness · dissatisfaction · meaninglessness",
+      },
+    ],
   },
 ] as const;
 
 const JUICE_OF_LIFE_PARAGRAPHS = [
-  "Consciousness is there. Life itself is there. And from that dimension, if you stay in that dimension while experiencing the world, there is freedom, relief, insight, clarity — the ability to deal with the world, to take the right steps for the future, to have a calm mind, to live without conflict.",
-  "But the entire world operates on the movement of past, present and future. So the moment consciousness forgets its true nature and takes something within the world to be itself, it becomes modified and subjected to the ways of the world. You feel temporary. You feel limited. You feel confined. You feel small. You feel insufficient.",
-  "Consequently, you are always seeking to enjoy the senses in order to feel that life is meaningful — trying to squeeze every bit of joy out of them in order to feel some aliveness, some pleasure, some novelty. It is like licking the peel of the fruit instead of entering into the juice within. The juice is life itself, which we have forgotten that we are, and are now seeking happiness through the senses and the mind.",
-  "This is what we see in the world today. People become baffled. People become confused. People use drugs, people overdose, people commit crimes. All of it comes out of this need, this feeling of insufficiency — and from being bound in the movement and flow of this world of past, present and future, of action and reaction, from birth to death, stuck in the movement of time.",
-  "That is why consciousness must withdraw itself from being identified with the body, the mind and the senses. It must become aware of its own nature. It must rest in its own nature.",
-  "And only then can it live in a dimension that is timeless, free, infinite and formless — unconditioned, blissful, peaceful, without conflict and without duality. Always here and now. Absolutely real and true.",
+  "Consciousness is there. Life itself is there. And from that dimension, if you stay in that dimension while experiencing the world, there is freedom, relief, peace and happiness. Living from presence helps you meet the challenges of human life with wisdom and grace.",
+  "The moment you forget yourself as pure consciousness and identify with the contents of consciousness, you become subjected to the limited nature of the material world and suffer. Life feels like you versus the world. You feel small, confined and insufficient.",
+  "That's why you are always seeking to enjoy the senses in order to feel that life is meaningful. Trying to squeeze every bit of joy out of the senses in order to feel some aliveness, some pleasure, some novelty. It is like licking the peel of the fruit instead of entering into the juice within. The juice is life itself, which we have forgotten that we are, and are now seeking happiness through the senses and the mind.",
+  "This is what we see in the world today. People become baffled and confused. People use drugs, people overdose, people commit crimes. All of it comes out of this need, this feeling of insufficiency — and from being bound by the influence of time.",
+  "That is why consciousness must withdraw itself from being identified with the body, the mind and the senses. It must become aware of itself. It must rest in its own nature.",
+  "And only then can we live from a dimension that is timeless, free, infinite and formless — unconditioned, blissful, peaceful, without conflict and without duality. Always here and now. Absolutely real and true.",
 ] as const;
 
 const LAYERS = [
-  { n: 0, t: "Source", sub: "Pure Consciousness", color: "#fff8e0", size: 80, body: "The absolute core. The unchanging, silent observer. It has no form, no past, and no resistance. It simply is. This is what you truly are beneath everything else — Life itself." },
-  { n: 1, t: "Energetic Body", sub: "The Vital Bridge", color: "#a8e0ff", size: 160, body: "The subtle energy pathways through which life force flows to power the human system. When threatened, the pathways contract. When safe, life force flows freely. The state of a person's energy system is usually reflected in the state of their mind and nervous system." },
-  { n: 2, t: "Emotional Body", sub: "The Resonance Field", color: "#7ec8e3", size: 240, body: "The internal weather system of the human feelings. It translates energy into the physical sensations of fear, joy, love, and connection. When closed, we feel numb, indifferent, and find it hard to connect. When open, will feel empathic, alive, and love radiates from the inside out." },
-  { n: 3, t: "Intellectual Body", sub: "Executive Discernment", color: "#5fa8d3", size: 320, body: "The faculty of analysing, reasoning, logic, discrimination, and conscious choice. The Chooser — the part of you that can cut through illusions and override biological impulses when properly developed." },
-  { n: 4, t: "Mental Body", sub: "Thought & Memory", color: "#3d7ab0", size: 400, body: "The database of past accumulated memories, experiences, conditioning, endless thinking. The unconscious activity of the mind creates the illusion of psychological time as past and future. This perpetuates fear, endless desires, and resistance to the present moment." },
-  { n: 5, t: "Physical Body", sub: "The Hardware", color: "#2a5688", size: 480, body: "The biological vessel and sensory organs through which life perceives and acts in the world. It is the outermost expression of all the inner layers." },
-  { n: 6, t: "Environment", sub: "The Elemental Matrix", color: "#1b3a60", size: 560, body: "The physical world surrounding the body. The spaces, nature, and people we constantly exchange energy with. Often overlooked, the environment is a layer of being — not separate from you, but in constant dialogue with all the layers within." },
+  { n: 0, t: "Source", sub: "Pure Consciousness", color: "#fff8e0", size: 80, body: "This is life itself. Pure consciousness beyond sensory experiences and mental activities. It is boundless and inconceivable by thought. It can be experienced as your true nature when you turn inwards and observe without identifying yourself with anything. Simply be nothing inwardly." },
+  { n: 1, t: "Energy Body", sub: "The Life Force", color: "#a8e0ff", size: 160, body: "The subtle energy pathways through which life force flows to power the human system. The state of a person's energy system is usually reflected in the state of their mind, nervous system and emotions. When living unconsciously, the pathways contract and we feel less peaceful and happy. When living consciously, life force flows freely." },
+  { n: 2, t: "Emotional Body", sub: "The Heart Space", color: "#7ec8e3", size: 240, body: "The internal weather system of the human feelings. It changes to reflect the state of the energy body. It is also influenced by sensory inputs, thoughts, and external situations. When closed, we feel numb, indifferent, and find it hard to connect. When open, we feel empathic, alive, and love radiates from the inside out." },
+  { n: 3, t: "Intellectual Body", sub: "Executive Discernment", color: "#5fa8d3", size: 320, body: "The faculty of analysing, reasoning, logic, discrimination, and conscious choice. It is able to analyse memories and sensory experiences. It is not intelligence — it simply dissects and analyses information and mental data." },
+  { n: 4, t: "Mental Body", sub: "Thought & Memory", color: "#3d7ab0", size: 400, body: "The database of past accumulated memories, experiences, conditioning, endless thinking. Strong identification with the contents of the mind creates the false ego, and the illusion of psychological time as past and future." },
+  { n: 5, t: "Physical Body", sub: "The Vehicle", color: "#2a5688", size: 480, body: "The biological vessel and sensory organs through which life perceives and acts in the world. It is the outermost expression of all the inner layers." },
+  { n: 6, t: "Environment", sub: "The World", color: "#1b3a60", size: 560, body: "The physical world surrounding the body. This is what you perceive externally through the senses. The spaces, nature, and people we constantly exchange energy with. Often overlooked, the environment is a layer of being — not separate from you, but in constant dialogue with all the layers within." },
 ];
 
 const LEVER_ZERO = {
@@ -306,17 +337,13 @@ function ZonePanel({ zone }: { zone: Zone }) {
 }
 
 function PhilosophyPage() {
-  const [hasMounted, setHasMounted] = useState(false);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
-  const [reversalPulse, setReversalPulse] = useState(false);
-  const reversalPulseRef = useRef<HTMLParagraphElement | null>(null);
   const [activeLayer, setActiveLayer] = useState(0);
   const [openLever, setOpenLever] = useState<number | null>(null);
   const [activeZone, setActiveZone] = useState(1);
   const layer = LAYERS[activeLayer];
 
   useEffect(() => {
-    setHasMounted(true);
     if (typeof window === "undefined" || !window.matchMedia) return;
     const media = window.matchMedia("(prefers-reduced-motion: reduce)");
     const sync = () => setPrefersReducedMotion(media.matches);
@@ -324,22 +351,6 @@ function PhilosophyPage() {
     media.addEventListener("change", sync);
     return () => media.removeEventListener("change", sync);
   }, []);
-
-  useEffect(() => {
-    if (!hasMounted || prefersReducedMotion || typeof window === "undefined" || !reversalPulseRef.current)
-      return;
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const entry = entries[0];
-        if (!entry?.isIntersecting) return;
-        setReversalPulse(true);
-        observer.disconnect();
-      },
-      { threshold: 0.8 },
-    );
-    observer.observe(reversalPulseRef.current);
-    return () => observer.disconnect();
-  }, [hasMounted, prefersReducedMotion]);
 
   return (
     <div className="min-h-screen bg-[#0a1628] text-white">
@@ -350,20 +361,11 @@ function PhilosophyPage() {
             20% { opacity: 0.95; }
             100% { transform: translate(-50%, -160%); opacity: 0; }
           }
-          @keyframes release-pulse {
-            0% { box-shadow: 0 0 0 0 rgba(126, 200, 227, 0); }
-            40% { box-shadow: 0 0 0 14px rgba(126, 200, 227, 0.32); }
-            100% { box-shadow: 0 0 0 34px rgba(126, 200, 227, 0); }
-          }
           .reversal-connector-flow {
             animation: reversal-flow 3s ease-in-out infinite;
           }
-          .reversal-release-once {
-            animation: release-pulse 1.1s ease-out 1;
-          }
           @media (prefers-reduced-motion: reduce) {
-            .reversal-connector-flow,
-            .reversal-release-once {
+            .reversal-connector-flow {
               animation: none !important;
             }
           }
@@ -456,16 +458,30 @@ function PhilosophyPage() {
               })}
             </div>
 
-            {/* Canopy — all nine branches visible as a set, no implied order */}
-            <div className="relative z-10 mt-14 grid grid-cols-1 gap-x-8 gap-y-10 sm:mt-16 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-10 lg:gap-y-12">
-              {SUFFERING_BRANCHES.map((branch) => (
-                <div key={branch.name}>
-                  <h3 className="display text-lg tracking-wide text-[#7ec8e3] sm:text-xl">
-                    {branch.name}
-                  </h3>
-                  <p className="mt-2 text-[15px] leading-relaxed text-[#b8d4e8] sm:text-base">
-                    {branch.line}
-                  </p>
+            {/* Canopy — three unlabelled rows of three; grouping survives as single-column order on mobile */}
+            <div className="relative z-10 mt-14 space-y-10 sm:mt-16 sm:space-y-12">
+              {SUFFERING_BRANCH_GROUPS.map((group) => (
+                <div
+                  key={group.branches[0].name}
+                  className="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-3 sm:gap-x-8 lg:gap-x-10 lg:gap-y-12"
+                >
+                  {group.branches.map((branch) => (
+                    <div
+                      key={branch.name}
+                      className="border-l-2 pl-4 sm:pl-5"
+                      style={{ borderColor: `${group.accent}99` }}
+                    >
+                      <h3 className="display text-lg tracking-wide text-[#7ec8e3] sm:text-xl">
+                        {branch.name}
+                      </h3>
+                      <p className="mt-2 text-[15px] leading-relaxed text-[#b8d4e8] sm:text-base">
+                        {branch.line}
+                      </p>
+                      <p className="mt-2 text-[12px] leading-relaxed text-[#b8d4e8]/50 sm:text-[13px]">
+                        {branch.felt}
+                      </p>
+                    </div>
+                  ))}
                 </div>
               ))}
             </div>
@@ -477,24 +493,9 @@ function PhilosophyPage() {
         </div>
       </section>
 
-      {/* Enjoying the Juice of Life */}
-      <section className="relative bg-[#0a1628] py-28 sm:py-32">
-        <div className="relative z-10 mx-auto max-w-[680px] px-6">
-          <h2 className="display text-center text-3xl text-white sm:text-4xl md:text-5xl">
-            Enjoying the Juice of Life
-          </h2>
-          <div className="mt-12 space-y-6 text-[15px] leading-[1.85] text-[#b8d4e8] sm:text-base sm:leading-[1.9]">
-            {JUICE_OF_LIFE_PARAGRAPHS.map((paragraph) => (
-              <p key={paragraph.slice(0, 48)}>{paragraph}</p>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* The Reversal */}
+      {/* The Reversal — Enjoying the Juice of Life */}
       <section className="relative overflow-hidden bg-[#11253b] py-32">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,rgba(126,200,227,0.2),transparent_58%)]" />
-        <Starfield density={0.55} />
         <div className="relative z-10 mx-auto max-w-3xl px-6 text-center">
           <div className="relative mx-auto h-16 w-3">
             <div className="absolute inset-0 rounded-full bg-gradient-to-t from-[#7ec8e3]/25 to-[#e8f4fb]/75" />
@@ -502,71 +503,54 @@ function PhilosophyPage() {
               <span className="reversal-connector-flow absolute left-1/2 top-0 h-10 w-1 rounded-full bg-gradient-to-t from-transparent via-[#7ec8e3] to-white" />
             )}
           </div>
-          <div className="label-eyebrow">THE REVERSAL</div>
           <h2 className="display mt-6 text-4xl text-white sm:text-5xl md:text-6xl">
-            One root. One place it comes undone.
+            Enjoying the Juice of Life
           </h2>
-          <p className="mx-auto mt-10 whitespace-pre-line text-[15px] leading-loose text-[#b8d4e8] sm:text-base">
-            {`This is the most hopeful fact in all of it. A structure with a single root has
-a single place where it can be dismantled.
-
-Suppose you were to fully remember, in this moment, that you are the boundless
-life and not the small separate self. Watch what happens to the chain.
-
-The separate self dissolves — there is no longer anyone separate to be. With no
-separate self, resistance falls away — no one is braced against life, nothing
-is left to refuse. As resistance falls away, the contraction releases — the
-clenched energy opens, and the closed system opens with it. And as the system
-opens, the void fills — not from anything gained, but because you have
-recognised the infinite life you always were.`}
-          </p>
-          <p
-            ref={reversalPulseRef}
-            className={`display mt-12 text-3xl text-white sm:text-4xl ${
-              reversalPulse && !prefersReducedMotion ? "reversal-release-once" : ""
-            }`}
-          >
-            Pull the root, and every link lets go at once.
-          </p>
         </div>
 
-        <div className="relative left-1/2 mt-16 w-[108vw] -translate-x-1/2 px-6">
+        {/* Always-expanded reading panel — opaque enough for 4.5:1+ contrast */}
+        <div className="relative z-10 mx-auto mt-12 max-w-3xl px-6">
+          <div
+            className="rounded-2xl border border-white/12 px-6 py-10 sm:px-10 sm:py-12"
+            style={{
+              background: "rgba(8, 16, 30, 0.94)",
+              backdropFilter: "blur(24px)",
+              WebkitBackdropFilter: "blur(24px)",
+              boxShadow: "0 0 60px -24px rgba(126,200,227,0.28)",
+            }}
+          >
+            <div className="mx-auto max-w-[680px] space-y-6 text-left text-[15px] leading-[1.85] text-[#d5e6f2] sm:text-base sm:leading-[1.9]">
+              {JUICE_OF_LIFE_PARAGRAPHS.map((paragraph) => (
+                <p key={paragraph.slice(0, 48)}>{paragraph}</p>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="relative left-1/2 z-10 mt-16 w-[108vw] -translate-x-1/2 px-6">
           <div className="mx-auto max-w-6xl">
             <div className="grid gap-8 lg:grid-cols-2">
-              <div className="glass-card relative overflow-hidden p-7 lg:-translate-y-4">
+              <div className="glass-card relative overflow-hidden p-7">
                 <div className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#7ec8e3]/22 to-transparent" />
                 <h3 className="display relative z-10 text-3xl text-white">
-                  Recognition — from above
+                  Become conscious of the source of life within
                 </h3>
-                <p className="relative z-10 mt-5 whitespace-pre-line text-[15px] leading-relaxed text-[#b8d4e8]">
-                  {`Seeing directly through the mistaken identity. Awareness turning back on itself
-and recognising what it actually is. This is the work of the Awareness lever —
-observation, disidentification, self-inquiry.`}
+                <p className="relative z-10 mt-5 text-[15px] leading-relaxed text-[#b8d4e8]">
+                  The essence of inner growth. Raising your consciousness, realising that you are
+                  life itself, and resting in your true nature.
                 </p>
               </div>
-              <div className="glass-card relative overflow-hidden p-7 lg:translate-y-4">
+              <div className="glass-card relative overflow-hidden p-7">
                 <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#7ec8e3]/22 to-transparent" />
                 <h3 className="display relative z-10 text-3xl text-white">
-                  Restoration — from below
+                  Live in harmony with the intelligence of life
                 </h3>
-                <p className="relative z-10 mt-5 whitespace-pre-line text-[15px] leading-relaxed text-[#b8d4e8]">
-                  {`Working directly on the energy body — releasing contraction, restoring the free
-flow of life force. This is the work of breath, movement, sound, heart, sleep,
-and the conditions you live in.`}
+                <p className="relative z-10 mt-5 text-[15px] leading-relaxed text-[#b8d4e8]">
+                  Bringing the wisdom and light of consciousness into your daily life and
+                  relationships, and using it to meet the challenges of the world.
                 </p>
               </div>
             </div>
-            <p className="mx-auto mt-16 max-w-4xl whitespace-pre-line text-center text-[15px] leading-relaxed text-[#b8d4e8]">
-              {`These are the two great movements of the path, and they feed each other
-endlessly. Every release in the body makes recognition easier. Every taste of
-recognition releases the body further.`}
-            </p>
-            <p className="mx-auto mt-8 max-w-4xl whitespace-pre-line text-center text-sm leading-relaxed text-[#b8d4e8]/75">
-              {`Recognition alone is rarely enough. Contraction settles into tissue and nervous
-system over years, and does not always release the moment understanding dawns.
-You can see your true nature clearly and still find the chest tight and the old
-reactions running. This is why the framework works from both directions at once.`}
-            </p>
           </div>
         </div>
       </section>
