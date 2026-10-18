@@ -24,7 +24,7 @@ export function oneToOnePricingLine() {
 
 export function oneToOneOfferNote() {
   if (ONE_TO_ONE_OFFER.free) {
-    return `The first ${ONE_TO_ONE_OFFER.freeSessionLimit} sessions are offered freely. After that, €${ONE_TO_ONE_OFFER.priceEur}.`;
+    return `The first ${ONE_TO_ONE_OFFER.freeSessionLimit} people are seen freely. After that, €${ONE_TO_ONE_OFFER.priceEur}.`;
   }
   return `€${ONE_TO_ONE_OFFER.priceEur} for ${ONE_TO_ONE_OFFER.durationMinutes} minutes.`;
 }
@@ -44,7 +44,5 @@ export function oneToOneBookingLeadLine() {
 }
 
 export function oneToOneWorkDescription() {
-  const base =
-    "A diagnostic session rooted in the complete Sunya framework. Find where your system is actually contracted, and the single lever that matters most right now.";
-  return ONE_TO_ONE_OFFER.free ? `${base} Currently free for a limited time.` : base;
+  return "A diagnostic session rooted in the complete Sunya framework. Find the single biggest obstacle to your wellbeing, address it at its root, and leave with a personalised protocol.";
 }

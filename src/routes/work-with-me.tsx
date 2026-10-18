@@ -21,7 +21,7 @@ export const Route = createFileRoute("/work-with-me")({
   component: WorkPage,
   head: () => ({
     ...buildSeoHead({
-      title: "Work With Desmond — 1-on-1 Sunya Sessions | Sunya",
+      title: "Work With Desmond — 1-on-1 Sunya Sessions",
       description: oneToOneWorkDescription(),
       path: "/work-with-me",
       ogType: "website",
@@ -47,12 +47,27 @@ export const Route = createFileRoute("/work-with-me")({
 const CALENDLY_URL = "https://calendly.com/easoriaai/reset_session";
 
 const STEPS = [
-  "Full diagnostic across the root of suffering and the seven layers of being",
-  "Identification of where your system is actually contracted — which is rarely where you think",
-  "The single lever that matters most for you right now, and why the others can wait",
-  "A personalised protocol built for your actual life, not a generic programme",
-  "A follow-up voice note from Desmond within 48 hours",
-];
+  {
+    title: "Settle in",
+    body: "You will be guided through a short breath or awareness practice, so the session begins from a settled state.",
+  },
+  {
+    title: "Identify the root problem",
+    body: "We find the single biggest obstacle to your wellbeing right now, and address it at its root.",
+  },
+  {
+    title: "Practices and insights",
+    body: "You will be guided to apply simple yet powerful practices, and offered the insights that resolve the root problem.",
+  },
+  {
+    title: "Your personalised protocol",
+    body: "A set of practices, techniques and lifestyle changes built to support the main solution in your actual life.",
+  },
+  {
+    title: "Leave with it in writing",
+    body: "Within 48 hours you receive a document containing your protocol and the guidance given, so nothing depends on memory and you know how to apply it whenever it is needed.",
+  },
+] as const;
 
 function WorkPage() {
   function scrollToBooking() {
@@ -113,53 +128,27 @@ function WorkPage() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-[#0a1628] py-24">
-        <div className="relative z-10 mx-auto max-w-3xl px-6">
-          <div className="glass-card space-y-5 p-9 text-[#b8d4e8]">
-            <p>
-              A diagnostic session rooted in the complete Sunya framework. The aim is not to make
-              you feel better for an hour, but to find the one place your system is actually stuck,
-              and to leave you with something precise enough to work with.
-            </p>
-            <p>
-              Most people arrive assuming they know what their problem is. Usually the thing they
-              name is downstream of something else. Finding what is actually upstream is most of the
-              work.
-            </p>
-            <p>
-              Most people are stuck in one of five places. Finding which one is yours is much of
-              what a session is for.
-            </p>
-            <p>
-              <Link
-                to="/philosophy"
-                className="text-sm text-[#7ec8e3]/80 transition hover:text-white"
-              >
-                Read about the five zones →
-              </Link>
-            </p>
-          </div>
-        </div>
-      </section>
-
       <section className="relative overflow-hidden bg-[#060d1c] py-28">
         <div className="relative z-10 mx-auto max-w-6xl px-6">
-          <div className="text-center">
-            <div className="label-eyebrow">What happens in a session</div>
-            <h2 className="display mt-6 text-4xl text-white sm:text-5xl">
-              Five precise <span className="display-italic text-[#b8d4e8]">movements.</span>
-            </h2>
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="display text-4xl text-white sm:text-5xl">What happens in a session</h2>
+            <p className="mt-6 text-[#b8d4e8]">
+              A diagnostic session rooted in the complete Sunya framework. The aim is not to make you feel better for an hour, but to find the one place your system is actually stuck, and to leave you with something precise enough to work with.
+            </p>
           </div>
           <div className="mx-auto mt-14 max-w-3xl space-y-4">
-            {STEPS.map((s, i) => (
+            {STEPS.map((step, i) => (
               <div
-                key={i}
+                key={step.title}
                 className="flex items-start gap-5 rounded-2xl border border-white/10 bg-white/[0.03] p-5"
               >
                 <div className="display flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#7ec8e3]/10 text-xl text-[#7ec8e3] ring-1 ring-[#7ec8e3]/30">
                   {i + 1}
                 </div>
-                <p className="pt-2 text-[#b8d4e8]">{s}</p>
+                <div className="min-w-0 pt-2">
+                  <p className="font-semibold text-white">{step.title}</p>
+                  <p className="mt-1 text-[#b8d4e8]">{step.body}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -176,13 +165,15 @@ function WorkPage() {
               <p className="mt-2 text-xs text-[#b8d4e8]/70">{oneToOneOfferNote()}</p>
             </div>
             <ul className="mt-7 space-y-3 text-sm text-[#b8d4e8]">
-              {["Full Sunya diagnostic", "Personalised practice protocol", "Applied to your specific situation"].map(
-                (i) => (
-                  <li key={i} className="flex gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-[#e8c79c]" /> {i}
-                  </li>
-                ),
-              )}
+              {[
+                "Full Sunya diagnostic",
+                "Personalised practice protocol",
+                "Written protocol within 48 hours",
+              ].map((i) => (
+                <li key={i} className="flex gap-2">
+                  <CheckCircle2 className="h-4 w-4 shrink-0 text-[#e8c79c]" /> {i}
+                </li>
+              ))}
             </ul>
             <button
               onClick={scrollToBooking}
