@@ -5,7 +5,7 @@ import { Starfield } from "@/components/Starfield";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { Breadcrumb } from "@/components/site/Breadcrumb";
-import desmondImg from "@/assets/desmond.jpg";
+import { FounderSection } from "@/components/site/FounderBio";
 import { buildSeoHead, buildServiceSchema } from "@/lib/seo";
 import {
   ONE_TO_ONE_OFFER,
@@ -47,46 +47,17 @@ export const Route = createFileRoute("/work-with-me")({
 const CALENDLY_URL = "https://calendly.com/easoriaai/reset_session";
 
 const STEPS = [
-  "Full diagnostic across the five links and the seven layers of being",
+  "Full diagnostic across the root of suffering and the seven layers of being",
   "Identification of where your system is actually contracted — which is rarely where you think",
   "The single lever that matters most for you right now, and why the others can wait",
   "A personalised protocol built for your actual life, not a generic programme",
-  "ongoing support if needed.",
+  "A follow-up voice note from Desmond within 48 hours",
 ];
-
-const ZONES = [
-  {
-    zone: "Survival crisis",
-    description:
-      "The material ground is unstable — money, housing, safety. No inner practice takes root here until that is addressed directly.",
-  },
-  {
-    zone: "Nervous system collapse",
-    description:
-      "Exhausted, dysregulated, sleeping badly, tense in a way that never fully releases.",
-  },
-  {
-    zone: "Emotional accumulation",
-    description:
-      "Stable on the surface, but carrying grief, resentment, or numbness that has not moved in years.",
-  },
-  {
-    zone: "Mental fragmentation",
-    description:
-      "Scattered, overthinking, self-critical, mentally exhausted despite physical rest.",
-  },
-  {
-    zone: "The hollow seeker",
-    description:
-      "Everything works. Nothing satisfies. Successful by every external measure and persistently empty.",
-  },
-] as const;
 
 function WorkPage() {
   function scrollToBooking() {
     document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" });
   }
-
 
   // Load Calendly script + scroll to #booking if hash present
   useEffect(() => {
@@ -119,8 +90,7 @@ function WorkPage() {
         <div
           className="absolute left-1/2 top-1/3 h-[700px] w-[700px] -translate-x-1/2 rounded-full opacity-30"
           style={{
-            background:
-              "radial-gradient(circle, #d4a574 0%, #8b6f3d 30%, transparent 70%)",
+            background: "radial-gradient(circle, #d4a574 0%, #8b6f3d 30%, transparent 70%)",
             filter: "blur(40px)",
           }}
         />
@@ -129,9 +99,7 @@ function WorkPage() {
           <h1 className="display mt-6 text-5xl text-white sm:text-7xl">
             Work With <span className="display-italic text-[#e8c79c]">Desmond</span>
           </h1>
-          <p className="mx-auto mt-8 max-w-2xl text-lg text-[#b8d4e8]">
-            {oneToOneHeroOfferLine()}
-          </p>
+          <p className="mx-auto mt-8 max-w-2xl text-lg text-[#b8d4e8]">{oneToOneHeroOfferLine()}</p>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-[#b8d4e8]">
             Direct, personalised engagement with the full Sunya framework — applied to your
             specific life, your specific situation, your specific system.
@@ -148,12 +116,27 @@ function WorkPage() {
       <section className="relative overflow-hidden bg-[#0a1628] py-24">
         <div className="relative z-10 mx-auto max-w-3xl px-6">
           <div className="glass-card space-y-5 p-9 text-[#b8d4e8]">
-            <p className="display text-2xl text-white">This is not generic life coaching.</p>
             <p>
-              It is a diagnostic session rooted in the complete Sunya framework. The aim is not to make you feel better for an hour. It is to find the one place your system is actually stuck — and to leave you with something precise enough to work with.
+              A diagnostic session rooted in the complete Sunya framework. The aim is not to make
+              you feel better for an hour, but to find the one place your system is actually stuck,
+              and to leave you with something precise enough to work with.
             </p>
             <p>
-              Most people arrive assuming they know what their problem is. Usually the thing they name is downstream of something else. Finding what is actually upstream is most of the work.
+              Most people arrive assuming they know what their problem is. Usually the thing they
+              name is downstream of something else. Finding what is actually upstream is most of the
+              work.
+            </p>
+            <p>
+              Most people are stuck in one of five places. Finding which one is yours is much of
+              what a session is for.
+            </p>
+            <p>
+              <Link
+                to="/philosophy"
+                className="text-sm text-[#7ec8e3]/80 transition hover:text-white"
+              >
+                Read about the five zones →
+              </Link>
             </p>
           </div>
         </div>
@@ -183,47 +166,6 @@ function WorkPage() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-[#0a1628] py-24">
-        <div className="relative z-10 mx-auto max-w-6xl px-6">
-          <div className="text-center">
-            <div className="label-eyebrow">IS THIS FOR YOU</div>
-            <h2 className="display mt-6 text-4xl text-white sm:text-5xl">
-              Most people are stuck in one of five places.
-            </h2>
-            <p className="mx-auto mt-6 max-w-3xl text-[#b8d4e8]">
-              Every system has a single point of greatest friction at any moment. Address anything other than that and it quietly defeats every other effort. Much of a session is simply finding yours.
-            </p>
-          </div>
-          <div className="mx-auto mt-14 max-w-4xl space-y-4">
-            {ZONES.map((item, index) => (
-              <div
-                key={item.zone}
-                className="flex items-start gap-5 rounded-2xl border border-white/10 bg-white/[0.03] p-5"
-              >
-                <div className="display flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#7ec8e3]/10 text-xl text-[#7ec8e3] ring-1 ring-[#7ec8e3]/30">
-                  {index + 1}
-                </div>
-                <div className="pt-1">
-                  <h3 className="display text-2xl text-white">{item.zone}</h3>
-                  <p className="mt-2 text-[#b8d4e8]">{item.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-          <p className="mx-auto mt-10 max-w-4xl text-center text-[#b8d4e8]">
-            If you recognise yourself in more than one, that is normal — and identifying which one to address first is exactly what the session is for.
-          </p>
-          <div className="mt-6 text-center">
-            <Link
-              to="/philosophy"
-              className="inline-flex items-center gap-2 text-sm text-[#7ec8e3] transition hover:text-white"
-            >
-              Read more about the five zones →
-            </Link>
-          </div>
-        </div>
-      </section>
-
       {/* Pricing card */}
       <section className="relative overflow-hidden bg-[#0a1628] py-20">
         <div className="relative z-10 mx-auto max-w-2xl px-6">
@@ -234,16 +176,13 @@ function WorkPage() {
               <p className="mt-2 text-xs text-[#b8d4e8]/70">{oneToOneOfferNote()}</p>
             </div>
             <ul className="mt-7 space-y-3 text-sm text-[#b8d4e8]">
-              {[
-                "Full Sunya diagnostic",
-                "Personalised practice protocol",
-                "Applied to your specific situation",
-                "Follow-up voice note within 48hrs",
-              ].map((i) => (
-                <li key={i} className="flex gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-[#e8c79c]" /> {i}
-                </li>
-              ))}
+              {["Full Sunya diagnostic", "Personalised practice protocol", "Applied to your specific situation"].map(
+                (i) => (
+                  <li key={i} className="flex gap-2">
+                    <CheckCircle2 className="h-4 w-4 text-[#e8c79c]" /> {i}
+                  </li>
+                ),
+              )}
             </ul>
             <button
               onClick={scrollToBooking}
@@ -256,28 +195,11 @@ function WorkPage() {
       </section>
 
       {/* Booking */}
-      <section
-        id="booking"
-        className="relative overflow-hidden bg-[#0a1628] py-28 scroll-mt-24"
-      >
+      <section id="booking" className="relative overflow-hidden bg-[#0a1628] py-28 scroll-mt-24">
         <div className="relative z-10 mx-auto max-w-4xl px-6">
           <div className="text-center">
-            <div className="label-eyebrow">Book your session</div>
-            <h2 className="display mt-6 text-4xl text-white sm:text-5xl">
-              Pick a time <span className="display-italic text-[#b8d4e8]">that works.</span>
-            </h2>
+            <h2 className="display text-4xl text-white sm:text-5xl">Book your session</h2>
             <p className="mx-auto mt-4 max-w-2xl text-sm text-[#b8d4e8]">{oneToOneBookingLeadLine()}</p>
-            <ul className="mx-auto mt-8 flex max-w-2xl flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-[#b8d4e8]">
-              {[
-                "Full Sunya diagnostic",
-                "Personalised practice protocol",
-                "48-hour follow-up voice note",
-              ].map((i) => (
-                <li key={i} className="inline-flex items-center gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-[#7ec8e3]" /> {i}
-                </li>
-              ))}
-            </ul>
           </div>
 
           <div className="glass-strong mt-10 overflow-hidden rounded-3xl p-2">
@@ -294,10 +216,7 @@ function WorkPage() {
           </p>
           <p className="mt-6 text-center text-sm text-[#b8d4e8]/80">
             Prefer a group? Explore{" "}
-            <Link
-              to="/gatherings"
-              className="text-[#7ec8e3] transition hover:text-white"
-            >
+            <Link to="/gatherings" className="text-[#7ec8e3] transition hover:text-white">
               meditation events in Dublin and online
             </Link>
             .
@@ -305,67 +224,7 @@ function WorkPage() {
         </div>
       </section>
 
-      <section
-        className="relative overflow-hidden py-32"
-        style={{
-          background: "linear-gradient(135deg, #0a1628 0%, #1a1530 50%, #2a1a1f 100%)",
-        }}
-      >
-        <div className="relative z-10 mx-auto grid max-w-6xl gap-14 px-6 lg:grid-cols-5 lg:items-center">
-          <div className="lg:col-span-2">
-            <div className="glass relative overflow-hidden rounded-3xl">
-              <img
-                src={desmondImg}
-                alt="Desmond Olubunmi"
-                width={1024}
-                height={1024}
-                loading="lazy"
-                className="aspect-[4/5] h-full w-full object-cover"
-              />
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0a1628]/40 via-transparent to-transparent" />
-            </div>
-          </div>
-          <div className="lg:col-span-3">
-            <div className="label-eyebrow">The founder</div>
-            <h2 className="display mt-5 text-4xl text-white sm:text-6xl">Desmond Olubunmi</h2>
-            <p className="display-italic mt-3 text-lg text-[#b8d4e8]">Spiritual teacher</p>
-            <div className="mt-8 space-y-4 text-[#b8d4e8]">
-              <p>
-                Desmond Olubunmi has dedicated his life to the physical, mental and spiritual
-                wellbeing of humanity.
-              </p>
-              <p>
-                A naturally gifted seeker of truth, he spent his teens and early twenties in long
-                daily contemplative practice across diverse traditions, distilling the science of
-                human wellbeing down to its absolute essence.
-              </p>
-              <p>
-                Desmond offers a complete framework for human wellbeing that is timeless and
-                universal. His presence and guidance help people realise the natural peace and bliss
-                of their inner being, and live it in their daily lives.
-              </p>
-              <p>
-                He is the author of{" "}
-                <em className="italic font-medium text-white">The Sleep Rhythm Reset</em>, an Amazon
-                #1 bestseller in its category, and the creator of the Sunya Sleep app. He currently
-                teaches through writing, practice, and gatherings, in Dublin and online.
-              </p>
-            </div>
-            <div className="mt-9 flex flex-wrap gap-4">
-              <a
-                href="#booking"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" });
-                }}
-                className="glow-btn inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium"
-              >
-                {oneToOneBookingCtaLabel()} <ArrowRight className="h-4 w-4" />
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      <FounderSection />
 
       <Footer />
     </div>

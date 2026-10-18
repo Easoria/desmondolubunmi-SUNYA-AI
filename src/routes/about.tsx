@@ -2,13 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { Breadcrumb } from "@/components/site/Breadcrumb";
+import { FounderBio, FOUNDER_SUBTITLE } from "@/components/site/FounderBio";
 import { buildSeoHead, PERSON_SCHEMA } from "@/lib/seo";
-
-const FOUNDER_PARAGRAPHS = [
-  "Desmond Olubunmi has dedicated his life to the physical, mental and spiritual wellbeing of humanity.",
-  "A naturally gifted seeker of truth, he spent his teens and early twenties in long daily contemplative practice across diverse traditions, distilling the science of human wellbeing down to its absolute essence.",
-  "Desmond offers a complete framework for human wellbeing that is timeless and universal. His presence and guidance help people realise the natural peace and bliss of their inner being, and live it in their daily lives.",
-] as const;
 
 const BOOK_SCHEMA = {
   "@context": "https://schema.org",
@@ -63,24 +58,10 @@ function AboutPage() {
       <Breadcrumb />
       <main className="mx-auto max-w-4xl px-6 pb-24 pt-12">
         <div className="label-eyebrow">The founder</div>
-        <h1 className="display mt-4 text-4xl text-white sm:text-5xl">
-          Desmond Olubunmi
-        </h1>
-        <p className="display-italic mt-3 text-lg text-[#b8d4e8]">Spiritual teacher</p>
+        <h1 className="display mt-4 text-4xl text-white sm:text-5xl">Desmond Olubunmi</h1>
+        <p className="display-italic mt-3 text-lg text-[#b8d4e8]">{FOUNDER_SUBTITLE}</p>
 
-        <section className="mt-10 space-y-4 text-[#b8d4e8]">
-          {FOUNDER_PARAGRAPHS.map((paragraph) => (
-            <p key={paragraph} className="leading-relaxed">
-              {paragraph}
-            </p>
-          ))}
-          <p className="leading-relaxed">
-            He is the author of{" "}
-            <em className="italic font-medium text-white">The Sleep Rhythm Reset</em>, an Amazon #1
-            bestseller in its category, and the creator of the Sunya Sleep app. He currently teaches
-            through writing, practice, and gatherings, in Dublin and online.
-          </p>
-        </section>
+        <FounderBio className="mt-10 space-y-4 text-[#b8d4e8]" />
 
         <section className="mt-12 rounded-3xl border border-white/10 bg-white/[0.03] p-6">
           <h2 className="display text-2xl text-white">Published work</h2>
@@ -110,7 +91,6 @@ function AboutPage() {
             </li>
           </ul>
         </section>
-
       </main>
       <Footer />
     </div>
