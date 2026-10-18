@@ -791,10 +791,7 @@ function PhilosophyPage() {
             </div>
           </noscript>
 
-          <p className="mx-auto mt-14 max-w-3xl text-center text-sm leading-relaxed text-[#b8d4e8]/85">
-            Most people sit across two zones. When that happens, identify which one — if addressed — would most rapidly improve the other. Start there.
-          </p>
-          <div className="mt-8 flex flex-col items-center gap-4">
+          <div className="mt-14 flex flex-col items-center gap-4">
             <Link
               to="/problems"
               className="glow-btn inline-flex items-center gap-2 rounded-full px-8 py-4 text-sm font-medium"
