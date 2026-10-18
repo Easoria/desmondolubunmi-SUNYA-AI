@@ -149,32 +149,168 @@ const LAYERS = [
   { n: 6, t: "Environment", sub: "The World", color: "#1b3a60", size: 560, body: "The physical world surrounding the body. This is what you perceive externally through the senses. The spaces, nature, and people we constantly exchange energy with. Often overlooked, the environment is a layer of being — not separate from you, but in constant dialogue with all the layers within." },
 ];
 
+/** Copy from order-of-operations Lever Map — italic tagline + body (+ optional notes). */
+type LeverMapBlurb = {
+  italic: string;
+  rest?: string;
+  notes?: string[];
+};
+
 const LEVER_ZERO = {
   n: 0,
   t: "Conservation",
   slug: "conservation" as const,
-  body: `Before you try to generate more energy, stop losing the energy you have.
-
-The human system constantly leaks vitality through unconscious habit — endless
-scrolling, compulsive overthinking, idle talk, chronic over-consumption,
-over-stimulation of every kind. Close the leaks and the system recharges on its
-own.`,
+  blurb: {
+    italic: "Stops the leakage.",
+    rest: "Before generating more energy, plug the holes.",
+    notes: [
+      "Reach for this when you are consistently depleted despite practice — when everything you build keeps draining away.",
+    ],
+  } satisfies LeverMapBlurb,
 };
 
 const LEVERS = [
-  { n: 1, t: "Breath", slug: "breath" as const, what: "The breath is the remote control for the nervous system. The only autonomic function you can consciously override — making it the most immediate lever available to any human being at any moment.", group: "internal" as const },
-  { n: 2, t: "Movement", slug: "movement" as const, what: "The physical body stores past trauma and resistance as rigidity. Conscious, fluid movement restores alignment and removes friction from the biological hardware. The body IS the mind made physical.", group: "internal" as const },
-  { n: 3, t: "Mind", slug: "mind" as const, what: "Training the intellect to move from scattered rumination into single-pointed focus and clarity. A trained mind stops fighting reality and becomes a brilliant tool for alignment and truth.", group: "internal" as const },
-  { n: 4, t: "Sound", slug: "sound" as const, what: "The body is highly responsive to vibration. Specific sounds, silence, and conscious listening can harmonize the nervous system far faster than thought-based practices.", group: "internal" as const },
-  { n: 5, t: "Heart", slug: "heart" as const, what: "Transforming emotional contraction. Compassion, forgiveness, and devotion literally melt the defensive armour built around the chest. The heart is an electromagnetic field that affects everyone around you.", group: "internal" as const },
-  { n: 6, t: "Awareness", slug: "awareness" as const, what: "The capacity to notice your experience without instantly reacting. By stepping back and observing thoughts and sensations, you detach from the illusion of the Self and rest in unconditioned presence. The master switch.", group: "internal" as const },
-  { n: 7, t: "Sustenance", slug: "sustenance" as const, what: "Stripping the survival panic away from money and work. When livelihood is misaligned with authentic nature, every working hour costs Prana. Aligning labour with truth transforms work into frictionless service.", group: "external" as const },
-  { n: 8, t: "Sleep", slug: "sleep" as const, what: "Sleep is the most active repair process the body undertakes. The nervous system processes, the energetic body recharges, the physical body restores. Compromising sleep compromises every other lever.", group: "external" as const },
-  { n: 9, t: "Nutrition", slug: "nutrition" as const, what: "Food is not just fuel — it is information sent to every cell. High-water-content, living foods with low processing friction give more energy than they take to digest.", group: "external" as const },
-  { n: 10, t: "Connection", slug: "connection" as const, what: "We are nodes in a living relational field. Healing the illusion of separation by cultivating authentic, maskless relationships allows nervous systems to co-regulate. You cannot fully heal alone.", group: "external" as const },
-  { n: 11, t: "Nature", slug: "nature" as const, what: "The body evolved in nature over millions of years. Modern life has severed this connection — and the nervous system registers severance as chronic stress. Syncing with the Earth is biological necessity.", group: "external" as const },
-  { n: 12, t: "Environment", slug: "environment" as const, what: "Your physical space mirrors and shapes your mental space. Visual noise creates mental noise. Space design is not decoration — it is inner architecture.", group: "external" as const },
+  {
+    n: 1,
+    t: "Breath",
+    slug: "breath" as const,
+    blurb: {
+      italic: "Regulates the nervous system.",
+      rest: "The universal entry point and the fastest- acting tool in the framework. Reach for this first, always, and return to it whenever the system is dysregulated.",
+    } satisfies LeverMapBlurb,
+    group: "internal" as const,
+  },
+  {
+    n: 2,
+    t: "Movement",
+    slug: "movement" as const,
+    blurb: {
+      italic: "Releases stored physical tension and builds energetic capacity.",
+      notes: [
+        "Reach for this when the body is rigid, restless, or chronically tense — when the physical hardware is blocking everything above it.",
+      ],
+    } satisfies LeverMapBlurb,
+    group: "internal" as const,
+  },
+  {
+    n: 3,
+    t: "Mind",
+    slug: "mind" as const,
+    blurb: {
+      italic: "Directs cognitive energy and clears mental noise.",
+      rest: "Reach for this when you are capable of stability but scattered — when the mind is sharp but undirected.",
+    } satisfies LeverMapBlurb,
+    group: "internal" as const,
+  },
+  {
+    n: 4,
+    t: "Sound",
+    slug: "sound" as const,
+    blurb: {
+      italic: "Reorganises internal coherence through vibration.",
+      rest: "Reach for this when you need a non-effortful entry into stillness — when the mind is too resistant for direct meditation but can be carried by sound.",
+    } satisfies LeverMapBlurb,
+    group: "internal" as const,
+  },
+  {
+    n: 5,
+    t: "Heart",
+    slug: "heart" as const,
+    blurb: {
+      italic: "Dissolves emotional armour and opens the system.",
+      rest: "Reach for this when emotional heaviness, shutdown, or grief is the primary obstruction. The solvent that melts what mental effort cannot move.",
+    } satisfies LeverMapBlurb,
+    group: "internal" as const,
+  },
+  {
+    n: 6,
+    t: "Awareness",
+    slug: "awareness" as const,
+    blurb: {
+      italic: "The master lever.",
+      rest: "Reach for this once basic stability exists. Contains the entire spectrum from basic relaxation (NSDR, Body Scan) to the deepest practices in the framework (Ultimate Self-Inquiry, Aware of Awareness).",
+    } satisfies LeverMapBlurb,
+    group: "internal" as const,
+  },
+  {
+    n: 7,
+    t: "Sustenance",
+    slug: "sustenance" as const,
+    blurb: {
+      italic: "Frees the life force from survival panic.",
+      rest: "Reach for this when financial terror or misaligned work is the primary driver of your suffering. Must be addressed before genuine inner growth is possible.",
+    } satisfies LeverMapBlurb,
+    group: "external" as const,
+  },
+  {
+    n: 8,
+    t: "Sleep",
+    slug: "sleep" as const,
+    blurb: {
+      italic: "The non-negotiable biological reset.",
+      rest: "Reach for this when you are chronically exhausted. No other practice compensates for a collapsing sleep foundation.",
+      notes: ["Address this before anything else if it is severely compromised."],
+    } satisfies LeverMapBlurb,
+    group: "external" as const,
+  },
+  {
+    n: 9,
+    t: "Nutrition",
+    slug: "nutrition" as const,
+    blurb: {
+      italic: "Builds a clean, conductive physical vehicle.",
+      rest: "Reach for this when digestive issues, energy crashes, or food-related anxiety are creating consistent friction.",
+      notes: ["Not usually the primary bottleneck, but a significant force multiplier."],
+    } satisfies LeverMapBlurb,
+    group: "external" as const,
+  },
+  {
+    n: 10,
+    t: "Connection",
+    slug: "connection" as const,
+    blurb: {
+      italic: "Dissolves isolation and co-regulates the nervous system.",
+      rest: "Reach for this when chronic loneliness, relational conflict, or social isolation is the primary drain on your energy and well-being.",
+    } satisfies LeverMapBlurb,
+    group: "external" as const,
+  },
+  {
+    n: 11,
+    t: "Nature",
+    slug: "nature" as const,
+    blurb: {
+      italic: "Restores biological coherence.",
+      rest: "Reach for this as a consistent daily practice for almost everyone — particularly those living in urban environments. The lowest-effort, highest-return baseline practice.",
+    } satisfies LeverMapBlurb,
+    group: "external" as const,
+  },
+  {
+    n: 12,
+    t: "Environment",
+    slug: "environment" as const,
+    blurb: {
+      italic: "The aquarium.",
+      rest: "Reach for this when your physical space is chaotic, toxic, or actively working against your inner practice. Often underestimated. A bad environment defeats a good practice.",
+    } satisfies LeverMapBlurb,
+    group: "external" as const,
+  },
 ];
+
+function LeverMapCopy({ blurb }: { blurb: LeverMapBlurb }) {
+  return (
+    <div className="space-y-3">
+      <p className="leading-relaxed">
+        <em>{blurb.italic}</em>
+        {blurb.rest ? <> {blurb.rest}</> : null}
+      </p>
+      {blurb.notes?.map((note) => (
+        <p key={note} className="leading-relaxed">
+          {note}
+        </p>
+      ))}
+    </div>
+  );
+}
 
 type Zone = {
   n: number;
@@ -641,9 +777,9 @@ function PhilosophyPage() {
               </div>
               <div className="relative z-10 pl-12 sm:pl-16">
                 <h3 className="display text-4xl text-white">Conservation</h3>
-                <p className="mt-5 whitespace-pre-line text-[15px] leading-relaxed text-[#b8d4e8]">
-                  {LEVER_ZERO.body}
-                </p>
+                <div className="mt-5 text-[15px] text-[#b8d4e8]">
+                  <LeverMapCopy blurb={LEVER_ZERO.blurb} />
+                </div>
                 <Link
                   to="/practices/$leverSlug"
                   params={{ leverSlug: LEVER_ZERO.slug }}
@@ -685,7 +821,7 @@ function PhilosophyPage() {
                         </button>
                         {open && (
                           <div className="border-t border-white/10 px-5 pb-6 pt-5 text-sm text-[#b8d4e8]">
-                            <p className="leading-relaxed">{l.what}</p>
+                            <LeverMapCopy blurb={l.blurb} />
                             <Link
                               to="/practices/$leverSlug"
                               params={{ leverSlug: l.slug }}
