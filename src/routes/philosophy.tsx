@@ -408,7 +408,59 @@ const ZONES: Zone[] = [
 const GROUND_BODY =
   "The body has its own limitations and constant demands — food, shelter, sleep. It is also subject to illness and aging. This is the constant underlying pressure of the physical body. We are less able to meet the demands of life when we are unconscious.";
 
-function ZonePanel({ zone }: { zone: Zone }) {
+function ZonePanel({
+  zone,
+  variant = "card",
+}: {
+  zone: Zone;
+  /** `flat` = mobile accordion body: no nested card, no repeated number/title. */
+  variant?: "card" | "flat";
+}) {
+  const content = (
+    <>
+      {variant === "card" ? (
+        <h3 className="display text-3xl text-white">{zone.name}</h3>
+      ) : null}
+      <p
+        className={`text-[15px] leading-relaxed text-[#b8d4e8] ${
+          variant === "card" ? "mt-4" : ""
+        }`}
+      >
+        {zone.description}
+      </p>
+      <ul className="mt-5 space-y-2 text-sm text-[#b8d4e8]">
+        {zone.signs.map((sign) => (
+          <li key={sign} className="flex gap-3">
+            <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-[#7ec8e3]" />
+            <span>{sign}</span>
+          </li>
+        ))}
+      </ul>
+      <div className="mt-6 rounded-2xl border border-[#7ec8e3]/50 bg-[#7ec8e3]/10 p-4">
+        <div className="label-eyebrow">Start here</div>
+        <p className="mt-2 display text-2xl text-white">
+          {zone.startHereLinks.map((item, index) => (
+            <span key={item.slug}>
+              <Link
+                to="/practices/$leverSlug"
+                params={{ leverSlug: item.slug }}
+                className="underline-offset-4 hover:underline"
+              >
+                {item.label}
+              </Link>
+              {index < zone.startHereLinks.length - 1 ? ", and " : null}
+            </span>
+          ))}
+        </p>
+        <p className="mt-3 text-xs leading-relaxed text-[#b8d4e8]/80">{zone.note}</p>
+      </div>
+    </>
+  );
+
+  if (variant === "flat") {
+    return <div className="relative z-10">{content}</div>;
+  }
+
   return (
     <div
       className={`glass-card relative overflow-hidden p-6 sm:p-8 ${
@@ -420,36 +472,7 @@ function ZonePanel({ zone }: { zone: Zone }) {
       <div className="pointer-events-none absolute left-3 top-2 font-display text-6xl text-white/10 sm:left-4 sm:text-7xl">
         {String(zone.n).padStart(2, "0")}
       </div>
-      <div className="relative z-10 pl-10 sm:pl-12">
-        <h3 className="display text-3xl text-white">{zone.name}</h3>
-        <p className="mt-4 text-[15px] leading-relaxed text-[#b8d4e8]">{zone.description}</p>
-        <ul className="mt-5 space-y-2 text-sm text-[#b8d4e8]">
-          {zone.signs.map((sign) => (
-            <li key={sign} className="flex gap-3">
-              <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-[#7ec8e3]" />
-              <span>{sign}</span>
-            </li>
-          ))}
-        </ul>
-        <div className="mt-6 rounded-2xl border border-[#7ec8e3]/50 bg-[#7ec8e3]/10 p-4">
-          <div className="label-eyebrow">Start here</div>
-          <p className="mt-2 display text-2xl text-white">
-            {zone.startHereLinks.map((item, index) => (
-              <span key={item.slug}>
-                <Link
-                  to="/practices/$leverSlug"
-                  params={{ leverSlug: item.slug }}
-                  className="underline-offset-4 hover:underline"
-                >
-                  {item.label}
-                </Link>
-                {index < zone.startHereLinks.length - 1 ? ", and " : null}
-              </span>
-            ))}
-          </p>
-          <p className="mt-3 text-xs leading-relaxed text-[#b8d4e8]/80">{zone.note}</p>
-        </div>
-      </div>
+      <div className="relative z-10 pl-10 sm:pl-12">{content}</div>
     </div>
   );
 }
@@ -908,8 +931,8 @@ function PhilosophyPage() {
                     />
                   </button>
                   {selected && (
-                    <div className="border-t border-white/10 p-4">
-                      <ZonePanel zone={zone} />
+                    <div className="border-t border-white/10 px-4 pb-5 pt-4">
+                      <ZonePanel zone={zone} variant="flat" />
                     </div>
                   )}
                 </div>
