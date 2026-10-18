@@ -2271,7 +2271,7 @@ export const whereToBegin: WhereToBegin = {
               "bold": true
             },
             {
-              "text": " Sustenance (Lever 12). No inner practice can take root while the root energy centre is locked in survival mode. Address the material foundation first — always."
+              "text": " Sustenance (Lever 7). No inner practice can take root while the root energy centre is locked in survival mode. Address the material foundation first — always."
             }
           ]
         }
@@ -2279,7 +2279,7 @@ export const whereToBegin: WhereToBegin = {
       "paragraphs": [
         "The biological baseline is not handled. Sustenance, shelter, or safety are genuinely threatened or chronically uncertain.",
         "Signs: Chronic financial terror, housing instability, inability to think beyond immediate survival, constant low-grade panic, inability to engage with any inner practice",
-        "First lever: Sustenance (Lever 12). No inner practice can take root while the root energy centre is locked in survival mode. Address the material foundation first — always."
+        "First lever: Sustenance (Lever 7). No inner practice can take root while the root energy centre is locked in survival mode. Address the material foundation first — always."
       ]
     },
     {
@@ -2315,7 +2315,7 @@ export const whereToBegin: WhereToBegin = {
               "bold": true
             },
             {
-              "text": " Sleep (Lever 7). A chronically exhausted nervous system cannot hold inner practice. Stabilise the nightly reset first. Breath (Lever 1) as immediate support."
+              "text": " Sleep (Lever 8). A chronically exhausted nervous system cannot hold inner practice. Stabilise the nightly reset first. Breath (Lever 1) as immediate support."
             }
           ]
         }
@@ -2323,7 +2323,7 @@ export const whereToBegin: WhereToBegin = {
       "paragraphs": [
         "The biological baseline is technically handled, but the body is chronically exhausted and dysregulated.",
         "Signs: Poor or fragmented sleep, persistent fatigue, high baseline anxiety, inability to concentrate, physical tension that does not release, frequent illness",
-        "First lever: Sleep (Lever 7). A chronically exhausted nervous system cannot hold inner practice. Stabilise the nightly reset first. Breath (Lever 1) as immediate support."
+        "First lever: Sleep (Lever 8). A chronically exhausted nervous system cannot hold inner practice. Stabilise the nightly reset first. Breath (Lever 1) as immediate support."
       ]
     },
     {
@@ -2359,7 +2359,7 @@ export const whereToBegin: WhereToBegin = {
               "bold": true
             },
             {
-              "text": " Heart (Lever 5). Specifically: Emotional Presence, Heart Coherence, and the Alchemy of Forgiveness (Connection Lever 9). Breath (Lever 1) to open the system before heart work."
+              "text": " Heart (Lever 5). Specifically: Emotional Presence, Heart Coherence, and the Alchemy of Forgiveness (Connection Lever 10). Breath (Lever 1) to open the system before heart work."
             }
           ]
         }
@@ -2367,7 +2367,7 @@ export const whereToBegin: WhereToBegin = {
       "paragraphs": [
         "The system is stable but the emotional body is heavy, blocked, or numb.",
         "Signs: Persistent heaviness or sadness, unresolved grief, chronic resentment, relational conflict, emotional numbness, a general sense of being weighed down without clear cause",
-        "First lever: Heart (Lever 5). Specifically: Emotional Presence, Heart Coherence, and the Alchemy of Forgiveness (Connection Lever 9). Breath (Lever 1) to open the system before heart work."
+        "First lever: Heart (Lever 5). Specifically: Emotional Presence, Heart Coherence, and the Alchemy of Forgiveness (Connection Lever 10). Breath (Lever 1) to open the system before heart work."
       ]
     },
     {
@@ -2682,7 +2682,7 @@ export const whereToBegin: WhereToBegin = {
           "type": "paragraph",
           "spans": [
             {
-              "text": "If the primary presenting symptom is physical tension and nervous system dysregulation: Breath → Movement (Lever 2) → Sleep practices (Lever 7)"
+              "text": "If the primary presenting symptom is physical tension and nervous system dysregulation: Breath → Movement (Lever 2) → Sleep practices (Lever 8)"
             }
           ]
         },
@@ -2706,7 +2706,7 @@ export const whereToBegin: WhereToBegin = {
           "type": "paragraph",
           "spans": [
             {
-              "text": "If the primary presenting symptom is disconnection, isolation, or relational difficulty: Breath → Heart (Lever 5) → Connection practices (Lever 9): Internal Saturation, Somatic Communion If you are stable but seeking depth: Breath → Awareness (Lever 6): the full spectrum → Conservation (Lever 0) → Self-Inquiry and Ultimate Self-Inquiry"
+              "text": "If the primary presenting symptom is disconnection, isolation, or relational difficulty: Breath → Heart (Lever 5) → Connection practices (Lever 10): Internal Saturation, Somatic Communion If you are stable but seeking depth: Breath → Awareness (Lever 6): the full spectrum → Conservation (Lever 0) → Self-Inquiry and Ultimate Self-Inquiry"
             }
           ]
         },
@@ -2738,10 +2738,10 @@ export const whereToBegin: WhereToBegin = {
         "Begin with Breath (Lever 1) before introducing any other internal practice.",
         "Expansion from Breath — the symptom-based map",
         "Once Breath is established as a daily practice (minimum 10 minutes, morning), expand based on what your system most needs:",
-        "If the primary presenting symptom is physical tension and nervous system dysregulation: Breath → Movement (Lever 2) → Sleep practices (Lever 7)",
+        "If the primary presenting symptom is physical tension and nervous system dysregulation: Breath → Movement (Lever 2) → Sleep practices (Lever 8)",
         "If the primary presenting symptom is emotional heaviness, grief, or numbness: Breath → Heart (Lever 5): Heart Coherence, Emotional Presence → Sound (Lever 4): toning, humming → Awareness (Lever 6): Body Scan",
         "If the primary presenting symptom is mental noise, overthinking, or scattered focus: Breath → Awareness (Lever 6): Breath Awareness, Pure Observation → Mind (Lever 3): Input Control, Laser Focus → Conservation (Lever 0)",
-        "If the primary presenting symptom is disconnection, isolation, or relational difficulty: Breath → Heart (Lever 5) → Connection practices (Lever 9): Internal Saturation, Somatic Communion If you are stable but seeking depth: Breath → Awareness (Lever 6): the full spectrum → Conservation (Lever 0) → Self-Inquiry and Ultimate Self-Inquiry",
+        "If the primary presenting symptom is disconnection, isolation, or relational difficulty: Breath → Heart (Lever 5) → Connection practices (Lever 10): Internal Saturation, Somatic Communion If you are stable but seeking depth: Breath → Awareness (Lever 6): the full spectrum → Conservation (Lever 0) → Self-Inquiry and Ultimate Self-Inquiry",
         "The expansion rule Add one new practice at a time. Stay consistent with the current practice before a new one is introduced. Introducing multiple practices simultaneously produces the same result as overloading yourself — overwhelm and abandonment.",
         "One practice, consistently applied, always outperforms five practices inconsistently applied."
       ]
@@ -3148,7 +3148,23 @@ export const whereToBegin: WhereToBegin = {
           "type": "paragraph",
           "spans": [
             {
-              "text": "Lever 7 — Sleep",
+              "text": "Lever 7 — Sustenance",
+              "bold": true
+            },
+            {
+              "text": " Frees the life force from survival panic.",
+              "italic": true
+            },
+            {
+              "text": " Reach for this when financial terror or misaligned work is the primary driver of your suffering. Must be addressed before genuine inner growth is possible."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "Lever 8 — Sleep",
               "bold": true
             },
             {
@@ -3172,7 +3188,7 @@ export const whereToBegin: WhereToBegin = {
           "type": "paragraph",
           "spans": [
             {
-              "text": "Lever 8 — Nutrition",
+              "text": "Lever 9 — Nutrition",
               "bold": true
             },
             {
@@ -3196,7 +3212,7 @@ export const whereToBegin: WhereToBegin = {
           "type": "paragraph",
           "spans": [
             {
-              "text": "Lever 9 — Connection",
+              "text": "Lever 10 — Connection",
               "bold": true
             },
             {
@@ -3205,22 +3221,6 @@ export const whereToBegin: WhereToBegin = {
             },
             {
               "text": " Reach for this when chronic loneliness, relational conflict, or social isolation is the primary drain on your energy and well-being."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "spans": [
-            {
-              "text": "Lever 10 — Environment",
-              "bold": true
-            },
-            {
-              "text": " The aquarium.",
-              "italic": true
-            },
-            {
-              "text": " Reach for this when your physical space is chaotic, toxic, or actively working against your inner practice. Often underestimated. A bad environment defeats a good practice."
             }
           ]
         },
@@ -3244,15 +3244,15 @@ export const whereToBegin: WhereToBegin = {
           "type": "paragraph",
           "spans": [
             {
-              "text": "Lever 12 — Sustenance",
+              "text": "Lever 12 — Environment",
               "bold": true
             },
             {
-              "text": " Frees the life force from survival panic.",
+              "text": " The aquarium.",
               "italic": true
             },
             {
-              "text": " Reach for this when financial terror or misaligned work is the primary driver of your suffering. Must be addressed before genuine inner growth is possible."
+              "text": " Reach for this when your physical space is chaotic, toxic, or actively working against your inner practice. Often underestimated. A bad environment defeats a good practice."
             }
           ]
         }
@@ -3268,14 +3268,14 @@ export const whereToBegin: WhereToBegin = {
         "Lever 4 — Sound Reorganises internal coherence through vibration. Reach for this when you need a non-effortful entry into stillness — when the mind is too resistant for direct meditation but can be carried by sound.",
         "Lever 5 — Heart Dissolves emotional armour and opens the system. Reach for this when emotional heaviness, shutdown, or grief is the primary obstruction. The solvent that melts what mental effort cannot move.",
         "Lever 6 — Awareness The master lever. Reach for this once basic stability exists. Contains the entire spectrum from basic relaxation (NSDR, Body Scan) to the deepest practices in the framework (Ultimate Self-Inquiry, Aware of Awareness).",
-        "Lever 7 — Sleep The non-negotiable biological reset. Reach for this when you are chronically exhausted. No other practice compensates for a collapsing sleep foundation.",
+        "Lever 7 — Sustenance Frees the life force from survival panic. Reach for this when financial terror or misaligned work is the primary driver of your suffering. Must be addressed before genuine inner growth is possible.",
+        "Lever 8 — Sleep The non-negotiable biological reset. Reach for this when you are chronically exhausted. No other practice compensates for a collapsing sleep foundation.",
         "Address this before anything else if it is severely compromised.",
-        "Lever 8 — Nutrition Builds a clean, conductive physical vehicle. Reach for this when digestive issues, energy crashes, or food-related anxiety are creating consistent friction.",
+        "Lever 9 — Nutrition Builds a clean, conductive physical vehicle. Reach for this when digestive issues, energy crashes, or food-related anxiety are creating consistent friction.",
         "Not usually the primary bottleneck, but a significant force multiplier.",
-        "Lever 9 — Connection Dissolves isolation and co-regulates the nervous system. Reach for this when chronic loneliness, relational conflict, or social isolation is the primary drain on your energy and well-being.",
-        "Lever 10 — Environment The aquarium. Reach for this when your physical space is chaotic, toxic, or actively working against your inner practice. Often underestimated. A bad environment defeats a good practice.",
+        "Lever 10 — Connection Dissolves isolation and co-regulates the nervous system. Reach for this when chronic loneliness, relational conflict, or social isolation is the primary drain on your energy and well-being.",
         "Lever 11 — Nature Restores biological coherence. Reach for this as a consistent daily practice for almost everyone — particularly those living in urban environments. The lowest-effort, highest-return baseline practice.",
-        "Lever 12 — Sustenance Frees the life force from survival panic. Reach for this when financial terror or misaligned work is the primary driver of your suffering. Must be addressed before genuine inner growth is possible."
+        "Lever 12 — Environment The aquarium. Reach for this when your physical space is chaotic, toxic, or actively working against your inner practice. Often underestimated. A bad environment defeats a good practice."
       ]
     },
     {
