@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
-import { ArrowRight, CheckCircle2, ChevronDown } from "lucide-react";
+import { useEffect } from "react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { Starfield } from "@/components/Starfield";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
@@ -83,8 +83,6 @@ const ZONES = [
 ] as const;
 
 function WorkPage() {
-  const [bioExpanded, setBioExpanded] = useState(false);
-
   function scrollToBooking() {
     document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" });
   }
@@ -330,86 +328,28 @@ function WorkPage() {
           <div className="lg:col-span-3">
             <div className="label-eyebrow">The founder</div>
             <h2 className="display mt-5 text-4xl text-white sm:text-6xl">Desmond Olubunmi</h2>
-            <p className="display-italic mt-3 text-lg text-[#b8d4e8]">
-              Spiritual teacher. Visionary.
-            </p>
+            <p className="display-italic mt-3 text-lg text-[#b8d4e8]">Spiritual teacher</p>
             <div className="mt-8 space-y-4 text-[#b8d4e8]">
-              <p>Everything humans do is an attempt to be happy.</p>
               <p>
-                We earn degrees, build careers, raise children, enter relationships, pray,
-                meditate. Every act — however it appears — is aimed at one thing: reducing
-                suffering and realising happiness. This is the most universal human truth there
-                is.
+                Desmond Olubunmi has dedicated his life to the physical, mental and spiritual
+                wellbeing of humanity.
               </p>
               <p>
-                We have more comfort, more information, and more options than any generation
-                before us. But can we say we are happier?
+                A naturally gifted seeker of truth, he spent his teens and early twenties in long
+                daily contemplative practice across diverse traditions, distilling the science of
+                human wellbeing down to its absolute essence.
               </p>
               <p>
-                Born in Nigeria, raised in Ireland, I was exposed early to radically different
-                cultures and ways of understanding life. Christians, Muslims, Hindus, Buddhists,
-                scientists, therapists — all essentially trying to create human well-being. I
-                wanted to know the truth of human life. Not what people believed. What was
-                actually true.
+                Desmond offers a complete framework for human wellbeing that is timeless and
+                universal. His presence and guidance help people realise the natural peace and bliss
+                of their inner being, and live it in their daily lives.
               </p>
               <p>
-                That curiosity was always in me — even as a child I had a deep sense of reverence
-                for something sacred in life, even before I could name it.
+                He is the author of{" "}
+                <em className="italic font-medium text-white">The Sleep Rhythm Reset</em>, an Amazon
+                #1 bestseller in its category, and the creator of the Sunya Sleep app. He currently
+                teaches through writing, practice, and gatherings, in Dublin and online.
               </p>
-              <p>But it was suffering that made the question urgent.</p>
-              <p>
-                In my teens, my nervous system was constantly dysregulated. My mind wouldn't
-                stop. I couldn't sleep. The inner chaos became intolerable — and that intolerance
-                became the catalyst. I found mindful breathing practices — and for the first
-                time, I experienced inner peace. Not by believing in something, but by working
-                with the natural mechanics of my own system.
-              </p>
-              {bioExpanded && (
-                <>
-                  <p>
-                    This relief inspired a journey into deeper practice and curiosity — to understand
-                    the mechanisms of human life. I practiced daily for many years, long hours,
-                    multiple silent retreats, including several ten-day Vipassana retreats — where I
-                    sat until thought and time dissolved and what remained was pure awareness,
-                    totally alive and still.
-                  </p>
-                  <p>And gradually, what became clear was this:</p>
-                  <p>
-                    Every tradition, every religion, every healing modality — different brands, one
-                    human system, one truth.
-                  </p>
-                  <p>
-                    I began to distil. I traced every practice back to its essence — breathwork,
-                    movement, sound, meditation, devotion, nutrition, environment — asking: what is
-                    this fundamentally doing to the human system? What is it actually changing?
-                  </p>
-                  <p>That process became Sunya.</p>
-                  <p>
-                    Not a belief system. Not a tradition. A universal map — built on first
-                    principles, belonging to no culture, accessible to every human being.
-                  </p>
-                  <p>
-                    We all want the same thing: freedom from suffering and the realisation of lasting
-                    happiness. Sunya exists to make that available — without dogma, without belief,
-                    without asking you to convert to anything.
-                  </p>
-                  <p className="text-white/90">
-                    I built this because I lived the problem. And found the path through it.
-                  </p>
-                  <p>Now it's yours.</p>
-                  <p className="display-italic">— Desmond</p>
-                </>
-              )}
-              <button
-                type="button"
-                onClick={() => setBioExpanded((v) => !v)}
-                className="mt-2 inline-flex items-center gap-1 text-xs uppercase tracking-[0.32em] text-[#7ec8e3] transition hover:text-white"
-              >
-                {bioExpanded ? "Read less" : "Read more"}
-                <ChevronDown
-                  className={`h-3 w-3 transition-transform ${bioExpanded ? "rotate-180" : ""}`}
-                />
-              </button>
             </div>
             <div className="mt-9 flex flex-wrap gap-4">
               <a
