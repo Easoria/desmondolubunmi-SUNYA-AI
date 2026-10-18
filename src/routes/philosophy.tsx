@@ -73,18 +73,18 @@ const SUFFERING_BRANCH_GROUPS = [
     branches: [
       {
         name: "Time",
-        line: "we ruminate over the past and worry about the future, never in the now",
-        felt: "worry · regret · mental rumination",
+        line: "Identification with the contents of the mind causes us to ruminate over the past and worry about the future, never in the now.",
+        felt: "This is felt as worry, regret, mental rumination.",
       },
       {
         name: "Linearity",
-        line: "identification with matter confines us to the space-time continuum, and to the movement of cause and effect. We are forced to move in a linear direction through time, towards a certain end.",
-        felt: "pressure · urgency · indecision",
+        line: "Identification with form confines us to the space-time continuum, and to the movement of cause and effect. We are forced to move in a linear direction through time, towards a certain end.",
+        felt: "This is felt as pressure, urgency, indecision.",
       },
       {
         name: "Mortality",
-        line: "we experience ourselves as finite, time-bound creatures living under the fear of death",
-        felt: "fear · dread · health anxiety",
+        line: "Identification with form causes us to experience ourselves as finite, time-bound creatures living under the fear of death.",
+        felt: "This is felt as fear, dread, health anxiety.",
       },
     ],
   },
@@ -93,18 +93,18 @@ const SUFFERING_BRANCH_GROUPS = [
     branches: [
       {
         name: "Division",
-        line: "we feel divided from others, and from that division comes conflict and fear",
-        felt: "loneliness · jealousy · conflict",
+        line: "Identification with form makes us feel divided from others, and from that division comes conflict and fear.",
+        felt: "This is felt as loneliness, jealousy, conflict.",
       },
       {
         name: "Resistance",
-        line: "we resist things that are outside the boundaries of our limited identities. We resist the present moment. We resist what is. And to resist what is, is to be in conflict with life itself — because life only exists in the present moment.",
-        felt: "stress · frustration · anger",
+        line: "Identification with form causes us to resist things that are outside the boundaries of our limited identities. We resist the present moment. We resist what is. And to resist what is, is to be in conflict with life itself — because life only exists in the present moment.",
+        felt: "This is felt as stress, frustration, anger.",
       },
       {
         name: "Contraction",
-        line: "out of fear and feeling threatened, we contract physically and hold tension. And contraction inhibits the flow of life, which leaves us exhausted, without vibrance and without aliveness.",
-        felt: "tension · exhaustion · burnout",
+        line: "Identification with form causes us to feel threatened, contract physically and hold tension. And contraction inhibits the flow of life, which leaves us exhausted, without vibrance and without aliveness.",
+        felt: "This is felt as tension, exhaustion, burnout.",
       },
     ],
   },
@@ -113,18 +113,18 @@ const SUFFERING_BRANCH_GROUPS = [
     branches: [
       {
         name: "Craving",
-        line: "we chase sense gratification endlessly",
-        felt: "addiction · restlessness · overconsumption",
+        line: "Identification with the bodily senses causes us to chase sense gratification endlessly.",
+        felt: "This is felt as addiction, restlessness, overconsumption.",
       },
       {
         name: "Insufficiency",
-        line: "we feel permanently insufficient, because we have identified ourselves with limited things",
-        felt: "low self-esteem · envy · never enough",
+        line: "Identification with form causes us to feel permanently insufficient, because the body and mind are inherently limited.",
+        felt: "This is felt as low self-esteem, envy, never enough.",
       },
       {
         name: "Seeking",
-        line: "we seek salvation in external things, or in the future, rather than in the presence always here",
-        felt: "emptiness · dissatisfaction · meaninglessness",
+        line: "Identification with any form causes us to seek salvation in external things or in the future, rather than being content with what is here and now.",
+        felt: "This is felt as emptiness, dissatisfaction, meaninglessness.",
       },
     ],
   },
@@ -288,7 +288,7 @@ const ZONES: Zone[] = [
 ];
 
 const GROUND_BODY =
-  "The body has its own limitations and constant demands — food, shelter, sleep. It is also subject to illness and aging. This is the constant underlying pressure of the physical body. We are less able to meet the demands of life when we are unconscious.";
+  "The body has its own limitations and constant demands — food, shelter, sleep. It is also subject to illness and aging. This is the constant underlying pressure of the physical body. We are less able to meet the demands of life when we live unconsciously.";
 
 function ZonePanel({ zone }: { zone: Zone }) {
   return (
@@ -392,29 +392,27 @@ function PhilosophyPage() {
         </div>
       </section>
 
-      {/* Entropy */}
-      <section className="relative overflow-hidden bg-[#0a1628] py-32">
-        <div className="relative z-10 mx-auto max-w-3xl px-6">
-          <div className="text-center">
-            <h2 className="display text-4xl text-white sm:text-5xl">Entropy</h2>
-          </div>
-          <div className="mx-auto mt-12 h-px w-24 bg-gradient-to-r from-transparent via-[#7ec8e3]/40 to-transparent" />
-          <div className="mt-12 text-[15px] leading-loose text-[#b8d4e8] sm:text-base">
-            <p>{GROUND_BODY}</p>
-          </div>
-          <div className="mx-auto mt-16 h-px w-24 bg-gradient-to-r from-transparent via-[#7ec8e3]/40 to-transparent" />
-        </div>
-      </section>
-
-      {/* Why we suffer — widening trunk + branch canopy grid */}
-      <section className="relative overflow-hidden bg-[#060d1c] py-32">
+      {/* Why we suffer — Entropy subordinate, widening trunk + branch canopy */}
+      <section className="relative overflow-hidden bg-[#060d1c] py-[7.2rem]">
         <Starfield density={0.3} />
         <div className="relative z-10 mx-auto max-w-5xl px-6">
           <div className="text-center">
             <h2 className="display text-4xl text-white sm:text-5xl md:text-6xl">Why we suffer</h2>
           </div>
 
-          <div className="relative mx-auto mt-14 pb-16">
+          {/* Entropy — always open, subordinate to the section heading */}
+          <div className="mx-auto mt-10 max-w-3xl sm:mt-12">
+            <p className="text-center text-sm tracking-wide text-[#b8d4e8]/55 sm:text-[0.9rem]">
+              Entropy
+            </p>
+            <div className="mx-auto mt-8 h-px w-24 bg-gradient-to-r from-transparent via-[#7ec8e3]/40 to-transparent sm:mt-10" />
+            <div className="mt-8 text-[15px] leading-loose text-[#b8d4e8] sm:mt-10 sm:text-base">
+              <p>{GROUND_BODY}</p>
+            </div>
+            <div className="mx-auto mt-10 h-px w-24 bg-gradient-to-r from-transparent via-[#7ec8e3]/40 to-transparent sm:mt-12" />
+          </div>
+
+          <div className="relative mx-auto mt-14 pb-14">
             {/* Trunk line — fades before the canopy grid */}
             <div
               className="pointer-events-none absolute left-1/2 top-8 h-[min(420px,55%)] w-px -translate-x-1/2"
@@ -458,17 +456,17 @@ function PhilosophyPage() {
               })}
             </div>
 
-            {/* Canopy — three unlabelled rows of three; grouping survives as single-column order on mobile */}
+            {/* Canopy — three unlabelled rows; equal-height cells, text top-aligned */}
             <div className="relative z-10 mt-14 space-y-10 sm:mt-16 sm:space-y-12">
               {SUFFERING_BRANCH_GROUPS.map((group) => (
                 <div
                   key={group.branches[0].name}
-                  className="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-3 sm:gap-x-8 lg:gap-x-10 lg:gap-y-12"
+                  className="grid grid-cols-1 items-stretch gap-x-8 gap-y-10 sm:grid-cols-3 sm:gap-x-8 lg:gap-x-10 lg:gap-y-12"
                 >
                   {group.branches.map((branch) => (
                     <div
                       key={branch.name}
-                      className="border-l-2 pl-4 sm:pl-5"
+                      className="flex h-full flex-col border-l-2 pl-4 sm:pl-5"
                       style={{ borderColor: `${group.accent}99` }}
                     >
                       <h3 className="display text-lg tracking-wide text-[#7ec8e3] sm:text-xl">

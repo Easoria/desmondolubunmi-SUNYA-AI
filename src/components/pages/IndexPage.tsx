@@ -293,7 +293,7 @@ function Reframe() {
           >
             <div className="overflow-hidden">
               <p className="pb-3 pt-1 text-[0.8rem] leading-relaxed text-[#b8d4e8]/45 sm:text-[0.85rem]">
-                The body has its own limitations and constant demands — food, shelter, sleep. It is also subject to illness and aging. This is the constant underlying pressure of the physical body. We are less able to meet the demands of life when we are unconscious.
+                The body has its own limitations and constant demands — food, shelter, sleep. It is also subject to illness and aging. This is the constant underlying pressure of the physical body. We are less able to meet the demands of life when we live unconsciously.
               </p>
             </div>
           </div>
