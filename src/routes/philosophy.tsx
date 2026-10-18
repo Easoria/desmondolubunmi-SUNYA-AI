@@ -7,7 +7,7 @@ import { Footer } from "@/components/site/Footer";
 import { Breadcrumb } from "@/components/site/Breadcrumb";
 import { EmailCapture } from "@/components/site/EmailCapture";
 import { SacredGeometry, Orbs } from "@/components/site/Decor";
-import { getLeverBySlug, getLeverPracticeCount, type LeverSlug } from "@/data/levers";
+import { type LeverSlug } from "@/data/levers";
 import { buildSeoHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/philosophy")({
@@ -623,9 +623,14 @@ function PhilosophyPage() {
             <h2 className="display text-4xl text-white sm:text-5xl md:text-6xl">
               The Twelve Levers of Transformation
             </h2>
-            <p className="mx-auto mt-6 max-w-2xl text-[#b8d4e8]">
-              When we distil the vast diversity of techniques and paths for human wellbeing into their absolute essence, we arrive at the twelve levers of transformation. These are the twelve fundamental means through which a human being can transform their wellbeing. Contained within each lever are simple yet powerful practices for lasting transformation and complete wellbeing.
-            </p>
+            <div className="mx-auto mt-6 max-w-2xl space-y-4 text-[#b8d4e8]">
+              <p>
+                When we distil the vast diversity of techniques and paths for human wellbeing into their absolute essence, we arrive at the twelve levers of transformation.
+              </p>
+              <p>
+                These are the twelve fundamental means through which a human being can transform their wellbeing. Contained within each lever are simple yet powerful practices for lasting transformation and complete wellbeing.
+              </p>
+            </div>
           </div>
 
           <div className="mt-14">
@@ -639,19 +644,13 @@ function PhilosophyPage() {
                 <p className="mt-5 whitespace-pre-line text-[15px] leading-relaxed text-[#b8d4e8]">
                   {LEVER_ZERO.body}
                 </p>
-                {(() => {
-                  const conservation = getLeverBySlug(LEVER_ZERO.slug);
-                  const count = conservation ? getLeverPracticeCount(conservation) : 0;
-                  return (
-                    <Link
-                      to="/practices/$leverSlug"
-                      params={{ leverSlug: LEVER_ZERO.slug }}
-                      className="mt-5 inline-flex items-center gap-2 text-sm text-[#7ec8e3] transition hover:text-white"
-                    >
-                      {count} practices <ArrowRight className="h-4 w-4" />
-                    </Link>
-                  );
-                })()}
+                <Link
+                  to="/practices/$leverSlug"
+                  params={{ leverSlug: LEVER_ZERO.slug }}
+                  className="mt-5 inline-flex items-center gap-2 text-sm text-[#7ec8e3] transition hover:text-white"
+                >
+                  See conservation practices <ArrowRight className="h-4 w-4" />
+                </Link>
               </div>
             </div>
             <div className="mx-auto mt-8 h-px w-full max-w-5xl bg-gradient-to-r from-transparent via-[#dcb48d]/40 to-transparent" />
@@ -666,8 +665,6 @@ function PhilosophyPage() {
                 <div className="space-y-3">
                   {LEVERS.filter((l) => l.group === group).map((l) => {
                     const open = openLever === l.n;
-                    const leverData = getLeverBySlug(l.slug);
-                    const count = leverData ? getLeverPracticeCount(leverData) : 0;
                     return (
                       <div key={l.n} className="glass-card overflow-hidden">
                         <button
@@ -694,7 +691,7 @@ function PhilosophyPage() {
                               params={{ leverSlug: l.slug }}
                               className="mt-5 inline-flex items-center gap-2 text-sm text-[#7ec8e3] transition hover:text-white"
                             >
-                              {count} practices <ArrowRight className="h-4 w-4" />
+                              See {l.slug} practices <ArrowRight className="h-4 w-4" />
                             </Link>
                           </div>
                         )}
