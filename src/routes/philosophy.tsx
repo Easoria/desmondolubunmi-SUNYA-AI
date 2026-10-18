@@ -436,23 +436,23 @@ function ZonePanel({
           </li>
         ))}
       </ul>
-      <div className="mt-6 rounded-2xl border border-[#7ec8e3]/50 bg-[#7ec8e3]/10 p-4">
-        <div className="label-eyebrow">Start here</div>
-        <p className="mt-2 display text-2xl text-white">
-          {zone.startHereLinks.map((item, index) => (
-            <span key={item.slug}>
-              <Link
-                to="/practices/$leverSlug"
-                params={{ leverSlug: item.slug }}
-                className="underline-offset-4 hover:underline"
-              >
-                {item.label}
-              </Link>
-              {index < zone.startHereLinks.length - 1 ? ", and " : null}
-            </span>
-          ))}
-        </p>
-        <p className="mt-3 text-xs leading-relaxed text-[#b8d4e8]/80">{zone.note}</p>
+      <div className="mt-6 space-y-3">
+        {zone.startHereLinks.map((item, index) => (
+          <Link
+            key={item.slug}
+            to="/practices/$leverSlug"
+            params={{ leverSlug: item.slug }}
+            className="block rounded-2xl border border-[#7ec8e3]/50 bg-[#7ec8e3]/10 p-4 transition hover:border-[#7ec8e3]/80 hover:bg-[#7ec8e3]/16"
+          >
+            {index === 0 ? <div className="label-eyebrow">Start here</div> : null}
+            <p className={`display text-2xl text-white ${index === 0 ? "mt-2" : ""}`}>
+              {item.label}
+            </p>
+            {index === 0 ? (
+              <p className="mt-3 text-xs leading-relaxed text-[#b8d4e8]/80">{zone.note}</p>
+            ) : null}
+          </Link>
+        ))}
       </div>
     </>
   );
