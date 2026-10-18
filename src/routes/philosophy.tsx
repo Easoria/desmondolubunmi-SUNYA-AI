@@ -709,21 +709,18 @@ function PhilosophyPage() {
       <section className="relative overflow-hidden bg-[#0a1628] py-32">
         <div className="relative z-10 mx-auto max-w-6xl px-6">
           <div className="text-center">
-            <div className="label-eyebrow">WHERE YOU BEGIN</div>
-            <h2 className="display mt-6 text-4xl text-white sm:text-5xl md:text-6xl">
-              Twelve levers. But only one matters right now.
+            <h2 className="display text-4xl text-white sm:text-5xl md:text-6xl">
+              Begin here
             </h2>
-            <p className="mx-auto mt-8 max-w-3xl whitespace-pre-line text-[15px] leading-loose text-[#b8d4e8]">
-              {`The instinct when someone is suffering is to prescribe everything at once. The
-result is overwhelm, abandonment, and the false conclusion that the tools don't
-work. The tools work. Over-prescription fails.
-
-Every human system has a single point of greatest friction at any given time.
-Address anything other than that bottleneck and it silently defeats every other
-intervention. Address it directly and the whole system shifts.
-
-Most people are in one of five zones. Find yours.`}
-            </p>
+            <div className="mx-auto mt-8 max-w-3xl space-y-5 text-[15px] leading-loose text-[#b8d4e8]">
+              <p>
+                Every human system has a single point of greatest friction at any given time. Address it directly and the whole system shifts.
+              </p>
+              <p>
+                You do not need all twelve levers. Identify your main problem, apply the lever that resolves it, and work with the practices there. That is the whole of it.
+              </p>
+              <p>Most people are in one of five zones. Find yours.</p>
+            </div>
           </div>
 
           <div className="mt-14 hidden gap-8 lg:grid lg:grid-cols-[260px_minmax(0,1fr)]">
@@ -794,36 +791,10 @@ Most people are in one of five zones. Find yours.`}
             </div>
           </noscript>
 
-          <p className="mx-auto mt-14 max-w-3xl whitespace-pre-line text-center text-sm leading-relaxed text-[#b8d4e8]/85">
-            {`Most people sit across two zones. When that happens, identify which one — if
-addressed — would most rapidly improve the other. Start there.`}
+          <p className="mx-auto mt-14 max-w-3xl text-center text-sm leading-relaxed text-[#b8d4e8]/85">
+            Most people sit across two zones. When that happens, identify which one — if addressed — would most rapidly improve the other. Start there.
           </p>
-          <div className="mt-8 flex flex-col items-center gap-3 text-sm sm:flex-row sm:justify-center">
-            <Link
-              to="/practices/where-to-begin"
-              className="text-[#7ec8e3] transition hover:text-white"
-            >
-              Read the full order of operations →
-            </Link>
-            <Link to="/timeless-solution" className="text-[#7ec8e3]/80 transition hover:text-white">
-              Or begin the Timeless Solution →
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="relative overflow-hidden bg-[#0a1628] py-28">
-        <Starfield density={0.4} />
-        <div className="relative z-10 mx-auto max-w-3xl px-6 text-center">
-          <h2 className="display text-4xl text-white sm:text-5xl">
-            Not sure which zone you're in?
-          </h2>
-          <p className="mx-auto mt-6 max-w-xl text-[#b8d4e8]">
-            Start from what you&apos;re experiencing, or follow the order of operations for where
-            to begin.
-          </p>
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+          <div className="mt-8 flex flex-col items-center gap-4">
             <Link
               to="/problems"
               className="glow-btn inline-flex items-center gap-2 rounded-full px-8 py-4 text-sm font-medium"
@@ -832,9 +803,9 @@ addressed — would most rapidly improve the other. Start there.`}
             </Link>
             <Link
               to="/practices/where-to-begin"
-              className="inline-flex items-center gap-2 text-sm text-[#7ec8e3] transition hover:text-white"
+              className="text-xs text-[#7ec8e3]/70 transition hover:text-[#7ec8e3]"
             >
-              Where to begin <ArrowRight className="h-4 w-4" />
+              Read the full order of operations →
             </Link>
           </div>
         </div>
