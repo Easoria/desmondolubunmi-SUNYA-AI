@@ -161,8 +161,8 @@ const LEVER_ZERO = {
   t: "Conservation",
   slug: "conservation" as const,
   blurb: {
-    italic: "Stops the leakage.",
-    rest: "Before generating more energy, plug the holes.",
+    italic: "Conserves life force energy.",
+    rest: "This fundamental lever helps increase vitality, aliveness and joy by reducing energy dissipation.",
     notes: [
       "Reach for this when you are consistently depleted despite practice — when everything you build keeps draining away.",
     ],
