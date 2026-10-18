@@ -1,5 +1,7 @@
 export const ONE_TO_ONE_OFFER = {
   free: true,
+  /** How many founding sessions are offered at no charge while `free` is true. */
+  freeSessionLimit: 10,
   priceEur: 150,
   durationMinutes: 90,
 } as const;
