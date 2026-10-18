@@ -91,9 +91,13 @@ function WhereToBeginPage() {
         <div className="mt-14">
           <EssayProse
             sections={sectionsBeforeSafety}
-            sectionIdForHeading={(heading) =>
-              heading === LEVER_MAP_HEADING ? "lever-map" : undefined
-            }
+            autoLinkFramework
+            sectionIdForHeading={(heading) => {
+              if (heading === LEVER_MAP_HEADING) return "lever-map";
+              const zoneMatch = heading.match(/^Zone\s+(\d+)/i);
+              if (zoneMatch) return `zone-${zoneMatch[1]}`;
+              return undefined;
+            }}
           />
         </div>
 
@@ -125,6 +129,7 @@ function WhereToBeginPage() {
           <div className="mt-14">
             <EssayProse
               sections={[safetySection]}
+              autoLinkFramework
               sectionIdForHeading={() => "safety"}
               emphasizeHeading={() => true}
             />
