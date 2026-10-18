@@ -132,9 +132,6 @@ function WorkPage() {
         <div className="relative z-10 mx-auto max-w-6xl px-6">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="display text-4xl text-white sm:text-5xl">What happens in a session</h2>
-            <p className="mt-6 text-[#b8d4e8]">
-              A diagnostic session rooted in the complete Sunya framework. The aim is not to make you feel better for an hour, but to find the one place your system is actually stuck, and to leave you with something precise enough to work with.
-            </p>
           </div>
           <div className="mx-auto mt-14 max-w-3xl space-y-4">
             {STEPS.map((step, i) => (
