@@ -2,7 +2,7 @@ import type { Lever } from "@/data/levers/types";
 
 export const nutritionLever: Lever = {
   slug: "nutrition",
-  number: 8,
+  number: 9,
   name: "Nutrition",
   layerLine: "Physical Body",
   summaryLine: "A clear position: The Sunya approach recommends a plant-based diet, with fish as the one concession to animal protein.",
@@ -370,6 +370,6 @@ export const nutritionLever: Lever = {
     "nervous-system-collapse",
     "survival-crisis"
   ],
-  metaTitle: "Nutrition — Lever 8 Practice Library | Sunya",
+  metaTitle: "Nutrition — Lever 9 Practice Library | Sunya",
   metaDescription: "A clear position: The Sunya approach recommends a plant-based diet, with fish as the one concession to animal protein."
 };

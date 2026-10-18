@@ -8,12 +8,12 @@ import { buildSeoHead, canonicalUrl } from "@/lib/seo";
 
 const INTERNAL_SLUGS = ["breath", "movement", "mind", "sound", "heart", "awareness"] as const;
 const EXTERNAL_SLUGS = [
+  "sustenance",
   "sleep",
   "nutrition",
   "connection",
-  "environment",
   "nature",
-  "sustenance",
+  "environment",
 ] as const;
 
 export const Route = createFileRoute("/practices")({

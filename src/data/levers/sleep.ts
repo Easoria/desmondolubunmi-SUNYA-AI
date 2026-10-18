@@ -2,7 +2,7 @@ import type { Lever } from "@/data/levers/types";
 
 export const sleepLever: Lever = {
   slug: "sleep",
-  number: 7,
+  number: 8,
   name: "Sleep",
   layerLine: "Physical Body + Energetic Body",
   summaryLine: "Sleep is not passive rest.",
@@ -809,6 +809,6 @@ export const sleepLever: Lever = {
   relatedZones: [
     "nervous-system-collapse"
   ],
-  metaTitle: "Sleep — Lever 7 Practice Library | Sunya",
+  metaTitle: "Sleep — Lever 8 Practice Library | Sunya",
   metaDescription: "Sleep is not passive rest."
 };

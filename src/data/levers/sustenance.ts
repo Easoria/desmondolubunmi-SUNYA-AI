@@ -2,7 +2,7 @@ import type { Lever } from "@/data/levers/types";
 
 export const sustenanceLever: Lever = {
   slug: "sustenance",
-  number: 12,
+  number: 7,
   name: "Sustenance",
   layerLine: "Mental Body + Environment",
   summaryLine: "There is an inescapable law that underlies every spiritual teaching, every inner practice, and every dimension of this document: the body is a dissipative structure subject to entropy.",
@@ -308,6 +308,6 @@ export const sustenanceLever: Lever = {
   relatedZones: [
     "survival-crisis"
   ],
-  metaTitle: "Sustenance — Lever 12 Practice Library | Sunya",
+  metaTitle: "Sustenance — Lever 7 Practice Library | Sunya",
   metaDescription: "There is an inescapable law that underlies every spiritual teaching, every inner practice, and every dimension of this document: the body is a dissipative structure subject to entropy."
 };

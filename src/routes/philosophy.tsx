@@ -7,7 +7,7 @@ import { Footer } from "@/components/site/Footer";
 import { Breadcrumb } from "@/components/site/Breadcrumb";
 import { EmailCapture } from "@/components/site/EmailCapture";
 import { SacredGeometry, Orbs } from "@/components/site/Decor";
-import type { LeverSlug } from "@/data/levers";
+import { getLeverBySlug, getLeverPracticeCount, type LeverSlug } from "@/data/levers";
 import { buildSeoHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/philosophy")({
@@ -152,30 +152,28 @@ const LAYERS = [
 const LEVER_ZERO = {
   n: 0,
   t: "Conservation",
-  layer: "The prerequisite for all twelve",
+  slug: "conservation" as const,
   body: `Before you try to generate more energy, stop losing the energy you have.
 
 The human system constantly leaks vitality through unconscious habit — endless
 scrolling, compulsive overthinking, idle talk, chronic over-consumption,
 over-stimulation of every kind. Close the leaks and the system recharges on its
-own.
-
-Practices: silence, sensory rest, fasting, sexual conservation, the root lock.`,
+own.`,
 };
 
 const LEVERS = [
-  { n: 1, t: "Breath", layer: "Energetic Body + Physical Body", what: "The breath is the remote control for the nervous system. The only autonomic function you can consciously override — making it the most immediate lever available to any human being at any moment.", practices: ["4-7-8 breathing: Inhale 4, hold 7, exhale 8. Repeat 4 cycles whenever anxiety arises.", "Box breathing: 4 in, 4 hold, 4 out, 4 hold. Used by special forces for nervous system regulation.", "Conscious slow breathing: Slow your breath to 5-6 breaths per minute throughout the day."], group: "internal" },
-  { n: 2, t: "Movement", layer: "Physical Body + Energetic Body", what: "The physical body stores past trauma and resistance as rigidity. Conscious, fluid movement restores alignment and removes friction from the biological hardware. The body IS the mind made physical.", practices: ["Shaking: Stand and shake every part of your body for 5 minutes.", "Slow intuitive movement: No choreography, no goal. Follow sensation.", "Morning joint circles: Rotate every joint from ankles to neck for 5 minutes."], group: "internal" },
-  { n: 3, t: "Mind", layer: "Intellectual Body + Mental Body", what: "Training the intellect to move from scattered rumination into single-pointed focus and clarity. A trained mind stops fighting reality and becomes a brilliant tool for alignment and truth.", practices: ["Single-task focus: One task, no other stimuli, 25 minutes.", "Contemplation: Sit with one question — let insight arise without forcing.", "Reality testing: Ask 'is this happening now, or is this a story?' Return to present."], group: "internal" },
-  { n: 4, t: "Sound", layer: "Energetic Body + Emotional Body", what: "The body is highly responsive to vibration. Specific sounds, silence, and conscious listening can harmonize the nervous system far faster than thought-based practices.", practices: ["Humming: Hum a single tone for 5 minutes. Stimulates the vagus nerve.", "Sound bath: 20 minutes with singing bowls, 432Hz music, or natural soundscapes.", "Chanting: Repeat AUM, HU, or a meaningful sound for 10 minutes."], group: "internal" },
-  { n: 5, t: "Heart", layer: "Emotional Body", what: "Transforming emotional contraction. Compassion, forgiveness, and devotion literally melt the defensive armour built around the chest. The heart is an electromagnetic field that affects everyone around you.", practices: ["Heart breathing: Hand on chest, breathe through the heart, feel warmth expanding.", "Loving-kindness (Metta): Direct goodwill toward yourself, loved one, neutral, difficult.", "Forgiveness practice: 'I release this. It no longer serves me.' Until the charge softens."], group: "internal" },
-  { n: 6, t: "Awareness", layer: "Source + Mental Body", what: "The capacity to notice your experience without instantly reacting. By stepping back and observing thoughts and sensations, you detach from the illusion of the Self and rest in unconditioned presence. The master switch.", practices: ["60-second observer: Once per hour, stop and notice body and mind without labels.", "Thought watching: Sit 5 minutes and watch thoughts pass like clouds. Do not engage.", "Sensory anchoring: Bring full attention to one sense for 2 minutes to return to presence."], group: "internal" },
-  { n: 7, t: "Sleep", layer: "Physical Body + Energetic Body", what: "Sleep is the most active repair process the body undertakes. The nervous system processes, the energetic body recharges, the physical body restores. Compromising sleep compromises every other lever.", practices: ["Consistent sleep-wake times every single day.", "Pre-sleep wind-down: No screens 60 min before bed. Dim lights. Slow breathing.", "Sleep environment: Complete darkness, 18-19°C, no electromagnetic devices near bed."], group: "external" },
-  { n: 8, t: "Nutrition", layer: "Physical Body", what: "Food is not just fuel — it is information sent to every cell. High-water-content, living foods with low processing friction give more energy than they take to digest.", practices: ["Eat living foods first: Begin every meal with something raw.", "Eliminate slowly: Remove one processed food per week. Sustainability over intensity.", "Eat in silence: One meal per week, slowly, in silence. Notice what your body wants."], group: "external" },
-  { n: 9, t: "Connection", layer: "Emotional Body + Environment", what: "We are nodes in a living relational field. Healing the illusion of separation by cultivating authentic, maskless relationships allows nervous systems to co-regulate. You cannot fully heal alone.", practices: ["Mask-dropping conversations: Say one true thing today that you would normally filter.", "Presence over performance: Focus on the other person — not on what to say next.", "Conscious community: Protect time with people who genuinely support your growth."], group: "external" },
-  { n: 10, t: "Environment", layer: "Environment + Mental Body", what: "Your physical space mirrors and shapes your mental space. Visual noise creates mental noise. Space design is not decoration — it is inner architecture.", practices: ["20-item declutter today.", "Sacred space: Designate one area only for stillness. Keep it impeccably clean.", "Sensory audit: Walk through your home and remove anything that creates contraction."], group: "external" },
-  { n: 11, t: "Nature", layer: "Physical + Energetic + Environment", what: "The body evolved in nature over millions of years. Modern life has severed this connection — and the nervous system registers severance as chronic stress. Syncing with the Earth is biological necessity.", practices: ["Morning sunlight in your eyes within 30 minutes of waking, for 10+ minutes.", "Earthing: Walk barefoot on natural ground for 20 minutes.", "Nature immersion: 2+ hours per week in nature with no phone."], group: "external" },
-  { n: 12, t: "Sustenance", layer: "Mental Body + Environment", what: "Stripping the survival panic away from money and work. When livelihood is misaligned with authentic nature, every working hour costs Prana. Aligning labour with truth transforms work into frictionless service.", practices: ["Authentic audit: Does my work align with what I am here to do?", "Value creation focus: Shift from 'how do I make money' to 'how do I create genuine value?'", "Sufficiency practice: Define clearly what 'enough' looks like financially."], group: "external" },
+  { n: 1, t: "Breath", slug: "breath" as const, what: "The breath is the remote control for the nervous system. The only autonomic function you can consciously override — making it the most immediate lever available to any human being at any moment.", group: "internal" as const },
+  { n: 2, t: "Movement", slug: "movement" as const, what: "The physical body stores past trauma and resistance as rigidity. Conscious, fluid movement restores alignment and removes friction from the biological hardware. The body IS the mind made physical.", group: "internal" as const },
+  { n: 3, t: "Mind", slug: "mind" as const, what: "Training the intellect to move from scattered rumination into single-pointed focus and clarity. A trained mind stops fighting reality and becomes a brilliant tool for alignment and truth.", group: "internal" as const },
+  { n: 4, t: "Sound", slug: "sound" as const, what: "The body is highly responsive to vibration. Specific sounds, silence, and conscious listening can harmonize the nervous system far faster than thought-based practices.", group: "internal" as const },
+  { n: 5, t: "Heart", slug: "heart" as const, what: "Transforming emotional contraction. Compassion, forgiveness, and devotion literally melt the defensive armour built around the chest. The heart is an electromagnetic field that affects everyone around you.", group: "internal" as const },
+  { n: 6, t: "Awareness", slug: "awareness" as const, what: "The capacity to notice your experience without instantly reacting. By stepping back and observing thoughts and sensations, you detach from the illusion of the Self and rest in unconditioned presence. The master switch.", group: "internal" as const },
+  { n: 7, t: "Sustenance", slug: "sustenance" as const, what: "Stripping the survival panic away from money and work. When livelihood is misaligned with authentic nature, every working hour costs Prana. Aligning labour with truth transforms work into frictionless service.", group: "external" as const },
+  { n: 8, t: "Sleep", slug: "sleep" as const, what: "Sleep is the most active repair process the body undertakes. The nervous system processes, the energetic body recharges, the physical body restores. Compromising sleep compromises every other lever.", group: "external" as const },
+  { n: 9, t: "Nutrition", slug: "nutrition" as const, what: "Food is not just fuel — it is information sent to every cell. High-water-content, living foods with low processing friction give more energy than they take to digest.", group: "external" as const },
+  { n: 10, t: "Connection", slug: "connection" as const, what: "We are nodes in a living relational field. Healing the illusion of separation by cultivating authentic, maskless relationships allows nervous systems to co-regulate. You cannot fully heal alone.", group: "external" as const },
+  { n: 11, t: "Nature", slug: "nature" as const, what: "The body evolved in nature over millions of years. Modern life has severed this connection — and the nervous system registers severance as chronic stress. Syncing with the Earth is biological necessity.", group: "external" as const },
+  { n: 12, t: "Environment", slug: "environment" as const, what: "Your physical space mirrors and shapes your mental space. Visual noise creates mental noise. Space design is not decoration — it is inner architecture.", group: "external" as const },
 ];
 
 type Zone = {
@@ -186,22 +184,6 @@ type Zone = {
   startHere: string;
   startHereLinks: { label: string; slug: LeverSlug }[];
   note: string;
-};
-
-const LEVER_SLUG_BY_NUMBER: Record<number, LeverSlug> = {
-  0: "conservation",
-  1: "breath",
-  2: "movement",
-  3: "mind",
-  4: "sound",
-  5: "heart",
-  6: "awareness",
-  7: "sleep",
-  8: "nutrition",
-  9: "connection",
-  10: "environment",
-  11: "nature",
-  12: "sustenance",
 };
 
 const ZONES: Zone[] = [
@@ -217,8 +199,8 @@ const ZONES: Zone[] = [
       "Constant low-grade panic",
       "No capacity for inner practice",
     ],
-    startHere: "Sustenance — Lever 12",
-    startHereLinks: [{ label: "Sustenance — Lever 12", slug: "sustenance" }],
+    startHere: "Sustenance — Lever 7",
+    startHereLinks: [{ label: "Sustenance — Lever 7", slug: "sustenance" }],
     note: "No inner practice takes root while the system is locked in survival mode. Address the material foundation first. Always.",
   },
   {
@@ -233,8 +215,8 @@ const ZONES: Zone[] = [
       "Tension that does not release",
       "Frequent illness",
     ],
-    startHere: "Sleep — Lever 7",
-    startHereLinks: [{ label: "Sleep — Lever 7", slug: "sleep" }],
+    startHere: "Sleep — Lever 8",
+    startHereLinks: [{ label: "Sleep — Lever 8", slug: "sleep" }],
     note: "An exhausted nervous system cannot hold inner practice. Stabilise the nightly reset first, with Breath as immediate support.",
   },
   {
@@ -638,19 +620,11 @@ function PhilosophyPage() {
       <section className="relative overflow-hidden bg-[#060d1c] py-32">
         <div className="relative z-10 mx-auto max-w-6xl px-6">
           <div className="text-center">
-            <div className="label-eyebrow">The Sunya method</div>
-            <h2 className="display mt-6 text-4xl text-white sm:text-5xl md:text-6xl">
-              The 12 Levers of
-              <br />
-              <span className="display-italic text-[#b8d4e8]">Transformation.</span>
+            <h2 className="display text-4xl text-white sm:text-5xl md:text-6xl">
+              The Twelve Levers of Transformation
             </h2>
             <p className="mx-auto mt-6 max-w-2xl text-[#b8d4e8]">
-              The precise tools for working on the human system. Each lever corresponds to specific
-              layers of being. Together, they form a complete system for inner freedom.
-            </p>
-            <p className="mx-auto mt-5 max-w-2xl whitespace-pre-line text-sm text-[#b8d4e8]/90">
-              {`The order matters. The levers move from the most immediate and physical to the
-most subtle. Each one prepares the ground for the next.`}
+              When we distil the vast diversity of techniques and paths for human wellbeing into their absolute essence, we arrive at the twelve levers of transformation. These are the twelve fundamental means through which a human being can transform their wellbeing. Contained within each lever are simple yet powerful practices for lasting transformation and complete wellbeing.
             </p>
           </div>
 
@@ -662,12 +636,22 @@ most subtle. Each one prepares the ground for the next.`}
               </div>
               <div className="relative z-10 pl-12 sm:pl-16">
                 <h3 className="display text-4xl text-white">Conservation</h3>
-                <p className="mt-1 text-xs uppercase tracking-[0.25em] text-[#dcb48d]/90">
-                  The prerequisite for all twelve
-                </p>
                 <p className="mt-5 whitespace-pre-line text-[15px] leading-relaxed text-[#b8d4e8]">
                   {LEVER_ZERO.body}
                 </p>
+                {(() => {
+                  const conservation = getLeverBySlug(LEVER_ZERO.slug);
+                  const count = conservation ? getLeverPracticeCount(conservation) : 0;
+                  return (
+                    <Link
+                      to="/practices/$leverSlug"
+                      params={{ leverSlug: LEVER_ZERO.slug }}
+                      className="mt-5 inline-flex items-center gap-2 text-sm text-[#7ec8e3] transition hover:text-white"
+                    >
+                      {count} practices <ArrowRight className="h-4 w-4" />
+                    </Link>
+                  );
+                })()}
               </div>
             </div>
             <div className="mx-auto mt-8 h-px w-full max-w-5xl bg-gradient-to-r from-transparent via-[#dcb48d]/40 to-transparent" />
@@ -682,6 +666,8 @@ most subtle. Each one prepares the ground for the next.`}
                 <div className="space-y-3">
                   {LEVERS.filter((l) => l.group === group).map((l) => {
                     const open = openLever === l.n;
+                    const leverData = getLeverBySlug(l.slug);
+                    const count = leverData ? getLeverPracticeCount(leverData) : 0;
                     return (
                       <div key={l.n} className="glass-card overflow-hidden">
                         <button
@@ -693,7 +679,6 @@ most subtle. Each one prepares the ground for the next.`}
                           </span>
                           <div className="min-w-0 flex-1">
                             <div className="display text-xl text-white">{l.t}</div>
-                            <div className="text-xs italic text-[#b8d4e8]/70">{l.layer}</div>
                           </div>
                           <ChevronDown
                             className={`h-4 w-4 shrink-0 text-[#7ec8e3] transition-transform ${
@@ -704,21 +689,12 @@ most subtle. Each one prepares the ground for the next.`}
                         {open && (
                           <div className="border-t border-white/10 px-5 pb-6 pt-5 text-sm text-[#b8d4e8]">
                             <p className="leading-relaxed">{l.what}</p>
-                            <div className="label-eyebrow mt-5">3 practices</div>
-                            <ul className="mt-3 space-y-2">
-                              {l.practices.map((p, i) => (
-                                <li key={i} className="flex gap-3">
-                                  <span className="text-[#7ec8e3]">·</span>
-                                  <span>{p}</span>
-                                </li>
-                              ))}
-                            </ul>
                             <Link
                               to="/practices/$leverSlug"
-                              params={{ leverSlug: LEVER_SLUG_BY_NUMBER[l.n] }}
+                              params={{ leverSlug: l.slug }}
                               className="mt-5 inline-flex items-center gap-2 text-sm text-[#7ec8e3] transition hover:text-white"
                             >
-                              See all practices <ArrowRight className="h-4 w-4" />
+                              {count} practices <ArrowRight className="h-4 w-4" />
                             </Link>
                           </div>
                         )}

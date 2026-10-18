@@ -2,7 +2,7 @@ import type { Lever } from "@/data/levers/types";
 
 export const environmentLever: Lever = {
   slug: "environment",
-  number: 10,
+  number: 12,
   name: "Environment",
   layerLine: "Environment + Mental Body",
   summaryLine: "No matter how precisely you have refined your inner practice, you are not a sealed container.",
@@ -376,6 +376,6 @@ export const environmentLever: Lever = {
     "nervous-system-collapse",
     "mental-fragmentation"
   ],
-  metaTitle: "Environment — Lever 10 Practice Library | Sunya",
+  metaTitle: "Environment — Lever 12 Practice Library | Sunya",
   metaDescription: "No matter how precisely you have refined your inner practice, you are not a sealed container."
 };

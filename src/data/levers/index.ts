@@ -21,12 +21,12 @@ export const LEVER_ORDER = [
   "sound",
   "heart",
   "awareness",
+  "sustenance",
   "sleep",
   "nutrition",
   "connection",
-  "environment",
   "nature",
-  "sustenance",
+  "environment",
 ] as const;
 
 export type LeverSlug = (typeof LEVER_ORDER)[number];

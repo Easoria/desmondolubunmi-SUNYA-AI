@@ -2,7 +2,7 @@ import type { Lever } from "@/data/levers/types";
 
 export const connectionLever: Lever = {
   slug: "connection",
-  number: 9,
+  number: 10,
   name: "Connection",
   layerLine: "Emotional Body + Environment",
   summaryLine: "Humans are not designed to regulate their nervous systems in isolation.",
@@ -421,6 +421,6 @@ export const connectionLever: Lever = {
   relatedZones: [
     "emotional-accumulation"
   ],
-  metaTitle: "Connection — Lever 9 Practice Library | Sunya",
+  metaTitle: "Connection — Lever 10 Practice Library | Sunya",
   metaDescription: "Humans are not designed to regulate their nervous systems in isolation."
 };
