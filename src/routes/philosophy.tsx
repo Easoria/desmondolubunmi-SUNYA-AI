@@ -628,7 +628,7 @@ function PhilosophyPage() {
                 When we distil the vast diversity of techniques and paths for human wellbeing into their absolute essence, we arrive at the twelve levers of transformation.
               </p>
               <p>
-                These are the twelve fundamental means through which a human being can transform their wellbeing. Contained within each lever are simple yet powerful practices for lasting transformation and complete wellbeing.
+                These are the twelve fundamental means through which a human being can transform their wellbeing. Contained within each lever are simple yet powerful practices for complete wellbeing.
               </p>
             </div>
           </div>
