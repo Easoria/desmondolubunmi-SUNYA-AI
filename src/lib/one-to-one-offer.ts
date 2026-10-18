@@ -24,7 +24,7 @@ export function oneToOnePricingLine() {
 
 export function oneToOneOfferNote() {
   if (ONE_TO_ONE_OFFER.free) {
-    return `${oneToOnePriceLabel()} while I take on my first Sunya clients. This will return to €${ONE_TO_ONE_OFFER.priceEur}.`;
+    return `The first ${ONE_TO_ONE_OFFER.freeSessionLimit} sessions are offered freely. After that, €${ONE_TO_ONE_OFFER.priceEur}.`;
   }
   return `€${ONE_TO_ONE_OFFER.priceEur} for ${ONE_TO_ONE_OFFER.durationMinutes} minutes.`;
 }
