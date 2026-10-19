@@ -200,10 +200,6 @@ function ProblemPageView() {
           {problem.opening}
         </p>
 
-        <p className="display mt-6 text-xl leading-snug text-[#7ec8e3] sm:mt-7 sm:text-2xl">
-          → {problem.stateLine}
-        </p>
-
         <ul className="mt-6 space-y-2.5 sm:mt-7">
           {problem.bullets.map((bullet) => (
             <li

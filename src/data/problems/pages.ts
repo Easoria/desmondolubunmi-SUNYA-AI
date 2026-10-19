@@ -243,19 +243,19 @@ export const PROBLEM_SLUG_REDIRECTS: Record<string, string> = {
   burnout: "burnout-cycles",
 };
 
-/** Lever order for practice lists — immediate first. */
+/** Lever order for practice lists — canonical site order. */
 export const PROBLEM_PRACTICE_LEVER_ORDER = [
+  "conservation",
   "breath",
-  "awareness",
+  "movement",
   "mind",
   "sound",
   "heart",
-  "movement",
-  "conservation",
+  "awareness",
+  "sustenance",
   "sleep",
   "nutrition",
   "connection",
-  "environment",
   "nature",
-  "sustenance",
+  "environment",
 ] as const;
