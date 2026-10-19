@@ -95,6 +95,7 @@ export const nutritionLever: Lever = {
       ],
       metaTitle: "Chrononutrition — How to Practise It | Sunya",
       metaDescription: "Synchronising the internal process of digestion with the external cycle of the sun — what traditional science called Agni, the digestive fire, and what modern biology now confirms as circadian nutrition.",
+      families: ["L1"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
@@ -151,6 +152,7 @@ export const nutritionLever: Lever = {
       ],
       metaTitle: "High-Frequency Hydration — How to Practise It | Sunya",
       metaDescription: "Consciously flushing the biological system with living, high-quality water to conduct life force, cleanse the internal ecosystem, and maintain absolute cellular fluidity.",
+      families: ["L1", "H1"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
@@ -204,6 +206,7 @@ export const nutritionLever: Lever = {
       ],
       metaTitle: "Herbal Alchemy — How to Practise It | Sunya",
       metaDescription: "Utilising the concentrated biochemical intelligence of herbs and natural plant medicine to gently restore balance, repair the nervous system, and support the energy body.",
+      families: ["H1"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
@@ -257,6 +260,7 @@ export const nutritionLever: Lever = {
       ],
       metaTitle: "Conscious Consumption — How to Practise It | Nutrition | Sunya",
       metaDescription: "Shifting the body into the precise physiological state required to fully extract nourishment from food.",
+      families: ["H1", "P1"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
@@ -309,6 +313,7 @@ export const nutritionLever: Lever = {
       ],
       metaTitle: "The Alchemy of the Void — How to Practise It | Sunya",
       metaDescription: "Voluntarily abstaining from physical consumption to allow the body’s internal intelligence to incinerate cellular waste, repair the physical vehicle, and free the life force from its most energy-intensive daily task.",
+      families: ["L1"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",

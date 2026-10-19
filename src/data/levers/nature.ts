@@ -87,6 +87,7 @@ export const natureLever: Lever = {
       ],
       metaTitle: "Water — How to Practise It | Sunya",
       metaDescription: "Using the element of water — particularly natural, living water — to physically and energetically cleanse the body, reset the nervous system, and dissolve the accumulated emotional residue of daily life.",
+      families: ["L2", "H1", "L4"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
@@ -136,6 +137,7 @@ export const natureLever: Lever = {
       ],
       metaTitle: "Air — How to Practise It | Sunya",
       metaDescription: "Immersing the body and lungs in the living air of natural environments — particularly forests, mountains, and coastlines — to flush the inner system with concentrated life force and expand the energy body beyond its habitual contracted boundaries.",
+      families: ["H4", "H1"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
@@ -185,6 +187,7 @@ export const natureLever: Lever = {
       ],
       metaTitle: "Fire — How to Practise It | Sunya",
       metaDescription: "Using sunlight and natural flame to activate the body’s solar energy, regulate the hormonal system, awaken perception, and burn away accumulated stagnant energy that dimmer practices cannot reach.",
+      families: ["L1", "L4", "P3"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "STATED",
@@ -230,6 +233,7 @@ export const natureLever: Lever = {
       ],
       metaTitle: "Space — How to Practise It | Sunya",
       metaDescription: "Removing visual boundaries and exposing the awareness to vastness — sky, open horizon, infinite depth — to dissolve the contracted, self-referential mind and allow the energy body to expand beyond its habitual limits.",
+      families: ["H4", "M3"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
@@ -290,6 +294,7 @@ export const natureLever: Lever = {
       ],
       metaTitle: "Places of Natural Transformational Power — How to Practise It | Sunya",
       metaDescription: "Specific natural environments that strip survival noise and open direct access to stillness, scale, and transformation.",
+      families: ["H2", "H1"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
