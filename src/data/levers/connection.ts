@@ -38,6 +38,7 @@ export const connectionLever: Lever = {
       ],
       metaTitle: "Internal Saturation — How to Practise It | Sunya",
       metaDescription: "The foundational state for all genuine connection: arriving at every interaction already whole — needing nothing, seeking nothing, giving everything.",
+      families: ["L2", "M2"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
