@@ -45,6 +45,7 @@ export const nutritionLever: Lever = {
       ],
       metaTitle: "The Pranic Spectrum — How to Practise It | Sunya",
       metaDescription: "Moving beyond dogmatic diets to directly observing how specific foods affect the energy and clarity of the human system.",
+      families: ["L1", "P3", "H4"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "STATED",
