@@ -44,6 +44,7 @@ export const environmentLever: Lever = {
       ],
       metaTitle: "Somatic Architecture — How to Practise It | Sunya",
       metaDescription: "Auditing the most immediate layer of your physical environment — what wraps your skin all day.",
+      families: ["P1"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
@@ -95,6 +96,7 @@ export const environmentLever: Lever = {
       ],
       metaTitle: "Spatial Alchemy — How to Practise It | Sunya",
       metaDescription: "Transforming your living space into an externalised reflection of a clear, settled mind.",
+      families: ["H2", "M3"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
@@ -150,6 +152,7 @@ export const environmentLever: Lever = {
       ],
       metaTitle: "Vibrational Signatures — How to Practise It | Sunya",
       metaDescription: "Recognising that the objects around you are not energetically neutral — and that each one carries a specific signature you can begin to perceive if you pay close enough attention.",
+      families: ["M2", "L4", "H3"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
@@ -204,6 +207,7 @@ export const environmentLever: Lever = {
       ],
       metaTitle: "Atmospheric Purity — How to Practise It | Sunya",
       metaDescription: "Controlling the microscopic and acoustic inputs of your environment.",
+      families: ["H1", "L1"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
@@ -255,6 +259,7 @@ export const environmentLever: Lever = {
       ],
       metaTitle: "Cultural Resonance — How to Practise It | Sunya",
       metaDescription: "Evaluating the collective mindset and energy of your geographical location — and recognising when the environment itself is fundamentally misaligned with your nature, requiring a complete geographic change.",
+      families: ["H1", "L1", "H2"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
@@ -311,6 +316,7 @@ export const environmentLever: Lever = {
       ],
       metaTitle: "Navigating Shared Frequencies — How to Practise It | Sunya",
       metaDescription: "Maintaining your energetic sovereignty when living or working with others whose habits, stress, and unconscious patterns are continuously imposing on the shared space.",
+      families: ["H3", "H1", "L2"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
@@ -359,6 +365,7 @@ export const environmentLever: Lever = {
       ],
       metaTitle: "Consecrated Spaces — How to Practise It | Sunya",
       metaDescription: "Immersing the physical and energy body in deliberately engineered environments of concentrated life force.",
+      families: ["L1"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
