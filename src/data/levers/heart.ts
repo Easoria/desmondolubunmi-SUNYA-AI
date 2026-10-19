@@ -475,6 +475,7 @@ export const heartLever: Lever = {
       ],
       metaTitle: "Non-Dual Devotion — How to Practise It | Sunya",
       metaDescription: "Falling in love with life itself — not as a religious act directed at an external deity, but as a profound, loving recognition that you are an expression of the very life you revere.",
+      families: ["H1", "L2"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",

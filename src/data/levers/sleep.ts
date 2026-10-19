@@ -804,6 +804,7 @@ export const sleepLever: Lever = {
       ],
       metaTitle: "The Threshold of Awakening — How to Practise It | Sunya",
       metaDescription: "A more advanced practice that builds on everything in this lever — bringing a thread of gentle awareness to the natural process of falling asleep, without trying to do anything at all.",
+      families: ["H4", "L1"],
       directions: ["soften", "calm", "release", "slow"],
       problems: [],
       generated: {

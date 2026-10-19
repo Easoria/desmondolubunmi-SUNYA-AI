@@ -359,6 +359,7 @@ export const nutritionLever: Lever = {
       ],
       metaTitle: "Energetic Imprinting — How to Practise It | Sunya",
       metaDescription: "Recognising that the quality of a meal is not determined by its ingredients alone — but by the state of the one who prepares it, the simplicity of its construction, and the presence with which it is received.",
+      families: ["L2", "P3"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",

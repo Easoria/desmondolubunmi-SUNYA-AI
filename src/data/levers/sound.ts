@@ -163,6 +163,7 @@ export const soundLever: Lever = {
       ],
       metaTitle: "Om Namah Shivaya — How to Practise It | Sunya",
       metaDescription: "The ultimate act of disidentification — dissolving the illusion of the finite, separate self and bowing to the infinite, formless consciousness that is the true ground of being.",
+      families: ["H1"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
@@ -213,6 +214,7 @@ export const soundLever: Lever = {
       ],
       metaTitle: "The Gayatri Mantra — How to Practise It | Sunya",
       metaDescription: "Invoking the supreme, unconditioned intelligence of Life to illuminate the mind — dissolving the fog of the conditioned self by flooding inner space with the pure light of consciousness.",
+      families: ["H1", "H4"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",

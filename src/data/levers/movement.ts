@@ -459,6 +459,7 @@ export const movementLever: Lever = {
       ],
       metaTitle: "The Meditation Seat — How to Practise It | Sunya",
       metaDescription: "The foundation of all seated practice — a stable, self-contained base that holds the energy in and channels it upward.",
+      families: ["H4", "M3"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
@@ -596,6 +597,7 @@ export const movementLever: Lever = {
       ],
       metaTitle: "The Corpse Pose — How to Practise It | Sunya",
       metaDescription: "Total integration — the most important position in the practice.",
+      families: ["P1"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "STATED",
