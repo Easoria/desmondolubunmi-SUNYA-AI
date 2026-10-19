@@ -268,6 +268,7 @@ export const soundLever: Lever = {
       ],
       metaTitle: "Conscious Listening — How to Practise It | Sunya",
       metaDescription: "Deep listening — recognising that listening is not a passive act but an active force that continuously shapes the inner system.",
+      families: ["M3"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
