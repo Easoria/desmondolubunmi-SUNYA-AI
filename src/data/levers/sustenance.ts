@@ -47,6 +47,7 @@ export const sustenanceLever: Lever = {
       ],
       metaTitle: "The Master Code of Abundance — How to Practise It | Sunya",
       metaDescription: "The absolute, timeless framework for achieving limitless sustenance.",
+      families: ["H1", "L1"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
@@ -94,6 +95,7 @@ export const sustenanceLever: Lever = {
       ],
       metaTitle: "Decoding Money and Value — How to Practise It | Sunya",
       metaDescription: "Stripping away the fear, greed, and illusion surrounding money — and recognising it for what it actually is: the physical manifestation of exchanged value and life force within the human network.",
+      families: ["H1"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
@@ -146,6 +148,7 @@ export const sustenanceLever: Lever = {
       ],
       metaTitle: "Mastery of the Instrument — How to Practise It | Sunya",
       metaDescription: "Acquiring and relentlessly sharpening a practical, high-leverage skill to interface with the physical arena with ease.",
+      families: ["L1"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
@@ -197,6 +200,7 @@ export const sustenanceLever: Lever = {
       ],
       metaTitle: "The Economics of Simplicity — How to Practise It | Sunya",
       metaDescription: "Mastering the outflow of your stored energy.",
+      families: ["H1", "H2"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
@@ -247,6 +251,7 @@ export const sustenanceLever: Lever = {
       ],
       metaTitle: "Right Livelihood — How to Practise It | Sunya",
       metaDescription: "Ensuring the method by which you gather sustenance does not poison the inner system.",
+      families: ["M2"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
@@ -292,6 +297,7 @@ export const sustenanceLever: Lever = {
       ],
       metaTitle: "The Ecosystem Trust — How to Practise It | Sunya",
       metaDescription: "The ultimate shift in the relationship with sustenance: moving from the terrified, grasping energy of scarcity into the relaxed, magnetic frequency of absolute trust in the intelligence of life.",
+      families: ["H1", "H4"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
