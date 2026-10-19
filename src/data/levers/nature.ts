@@ -41,6 +41,7 @@ export const natureLever: Lever = {
       ],
       metaTitle: "Earth — How to Practise It | Sunya",
       metaDescription: "Discharging the accumulated static charge of modern life by making direct physical contact with the ground.",
+      families: ["H1", "H4", "P1"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "STATED",

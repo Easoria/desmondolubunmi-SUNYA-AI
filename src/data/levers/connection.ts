@@ -89,6 +89,7 @@ export const connectionLever: Lever = {
       ],
       metaTitle: "The Resonance Principle — How to Practise It | Sunya",
       metaDescription: "Gaining clarity on your own internal frequency so that you can consciously project it outward and attract the environments, communities, and people who naturally harmonise with you.",
+      families: ["L1", "L2"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
@@ -140,6 +141,7 @@ export const connectionLever: Lever = {
       ],
       metaTitle: "The Alchemy of Authenticity — How to Practise It | Sunya",
       metaDescription: "Dropping the social mask to exist in a state of genuine honesty with yourself and the world.",
+      families: ["L2", "M2"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
@@ -195,6 +197,7 @@ export const connectionLever: Lever = {
       ],
       metaTitle: "Karma Yoga — How to Practise It | Sunya",
       metaDescription: "Dissolving the boundaries of the separate self by serving something larger than personal survival.",
+      families: ["L2"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
@@ -250,6 +253,7 @@ export const connectionLever: Lever = {
       ],
       metaTitle: "Somatic Communion — How to Practise It | Sunya",
       metaDescription: "Utilising your physical and energetic presence to stabilise the nervous system of another human being.",
+      families: ["H1", "L2"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
@@ -305,6 +309,7 @@ export const connectionLever: Lever = {
       ],
       metaTitle: "The Ecosystem of Belonging — How to Practise It | Sunya",
       metaDescription: "Architecting and immersing yourself in a collective field that amplifies consciousness and accelerates growth.",
+      families: ["L2", "L4"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
@@ -358,6 +363,7 @@ export const connectionLever: Lever = {
       ],
       metaTitle: "The Alchemy of Forgiveness — How to Practise It | Sunya",
       metaDescription: "The ultimate internal technology for untying the deepest knots of the heart.",
+      families: ["H3", "L2", "L4"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
@@ -406,6 +412,7 @@ export const connectionLever: Lever = {
       ],
       metaTitle: "Haptic Alchemy — How to Practise It | Sunya",
       metaDescription: "Consciously restoring the body’s need for safe, appropriate physical contact — and recognising that touch is not a luxury but a biological necessity for nervous system health.",
+      families: ["H1", "L2"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
