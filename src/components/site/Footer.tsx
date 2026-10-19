@@ -41,8 +41,7 @@ export function Footer() {
         <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between lg:gap-16">
           <div className="shrink-0">
             <Link to="/" className="inline-block">
-              <div className="display text-xl tracking-[0.4em] text-white">SUNYA</div>
-              <div className="mt-1 text-xs italic text-[#b8d4e8]/70">by Desmond Olubunmi</div>
+              <div className="display text-xl tracking-wide text-white">Desmond Olubunmi</div>
             </Link>
           </div>
 

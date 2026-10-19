@@ -43,7 +43,7 @@ function page(
 export const PROBLEM_PAGES: ProblemPage[] = [
   page(
     "H1",
-    "Something is going to go wrong. You do not know what. Your body has already decided.",
+    "You are looping and replaying future scenarios in your mind, worried about things that have not yet happened.",
     "You are scanning. The threat is in the future and you are already there.",
     [
       "Your mind runs forward — what if, what then, what next",
@@ -55,7 +55,7 @@ export const PROBLEM_PAGES: ProblemPage[] = [
   ),
   page(
     "H2",
-    "There is too much. Too many things, too many decisions, too many open loops.",
+    "You are struggling to keep up with the demands of life, pressured by having so much to do.",
     "The volume has exceeded what you can sort. So nothing gets sorted.",
     [
       "You cannot decide what to do first, so you do nothing",
@@ -67,7 +67,7 @@ export const PROBLEM_PAGES: ProblemPage[] = [
   ),
   page(
     "H3",
-    "Small things are landing hard. The slow driver. The badly worded message. The sound of someone eating.",
+    "You feel annoyed and irritable with people and situations, especially those that would not normally bother you.",
     "Something is blocked, and the force has nowhere to go.",
     [
       "You are irritable rather than anxious or flat",
@@ -79,7 +79,7 @@ export const PROBLEM_PAGES: ProblemPage[] = [
   ),
   page(
     "H4",
-    "Your body is heavy. Your mind is not. Thoughts keep looping — unfinished conversations, random fragments, the same worry in a slightly different costume.",
+    "Your body is tired but your thoughts will not stop, especially when you are trying to sleep.",
     "You are on. The day has not powered down.",
     [
       "Thoughts keep generating even when you try to stop them",
@@ -91,7 +91,7 @@ export const PROBLEM_PAGES: ProblemPage[] = [
   ),
   page(
     "L1",
-    "The tank is empty. Not sleepy — empty.",
+    "You feel deeply tired and low on energy. Ordinary tasks take longer than they should.",
     "You have been spending more than you take in, for long enough that the reserve is gone.",
     [
       "Small tasks feel disproportionately heavy",
@@ -103,7 +103,7 @@ export const PROBLEM_PAGES: ProblemPage[] = [
   ),
   page(
     "L2",
-    "You know what you should feel. You do not feel it.",
+    "You find it hard to feel or express emotion. The heart space is closed, and you feel emotionally unresponsive.",
     "The volume has been turned down. It has not come back up.",
     [
       "Good news lands about the same as bad news",
@@ -115,7 +115,7 @@ export const PROBLEM_PAGES: ProblemPage[] = [
   ),
   page(
     "L3",
-    "You know what to do. You are not doing it.",
+    "Deep down you know exactly what needs to be done, and you want to do it, but you do not.",
     "Your system has decided the task is a threat, and it is backing away.",
     [
       "The task is specific and you keep going around it",
@@ -127,7 +127,7 @@ export const PROBLEM_PAGES: ProblemPage[] = [
   ),
   page(
     "L4",
-    "Everything is heavier than it should be. Getting up. Getting dressed. Replying.",
+    "You feel uninspired and do not want to do anything. Getting through the day takes everything.",
     "There is weight in the system and no lift.",
     [
       "Things that used to matter feel flat",
@@ -139,7 +139,7 @@ export const PROBLEM_PAGES: ProblemPage[] = [
   ),
   page(
     "M1",
-    "Part of you wants it. Part of you does not. Neither will stand down.",
+    "You feel confused. You have been going back and forth on a decision and cannot settle it.",
     "You are pulling in two directions, so you cannot move in either.",
     [
       "You change your mind depending on the day",
@@ -151,7 +151,7 @@ export const PROBLEM_PAGES: ProblemPage[] = [
   ),
   page(
     "M2",
-    "The voice is running. It has been for a long time.",
+    "You replay your own mistakes and speak to yourself in a way you never would to anyone else.",
     "Part of you has turned against another part.",
     [
       "You replay things you said and did",
@@ -163,7 +163,7 @@ export const PROBLEM_PAGES: ProblemPage[] = [
   ),
   page(
     "M3",
-    "Your head is full and nothing is in order.",
+    "You start things and lose them halfway, and cannot hold your attention on one thing.",
     "Too many threads are open. None of them can finish.",
     [
       "You start things and lose them halfway",
@@ -175,7 +175,7 @@ export const PROBLEM_PAGES: ProblemPage[] = [
   ),
   page(
     "M4",
-    "You go hard. Then you collapse. Then you go hard again.",
+    "You push hard for a stretch, then crash, then push again, and nothing holds.",
     "The system swings between full output and shutdown, with nothing in between.",
     [
       "Good weeks and lost weeks, on repeat",
@@ -187,7 +187,7 @@ export const PROBLEM_PAGES: ProblemPage[] = [
   ),
   page(
     "P1",
-    "Your body is holding. Shoulders, jaw, neck, gut — something is always tight.",
+    "You unconsciously tense parts of your body — shoulders, jaw, neck — and breathe in a shallow pattern.",
     "The body braced for something and never stood down.",
     [
       "You notice the tension only when you stop",
@@ -199,7 +199,7 @@ export const PROBLEM_PAGES: ProblemPage[] = [
   ),
   page(
     "P2",
-    "The body does not move the way it used to.",
+    "Your body has lost its flexibility and range of motion. Movement is no longer smooth and free.",
     "The range you stopped using is the range you lost.",
     [
       "Getting up from the floor takes planning",
@@ -211,7 +211,7 @@ export const PROBLEM_PAGES: ProblemPage[] = [
   ),
   page(
     "P3",
-    "The body feels sluggish. Heavy. Slow to start.",
+    "Your body feels heavy and sluggish. You want to lie down rather than move.",
     "A body that does not move produces less energy to move with.",
     [
       "You are physically slow rather than mentally tired",
@@ -229,14 +229,14 @@ export const PROBLEM_PAGE_BY_SLUG = Object.fromEntries(
 
 /** Old / ad-hoc problem URLs → canonical mechanism pages (301). */
 export const PROBLEM_SLUG_REDIRECTS: Record<string, string> = {
-  insomnia: "a-mind-that-wont-switch-off",
+  insomnia: "a-racing-mind",
   "people-pleasing": "self-criticism-and-shame",
   grief: "low-mood-and-heaviness",
   "chronic-stress": "overwhelm",
   "decision-fatigue": "feeling-torn",
-  // Renamed tag slugs
+  // Renamed tag / page slugs
   "feeling-overwhelmed": "overwhelm",
-  "a-racing-mind": "a-mind-that-wont-switch-off",
+  "a-mind-that-wont-switch-off": "a-racing-mind",
   "numbness-and-disconnection": "emotional-numbness",
   "avoidance-and-procrastination": "procrastination-and-avoidance",
   "self-criticism": "self-criticism-and-shame",

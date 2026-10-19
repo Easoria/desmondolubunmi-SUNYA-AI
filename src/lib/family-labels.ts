@@ -48,10 +48,10 @@ export const FAMILY_PROBLEM_META: Record<FamilyCode, FamilyProblemMeta> = {
     state: "over",
   },
   H4: {
-    slug: "a-mind-that-wont-switch-off",
-    phrase: "a mind that won't switch off",
-    label: "For a mind that won't switch off",
-    title: "A mind that won't switch off",
+    slug: "a-racing-mind",
+    phrase: "a racing mind",
+    label: "For a racing mind",
+    title: "A racing mind",
     state: "over",
   },
   L1: {
