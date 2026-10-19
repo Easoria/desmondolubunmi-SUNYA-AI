@@ -317,7 +317,7 @@ export const breathLever: Lever = {
           ],
           metaTitle: "Bellows Breath — How to Practise It | Sunya",
           metaDescription: "A vigorous pump that floods the system with energy and heat.",
-          families: ["L3", "L4"],
+          families: ["L3", "L4", "P3"],
           directions: ["energise", "uplift", "initiate"],
           problems: [],
           generated: {

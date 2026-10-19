@@ -107,7 +107,7 @@ export const conservationLever: Lever = {
       metaTitle: "Sensory Rest — How to Practise It | Sunya",
       metaDescription:
         "The senses reach outward all day toward stimulation — screens, noise, endless input — and pour energy out as they go.",
-      families: ["H2", "H4"],
+      families: ["H2", "H4", "M4"],
       directions: ["reduce", "simplify", "calm"],
       problems: ["insomnia"],
       generated: {

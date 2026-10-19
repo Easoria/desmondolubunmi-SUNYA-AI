@@ -170,7 +170,7 @@ export const mindLever: Lever = {
       ],
       metaTitle: "Conscious Creation — How to Practise It | Sunya",
       metaDescription: "Using the mind as a creative force — stepping into the role of the conscious creator by combining deep, focused visualization with sustained determination and strategic action.",
-      families: ["L3", "M3"],
+      families: ["L3", "M3", "M1"],
       directions: ["initiate", "structure"],
       problems: [],
       generated: {
@@ -292,7 +292,7 @@ export const mindLever: Lever = {
       ],
       metaTitle: "Journaling — How to Practise It | Sunya",
       metaDescription: "Transferring internal mental chaos into external physical form.",
-      families: ["H4", "M3"],
+      families: ["H4", "M3", "M1"],
       directions: ["calm", "structure", "clarify"],
       problems: ["insomnia"],
       generated: {

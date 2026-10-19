@@ -413,7 +413,7 @@ export const sleepLever: Lever = {
       ],
       metaTitle: "Strategic Somatic Movement — How to Practise It | Sunya",
       metaDescription: "Using the body’s physical energy to build the chemical drive for sleep during the day, while downshifting the nervous system in the evening.",
-      families: ["H4", "L1"],
+      families: ["H4", "L1", "P3"],
       directions: ["discharge", "release", "calm"],
       problems: ["insomnia"],
       generated: {

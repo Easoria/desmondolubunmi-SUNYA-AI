@@ -47,7 +47,7 @@ export const sustenanceLever: Lever = {
       ],
       metaTitle: "The Master Code of Abundance — How to Practise It | Sunya",
       metaDescription: "The absolute, timeless framework for achieving limitless sustenance.",
-      families: ["H1", "L1"],
+      families: ["H1", "L1", "M4"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
@@ -251,7 +251,7 @@ export const sustenanceLever: Lever = {
       ],
       metaTitle: "Right Livelihood — How to Practise It | Sunya",
       metaDescription: "Ensuring the method by which you gather sustenance does not poison the inner system.",
-      families: ["M2"],
+      families: ["M2", "M1"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",

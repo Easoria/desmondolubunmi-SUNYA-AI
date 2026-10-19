@@ -259,7 +259,7 @@ export const environmentLever: Lever = {
       ],
       metaTitle: "Cultural Resonance — How to Practise It | Sunya",
       metaDescription: "Evaluating the collective mindset and energy of your geographical location — and recognising when the environment itself is fundamentally misaligned with your nature, requiring a complete geographic change.",
-      families: ["H1", "L1", "H2"],
+      families: ["H1", "L1", "H2", "M1"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
@@ -316,7 +316,7 @@ export const environmentLever: Lever = {
       ],
       metaTitle: "Navigating Shared Frequencies — How to Practise It | Sunya",
       metaDescription: "Maintaining your energetic sovereignty when living or working with others whose habits, stress, and unconscious patterns are continuously imposing on the shared space.",
-      families: ["H3", "H1", "L2"],
+      families: ["H3", "H1", "L2", "M1"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
