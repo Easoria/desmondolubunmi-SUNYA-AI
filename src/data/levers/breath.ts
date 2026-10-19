@@ -367,7 +367,7 @@ export const breathLever: Lever = {
           ],
           metaTitle: "Skull-Shining Breath — How to Practise It | Sunya",
           metaDescription: "Clearing the head and brightening the whole system.",
-          families: ["L3", "L4"],
+          families: ["L3", "L4", "P3"],
           directions: ["energise", "uplift", "clarify"],
           problems: [],
           generated: {
@@ -416,7 +416,7 @@ export const breathLever: Lever = {
           relatedPractices: ["bellows-breath", "skull-shining-breath", "coherent-breathing"],
           metaTitle: "Cyclic Hyperventilation — How to Practise It | Sunya",
           metaDescription: "A powerful surge of energy, heat, and elevated mood.",
-          families: ["L3", "L4"],
+          families: ["L3", "L4", "P3"],
           directions: ["energise", "uplift", "initiate"],
           problems: [],
           generated: {

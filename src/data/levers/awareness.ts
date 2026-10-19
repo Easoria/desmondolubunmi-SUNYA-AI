@@ -83,7 +83,7 @@ export const awarenessLever: Lever = {
       ],
       metaTitle: "Inner Gaze — How to Practise It | Sunya",
       metaDescription: "Directing the mental gaze upward and inward — to the space between the eyebrows — creating a single, neutral anchor point that draws the life force upward and inward.",
-      families: ["H4"],
+      families: ["H4", "M3"],
       directions: ["calm", "contain"],
       problems: [],
       generated: {
@@ -131,7 +131,7 @@ export const awarenessLever: Lever = {
       ],
       metaTitle: "Body Scan — How to Practise It | Sunya",
       metaDescription: "Moving awareness slowly through the body, from feet to head, turning unconscious tension into conscious relaxation.",
-      families: ["H3", "H1"],
+      families: ["H3", "H1", "P1"],
       directions: ["soften", "release", "ground"],
       problems: ["insomnia"],
       generated: {
@@ -178,7 +178,7 @@ export const awarenessLever: Lever = {
       ],
       metaTitle: "Non-Sleep Deep Rest (NSDR) — How to Practise It | Sunya",
       metaDescription: "A practice of guided rest rooted in the ancient tradition of Yoga Nidra.",
-      families: ["L1", "H4"],
+      families: ["L1", "H4", "M4"],
       directions: ["restore", "calm", "release"],
       problems: ["insomnia"],
       generated: {
@@ -337,7 +337,7 @@ export const awarenessLever: Lever = {
       ],
       metaTitle: "Compassionate Presence — How to Practise It | Sunya",
       metaDescription: "The simple act of being with whatever is arising in you, without judgment or avoidance.",
-      families: ["M2", "H1"],
+      families: ["M2", "H1", "H3"],
       directions: ["soften", "ground"],
       problems: [],
       generated: {

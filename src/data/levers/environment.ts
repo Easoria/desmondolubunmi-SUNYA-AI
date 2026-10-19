@@ -44,7 +44,7 @@ export const environmentLever: Lever = {
       ],
       metaTitle: "Somatic Architecture — How to Practise It | Sunya",
       metaDescription: "Auditing the most immediate layer of your physical environment — what wraps your skin all day.",
-      families: ["P1"],
+      families: ["P1", "P2"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",

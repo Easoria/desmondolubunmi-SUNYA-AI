@@ -200,7 +200,7 @@ export const sustenanceLever: Lever = {
       ],
       metaTitle: "The Economics of Simplicity — How to Practise It | Sunya",
       metaDescription: "Mastering the outflow of your stored energy.",
-      families: ["H1", "H2"],
+      families: ["H1", "H2", "M4"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",

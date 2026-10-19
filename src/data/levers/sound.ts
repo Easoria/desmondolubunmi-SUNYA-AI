@@ -51,6 +51,7 @@ export const soundLever: Lever = {
       ],
       metaTitle: "AUM (Om) Chanting — How to Practise It | Sunya",
       metaDescription: "Attuning the individual back to the universal through the primordial sound of AUM.",
+      families: ["L3"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
@@ -104,6 +105,7 @@ export const soundLever: Lever = {
       ],
       metaTitle: "Om Sat Chit Ananda — How to Practise It | Sunya",
       metaDescription: "The ultimate affirmation of your true identity.",
+      families: ["M2"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",

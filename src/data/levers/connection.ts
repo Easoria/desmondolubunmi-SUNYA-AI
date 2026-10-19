@@ -89,7 +89,7 @@ export const connectionLever: Lever = {
       ],
       metaTitle: "The Resonance Principle — How to Practise It | Sunya",
       metaDescription: "Gaining clarity on your own internal frequency so that you can consciously project it outward and attract the environments, communities, and people who naturally harmonise with you.",
-      families: ["L1", "L2"],
+      families: ["L1", "L2", "M1"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
@@ -141,7 +141,7 @@ export const connectionLever: Lever = {
       ],
       metaTitle: "The Alchemy of Authenticity — How to Practise It | Sunya",
       metaDescription: "Dropping the social mask to exist in a state of genuine honesty with yourself and the world.",
-      families: ["L2", "M2"],
+      families: ["L2", "M2", "M1"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",

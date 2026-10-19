@@ -187,7 +187,7 @@ export const natureLever: Lever = {
       ],
       metaTitle: "Fire — How to Practise It | Sunya",
       metaDescription: "Using sunlight and natural flame to activate the body’s solar energy, regulate the hormonal system, awaken perception, and burn away accumulated stagnant energy that dimmer practices cannot reach.",
-      families: ["L1", "L4", "P3"],
+      families: ["L1", "L4", "P3", "L3"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "STATED",

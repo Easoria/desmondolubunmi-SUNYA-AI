@@ -101,7 +101,7 @@ export const sleepLever: Lever = {
       ],
       metaTitle: "Cognitive De-Escalation — How to Practise It | Sunya",
       metaDescription: "Breaking the cycle of stress and sleeplessness by removing the performance pressure of sleep.",
-      families: ["H4", "H1"],
+      families: ["H4", "H1", "M4"],
       directions: ["calm", "slow", "contain", "soften"],
       problems: ["insomnia"],
       generated: {
@@ -413,7 +413,7 @@ export const sleepLever: Lever = {
       ],
       metaTitle: "Strategic Somatic Movement — How to Practise It | Sunya",
       metaDescription: "Using the body’s physical energy to build the chemical drive for sleep during the day, while downshifting the nervous system in the evening.",
-      families: ["H4", "L1", "P3"],
+      families: ["H4", "L1", "P3", "P2"],
       directions: ["discharge", "release", "calm"],
       problems: ["insomnia"],
       generated: {
@@ -531,7 +531,7 @@ export const sleepLever: Lever = {
       ],
       metaTitle: "The Morning Ignition — How to Practise It | Sunya",
       metaDescription: "Leveraging the first hour of waking to fuel the day and biologically anchor the subsequent night’s rest.",
-      families: ["L1"],
+      families: ["L1", "L3", "P3"],
       directions: ["energise", "initiate", "stabilise"],
       problems: [],
       generated: {

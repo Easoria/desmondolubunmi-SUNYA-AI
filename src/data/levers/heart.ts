@@ -102,7 +102,7 @@ export const heartLever: Lever = {
       ],
       metaTitle: "Emotional Presence — How to Practise It | Sunya",
       metaDescription: "The practice of digesting difficult emotions completely rather than suppressing or being overwhelmed by them.",
-      families: ["L2"],
+      families: ["L2", "H3"],
       directions: ["reconnect", "release"],
       problems: [],
       generated: {
@@ -222,7 +222,7 @@ export const heartLever: Lever = {
       ],
       metaTitle: "Loving-Kindness — How to Practise It | Sunya",
       metaDescription: "A systematic practice of extending compassion and goodwill outward in concentric circles — from yourself, to those you love, to strangers, to those who have caused you pain, and finally to all living beings.",
-      families: ["H3", "L2"],
+      families: ["H3", "L2", "M2"],
       directions: ["soften", "open"],
       problems: [],
       generated: {
@@ -284,7 +284,7 @@ export const heartLever: Lever = {
       ],
       metaTitle: "Giving and Receiving — How to Practise It | Sunya",
       metaDescription: "A practice of breathing in suffering and breathing out relief — the deliberate opening of the heart to what it would normally close against.",
-      families: ["L2"],
+      families: ["L2", "H3", "L4"],
       directions: ["open", "soften"],
       problems: [],
       generated: {
@@ -343,7 +343,7 @@ export const heartLever: Lever = {
       ],
       metaTitle: "Ecstatic Chanting — How to Practise It | Sunya",
       metaDescription: "Using melody, repetition, and fierce emotional intensity to override the analytical mind and open the heart completely.",
-      families: ["L2"],
+      families: ["L2", "L4"],
       directions: ["open", "reconnect"],
       problems: [],
       generated: {
@@ -525,6 +525,7 @@ export const heartLever: Lever = {
       ],
       metaTitle: "Prayer — How to Practise It | Sunya",
       metaDescription: "Moving beyond petitionary begging — beyond the desperate asking of a separate, frightened self.",
+      families: ["M1"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
