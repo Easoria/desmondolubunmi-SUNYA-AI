@@ -516,25 +516,23 @@ function PhilosophyPage() {
       <Breadcrumb />
 
       {/* Hero */}
-      <section className="relative overflow-hidden pb-32 pt-16">
+      <section className="relative overflow-hidden pb-[6.8rem] pt-16">
         <Starfield density={0.7} />
         <SacredGeometry className="inset-0 m-auto h-[800px] w-[800px]" />
         <Orbs />
         <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
-          <div className="label-eyebrow">THE SUNYA PHILOSOPHY</div>
-          <h1 className="display mt-6 text-5xl text-white sm:text-7xl">
-            A unified map of human
-            <br />
-            <span className="display-italic text-[#b8d4e8]">suffering and freedom.</span>
+          <h1 className="display text-5xl text-white sm:text-7xl">
+            THE SUNYA PHILOSOPHY
           </h1>
           <p className="mx-auto mt-8 max-w-2xl text-lg text-[#b8d4e8]">
-            Built on first principles. Belonging to no tradition. Valid for every human being.
+            A unified map of human{" "}
+            <span className="display-italic">suffering and freedom.</span>
           </p>
         </div>
       </section>
 
       {/* Why we suffer — Entropy subordinate, widening trunk + branch canopy */}
-      <section className="relative overflow-hidden bg-[#060d1c] py-[7.2rem]">
+      <section className="relative overflow-hidden bg-[#060d1c] py-[7.04rem]">
         <Starfield density={0.3} />
         <div className="relative z-10 mx-auto max-w-5xl px-6">
           <div className="text-center">
