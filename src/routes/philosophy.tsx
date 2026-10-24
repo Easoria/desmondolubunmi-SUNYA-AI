@@ -525,8 +525,7 @@ function PhilosophyPage() {
             THE SUNYA PHILOSOPHY
           </h1>
           <p className="mx-auto mt-8 max-w-2xl text-lg text-[#b8d4e8]">
-            A unified map of human{" "}
-            <span className="display-italic">suffering and freedom.</span>
+            A unified map of human suffering and freedom.
           </p>
         </div>
       </section>
