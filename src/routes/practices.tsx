@@ -114,12 +114,12 @@ function PracticesIndexPage() {
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6">
           <div className="text-center">
             <h1 className="display text-3xl text-white sm:text-6xl">THE SUNYA PRACTICES</h1>
-            <p className="mx-auto mt-5 max-w-3xl text-lg text-[#b8d4e8] sm:mt-6 sm:text-xl">
+            <p className="mx-auto mt-5 max-w-5xl text-lg text-[#b8d4e8] sm:mt-6 sm:text-xl">
               The twelve foundational means of human wellbeing
             </p>
           </div>
 
-          <div className="mx-auto mt-6 max-w-[700px] space-y-5 text-sm leading-relaxed text-[#b8d4e8] sm:mt-7 sm:text-base">
+          <div className="mx-auto mt-6 max-w-5xl space-y-5 text-sm leading-relaxed text-[#b8d4e8] sm:mt-7 sm:text-base">
             <p>
               When every approach to human wellbeing is distilled to its essence, twelve foundational
               means remain.
