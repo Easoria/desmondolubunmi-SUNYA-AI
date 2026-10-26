@@ -113,10 +113,10 @@ function PracticesIndexPage() {
         <Starfield density={0.4} />
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6">
           <div className="text-center">
-            <div className="label-eyebrow">THE SUNYA PRACTICES</div>
-            <h1 className="display mt-5 text-3xl text-white sm:mt-6 sm:text-6xl">
+            <h1 className="display text-3xl text-white sm:text-6xl">THE SUNYA PRACTICES</h1>
+            <p className="mx-auto mt-5 max-w-3xl text-lg text-[#b8d4e8] sm:mt-6 sm:text-xl">
               The twelve foundational means of human wellbeing
-            </h1>
+            </p>
           </div>
 
           <div className="mx-auto mt-6 max-w-[700px] space-y-5 text-sm leading-relaxed text-[#b8d4e8] sm:mt-7 sm:text-base">
@@ -145,6 +145,9 @@ function PracticesIndexPage() {
           )}
 
           <div className="mt-12">
+            <h2 className="display mb-6 text-center text-2xl text-[#d6effb] sm:text-3xl">
+              The Six Internal Levers
+            </h2>
             <div className="rounded-3xl border border-[#7ec8e3]/40 bg-[#7ec8e3]/[0.08] p-3 shadow-[0_0_42px_-24px_rgba(126,200,227,0.85)] sm:p-4">
               <div className="grid gap-3 sm:gap-4 md:grid-cols-2 xl:grid-cols-3">
                 {internal.map((lever, index) => (
@@ -155,6 +158,9 @@ function PracticesIndexPage() {
           </div>
 
           <div className="mt-14">
+            <h2 className="display mb-6 text-center text-2xl text-[#f0dcc8] sm:text-3xl">
+              The Six External Pillars
+            </h2>
             <div className="rounded-3xl border border-[#dcb48d]/25 bg-[#dcb48d]/[0.05] p-3 sm:p-4">
               <div className="grid gap-3 sm:gap-4 md:grid-cols-2 xl:grid-cols-3">
                 {external.map((lever) => (
