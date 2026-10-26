@@ -6,6 +6,7 @@ import { Footer } from "@/components/site/Footer";
 import { Breadcrumb } from "@/components/site/Breadcrumb";
 import { GatheringCard } from "@/components/gatherings/GatheringCard";
 import { GatheringInterestCapture } from "@/components/gatherings/GatheringInterestCapture";
+import { SundaySessionSection } from "@/components/gatherings/SundaySessionSection";
 import { DUBLIN_GATHERING_CARD } from "@/data/gatherings/dublin-seed";
 import { fetchPublishedGatheringsClient } from "@/lib/gatherings-browser";
 import { isGatheringUpcoming, type GatheringCard as GatheringCardData } from "@/lib/gatherings";
@@ -108,6 +109,10 @@ function GatheringsIndexPage() {
             human connection. Some in Dublin, some online, all open to anyone.
           </p>
         </header>
+
+        <div className="mt-14">
+          <SundaySessionSection />
+        </div>
 
         <section className="mt-14">
           {upcoming.length === 0 ? (

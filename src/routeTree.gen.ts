@@ -40,6 +40,7 @@ import { Route as ApiCommunitySignupRouteImport } from './routes/api/community-s
 import { Route as ApiContributorSignupRouteImport } from './routes/api/contributor-signup'
 import { Route as ApiEmailCaptureRouteImport } from './routes/api/email-capture'
 import { Route as ApiGatheringsSignupRouteImport } from './routes/api/gatherings-signup'
+import { Route as ApiSundaySessionSignupRouteImport } from './routes/api/sunday-session-signup'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as EssaysSlugRouteImport } from './routes/essays.$slug'
 import { Route as GatheringsSlugRouteImport } from './routes/gatherings.$slug'
@@ -211,6 +212,11 @@ const ApiGatheringsSignupRoute = ApiGatheringsSignupRouteImport.update({
   path: '/api/gatherings-signup',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiSundaySessionSignupRoute = ApiSundaySessionSignupRouteImport.update({
+  id: '/api/sunday-session-signup',
+  path: '/api/sunday-session-signup',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BlogSlugRoute = BlogSlugRouteImport.update({
   id: '/$slug',
   path: '/$slug',
@@ -323,6 +329,7 @@ export interface FileRoutesByFullPath {
   '/api/contributor-signup': typeof ApiContributorSignupRoute
   '/api/email-capture': typeof ApiEmailCaptureRoute
   '/api/gatherings-signup': typeof ApiGatheringsSignupRoute
+  '/api/sunday-session-signup': typeof ApiSundaySessionSignupRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/essays/$slug': typeof EssaysSlugRoute
   '/gatherings/$slug': typeof GatheringsSlugRoute
@@ -371,6 +378,7 @@ export interface FileRoutesByTo {
   '/api/contributor-signup': typeof ApiContributorSignupRoute
   '/api/email-capture': typeof ApiEmailCaptureRoute
   '/api/gatherings-signup': typeof ApiGatheringsSignupRoute
+  '/api/sunday-session-signup': typeof ApiSundaySessionSignupRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/essays/$slug': typeof EssaysSlugRoute
   '/gatherings/$slug': typeof GatheringsSlugRoute
@@ -420,6 +428,7 @@ export interface FileRoutesById {
   '/api/contributor-signup': typeof ApiContributorSignupRoute
   '/api/email-capture': typeof ApiEmailCaptureRoute
   '/api/gatherings-signup': typeof ApiGatheringsSignupRoute
+  '/api/sunday-session-signup': typeof ApiSundaySessionSignupRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/essays/$slug': typeof EssaysSlugRoute
   '/gatherings/$slug': typeof GatheringsSlugRoute
@@ -470,6 +479,7 @@ export interface FileRouteTypes {
     | '/api/contributor-signup'
     | '/api/email-capture'
     | '/api/gatherings-signup'
+    | '/api/sunday-session-signup'
     | '/blog/$slug'
     | '/essays/$slug'
     | '/gatherings/$slug'
@@ -518,6 +528,7 @@ export interface FileRouteTypes {
     | '/api/contributor-signup'
     | '/api/email-capture'
     | '/api/gatherings-signup'
+    | '/api/sunday-session-signup'
     | '/blog/$slug'
     | '/essays/$slug'
     | '/gatherings/$slug'
@@ -566,6 +577,7 @@ export interface FileRouteTypes {
     | '/api/contributor-signup'
     | '/api/email-capture'
     | '/api/gatherings-signup'
+    | '/api/sunday-session-signup'
     | '/blog/$slug'
     | '/essays/$slug'
     | '/gatherings/$slug'
@@ -615,6 +627,7 @@ export interface RootRouteChildren {
   ApiContributorSignupRoute: typeof ApiContributorSignupRoute
   ApiEmailCaptureRoute: typeof ApiEmailCaptureRoute
   ApiGatheringsSignupRoute: typeof ApiGatheringsSignupRoute
+  ApiSundaySessionSignupRoute: typeof ApiSundaySessionSignupRoute
   ProblemsSlugRoute: typeof ProblemsSlugRoute
   ProblemsIndexRoute: typeof ProblemsIndexRoute
   ApiAdminBootstrapGatheringsRoute: typeof ApiAdminBootstrapGatheringsRoute
@@ -837,6 +850,13 @@ declare module '@tanstack/react-router' {
       path: '/api/gatherings-signup'
       fullPath: '/api/gatherings-signup'
       preLoaderRoute: typeof ApiGatheringsSignupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/sunday-session-signup': {
+      id: '/api/sunday-session-signup'
+      path: '/api/sunday-session-signup'
+      fullPath: '/api/sunday-session-signup'
+      preLoaderRoute: typeof ApiSundaySessionSignupRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/blog/$slug': {
@@ -1086,6 +1106,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiContributorSignupRoute: ApiContributorSignupRoute,
   ApiEmailCaptureRoute: ApiEmailCaptureRoute,
   ApiGatheringsSignupRoute: ApiGatheringsSignupRoute,
+  ApiSundaySessionSignupRoute: ApiSundaySessionSignupRoute,
   ProblemsSlugRoute: ProblemsSlugRoute,
   ProblemsIndexRoute: ProblemsIndexRoute,
   ApiAdminBootstrapGatheringsRoute: ApiAdminBootstrapGatheringsRoute,
