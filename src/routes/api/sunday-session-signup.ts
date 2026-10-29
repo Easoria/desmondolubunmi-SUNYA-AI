@@ -67,7 +67,7 @@ async function upsertSundaySessionSubscriber(input: {
     throw createError;
   }
 
-  // Already on the list — update fields and ensure they are in the Sunday group.
+  // Already on the list — update fields and ensure they are in the community group.
   const updateRes = await mailerliteFetch(
     `/subscribers/${encodeURIComponent(input.email)}`,
     input.apiKey,
@@ -110,10 +110,13 @@ export const Route = createFileRoute("/api/sunday-session-signup")({
         }
 
         const apiKey = process.env.MAILERLITE_API_KEY;
-        const groupId = process.env.MAILERLITE_SUNDAY_SESSION_GROUP_ID;
+        // Same list as community / mailbox signups — already on Vercel.
+        // sunday_session_consent + what_brings_you mark Sunday Session registrants
+        // so MailerLite automation can send the Zoom link only to them.
+        const groupId = process.env.MAILERLITE_COMMUNITY_GROUP_ID;
         if (!apiKey || !groupId) {
           console.error(
-            "Mailerlite env vars missing (MAILERLITE_API_KEY / MAILERLITE_SUNDAY_SESSION_GROUP_ID)",
+            "Mailerlite env vars missing (MAILERLITE_API_KEY / MAILERLITE_COMMUNITY_GROUP_ID)",
           );
           return Response.json(
             { error: "Registration is not configured yet. Please try again later." },
