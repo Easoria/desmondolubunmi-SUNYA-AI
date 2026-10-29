@@ -10,10 +10,11 @@ export const SUNDAY_SESSION_MINUTE = 0;
 export const SUNDAY_SESSION_DURATION_MINUTES = 90;
 
 /**
- * EDIT WEEKLY — shown under the title on /gatherings.
- * Example: "Resting as awareness" or leave empty to hide the line.
+ * EDIT WEEKLY — shown as “This week: …” under the subtitle on /gatherings.
+ * Leave empty to hide the line completely.
  */
-export const THIS_WEEKS_THEME = "";
+export const THIS_WEEKS_THEME =
+  "Stillness and compassion, quieting the mind and opening the heart";
 
 export type DublinParts = {
   year: number;
@@ -171,13 +172,20 @@ export function formatDublinSessionWhen(start: Date): string {
   return `${weekdayLong} ${z.day} ${monthLong} ${z.year} · ${pad2(z.hour)}:${pad2(z.minute)} Irish time`;
 }
 
+export function resolveVisitorTimeZone(timeZone?: string): string | undefined {
+  if (timeZone) return timeZone;
+  if (typeof Intl === "undefined") return undefined;
+  return Intl.DateTimeFormat().resolvedOptions().timeZone;
+}
+
+/** True when the visitor's zone is Irish time (Europe/Dublin). */
+export function isVisitorInIreland(timeZone?: string): boolean {
+  return resolveVisitorTimeZone(timeZone) === SUNDAY_SESSION_TZ;
+}
+
 /** Visitor-local line, e.g. "your time: Sunday 26 October · 18:00". */
 export function formatVisitorSessionWhen(start: Date, timeZone?: string): string {
-  const tz =
-    timeZone ||
-    (typeof Intl !== "undefined"
-      ? Intl.DateTimeFormat().resolvedOptions().timeZone
-      : undefined);
+  const tz = resolveVisitorTimeZone(timeZone);
 
   const opts: Intl.DateTimeFormatOptions = {
     weekday: "long",
@@ -194,6 +202,22 @@ export function formatVisitorSessionWhen(start: Date, timeZone?: string): string
     return `Your time: ${formatted}`;
   }
   return `Your time (${tz.replace(/_/g, " ")}): ${formatted}`;
+}
+
+/** Compact local clock for the schedule line, e.g. "Sunday · 13:00 your time". */
+export function formatVisitorLocalSuffix(start: Date, timeZone?: string): string | null {
+  const tz = resolveVisitorTimeZone(timeZone);
+  if (!tz || tz === SUNDAY_SESSION_TZ) return null;
+
+  const formatted = new Intl.DateTimeFormat("en-GB", {
+    timeZone: tz,
+    weekday: "long",
+    hour: "numeric",
+    minute: "2-digit",
+    hour12: false,
+  }).format(start);
+
+  return `${formatted} your time`;
 }
 
 function formatIcsLocal(date: Date): string {

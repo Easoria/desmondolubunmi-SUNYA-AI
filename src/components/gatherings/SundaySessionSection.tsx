@@ -4,8 +4,7 @@ import { Loader2 } from "lucide-react";
 import {
   buildGoogleCalendarUrl,
   downloadSundaySessionIcs,
-  formatDublinSessionWhen,
-  formatVisitorSessionWhen,
+  formatVisitorLocalSuffix,
   getNextSundaySessionStart,
   SUNDAY_SESSION_SUBTITLE,
   SUNDAY_SESSION_TITLE,
@@ -35,8 +34,7 @@ const labelClass = "block text-sm text-[#b8d4e8]";
 
 export function SundaySessionSection({ id = "sunday-stillness" }: { id?: string }) {
   const nextStart = useMemo(() => getNextSundaySessionStart(), []);
-  const dublinWhen = useMemo(() => formatDublinSessionWhen(nextStart), [nextStart]);
-  const visitorWhen = useMemo(() => formatVisitorSessionWhen(nextStart), [nextStart]);
+  const localSuffix = useMemo(() => formatVisitorLocalSuffix(nextStart), [nextStart]);
   const googleUrl = useMemo(() => buildGoogleCalendarUrl(nextStart), [nextStart]);
 
   const [form, setForm] = useState<FormState>(INITIAL);
@@ -96,38 +94,21 @@ export function SundaySessionSection({ id = "sunday-stillness" }: { id?: string 
       id={id}
       className="rounded-2xl border border-[#7ec8e3]/25 bg-[#7ec8e3]/[0.06] px-5 py-8 sm:px-8 sm:py-10"
     >
-      <div className="label-eyebrow text-center">Weekly · Free · Online</div>
-      <h2 className="display mt-3 text-center text-3xl text-white sm:text-4xl">
+      <h2 className="display text-center text-3xl text-white sm:text-4xl">
         {SUNDAY_SESSION_TITLE}
       </h2>
       <p className="mx-auto mt-3 max-w-xl text-center text-sm text-[#b8d4e8] sm:text-base">
         {SUNDAY_SESSION_SUBTITLE}
       </p>
+      <p className="mx-auto mt-3 max-w-xl text-center text-sm text-[#e8f4fb]">
+        Every Sunday at 6pm Irish time, online
+        {localSuffix ? <span className="text-[#b8d4e8]/85"> · {localSuffix}</span> : null}
+      </p>
       {THIS_WEEKS_THEME.trim() ? (
         <p className="mx-auto mt-4 max-w-xl text-center text-sm text-[#e8f4fb]">
-          <span className="text-[#7ec8e3]/85">This week&apos;s theme:</span> {THIS_WEEKS_THEME.trim()}
+          This week: {THIS_WEEKS_THEME.trim()}
         </p>
-      ) : (
-        <p className="mx-auto mt-4 max-w-xl text-center text-sm text-[#b8d4e8]/55">
-          {/* EDIT WEEKLY: set THIS_WEEKS_THEME in src/lib/sunday-session.ts */}
-          This week&apos;s theme — coming soon
-        </p>
-      )}
-
-      {/* PLACEHOLDER: replace with Desmond's Sunday Stillness description copy. */}
-      <p className="mx-auto mt-4 max-w-xl text-center text-sm leading-relaxed text-[#b8d4e8] sm:text-base">
-        {/* SUNDAY_STILLNESS_DESCRIPTION_PLACEHOLDER */}A quiet weekly online session — practice,
-        presence, and genuine human connection. Free to join. Register with your email to receive
-        the link.
-      </p>
-
-      <div className="mx-auto mt-6 max-w-md text-center">
-        <p className="font-display text-lg tracking-wide text-white sm:text-xl">{dublinWhen}</p>
-        <p className="mt-2 text-sm text-[#b8d4e8]/80">{visitorWhen}</p>
-        <p className="mt-2 text-xs uppercase tracking-[0.2em] text-[#b8d4e8]/55">
-          About 60–90 minutes · Zoom link by email only
-        </p>
-      </div>
+      ) : null}
 
       {done ? (
         <div className="mx-auto mt-8 max-w-md text-center">
@@ -158,6 +139,7 @@ export function SundaySessionSection({ id = "sunday-stillness" }: { id?: string 
           className="relative mx-auto mt-8 max-w-md space-y-4"
           noValidate
         >
+          <p className="text-center text-sm text-[#b8d4e8]">Register to receive the link.</p>
           <div>
             <label htmlFor="sunday-first-name" className={labelClass}>
               First name <span className="text-[#7ec8e3]">*</span>
