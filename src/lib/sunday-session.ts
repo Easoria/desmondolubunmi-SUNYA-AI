@@ -1,11 +1,19 @@
-/** Permanent weekly Sunya Sunday Session — Europe/Dublin, Sundays 18:00. */
+/** Permanent weekly Sunday Stillness — Europe/Dublin, Sundays 18:00. */
 
 export const SUNDAY_SESSION_TZ = "Europe/Dublin";
-export const SUNDAY_SESSION_TITLE = "Sunya Sunday Session";
+export const SUNDAY_SESSION_TITLE = "Sunday Stillness";
+export const SUNDAY_SESSION_SUBTITLE =
+  "A free live meditation and teaching with Desmond Olubunmi";
 export const SUNDAY_SESSION_HOUR = 18;
 export const SUNDAY_SESSION_MINUTE = 0;
 /** Shown length for calendar entries; the live session is about 60–90 minutes. */
 export const SUNDAY_SESSION_DURATION_MINUTES = 90;
+
+/**
+ * EDIT WEEKLY — shown under the title on /gatherings.
+ * Example: "Resting as awareness" or leave empty to hide the line.
+ */
+export const THIS_WEEKS_THEME = "";
 
 export type DublinParts = {
   year: number;
@@ -115,7 +123,7 @@ function addCalendarDays(
 }
 
 /**
- * Next Sunday Session start as a UTC Date: coming Sunday 18:00 Europe/Dublin.
+ * Next Sunday Stillness start as a UTC Date: coming Sunday 18:00 Europe/Dublin.
  * If today is Sunday and Dublin local time is still before 18:00, returns today.
  */
 export function getNextSundaySessionStart(from: Date = new Date()): Date {
@@ -208,16 +216,16 @@ function formatIcsUtcStamp(date: Date): string {
 
 /** Calendar description — never includes a meeting URL. */
 export const SUNDAY_SESSION_CALENDAR_DESCRIPTION =
-  "Sunya Sunday Session — free, online, about 60–90 minutes. The joining link is in your registration email (it is never shown on the website).";
+  "Sunday Stillness — free, online, about 60–90 minutes. The joining link is in your registration email (it is never shown on the website).";
 
 export function buildSundaySessionIcs(start: Date = getNextSundaySessionStart()): string {
-  const uid = `sunday-session@desmondolubunmi.com`;
+  const uid = `sunday-stillness@desmondolubunmi.com`;
   const stamp = formatIcsUtcStamp(new Date());
   const dtStart = formatIcsLocal(start);
   const lines = [
     "BEGIN:VCALENDAR",
     "VERSION:2.0",
-    "PRODID:-//Sunya//Sunday Session//EN",
+    "PRODID:-//Sunya//Sunday Stillness//EN",
     "CALSCALE:GREGORIAN",
     "METHOD:PUBLISH",
     "BEGIN:VTIMEZONE",
@@ -244,7 +252,7 @@ export function downloadSundaySessionIcs(start?: Date) {
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
   a.href = url;
-  a.download = "sunya-sunday-session.ics";
+  a.download = "sunday-stillness.ics";
   document.body.appendChild(a);
   a.click();
   a.remove();

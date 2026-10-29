@@ -7,7 +7,9 @@ import {
   formatDublinSessionWhen,
   formatVisitorSessionWhen,
   getNextSundaySessionStart,
+  SUNDAY_SESSION_SUBTITLE,
   SUNDAY_SESSION_TITLE,
+  THIS_WEEKS_THEME,
 } from "@/lib/sunday-session";
 
 type FormState = {
@@ -31,7 +33,7 @@ const inputClass =
 
 const labelClass = "block text-sm text-[#b8d4e8]";
 
-export function SundaySessionSection({ id = "sunday-session" }: { id?: string }) {
+export function SundaySessionSection({ id = "sunday-stillness" }: { id?: string }) {
   const nextStart = useMemo(() => getNextSundaySessionStart(), []);
   const dublinWhen = useMemo(() => formatDublinSessionWhen(nextStart), [nextStart]);
   const visitorWhen = useMemo(() => formatVisitorSessionWhen(nextStart), [nextStart]);
@@ -98,10 +100,23 @@ export function SundaySessionSection({ id = "sunday-session" }: { id?: string })
       <h2 className="display mt-3 text-center text-3xl text-white sm:text-4xl">
         {SUNDAY_SESSION_TITLE}
       </h2>
+      <p className="mx-auto mt-3 max-w-xl text-center text-sm text-[#b8d4e8] sm:text-base">
+        {SUNDAY_SESSION_SUBTITLE}
+      </p>
+      {THIS_WEEKS_THEME.trim() ? (
+        <p className="mx-auto mt-4 max-w-xl text-center text-sm text-[#e8f4fb]">
+          <span className="text-[#7ec8e3]/85">This week&apos;s theme:</span> {THIS_WEEKS_THEME.trim()}
+        </p>
+      ) : (
+        <p className="mx-auto mt-4 max-w-xl text-center text-sm text-[#b8d4e8]/55">
+          {/* EDIT WEEKLY: set THIS_WEEKS_THEME in src/lib/sunday-session.ts */}
+          This week&apos;s theme — coming soon
+        </p>
+      )}
 
-      {/* PLACEHOLDER: replace with Desmond's Sunday Session description copy. */}
+      {/* PLACEHOLDER: replace with Desmond's Sunday Stillness description copy. */}
       <p className="mx-auto mt-4 max-w-xl text-center text-sm leading-relaxed text-[#b8d4e8] sm:text-base">
-        {/* SUNDAY_SESSION_DESCRIPTION_PLACEHOLDER */}A quiet weekly online session — practice,
+        {/* SUNDAY_STILLNESS_DESCRIPTION_PLACEHOLDER */}A quiet weekly online session — practice,
         presence, and genuine human connection. Free to join. Register with your email to receive
         the link.
       </p>
@@ -248,7 +263,7 @@ export function SundaySessionSection({ id = "sunday-session" }: { id?: string })
             disabled={loading || !form.consent}
             className="inline-flex w-full items-center justify-center rounded-md border border-[#7ec8e3]/50 bg-[#7ec8e3]/15 px-5 py-3 text-sm text-white transition hover:bg-[#7ec8e3]/25 disabled:cursor-not-allowed disabled:opacity-50"
           >
-            {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : "Register for Sunday Session"}
+            {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : "Register for Sunday Stillness"}
           </button>
         </form>
       )}

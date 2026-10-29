@@ -67,7 +67,7 @@ async function upsertSundaySessionSubscriber(input: {
     throw createError;
   }
 
-  // Already on the list — update fields and ensure they are in the community group.
+  // Already on the list — update fields and ensure they are in the Sunday group.
   const updateRes = await mailerliteFetch(
     `/subscribers/${encodeURIComponent(input.email)}`,
     input.apiKey,
@@ -110,7 +110,7 @@ export const Route = createFileRoute("/api/sunday-session-signup")({
         }
 
         const apiKey = process.env.MAILERLITE_API_KEY;
-        // Dedicated Sunday Session group — leave Community / Contributors alone.
+        // Dedicated Sunday Stillness group — leave Community / Contributors alone.
         const groupId = process.env.MAILERLITE_SUNDAY_SESSION_GROUP_ID;
         if (!apiKey || !groupId) {
           console.error(
