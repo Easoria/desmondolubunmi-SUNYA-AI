@@ -99,24 +99,24 @@ function GatheringsIndexPage() {
       <Breadcrumb />
 
       <main className="mx-auto max-w-3xl px-6 pb-24 pt-10">
-        <header className="text-center">
-          <div className="label-eyebrow">Gatherings</div>
-          <h1 className="display mt-4 text-4xl text-white sm:text-5xl">
-            In person and online.
-          </h1>
-          <p className="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-[#b8d4e8] sm:text-base">
-            Small gatherings for people curious about consciousness, inner life, and genuine
-            human connection. Some in Dublin, some online, all open to anyone.
-          </p>
-        </header>
-
-        <div className="mt-14">
+        <div>
           <SundaySessionSection />
         </div>
 
-        <section className="mt-14">
+        <section className="mt-16 border-t border-white/10 pt-14">
+          <header className="text-center">
+            <div className="label-eyebrow">Gatherings</div>
+            <h1 className="display mt-4 text-4xl text-white sm:text-5xl">
+              In person and online.
+            </h1>
+            <p className="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-[#b8d4e8] sm:text-base">
+              Small gatherings for people curious about consciousness, inner life, and genuine
+              human connection. Some in Dublin, some online, all open to anyone.
+            </p>
+          </header>
+
           {upcoming.length === 0 ? (
-            <div className="border-t border-white/10 pt-10">
+            <div className="mt-10">
               <p className="text-center text-lg text-white">Nothing scheduled right now.</p>
               <p className="mx-auto mt-4 max-w-xl text-center text-sm leading-relaxed text-[#b8d4e8]">
                 Gatherings happen roughly monthly, in Dublin and online. Leave your email and
@@ -127,7 +127,7 @@ function GatheringsIndexPage() {
               </div>
             </div>
           ) : (
-            <div className="border-t border-white/10">
+            <div className="mt-10 border-t border-white/10">
               {upcoming.map((g) => (
                 <GatheringCard key={g.id} gathering={g} />
               ))}
