@@ -115,22 +115,27 @@ export function SundaySessionSection({ id = "sunday-stillness" }: { id?: string 
           <p className="text-base text-[#e8f4fb]">
             You're registered. Check your inbox for the link.
           </p>
-          <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-            <button
-              type="button"
-              onClick={() => downloadSundaySessionIcs(nextStart)}
-              className="inline-flex items-center justify-center rounded-md border border-[#7ec8e3]/50 bg-[#7ec8e3]/10 px-5 py-3 text-sm text-white transition hover:bg-[#7ec8e3]/20"
-            >
-              Add to calendar (.ics)
-            </button>
+          <div className="mt-6 flex w-full flex-col items-stretch gap-4 sm:items-center">
             <a
               href={googleUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-md border border-white/15 bg-white/[0.06] px-5 py-3 text-sm text-[#e8f4fb] transition hover:border-white/25 hover:bg-white/[0.1]"
+              className="inline-flex items-center justify-center rounded-md border border-[#7ec8e3]/50 bg-[#7ec8e3]/10 px-5 py-3 text-sm text-white transition hover:bg-[#7ec8e3]/20"
             >
-              Google Calendar
+              Add to Google Calendar
             </a>
+            <div className="flex flex-col items-center gap-1.5">
+              <button
+                type="button"
+                onClick={() => downloadSundaySessionIcs(nextStart)}
+                className="inline-flex items-center justify-center rounded-md border border-white/15 bg-white/[0.06] px-5 py-3 text-sm text-[#e8f4fb] transition hover:border-white/25 hover:bg-white/[0.1]"
+              >
+                Apple or Outlook calendar
+              </button>
+              <p className="max-w-xs text-center text-xs leading-relaxed text-[#b8d4e8]/70">
+                Open the file that downloads, and it adds the session to your calendar.
+              </p>
+            </div>
           </div>
         </div>
       ) : (
