@@ -105,8 +105,15 @@ export function SundaySessionSection({ id = "sunday-stillness" }: { id?: string 
         {localSuffix ? <span className="text-[#b8d4e8]/85"> · {localSuffix}</span> : null}
       </p>
       {THIS_WEEKS_THEME.trim() ? (
-        <p className="mx-auto mt-4 max-w-xl text-center text-sm text-[#e8f4fb]">
-          This week: {THIS_WEEKS_THEME.trim()}
+        <p className="mx-auto mt-5 max-w-xl text-center">
+          <span className="text-xs uppercase tracking-[0.22em] text-[#7ec8e3]/85">
+            This week
+          </span>
+          <span className="mt-2 block font-display text-lg italic leading-snug text-white sm:text-xl">
+            <span className="border-b border-[#dcb48d]/55 pb-0.5">
+              {THIS_WEEKS_THEME.trim()}
+            </span>
+          </span>
         </p>
       ) : null}
 
