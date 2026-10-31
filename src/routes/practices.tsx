@@ -7,6 +7,7 @@ import type { Lever } from "@/data/levers/types";
 import { buildSeoHead, canonicalUrl } from "@/lib/seo";
 
 const INTERNAL_SLUGS = ["breath", "movement", "mind", "sound", "heart", "awareness"] as const;
+const SHARED_INTRO_SLUGS = new Set(["conservation", ...INTERNAL_SLUGS]);
 const EXTERNAL_SLUGS = [
   "sustenance",
   "sleep",
@@ -16,21 +17,12 @@ const EXTERNAL_SLUGS = [
   "environment",
 ] as const;
 
-/** Index-only card copy — keeps lever pages and SEO summaries unchanged. */
+/**
+ * Index card copy for external pillars only.
+ * Internal levers (incl. Conservation) read `summaryLine` from lever data —
+ * the same string shown as the visible intro paragraph on each lever page.
+ */
 const INDEX_CARD_DESCRIPTIONS: Record<string, string> = {
-  conservation:
-    "Conservation helps you stabilise your life and build the life force energy needed to fuel lasting transformation. Without this step, you may find that you quickly lose whatever inner progress you have made, or that you do not have enough energy to start or maintain steady practice. Through energy conservation, inner practice becomes consistent and transformation happens faster.",
-  breath:
-    "Your breath. The one faculty that is both automatic and voluntary, which makes it a direct handle on the nervous system and the flow of life force. It is free, always available, and can be used anywhere without drawing attention.",
-  movement:
-    "Your body. Conscious movement increases flexibility and robustness, and grounds you in physicality in a healthy way. It reduces physical tension and helps the life force flow upward. When the mind feels restless or ungrounded, movement is often the easier way into inner stillness.",
-  mind: "Your capacity to think, reflect and imagine. Untrained, it runs compulsively between past and future and scatters your energy in every direction. Trained, it becomes a powerful tool for creating the life that you want, both within and externally.",
-  sound:
-    "Your voice. Sound vibrations such as chanting, singing, or humming can be used to calm the nervous system, focus the mind, and vibrate open the subtle energy pathways through which life force flows.",
-  heart:
-    "Your capacity to feel. Positive emotional states are the juice of life and the fruit of the path. A closed heart dulls everything, and an open one changes the quality of ordinary experience. The Heart lever empowers you to be in any emotional state you want, and to transform negative emotions.",
-  awareness:
-    "Consciousness itself, turning back to recognise its own nature. Unconsciousness is the main cause of suffering, which makes this the most fundamental lever — and the one the others prepare you for.",
   sustenance:
     "How you earn your living, and whether it is secure. Money and work are not separate from inner life. No practice takes root while survival is uncertain, and no amount of meditation resolves an empty cupboard.",
   sleep:
@@ -223,7 +215,11 @@ function LeverCard({
       : undefined;
 
   const headingClass = band === "external" ? "text-white" : "text-white";
-  const summary = INDEX_CARD_DESCRIPTIONS[lever.slug] ?? lever.summaryLine ?? lever.intro[0];
+  // Internal levers share `summaryLine` with the lever-page visible intro.
+  // External pillars keep their index-only card copy.
+  const summary = SHARED_INTRO_SLUGS.has(lever.slug)
+    ? (lever.summaryLine ?? lever.intro[0])
+    : (INDEX_CARD_DESCRIPTIONS[lever.slug] ?? lever.summaryLine ?? lever.intro[0]);
 
   return (
     <Link

@@ -2,6 +2,7 @@ import { Link, Outlet, createFileRoute, notFound, useRouterState } from "@tansta
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { Starfield } from "@/components/Starfield";
+import { LeverIntro } from "@/components/practices/LeverIntro";
 import {
   getAllLeverPractices,
   getLeverBySlug,
@@ -18,6 +19,16 @@ import {
   buildSeoHead,
   canonicalUrl,
 } from "@/lib/seo";
+
+const INTERNAL_LEVER_INTRO_SLUGS = new Set([
+  "conservation",
+  "breath",
+  "movement",
+  "mind",
+  "sound",
+  "heart",
+  "awareness",
+]);
 
 export const Route = createFileRoute("/practices/$leverSlug")({
   loader: ({ params }) => {
@@ -97,7 +108,8 @@ function LeverHubPage() {
   const hasExplicitSourceNumbers = flatPractices.some(
     (practice) => typeof practice.sourceNumber === "number",
   );
-  const introParagraphs = formatNarrativeParagraphs(lever.intro);
+  const useSharedIntro = INTERNAL_LEVER_INTRO_SLUGS.has(lever.slug);
+  const introParagraphs = useSharedIntro ? [] : formatNarrativeParagraphs(lever.intro);
 
   return (
     <div className="min-h-screen bg-[#0a1628] text-white">
@@ -135,24 +147,28 @@ function LeverHubPage() {
             </div>
           </div>
 
-          <div className="mx-auto mt-8 max-w-4xl space-y-6 text-[#b8d4e8] sm:mt-10">
-            {lever.slug === "sleep" ? (
-              <p className="text-[15px] leading-8 sm:text-base">
-                <Link
-                  to="/problems/$slug"
-                  params={{ slug: "a-racing-mind" }}
-                  className="text-[#7ec8e3] underline decoration-[#7ec8e3]/35 underline-offset-4 transition hover:text-white hover:decoration-white/50"
-                >
-                  Can’t sleep? Start with the problem, not the lever →
-                </Link>
-              </p>
-            ) : null}
-            {introParagraphs.map((paragraph, index) => (
-              <p key={index} className="text-[15px] leading-8 sm:text-base">
-                {paragraph}
-              </p>
-            ))}
-          </div>
+          {useSharedIntro ? (
+            <LeverIntro lever={lever} />
+          ) : (
+            <div className="mx-auto mt-8 max-w-4xl space-y-6 text-[#b8d4e8] sm:mt-10">
+              {lever.slug === "sleep" ? (
+                <p className="text-[15px] leading-8 sm:text-base">
+                  <Link
+                    to="/problems/$slug"
+                    params={{ slug: "a-racing-mind" }}
+                    className="text-[#7ec8e3] underline decoration-[#7ec8e3]/35 underline-offset-4 transition hover:text-white hover:decoration-white/50"
+                  >
+                    Can’t sleep? Start with the problem, not the lever →
+                  </Link>
+                </p>
+              ) : null}
+              {introParagraphs.map((paragraph, index) => (
+                <p key={index} className="text-[15px] leading-8 sm:text-base">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+          )}
 
           {hasGroups ? (
             <div className="mt-12 space-y-10">

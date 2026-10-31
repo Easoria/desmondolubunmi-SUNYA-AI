@@ -5,9 +5,12 @@ export const mindLever: Lever = {
   number: 3,
   name: "Mind",
   layerLine: "Intellectual Body + Mental Body",
-  summaryLine: "The mind, when untrained, is the great scatterer — running compulsively between past and future, spinning narratives, reinforcing the story of the separate self, and dispersing the life force in every direction at once.",
+  summaryLine: "Your capacity to think, reflect and imagine. Untrained, it runs compulsively between past and future and scatters your energy in every direction. Trained, it becomes a powerful tool for creating the life that you want, both within and externally.",
   intro: [
-    "The mind, when untrained, is the great scatterer — running compulsively between past and future, spinning narratives, reinforcing the story of the separate self, and dispersing the life force in every direction at once. Trained, it becomes the opposite: a precise instrument that concentrates energy, steadies the inner system, and supports the whole work of transformation. The practices of this lever work on the thinking layer directly — on the content, direction, and quality of thought itself. This matters because the layers of being are not isolated: what happens in the mental body cascades directly into the emotional body, which cascades into the energy body. Chronic rumination and mental noise contract the energy system. Focused, directed thought opens it. The mind trained well is not merely a cognitive tool — it becomes a lever for inner transformation. The seven practices that follow address the main ways the mind scatters and holds the system back: what it consumes, the clarity of its direction, the precision of its attention, its habit of circling the same ground, and its relationship to time and karma. Each one removes a source of mental friction and turns the life force back toward the centre."
+    "The mind untrained is the great scatterer — spinning narratives, reinforcing the story of the separate self, dispersing the life force in every direction at once. Trained, it becomes the opposite: a precise instrument that concentrates energy, steadies the inner system, and supports the whole work of transformation.",
+    "The practices of this lever work on the thinking layer directly — on the content, direction and quality of thought itself. This matters because the layers of being are not isolated. What happens in the mental body cascades into the emotional body, which cascades into the energy body. Chronic rumination and mental noise contract the energy system. Focused, directed thought opens it.",
+    "The practices that follow address the main ways the mind scatters and holds the system back: what it consumes, the clarity of its direction, the precision of its attention, its habit of circling the same ground, and its relationship to time.",
+    "Each one removes a source of mental friction and makes the mind steady.",
   ],
   practices: [
     {
