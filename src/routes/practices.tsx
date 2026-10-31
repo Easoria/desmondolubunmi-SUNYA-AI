@@ -7,7 +7,6 @@ import type { Lever } from "@/data/levers/types";
 import { buildSeoHead, canonicalUrl } from "@/lib/seo";
 
 const INTERNAL_SLUGS = ["breath", "movement", "mind", "sound", "heart", "awareness"] as const;
-const SHARED_INTRO_SLUGS = new Set(["conservation", ...INTERNAL_SLUGS]);
 const EXTERNAL_SLUGS = [
   "sustenance",
   "sleep",
@@ -16,26 +15,6 @@ const EXTERNAL_SLUGS = [
   "nature",
   "environment",
 ] as const;
-
-/**
- * Index card copy for external pillars only.
- * Internal levers (incl. Conservation) read `summaryLine` from lever data —
- * the same string shown as the visible intro paragraph on each lever page.
- */
-const INDEX_CARD_DESCRIPTIONS: Record<string, string> = {
-  sustenance:
-    "How you earn your living, and whether it is secure. Money and work are not separate from inner life. No practice takes root while survival is uncertain, and no amount of meditation resolves an empty cupboard.",
-  sleep:
-    "Ensuring proper sleep is necessary for physical rejuvenation, consolidating learning, and daily productivity. This lever helps us harness the power of sleep for health, longevity, and accessing altered states of consciousness.",
-  nutrition:
-    "The quality of your food determines the quality of your thoughts and feelings. Food either lightens the system or burdens it — and the burden is felt in the mind as much as the body.",
-  connection:
-    "For most people, their relationships are either a cause of major happiness or of major distress in their life. This is because relationships serve as a mirror that can challenge us to evolve and overcome duality. The Connection lever empowers you to transform how you relate with yourself and others.",
-  nature:
-    "The body evolved in continuous relationship with sunlight, water, earth and the turning of the seasons. Modern life has distanced us from that relationship, and our wellbeing has suffered for it. This lever is about living in harmony with the intelligence of nature, and using nature itself as a means to wellbeing and presence.",
-  environment:
-    "Where you live, what you wear, the items around you, the room you sleep in — all of these constantly influence your wellbeing. So does the culture around you, the people you are among, and what your senses and mind are exposed to. No amount of practice fully overrides your environment, which is why it matters to curate one that is conducive to wellbeing.",
-};
 
 export const Route = createFileRoute("/practices")({
   component: PracticesRoutePage,
@@ -215,11 +194,8 @@ function LeverCard({
       : undefined;
 
   const headingClass = band === "external" ? "text-white" : "text-white";
-  // Internal levers share `summaryLine` with the lever-page visible intro.
-  // External pillars keep their index-only card copy.
-  const summary = SHARED_INTRO_SLUGS.has(lever.slug)
-    ? (lever.summaryLine ?? lever.intro[0])
-    : (INDEX_CARD_DESCRIPTIONS[lever.slug] ?? lever.summaryLine ?? lever.intro[0]);
+  // Card description shares `summaryLine` with the lever-page visible intro.
+  const summary = lever.summaryLine ?? lever.intro[0];
 
   return (
     <Link

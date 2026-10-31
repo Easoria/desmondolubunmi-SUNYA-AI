@@ -3,6 +3,7 @@ import type { Lever } from "@/data/levers/types";
 
 type Props = {
   lever: Pick<Lever, "summaryLine" | "intro">;
+  className?: string;
 };
 
 /**
@@ -10,7 +11,7 @@ type Props = {
  * Expandable copy stays in the HTML when collapsed for indexing.
  * A noscript style keeps the remainder open when JavaScript is disabled.
  */
-export function LeverIntro({ lever }: Props) {
+export function LeverIntro({ lever, className }: Props) {
   const moreId = useId();
   const visible = (lever.summaryLine ?? "").trim();
   const more = lever.intro.map((p) => p.trim()).filter(Boolean);
@@ -20,7 +21,11 @@ export function LeverIntro({ lever }: Props) {
   if (!visible && !hasMore) return null;
 
   return (
-    <div className="mx-auto mt-8 max-w-4xl text-[#b8d4e8] sm:mt-10">
+    <div
+      className={
+        className ?? "mx-auto mt-8 max-w-4xl text-[#b8d4e8] sm:mt-10"
+      }
+    >
       {hasMore ? (
         <noscript>
           <style>{`
