@@ -104,6 +104,10 @@ export type PracticeGroup = {
   name: string;
   qualifier?: string;
   description?: string[];
+  /** Short line under the heading (not body prose). */
+  note?: string;
+  /** Distinct safety block under the heading — always visible. */
+  safetyNote?: string[];
   practices: Practice[];
 };
 

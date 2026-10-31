@@ -160,9 +160,25 @@ function LeverHubPage() {
                 <section key={group.slug}>
                   <h2 className="display text-3xl text-white">{group.name}</h2>
                   {group.qualifier ? (
-                    <p className="mt-1 text-sm uppercase tracking-[0.22em] text-[#7ec8e3]/85">
-                      {group.qualifier}
-                    </p>
+                    <p className="mt-1 text-sm text-[#7ec8e3]/90">{group.qualifier}</p>
+                  ) : null}
+                  {group.note ? (
+                    <p className="mt-3 text-sm leading-relaxed text-[#b8d4e8]/85">{group.note}</p>
+                  ) : null}
+                  {group.safetyNote && group.safetyNote.length > 0 ? (
+                    <aside
+                      className="mt-4 rounded-xl border border-[#dcb48d]/35 bg-[#dcb48d]/[0.08] px-4 py-4 sm:px-5"
+                      role="note"
+                    >
+                      <p className="text-[11px] uppercase tracking-[0.22em] text-[#dcb48d]">
+                        Safety
+                      </p>
+                      <div className="mt-2 space-y-3 text-sm leading-relaxed text-[#f0dcc8]">
+                        {group.safetyNote.map((paragraph, index) => (
+                          <p key={index}>{paragraph}</p>
+                        ))}
+                      </div>
+                    </aside>
                   ) : null}
                   {group.description
                     ? formatNarrativeParagraphs(group.description, {

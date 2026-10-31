@@ -9,16 +9,13 @@ export const breathLever: Lever = {
     "Breath is the most immediate of all the tools, and for most people the natural place to begin. It is the one tool you carry with you everywhere — needing no equipment, no place, and no preparation, available at any moment to regulate your own state of being. Its power comes from a peculiarity: of all the body’s functions, the breath is one of the few that is both automatic and voluntary at once. It runs on its own, yet you can take hold of it at will — a direct handle on the flow of the life force, and on the state of the nervous system.",
     "It works across several layers at once. At the level of the body, the breath and the nervous system mirror each other in both directions. The breath reveals the state of the system — shallow and fast in anxiety, slow and deep in calm — so that you can read the one from the other; and it governs that state — slow the breath deliberately, and the system follows it down into safety; quicken it, and the system rouses. You can therefore both read the nervous system through the breath and steer it through the breath. At the level of the energy, the breath is how the life force is drawn in, moved, and directed — its pace and depth raising the life force when the system is dull, calming it when agitated, gathering it when scattered. And because a still breath quiets the mind, it reaches the mental layer too: this is why the breath is steadied before any deeper inner work — settle the breath, and the mind settles with it.",
     "And the breath asks nothing of your beliefs. Like every practice in this manual, it needs no faith, no doctrine, no allegiance to any tradition; its effect is simply physiological, and therefore universal. Breathe slowly and you will calm, whatever you believe or do not believe — the body answers the same way in everyone. It is the most accessible regulator a human being has — a single lever that can move the whole system from agitation to calm, from dullness to vitality, or into deep stillness, in a matter of minutes.",
-    "What follows are the specific ways to use it, grouped by what they do: the foundations that restore baseline and safety, those that calm an overactive system, those that energise a sluggish one, and the deeper practices that draw the gathered life force upward.",
+    "What follows are the specific ways to use it, grouped by what they do: those that calm an overactive system, those that energise a sluggish one, and the deeper practices that gather the life force and draw it upward.",
   ],
   groups: [
     {
-      slug: "the-foundations",
-      name: "The Foundations",
-      qualifier: "Regulation and Safety",
-      description: [
-        "These restore the system to its healthy baseline. They are gentle, safe for anyone, and the right place to begin — for daily practice and for establishing a basic sense of steadiness.",
-      ],
+      slug: "calming",
+      name: "Calming",
+      qualifier: "For stress, anxiety and an overactive system",
       practices: [
         {
           slug: "alternate-nostril-breathing",
@@ -45,7 +42,7 @@ export const breathLever: Lever = {
           duration: "5–10 minutes",
           layers: ["Energetic Body", "Physical Body", "Mental Body"],
           leverSlug: "breath",
-          groupSlug: "the-foundations",
+          groupSlug: "calming",
           relatedPractices: ["coherent-breathing", "deep-belly-breathing", "spinal-breathing"],
           metaTitle: "Alternate-Nostril Breathing — How to Practise It | Sunya",
           metaDescription:
@@ -67,7 +64,8 @@ export const breathLever: Lever = {
               },
               {
                 slug: "spinal-breathing",
-                reason: "Alternate-nostril clearing naturally precedes deeper central-channel work.",
+                reason:
+                  "Alternate-nostril clearing naturally precedes deeper central-channel work.",
               },
             ],
           },
@@ -95,7 +93,7 @@ export const breathLever: Lever = {
           duration: "3–5 minutes",
           layers: ["Physical Body", "Energetic Body", "Mental Body"],
           leverSlug: "breath",
-          groupSlug: "the-foundations",
+          groupSlug: "calming",
           relatedPractices: [
             "coherent-breathing",
             "the-physiological-sigh",
@@ -143,7 +141,7 @@ export const breathLever: Lever = {
           duration: "10–20 minutes",
           layers: ["Physical Body", "Energetic Body", "Mental Body", "Emotional Body"],
           leverSlug: "breath",
-          groupSlug: "the-foundations",
+          groupSlug: "calming",
           relatedPractices: [
             "deep-belly-breathing",
             "alternate-nostril-breathing",
@@ -173,16 +171,6 @@ export const breathLever: Lever = {
             ],
           },
         },
-      ],
-    },
-    {
-      slug: "the-sedatives",
-      name: "The Sedatives",
-      qualifier: "for Anxiety, Anger, and Restlessness",
-      description: [
-        "Use these to bring down an overactive or agitated system — when the mind is racing, the emotions are high, or sleep will not come. Each lengthens and softens the breath to move the system firmly toward calm.",
-      ],
-      practices: [
         {
           slug: "the-physiological-sigh",
           name: "The Physiological Sigh",
@@ -203,7 +191,7 @@ export const breathLever: Lever = {
           ],
           layers: ["Physical Body", "Mental Body", "Energetic Body"],
           leverSlug: "breath",
-          groupSlug: "the-sedatives",
+          groupSlug: "calming",
           relatedPractices: ["4-7-8-breathing", "deep-belly-breathing", "coherent-breathing"],
           metaTitle: "The Physiological Sigh — How to Practise It | Sunya",
           metaDescription: "The fastest way to stop panic in real time.",
@@ -250,7 +238,7 @@ export const breathLever: Lever = {
           ],
           layers: ["Physical Body", "Mental Body", "Energetic Body"],
           leverSlug: "breath",
-          groupSlug: "the-sedatives",
+          groupSlug: "calming",
           relatedPractices: ["the-physiological-sigh", "coherent-breathing", "breath-retention"],
           metaTitle: "4-7-8 Breathing — How to Practise It | Sunya",
           metaDescription: "Deep sedation, for sleep or intense anxiety.",
@@ -281,10 +269,10 @@ export const breathLever: Lever = {
     {
       slug: "the-activators",
       name: "The Activators",
-      qualifier: "for Low Energy and Lethargy",
-      description: [
-        "Use these to rouse a dull, tired, or sluggish system — to build heat, energy, and alertness, or to lift a heavy, low mood. They share a common mechanism: by breathing deeply and rapidly — and, in some, adding vigorous physical movement — you draw far more life force into the system and drive it forcefully through the energy pathways, like a pump pushing water through a pipe. This pumping pressure clears blocked and stagnant pathways and sets the life force circulating freely and strongly through the whole system. Because they are so much more forceful than the other breaths, they carry real cautions.",
-        "A note on safety — read before practising any of these. Because they are rapid and forceful, these breaths can leave you light-headed, dizzy, or tingling. Always practise sitting or lying down — never standing, never in or near water, and never while driving. Stop and rest if you feel unwell. Avoid them in pregnancy, and if you have high blood pressure, a heart condition, or epilepsy. Begin gently and build up slowly.",
+      qualifier: "For low energy and lethargy",
+      safetyNote: [
+        "A note on safety — read before practising any of these. Because they are rapid and forceful, these breaths can leave you light-headed, dizzy, or tingling. Always practise sitting or lying down — never standing, never in or near water, and never while driving. Stop and rest if you feel unwell.",
+        "Avoid them in pregnancy, and if you have high blood pressure, a heart condition, or epilepsy. Begin gently and build up slowly.",
       ],
       practices: [
         {
@@ -360,11 +348,7 @@ export const breathLever: Lever = {
           layers: ["Physical Body", "Energetic Body", "Mental Body"],
           leverSlug: "breath",
           groupSlug: "the-activators",
-          relatedPractices: [
-            "bellows-breath",
-            "cyclic-hyperventilation",
-            "the-physiological-sigh",
-          ],
+          relatedPractices: ["bellows-breath", "cyclic-hyperventilation", "the-physiological-sigh"],
           metaTitle: "Skull-Shining Breath — How to Practise It | Sunya",
           metaDescription: "Clearing the head and brightening the whole system.",
           families: ["L3", "L4", "P3"],
@@ -443,10 +427,11 @@ export const breathLever: Lever = {
     {
       slug: "the-deepest-practice",
       name: "The Deepest Practice",
-      qualifier: "Meditation and Higher States",
-      description: [
-        "This is the deepest of the breath practices. Where the others regulate the body’s state, this one gathers the life force and draws it consciously up the central channel — the breath becoming a vehicle for energy and awareness together. It opens into meditation and the higher states.",
-        "A gentle word before it: because it works directly on the life force and the central channel, it is the most powerful of the breaths, and its effects deepen with practice. Approach it gently, never forcing, and let it unfold at its own pace. Fuller guidance on working safely with rising energy comes later, in the Order of Operations.",
+      qualifier: "Meditation and higher states",
+      note: "Because these work directly on the life force and the central channel, approach them gently, never forcing, and let them unfold at their own pace.",
+      safetyNote: [
+        "A note on safety — important. The gentle, equal-count retention is suitable for most people and calming to practise. But as the holds grow longer, and with the Great Lock especially, these build strong internal pressure — so take care: practise seated, never in or near water, and never while driving; lengthen the holds only gradually and never strain; and stop if you feel light-headed.",
+        "Avoid the longer holds and the Great Lock in pregnancy, and if you have high blood pressure, a heart condition, glaucoma, or epilepsy. The Great Lock is best learned with an experienced teacher.",
       ],
       practices: [
         {
@@ -506,17 +491,6 @@ export const breathLever: Lever = {
             ],
           },
         },
-      ],
-    },
-    {
-      slug: "the-locks",
-      name: "The Locks",
-      qualifier: "Sealing and Containing the Energy",
-      description: [
-        "These hold the breath still and seal the body, building inner pressure that drives the gathered life force upward and contains it within the system. In their basic form they are calm and accessible; in their fuller forms they are the most potent — and most demanding — of all the breath practices.",
-        "A note on safety — important. The gentle, equal-count retention below is suitable for most people and calming to practise. But as the holds grow longer, and with the Great Lock especially, these build strong internal pressure — so take care: practise seated, never in or near water, and never while driving; lengthen the holds only gradually and never strain; and stop if you feel light-headed. Avoid the longer holds and the Great Lock in pregnancy, and if you have high blood pressure, a heart condition, glaucoma, or epilepsy. The Great Lock is best learned with an experienced teacher.",
-      ],
-      practices: [
         {
           slug: "breath-retention",
           name: "Breath Retention",
@@ -538,7 +512,7 @@ export const breathLever: Lever = {
           ],
           layers: ["Energetic Body", "Physical Body", "Mental Body"],
           leverSlug: "breath",
-          groupSlug: "the-locks",
+          groupSlug: "the-deepest-practice",
           relatedPractices: ["the-great-lock", "spinal-breathing", "4-7-8-breathing"],
           metaTitle: "Breath Retention — How to Practise It | Sunya",
           metaDescription:
@@ -595,7 +569,7 @@ export const breathLever: Lever = {
           ],
           layers: ["Energetic Body", "Physical Body"],
           leverSlug: "breath",
-          groupSlug: "the-locks",
+          groupSlug: "the-deepest-practice",
           relatedPractices: ["the-root-lock", "breath-retention", "spinal-breathing"],
           metaTitle: "The Great Lock — How to Practise It | Sunya",
           metaDescription:
