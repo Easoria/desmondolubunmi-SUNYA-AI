@@ -5,9 +5,12 @@ export const environmentLever: Lever = {
   number: 12,
   name: "Environment",
   layerLine: "Environment + Mental Body",
-  summaryLine: "No matter how precisely you have refined your inner practice, you are not a sealed container.",
+  summaryLine: "Where you live, what you wear, the items around you, the room you sleep in — all of these constantly influence your wellbeing. So does the culture around you, the people you are among, and what your senses and mind are exposed to. No amount of practice fully overrides your environment, which is why it matters to curate one that is conducive to wellbeing.",
   intro: [
-    "No matter how precisely you have refined your inner practice, you are not a sealed container. You are in a constant, unbroken state of energetic exchange with your immediate surroundings. Think of the energy body as a fish, and the physical environment as the water in the aquarium. You can feed the fish the highest-quality food and teach it to swim with perfect technique — but if the water itself is toxic, the fish will spend almost all of its vital energy simply surviving the baseline environment, with nothing left for growth. When you live in a chaotic, dirty, or energetically misaligned space, the nervous system registers a constant low-grade friction. The channels constrict defensively. But when you deliberately curate an environment of order, beauty, and high resonance, the space begins to do the heavy lifting for you — passively sustaining your openness without requiring continuous inner effort. This is why environment is not secondary to inner practice. It either amplifies everything you are building, or silently dismantles it. The seven practices that follow move from the most intimate layer of your environment — what you wear on your skin — all the way out to the collective culture of the place you live, and to the rare, ancient technology of consecrated spaces that have been specifically engineered to uplift the human system."
+    "However refined your practice, you are not sealed off from where you are. You are in constant exchange with your surroundings, whether or not you notice it.",
+    "Think of yourself as a fish, and your environment as the water. You can feed the fish well and teach it to swim perfectly, but if the water is dirty it will spend everything it has simply surviving, with nothing left over.",
+    "It works the same way in a room. Live somewhere cluttered, noisy or neglected and the system registers a low constant friction — not enough to name, but enough to cost you. The channels stay slightly braced. Live somewhere ordered and quiet and the opposite happens: the space holds you open without your having to do anything, and the effort you would have spent resisting it is simply yours again.",
+    "This is why environment is not secondary to inner practice. It either carries what you are building, or quietly undoes it.",
   ],
   practices: [
     {
