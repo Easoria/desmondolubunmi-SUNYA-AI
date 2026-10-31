@@ -6,11 +6,8 @@ export const conservationLever: Lever = {
   name: "Conservation",
   subtitle: "The Prerequisite",
   layerLine: "The prerequisite for all twelve",
-  intro: [
-    "Before you can raise your energy, you must stop wasting it. Most people live with the tap running — leaking life force faster than they could ever build it. Conservation is the simple discipline of plugging the leaks, so that energy is no longer drained away but allowed to gather. It comes before everything else, because there is no use generating more energy into a vessel that cannot hold it.",
-    "Energy that is contained does not simply sit still — it pools, concentrates, and begins to rise of its own accord. Recall that the natural movement of gathered life force is upward, along the central channel. The more the outward leaking stops, the more the energy accumulates, and the more it naturally turns vertical, lifting consciousness with it. Conservation forces nothing; it simply removes the constant draining that keeps the system perpetually low. Stop the leaks, and the rising happens by itself.",
-    "The life force leaks through a handful of predictable channels. Each practice below seals one of them.",
-  ],
+  summaryLine: "Conservation helps you stabilise your life and build the life force energy needed to fuel lasting transformation. Without this step, you may find that you quickly lose whatever inner progress you have made, or that you do not have enough energy to start or maintain steady practice. Through energy conservation, inner practice becomes consistent and transformation happens faster.",
+  intro: [],
   leadEssence:
     "Before you can raise your energy, you must stop wasting it. Most people live with the tap running — leaking life force faster than they could ever build it. Conservation is the simple discipline of plugging the leaks, so that energy is no longer drained away but allowed to gather. It comes before everything else, because there is no use generating more energy into a vessel that cannot hold it.",
   leadMechanism:

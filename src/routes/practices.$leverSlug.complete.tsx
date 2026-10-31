@@ -68,6 +68,7 @@ function CompleteLeverPage() {
         <p className="mt-2 text-sm italic text-[#b8d4e8]/80">Reader&apos;s edition</p>
 
         <div className="mt-8 max-w-[72ch] space-y-5 text-[15px] leading-7 text-[#b8d4e8] sm:text-base">
+          {lever.summaryLine ? <p>{lever.summaryLine}</p> : null}
           {lever.intro.map((paragraph, index) => (
             <p key={index}>{paragraph}</p>
           ))}

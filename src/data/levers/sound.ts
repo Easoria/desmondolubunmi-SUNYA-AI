@@ -5,9 +5,12 @@ export const soundLever: Lever = {
   number: 4,
   name: "Sound",
   layerLine: "Energetic Body + Emotional Body",
-  summaryLine: "Sound is the most universal inner technology in human history.",
+  summaryLine: "Your voice. Sound vibrations such as chanting, singing, or humming can be used to calm the nervous system, focus the mind, and vibrate open the subtle energy pathways through which life force flows.",
   intro: [
-    "Sound is the most universal inner technology in human history. Across every tradition, in every era and culture, human beings independently discovered that intentional sound transforms the inner state: the Om of Hindu practitioners, the Gregorian chants of Christian monks, the Dhikr of the Sufis, the ceremonial drumming of indigenous peoples. The outer forms differ entirely. The inner mechanism is the same. The body is largely composed of water, and water conducts sound far more efficiently than air — which means the entire physical system is deeply, immediately responsive to vibration. Sound is not an abstraction; it is a direct physical technology. When used intentionally, specific sounds and frequencies physically reorganise the cells and channels, dissolve energetic knots, calm the nervous system, and create coherence throughout the whole inner structure. The practices of this lever fall into two modes: active vocalization — chanting mantras and toning — which generates the vibration from within, and conscious listening, which allows curated external sound to do the work. Both converge on the same result: a cleared, coherent, open energy system."
+    "Sound is the most universal inner technology in human history. Across every tradition, in every era and culture, human beings independently discovered that intentional sound transforms the inner state: the Om of Hindu practitioners, the Gregorian chants of Christian monks, the Dhikr of the Sufis, the ceremonial drumming of indigenous peoples. The outer forms differ entirely. The inner mechanism is the same.",
+    "The body is largely composed of water, and water conducts sound far more efficiently than air — which means the entire physical system is deeply, immediately responsive to vibration. Sound is not an abstraction. It is a direct physical technology.",
+    "Used intentionally, specific sounds and frequencies reorganise the cells and channels, dissolve energetic knots, and create coherence throughout the whole inner structure.",
+    "The practices of this lever fall into two modes: active vocalisation — chanting and toning — which generates the vibration from within, and conscious listening, which allows curated external sound to do the work. Both converge on the same result: a cleared, coherent, open energy system.",
   ],
   practices: [
     {
