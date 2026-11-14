@@ -4,7 +4,7 @@ export const natureLever: Lever = {
   slug: "nature",
   number: 11,
   name: "Nature",
-  layerLine: "Physical Body + Energetic Body + Environment",
+  layerLine: "Physical Body + The Vital Body + Environment",
   summaryLine: "The body evolved in continuous relationship with sunlight, water, earth and the turning of the seasons. Modern life has distanced us from that relationship, and our wellbeing has suffered for it. This lever is about living in harmony with the intelligence of nature, and using nature itself as a means to wellbeing and presence.",
   intro: [
     "We are not separate from nature. We are made of it, and we are still governed by it — but modern life has arranged itself so that we rarely notice. Most of us move between buildings, under artificial light, surrounded by surfaces that came out of a factory. The body has not changed. Only its surroundings have.",
@@ -34,7 +34,7 @@ export const natureLever: Lever = {
       duration: "15 minutes",
       layers: [
         "Physical Body",
-        "Energetic Body",
+        "The Vital Body",
         "Environment"
       ],
       leverSlug: "nature",
@@ -79,7 +79,7 @@ export const natureLever: Lever = {
       ],
       layers: [
         "Physical Body",
-        "Energetic Body",
+        "The Vital Body",
         "Environment"
       ],
       leverSlug: "nature",
@@ -129,7 +129,7 @@ export const natureLever: Lever = {
       ],
       layers: [
         "Physical Body",
-        "Energetic Body",
+        "The Vital Body",
         "Environment"
       ],
       leverSlug: "nature",
@@ -180,7 +180,7 @@ export const natureLever: Lever = {
       duration: "30 minutes",
       layers: [
         "Physical Body",
-        "Energetic Body",
+        "The Vital Body",
         "Environment"
       ],
       leverSlug: "nature",
@@ -226,7 +226,7 @@ export const natureLever: Lever = {
       ],
       layers: [
         "Physical Body",
-        "Energetic Body",
+        "The Vital Body",
         "Environment"
       ],
       leverSlug: "nature",
@@ -286,7 +286,7 @@ export const natureLever: Lever = {
       ],
       layers: [
         "Physical Body",
-        "Energetic Body",
+        "The Vital Body",
         "Environment"
       ],
       leverSlug: "nature",

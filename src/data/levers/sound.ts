@@ -4,7 +4,7 @@ export const soundLever: Lever = {
   slug: "sound",
   number: 4,
   name: "Sound",
-  layerLine: "Energetic Body + Emotional Body",
+  layerLine: "The Vital Body + Emotional Body",
   summaryLine: "Your voice. Sound vibrations such as chanting, singing, or humming can be used to calm the nervous system, focus the mind, and vibrate open the subtle energy pathways through which life force flows.",
   intro: [
     "Sound is the most universal inner technology in human history. Across every tradition, in every era and culture, human beings independently discovered that intentional sound transforms the inner state: the Om of Hindu practitioners, the Gregorian chants of Christian monks, the Dhikr of the Sufis, the ceremonial drumming of indigenous peoples. The outer forms differ entirely. The inner mechanism is the same.",
@@ -44,7 +44,7 @@ export const soundLever: Lever = {
         }
       ],
       layers: [
-        "Energetic Body",
+        "The Vital Body",
         "Emotional Body"
       ],
       leverSlug: "sound",
@@ -97,7 +97,7 @@ export const soundLever: Lever = {
         }
       ],
       layers: [
-        "Energetic Body",
+        "The Vital Body",
         "Emotional Body"
       ],
       leverSlug: "sound",
@@ -155,7 +155,7 @@ export const soundLever: Lever = {
         }
       ],
       layers: [
-        "Energetic Body",
+        "The Vital Body",
         "Emotional Body"
       ],
       leverSlug: "sound",
@@ -207,7 +207,7 @@ export const soundLever: Lever = {
         }
       ],
       layers: [
-        "Energetic Body",
+        "The Vital Body",
         "Emotional Body"
       ],
       leverSlug: "sound",
@@ -264,7 +264,7 @@ export const soundLever: Lever = {
         }
       ],
       layers: [
-        "Energetic Body",
+        "The Vital Body",
         "Emotional Body"
       ],
       leverSlug: "sound",

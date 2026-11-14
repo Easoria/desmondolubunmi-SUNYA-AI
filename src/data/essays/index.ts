@@ -2887,7 +2887,7 @@ export const whereToBegin: WhereToBegin = {
               "bold": true
             },
             {
-              "text": " Disidentifying / Neti-Neti, Energy Body Awareness, Holistic Subtle Bodies Awareness (Lever 6)"
+              "text": " Disidentifying / Neti-Neti, Reading Your Vital State, Holistic Subtle Bodies Awareness (Lever 6)"
             }
           ]
         },
@@ -2907,7 +2907,7 @@ export const whereToBegin: WhereToBegin = {
       ],
       "paragraphs": [
         "Systematically loosening the attachment to the layers of identity — body, thoughts, emotions — through the via negativa.",
-        "Practices: Disidentifying / Neti-Neti, Energy Body Awareness, Holistic Subtle Bodies Awareness (Lever 6)",
+        "Practices: Disidentifying / Neti-Neti, Reading Your Vital State, Holistic Subtle Bodies Awareness (Lever 6)",
         "Signs of readiness for Step 3: You begin to experience, at least briefly, a quality of spaciousness or presence not dependent on your thoughts or circumstances."
       ]
     },

@@ -6,8 +6,8 @@ export type ZoneSlug =
   | "the-hollow-seeker";
 
 export type LayerOfBeing =
-  | "Source"
-  | "Energetic Body"
+  | "Consciousness"
+  | "The Vital Body"
   | "Emotional Body"
   | "Intellectual Body"
   | "Mental Body"

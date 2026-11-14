@@ -4,7 +4,7 @@ export const awarenessLever: Lever = {
   slug: "awareness",
   number: 6,
   name: "Awareness",
-  layerLine: "Source + Mental Body",
+  layerLine: "Consciousness + Mental Body",
   summaryLine: "Consciousness itself, turning back to recognise its own nature. Unconsciousness is the main cause of suffering, which makes this the most fundamental lever — and the one the others prepare you for.",
   intro: [
     "At the root of suffering is unconsciousness. Not evil, not weakness — simply not seeing. Most suffering persists because we are entangled in our thoughts, emotions and impulses. When awareness strengthens, identification loosens. Thoughts are seen as thoughts. Emotions are felt without becoming identity. Sensations arise and pass. Energy that was locked in unconscious reaction becomes available for transformation.",
@@ -32,7 +32,7 @@ export const awarenessLever: Lever = {
         }
       ],
       layers: [
-        "Source",
+        "Consciousness",
         "Mental Body"
       ],
       leverSlug: "awareness",
@@ -76,7 +76,7 @@ export const awarenessLever: Lever = {
       ],
       duration: "5–10 minutes",
       layers: [
-        "Source",
+        "Consciousness",
         "Mental Body"
       ],
       leverSlug: "awareness",
@@ -124,7 +124,7 @@ export const awarenessLever: Lever = {
         }
       ],
       layers: [
-        "Source",
+        "Consciousness",
         "Mental Body"
       ],
       leverSlug: "awareness",
@@ -171,7 +171,7 @@ export const awarenessLever: Lever = {
         }
       ],
       layers: [
-        "Source",
+        "Consciousness",
         "Mental Body"
       ],
       leverSlug: "awareness",
@@ -207,7 +207,7 @@ export const awarenessLever: Lever = {
     {
       sourceNumber: 5,
       slug: "energy-body-awareness",
-      name: "Energy Body Awareness",
+      name: "Reading Your Vital State",
       essence: "Holding awareness on the entire energy body as a unified whole — the most powerful practice for direct inner transformation. Where other practices work on the energy body indirectly, this one places awareness on it directly. The effect is immediate and far- reaching.",
       mechanism: [
         "The energy body responds to awareness the same way all other layers do — what is brought into the light of awareness begins to transform. By holding awareness on the entire energy body as a whole simultaneously, you activate and purify the complete network of channels at once rather than working on them individually. This is what makes the practice so potent: the scope is total. The entire inner structure is held in a single, unified field of attention, and the channels — even those deep in the periphery — begin to open and evolve."
@@ -221,7 +221,7 @@ export const awarenessLever: Lever = {
         }
       ],
       layers: [
-        "Source",
+        "Consciousness",
         "Mental Body"
       ],
       leverSlug: "awareness",
@@ -230,7 +230,7 @@ export const awarenessLever: Lever = {
         "holistic-subtle-bodies-awareness",
         "compassionate-presence"
       ],
-      metaTitle: "Energy Body Awareness — How to Practise It | Sunya",
+      metaTitle: "Reading Your Vital State — How to Practise It | Sunya",
       metaDescription: "Holding awareness on the entire energy body as a unified whole — the most powerful practice for direct inner transformation.",
       families: ["L2", "M4"],
       directions: ["reconnect", "stabilise"],
@@ -261,9 +261,9 @@ export const awarenessLever: Lever = {
       notes: [
         "This is the most powerful practice in the entire document for rapid inner transformation."
       ],
-      essence: "Shining the light of awareness on the entire layers of being at once — physical, emotional, mental, and energetic simultaneously. More holistic and grounding than Energy Body Awareness alone, and more stabilising. It is the most powerful practice for inner transformation in this lever — and also the most demanding. It requires considerable awareness and skill as a prerequisite; the practices that precede it here are not merely preparation but the foundation that makes this one possible.",
+      essence: "Shining the light of awareness on the entire layers of being at once — physical, emotional, mental, and energetic simultaneously. More holistic and grounding than Reading Your Vital State alone, and more stabilising. It is the most powerful practice for inner transformation in this lever — and also the most demanding. It requires considerable awareness and skill as a prerequisite; the practices that precede it here are not merely preparation but the foundation that makes this one possible.",
       mechanism: [
-        "In Energy Body Awareness, attention is narrowed to one specific layer. Here, awareness is expanded to hold the entire inner structure at once — body, emotions, mind, and energy body in one unified field of observation. The effect is total rather than targeted. Mental impressions, emotional patterns, and energetic blockages are all exposed to the same undivided light of awareness simultaneously. Rather than dissolving layer by layer, the accumulated inner material — the conditioning, the held tension, the karmic impressions — begins to release all at once."
+        "In Reading Your Vital State, attention is narrowed to one specific layer. Here, awareness is expanded to hold the entire inner structure at once — body, emotions, mind, and energy body in one unified field of observation. The effect is total rather than targeted. Mental impressions, emotional patterns, and energetic blockages are all exposed to the same undivided light of awareness simultaneously. Rather than dissolving layer by layer, the accumulated inner material — the conditioning, the held tension, the karmic impressions — begins to release all at once."
       ],
       protocol: [
         {
@@ -274,7 +274,7 @@ export const awarenessLever: Lever = {
         }
       ],
       layers: [
-        "Source",
+        "Consciousness",
         "Mental Body"
       ],
       leverSlug: "awareness",
@@ -330,7 +330,7 @@ export const awarenessLever: Lever = {
         }
       ],
       layers: [
-        "Source",
+        "Consciousness",
         "Mental Body"
       ],
       leverSlug: "awareness",
@@ -377,7 +377,7 @@ export const awarenessLever: Lever = {
         }
       ],
       layers: [
-        "Source",
+        "Consciousness",
         "Mental Body"
       ],
       leverSlug: "awareness",
@@ -437,7 +437,7 @@ export const awarenessLever: Lever = {
         }
       ],
       layers: [
-        "Source",
+        "Consciousness",
         "Mental Body"
       ],
       leverSlug: "awareness",
@@ -503,7 +503,7 @@ export const awarenessLever: Lever = {
         }
       ],
       layers: [
-        "Source",
+        "Consciousness",
         "Mental Body"
       ],
       leverSlug: "awareness",
@@ -563,7 +563,7 @@ export const awarenessLever: Lever = {
         }
       ],
       layers: [
-        "Source",
+        "Consciousness",
         "Mental Body"
       ],
       leverSlug: "awareness",
@@ -623,7 +623,7 @@ export const awarenessLever: Lever = {
         }
       ],
       layers: [
-        "Source",
+        "Consciousness",
         "Mental Body"
       ],
       leverSlug: "awareness",
@@ -686,7 +686,7 @@ export const awarenessLever: Lever = {
       ],
       duration: "30 minutes each session",
       layers: [
-        "Source",
+        "Consciousness",
         "Mental Body"
       ],
       leverSlug: "awareness",
@@ -746,7 +746,7 @@ export const awarenessLever: Lever = {
         }
       ],
       layers: [
-        "Source",
+        "Consciousness",
         "Mental Body"
       ],
       leverSlug: "awareness",
@@ -789,7 +789,7 @@ export const awarenessLever: Lever = {
         }
       ],
       layers: [
-        "Source",
+        "Consciousness",
         "Mental Body"
       ],
       leverSlug: "awareness",

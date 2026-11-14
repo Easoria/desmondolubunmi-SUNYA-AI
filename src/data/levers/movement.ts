@@ -4,7 +4,7 @@ export const movementLever: Lever = {
   slug: "movement",
   number: 2,
   name: "Movement",
-  layerLine: "Physical Body + Energetic Body",
+  layerLine: "Physical Body + The Vital Body",
   summaryLine: "Your body. Conscious movement increases flexibility and robustness, and grounds you in physicality in a healthy way. It reduces physical tension and helps the life force flow upward. When the mind feels restless or ungrounded, movement is often the easier way into inner stillness.",
   intro: [
     "The body is not a thing apart from your inner life — the two are woven together. The way you hold your body shapes how you feel, how you perceive, and how your energy moves: a collapsed, slumped frame dampens the whole system, while an open, upright one lets it flow freely. Tension in the body is tension in the mind; rigidity in the body is contraction in the energy. The body, you might say, is the inner state made visible — so to change the body is to change the state.",
@@ -31,7 +31,7 @@ export const movementLever: Lever = {
       ],
       layers: [
         "Physical Body",
-        "Energetic Body"
+        "The Vital Body"
       ],
       leverSlug: "movement",
       relatedPractices: [
@@ -73,7 +73,7 @@ export const movementLever: Lever = {
       ],
       layers: [
         "Physical Body",
-        "Energetic Body"
+        "The Vital Body"
       ],
       leverSlug: "movement",
       relatedPractices: [
@@ -162,7 +162,7 @@ export const movementLever: Lever = {
       duration: "2 minutes",
       layers: [
         "Physical Body",
-        "Energetic Body"
+        "The Vital Body"
       ],
       leverSlug: "movement",
       relatedPractices: [
@@ -218,7 +218,7 @@ export const movementLever: Lever = {
       duration: "1–3 minutes",
       layers: [
         "Physical Body",
-        "Energetic Body"
+        "The Vital Body"
       ],
       leverSlug: "movement",
       relatedPractices: [
@@ -350,7 +350,7 @@ export const movementLever: Lever = {
       duration: "1–2 minutes",
       layers: [
         "Physical Body",
-        "Energetic Body"
+        "The Vital Body"
       ],
       leverSlug: "movement",
       relatedPractices: [
@@ -409,7 +409,7 @@ export const movementLever: Lever = {
       duration: "5–10 minutes",
       layers: [
         "Physical Body",
-        "Energetic Body"
+        "The Vital Body"
       ],
       leverSlug: "movement",
       relatedPractices: [
@@ -454,7 +454,7 @@ export const movementLever: Lever = {
       ],
       layers: [
         "Physical Body",
-        "Energetic Body"
+        "The Vital Body"
       ],
       leverSlug: "movement",
       relatedPractices: [
@@ -499,7 +499,7 @@ export const movementLever: Lever = {
       duration: "2–5 minutes",
       layers: [
         "Physical Body",
-        "Energetic Body"
+        "The Vital Body"
       ],
       leverSlug: "movement",
       relatedPractices: [
@@ -545,7 +545,7 @@ export const movementLever: Lever = {
       ],
       layers: [
         "Physical Body",
-        "Energetic Body"
+        "The Vital Body"
       ],
       leverSlug: "movement",
       relatedPractices: [
@@ -591,7 +591,7 @@ export const movementLever: Lever = {
       duration: "at least 5–10 minutes",
       layers: [
         "Physical Body",
-        "Energetic Body"
+        "The Vital Body"
       ],
       leverSlug: "movement",
       relatedPractices: [
@@ -636,7 +636,7 @@ export const movementLever: Lever = {
       ],
       layers: [
         "Physical Body",
-        "Energetic Body"
+        "The Vital Body"
       ],
       leverSlug: "movement",
       relatedPractices: [
@@ -677,7 +677,7 @@ export const movementLever: Lever = {
       ],
       layers: [
         "Physical Body",
-        "Energetic Body"
+        "The Vital Body"
       ],
       leverSlug: "movement",
       relatedPractices: [
