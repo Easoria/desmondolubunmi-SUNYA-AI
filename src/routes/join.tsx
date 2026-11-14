@@ -12,19 +12,20 @@ import {
 } from "lucide-react";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
+import { buildSeoHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/join")({
   component: JoinPage,
   head: () => ({
-    meta: [
-      { title: "Get Involved — Sunya needs people like you" },
-      {
-        name: "description",
-        content:
-          "Volunteer, train as a Sunya teacher, partner with us, or spread the word. Tell Desmond about yourself.",
-      },
-      { name: "robots", content: "noindex" },
-    ],
+    ...buildSeoHead({
+      title: "Get Involved — Sunya needs people like you",
+      description:
+        "Volunteer, train as a Sunya teacher, partner with us, or spread the word. Tell Desmond about yourself.",
+      path: "/join",
+      ogType: "website",
+      imageKind: "core",
+      extraMeta: [{ name: "robots", content: "noindex" }],
+    }),
   }),
 });
 

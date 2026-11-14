@@ -74,7 +74,7 @@ export const Route = createFileRoute("/gatherings/$slug")({
       ? g.subtitle?.trim() ||
         firstSentence(firstMarkdownParagraph(g.description)) ||
         "A Sunya gathering with Desmond Olubunmi."
-      : "";
+      : "Sunya gatherings with Desmond Olubunmi — in Dublin and online.";
 
     return {
       ...buildSeoHead({

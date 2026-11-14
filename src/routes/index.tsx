@@ -11,9 +11,9 @@ import heroWebp from "@/assets/desmond-hero.webp";
 export const Route = createFileRoute("/")({
   component: IndexPage,
   head: () => {
-    const title = "Desmond Olubunmi — Sunya";
+    const title = "Desmond Olubunmi — Sunya | A Complete Map of Human Wellbeing";
     const description =
-      "You are the happiness you seek. A complete path to human wellbeing that is timeless and universal. Teachings, practices, and gatherings.";
+      "Most approaches treat one part of a person. Sunya maps all twelve — six faculties of your own being, six conditions of your life.";
 
     const seo = buildSeoHead({
       title,
