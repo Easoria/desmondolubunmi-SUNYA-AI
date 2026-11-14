@@ -5,8 +5,7 @@ import desmondImg from "@/assets/desmond.jpg";
 export const FOUNDER_SUBTITLE = "Founder of Sunya · Author of The Sleep Rhythm Reset";
 
 export const FOUNDER_PARAGRAPHS = [
-  "A naturally gifted seeker of truth, he spent his teens and early twenties in long daily contemplative practice across diverse traditions, distilling the science of human wellbeing down to its absolute essence.",
-  "Desmond offers a complete framework for human wellbeing that is timeless and universal. His presence and guidance help people realise the natural peace and bliss of their inner being, and live it in their daily lives.",
+  "He spent his teens and early twenties in daily contemplative practice across several traditions, working out what they had in common and what each one left out. The result is Sunya: a framework that covers the whole of a person rather than one part.",
 ] as const;
 
 export function FounderBio({ className = "space-y-4 text-[#b8d4e8]" }: { className?: string }) {
@@ -20,8 +19,8 @@ export function FounderBio({ className = "space-y-4 text-[#b8d4e8]" }: { classNa
       <p className="leading-relaxed">
         He is the author of{" "}
         <em className="italic font-medium text-white">The Sleep Rhythm Reset</em>, an Amazon #1
-        bestseller in its category, and the creator of the Sunya Sleep app. He currently teaches
-        through writing, practice, and gatherings, in Dublin and online.
+        bestseller in its category, and the creator of the Sunya Sleep app. He teaches through
+        writing, practice and gatherings, in Dublin and online.
       </p>
     </div>
   );

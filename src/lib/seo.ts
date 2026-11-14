@@ -352,14 +352,13 @@ export function parseDurationToIso(duration?: string) {
   return `PT${value}M`;
 }
 
+/** Checkable facts only — no attainment claims. Injected server-side via route head. */
 export const PERSON_SCHEMA = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Desmond Olubunmi",
   jobTitle: "Founder",
   description: "Founder of Sunya. Author of The Sleep Rhythm Reset.",
-  url: canonicalUrl("/about"),
-  image: canonicalUrl("/og/core.jpg"),
   sameAs: [
     "https://amzn.eu/d/0bzw0W4k",
     "https://apps.apple.com/ie/app/sunya-sleep/id6764553926",
