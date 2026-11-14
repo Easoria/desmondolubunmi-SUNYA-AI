@@ -29,7 +29,7 @@ export const Route = createFileRoute("/about")({
     ...buildSeoHead({
       title: "About Desmond Olubunmi — Founder of Sunya | Sunya",
       description:
-        "Desmond Olubunmi has dedicated his life to the physical, mental and spiritual wellbeing of humanity. Founder of Sunya, author of The Sleep Rhythm Reset, and creator of the Sunya Sleep app.",
+        "Founder of Sunya. Author of The Sleep Rhythm Reset, and creator of the Sunya Sleep app.",
       path: "/about",
       ogType: "website",
       imageKind: "core",
@@ -57,7 +57,6 @@ function AboutPage() {
       <Nav />
       <Breadcrumb />
       <main className="mx-auto max-w-4xl px-6 pb-24 pt-12">
-        <div className="label-eyebrow">The founder</div>
         <h1 className="display mt-4 text-4xl text-white sm:text-5xl">Desmond Olubunmi</h1>
         <p className="display-italic mt-3 text-lg text-[#b8d4e8]">{FOUNDER_SUBTITLE}</p>
 

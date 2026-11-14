@@ -61,7 +61,12 @@ export const Route = createFileRoute("/writing/$slug")({
     const a = loaderData?.article;
     const path = `/writing/${params.slug}`;
     const title = a ? `${a.title} — Desmond Olubunmi` : "Writing — Desmond Olubunmi";
-    const description = a?.meta_description ?? a?.excerpt ?? "";
+    const description =
+      a?.meta_description?.trim() ||
+      a?.excerpt?.trim() ||
+      (a?.title
+        ? `${a.title} — writing by Desmond Olubunmi, founder of Sunya.`
+        : "Writing by Desmond Olubunmi, founder of Sunya.");
     const sectionLabel = writingCategoryLabel(a?.category) || "Writing";
     const hideFromIndex = Boolean(loaderData?.isPreview || (a && !a.published));
 

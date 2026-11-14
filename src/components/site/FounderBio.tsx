@@ -2,10 +2,9 @@ import type { ReactNode } from "react";
 import desmondImg from "@/assets/desmond.jpg";
 
 /** Shared founder copy — keep homepage, About, and work-with-me in sync. */
-export const FOUNDER_SUBTITLE = "Spiritual teacher";
+export const FOUNDER_SUBTITLE = "Founder of Sunya · Author of The Sleep Rhythm Reset";
 
 export const FOUNDER_PARAGRAPHS = [
-  "Desmond Olubunmi has dedicated his life to the physical, mental and spiritual wellbeing of humanity.",
   "A naturally gifted seeker of truth, he spent his teens and early twenties in long daily contemplative practice across diverse traditions, distilling the science of human wellbeing down to its absolute essence.",
   "Desmond offers a complete framework for human wellbeing that is timeless and universal. His presence and guidance help people realise the natural peace and bliss of their inner being, and live it in their daily lives.",
 ] as const;
@@ -58,8 +57,7 @@ export function FounderSection({ actions }: FounderSectionProps) {
           </div>
         </div>
         <div className="lg:col-span-3">
-          <div className="label-eyebrow">The founder</div>
-          <h2 className="display mt-5 text-4xl text-white sm:text-6xl">Desmond Olubunmi</h2>
+          <h2 className="display text-4xl text-white sm:text-6xl">Desmond Olubunmi</h2>
           <p className="display-italic mt-3 text-lg text-[#b8d4e8]">{FOUNDER_SUBTITLE}</p>
           <FounderBio className="mt-8 space-y-4 text-[#b8d4e8]" />
           {actions ? <div className="mt-9">{actions}</div> : null}

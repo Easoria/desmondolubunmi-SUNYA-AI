@@ -89,7 +89,6 @@ export function buildSeoHead({
   extraMeta = [],
 }: SeoHeadInput) {
   const canonical = canonicalUrl(path);
-  const socialTitle = stripSunyaSuffix(title);
   const fallbackImage = canonicalUrl(FALLBACK_OG_IMAGE_BY_KIND[imageKind]);
   const ogImage = imageUrl ?? fallbackImage;
 
@@ -97,7 +96,7 @@ export function buildSeoHead({
     meta: [
       { title },
       { name: "description", content: description },
-      { property: "og:title", content: socialTitle },
+      { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:url", content: canonical },
       { property: "og:type", content: ogType },
@@ -107,7 +106,7 @@ export function buildSeoHead({
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: socialTitle },
+      { name: "twitter:title", content: title },
       { name: "twitter:description", content: description },
       { name: "twitter:image", content: ogImage },
       ...extraMeta,
@@ -357,9 +356,8 @@ export const PERSON_SCHEMA = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Desmond Olubunmi",
-  jobTitle: "Spiritual teacher and founder",
-  description:
-    "Founder of Sunya, a universal system for inner transformation. Author of The Sleep Rhythm Reset, an Amazon #1 bestseller in its category.",
+  jobTitle: "Founder",
+  description: "Founder of Sunya. Author of The Sleep Rhythm Reset.",
   url: canonicalUrl("/about"),
   image: canonicalUrl("/og/core.jpg"),
   sameAs: [
