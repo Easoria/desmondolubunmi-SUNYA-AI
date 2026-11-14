@@ -122,7 +122,7 @@ export const environmentLever: Lever = {
     {
       sourceNumber: 3,
       slug: "vibrational-signatures",
-      name: "Vibrational Signatures",
+      name: "Sound Signatures",
       subtitle: "the audit of objects",
       essence: "Recognising that the objects around you are not emotionally neutral — and that each one carries a specific felt quality you can begin to notice if you pay close enough attention. The practice of curating your physical space so that everything in it supports openness and ease rather than stagnation, guilt, or heaviness.",
       mechanism: [
@@ -153,7 +153,7 @@ export const environmentLever: Lever = {
         "atmospheric-purity",
         "cultural-resonance"
       ],
-      metaTitle: "Vibrational Signatures — How to Practise It | Sunya",
+      metaTitle: "Sound Signatures — How to Practise It | Sunya",
       metaDescription: "Recognising that the objects around you are not emotionally neutral — and that each one carries a specific felt quality you can begin to notice if you pay close enough attention.",
       families: ["M2", "L4", "H3"],
       generated: {

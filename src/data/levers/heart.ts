@@ -130,7 +130,7 @@ export const heartLever: Lever = {
     {
       sourceNumber: 3,
       slug: "holding-love-as-vibration",
-      name: "Holding Love as Vibration",
+      name: "Holding Love Steady",
       essence: "Rather than directing love at someone or something, you learn to inhabit it as a self-generated state — consciously choosing to immerse yourself in the feeling of love by deliberate inner attention.",
       mechanism: [
         "Most people experience love only as a response to an external stimulus — a person, an animal, a beautiful moment. The love arises, and when the object is gone, the love fades. This practice reverses that dependency. By recalling a moment of pure, unconditional love to access the feeling, then deliberately dropping the object while sustaining the feeling itself, you discover that love is not merely a reaction — it is a state you consciously choose to be in. As you hold this vibration, it saturates the inner system and radiates outward naturally. You are not directing love at anyone; you are becoming a source of it."
@@ -161,7 +161,7 @@ export const heartLever: Lever = {
         "loving-kindness",
         "giving-and-receiving"
       ],
-      metaTitle: "Holding Love as Vibration — How to Practise It | Sunya",
+      metaTitle: "Holding Love Steady — How to Practise It | Sunya",
       metaDescription: "Rather than directing love at someone or something, you learn to inhabit it as a self-generated state — consciously choosing to immerse yourself in the feeling of love by deliberate inner attention.",
       families: ["L2"],
       directions: ["reconnect", "open"],
