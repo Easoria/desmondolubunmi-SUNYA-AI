@@ -6,25 +6,25 @@ export const conservationLever: Lever = {
   name: "Conservation",
   subtitle: "The Prerequisite",
   layerLine: "The prerequisite for all twelve",
-  summaryLine: "Conservation helps you stabilise your life and build the life force energy needed to fuel lasting transformation. Without this step, you may find that you quickly lose whatever inner progress you have made, or that you do not have enough energy to start or maintain steady practice. Through energy conservation, inner practice becomes consistent and transformation happens faster.",
+  summaryLine: "Conservation helps you stabilise your life and build the energy needed to fuel lasting transformation. Without this step, you may find that you quickly lose whatever inner progress you have made, or that you do not have enough energy to start or maintain steady practice. Through energy conservation, inner practice becomes consistent and transformation happens faster.",
   intro: [],
   leadEssence:
-    "Before you can raise your energy, you must stop wasting it. Most people live with the tap running — leaking life force faster than they could ever build it. Conservation is the simple discipline of plugging the leaks, so that energy is no longer drained away but allowed to gather. It comes before everything else, because there is no use generating more energy into a vessel that cannot hold it.",
+    "Before you can raise your energy, you must stop wasting it. Most people live with the tap running — leaking energy faster than they could ever build it. Conservation is the simple discipline of plugging the leaks, so that energy is no longer drained away but allowed to gather. It comes before everything else, because there is no use generating more energy into a vessel that cannot hold it.",
   leadMechanism:
-    "Energy that is contained does not simply sit still — it pools, concentrates, and begins to rise of its own accord. Recall that the natural movement of gathered life force is upward, along the central channel. The more the outward leaking stops, the more the energy accumulates, and the more it naturally turns vertical, lifting consciousness with it. Conservation forces nothing; it simply removes the constant draining that keeps the system perpetually low. Stop the leaks, and the rising happens by itself.",
+    "Energy that is contained does not simply sit still — it pools, concentrates, and begins to rise of its own accord. Gathered energy tends to move upward through the centre of the body. The more the outward leaking stops, the more the energy accumulates, and the more it naturally turns vertical, lifting consciousness with it. Conservation forces nothing; it simply removes the constant draining that keeps the system perpetually low. Stop the leaks, and the rising happens by itself.",
   leadBridgeLine:
-    "The life force leaks through a handful of predictable channels. Each practice below seals one of them.",
+    "Energy leaks through a handful of predictable outlets. Each practice below seals one of them.",
   practices: [
     {
       slug: "silence",
       name: "Silence",
       essence:
-        "Speech is one of the largest drains of life force there is, because your speech is a projection of your energy — it runs on it. When you speak, you direct life force outward. It is a process of expenditure, which is why it is worth spending consciously.",
+        "Speech is one of the largest drains of energy there is, because your speech is a projection of your energy — it runs on it. When you speak, you direct energy outward. It is a process of expenditure, which is why it is worth spending consciously.",
       mechanism: [
         "You can hear this directly: a person brimming with energy speaks with a strong, vivid voice, while a depleted person speaks slowly and faintly. The voice broadcasts the state of the energy, and spends it in the broadcasting.",
         "Notice, too, that you cannot speak and breathe freely at the same time — speech interrupts the very breath that feeds the system.",
         "The drain also runs in both directions. Excessive speech, particularly idle chatter and gossip, leaves the mind restless. The restless mind then reaches for more speech, which agitates it further. Most of this happens unconsciously — we rarely notice what our talking is doing to our energy, our clarity, or our state of mind.",
-        "The practice is periods of deliberate silence — not strain or suppression, but resting the voice, and with it the restless mind that drives it. In that silence, two things happen at once: the leaking of energy stops, and a natural clarity arises. The life force settles and begins to reorganise itself. You perceive more clearly and act with more composure, because there is finally something in the system to act from.",
+        "The practice is periods of deliberate silence — not strain or suppression, but resting the voice, and with it the restless mind that drives it. In that silence, two things happen at once: the leaking of energy stops, and a natural clarity arises. Energy settles and begins to reorganise itself. You perceive more clearly and act with more composure, because there is finally something in the system to act from.",
         "There is a further effect, easily observed in others. Words spoken constantly lose their weight — when someone talks without pause, their speech carries less gravity and is received with less attention. The words become cheap. Speech drawn from silence carries meaning and lands.",
       ],
       protocol: [
@@ -46,7 +46,7 @@ export const conservationLever: Lever = {
       relatedPractices: ["sensory-rest", "deep-belly-breathing", "coherent-breathing"],
       metaTitle: "Silence — How to Practise It | Sunya",
       metaDescription:
-        "Speech is one of the largest drains of life force there is, because your speech is a projection of your energy — it runs on it.",
+        "Speech is one of the largest drains of energy there is, because your speech is a projection of your energy — it runs on it.",
       families: ["L1", "H2", "H4"],
       directions: ["restore", "reduce", "calm"],
       problems: [],
@@ -113,7 +113,7 @@ export const conservationLever: Lever = {
         relatedPracticeRationale: [
           {
             slug: "silence",
-            reason: "Both reduce outward engagement and preserve life force.",
+            reason: "Both reduce outward engagement and preserve energy.",
           },
           {
             slug: "coherent-breathing",
@@ -121,7 +121,7 @@ export const conservationLever: Lever = {
           },
           {
             slug: "alternate-nostril-breathing",
-            reason: "Sensory quiet pairs naturally with concentrated channel-clearing breathwork.",
+            reason: "Sensory quiet pairs naturally with concentrated balancing breathwork.",
           },
         ],
       },
@@ -133,7 +133,7 @@ export const conservationLever: Lever = {
         "A great deal of the body’s energy goes into digestion. Periodic fasting frees that energy, and the effects reach every layer at once — body, energy, and mind.",
       mechanism: [
         "Start with the body. Digestion is constant work, and eating every day means the body rarely gets to stop and attend to itself. Fasting gives it that time. Instead of breaking food down, it turns to maintenance — repairing, cleansing, consuming damaged cells, restoring itself. Inflammation drops. The body gets lighter and stronger.",
-        "In the energy body, the same shift happens. When there is no food to digest, the freed life force is available to rise. Emptiness itself contributes to this: with nothing sitting in the system, the energy moves upward more easily and begins to reorganise into its natural flow.",
+        "In the vital body, the same shift happens. When there is no food to digest, the freed energy is available to rise. Emptiness itself contributes to this: with nothing sitting in the system, energy moves upward more easily and begins to reorganise into its natural flow.",
         "The mind quiets too. The weight of food in the body and the activity of digesting it both register mentally, whether or not you notice. When that stops, there is simply less going on. The body moves into a healing state rather than a working one, and the mind tends to settle with it.",
         "There is also the plain matter of time and attention. Fasting removes the thinking about food, the cooking, the eating, the cleaning up. All of that attention becomes available for practice.",
         "And it makes the relationship with eating conscious again. Most eating happens on autopilot. Stopping shows you what was actually habit.",
@@ -170,7 +170,7 @@ export const conservationLever: Lever = {
         relatedPracticeRationale: [
           {
             slug: "sexual-conservation",
-            reason: "Both are direct conservation channels that reduce major vitality drains.",
+            reason: "Both are direct conservation practices that reduce major vitality drains.",
           },
           {
             slug: "deep-belly-breathing",
@@ -186,7 +186,7 @@ export const conservationLever: Lever = {
     {
       slug: "sexual-conservation",
       name: "Sexual Conservation",
-      essence: "Sexual energy is among the most concentrated forms of the life force.",
+      essence: "Sexual energy is among the most concentrated forms of vital energy.",
       mechanism: [
         "This drive is a natural part of the human system and serves a critical function — reproduction, the carrying on of the species. Just as hunger is there, just as the drive for sleep is there, this is there too. The first step is to recognise it rather than push it under the carpet.",
         "Then, having recognised it, ask what it actually is. Sexual energy is a life-giving substance — every human being comes from it. That alone tells you it is significant and powerful.",
@@ -227,7 +227,7 @@ export const conservationLever: Lever = {
       leverSlug: "conservation",
       relatedPractices: ["the-root-lock", "fasting", "spinal-breathing"],
       metaTitle: "Sexual Conservation — How to Practise It | Sunya",
-      metaDescription: "Sexual energy is among the most concentrated forms of the life force.",
+      metaDescription: "Sexual energy is among the most concentrated forms of vital energy.",
       families: ["L1"],
       directions: ["contain", "restore", "reduce"],
       problems: [],
@@ -241,11 +241,11 @@ export const conservationLever: Lever = {
           },
           {
             slug: "fasting",
-            reason: "Each practice conserves major energetic expenditure channels.",
+            reason: "Each practice conserves major drains of vital energy.",
           },
           {
             slug: "spinal-breathing",
-            reason: "Conserved force is naturally paired with upward channeling practices.",
+            reason: "Conserved force is naturally paired with upward spinal-breath practices.",
           },
         ],
       },
@@ -254,12 +254,12 @@ export const conservationLever: Lever = {
       slug: "the-root-lock",
       name: "The Root Lock",
       essence:
-        "A contraction at the base of the body that seals energy in and turns it upward. It is the most direct means of conserving the life force, and the ground the other conservation practices stand on.",
+        "A contraction at the base of the body that seals energy in and turns it upward. It is the most direct means of conserving vital energy, and the ground the other conservation practices stand on.",
       mechanism: [
-        "Left alone, the life force tends to settle at the base of the body and pool there. When it does, two things happen: it leaks away gradually, and it stagnates. Anyone who has felt sexual energy sitting heavily and going nowhere knows this sensation directly.",
+        "Left alone, vital energy tends to settle at the base of the body and pool there. When it does, two things happen: it leaks away gradually, and it stagnates. Anyone who has felt sexual energy sitting heavily and going nowhere knows this sensation directly.",
         "The root lock changes both. The contraction seals the base, so the energy stops draining outward, and it gives that energy a floor to rise from rather than a place to collect. What was pooling begins to move upward through the system.",
         "This is why it belongs to conservation. It is not generating anything new — it is stopping a loss and redirecting what is already there.",
-        "It also works at the level of the body itself. The contraction creates stability and grounding, a felt sense of being rooted, which is the physical counterpart of the energetic sealing. And for anyone working with sexual conservation, this is what makes it possible in the body rather than only in the will.",
+        "It also works at the level of the body itself. The contraction creates stability and grounding, a felt sense of being rooted, which is the physical counterpart of sealing energy in. And for anyone working with sexual conservation, this is what makes it possible in the body rather than only in the will.",
       ],
       protocol: [
         {
@@ -303,7 +303,7 @@ export const conservationLever: Lever = {
           },
           {
             slug: "spinal-breathing",
-            reason: "Root sealing complements upward movement through the central channel.",
+            reason: "Root sealing complements upward movement along the centre of the spine.",
           },
         ],
       },

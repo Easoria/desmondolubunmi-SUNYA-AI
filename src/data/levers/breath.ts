@@ -5,10 +5,10 @@ export const breathLever: Lever = {
   number: 1,
   name: "Breath",
   layerLine: "The Vital Body + Physical Body",
-  summaryLine: "Your breath. The one faculty that is both automatic and voluntary, which makes it a direct handle on the nervous system and the flow of life force. It is free, always available, and can be used anywhere without drawing attention.",
+  summaryLine: "Your breath. The one faculty that is both automatic and voluntary, which makes it a direct handle on the nervous system and on how much energy is available to you. It is free, always available, and can be used anywhere without drawing attention.",
   intro: [
     "The breath works across several layers at once. At the level of the body, the breath and the nervous system mirror each other in both directions. The breath reveals the state of the system — shallow and fast in anxiety, slow and deep in calm — and it governs that state: slow the breath deliberately, and the system follows it down into safety; quicken it, and the system rouses. You can therefore both read the nervous system through the breath and steer it through the breath.",
-    "At the level of the energy, the breath is how the life force is drawn in, moved, and directed — its pace and depth raising the life force when the system is dull, calming it when agitated, gathering it when scattered. And because a still breath quiets the mind, it reaches the mental layer too. This is why the breath is steadied before any deeper inner work: settle the breath, and the mind settles with it.",
+    "Breath also changes how much energy you have and how evenly it sits in the body. Slow, deep breathing calms an agitated system; quicker breathing lifts a dull one; even, deliberate breathing gathers attention when it is scattered. And because a still breath quiets the mind, it reaches the mental layer too. This is why the breath is steadied before any deeper inner work: settle the breath, and the mind settles with it.",
     "The breath asks nothing of your beliefs. It needs no faith, no doctrine, no allegiance to any tradition — its effect is simply physiological, and therefore universal. Breathe slowly and you will calm, whatever you believe or do not believe. The body answers the same way in everyone.",
   ],
   groups: [
@@ -20,13 +20,12 @@ export const breathLever: Lever = {
         {
           slug: "alternate-nostril-breathing",
           name: "Alternate-Nostril Breathing",
-          sanskritName: "Nadi Shodhana",
           subtitle: "the deep purifier",
           essence:
-            "The most powerful of the breaths for cleansing the energy pathways — and, by working both sides in turn, a balancer of the whole system.",
+            "The most thorough of the balancing breaths. Alternating sides slows the breath and settles the whole system evenly. (Known in the yogic traditions as nadi shodhana.)",
           mechanism: [
-            "Closing one nostril concentrates the breath. With both nostrils open, the breath divides between them; close one, and the entire force of the breath flows through the other — much as water pushed through a single pipe instead of two flows with far greater pressure, clearing the channel faster. So slow, conscious breathing through one nostril is far more potent than ordinary breathing, even deep breathing.",
-            "Alternating between the two sides brings that concentrated, intensified breath to each half of the system in turn. Because of this potency, it settles the nervous system more quickly and deeply than ordinary breathing — and above all, it is one of the most effective of all practices for clearing the energy pathways, which is what the name Nadi Shodhana means: the cleansing of the channels. As the pathways clear, the life force flows more freely through the whole system.",
+            "Closing one nostril concentrates the breath. With both nostrils open, the breath divides between them; close one, and the entire force of the breath flows through the other — much as water pushed through a single pipe instead of two flows with far greater pressure. So slow, conscious breathing through one nostril is far more potent than ordinary breathing, even deep breathing.",
+            "Alternating between the two sides brings that concentrated breath to each half of the system in turn. Because of this, it settles the nervous system more quickly and deeply than ordinary breathing, and leaves the body feeling clearer and more evenly awake from side to side.",
           ],
           protocol: [
             {
@@ -46,7 +45,7 @@ export const breathLever: Lever = {
           relatedPractices: ["coherent-breathing", "deep-belly-breathing", "spinal-breathing"],
           metaTitle: "Alternate-Nostril Breathing — How to Practise It | Sunya",
           metaDescription:
-            "The most powerful of the breaths for cleansing the energy pathways — and, by working both sides in turn, a balancer of the whole system.",
+            "The most thorough of the balancing breaths. Alternating sides slows the breath and settles the whole system evenly.",
           families: ["H4", "M4"],
           directions: ["calm", "stabilise"],
           problems: [],
@@ -65,7 +64,7 @@ export const breathLever: Lever = {
               {
                 slug: "spinal-breathing",
                 reason:
-                  "Alternate-nostril clearing naturally precedes deeper central-channel work.",
+                  "Alternate-nostril balancing naturally precedes deeper spinal-breath work.",
               },
             ],
           },
@@ -118,7 +117,7 @@ export const breathLever: Lever = {
               },
               {
                 slug: "alternate-nostril-breathing",
-                reason: "Foundational channel balancing pairs naturally with diaphragmatic reset.",
+                reason: "Foundational side-to-side balancing pairs naturally with diaphragmatic reset.",
               },
             ],
           },
@@ -278,11 +277,10 @@ export const breathLever: Lever = {
         {
           slug: "bellows-breath",
           name: "Bellows Breath",
-          sanskritName: "Bhastrika",
           subtitle: "the energising pump",
-          essence: "A vigorous pump that floods the system with energy and heat.",
+          essence: "A vigorous pump that floods the system with energy and heat. (Known in the yogic traditions as bhastrika.)",
           mechanism: [
-            "The rapid, forceful breathing, paired with the sweeping arm movement, turns the body into a pump — drawing in a surge of life force and driving it hard through the pathways, clearing stagnation and raising the body’s heat. It is one of the fastest natural ways to lift energy and alertness, without stimulants.",
+            "The rapid, forceful breathing, paired with the sweeping arm movement, turns the body into a pump. Heat builds quickly; tingling often spreads through the hands and face; and alertness rises without stimulants. It is one of the fastest natural ways to lift energy when the system is dull.",
           ],
           protocol: [
             { text: "Sit tall, with your hands in loose fists by your shoulders." },
@@ -330,11 +328,10 @@ export const breathLever: Lever = {
         {
           slug: "skull-shining-breath",
           name: "Skull-Shining Breath",
-          sanskritName: "Kapalabhati",
           subtitle: "clarity and charge",
-          essence: "Clearing the head and brightening the whole system.",
+          essence: "Clearing the head and brightening the whole system. (Known in the yogic traditions as kapalabhati.)",
           mechanism: [
-            "The short, sharp exhales act as a rapid pump — each one driving stale air from the depths of the lungs and pushing fresh life force up through the pathways, clearing them as it goes and leaving a bright, clear, awake sensation through the head.",
+            "The short, sharp exhales act as a rapid pump — each one driving stale air from the depths of the lungs and leaving a bright, clear, awake sensation through the head. Many people feel sharper and more alert within a single round.",
           ],
           protocol: [
             { text: "Sit tall." },
@@ -360,7 +357,7 @@ export const breathLever: Lever = {
             relatedPracticeRationale: [
               {
                 slug: "bellows-breath",
-                reason: "Both are fast pump-based activators that clear stagnation.",
+                reason: "Both are fast pump-based activators that raise heat and alertness.",
               },
               {
                 slug: "cyclic-hyperventilation",
@@ -379,7 +376,7 @@ export const breathLever: Lever = {
           subtitle: "intense activation",
           essence: "A powerful surge of energy, heat, and elevated mood.",
           mechanism: [
-            "Rounds of rapid, deep breathing followed by a long breath-hold flood the system with life force, reset the body’s chemistry, and generate intense internal heat and a heightened, clear state. It is the most intense of the activating breaths.",
+            "Rounds of rapid, deep breathing followed by a long breath-hold reset the body’s chemistry and generate intense internal heat and a heightened, clear state. Energy rises sharply; the body often tingles; mood lifts. It is the most intense of the activating breaths.",
             "Extra caution. Especially powerful — and never to be done in or near water.",
           ],
           protocol: [
@@ -428,7 +425,7 @@ export const breathLever: Lever = {
       slug: "the-deepest-practice",
       name: "The Deepest Practice",
       qualifier: "Meditation and higher states",
-      note: "Because these work directly on the life force and the central channel, approach them gently, never forcing, and let them unfold at their own pace.",
+      note: "Because these work directly on breath, attention, and the centre of the spine, approach them gently, never forcing, and let them unfold at their own pace.",
       safetyNote: [
         "A note on safety — important. The gentle, equal-count retention is suitable for most people and calming to practise. But as the holds grow longer, and with the Great Lock especially, these build strong internal pressure — so take care: practise seated, never in or near water, and never while driving; lengthen the holds only gradually and never strain; and stop if you feel light-headed.",
         "Avoid the longer holds and the Great Lock in pregnancy, and if you have high blood pressure, a heart condition, glaucoma, or epilepsy. The Great Lock is best learned with an experienced teacher.",
@@ -437,12 +434,11 @@ export const breathLever: Lever = {
         {
           slug: "spinal-breathing",
           name: "Spinal Breathing",
-          sanskritName: "Sushumna Kriya",
-          subtitle: "the central axis",
+          subtitle: "the central line",
           essence:
-            "The deepest and most complete of all the breath practices: opening the central channel and drawing the life force upward.",
+            "The deepest of the breath practices: attention moves with the breath along a line up the centre of the spine. (Known in the yogic traditions as sushumna kriya.)",
           mechanism: [
-            "Breathing deeply with concentrated awareness up and down the spine pulls the life force upward and opens the central channel, letting it flow freely up the spine. And as the life force rises, consciousness rises with it — into states of heightened clarity and bliss.",
+            "Breathing deeply with concentrated awareness up and down the spine draws attention and energy slowly along a line through the centre of the body, so that breath and attention move together. Practitioners often report heightened clarity and a steady, quiet alertness as the practice settles.",
           ],
           protocol: [
             { text: "Sit with the spine erect." },
@@ -468,7 +464,7 @@ export const breathLever: Lever = {
           relatedPractices: ["alternate-nostril-breathing", "breath-retention", "the-great-lock"],
           metaTitle: "Spinal Breathing — How to Practise It | Sunya",
           metaDescription:
-            "The deepest and most complete of all the breath practices: opening the central channel and drawing the life force upward.",
+            "The deepest of the breath practices: attention moves with the breath along a line up the centre of the spine.",
           families: ["L3", "M4"],
           directions: ["initiate", "stabilise", "clarify"],
           problems: [],
@@ -478,15 +474,15 @@ export const breathLever: Lever = {
             relatedPracticeRationale: [
               {
                 slug: "alternate-nostril-breathing",
-                reason: "Channel-clearing foundation before deep central-axis work.",
+                reason: "Side-to-side balancing foundation before deep spinal-breath work.",
               },
               {
                 slug: "breath-retention",
-                reason: "Both intensify internal stillness and upward energetic pressure.",
+                reason: "Both intensify internal stillness and upward attention along the spine.",
               },
               {
                 slug: "the-great-lock",
-                reason: "Both direct gathered force into the central channel upward.",
+                reason: "Both gather attention and energy along the centre of the spine.",
               },
             ],
           },
@@ -494,12 +490,11 @@ export const breathLever: Lever = {
         {
           slug: "breath-retention",
           name: "Breath Retention",
-          sanskritName: "Kumbhaka",
           subtitle: "the pause between",
           essence:
             "The conscious, deliberate pause — where the breath stops and the system opens, settles, and falls quiet.",
           mechanism: [
-            "Consciously holding the breath quiets the overthinking mind — and the two holds do different things. Holding after the in-breath builds an inner pressure that pushes the energy pathways open, drawing in and building the life force. Holding after the out-breath builds stillness — opening into a deep, silent, empty quiet, and stilling the chatter of the mind. What matters is that the holding is conscious and willed — the practice is in the deliberate pause, not the shallow breath-catching of an anxious body.",
+            "Consciously holding the breath quiets the overthinking mind — and the two holds do different things. Holding after the in-breath builds an inner pressure and a sense of fullness; energy often feels denser and more gathered. Holding after the out-breath builds stillness — opening into a deep, silent, empty quiet, and stilling the chatter of the mind. What matters is that the holding is conscious and willed — the practice is in the deliberate pause, not the shallow breath-catching of an anxious body.",
           ],
           protocol: [
             { text: "Inhale for 4 counts." },
@@ -530,7 +525,7 @@ export const breathLever: Lever = {
               },
               {
                 slug: "spinal-breathing",
-                reason: "Retention supports deeper energetic ascent and concentration.",
+                reason: "Retention supports deeper concentration along the spinal line.",
               },
               {
                 slug: "4-7-8-breathing",
@@ -542,12 +537,11 @@ export const breathLever: Lever = {
         {
           slug: "the-great-lock",
           name: "The Great Lock",
-          sanskritName: "Maha Bandha",
           subtitle: "the full seal",
           essence:
-            "The most powerful of the sealing practices: pressurising the central channel to drive the life force upward.",
+            "The most powerful of the sealing practices: hold the breath still and engage the body's locks, building internal pressure. The effect is a strong upward pull through the torso and a marked stillness afterwards. (Known in the yogic traditions as maha bandha.)",
           mechanism: [
-            "Engaging the three locks of the body — base, belly, and throat — together while the breath is held out creates a strong vacuum and pressure through the torso, driving the gathered life force up the central channel toward the higher centres. It is the most potent of the locks, and the most demanding.",
+            "Engaging the three locks of the body — base, belly, and throat — together while the breath is held out creates a strong vacuum and pressure through the torso. The effect is a strong upward pull through the centre of the body and a marked stillness afterwards. It is the most potent of the locks, and the most demanding.",
           ],
           protocol: [
             {
@@ -573,7 +567,7 @@ export const breathLever: Lever = {
           relatedPractices: ["the-root-lock", "breath-retention", "spinal-breathing"],
           metaTitle: "The Great Lock — How to Practise It | Sunya",
           metaDescription:
-            "The most powerful of the sealing practices: pressurising the central channel to drive the life force upward.",
+            "The most powerful of the sealing practices: hold the breath still and engage the body's locks, building internal pressure.",
           families: ["L3"],
           directions: ["contain", "initiate"],
           problems: [],
@@ -591,7 +585,7 @@ export const breathLever: Lever = {
               },
               {
                 slug: "spinal-breathing",
-                reason: "All three support upward movement through the central channel.",
+                reason: "All three support upward attention and steadiness along the spinal line.",
               },
             ],
           },

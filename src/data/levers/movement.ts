@@ -5,14 +5,14 @@ export const movementLever: Lever = {
   number: 2,
   name: "Movement",
   layerLine: "Physical Body + The Vital Body",
-  summaryLine: "Your body. Conscious movement increases flexibility and robustness, and grounds you in physicality in a healthy way. It reduces physical tension and helps the life force flow upward. When the mind feels restless or ungrounded, movement is often the easier way into inner stillness.",
+  summaryLine: "Your body. Conscious movement increases flexibility and robustness, and grounds you in physicality in a healthy way. It reduces physical tension and leaves the body freer, warmer, and more alert. When the mind feels restless or ungrounded, movement is often the easier way into inner stillness.",
   intro: [
     "The body is not a thing apart from your inner life — the two are woven together. The way you hold your body shapes how you feel, how you perceive, and how your energy moves: a collapsed, slumped frame dampens the whole system, while an open, upright one lets it flow freely. Tension in the body is tension in the mind; rigidity in the body is contraction in the energy. The body, you might say, is the inner state made visible — so to change the body is to change the state.",
     "Movement reaches several layers of you at once. The most obvious is the body: conscious movement — yoga, stretching, walking, tai chi, or free dance — releases the rigidity the body stores, restores circulation, and loosens the spine, the central axis through which everything flows.",
-    "But the same movement reaches deeper, into the energy. As the body opens, the pathways open with it, and the life force begins to circulate and rise — for where the body is stiff and held, the channels are crimped and the energy stagnates; where the body is fluid and open, the life force flows.",
+    "But the same movement reaches deeper than the muscles alone. As the body opens, circulation returns, heat builds, and the whole system feels more awake — for where the body is stiff and held, movement is cramped and the body feels dull; where the body is fluid and open, energy moves freely and alertness rises.",
     "And as the body moves, it lets go of what it has been holding — the fear, the tension, the old residue lodged in the muscles — and the mind and emotions ease with it.",
-    "There is a deeper truth beneath this. Rigidity is the body's form of holding on — defending, resisting, clenching against life. Fluidity is the body's form of surrender — yielding, adapting, flowing like water. So to free the body is, quite literally, to practise surrender in physical form; and a body trained to move like water becomes a system through which the life force, and consciousness itself, can move unobstructed.",
-    "Movement does three things for the system, and the practices that follow are built around them: it releases what is stuck, it circulates the life force through the opened pathways, and it builds structure — a strong, grounded body that can hold a great deal of energy without strain.",
+    "There is a deeper truth beneath this. Rigidity is the body's form of holding on — defending, resisting, clenching against life. Fluidity is the body's form of surrender — yielding, adapting, flowing like water. So to free the body is, quite literally, to practise surrender in physical form; and a body trained to move like water becomes freer throughout — stiffness releases, and consciousness itself can move unobstructed.",
+    "Movement does three things for the system, and the practices that follow are built around them: it releases what is stuck, it restores warmth and freer movement through the whole body, and it builds structure — a strong, grounded body that can hold a great deal of energy without strain.",
   ],
   practices: [
     {
@@ -60,11 +60,10 @@ export const movementLever: Lever = {
       sourceNumber: 2,
       slug: "joint-rotations",
       name: "Joint Rotations",
-      sanskritName: "Pawanmuktasana",
       subtitle: "the preliminary",
-      essence: "The simplest warm-up of all, and the minimum before any deeper practice: a slow rotation through every joint in the body, finishing at the neck. Safe for anyone.",
+      essence: "The simplest warm-up of all, and the minimum before any deeper practice: a slow rotation through every joint in the body, finishing at the neck. Safe for anyone. (Known in the yogic traditions as pawanmuktasana.)",
       mechanism: [
-        "Stiffness usually begins not in the spine but at the extremities — at the joints, where the channels must bend and cross. A stiff joint crimps the channel like a kinked hose, and the life force cannot pass. Rotating each joint in turn frees these crossings, stirs the joint’s own lubricating fluid, and opens the gates so the life force can flow back toward the spine."
+        "Stiffness usually begins not in the spine but at the extremities — at the joints, where movement must bend and cross. A stiff joint restricts motion like a kinked hose. Rotating each joint in turn frees these crossings, stirs the joint’s own lubricating fluid, and leaves the limbs warmer and freer so ease can travel back toward the spine."
       ],
       protocol: [
         {
@@ -110,7 +109,7 @@ export const movementLever: Lever = {
       subtitle: "the full mobility practice",
       essence: "The complete mobility practice: a structured sequence that works the joints, frees the neck, fortifies the spine, and balances the system with the breath. Where the Joint Rotations are the quick minimum, this is the full version.",
       mechanism: [
-        "When the body has been still or asleep, its fluids settle and the energy stagnates in the joints. Moving the limbs in time with the breath flushes them with fresh life force; freeing the neck — the bridge between body and head — clears the way to the higher centres; the squatting and spinal work strengthen the lower back against collapse; and alternating the breath between the nostrils balances the two sides of the system, settling a restless mind."
+        "When the body has been still or asleep, its fluids settle and the joints stiffen. Moving the limbs in time with the breath flushes them with warmth and fresh circulation; freeing the neck — the bridge between body and head — clears the way upward; the squatting and spinal work strengthen the lower back against collapse; and alternating the breath between the nostrils balances the two sides of the system, settling a restless mind."
       ],
       protocol: [
         {
@@ -196,10 +195,10 @@ export const movementLever: Lever = {
       sourceNumber: 4,
       slug: "spinal-loosening",
       name: "Spinal Loosening",
-      subtitle: "freeing the central axis",
-      essence: "A focused sequence for loosening the spine — the central axis along which the life force rises. Moving the spine through its three natural directions — folding, twisting, and bending to the side — releases the compression of daily life and opens the central channel.",
+      subtitle: "freeing the centre of the spine",
+      essence: "A focused sequence for loosening the spine — a line through the centre of the body along which attention and ease rise. Moving the spine through its three natural directions — folding, twisting, and bending to the side — releases the compression of daily life and frees the centre of the spine.",
       mechanism: [
-        "The spine houses the central channel; when the vertebrae are stiff and compressed from a life of sitting and facing forward, that channel is squeezed and the energy stagnates. Moving the spine in each of its directions decompresses it, and with each release sends a fresh surge of life force through the central axis — dissolving the knots and freeing the upward flow. Because everything depends on a clear central channel, this is among the most important sequences for raising the life force."
+        "When the vertebrae are stiff and compressed from a life of sitting and facing forward, the centre of the spine is squeezed and the body feels dull and held. Moving the spine in each of its directions decompresses it, and with each release sends a fresh surge of warmth and ease through a line through the centre of the spine — dissolving the knots and freeing upward movement. Because so much depends on a free, open spine, this is among the most important sequences for restoring alertness and freer movement."
       ],
       protocol: [
         {
@@ -227,7 +226,7 @@ export const movementLever: Lever = {
         "the-dance-of-dissolution"
       ],
       metaTitle: "Spinal Loosening — How to Practise It | Sunya",
-      metaDescription: "A focused sequence for loosening the spine — the central axis along which the life force rises.",
+      metaDescription: "A focused sequence for loosening the spine — a line through the centre of the body along which attention and ease rise.",
       families: ["P2", "P3"],
       generated: {
         layersSource: "INFERRED",
@@ -255,8 +254,8 @@ export const movementLever: Lever = {
       subtitle: "the complete arc",
       essence: "A complete whole-body session — the full arc of the Movement practice in a single sitting. It moves from opening the deep roots of the pelvis through mobilising the spine, into a flowing dynamic sequence and balancing postures, then unwinds in floor work, and closes with the Great Seal. The other practices each serve a focused purpose; this one brings them together.",
       mechanism: [
-        "The arc follows a precise internal logic: the dense energy in the hips and pelvis must be released first, or the life force cannot rise. Once the root is open, the spinal wave carries that energy upward through the central channel. The flowing sequence then builds",
-        "heat throughout the body, circulating the life force into every region. The floor work unwinds what remains. The Great Seal at the close contains and directs the accumulated life force so it rises rather than disperses. Before you begin. Light or empty stomach (at least 1.5 hours after a full meal). Uninterrupted time, phone off. Move slowly and gently; stop if anything hurts."
+        "The arc follows a precise internal logic: the dense, held tension in the hips and pelvis must be released first, or ease cannot rise through the torso. Once the root is open, the spinal wave carries that release upward along a line through the centre of the spine. The flowing sequence then builds",
+        "heat throughout the body, circulating warmth and freer movement into every region. The floor work unwinds what remains. The Great Seal at the close contains and directs the accumulated energy so it rises rather than disperses. Before you begin. Light or empty stomach (at least 1.5 hours after a full meal). Uninterrupted time, phone off. Move slowly and gently; stop if anything hurts."
       ],
       protocol: [
         {
@@ -384,10 +383,10 @@ export const movementLever: Lever = {
       sourceNumber: 6,
       slug: "the-dance-of-dissolution",
       name: "The Dance of Dissolution",
-      essence: "Using spontaneous, non-linear movement to dissolve the separate self through the body — bypassing the analytical mind entirely and opening the channels that structured practice cannot reach. It is also the most direct expression of Lila (divine play) — moving not as a technique, but as pure, unguarded aliveness.",
+      essence: "Using spontaneous, non-linear movement to dissolve the separate self through the body — bypassing the analytical mind entirely and freeing parts of the body that structured practice cannot reach. It is also the most direct expression of Lila (divine play) — moving not as a technique, but as pure, unguarded aliveness.",
       mechanism: [
-        "Across traditions, the same pattern appears: the Sufi whirling, the Hare Krishnas leaping in ecstasy, indigenous tribes entering rhythmic trance. This is not entertainment — it is a universal technology. The separate self does not only live in thought; it stores its conditioning as physical armor — tension in the muscles, constriction in the channels. Ordinary movement is entirely choreographed by the analytical mind, which keeps that armor locked in place. But when the body moves in fast, unpredictable, non-linear ways to a driving rhythm, the analytical mind cannot keep up. It tries to choreograph, fails, and eventually gives up. At the same time, something else is happening in the body. In daily life we move in the same narrow, habitual patterns — the same handful of gestures and postures, repeated endlessly. Everything outside those grooves slowly stiffens and closes. Free dance breaks out of those",
-        "grooves entirely, carrying the body into shapes and directions it never normally goes. The parts that habitual movement never reaches are finally opened, and the life force flows through them again. Both happen at once: the mind releases its grip, and the body opens where it had been closed. Each deepens the other, and the combined effect is far greater than either alone. The channels open. The life force floods through. And the wave, for a moment, forgets its boundaries and dissolves back into the water. What structured practice reaches methodically, ecstatic movement reaches suddenly."
+        "Across traditions, the same pattern appears: the Sufi whirling, the Hare Krishnas leaping in ecstasy, indigenous tribes entering rhythmic trance. This is not entertainment — it is a universal technology. The separate self does not only live in thought; it stores its conditioning as physical armor — tension in the muscles, constriction held in the body. Ordinary movement is entirely choreographed by the analytical mind, which keeps that armor locked in place. But when the body moves in fast, unpredictable, non-linear ways to a driving rhythm, the analytical mind cannot keep up. It tries to choreograph, fails, and eventually gives up. At the same time, something else is happening in the body. In daily life we move in the same narrow, habitual patterns — the same handful of gestures and postures, repeated endlessly. Everything outside those grooves slowly stiffens and closes. Free dance breaks out of those",
+        "grooves entirely, carrying the body into shapes and directions it never normally goes. The parts that habitual movement never reaches are finally opened, and warmth and freer movement return to them. Both happen at once: the mind releases its grip, and the body opens where it had been closed. Each deepens the other, and the combined effect is far greater than either alone. Stiffness releases. Energy floods through. And the wave, for a moment, forgets its boundaries and dissolves back into the water. What structured practice reaches methodically, ecstatic movement reaches suddenly."
       ],
       protocol: [
         {
@@ -418,7 +417,7 @@ export const movementLever: Lever = {
         "the-deep-squat"
       ],
       metaTitle: "The Dance of Dissolution — How to Practise It | Sunya",
-      metaDescription: "Using spontaneous, non-linear movement to dissolve the separate self through the body — bypassing the analytical mind entirely and opening the channels that structured practice cannot reach.",
+      metaDescription: "Using spontaneous, non-linear movement to dissolve the separate self through the body — bypassing the analytical mind entirely and freeing parts of the body that structured practice cannot reach.",
       families: ["P1", "P2", "M3"],
       generated: {
         layersSource: "INFERRED",
@@ -442,10 +441,9 @@ export const movementLever: Lever = {
     {
       slug: "the-meditation-seat",
       name: "The Meditation Seat",
-      sanskritName: "Padmasana / Siddhasana",
-      essence: "The foundation of all seated practice — a stable, self-contained base that holds the energy in and channels it upward.",
+      essence: "The foundation of all seated practice — a stable, self-contained base that holds the energy in and directs it upward. (Known in the yogic traditions as padmasana / siddhasana.)",
       mechanism: [
-        "Sitting cross-legged with the spine erect creates a triangular base, stable from every direction. It closes the lower body off, stopping the life force from dispersing downward through the legs, and creates a clear vertical axis through the central channel. The straighter the spine, the more freely the energy moves."
+        "Sitting cross-legged with the spine erect creates a triangular base, stable from every direction. It closes the lower body off, stopping energy from dispersing downward through the legs, and creates a clear vertical axis through the centre of the spine. The straighter the spine, the more freely the energy moves."
       ],
       protocol: [
         {
@@ -463,7 +461,7 @@ export const movementLever: Lever = {
         "the-prostration-sujud-balasana"
       ],
       metaTitle: "The Meditation Seat — How to Practise It | Sunya",
-      metaDescription: "The foundation of all seated practice — a stable, self-contained base that holds the energy in and channels it upward.",
+      metaDescription: "The foundation of all seated practice — a stable, self-contained base that holds the energy in and directs it upward.",
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
@@ -486,10 +484,9 @@ export const movementLever: Lever = {
     {
       slug: "the-deep-squat",
       name: "The Deep Squat",
-      sanskritName: "Malasana",
-      essence: "The body’s original resting position — a natural release for the lower spine and a direct connection to the ground.",
+      essence: "The body’s original resting position — a natural release for the lower spine and a direct connection to the ground. (Known in the yogic traditions as malasana.)",
       mechanism: [
-        "The modern habit of sitting in chairs shortens the hips and pelvis and traps stagnant energy in the lower body. The deep squat decompresses the lower spine, releases the pelvic floor, and grounds the energy of the root — bringing the base of the body into direct contact with the earth and allowing what has been held there to settle and release."
+        "The modern habit of sitting in chairs shortens the hips and pelvis and traps held tension in the lower body. The deep squat decompresses the lower spine, releases the pelvic floor, and grounds the energy of the root — bringing the base of the body into direct contact with the earth and allowing what has been held there to settle and release."
       ],
       protocol: [
         {
@@ -535,8 +532,8 @@ export const movementLever: Lever = {
       subtitle: "Child’s Pose)",
       essence: "The geometry of complete surrender — using the body to enact what the mind is being asked to do.",
       mechanism: [
-        "Lowering the forehead to the ground is the body’s most universal gesture of surrender — present in Islam, Yoga, and Zen. The body leads and the whole system follows: holding this position physically communicates surrender to the mind and energy body, and",
-        "they respond in kind. The vigilance held in the nervous system releases, the energy system opens, and the life force flows freely."
+        "Lowering the forehead to the ground is the body’s most universal gesture of surrender — present in Islam, Yoga, and Zen. The body leads and the whole system follows: holding this position physically communicates surrender to the mind and the whole system, and",
+        "they respond in kind. The vigilance held in the nervous system releases, the body softens, and energy moves freely."
       ],
       protocol: [
         {
@@ -578,8 +575,7 @@ export const movementLever: Lever = {
     {
       slug: "the-corpse-pose",
       name: "The Corpse Pose",
-      sanskritName: "Savasana",
-      essence: "Total integration — the most important position in the practice.",
+      essence: "Total integration — the most important position in the practice. (Known in the yogic traditions as savasana.)",
       mechanism: [
         "Lying completely still after active practice gives the nervous system the conditions it needs to absorb the shift that has occurred. What moves during practice settles and is saved in stillness. Skipping this phase means losing much of what was opened."
       ],
@@ -624,10 +620,9 @@ export const movementLever: Lever = {
     {
       slug: "the-consciousness-seal",
       name: "The Consciousness Seal",
-      sanskritName: "Gyan Mudra / Chin Mudra",
-      essence: "A simple, stabilising loop that focuses the mind and redirects the flow of energy.",
+      essence: "A simple, stabilising loop that focuses the mind and redirects the flow of energy. (Known in the yogic traditions as gyan mudra / chin mudra.)",
       mechanism: [
-        "Energy moves naturally through the hands and fingers and tends to flow outward through the fingertips. Connecting the thumb and index finger closes a loop, redirecting that flow back toward the centre of the body and channelling it toward the central channel."
+        "Energy moves naturally through the hands and fingers and tends to flow outward through the fingertips. Connecting the thumb and index finger closes a loop, redirecting that flow back toward the centre of the body and along a line through the centre of the spine."
       ],
       protocol: [
         {
@@ -664,8 +659,7 @@ export const movementLever: Lever = {
     {
       slug: "the-primal-seal",
       name: "The Primal Seal",
-      sanskritName: "Adi Mudra",
-      essence: "A grounding, stabilising seal — the primordial hand position of the human being.",
+      essence: "A grounding, stabilising seal — the primordial hand position of the human being. (Known in the yogic traditions as adi mudra.)",
       mechanism: [
         "This is the first hand position of the human being — the natural fist the fetus makes in the womb, before any conditioning has entered. Closing the hand into a fist in this way draws the energy of the extremities inward and downward, creating a sense of",
         "rootedness and safety in the body. It quiets restlessness and settles scattered energy."

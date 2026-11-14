@@ -7,8 +7,8 @@ export const sleepLever: Lever = {
   layerLine: "Physical Body + The Vital Body",
   summaryLine: "Ensuring proper sleep is necessary for physical rejuvenation, consolidating learning, and daily productivity. This lever helps us harness the power of sleep for health, longevity, and accessing altered states of consciousness.",
   intro: [
-    "Sleep is not passive. It is the nightly mechanism through which the nervous system recalibrates and the energy body is restored. The body repairs itself, the mind clears what the day accumulated, and what felt overwhelming the evening before often arrives transformed by morning.",
-    "This is why sleep supports every other practice. No amount of meditation compensates for a chronically exhausted nervous system. When sleep is deep, you wake with a clear and replenished system, and the life force is free to rise.",
+    "Sleep is not passive. It is the nightly mechanism through which the nervous system recalibrates and the vital body is restored. The body repairs itself, the mind clears what the day accumulated, and what felt overwhelming the evening before often arrives transformed by morning.",
+    "This is why sleep supports every other practice. No amount of meditation compensates for a chronically exhausted nervous system. When sleep is deep, you wake with a clear and replenished system, and energy is free to rise.",
     "There is something worth noticing in it. Sleep is a small death. Every night you let go of your name, your work, your problems, everything you have accumulated and taken yourself to be — and every morning you return unharmed. This crossing can also be explored deliberately, for meditative and transcendental benefit, which is what the deeper practices in this lever are for.",
   ],
   practices: [
@@ -500,7 +500,7 @@ export const sleepLever: Lever = {
       subtitle: "neurochemical waking protocols",
       essence: "Leveraging the first hour of waking to fuel the day and biologically anchor the subsequent night’s rest. How you begin the morning directly shapes the quality of the sleep that follows.",
       mechanism: [
-        "The body has a built-in wake signal: in the 30–60 minutes after waking, cortisol rises naturally to clear sleep inertia and boot up the brain. Smothering this natural process with immediate caffeine disrupts the pattern, setting up an afternoon energy crash. Additionally, the transitional state between sleep and full waking is a fleeting window of relaxed, unconditioned awareness — highly creative and intuitive. How you navigate this 60- minute window shapes the entire energetic rhythm of the day."
+        "The body has a built-in wake signal: in the 30–60 minutes after waking, cortisol rises naturally to clear sleep inertia and boot up the brain. Smothering this natural process with immediate caffeine disrupts the pattern, setting up an afternoon energy crash. Additionally, the transitional state between sleep and full waking is a fleeting window of relaxed, unconditioned awareness — highly creative and intuitive. How you navigate this 60- minute window shapes the entire rhythm of energy across the day."
       ],
       protocol: [
         {

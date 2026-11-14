@@ -117,7 +117,7 @@ export const connectionLever: Lever = {
       subtitle: "radical truthfulness",
       essence: "Dropping the social mask to exist in a state of genuine honesty with yourself and the world. The recognition that true connection is impossible if you are hiding behind a false persona.",
       mechanism: [
-        "To avoid rejection, the conditioned self constructs a social mask — a carefully managed persona designed to gain approval. Maintaining this mask consumes enormous amounts of vital energy. When you interact with someone while wearing it, they are not connecting with you; they are connecting with the performance. Even in a crowded room, you feel entirely alone. Authenticity is the practice of dropping this performance. It is terrifying at first, because it requires genuine vulnerability — the willingness to be seen as you actually are. But vulnerability has a precise energetic effect: when you speak your truth and show your real face, you signal to the other person’s nervous system that it is safe for them to do the same. The armour on both sides dissolves. Real contact becomes possible."
+        "To avoid rejection, the conditioned self constructs a social mask — a carefully managed persona designed to gain approval. Maintaining this mask consumes enormous amounts of vital energy. When you interact with someone while wearing it, they are not connecting with you; they are connecting with the performance. Even in a crowded room, you feel entirely alone. Authenticity is the practice of dropping this performance. It is terrifying at first, because it requires genuine vulnerability — the willingness to be seen as you actually are. But vulnerability has a precise effect: when you speak your truth and show your real face, you signal to the other person’s nervous system that it is safe for them to do the same. The armour on both sides dissolves. Real contact becomes possible."
       ],
       protocol: [
         {
@@ -170,7 +170,7 @@ export const connectionLever: Lever = {
       essence: "Dissolving the boundaries of the separate self by serving something larger than personal survival. The shift from a life of extraction to a life of contribution — and the discovery that serving others is one of the most direct paths to inner freedom.",
       mechanism: [
         "The separate self is fundamentally extractive in nature. It enters every",
-        "relationship, room, and community with a subconscious equation: “What can I get from this? How does this benefit me?” This constant grasping keeps the heart locked, the channels constricted, and the life force stagnant. You feel disconnected because you are treating the world as a transaction rather than a communion. Selfless service — giving your time, energy, or love with no expectation of reward — breaks this loop directly. When you pour your energy out for the benefit of another, you physically and energetically unblock the heart. You stop being a stagnant vessel hoarding water and become a hollow, flowing pipe. The life force rushes through you to serve the other person, and in doing so, it washes and restores your own inner system. What you give, you experience. What you withhold, you lose."
+        "relationship, room, and community with a subconscious equation: “What can I get from this? How does this benefit me?” This constant grasping keeps the heart locked, attention constricted, and energy stuck. You feel disconnected because you are treating the world as a transaction rather than a communion. Selfless service — giving your time, energy, or love with no expectation of reward — breaks this loop directly. When you pour your energy out for the benefit of another, you physically and inwardly open the heart. You stop being a stagnant vessel hoarding water and become a hollow, flowing pipe. Energy rushes through you to serve the other person, and in doing so, it washes and restores your own inner system. What you give, you experience. What you withhold, you lose."
       ],
       protocol: [
         {
@@ -223,9 +223,9 @@ export const connectionLever: Lever = {
       slug: "somatic-communion",
       name: "Somatic Communion",
       subtitle: "the physics of presence",
-      essence: "Utilising your physical and energetic presence to stabilise the nervous system of another human being. The practice of recognising that absolute, undivided attention is one of the most profound forms of care available.",
+      essence: "Utilising your physical presence to stabilise the nervous system of another human being. The practice of recognising that absolute, undivided attention is one of the most profound forms of care available.",
       mechanism: [
-        "Human beings co-regulate through presence. The brain is constantly scanning the micro-expressions, breathing rates, and energetic quality of the people around us to determine whether we are safe — a process called neuroception. We have mirror neurons",
+        "Human beings co-regulate through presence. The brain is constantly scanning the micro-expressions, breathing rates, and felt quality of the people around us to determine whether we are safe — a process called neuroception. We have mirror neurons",
         "that literally mirror the emotional and physical states of those we are with. When you sit with someone in distress while distracted, looking at your phone, or trying to logically fix their problem, you amplify their chaos. But when you drop into a deep, parasympathetic state of genuine presence — belly soft, breath slow, mind quiet — your whole physical system broadcasts a signal of safety. Without a single word, their nervous system begins to entrain to yours. You become a stable anchor in someone else’s storm. This is not a metaphor. It is biology."
       ],
       protocol: [
@@ -253,7 +253,7 @@ export const connectionLever: Lever = {
         "the-alchemy-of-forgiveness"
       ],
       metaTitle: "Somatic Communion — How to Practise It | Sunya",
-      metaDescription: "Utilising your physical and energetic presence to stabilise the nervous system of another human being.",
+      metaDescription: "Utilising your physical presence to stabilise the nervous system of another human being.",
       families: ["H1", "L2"],
       generated: {
         layersSource: "INFERRED",
@@ -334,10 +334,10 @@ export const connectionLever: Lever = {
       sourceNumber: 6,
       slug: "the-alchemy-of-forgiveness",
       name: "The Alchemy of Forgiveness",
-      subtitle: "severing the energetic cord",
-      essence: "The ultimate internal technology for untying the deepest knots of the heart. Releasing the heavy, stagnant energy of past grievances to reclaim your vital force and restore the fluidity of the inner system.",
+      subtitle: "releasing the hold of the past",
+      essence: "The ultimate internal technology for untying the deepest knots of the heart. Releasing the heavy, stuck residue of past grievances to reclaim your vitality and restore the fluidity of the inner system.",
       mechanism: [
-        "The conditioned self uses anger and resentment to maintain the rigid boundary of its identity. It builds itself around the story of being a victim. But holding a grudge is not just a psychological burden — it is a continuous energetic leak. When you refuse to forgive, you construct a persistent connection between your heart centre and the object of your anger. Every time you replay the betrayal in your mind, you pump your precious life force into the past, keeping the knot of pain tightly bound in your chest. Forgiveness is not a passive act of condoning harmful behaviour. It is the deliberate, ruthlessly effective act of taking your power back. By forgiving, you sever that connection, dissolve the dense tension trapped in your nervous system, and return the leaked energy to your own central channel. You are not doing this for them. You are doing it for yourself."
+        "The conditioned self uses anger and resentment to maintain the rigid boundary of its identity. It builds itself around the story of being a victim. But holding a grudge is not just a psychological burden — it is a continuous drain. When you refuse to forgive, you construct a persistent connection between your heart centre and the object of your anger. Every time you replay the betrayal in your mind, you pump your precious energy into the past, keeping the knot of pain tightly bound in your chest. Forgiveness is not a passive act of condoning harmful behaviour. It is the deliberate, ruthlessly effective act of taking your power back. By forgiving, you sever that connection, dissolve the dense tension trapped in your nervous system, and return the leaked energy to your own centre. You are not doing this for them. You are doing it for yourself."
       ],
       protocol: [
         {

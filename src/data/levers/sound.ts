@@ -5,23 +5,23 @@ export const soundLever: Lever = {
   number: 4,
   name: "Sound",
   layerLine: "The Vital Body + Emotional Body",
-  summaryLine: "Your voice. Sound vibrations such as chanting, singing, or humming can be used to calm the nervous system, focus the mind, and vibrate open the subtle energy pathways through which life force flows.",
+  summaryLine: "Your voice. Sound vibrations such as chanting, singing, or humming can be used to calm the nervous system, focus the mind, and loosen held tension so the body settles and feels open.",
   intro: [
     "Sound is the most universal inner technology in human history. Across every tradition, in every era and culture, human beings independently discovered that intentional sound transforms the inner state: the Om of Hindu practitioners, the Gregorian chants of Christian monks, the Dhikr of the Sufis, the ceremonial drumming of indigenous peoples. The outer forms differ entirely. The inner mechanism is the same.",
     "The body is largely composed of water, and water conducts sound far more efficiently than air — which means the entire physical system is deeply, immediately responsive to vibration. Sound is not an abstraction. It is a direct physical technology.",
-    "Used intentionally, specific sounds and frequencies reorganise the cells and channels, dissolve energetic knots, and create coherence throughout the whole inner structure.",
-    "The practices of this lever fall into two modes: active vocalisation — chanting and toning — which generates the vibration from within, and conscious listening, which allows curated external sound to do the work. Both converge on the same result: a cleared, coherent, open energy system.",
+    "Used intentionally, specific sounds and frequencies reorganise the cells, loosen held tightness, and create coherence throughout the whole inner structure.",
+    "The practices of this lever fall into two modes: active vocalisation — chanting and toning — which generates the vibration from within, and conscious listening, which allows curated external sound to do the work. Both converge on the same result: a cleared, coherent, open system.",
   ],
   practices: [
     {
       sourceNumber: 1,
       slug: "aum-chanting",
       name: "AUM (Om) Chanting",
-      subtitle: "the elemental vibration",
-      essence: "Attuning the individual back to the universal through the primordial sound of AUM. The use of pure, unconditioned vibration to harmonise the body, quiet the mind, and purify the energy system.",
+      subtitle: "the primordial sound",
+      essence: "Attuning the individual back to the universal through the primordial sound of AUM. The use of pure, unconditioned sound vibration to harmonise the body, quiet the mind, and settle the system.",
       mechanism: [
         "Every sound in human language requires the manipulation of the tongue. Because the tongue is the instrument of complex language, logic, and conditioned thinking, ordinary words keep us anchored in the psychological mind. But the syllables A (Ah), U (Oo), and M (Mm) are the only three sounds that can be produced without any movement of",
-        "the tongue. They are not conditioned by the human system. They are the raw, elemental vibrations of existence itself. On a biological level, this pure physical vibration directly stimulates the vagus nerve, immediately shifting the body out of survival mode. On an energetic level, it acts as an internal acoustic cleanser for the energy body. The continuous reverberation of AUM shakes loose the stagnant energy and accumulated debris held within the system — dissolving the energetic knots, clearing the channels, and opening the central channel so the life force can flow freely upward."
+        "the tongue. They are not conditioned by the human system. They are raw, elemental sounds — acoustic vibration at its simplest. On a biological level, this pure physical vibration directly stimulates the vagus nerve, immediately shifting the body out of survival mode. Felt from within, the continuous reverberation of AUM shakes loose heaviness and held tension — dissolving tightness along the centre of the body, clearing congestion, and leaving warmth and openness that moves freely upward."
       ],
       protocol: [
         {
@@ -77,7 +77,7 @@ export const soundLever: Lever = {
       subtitle: "the blueprint of the infinite",
       essence: "The ultimate affirmation of your true identity. Shifting from the illusion of the finite, lacking self into the direct recognition of Absolute Existence (Sat), Pure Consciousness (Chit), and Unconditioned Bliss (Ananda).",
       mechanism: [
-        "Human suffering arises because the conditioned self feels temporary, unconscious, and fundamentally insufficient — and attempts to fill that inner void by extracting from the physical world. Sat-Chit-Ananda is the direct energetic antidote to the Extraction Economy. It reverse-engineers the entire chain of human suffering at the source. Sat — Absolute Existence — dissolves the terror of annihilation. You are not the fragile, temporary Wave; you are the eternal Water in which the Wave arises. Chit — Pure Consciousness — dissolves the forgetting (Avidya), restoring your recognition of what you actually are: not the thoughts passing through awareness, but the awareness itself. Ananda — Unconditioned Bliss — dissolves the chronic insufficiency. Ananda is not a fleeting emotional high; it is the profound systemic relief that occurs when the separate self relaxes, the energetic knot unburdens, and the nervous system stops fighting reality. Chanting this mantra aligns the energy body with the very architectural blueprint of Life itself."
+        "Human suffering arises because the conditioned self feels temporary, unconscious, and fundamentally insufficient — and attempts to fill that inner void by extracting from the physical world. Sat-Chit-Ananda is the direct antidote to the Extraction Economy. It reverse-engineers the entire chain of human suffering at the source. Sat — Absolute Existence — dissolves the terror of annihilation. You are not the fragile, temporary Wave; you are the eternal Water in which the Wave arises. Chit — Pure Consciousness — dissolves the forgetting (Avidya), restoring your recognition of what you actually are: not the thoughts passing through awareness, but the awareness itself. Ananda — Unconditioned Bliss — dissolves the chronic insufficiency. Ananda is not a fleeting emotional high; it is the profound systemic relief that occurs when the separate self relaxes, held tightness softens, and the nervous system stops fighting reality. Chanting this mantra settles the whole system into the felt blueprint of Life itself — existence, awareness, and causeless ease."
       ],
       protocol: [
         {
@@ -135,7 +135,7 @@ export const soundLever: Lever = {
       subtitle: "surrendering to the formless",
       essence: "The ultimate act of disidentification — dissolving the illusion of the finite, separate self and bowing to the infinite, formless consciousness that is the true ground of being.",
       mechanism: [
-        "In the yogic tradition, Shiva does not merely refer to a deity. It translates literally as “that which is not” — the boundless Void, the unconditioned space of pure awareness from which all forms (the Waves) arise and into which they dissolve. Namah means “to bow.” So Om Namah Shivaya is not a religious plea to an external entity. It is a precise internal technology — a continuous declaration: “I bow to the divine formless essence within.” By repeatedly bowing the “I” to the Void, the localised contraction relaxes and the central channel opens wide."
+        "In the yogic tradition, Shiva does not merely refer to a deity. It translates literally as “that which is not” — the boundless Void, the unconditioned space of pure awareness from which all forms (the Waves) arise and into which they dissolve. Namah means “to bow.” So Om Namah Shivaya is not a religious plea to an external entity. It is a precise internal technology — a continuous declaration: “I bow to the divine formless essence within.” By repeatedly bowing the “I” to the Void, the localised contraction relaxes and a line up the centre of the spine feels open and clear."
       ],
       protocol: [
         {
@@ -193,7 +193,7 @@ export const soundLever: Lever = {
       subtitle: "illuminating the mind",
       essence: "Invoking the supreme, unconditioned intelligence of Life to illuminate the mind — dissolving the fog of the conditioned self by flooding inner space with the pure light of consciousness.",
       mechanism: [
-        "The foundational flaw of the human condition is Avidya — mistaken identity. Consciousness forgets what it actually is and contracts into a localised, survival-based state: a dense fog of fear, overthinking, and false selfhood. The Gayatri Mantra is the energetic antidote to this darkness. It is an acoustic alignment with the solar intelligence — the radiant, life-giving awareness that sustains the entire cosmos, that transforms food into flesh and beats the heart without any effort from you. This mantra does not ask for physical accumulation, which fuels the Extraction Economy. It asks only for illumination. By vibrating these specific syllables, you dissolve the stagnant debris and mental shadows within the mental body, allowing the boundless intelligence of Life to bypass the conditioned self and directly illuminate your intellect and perception."
+        "The foundational flaw of the human condition is Avidya — mistaken identity. Consciousness forgets what it actually is and contracts into a localised, survival-based state: a dense fog of fear, overthinking, and false selfhood. The Gayatri Mantra is the antidote to this darkness. It is an acoustic alignment with the solar intelligence — the radiant, life-giving awareness that sustains the entire cosmos, that transforms food into flesh and beats the heart without any effort from you. This mantra does not ask for physical accumulation, which fuels the Extraction Economy. It asks only for illumination. By sounding these specific syllables, you dissolve mental fog and held tension within the mental body, allowing the boundless intelligence of Life to bypass the conditioned self and directly illuminate your intellect and perception."
       ],
       protocol: [
         {
@@ -236,9 +236,9 @@ export const soundLever: Lever = {
     {
       slug: "conscious-listening",
       name: "Conscious Listening",
-      essence: "Deep listening — recognising that listening is not a passive act but an active force that continuously shapes the inner system. The practice of using curated sound to reorganise the nervous system, lower resistance, and unblock the energy body so life force flows freely.",
+      essence: "Deep listening — recognising that listening is not a passive act but an active force that continuously shapes the inner system. The practice of using curated sound to reorganise the nervous system, lower resistance, and loosen held tightness so the body settles and feels open.",
       mechanism: [
-        "In the science of Cymatics, when a specific sound frequency is played on a plate coated with sand, the grains snap from chaotic scattering into perfect, symmetrical geometric mandalas — visible proof that sound organises matter. You are not a metal plate; you are largely composed of fluid, and fluid conducts sound far more efficiently than air. Which means you are being continuously shaped, at the physical level, by what you hear. Disharmonious sound creates internal chaos. Harmonious sound creates coherence. There is a second mechanism at work. The nervous system naturally entrains to external sound — it synchronises to the dominant frequency of its environment. And when you listen to devotional music created with genuine feeling and intention, the heart resonates with the consciousness of the creator, absorbing not just the frequency but the inner state behind it. Listening becomes a way the inner state of the music reaches you."
+        "In the science of Cymatics, when a specific sound frequency is played on a plate coated with sand, the grains snap from chaotic scattering into perfect, symmetrical geometric mandalas — visible proof that sound organises matter. You are not a metal plate; you are largely composed of fluid, and fluid conducts sound far more efficiently than air. Which means you are being continuously shaped, at the physical level, by what you hear. Disharmonious sound creates internal chaos. Harmonious sound creates coherence. There is a second mechanism at work. The nervous system naturally entrains to external sound — it synchronises to the dominant frequency of its environment. And when you listen to devotional music created with genuine feeling and intention, the heart responds to the feeling in the music, taking in not just the sound but the inner state behind it. Listening becomes a way the inner state of the music reaches you."
       ],
       protocol: [
         {

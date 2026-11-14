@@ -10,7 +10,7 @@ export const awarenessLever: Lever = {
     "At the root of suffering is unconsciousness. Not evil, not weakness — simply not seeing. Most suffering persists because we are entangled in our thoughts, emotions and impulses. When awareness strengthens, identification loosens. Thoughts are seen as thoughts. Emotions are felt without becoming identity. Sensations arise and pass. Energy that was locked in unconscious reaction becomes available for transformation.",
     "The guiding principle is precise: whatever you shine the light of awareness on begins to transform into order and harmony.",
     "Awareness is a spectrum. Focused awareness — the Laser — concentrates attention on a single point. Open awareness — the Lantern — expands the field to hold all experience without grasping. Pure awareness — the Light Source — drops all objects entirely and rests as consciousness itself, beyond time, space and form. The entire inner journey moves along this arc.",
-    "Bring it to the body, and you become grounded in it — aware of unconscious tension held in the muscles, rooted out of the mind and into the physical, able to use the body more skilfully. Bring it to the mind, and the mental machinery becomes visible: thought processes, self-image, the unconscious patterns that were previously running unnoticed. Bring it to the emotions, and what was suppressed or hardened dissolves in the simple light of attention. Bring it to the energy body, and the pathways begin to reorganise and open, letting the life force flow freely through whatever you shine it on. Bring it to the breath and the senses, and you are grounded in the present moment — the only place where anything is actually alive.",
+    "Bring it to the body, and you become grounded in it — aware of unconscious tension held in the muscles, rooted out of the mind and into the physical, able to use the body more skilfully. Bring it to the mind, and the mental machinery becomes visible: thought processes, self-image, the unconscious patterns that were previously running unnoticed. Bring it to the emotions, and what was suppressed or hardened dissolves in the simple light of attention. Bring it to the vital body, and what was stuck begins to reorganise and open, letting energy flow freely through whatever you shine it on. Bring it to the breath and the senses, and you are grounded in the present moment — the only place where anything is actually alive.",
     "And then, at the depth of the practice, awareness is directed back upon itself. Instead of being absorbed in its objects, it recognises itself — the awareness that has been witnessing everything all along. In that moment you realise you are not the contents of awareness. You are awareness itself, in which everything is happening. Timeless, formless, limitless.",
     "This is the fruit of the practices that follow: not a state to be achieved but a natural resting. At this depth, practice is no longer about doing. It is awareness resting in its own luminous nature, at home in the eternal Now.",
   ],
@@ -64,8 +64,7 @@ export const awarenessLever: Lever = {
       sourceNumber: 2,
       slug: "inner-gaze",
       name: "Inner Gaze",
-      sanskritName: "Shambhavi Mudra",
-      essence: "Directing the mental gaze upward and inward — to the space between the eyebrows — creating a single, neutral anchor point that draws the life force upward and inward. A powerful practice for mental clarity and stillness, especially when the mind is chattering and wandering. Don’t fight the thoughts; do this instead.",
+      essence: "Directing the mental gaze upward and inward — to the space between the eyebrows — creating a single, neutral anchor point that draws attention and energy upward and inward. A powerful practice for mental clarity and stillness, especially when the mind is chattering and wandering. Don’t fight the thoughts; do this instead. (Known in the yogic traditions as shambhavi mudra.)",
       mechanism: [
         "In ordinary experience, attention moves outward through the eyes and senses. This practice reverses that direction — turning awareness inward to rest on a single, neutral point. By withdrawing attention from the stream of thoughts and anchoring it here, you cut off the energy that was fuelling the mental noise. Without attention feeding them, the thoughts begin to dissolve into stillness. The sustained inward gaze gradually opens a sense of deep inner silence and clarity."
       ],
@@ -86,7 +85,7 @@ export const awarenessLever: Lever = {
         "non-sleep-deep-rest"
       ],
       metaTitle: "Inner Gaze — How to Practise It | Sunya",
-      metaDescription: "Directing the mental gaze upward and inward — to the space between the eyebrows — creating a single, neutral anchor point that draws the life force upward and inward.",
+      metaDescription: "Directing the mental gaze upward and inward — to the space between the eyebrows — creating a single, neutral anchor point that draws attention and energy upward and inward.",
       families: ["H4", "M3"],
       directions: ["calm", "contain"],
       problems: [],
@@ -161,9 +160,9 @@ export const awarenessLever: Lever = {
       sourceNumber: 4,
       slug: "non-sleep-deep-rest",
       name: "Non-Sleep Deep Rest (NSDR)",
-      essence: "A practice of guided rest rooted in the ancient tradition of Yoga Nidra. The body becomes profoundly still — as if asleep — while the mind remains clear and quietly aware. A powerful way to recharge the energy body and calm the nervous system at any time of day.",
+      essence: "A practice of guided rest rooted in the ancient tradition of Yoga Nidra. The body becomes profoundly still — as if asleep — while the mind remains clear and quietly aware. A powerful way to recharge the vital body and calm the nervous system at any time of day.",
       mechanism: [
-        "In ordinary rest the mind is either active or unconscious. NSDR occupies a rare third state: the body fully released from effort while awareness remains gently present. In this state the nervous system recalibrates deeply — accumulated tension discharges, the life force replenishes, and the mind rests in a natural stillness that active thinking never allows."
+        "In ordinary rest the mind is either active or unconscious. NSDR occupies a rare third state: the body fully released from effort while awareness remains gently present. In this state the nervous system recalibrates deeply — accumulated tension discharges, energy replenishes, and the mind rests in a natural stillness that active thinking never allows."
       ],
       protocol: [
         {
@@ -208,9 +207,9 @@ export const awarenessLever: Lever = {
       sourceNumber: 5,
       slug: "energy-body-awareness",
       name: "Reading Your Vital State",
-      essence: "Holding awareness on the entire energy body as a unified whole — the most powerful practice for direct inner transformation. Where other practices work on the energy body indirectly, this one places awareness on it directly. The effect is immediate and far- reaching.",
+      essence: "Holding awareness on the entire vital body as a unified whole — the most powerful practice for direct inner transformation. Where other practices work on the vital body indirectly, this one places awareness on it directly. The effect is immediate and far- reaching.",
       mechanism: [
-        "The energy body responds to awareness the same way all other layers do — what is brought into the light of awareness begins to transform. By holding awareness on the entire energy body as a whole simultaneously, you activate and purify the complete network of channels at once rather than working on them individually. This is what makes the practice so potent: the scope is total. The entire inner structure is held in a single, unified field of attention, and the channels — even those deep in the periphery — begin to open and evolve."
+        "The vital body responds to awareness the same way all other layers do — what is brought into the light of awareness begins to transform. By holding awareness on the entire vital body as a whole simultaneously, you activate and clarify the complete field at once rather than working on isolated parts. This is what makes the practice so potent: the scope is total. The entire inner structure is held in a single, unified field of attention, and what was contracted — even at the periphery — begins to open and settle."
       ],
       protocol: [
         {
@@ -231,7 +230,7 @@ export const awarenessLever: Lever = {
         "compassionate-presence"
       ],
       metaTitle: "Reading Your Vital State — How to Practise It | Sunya",
-      metaDescription: "Holding awareness on the entire energy body as a unified whole — the most powerful practice for direct inner transformation.",
+      metaDescription: "Holding awareness on the entire vital body as a unified whole — the most powerful practice for direct inner transformation.",
       families: ["L2", "M4"],
       directions: ["reconnect", "stabilise"],
       problems: [],
@@ -261,9 +260,9 @@ export const awarenessLever: Lever = {
       notes: [
         "This is the most powerful practice in the entire document for rapid inner transformation."
       ],
-      essence: "Shining the light of awareness on the entire layers of being at once — physical, emotional, mental, and energetic simultaneously. More holistic and grounding than Reading Your Vital State alone, and more stabilising. It is the most powerful practice for inner transformation in this lever — and also the most demanding. It requires considerable awareness and skill as a prerequisite; the practices that precede it here are not merely preparation but the foundation that makes this one possible.",
+      essence: "Shining the light of awareness on the entire layers of being at once — physical, emotional, mental, and vital simultaneously. More holistic and grounding than Reading Your Vital State alone, and more stabilising. It is the most powerful practice for inner transformation in this lever — and also the most demanding. It requires considerable awareness and skill as a prerequisite; the practices that precede it here are not merely preparation but the foundation that makes this one possible.",
       mechanism: [
-        "In Reading Your Vital State, attention is narrowed to one specific layer. Here, awareness is expanded to hold the entire inner structure at once — body, emotions, mind, and energy body in one unified field of observation. The effect is total rather than targeted. Mental impressions, emotional patterns, and energetic blockages are all exposed to the same undivided light of awareness simultaneously. Rather than dissolving layer by layer, the accumulated inner material — the conditioning, the held tension, the karmic impressions — begins to release all at once."
+        "In Reading Your Vital State, attention is narrowed to one specific layer. Here, awareness is expanded to hold the entire inner structure at once — body, emotions, mind, and vital body in one unified field of observation. The effect is total rather than targeted. Mental impressions, emotional patterns, and held tension are all exposed to the same undivided light of awareness simultaneously. Rather than dissolving layer by layer, the accumulated inner material — the conditioning, the held tension, the karmic impressions — begins to release all at once."
       ],
       protocol: [
         {
@@ -284,7 +283,7 @@ export const awarenessLever: Lever = {
         "deep-listening-meditation"
       ],
       metaTitle: "Holistic Subtle Bodies Awareness — How to Practise It | Sunya",
-      metaDescription: "Shining the light of awareness on the entire layers of being at once — physical, emotional, mental, and energetic simultaneously.",
+      metaDescription: "Shining the light of awareness on the entire layers of being at once — physical, emotional, mental, and vital simultaneously.",
       families: ["M4"],
       directions: ["ground", "stabilise"],
       problems: [],
@@ -662,7 +661,7 @@ export const awarenessLever: Lever = {
       name: "Non-Doing",
       essence: "Dropping all sense of doing and simply being. Resting in a dimension of experience where the mind is not shaping reality — moving from compulsive thought and emotion to a state of pure emptiness, or zero.",
       mechanism: [
-        "By stepping into the gap where the usual psychological structure is absent — no goal, no method, no object — you allow the life force to reorganise itself at a subtler, more intelligent level. This is a step beyond incremental practice. Unlike mantra, visualisation, or focused attention, Non-Doing is entirely non-directive: you are not trying to achieve any particular state. You are simply stepping out of the mind entirely and allowing what is already here to be as it is."
+        "By stepping into the gap where the usual psychological structure is absent — no goal, no method, no object — you allow energy and attention to reorganise at a subtler, more intelligent level. This is a step beyond incremental practice. Unlike mantra, visualisation, or focused attention, Non-Doing is entirely non-directive: you are not trying to achieve any particular state. You are simply stepping out of the mind entirely and allowing what is already here to be as it is."
       ],
       protocol: [
         {
