@@ -46,7 +46,7 @@ const ROOT_CARDS = [
   {
     n: "01",
     name: "Unconsciousness",
-    line: "We are born with our senses turned outward for survival — unaware of the source of life within.",
+    line: "We are born with our senses turned outward for survival. Attention almost never turns back on itself.",
   },
   {
     n: "02",
@@ -103,7 +103,7 @@ const SUFFERING_BRANCH_GROUPS = [
       },
       {
         name: "Contraction",
-        line: "Identification with form causes us to feel threatened, contract physically and hold tension. And contraction inhibits the flow of life, which leaves us exhausted, without vibrance and without aliveness.",
+        line: "Identification with form causes us to feel threatened, contract physically and hold tension — and contraction is tiring to hold. It leaves the body braced and, over time, depleted.",
         felt: "This is felt as tension, exhaustion, burnout.",
       },
     ],
@@ -131,12 +131,12 @@ const SUFFERING_BRANCH_GROUPS = [
 ] as const;
 
 const JUICE_OF_LIFE_PARAGRAPHS = [
-  "Consciousness is there. Life itself is there. And from that dimension, if you stay in that dimension while experiencing the world, there is freedom, relief, peace and happiness. Living from presence helps you meet the challenges of human life with wisdom and grace.",
-  "The moment you forget yourself as pure consciousness and identify with the contents of consciousness, you become subjected to the limited nature of the material world and suffer. Life feels like you versus the world. You feel small, confined and insufficient.",
-  "That's why you are always seeking to enjoy the senses in order to feel that life is meaningful. Trying to squeeze every bit of joy out of the senses in order to feel some aliveness, some pleasure, some novelty. It is like licking the peel of the fruit instead of entering into the juice within. The juice is life itself, which we have forgotten that we are, and are now seeking happiness through the senses and the mind.",
-  "This is what we see in the world today. People become baffled and confused. People use drugs, people overdose, people commit crimes. All of it comes out of this need, this feeling of insufficiency — and from being bound by the influence of time.",
-  "That is why consciousness must withdraw itself from being identified with the body, the mind and the senses. It must become aware of itself. It must rest in its own nature.",
-  "And only then can we live from a dimension that is timeless, free, infinite and formless — unconditioned, blissful, peaceful, without conflict and without duality. Always here and now. Absolutely real and true.",
+  "When attention is taken up entirely by what it holds — a thought, a sensation, the next thing — you come to take yourself to be those things. And they are limited, so you feel limited. Life starts to feel like you against the world, and you never quite feel like enough.",
+  "So you try to make up the difference from outside, asking ordinary things to do a job they cannot do. You eat when you are not hungry. You reach for your phone before you have decided to. You want someone to tell you that you are doing fine. You get the thing you wanted, and within a week it is just normal.",
+  "Each one gives something real. Then the feeling fades, and you go looking again.",
+  "It is like licking the peel of the fruit instead of eating what is inside. The problem was never the fruit.",
+  "When attention rests in awareness rather than in what it holds, there is calm, clarity and aliveness that does not depend on circumstances going well. Nothing is being extracted from the world, so nothing has to be kept up.",
+  "The aim of the inner work is not to escape life. It is to stop meeting it from a position of lack.",
 ] as const;
 
 type LayerDef = {
@@ -187,7 +187,7 @@ const LAYERS: LayerDef[] = [
   {
     n: 2,
     t: "Emotional Body",
-    sub: "The Heart Space",
+    sub: "What you are feeling, and your capacity to feel.",
     color: "#7ec8e3",
     size: 240,
     body: [
@@ -197,7 +197,7 @@ const LAYERS: LayerDef[] = [
   {
     n: 3,
     t: "Intellectual Body",
-    sub: "Executive Discernment",
+    sub: "The part that reasons, weighs and decides.",
     color: "#5fa8d3",
     size: 320,
     body: [
@@ -207,7 +207,7 @@ const LAYERS: LayerDef[] = [
   {
     n: 4,
     t: "Mental Body",
-    sub: "Thought & Memory",
+    sub: "What you have stored, and the thinking that runs on it.",
     color: "#3d7ab0",
     size: 400,
     body: [
@@ -217,7 +217,7 @@ const LAYERS: LayerDef[] = [
   {
     n: 5,
     t: "Physical Body",
-    sub: "The Vehicle",
+    sub: "The body as seen from outside: tissue, organs, senses.",
     color: "#2a5688",
     size: 480,
     body: [
@@ -227,7 +227,7 @@ const LAYERS: LayerDef[] = [
   {
     n: 6,
     t: "Environment",
-    sub: "The World",
+    sub: "Everything around you that you are in constant exchange with.",
     color: "#1b3a60",
     size: 560,
     body: [
@@ -265,8 +265,8 @@ const LEVER_ZERO = {
   t: "Conservation",
   slug: "conservation" as const,
   blurb: {
-    italic: "Conserves life force energy.",
-    rest: "This fundamental lever helps increase vitality, aliveness and joy by reducing energy dissipation.",
+    italic: "Conserves energy.",
+    rest: "This fundamental lever increases vitality, aliveness and joy by reducing how much energy is lost.",
     notes: [
       "Reach for this when you are consistently depleted despite practice — when everything you build keeps draining away.",
     ],
@@ -289,7 +289,7 @@ const LEVERS = [
     t: "Movement",
     slug: "movement" as const,
     blurb: {
-      italic: "Releases stored physical tension and builds energetic capacity.",
+      italic: "Releases stored physical tension and builds capacity.",
       notes: [
         "Reach for this when the body is rigid, restless, or chronically tense — when the physical hardware is blocking everything above it.",
       ],
@@ -341,7 +341,7 @@ const LEVERS = [
     t: "Sustenance",
     slug: "sustenance" as const,
     blurb: {
-      italic: "Frees the life force from survival panic.",
+      italic: "Frees energy from survival panic.",
       rest: "Reach for this when financial terror or misaligned work is the primary driver of your suffering. Must be addressed before genuine inner growth is possible.",
     } satisfies LeverMapBlurb,
     group: "external" as const,
@@ -773,21 +773,21 @@ function PhilosophyPage() {
               <div className="glass-card relative overflow-hidden p-7">
                 <div className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#7ec8e3]/22 to-transparent" />
                 <h3 className="display relative z-10 text-3xl text-white">
-                  Become conscious of the source of life within
+                  Turn attention back on itself
                 </h3>
                 <p className="relative z-10 mt-5 text-[15px] leading-relaxed text-[#b8d4e8]">
-                  The essence of inner growth. Raising your consciousness, recognising that you are
-                  life itself, and resting in your true nature.
+                  The core of the inner work: attention resting in awareness rather than in what it
+                  holds.
                 </p>
               </div>
               <div className="glass-card relative overflow-hidden p-7">
                 <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#7ec8e3]/22 to-transparent" />
                 <h3 className="display relative z-10 text-3xl text-white">
-                  Live in harmony with the intelligence of life
+                  Bring it into daily life
                 </h3>
                 <p className="relative z-10 mt-5 text-[15px] leading-relaxed text-[#b8d4e8]">
-                  Bringing the wisdom and light of consciousness into your daily life and
-                  relationships, and using it to meet the challenges of the world.
+                  Using that calm and clarity to meet the challenges of daily life as they actually
+                  are.
                 </p>
               </div>
             </div>
@@ -805,9 +805,8 @@ function PhilosophyPage() {
               7 Layers of Being
             </h2>
             <p className="mx-auto mt-6 max-w-2xl text-[#b8d4e8]">
-              Experience radiates outward from the absolute core into the physical world through 7
-              distinct layers. To transform the human experience, you must understand which layer
-              you are working on.
+              Experience moves outward through seven layers, from awareness itself to the world
+              around you. To change an experience, you have to know which layer you are working on.
             </p>
           </div>
 
