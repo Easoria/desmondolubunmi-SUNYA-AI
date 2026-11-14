@@ -139,15 +139,119 @@ const JUICE_OF_LIFE_PARAGRAPHS = [
   "And only then can we live from a dimension that is timeless, free, infinite and formless — unconditioned, blissful, peaceful, without conflict and without duality. Always here and now. Absolutely real and true.",
 ] as const;
 
-const LAYERS = [
-  { n: 0, t: "Source", sub: "Pure Consciousness", color: "#fff8e0", size: 80, body: "This is life itself. Pure consciousness beyond sensory experiences and mental activities. It is boundless and inconceivable by thought. It can be experienced as your true nature when you turn inwards and observe without identifying yourself with anything. Simply be nothing inwardly." },
-  { n: 1, t: "Energy Body", sub: "The Life Force", color: "#a8e0ff", size: 160, body: "The subtle energy pathways through which life force flows to power the human system. The state of a person's energy system is usually reflected in the state of their mind, nervous system and emotions. When living unconsciously, the pathways contract and we feel less peaceful and happy. When living consciously, life force flows freely." },
-  { n: 2, t: "Emotional Body", sub: "The Heart Space", color: "#7ec8e3", size: 240, body: "The internal weather system of the human feelings. It changes to reflect the state of the energy body. It is also influenced by sensory inputs, thoughts, and external situations. When closed, we feel numb, indifferent, and find it hard to connect. When open, we feel empathic, alive, and love radiates from the inside out." },
-  { n: 3, t: "Intellectual Body", sub: "Executive Discernment", color: "#5fa8d3", size: 320, body: "The faculty of analysing, reasoning, logic, discrimination, and conscious choice. It is able to analyse memories and sensory experiences. It is not intelligence — it simply dissects and analyses information and mental data." },
-  { n: 4, t: "Mental Body", sub: "Thought & Memory", color: "#3d7ab0", size: 400, body: "The database of past accumulated memories, experiences, conditioning, endless thinking. Strong identification with the contents of the mind creates the false ego, and the illusion of psychological time as past and future." },
-  { n: 5, t: "Physical Body", sub: "The Vehicle", color: "#2a5688", size: 480, body: "The biological vessel and sensory organs through which life perceives and acts in the world. It is the outermost expression of all the inner layers." },
-  { n: 6, t: "Environment", sub: "The World", color: "#1b3a60", size: 560, body: "The physical world surrounding the body. This is what you perceive externally through the senses. The spaces, nature, and people we constantly exchange energy with. Often overlooked, the environment is a layer of being — not separate from you, but in constant dialogue with all the layers within." },
+type LayerDef = {
+  n: number;
+  t: string;
+  sub: string;
+  color: string;
+  size: number;
+  /** Paragraphs; wrap a span in **…** for bold. */
+  body: string[];
+};
+
+const LAYERS: LayerDef[] = [
+  {
+    n: 0,
+    t: "Consciousness",
+    sub: "The fact of being aware, before anything you are aware of.",
+    color: "#fff8e0",
+    size: 80,
+    body: [
+      "Whatever is happening — a thought, a feeling, a sound — something is aware of it. That awareness is not the thought, the feeling or the sound. You can check this in a second: notice something, then notice that you are noticing.",
+      "Whatever you can observe is not the observer. Everything you can notice — sensations, moods, thoughts, even your sense of who you are — arrives, changes and passes. Awareness does not appear among those changing things. It is the condition in which they appear.",
+      "Attention almost always rests in the contents. It can also be turned back on itself. That is what the practices at this level do, and when it happens every layer below changes state.",
+      "On what consciousness ultimately is, this framework takes no position. No experiment can settle it either, for the same reason as above: an experiment measures something observed, and the observer is never the observed. Consciousness therefore cannot be known as an object — only from the inside.",
+      "The traditions say a great deal here and disagree with one another. What is available to you is the looking itself: rest attention in awareness rather than in what it holds, and see what you find. Practitioners who go far with this consistently report that the sense of passing time, and of being someone separate who is watching, falls away.",
+    ],
+  },
+  {
+    n: 1,
+    t: "The Vital Body",
+    sub: "How much life is moving through you, and how freely.",
+    color: "#a8e0ff",
+    size: 160,
+    body: [
+      "Two things vary, and between them they describe your underlying state before any thought or emotion has formed.",
+      "**Charge** — how much is moving. Depleted at one end, abundant at the other.",
+      "**Ease** — how freely it moves. Constricted at one end, open at the other.",
+      "**Abundant and open.** Brightness. Things are easy to begin. Warmth, steadiness, the sense of enough.",
+      "**Abundant and constricted.** Restless, wired, irritable. Plenty of charge with nowhere clean to go.",
+      "**Depleted and open.** Low but peaceful. Tired in a way that rest actually fixes. Quiet, slow, content to do little.",
+      "**Depleted and constricted.** Low and tight. Tired in a way that rest does not fix — you sleep and wake unrefreshed. Heavy and effortful, with tension underneath it.",
+      "This is not the physical body, which is what a scan can see. It is not an emotion, which has an object and a name. It sits beneath both and shifts faster than either. The nearest modern term for part of it is nervous-system state, though the two are not simply the same thing.",
+      "On what it is made of, this framework takes no position.",
+      "Most people can place themselves within a few seconds, which is the point. This layer is read, not reasoned about.",
+      "It is the layer most directly changed by breath, by movement, and by how energy is spent or conserved — which is why those three levers sit here.",
+    ],
+  },
+  {
+    n: 2,
+    t: "Emotional Body",
+    sub: "The Heart Space",
+    color: "#7ec8e3",
+    size: 240,
+    body: [
+      "The internal weather system of the human feelings. It changes to reflect the state of the vital body. It is also influenced by sensory inputs, thoughts, and external situations. When closed, we feel numb, indifferent, and find it hard to connect. When open, we feel empathic, alive, and love radiates from the inside out.",
+    ],
+  },
+  {
+    n: 3,
+    t: "Intellectual Body",
+    sub: "Executive Discernment",
+    color: "#5fa8d3",
+    size: 320,
+    body: [
+      "The faculty of analysing, reasoning, logic, discrimination, and conscious choice. It is able to analyse memories and sensory experiences. It is not intelligence — it simply dissects and analyses information and mental data.",
+    ],
+  },
+  {
+    n: 4,
+    t: "Mental Body",
+    sub: "Thought & Memory",
+    color: "#3d7ab0",
+    size: 400,
+    body: [
+      "The database of past accumulated memories, experiences, conditioning, endless thinking. Strong identification with the contents of the mind creates the false ego, and the illusion of psychological time as past and future.",
+    ],
+  },
+  {
+    n: 5,
+    t: "Physical Body",
+    sub: "The Vehicle",
+    color: "#2a5688",
+    size: 480,
+    body: [
+      "The biological vessel and sensory organs through which life perceives and acts in the world. It is the outermost expression of all the inner layers.",
+    ],
+  },
+  {
+    n: 6,
+    t: "Environment",
+    sub: "The World",
+    color: "#1b3a60",
+    size: 560,
+    body: [
+      "The physical world surrounding the body. This is what you perceive externally through the senses. The spaces, nature, and people we constantly exchange energy with. Often overlooked, the environment is a layer of being — not separate from you, but in constant dialogue with all the layers within.",
+    ],
+  },
 ];
+
+function LayerBodyParagraph({ text }: { text: string }) {
+  const parts = text.split(/(\*\*[^*]+\*\*)/g).filter(Boolean);
+  return (
+    <p className="text-sm leading-relaxed text-[#b8d4e8]">
+      {parts.map((part, i) =>
+        part.startsWith("**") && part.endsWith("**") ? (
+          <strong key={i} className="font-medium text-white/90">
+            {part.slice(2, -2)}
+          </strong>
+        ) : (
+          <span key={i}>{part}</span>
+        ),
+      )}
+    </p>
+  );
+}
 
 /** Copy from order-of-operations Lever Map — italic tagline + body (+ optional notes). */
 type LeverMapBlurb = {
@@ -748,19 +852,23 @@ function PhilosophyPage() {
                         : "border-white/10 bg-white/[0.02] hover:border-white/20 hover:bg-white/[0.04]"
                     }`}
                   >
-                    <div className="flex items-baseline gap-4">
+                    <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
                       <span
-                        className="inline-block h-3 w-3 rounded-full"
+                        className="inline-block h-3 w-3 shrink-0 rounded-full"
                         style={{ background: l.color, boxShadow: `0 0 12px ${l.color}` }}
                       />
                       <span className="text-xs uppercase tracking-[0.25em] text-[#7ec8e3]">
                         Layer {l.n}
                       </span>
                       <span className="display text-xl text-white">{l.t}</span>
-                      <span className="ml-auto text-xs italic text-[#b8d4e8]/60">{l.sub}</span>
                     </div>
+                    <p className="mt-1.5 text-xs italic leading-relaxed text-[#b8d4e8]/70">{l.sub}</p>
                     {isActive && (
-                      <p className="mt-3 text-sm leading-relaxed text-[#b8d4e8]">{l.body}</p>
+                      <div className="mt-3 space-y-3">
+                        {l.body.map((paragraph) => (
+                          <LayerBodyParagraph key={paragraph} text={paragraph} />
+                        ))}
+                      </div>
                     )}
                   </button>
                 );

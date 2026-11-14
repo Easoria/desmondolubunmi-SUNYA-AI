@@ -4,7 +4,7 @@ export const sleepLever: Lever = {
   slug: "sleep",
   number: 8,
   name: "Sleep",
-  layerLine: "Physical Body + Energetic Body",
+  layerLine: "Physical Body + The Vital Body",
   summaryLine: "Ensuring proper sleep is necessary for physical rejuvenation, consolidating learning, and daily productivity. This lever helps us harness the power of sleep for health, longevity, and accessing altered states of consciousness.",
   intro: [
     "Sleep is not passive. It is the nightly mechanism through which the nervous system recalibrates and the energy body is restored. The body repairs itself, the mind clears what the day accumulated, and what felt overwhelming the evening before often arrives transformed by morning.",
@@ -37,7 +37,7 @@ export const sleepLever: Lever = {
       ],
       layers: [
         "Physical Body",
-        "Energetic Body"
+        "The Vital Body"
       ],
       leverSlug: "sleep",
       relatedPractices: [
@@ -92,7 +92,7 @@ export const sleepLever: Lever = {
       ],
       layers: [
         "Physical Body",
-        "Energetic Body"
+        "The Vital Body"
       ],
       leverSlug: "sleep",
       relatedPractices: [
@@ -158,7 +158,7 @@ export const sleepLever: Lever = {
       ],
       layers: [
         "Physical Body",
-        "Energetic Body"
+        "The Vital Body"
       ],
       leverSlug: "sleep",
       relatedPractices: [
@@ -218,7 +218,7 @@ export const sleepLever: Lever = {
       ],
       layers: [
         "Physical Body",
-        "Energetic Body"
+        "The Vital Body"
       ],
       leverSlug: "sleep",
       relatedPractices: [
@@ -279,7 +279,7 @@ export const sleepLever: Lever = {
       duration: "45 minutes",
       layers: [
         "Physical Body",
-        "Energetic Body"
+        "The Vital Body"
       ],
       leverSlug: "sleep",
       relatedPractices: [
@@ -346,7 +346,7 @@ export const sleepLever: Lever = {
       duration: "60 minutes",
       layers: [
         "Physical Body",
-        "Energetic Body"
+        "The Vital Body"
       ],
       leverSlug: "sleep",
       relatedPractices: [
@@ -404,7 +404,7 @@ export const sleepLever: Lever = {
       ],
       layers: [
         "Physical Body",
-        "Energetic Body"
+        "The Vital Body"
       ],
       leverSlug: "sleep",
       relatedPractices: [
@@ -461,7 +461,7 @@ export const sleepLever: Lever = {
       ],
       layers: [
         "Physical Body",
-        "Energetic Body"
+        "The Vital Body"
       ],
       leverSlug: "sleep",
       relatedPractices: [
@@ -522,7 +522,7 @@ export const sleepLever: Lever = {
       duration: "60–90 minutes",
       layers: [
         "Physical Body",
-        "Energetic Body"
+        "The Vital Body"
       ],
       leverSlug: "sleep",
       relatedPractices: [
@@ -579,7 +579,7 @@ export const sleepLever: Lever = {
       ],
       layers: [
         "Physical Body",
-        "Energetic Body"
+        "The Vital Body"
       ],
       leverSlug: "sleep",
       relatedPractices: [
@@ -639,7 +639,7 @@ export const sleepLever: Lever = {
       ],
       layers: [
         "Physical Body",
-        "Energetic Body"
+        "The Vital Body"
       ],
       leverSlug: "sleep",
       relatedPractices: [
@@ -697,7 +697,7 @@ export const sleepLever: Lever = {
       duration: "60 minutes",
       layers: [
         "Physical Body",
-        "Energetic Body"
+        "The Vital Body"
       ],
       leverSlug: "sleep",
       relatedPractices: [
@@ -748,7 +748,7 @@ export const sleepLever: Lever = {
       ],
       layers: [
         "Physical Body",
-        "Energetic Body"
+        "The Vital Body"
       ],
       leverSlug: "sleep",
       relatedPractices: [
@@ -797,7 +797,7 @@ export const sleepLever: Lever = {
       ],
       layers: [
         "Physical Body",
-        "Energetic Body"
+        "The Vital Body"
       ],
       leverSlug: "sleep",
       relatedPractices: [
