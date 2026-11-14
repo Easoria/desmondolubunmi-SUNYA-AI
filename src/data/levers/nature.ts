@@ -64,10 +64,10 @@ export const natureLever: Lever = {
       slug: "water",
       name: "Water",
       subtitle: "cleansing",
-      essence: "Using the element of water — particularly natural, living water — to physically and energetically cleanse the body, reset the nervous system, and dissolve the accumulated emotional residue of daily life.",
+      essence: "Using the element of water — particularly natural, living water — to physically cleanse the body, reset the nervous system, and dissolve the accumulated emotional residue of daily life.",
       mechanism: [
-        "Water is the element of flow, purification, and emotional release. Moving natural water — rivers, waterfalls, the breaking ocean — is associated with elevated negative ion concentrations and widely recognised across traditions as having a calming, cleansing effect on the nervous system and the energy body — not just physically, but on the deeper levels of feeling and emotion. Cold water immersion activates the Mammalian Dive Reflex — an ancient survival",
-        "mechanism that immediately slows the heart rate, deepens the breath, and forces the entire system into the present moment. Simultaneously, it spikes dopamine and norepinephrine, producing a powerful sense of aliveness and clarity. No amount of mental effort produces this effect as rapidly or completely. Water resets what the mind cannot. Major spiritual centres across history have incorporated water purification as a core technology — from the ritual kunds of ancient temples to the waterfall spray systems at sites held holy in those traditions. This is not incidental. Water is one of the most direct physical means of clearing what has accumulated in the energy body."
+        "Water is the element of flow, purification, and emotional release. Moving natural water — rivers, waterfalls, the breaking ocean — is associated with elevated negative ion concentrations and widely recognised across traditions as having a calming, cleansing effect on the nervous system — not just physically, but on the deeper levels of feeling and emotion. Cold water immersion activates the Mammalian Dive Reflex — an ancient survival",
+        "mechanism that immediately slows the heart rate, deepens the breath, and forces the entire system into the present moment. Simultaneously, it spikes dopamine and norepinephrine, producing a powerful sense of aliveness and clarity. No amount of mental effort produces this effect as rapidly or completely. Water resets what the mind cannot. Major spiritual centres across history have incorporated water purification as a core technology — from the ritual kunds of ancient temples to the waterfall spray systems at sites held holy in those traditions. This is not incidental. Water is one of the most direct physical means of clearing what has accumulated in the body and in the emotional field."
       ],
       protocol: [
         {
@@ -89,7 +89,7 @@ export const natureLever: Lever = {
         "fire"
       ],
       metaTitle: "Water — How to Practise It | Sunya",
-      metaDescription: "Using the element of water — particularly natural, living water — to physically and energetically cleanse the body, reset the nervous system, and dissolve the accumulated emotional residue of daily life.",
+      metaDescription: "Using the element of water — particularly natural, living water — to physically cleanse the body, reset the nervous system, and dissolve the accumulated emotional residue of daily life.",
       families: ["L2", "H1", "L4"],
       generated: {
         layersSource: "INFERRED",
@@ -114,10 +114,10 @@ export const natureLever: Lever = {
       slug: "air",
       name: "Air",
       subtitle: "vitalising",
-      essence: "Immersing the body and lungs in the living air of natural environments — particularly forests, mountains, and coastlines — to flush the inner system with concentrated life force and expand the energy body beyond its habitual contracted boundaries.",
+      essence: "Immersing the body and lungs in the living air of natural environments — particularly forests, mountains, and coastlines — to flush the system with fresh oxygen and open attention beyond its habitual contracted boundaries.",
       mechanism: [
-        "Indoor air is recycled, stale, and energetically depleted. The air in forests, mountains, and near the ocean is saturated with negative ions and the active life force of living organisms. Forest air, in particular, contains phytoncides — antimicrobial compounds released by trees that directly stimulate the immune system and the nervous system. The geometric structure of nature itself is significant: organic forms — fractals, tree canopies, expansive horizons — carry no harsh artificial right angles. This is interpreted by the",
-        "nervous system as a signal of fundamental safety, producing an immediate deepening of the parasympathetic state. When the energy body is no longer confined by walls and ceilings, it naturally expands. The boundaries maintained by the separate self — “I end at my skin” — begin to soften. The mind, occupied by the overwhelming richness of sensory input from a living environment, releases its habitual loops and grows quiet."
+        "Indoor air is recycled, stale, and depleted. The air in forests, mountains, and near the ocean is saturated with negative ions and the living quality of plants and open space. Forest air, in particular, contains phytoncides — antimicrobial compounds released by trees that directly stimulate the immune system and the nervous system. The geometric structure of nature itself is significant: organic forms — fractals, tree canopies, expansive horizons — carry no harsh artificial right angles. This is interpreted by the",
+        "nervous system as a signal of fundamental safety, producing an immediate deepening of the parasympathetic state. When you are no longer confined by walls and ceilings, attention naturally expands. The boundaries maintained by the separate self — “I end at my skin” — begin to soften. The mind, occupied by the overwhelming richness of sensory input from a living environment, releases its habitual loops and grows quiet."
       ],
       protocol: [
         {
@@ -139,7 +139,7 @@ export const natureLever: Lever = {
         "space"
       ],
       metaTitle: "Air — How to Practise It | Sunya",
-      metaDescription: "Immersing the body and lungs in the living air of natural environments — particularly forests, mountains, and coastlines — to flush the inner system with concentrated life force and expand the energy body beyond its habitual contracted boundaries.",
+      metaDescription: "Immersing the body and lungs in the living air of natural environments — particularly forests, mountains, and coastlines — to flush the system with fresh oxygen and open attention beyond its habitual contracted boundaries.",
       families: ["H4", "H1"],
       generated: {
         layersSource: "INFERRED",
@@ -164,10 +164,10 @@ export const natureLever: Lever = {
       slug: "fire",
       name: "Fire",
       subtitle: "igniting",
-      essence: "Using sunlight and natural flame to activate the body’s solar energy, regulate the hormonal system, awaken perception, and burn away accumulated stagnant energy that dimmer practices cannot reach.",
+      essence: "Using sunlight and natural flame to activate the body’s solar energy, regulate the hormonal system, awaken perception, and burn away accumulated heaviness that dimmer practices cannot reach.",
       mechanism: [
-        "The Sun is the primary source of life force in our solar system — the origin of all biological energy on Earth. Sunlight entering the eyes and skin does not merely provide warmth. It activates melatonin suppression, stimulates serotonin and dopamine production, synchronises the circadian clock, and directly energises the mitochondria — the cellular power plants — through photobiomodulation. Fire has a quality unique among the elements: it does not retain; it only transforms. While",
-        "earth grounds, water cleanses, and air expands, fire incinerates. This makes it the primary tool for burning what the other elements cannot fully dissolve — the deepest residues of lethargy, emotional inertia, and accumulated stagnant energy in the system."
+        "The Sun is the primary source of biological energy in our solar system — the origin of all living energy on Earth. Sunlight entering the eyes and skin does not merely provide warmth. It activates melatonin suppression, stimulates serotonin and dopamine production, synchronises the circadian clock, and directly energises the mitochondria — the cellular power plants — through photobiomodulation. Fire has a quality unique among the elements: it does not retain; it only transforms. While",
+        "earth grounds, water cleanses, and air expands, fire incinerates. This makes it the primary tool for burning what the other elements cannot fully dissolve — the deepest residues of lethargy, emotional inertia, and accumulated heaviness in the system."
       ],
       protocol: [
         {
@@ -189,7 +189,7 @@ export const natureLever: Lever = {
         "space"
       ],
       metaTitle: "Fire — How to Practise It | Sunya",
-      metaDescription: "Using sunlight and natural flame to activate the body’s solar energy, regulate the hormonal system, awaken perception, and burn away accumulated stagnant energy that dimmer practices cannot reach.",
+      metaDescription: "Using sunlight and natural flame to activate the body’s solar energy, regulate the hormonal system, awaken perception, and burn away accumulated heaviness that dimmer practices cannot reach.",
       families: ["L1", "L4", "P3", "L3"],
       generated: {
         layersSource: "INFERRED",
@@ -209,11 +209,10 @@ export const natureLever: Lever = {
     {
       slug: "space",
       name: "Space",
-      sanskritName: "Akasha",
       subtitle: "expanding",
-      essence: "Removing visual boundaries and exposing the awareness to vastness — sky, open horizon, infinite depth — to dissolve the contracted, self-referential mind and allow the energy body to expand beyond its habitual limits.",
+      essence: "Removing visual boundaries and exposing the awareness to vastness — sky, open horizon, infinite depth — to dissolve the contracted, self-referential mind and allow attention to expand beyond its habitual limits. (Known in the yogic traditions as akasha.)",
       mechanism: [
-        "The energy body mimics what it perceives. When you spend hours in confined rooms looking at small screens, the field of awareness contracts to match what it is surrounded by. When you expose the eyes and mind to genuine vastness — the open sky, the ocean horizon, the staggering depth of the night sky — the system responds by expanding to match what it perceives. The separate self, which survives by maintaining tight, defended boundaries, cannot maintain those boundaries when the environment simply exceeds them.",
+        "Awareness mimics what it perceives. When you spend hours in confined rooms looking at small screens, the field of awareness contracts to match what it is surrounded by. When you expose the eyes and mind to genuine vastness — the open sky, the ocean horizon, the staggering depth of the night sky — the system responds by expanding to match what it perceives. The separate self, which survives by maintaining tight, defended boundaries, cannot maintain those boundaries when the environment simply exceeds them.",
         "The intellect cannot compute infinity. It can process large numbers, but it cannot genuinely comprehend billions of galaxies or the silence between stars. And because it cannot comprehend it, it gives up — the analytical mind falls silent. In that silence, the separate self briefly releases its grip, and awareness expands into the openness, touching something that was always already there but that the constant noise of the mind was preventing it from recognising. The Shunya — the pure emptiness that underlies all creation — becomes briefly, directly perceptible. Not as a concept, but as the lived field in which you are already resting."
       ],
       protocol: [
@@ -235,7 +234,7 @@ export const natureLever: Lever = {
         "places-of-natural-transformational-power"
       ],
       metaTitle: "Space — How to Practise It | Sunya",
-      metaDescription: "Removing visual boundaries and exposing the awareness to vastness — sky, open horizon, infinite depth — to dissolve the contracted, self-referential mind and allow the energy body to expand beyond its habitual limits.",
+      metaDescription: "Removing visual boundaries and exposing the awareness to vastness — sky, open horizon, infinite depth — to dissolve the contracted, self-referential mind and allow attention to expand beyond its habitual limits.",
       families: ["H4", "M3"],
       generated: {
         layersSource: "INFERRED",
@@ -256,7 +255,7 @@ export const natureLever: Lever = {
       slug: "places-of-natural-transformational-power",
       name: "Places of Natural Transformational Power",
       subtitle: "the earth's natural temples",
-      essence: "Specific natural environments that strip survival noise from the system and open a direct channel to stillness, clarity, and deeper awareness.",
+      essence: "Specific natural environments that strip survival noise from the system and open a direct path to stillness, clarity, and deeper awareness.",
       mechanism: [
         "A pattern runs through the history of contemplative breakthrough: almost all of the world’s great spiritual openings occurred not in cities but in specific natural locations. The Buddha’s decisive insight is traditionally placed in a forest. The Prophet Muhammad received his revelation in a cave. Jesus spent forty days in the desert. Krishna’s divine play unfolded in forest groves. Yogis retreated to mountain peaks and river banks.",
         "This is not coincidence. These natural spaces are stripped of the chronic survival noise of daily life — and in their silence, a gap opens through which unconditioned intelligence floods in. They are the earth’s natural temples."
@@ -312,7 +311,7 @@ export const natureLever: Lever = {
           },
           {
             slug: "water",
-            reason: "Overlaps in cleansing and emotional-release pathways in natural settings."
+            reason: "Overlaps in cleansing and emotional-release effects in natural settings."
           }
         ]
       }
