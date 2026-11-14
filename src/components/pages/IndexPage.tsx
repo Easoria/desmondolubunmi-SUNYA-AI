@@ -26,8 +26,14 @@ import heroMobile640Webp from "@/assets/desmond-hero-mobile-640.webp";
 const sectionCtaClass =
   "inline-flex items-center gap-2 text-sm font-semibold tracking-wide text-[#7ec8e3] transition hover:text-white";
 
-const heroGatheringsBtn =
+const heroPrimaryBtn =
+  "inline-flex items-center justify-center rounded-full border border-white bg-white px-8 py-3.5 text-sm font-semibold tracking-wide text-[#0a1628] transition hover:bg-white/90";
+
+const heroSecondaryBtn =
   "inline-flex items-center justify-center rounded-full border border-white/45 bg-transparent px-8 py-3.5 text-sm font-medium tracking-wide text-white transition hover:border-white/80 hover:bg-white/10";
+
+/** Kept for quieter section CTAs below the hero. */
+const heroGatheringsBtn = heroSecondaryBtn;
 
 function HeroPhoto({
   className,
@@ -77,17 +83,23 @@ function HeroPhoto({
 function HeroCopy({ className = "" }: { className?: string }) {
   return (
     <div className={className}>
-      <h1 className="display whitespace-nowrap text-[clamp(1.55rem,6.4vw,1.78rem)] leading-none tracking-[-0.02em] text-white sm:text-[1.9rem] md:text-[2.15rem] lg:text-[2.45rem] xl:text-[2.7rem]">
-        You are the happiness you seek.
+      <h1 className="display text-[clamp(1.45rem,5.8vw,1.78rem)] leading-[1.12] tracking-[-0.02em] text-white sm:text-[1.9rem] md:text-[2.15rem] lg:text-[2.45rem] xl:text-[2.7rem]">
+        Your wellbeing is only as strong as its weakest part.
       </h1>
       <p className="mt-3 max-w-xl text-[0.95rem] leading-relaxed text-[#d5e6f2] sm:mt-4 sm:text-lg sm:leading-8 md:mt-7 md:max-w-[36rem] md:text-[1.2rem] md:leading-8">
-        A complete path to human wellbeing that is timeless and universal. Teachings, practices, and
-        gatherings.
+        Most approaches treat one part of a person. Sunya is a complete, non-sectarian system for
+        finding where you&apos;re actually stuck — and what to do about it.
       </p>
-      <div className="mt-8 md:mt-11">
+      <div className="mt-8 flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:gap-4 md:mt-11">
+        <Link
+          to="/problems"
+          className={`${heroPrimaryBtn} md:px-9 md:py-4 md:text-[0.95rem]`}
+        >
+          Find what helps
+        </Link>
         <Link
           to="/gatherings"
-          className={`${heroGatheringsBtn} md:px-9 md:py-4 md:text-[0.95rem]`}
+          className={`${heroSecondaryBtn} md:px-9 md:py-4 md:text-[0.95rem]`}
         >
           Upcoming gatherings
         </Link>

@@ -13,7 +13,7 @@ export const Route = createFileRoute("/")({
   head: () => {
     const title = "Desmond Olubunmi — Sunya | A Complete Map of Human Wellbeing";
     const description =
-      "Most approaches treat one part of a person. Sunya maps all twelve — six faculties of your own being, six conditions of your life.";
+      "Most approaches treat one part of a person. Sunya is a complete, non-sectarian system for finding where you're actually stuck — and what to do about it.";
 
     const seo = buildSeoHead({
       title,
