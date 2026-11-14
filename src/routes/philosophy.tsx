@@ -227,7 +227,7 @@ const LEVERS = [
     t: "Awareness",
     slug: "awareness" as const,
     blurb: {
-      italic: "The master lever.",
+      italic: "The foundational lever.",
       rest: "Reach for this once basic stability exists. Contains the entire spectrum from basic relaxation (NSDR, Body Scan) to the deepest practices in the framework (Ultimate Self-Inquiry, Aware of Awareness).",
     } satisfies LeverMapBlurb,
     group: "internal" as const,
@@ -672,7 +672,7 @@ function PhilosophyPage() {
                   Become conscious of the source of life within
                 </h3>
                 <p className="relative z-10 mt-5 text-[15px] leading-relaxed text-[#b8d4e8]">
-                  The essence of inner growth. Raising your consciousness, realising that you are
+                  The essence of inner growth. Raising your consciousness, recognising that you are
                   life itself, and resting in your true nature.
                 </p>
               </div>

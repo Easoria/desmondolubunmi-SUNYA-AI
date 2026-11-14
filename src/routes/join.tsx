@@ -122,7 +122,7 @@ function JoinPage() {
     <div className="min-h-screen bg-[#0a1628] text-white">
       <Nav />
 
-      {/* Sacred geometry backdrop */}
+      {/* Geometric backdrop */}
       <div
         aria-hidden
         className="pointer-events-none fixed inset-0 -z-0 opacity-[0.06]"

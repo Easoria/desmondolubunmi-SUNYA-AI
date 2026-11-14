@@ -40,7 +40,7 @@ export const mindLever: Lever = {
           text: "The input audit: Take an honest inventory of what you are feeding your mind daily. Look at what you watch, read, listen to, and discuss. Ask one question of each: does this create contraction — fear, anger, division — or expansion — peace, clarity, aliveness?"
         },
         {
-          text: "Guard the gates: Treat your attention as sacred territory. Cut out inputs that consistently generate contraction. Do not allow the mind to become a dumping ground for the world’s collective anxiety."
+          text: "Guard the gates: Treat your attention as protected territory. Cut out inputs that consistently generate contraction. Do not allow the mind to become a dumping ground for the world’s collective anxiety."
         },
         {
           text: "Build the positive fabric: Actively seek out knowledge, environments, and people that make you feel genuinely alive and clear. Feed the mind material that supports life. Over time, the architecture of the mind changes — and what it is built from determines what it naturally generates. As the mental diet changes, the mind ceases to be an enemy or a prison of limitations — the negative patterns and illusions lose their grip because they are no longer being fed. Curated with care, the mental body becomes a transparent lens that expresses the highest intelligence of Life."
@@ -199,7 +199,7 @@ export const mindLever: Lever = {
       sourceNumber: 4,
       slug: "laser-focus",
       name: "Laser Focus",
-      subtitle: "the mastery of attention",
+      subtitle: "the training of attention",
       essence: "Training the mind to sustain unwavering attention on a single point. Transforming scattered, leaking energy into a concentrated, powerful force by treating focus as a trainable muscle rather than a fixed talent.",
       mechanism: [
         "When your attention is scattered across multiple tasks, anxieties, and distractions, the life force bleeds out in every direction — leaving you exhausted and ineffective without clear cause. Deep focus, or Dharana, is the energetic antidote. It is not a genetic gift; it is a capacity that can be built. Every time your mind wanders and you consciously pull it back to a single target, you are performing a mental rep. Just as the body grows stronger through resistance training, the attention muscle grows through this act of return. Each time you catch the wandering and bring the mind back, you strengthen your capacity for sustained focus. By sealing the energetic leaks of scattered thinking and multi-tasking, your vital energy pools and concentrates. A scattered mind is like a weak light bulb that barely illuminates a room; a focused mind is a laser beam that can cut through steel."
@@ -209,7 +209,7 @@ export const mindLever: Lever = {
           text: "The core anchor: Dedicate 5–10 minutes daily to building the foundation. Sit quietly and select a single anchor — the sensation of the breath in the nostrils, or the steady flame of a candle (Trataka). Focus entirely on this one point and nothing else."
         },
         {
-          text: "The mental rep: Your mind will wander — it is conditioned to seek stimulation. When you notice you have drifted into thought, do not get frustrated. That moment of noticing is the awakening of consciousness. Gently, without judgment, return your attention to the anchor. Each return is one mental rep, and each rep strengthens the muscle."
+          text: "The mental rep: Your mind will wander — it is conditioned to seek stimulation. When you notice you have drifted into thought, do not get frustrated. That moment of noticing is consciousness becoming aware of itself. Gently, without judgment, return your attention to the anchor. Each return is one mental rep, and each rep strengthens the muscle."
         },
         {
           text: "Single-tasking — sealing the leaks: Carry this training into daily life. Multi-tasking is an illusion that scatters the life force. Do one thing at a time. If you are reading, just read. If you are eating, just eat. Give the present moment the full weight of your localized consciousness."
@@ -221,7 +221,7 @@ export const mindLever: Lever = {
           text: "Embrace the void — boredom as training: We live in a world built on the Extraction Economy — engineered to fill every empty moment with stimulation, keeping the attention scattered and the life force endlessly dispersed. To build genuine focus, you must learn to sit with a lack of stimulation. Stare out a window. Stand in a queue without reaching for the phone. Embracing this stillness starves the mind’s false hunger for distraction and builds immense, unwavering concentration. And beyond the training, every gap between activities is an invitation to go further — to practice presence itself, to simply rest as awareness, conscious of consciousness. These quiet moments are among the most direct doorways into the experience of pure inner silence."
         },
         {
-          text: "Consistency is far more powerful than duration: five minutes of genuine daily practice will transform your capacity over months. As the attention muscle hardens into a laser, you cease to be a victim of external distractions or unconscious thinking. You become the master of your vital energy — capable of sustaining focus on your vision until it takes form in the physical world."
+          text: "Consistency is far more powerful than duration: five minutes of genuine daily practice will transform your capacity over months. As the attention muscle hardens into a laser, you cease to be a victim of external distractions or unconscious thinking. You become able to direct your vital energy — capable of sustaining focus on your vision until it takes form in the physical world."
         }
       ],
       duration: "5–10 minutes",
@@ -393,7 +393,7 @@ export const mindLever: Lever = {
           text: "Strategic positioning — architecting the future: Now turn your gaze forward. Having accepted your current position on the board, envision the exact reality you want to create. Ask yourself: what is the most intelligent, strategic choice I can make right now to move toward that future?"
         },
         {
-          text: "Collapsing time into the Now: Finally, pull the attention back from past and future entirely. The entire network of your life — every past lesson, every future vision — is being held right here, in the eternal Now. Ground your strategic clarity into immediate, present-moment action. Mindful reflection transforms you from an unconscious reactor into a master strategist of your own existence. By studying the past, you gain unparalleled wisdom. By accepting the present, you dissolve the friction of resistance, freeing enormous vital energy. By strategically positioning the future, you become the conscious creator of your destiny. You navigate the complex network of time and action with grace, anchored in the only place where true power exists: the present moment."
+          text: "Collapsing time into the Now: Finally, pull the attention back from past and future entirely. The entire network of your life — every past lesson, every future vision — is being held right here, in the eternal Now. Ground your strategic clarity into immediate, present-moment action. Mindful reflection transforms you from an unconscious reactor into someone who can steer their own existence with clarity. By studying the past, you gain unparalleled wisdom. By accepting the present, you dissolve the friction of resistance, freeing enormous vital energy. By strategically positioning the future, you become the conscious creator of your destiny. You navigate the complex network of time and action with grace, anchored in the only place where true power exists: the present moment."
         }
       ],
       layers: [

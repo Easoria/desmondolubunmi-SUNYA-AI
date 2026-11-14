@@ -16,19 +16,19 @@ export const sustenanceLever: Lever = {
   practices: [
     {
       slug: "the-master-code-of-abundance",
-      name: "The Master Code of Abundance",
+      name: "The Code of Abundance",
       subtitle: "the conduit principle",
-      essence: "The absolute, timeless framework for achieving limitless sustenance. The realisation that true abundance is not amassed through aggressive extraction, but guaranteed by becoming an indispensable, frictionless conduit for the expansion of the whole.",
+      essence: "The absolute, timeless framework for achieving limitless sustenance. The recognition that true abundance is not amassed through aggressive extraction, but guaranteed by becoming an indispensable, frictionless conduit for the expansion of the whole.",
       mechanism: [
         "Understand the human network as a giant biological organism. In a physical",
-        "body, which blood vessel receives the most blood, oxygen, and nutrients? The main arteries. Why? Because they are the conduits responsible for sustaining the rest of the system. A cell that tries to hoard resources for itself is starved, or treated as a cancer. But a vessel that efficiently moves life force to the rest of the body is continuously flooded with maximum resources by the innate intelligence of the system. The universal law of abundance is this: the ecosystem infinitely funds whatever serves its own expansion. If your goal is merely to pay your own bills and protect your isolated self, you will only ever receive the baseline sustenance of a single, small unit. But when you expand your scope of responsibility — when you position yourself to solve massive friction, elevate consciousness, or provide immense value for the collective — the conditions become overwhelmingly favourable for life to route enormous energy through you. You do not chase abundance; you build the conditions that make it natural. The three timeless principles: Absolute Mastery. You cannot be a massive conduit if your instrument is narrow or broken. You must forge a profound, undeniable competence in your chosen domain. Whether you are building software, creating art, healing trauma, or organizing logistics, you must eliminate the friction in your craft until you operate at the level of genuine excellence. The human ecosystem ignores mediocrity — it gravitates toward, and rewards, mastery. Infinite Leverage. You will never achieve abundant sustenance if your income is permanently tied to your physical exhaustion — trading one hour of time for one unit of survival. Build systems, write code, create media, design products, lead teams. Create a solution once and allow it to serve thousands or millions of people. Leverage is what transforms a small stream into an ocean. The Frictionless State. This is the ultimate key. Money and resources are forms of energy, and energy flows away from desperation. If you build while terrified of poverty, the frequency you broadcast repels the very abundance you seek. Pursue massive value creation from a state of Internal Saturation — working with fierce ambition but with zero desperate attachment to the outcome. The guaranteed formula: Absolute Mastery + Infinite Leverage + Frictionless State. When the Wave executes all three from a place of genuine service to the Water, the universe does not merely sustain it — it makes it an artery."
+        "body, which blood vessel receives the most blood, oxygen, and nutrients? The main arteries. Why? Because they are the conduits responsible for sustaining the rest of the system. A cell that tries to hoard resources for itself is starved, or treated as a cancer. But a vessel that efficiently moves life force to the rest of the body is continuously flooded with maximum resources by the innate intelligence of the system. The universal law of abundance is this: the ecosystem infinitely funds whatever serves its own expansion. If your goal is merely to pay your own bills and protect your isolated self, you will only ever receive the baseline sustenance of a single, small unit. But when you expand your scope of responsibility — when you position yourself to solve massive friction, elevate consciousness, or provide immense value for the collective — the conditions become overwhelmingly favourable for life to route enormous energy through you. You do not chase abundance; you build the conditions that make it natural. The three timeless principles: Deep competence. You cannot be a massive conduit if your instrument is narrow or broken. You must forge a profound, undeniable competence in your chosen domain. Whether you are building software, creating art, healing trauma, or organizing logistics, you must eliminate the friction in your craft until you operate at the level of genuine excellence. The human ecosystem ignores mediocrity — it gravitates toward, and rewards, genuine skill. Infinite Leverage. You will never achieve abundant sustenance if your income is permanently tied to your physical exhaustion — trading one hour of time for one unit of survival. Build systems, write code, create media, design products, lead teams. Create a solution once and allow it to serve thousands or millions of people. Leverage is what transforms a small stream into an ocean. The Frictionless State. This is the ultimate key. Money and resources are forms of energy, and energy flows away from desperation. If you build while terrified of poverty, the frequency you broadcast repels the very abundance you seek. Pursue massive value creation from a state of Internal Saturation — working with fierce ambition but with zero desperate attachment to the outcome. The guaranteed formula: Deep competence + Infinite Leverage + Frictionless State. When the Wave executes all three from a place of genuine service to the Water, the universe does not merely sustain it — it makes it an artery."
       ],
       protocol: [
         {
           text: "Scope of responsibility: If your goal is merely to pay your own bills and protect your isolated self, you will only ever receive the baseline sustenance of a single, small unit. Expand your scope of responsibility by positioning yourself to solve massive friction, elevate consciousness, or provide immense value for the collective."
         },
         {
-          text: "Absolute Mastery: Forge profound, undeniable competence in your chosen domain. Whether you are building software, creating art, healing trauma, or organizing logistics, eliminate the friction in your craft until you operate at the level of genuine excellence."
+          text: "Deep competence: Forge profound, undeniable competence in your chosen domain. Whether you are building software, creating art, healing trauma, or organizing logistics, eliminate the friction in your craft until you operate at the level of genuine excellence."
         },
         {
           text: "Infinite Leverage: Build systems, write code, create media, design products, or lead teams. Create a solution once and allow it to serve thousands or millions of people."
@@ -37,7 +37,7 @@ export const sustenanceLever: Lever = {
           text: "The Frictionless State: Pursue massive value creation from a state of Internal Saturation — working with fierce ambition but with zero desperate attachment to the outcome."
         },
         {
-          text: "The guaranteed formula: Absolute Mastery + Infinite Leverage + Frictionless State. Execute all three from a place of genuine service to the Water."
+          text: "The guaranteed formula: Deep competence + Infinite Leverage + Frictionless State. Execute all three from a place of genuine service to the Water."
         }
       ],
       layers: [
@@ -49,7 +49,7 @@ export const sustenanceLever: Lever = {
         "decoding-money-and-value",
         "mastery-of-the-instrument"
       ],
-      metaTitle: "The Master Code of Abundance — How to Practise It | Sunya",
+      metaTitle: "The Code of Abundance — How to Practise It | Sunya",
       metaDescription: "The absolute, timeless framework for achieving limitless sustenance.",
       families: ["H1", "L1", "M4"],
       generated: {
@@ -122,19 +122,19 @@ export const sustenanceLever: Lever = {
     {
       sourceNumber: 2,
       slug: "mastery-of-the-instrument",
-      name: "Mastery of the Instrument",
+      name: "Craft of the Instrument",
       subtitle: "skill as the conduit",
       essence: "Acquiring and relentlessly sharpening a practical, high-leverage skill to interface with the physical arena with ease. The practice of turning the human machine into an undeniable asset to the ecosystem.",
       mechanism: [
         "Being spiritually awake, loving, or deeply conscious does not exempt you from the laws of physics or the Biological Tax. The infinite Water must still operate through the finite Wave. To harvest sustenance effortlessly, the Wave must possess a sharp instrument. Think of the human network as a giant puzzle. If you do not possess a defined skill — coding, building, healing, designing, communicating — you are a puzzle piece with no defined edges. The network does not know where to place you, so it does not feed you. But",
-        "when you master a craft, you become an efficient conduit: you can generate enormous value with relatively little effort, securing abundant sustenance with a fraction of the time and stress of someone operating without clear mastery."
+        "when you become skilled at a craft, you become an efficient conduit: you can generate enormous value with relatively little effort, securing abundant sustenance with a fraction of the time and stress of someone operating without clear skill."
       ],
       protocol: [
         {
           text: "The edge of the puzzle piece: Objectively evaluate your current capabilities. Do you possess a skill the human ecosystem actually needs? If not, build one. Choose a domain that aligns with your natural resonance — what genuinely gives you energy — and intersect it with what the world requires. This intersection is where effortless sustenance lives."
         },
         {
-          text: "Deep work as Dharma: Do not treat daily work as a miserable punishment endured to pay bills. Treat the mastery of your craft as Karma Yoga — the yoga of action. Whether you are writing code, baking bread, or managing logistics, execute the work with complete presence and genuine excellence. The quality of your consciousness dictates the quality of your output."
+          text: "Deep work as Dharma: Do not treat daily work as a miserable punishment endured to pay bills. Treat the craft of your work as Karma Yoga — the yoga of action. Whether you are writing code, baking bread, or managing logistics, execute the work with complete presence and genuine excellence. The quality of your consciousness dictates the quality of your output."
         },
         {
           text: "The leverage principle: The ego works linearly — trading one hour of time for one unit of survival. To make sustenance truly effortless, build skills that multiply your effort. Write a piece of code that serves a million people. Create a piece of content that inspires thousands while you sleep. Leverage divorces your survival from your physical exhaustion — and that freedom is what makes genuine inner work possible."
@@ -150,7 +150,7 @@ export const sustenanceLever: Lever = {
         "the-economics-of-simplicity",
         "right-livelihood"
       ],
-      metaTitle: "Mastery of the Instrument — How to Practise It | Sunya",
+      metaTitle: "Craft of the Instrument — How to Practise It | Sunya",
       metaDescription: "Acquiring and relentlessly sharpening a practical, high-leverage skill to interface with the physical arena with ease.",
       families: ["L1"],
       generated: {
@@ -231,7 +231,7 @@ export const sustenanceLever: Lever = {
       subtitle: "aligning income with integrity",
       essence: "Ensuring the method by which you gather sustenance does not poison the inner system. The practice of aligning daily work with the highest principles of unconditioned intelligence.",
       mechanism: [
-        "While money itself is a neutral energy, the action used to acquire it is not. If you generate sustenance through manipulation, deceit, exploiting the vulnerable, or destroying the environment, you are operating from the darkest dimension of the survival instinct. Even if this generates significant financial wealth, it destroys the human machine from the inside out. Actions of this kind create a persistent knot of subconscious guilt and shame in the heart — and block the clear perception needed to navigate life from a place of genuine intelligence. You cannot build an awakened, open inner life if you spend eight hours a day harming the human network. The generation of sustenance must be clean for the ascent to be real."
+        "While money itself is a neutral energy, the action used to acquire it is not. If you generate sustenance through manipulation, deceit, exploiting the vulnerable, or destroying the environment, you are operating from the darkest dimension of the survival instinct. Even if this generates significant financial wealth, it destroys the human machine from the inside out. Actions of this kind create a persistent knot of subconscious guilt and shame in the heart — and block the clear perception needed to navigate life from a place of genuine intelligence. You cannot build a clear, open inner life if you spend eight hours a day harming the human network. The generation of sustenance must be clean for the ascent to be real."
       ],
       protocol: [
         {

@@ -67,7 +67,7 @@ export const natureLever: Lever = {
       essence: "Using the element of water — particularly natural, living water — to physically and energetically cleanse the body, reset the nervous system, and dissolve the accumulated emotional residue of daily life.",
       mechanism: [
         "Water is the element of flow, purification, and emotional release. Moving natural water — rivers, waterfalls, the breaking ocean — is associated with elevated negative ion concentrations and widely recognised across traditions as having a calming, cleansing effect on the nervous system and the energy body — not just physically, but on the deeper levels of feeling and emotion. Cold water immersion activates the Mammalian Dive Reflex — an ancient survival",
-        "mechanism that immediately slows the heart rate, deepens the breath, and forces the entire system into the present moment. Simultaneously, it spikes dopamine and norepinephrine, producing a powerful sense of aliveness and clarity. No amount of mental effort produces this effect as rapidly or completely. Water resets what the mind cannot. Major spiritual centres across history have incorporated water purification as a core technology — from the ritual kunds of ancient temples to the waterfall spray systems at sacred sites. This is not incidental. Water is one of the most direct physical means of clearing what has accumulated in the energy body."
+        "mechanism that immediately slows the heart rate, deepens the breath, and forces the entire system into the present moment. Simultaneously, it spikes dopamine and norepinephrine, producing a powerful sense of aliveness and clarity. No amount of mental effort produces this effect as rapidly or completely. Water resets what the mind cannot. Major spiritual centres across history have incorporated water purification as a core technology — from the ritual kunds of ancient temples to the waterfall spray systems at sites held holy in those traditions. This is not incidental. Water is one of the most direct physical means of clearing what has accumulated in the energy body."
       ],
       protocol: [
         {
@@ -247,7 +247,7 @@ export const natureLever: Lever = {
           },
           {
             slug: "places-of-natural-transformational-power",
-            reason: "Part Two follows the elemental practices and extends space into sacred natural environments."
+            reason: "Part Two follows the elemental practices and extends space into natural environments used for contemplative work."
           }
         ]
       }
@@ -258,7 +258,7 @@ export const natureLever: Lever = {
       subtitle: "the earth's natural temples",
       essence: "Specific natural environments that strip survival noise from the system and open a direct channel to stillness, clarity, and deeper awareness.",
       mechanism: [
-        "A pattern runs through the history of human awakening: almost all of the world’s great spiritual breakthroughs occurred not in cities but in specific natural locations. The Buddha attained enlightenment in a forest. The Prophet Muhammad received his revelation in a cave. Jesus spent forty days in the desert. Krishna’s divine play unfolded in forest groves. Yogis retreated to mountain peaks and river banks.",
+        "A pattern runs through the history of contemplative breakthrough: almost all of the world’s great spiritual openings occurred not in cities but in specific natural locations. The Buddha’s decisive insight is traditionally placed in a forest. The Prophet Muhammad received his revelation in a cave. Jesus spent forty days in the desert. Krishna’s divine play unfolded in forest groves. Yogis retreated to mountain peaks and river banks.",
         "This is not coincidence. These natural spaces are stripped of the chronic survival noise of daily life — and in their silence, a gap opens through which unconditioned intelligence floods in. They are the earth’s natural temples."
       ],
       protocol: [
@@ -269,7 +269,7 @@ export const natureLever: Lever = {
           text: "Mountains — the ascent of consciousness. The mountain is the oldest symbol of spiritual ascent, and the symbol is precise: effort, obstacles, gradual elevation, and a final vantage point where everything below is seen in true scale. As you ascend, the noise of daily life recedes, the air clears, and the life force begins to move upward through the central channel.\n\nHow to engage: Climb with physical effort — do not simply drive to a peak. At the summit, sit in stillness. Let the distance and openness mirror the expansiveness within."
         },
         {
-          text: "Caves — the womb of the earth. A cave enforces sensory withdrawal structurally: darkness, silence, enclosure, and no stimulation for the mind to latch onto. With nowhere outward to go, awareness turns inward. This is why many mystics used caves for deep contemplative work.\n\nHow to engage: Find a natural cave (not a brightly lit tourist cave). Sit safely in the quiet. If old thoughts and unresolved material surface, let them surface — this is part of the purification."
+          text: "Caves — the womb of the earth. A cave enforces sensory withdrawal structurally: darkness, silence, enclosure, and no stimulation for the mind to latch onto. With nowhere outward to go, awareness turns inward. This is why many contemplatives used caves for deep inner work.\n\nHow to engage: Find a natural cave (not a brightly lit tourist cave). Sit safely in the quiet. If old thoughts and unresolved material surface, let them surface — this is part of the purification."
         },
         {
           text: "Forests — the cathedral of life. A forest is alive with sound, but free of human anxiety-noise. Brainwaves entrain to natural rhythm, the immune and nervous systems regulate, and the boundary between separate self and living world begins to soften.\n\nHow to engage: Enter without destination, phone, or timeline. Walk slowly. Touch the trees. Sit on the ground. Breathe and allow the frequency of the place to recalibrate the system."
