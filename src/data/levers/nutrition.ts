@@ -34,7 +34,7 @@ export const nutritionLever: Lever = {
           text: "Avoiding friction agents: Observe the effect of heavy fats, refined sugars, excessive salt, and extreme spices. While they may stimulate the taste buds, they destabilise the nervous system — forcing the digestive organs to work in overdrive and stealing life force from the brain and the higher energy centres."
         },
         {
-          text: "Objective somatic observation: Abandon strict dietary labels and dogmas — every biological system has unique needs. Instead, become a master observer. Eat a specific food, sit quietly for 30 minutes, and observe the result honestly. Is your mind sharp? Is your body light? Is your breath clear? Let the energetic feedback of your own system dictate what you eat."
+          text: "Objective somatic observation: Abandon strict dietary labels and dogmas — every biological system has unique needs. Instead, become a careful observer. Eat a specific food, sit quietly for 30 minutes, and observe the result honestly. Is your mind sharp? Is your body light? Is your breath clear? Let the energetic feedback of your own system dictate what you eat."
         }
       ],
       duration: "30 minutes",
@@ -234,7 +234,7 @@ export const nutritionLever: Lever = {
       slug: "conscious-consumption",
       name: "Conscious Consumption",
       subtitle: "how to eat",
-      essence: "Shifting the body into the precise physiological state required to fully extract nourishment from food. The practice of realising that eating while stressed turns even the finest food into a burden.",
+      essence: "Shifting the body into the precise physiological state required to fully extract nourishment from food. The practice of recognising that eating while stressed turns even the finest food into a burden.",
       mechanism: [
         "The autonomic nervous system has two primary gears: sympathetic (survival mode) and parasympathetic (rest and digest). When you eat while stressed — rushing between tasks, watching alarming news, or working through lunch — the brain has physically diverted blood away from the digestive organs and into the limbs. In this state, the digestive system is essentially offline. Even the highest-quality food, consumed in a state of tension and distraction, will ferment, stagnate, and produce metabolic waste rather than nourishment. To extract maximum life force from food, the body must first be anchored in a state of genuine safety and presence."
       ],

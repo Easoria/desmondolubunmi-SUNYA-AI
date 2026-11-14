@@ -253,7 +253,7 @@ export const movementLever: Lever = {
       slug: "the-full-practice",
       name: "The Full Practice",
       subtitle: "the complete arc",
-      essence: "A complete whole-body session — the full arc of the Movement practice in a single sitting. It moves from opening the deep roots of the pelvis through awakening the spine, into a flowing dynamic sequence and balancing postures, then unwinds in floor work, and closes with the Great Seal. The other practices each serve a focused purpose; this one brings them together.",
+      essence: "A complete whole-body session — the full arc of the Movement practice in a single sitting. It moves from opening the deep roots of the pelvis through mobilising the spine, into a flowing dynamic sequence and balancing postures, then unwinds in floor work, and closes with the Great Seal. The other practices each serve a focused purpose; this one brings them together.",
       mechanism: [
         "The arc follows a precise internal logic: the dense energy in the hips and pelvis must be released first, or the life force cannot rise. Once the root is open, the spinal wave carries that energy upward through the central channel. The flowing sequence then builds",
         "heat throughout the body, circulating the life force into every region. The floor work unwinds what remains. The Great Seal at the close contains and directs the accumulated life force so it rises rather than disperses. Before you begin. Light or empty stomach (at least 1.5 hours after a full meal). Uninterrupted time, phone off. Move slowly and gently; stop if anything hurts."

@@ -415,7 +415,7 @@ export const awarenessLever: Lever = {
       slug: "pure-observation",
       name: "Pure Observation",
       subtitle: "watching the mind",
-      essence: "The solution to compulsive thinking is not suppression — it is consciousness. The key to freedom is realising you are not your thoughts.",
+      essence: "The solution to compulsive thinking is not suppression — it is consciousness. The key to freedom is recognising you are not your thoughts.",
       mechanism: [
         "We suffer from our thoughts not because they arise, but because we identify with them — we become them, follow their narrative, and are carried away by their momentum. By stepping back and simply observing the stream of thoughts rather than participating in it, you make a fundamental distinction: there is the content of the mind, and there is the awareness watching that content. They are not the same. As this distinction deepens, thoughts lose their power. They continue to arise, but they no longer grip."
       ],
@@ -601,9 +601,9 @@ export const awarenessLever: Lever = {
       slug: "ultimate-self-inquiry",
       name: "Ultimate Self-Inquiry",
       subtitle: "dissolving the illusory self",
-      essence: "Meditating on the nature of death, on what existed before birth, and on the ending of time — to cut through the illusion of the separate self at its deepest root and realise pure consciousness.",
+      essence: "Meditating on the nature of death, on what existed before birth, and on the ending of time — to cut through the illusion of the separate self at its deepest root and recognise pure consciousness.",
       mechanism: [
-        "We maintain a deeply rooted sense of “I, me, and mine” — a vague, illusory mental identity that exists due to a lack of awareness and the underlying fear of being nothing. This false identity leads to self-centred activity and inevitable suffering, taking charge whenever we become unconscious. The physical self is constantly fleeting — it is time itself, in motion. But this limited, time-bound experience happens within a deeper dimension: consciousness itself. That consciousness has no shape or form. It is formless, timeless, and beyond birth and death. When we realise the limited self is a mirage, we see that reality is pure consciousness — which had temporarily veiled itself in the appearance of a separate identity."
+        "We maintain a deeply rooted sense of “I, me, and mine” — a vague, illusory mental identity that exists due to a lack of awareness and the underlying fear of being nothing. This false identity leads to self-centred activity and inevitable suffering, taking charge whenever we become unconscious. The physical self is constantly fleeting — it is time itself, in motion. But this limited, time-bound experience happens within a deeper dimension: consciousness itself. That consciousness has no shape or form. It is formless, timeless, and beyond birth and death. When we recognise the limited self is a mirage, we see that reality is pure consciousness — which had temporarily veiled itself in the appearance of a separate identity."
       ],
       protocol: [
         {
@@ -619,7 +619,7 @@ export const awarenessLever: Lever = {
           text: "Rest in not-knowing: Let go of all identities. Rest in not-knowing, in silence, in pure being. Just be. Rest as awareness."
         },
         {
-          text: "Dissolve duality: Seek to unveil the livingness that exists beyond birth, death, and non- existence. Allow experience, the act of experiencing, and the experiencer to dissolve into a nothingness that is timelessly alive as the eternal Now. Go deep into your being and realise the truth. Beyond this limited reality of time-bound existence, there is the eternal, transcendental consciousness that is witnessing everything perceived. Rest in this ultimate realisation: “I am not the body. I am not the mind. I am not my past. I have no future. I don’t belong to the movement of time. I have no shape or form. I have no identity. I am nothingness. I am life itself. I am pure consciousness. The supreme reality.”"
+          text: "Dissolve duality: Seek to unveil the livingness that exists beyond birth, death, and non- existence. Allow experience, the act of experiencing, and the experiencer to dissolve into a nothingness that is timelessly alive as the eternal Now. Go deep into your being and recognise the truth. Beyond this limited reality of time-bound existence, there is the eternal, transcendental consciousness that is witnessing everything perceived. Rest in this ultimate recognition: “I am not the body. I am not the mind. I am not my past. I have no future. I don’t belong to the movement of time. I have no shape or form. I have no identity. I am nothingness. I am life itself. I am pure consciousness. The supreme reality.”"
         }
       ],
       layers: [
@@ -633,7 +633,7 @@ export const awarenessLever: Lever = {
         "aware-of-awareness"
       ],
       metaTitle: "Ultimate Self-Inquiry — How to Practise It | Sunya",
-      metaDescription: "Meditating on the nature of death, on what existed before birth, and on the ending of time — to cut through the illusion of the separate self at its deepest root and realise pure consciousness.",
+      metaDescription: "Meditating on the nature of death, on what existed before birth, and on the ending of time — to cut through the illusion of the separate self at its deepest root and recognise pure consciousness.",
       families: ["H1"],
       directions: ["clarify"],
       problems: [],
@@ -779,9 +779,9 @@ export const awarenessLever: Lever = {
       slug: "the-shunya",
       name: "The Shunya",
       subtitle: "being nothing",
-      essence: "The practice of being absolutely nothing inwardly. Not as a state created or captured — but as something realized. The discovery that in true nothingness, the very essence of life itself is found.",
+      essence: "The practice of being absolutely nothing inwardly. Not as a state created or captured — but as something recognised. The discovery that in true nothingness, the very essence of life itself is found.",
       mechanism: [
-        "In the nothingness, Truth is experienced — not as a thing, not as a concept, but as the very essence of life itself. It is a nothingness that is full of life. An emptiness that is totally alive and luminous. A stillness that is living and present. Completely nothing — without form, without movement, without activity, without boundary. To arrive at this is to not take shape with anything perceivable or known. Knowledge is useless here. Anything known is not nothingness — it is still something, still perceived, still a form. So the movement is to let go of identifying with anything known, and then take the next step: to surrender and agree to be nothing. We carry a deep fear of being nothing. The separate self clings to being something — to having a form, an image, a story, an identity. But if we truly and totally submit and surrender — if we agree to not being part of anything fleeting — then in that dissolution, the ending of everything we typically take ourselves to be, there is a true experience of inner nothingness. Not as something created. Not as something captured. Something that is realized."
+        "In the nothingness, Truth is experienced — not as a thing, not as a concept, but as the very essence of life itself. It is a nothingness that is full of life. An emptiness that is totally alive and luminous. A stillness that is living and present. Completely nothing — without form, without movement, without activity, without boundary. To arrive at this is to not take shape with anything perceivable or known. Knowledge is useless here. Anything known is not nothingness — it is still something, still perceived, still a form. So the movement is to let go of identifying with anything known, and then take the next step: to surrender and agree to be nothing. We carry a deep fear of being nothing. The separate self clings to being something — to having a form, an image, a story, an identity. But if we truly and totally submit and surrender — if we agree to not being part of anything fleeting — then in that dissolution, the ending of everything we typically take ourselves to be, there is a true experience of inner nothingness. Not as something created. Not as something captured. Something that is recognised."
       ],
       protocol: [
         {

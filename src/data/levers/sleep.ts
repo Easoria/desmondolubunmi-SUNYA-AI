@@ -568,7 +568,7 @@ export const sleepLever: Lever = {
           text: "Jet lag: Upon arrival in a new time zone, immediately expose yourself to bright sunlight to force the circadian clock to begin adapting. Time your meals to the new time zone from the moment you land. Resist the pull of your old bedtime and push through to a normal evening hour at your destination."
         },
         {
-          text: "Shift work: Become a master of artificial light. Keep your workspace brightly lit during a night shift. On the way home, wear blue-light-blocking glasses to simulate dusk. Sleep in a heavily blacked-out room with earplugs. If an 8-hour block is impossible, anchor your rest around a solid 4–5-hour core and supplement with a strategic pre-shift nap."
+          text: "Shift work: Learn to work with artificial light deliberately. Keep your workspace brightly lit during a night shift. On the way home, wear blue-light-blocking glasses to simulate dusk. Sleep in a heavily blacked-out room with earplugs. If an 8-hour block is impossible, anchor your rest around a solid 4–5-hour core and supplement with a strategic pre-shift nap."
         },
         {
           text: "New parenthood: Do not add anxiety to fatigue. Share the overnight load in defined shifts — one partner takes the early hours while the other sleeps with earplugs, then they switch. A consolidated 4-hour block of uninterrupted sleep is biologically superior to eight hours fragmented by constant waking. When sleep is impossible, use the NSDR protocol or breathwork to rest the nervous system even without full unconsciousness."
@@ -675,7 +675,7 @@ export const sleepLever: Lever = {
       sourceNumber: 12,
       slug: "the-somatic-runway",
       name: "The Somatic Runway",
-      subtitle: "the master wind-down sequence",
+      subtitle: "the full wind-down sequence",
       essence: "A structured 60-minute sequence that systematically transitions the nervous system from the demands of the day to the threshold of deep sleep. The ritual that makes everything else in this lever work.",
       mechanism: [
         "Deep sleep does not switch on instantly. The descent from full wakefulness into unconscious repair requires a biological runway — a graduated lowering of core temperature, cortisol, and neurological activation. Most people skip this runway entirely, moving from screen to bed in minutes and then wondering why sleep does not come. By creating a consistent, unhurried transition sequence, you train the brain to associate each step with the next — building a powerful automatic chain that leads reliably to sleep."
@@ -778,7 +778,7 @@ export const sleepLever: Lever = {
     {
       sourceNumber: 14,
       slug: "the-threshold-of-awakening",
-      name: "The Threshold of Awakening",
+      name: "The Threshold of Sleep",
       subtitle: "witnessing the crossing",
       essence: "A more advanced practice that builds on everything in this lever — bringing a thread of gentle awareness to the natural process of falling asleep, without trying to do anything at all.",
       mechanism: [
@@ -803,7 +803,7 @@ export const sleepLever: Lever = {
       relatedPractices: [
         "data-and-intuition"
       ],
-      metaTitle: "The Threshold of Awakening — How to Practise It | Sunya",
+      metaTitle: "The Threshold of Sleep — How to Practise It | Sunya",
       metaDescription: "A more advanced practice that builds on everything in this lever — bringing a thread of gentle awareness to the natural process of falling asleep, without trying to do anything at all.",
       directions: ["soften", "calm", "release", "slow"],
       problems: [],

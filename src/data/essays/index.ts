@@ -359,7 +359,7 @@ export const essays: Essay[] = [
           "This is exactly what happened to the one life. Pouring itself into a form to experience its own creation, it became so absorbed in the experience — so fixated on the body, the mind, the world — that it lost sight of itself as the awareness behind it all. It fell asleep inside its own dream. And in that forgetting, it stopped knowing itself as the boundless life, and began to take itself to be only the form: this body, this mind, this small and separate someone.",
           "This is the birth of the ego — not as a thing, but as a case of mistaken identity. The one life, having forgotten itself, now feels itself to be a separate individual: a small self in here, surrounded by a vast world of “not me” out there. The seamless whole appears to split in two — “me” and “everything else.” This split is what we call duality. And it is the single root from which every form of human suffering will grow.",
           "And yet — none of it is actually true. The separation is real as an experience, but false as a fact. The wave has not truly become separate from the ocean; it has only forgotten, for a moment, that it was always water. Nothing has really divided. The one life is still the one life — merely dreaming itself to be many, and asleep to what it is.",
-          "This is why the entire human journey, beneath everything else, is a single movement: the one life slowly waking back up to itself — remembering, while still in form, what it never stopped being. But before we can speak of that awakening, we must first understand precisely what this one forgetting does to a human being. Because from this single misperception — “I am a separate self” — an entire architecture of suffering unfolds, with a clear and traceable mechanism."
+          "This is why the entire human journey, beneath everything else, is a single movement: the one life slowly waking back up to itself — remembering, while still in form, what it never stopped being. But before we can speak of that remembering, we must first understand precisely what this one forgetting does to a human being. Because from this single misperception — “I am a separate self” — an entire architecture of suffering unfolds, with a clear and traceable mechanism."
         ],
         "blocks": [
           {
@@ -414,7 +414,7 @@ export const essays: Essay[] = [
             "type": "paragraph",
             "spans": [
               {
-                "text": "This is why the entire human journey, beneath everything else, is a single movement: the one life slowly waking back up to itself — remembering, while still in form, what it never stopped being. But before we can speak of that awakening, we must first understand precisely what this one forgetting does to a human being. Because from this single misperception — “I am a separate self” — an entire architecture of suffering unfolds, with a clear and traceable mechanism."
+                "text": "This is why the entire human journey, beneath everything else, is a single movement: the one life slowly waking back up to itself — remembering, while still in form, what it never stopped being. But before we can speak of that remembering, we must first understand precisely what this one forgetting does to a human being. Because from this single misperception — “I am a separate self” — an entire architecture of suffering unfolds, with a clear and traceable mechanism."
               }
             ]
           }
@@ -872,7 +872,7 @@ export const essays: Essay[] = [
           "The physical body. The dense vessel — the place where consciousness meets the material world. Through it, the world comes in by way of the five senses; and through it, we act upon the world by the limbs and organs of action. It is how the one life reaches out and touches matter directly.",
           "The environment. Finally, the body does not float in a vacuum. It is borrowed, moment by moment, from the world around it — the elements of earth, water, fire, air, and space, which it constantly takes in and returns. And these elements, as we saw in the very beginning, are not dead stuff: at root they too are consciousness, condensed into form.",
           "Two things stand out from this whole map. The first is its shape: everything radiates from the centre — consciousness, then energy, then feeling, then thought, then body, then world — and the entire aim of inner work is to clear and settle the outer layers so that the light of the core can shine through them unobstructed.",
-          "The second is the crucial one. Of all seven layers, one is the master key to your well-being: the energy body. Look back and you can see why. Emotion is only the energy body felt as feeling. The intellect and the mind are instruments — they direct and process, but they do not determine your inner state. The body’s condition flows largely from the energy that animates it, and the environment is simply what you exchange that energy with. Strengthen your muscles and you grow stronger, but no happier; sharpen your intellect and you think better, but you are no more at peace. Yet open and raise the energy body, and your whole being shifts at once — the emotions settle, the mind quiets, the body comes alive, and consciousness itself grows clear. This is why, of all the layers, the energy body is the one we actually work. It is the single lever that moves everything else.",
+          "The second is the crucial one. Of all seven layers, one is the primary key to your well-being: the energy body. Look back and you can see why. Emotion is only the energy body felt as feeling. The intellect and the mind are instruments — they direct and process, but they do not determine your inner state. The body’s condition flows largely from the energy that animates it, and the environment is simply what you exchange that energy with. Strengthen your muscles and you grow stronger, but no happier; sharpen your intellect and you think better, but you are no more at peace. Yet open and raise the energy body, and your whole being shifts at once — the emotions settle, the mind quiets, the body comes alive, and consciousness itself grows clear. This is why, of all the layers, the energy body is the one we actually work. It is the single lever that moves everything else.",
           "So it is to the energy body itself that we now turn, in full."
         ],
         "blocks": [
@@ -968,7 +968,7 @@ export const essays: Essay[] = [
             "type": "paragraph",
             "spans": [
               {
-                "text": "The second is the crucial one. Of all seven layers, one is the master key to your well-being: the energy body. Look back and you can see why. Emotion is only the energy body felt as feeling. The intellect and the mind are instruments — they direct and process, but they do not determine your inner state. The body’s condition flows largely from the energy that animates it, and the environment is simply what you exchange that energy with. Strengthen your muscles and you grow stronger, but no happier; sharpen your intellect and you think better, but you are no more at peace. Yet open and raise the energy body, and your whole being shifts at once — the emotions settle, the mind quiets, the body comes alive, and consciousness itself grows clear. This is why, of all the layers, the energy body is the one we actually work. It is the single lever that moves everything else."
+                "text": "The second is the crucial one. Of all seven layers, one is the primary key to your well-being: the energy body. Look back and you can see why. Emotion is only the energy body felt as feeling. The intellect and the mind are instruments — they direct and process, but they do not determine your inner state. The body’s condition flows largely from the energy that animates it, and the environment is simply what you exchange that energy with. Strengthen your muscles and you grow stronger, but no happier; sharpen your intellect and you think better, but you are no more at peace. Yet open and raise the energy body, and your whole being shifts at once — the emotions settle, the mind quiets, the body comes alive, and consciousness itself grows clear. This is why, of all the layers, the energy body is the one we actually work. It is the single lever that moves everything else."
               }
             ]
           },
@@ -1321,9 +1321,9 @@ export const essays: Essay[] = [
           "Instead, the one truth is spread into many — the way a single white light passing through a prism opens into a whole band of distinct colours. Each colour is real light; each is simply one band of the one white. And what does the dividing is the three fundamental aspects of material reality: time, space, and form. Each of them forces the one truth to take a specific shape — a specific era, a specific place, a specific person — and nothing specific can ever be the whole.",
           "Time divides it by the era. A truth delivered to a struggling, war-torn people three thousand years ago must speak in a wholly different language, with wholly different rules and images, than the same truth offered to a modern, intellectual age. The teaching takes the shape of its time.",
           "Space divides it by the place. A tradition born in the harsh expanse of the desert will clothe itself in metaphors and rituals utterly unlike one born in the lush river-valleys of India. The teaching takes the colour of its land.",
-          "And form divides it most of all — through the particular human being who carries it. Every awakened teacher, however clear, is still a single, limited vessel: a unique mind, a unique history, a unique way of seeing. The pure light of realisation, passing through that one narrow lens, comes out as a particular colour. And there is more: because there are many doorways into the one truth, each teacher naturally teaches the doorway they themselves walked through. One who awakened through devotion teaches a religion of love and surrender. One who awakened through stillness teaches silent meditation and emptiness.",
-          "One who awakened through the body teaches posture and breath. Each describes the whole mountain from the side they happened to climb.",
-          "Then comes the tragedy of history. Once the teacher is gone, the living transmission slowly hardens. The fluid, direct pointing of a realised being crystallises, over generations, into fixed doctrine, literal interpretation, and rigid dogma. The followers begin to revere the lens itself — the particular words, the culture, the personality of the founder — rather than the one light that was shining through it. And so traditions that were each pointing at the same reality come to define themselves against one another, and even to fight.",
+          "And form divides it most of all — through the particular human being who carries it. Every teacher, however clear, is still a single, limited vessel: a unique mind, a unique history, a unique way of seeing. The pure light of recognition, passing through that one narrow lens, comes out as a particular colour. And there is more: because there are many doorways into the one truth, each teacher naturally teaches the doorway they themselves walked through. One whose path ran through devotion teaches a religion of love and surrender. One whose path ran through stillness teaches silent meditation and emptiness.",
+          "One whose path ran through the body teaches posture and breath. Each describes the whole mountain from the side they happened to climb.",
+          "Then comes the tragedy of history. Once the teacher is gone, the living teaching slowly hardens. The fluid, direct pointing of a teacher crystallises, over generations, into fixed doctrine, literal interpretation, and rigid dogma. The followers begin to revere the lens itself — the particular words, the culture, the personality of the founder — rather than the one light that was shining through it. And so traditions that were each pointing at the same reality come to define themselves against one another, and even to fight.",
           "But if we wish to find the unity beneath the difference, the way is clear: we look past the dogma. We set aside the question of which cultural packaging is “correct,” and ask instead what these traditions, beneath all their surfaces, are truly for — and what, beneath all their surfaces, they actually do. And when we look there, two startling convergences appear."
         ],
         "blocks": [
@@ -1371,7 +1371,7 @@ export const essays: Essay[] = [
             "type": "paragraph",
             "spans": [
               {
-                "text": "And form divides it most of all — through the particular human being who carries it. Every awakened teacher, however clear, is still a single, limited vessel: a unique mind, a unique history, a unique way of seeing. The pure light of realisation, passing through that one narrow lens, comes out as a particular colour. And there is more: because there are many doorways into the one truth, each teacher naturally teaches the doorway they themselves walked through. One who awakened through devotion teaches a religion of love and surrender. One who awakened through stillness teaches silent meditation and emptiness."
+                "text": "And form divides it most of all — through the particular human being who carries it. Every teacher, however clear, is still a single, limited vessel: a unique mind, a unique history, a unique way of seeing. The pure light of recognition, passing through that one narrow lens, comes out as a particular colour. And there is more: because there are many doorways into the one truth, each teacher naturally teaches the doorway they themselves walked through. One whose path ran through devotion teaches a religion of love and surrender. One whose path ran through stillness teaches silent meditation and emptiness."
               }
             ]
           },
@@ -1379,7 +1379,7 @@ export const essays: Essay[] = [
             "type": "paragraph",
             "spans": [
               {
-                "text": "One who awakened through the body teaches posture and breath. Each describes the whole mountain from the side they happened to climb."
+                "text": "One whose path ran through the body teaches posture and breath. Each describes the whole mountain from the side they happened to climb."
               }
             ]
           },
@@ -1387,7 +1387,7 @@ export const essays: Essay[] = [
             "type": "paragraph",
             "spans": [
               {
-                "text": "Then comes the tragedy of history. Once the teacher is gone, the living transmission slowly hardens. The fluid, direct pointing of a realised being crystallises, over generations, into fixed doctrine, literal interpretation, and rigid dogma. The followers begin to revere the lens itself — the particular words, the culture, the personality of the founder — rather than the one light that was shining through it. And so traditions that were each pointing at the same reality come to define themselves against one another, and even to fight."
+                "text": "Then comes the tragedy of history. Once the teacher is gone, the living teaching slowly hardens. The fluid, direct pointing of a teacher crystallises, over generations, into fixed doctrine, literal interpretation, and rigid dogma. The followers begin to revere the lens itself — the particular words, the culture, the personality of the founder — rather than the one light that was shining through it. And so traditions that were each pointing at the same reality come to define themselves against one another, and even to fight."
               }
             ]
           },
@@ -2040,14 +2040,14 @@ export const essays: Essay[] = [
       {
         "heading": "Dying before you die.",
         "paragraphs": [
-          "And here is the secret the mystics have always pointed to: you do not have to wait for the body to fail to know this. The entire purpose of the inner path is to dissolve the illusory boundary while still breathing — to let the separate self die now, so that what remains is the boundless life, living openly through the form. This is what every tradition has hidden in its heart. The Sufis called it Fanaa — annihilation of the self in the divine. The yogis called it Jivanmukti — liberation while still living. The Christian mystics spoke of dying to the self so that only Christ — the deathless — remains. To die before you die is to discover, while still alive, that you were never only the wave. And the one who knows this has nothing left to fear in physical death, because they have inwardly died into something deathless."
+          "And here is what contemplatives across traditions have long pointed to: you do not have to wait for the body to fail to know this. The entire purpose of the inner path is to dissolve the illusory boundary while still breathing — to let the separate self die now, so that what remains is the boundless life, living openly through the form. This is what every tradition has hidden in its heart. The Sufis called it Fanaa — annihilation of the self in the divine. The yogis called it Jivanmukti — liberation while still living. The Christian mystics spoke of dying to the self so that only Christ — the deathless — remains. To die before you die is to discover, while still alive, that you were never only the wave. And the one who knows this has nothing left to fear in physical death, because they have inwardly died into something deathless."
         ],
         "blocks": [
           {
             "type": "paragraph",
             "spans": [
               {
-                "text": "And here is the secret the mystics have always pointed to: you do not have to wait for the body to fail to know this. The entire purpose of the inner path is to dissolve the illusory boundary while still breathing — to let the separate self die now, so that what remains is the boundless life, living openly through the form. This is what every tradition has hidden in its heart. The Sufis called it Fanaa — annihilation of the self in the divine. The yogis called it Jivanmukti — liberation while still living. The Christian mystics spoke of dying to the self so that only Christ — the deathless — remains. To die before you die is to discover, while still alive, that you were never only the wave. And the one who knows this has nothing left to fear in physical death, because they have inwardly died into something deathless."
+                "text": "And here is what contemplatives across traditions have long pointed to: you do not have to wait for the body to fail to know this. The entire purpose of the inner path is to dissolve the illusory boundary while still breathing — to let the separate self die now, so that what remains is the boundless life, living openly through the form. This is what every tradition has hidden in its heart. The Sufis called it Fanaa — annihilation of the self in the divine. The yogis called it Jivanmukti — liberation while still living. The Christian mystics spoke of dying to the self so that only Christ — the deathless — remains. To die before you die is to discover, while still alive, that you were never only the wave. And the one who knows this has nothing left to fear in physical death, because they have inwardly died into something deathless."
               }
             ]
           }
@@ -3136,7 +3136,7 @@ export const whereToBegin: WhereToBegin = {
               "bold": true
             },
             {
-              "text": " The master lever.",
+              "text": " The foundational lever.",
               "italic": true
             },
             {
@@ -3267,7 +3267,7 @@ export const whereToBegin: WhereToBegin = {
         "Lever 3 — Mind Directs cognitive energy and clears mental noise. Reach for this when you are capable of stability but scattered — when the mind is sharp but undirected.",
         "Lever 4 — Sound Reorganises internal coherence through vibration. Reach for this when you need a non-effortful entry into stillness — when the mind is too resistant for direct meditation but can be carried by sound.",
         "Lever 5 — Heart Dissolves emotional armour and opens the system. Reach for this when emotional heaviness, shutdown, or grief is the primary obstruction. The solvent that melts what mental effort cannot move.",
-        "Lever 6 — Awareness The master lever. Reach for this once basic stability exists. Contains the entire spectrum from basic relaxation (NSDR, Body Scan) to the deepest practices in the framework (Ultimate Self-Inquiry, Aware of Awareness).",
+        "Lever 6 — Awareness The foundational lever. Reach for this once basic stability exists. Contains the entire spectrum from basic relaxation (NSDR, Body Scan) to the deepest practices in the framework (Ultimate Self-Inquiry, Aware of Awareness).",
         "Lever 7 — Sustenance Frees the life force from survival panic. Reach for this when financial terror or misaligned work is the primary driver of your suffering. Must be addressed before genuine inner growth is possible.",
         "Lever 8 — Sleep The non-negotiable biological reset. Reach for this when you are chronically exhausted. No other practice compensates for a collapsing sleep foundation.",
         "Address this before anything else if it is severely compromised.",
@@ -3387,7 +3387,7 @@ export const whereToBegin: WhereToBegin = {
           "type": "paragraph",
           "spans": [
             {
-              "text": "Kundalini is the name given across traditions to the concentrated life force held at the base of the central channel. When inner practice deepens sufficiently — through consistent conservation, breath, awareness, and heart work — this energy begins to rise through the central channel toward the higher centres. This is the biological and energetic process underlying genuine spiritual awakening."
+              "text": "Kundalini is the name given across traditions to the concentrated life force held at the base of the central channel. When inner practice deepens sufficiently — through consistent conservation, breath, awareness, and heart work — this energy begins to rise through the central channel toward the higher centres. This is the biological and energetic process underlying genuine contemplative opening."
             }
           ]
         },
@@ -3500,12 +3500,12 @@ export const whereToBegin: WhereToBegin = {
           "items": [
             [
               {
-                "text": "Do not diagnose kundalini awakening from symptoms alone — many of these signs have ordinary explanations and should be checked medically if there is any doubt"
+                "text": "Do not diagnose a kundalini process from symptoms alone — many of these signs have ordinary explanations and should be checked medically if there is any doubt"
               }
             ],
             [
               {
-                "text": "Do not use intense prolonged breathwork or sleep deprivation to force the process — this produces instability, not awakening"
+                "text": "Do not use intense prolonged breathwork or sleep deprivation to force the process — this produces instability, not opening"
               }
             ],
             [
@@ -3539,7 +3539,7 @@ export const whereToBegin: WhereToBegin = {
         "If you experience persistent dissociation, depersonalisation, or a break from ordinary reality following practice, take it seriously. Reduce practice intensity, increase grounding, and seek professional support if the state persists",
         "This framework is a complement to — not a replacement for — professional medical or psychological care where that care is genuinely needed",
         "The kundalini dimension",
-        "Kundalini is the name given across traditions to the concentrated life force held at the base of the central channel. When inner practice deepens sufficiently — through consistent conservation, breath, awareness, and heart work — this energy begins to rise through the central channel toward the higher centres. This is the biological and energetic process underlying genuine spiritual awakening.",
+        "Kundalini is the name given across traditions to the concentrated life force held at the base of the central channel. When inner practice deepens sufficiently — through consistent conservation, breath, awareness, and heart work — this energy begins to rise through the central channel toward the higher centres. This is the biological and energetic process underlying genuine contemplative opening.",
         "For most people engaging with this framework, the experience will be gradual and gentle: increasing clarity, spontaneous stillness, moments of unexpected spaciousness, a quiet dissolving of what used to feel urgent. This is the natural, healthy unfolding of the process.",
         "In a smaller number of people — particularly those with strong practice, significant prior life experience, or who are constitutionally sensitive — the process can accelerate rapidly. This may manifest as:",
         "Intense heat or energy moving through the body, particularly the spine",
@@ -3556,8 +3556,8 @@ export const whereToBegin: WhereToBegin = {
         "Do not try to force, accelerate, or replicate an experience — let the process unfold at its own pace",
         "Seek the presence of someone who has navigated this process themselves if the intensity becomes difficult to hold alone",
         "What not to do:",
-        "Do not diagnose kundalini awakening from symptoms alone — many of these signs have ordinary explanations and should be checked medically if there is any doubt",
-        "Do not use intense prolonged breathwork or sleep deprivation to force the process — this produces instability, not awakening",
+        "Do not diagnose a kundalini process from symptoms alone — many of these signs have ordinary explanations and should be checked medically if there is any doubt",
+        "Do not use intense prolonged breathwork or sleep deprivation to force the process — this produces instability, not opening",
         "Do not abandon the external pillars in pursuit of peak inner experiences — the biological foundation must remain strong throughout",
         "The deepest insight here is this: the process knows what it is doing. Your role is not to force it, but to ensure the conditions are right for it to unfold safely. Remove the obstacles, stabilise the foundation, and trust the intelligence of the life force itself."
       ]
