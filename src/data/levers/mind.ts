@@ -79,7 +79,6 @@ export const mindLever: Lever = {
       sourceNumber: 2,
       slug: "clarity-of-purpose",
       name: "Clarity of Purpose",
-      subtitle: "aligning the personal self",
       essence: "When you do not know where you are going, the mind falls into confusion and scatters attention in every direction. Clarity of purpose ends it — discovering your passion, getting deeply comfortable in your own skin, and aligning your daily actions with what brings you profound joy and makes you feel truly alive.",
       mechanism: [
         "A mind without direction does not rest — it wanders. Every unresolved question about where you are going becomes a persistent background drain: attention pulled in competing directions, indecision generating low-grade anxiety, energy leaking through the gap between what you are doing and what you actually care about. When genuine clarity arrives, everything changes. The energy that was scattered through confusion pools and concentrates. Focusing your attention on what fuels your passion multiplies what you can do — focus sharpens, resilience deepens, and creativity opens naturally. The internal chaos is replaced with a profound feeling of alignment, fulfillment, and contentment. The work of inner transformation becomes far easier because the outer life is no longer working against it."
@@ -138,9 +137,8 @@ export const mindLever: Lever = {
     {
       sourceNumber: 3,
       slug: "conscious-creation",
-      name: "Conscious Creation",
-      subtitle: "the directed mind",
-      essence: "Using the mind as a creative force — stepping into the role of the conscious creator by combining deep, focused visualization with sustained determination and strategic action. This is not wishful thinking; it is the deliberate alignment of inner vision with outer effort.",
+      name: "Visualisation and Action",
+      essence: "Using the mind as a creative force — combining deep, focused visualization with sustained determination and strategic action. This is not wishful thinking; it is the deliberate alignment of inner vision with outer effort.",
       mechanism: [
         "There is a common misconception about how this works. Manifestation is not a passive process — you cannot simply desire something, imagine it, and wait for it to appear. That is an illusion. The real mechanism is this: where attention goes, energy follows. When you focus intensely on a clear vision and invest it with genuine feeling, mind and body begin to orient entirely toward that vision — as if it were already true. The inner alignment deepens until the whole system is moving in that direction. But the visualization is only the spark. It is your sustained concentration, determination, and strategic action in the physical world that actually bridges the gap between inner vision and outer reality. Without right action grounding the vision, it remains imagination. Combined with relentless, determined effort, it becomes the engine of your experience."
       ],
@@ -171,8 +169,8 @@ export const mindLever: Lever = {
         "laser-focus",
         "journaling"
       ],
-      metaTitle: "Conscious Creation — How to Practise It | Sunya",
-      metaDescription: "Using the mind as a creative force — stepping into the role of the conscious creator by combining deep, focused visualization with sustained determination and strategic action.",
+      metaTitle: "Visualisation and Action — How to Practise It | Sunya",
+      metaDescription: "Combining focused visualization with sustained determination and strategic action. This is not wishful thinking; it is the deliberate alignment of inner vision with outer effort.",
       families: ["L3", "M3", "M1"],
       directions: ["initiate", "structure"],
       problems: [],
@@ -200,7 +198,7 @@ export const mindLever: Lever = {
       slug: "laser-focus",
       name: "Laser Focus",
       subtitle: "the training of attention",
-      essence: "Training the mind to sustain unwavering attention on a single point. Transforming scattered, leaking energy into a concentrated, powerful force by treating focus as a trainable muscle rather than a fixed talent.",
+      essence: "Training attention to stay on one thing, treating focus as a trainable skill rather than a fixed talent.",
       mechanism: [
         "When your attention is scattered across multiple tasks, anxieties, and distractions, energy bleeds out in every direction — leaving you exhausted and ineffective without clear cause. Deep focus is the practical antidote. (Known in the yogic traditions as dharana.) It is not a genetic gift; it is a capacity that can be built. Every time your mind wanders and you consciously pull it back to a single target, you are performing a mental rep. Just as the body grows stronger through resistance training, the attention muscle grows through this act of return. Each time you catch the wandering and bring the mind back, you strengthen your capacity for sustained focus. By closing the leaks of scattered thinking and multi-tasking, your energy pools and concentrates. A scattered mind is like a weak light bulb that barely illuminates a room; a focused mind is a laser beam that can cut through steel."
       ],
@@ -236,7 +234,7 @@ export const mindLever: Lever = {
         "conscious-affirmation"
       ],
       metaTitle: "Laser Focus — How to Practise It | Sunya",
-      metaDescription: "Training the mind to sustain unwavering attention on a single point.",
+      metaDescription: "Training attention to stay on one thing, treating focus as a trainable skill rather than a fixed talent.",
       families: ["H2", "M3"],
       directions: ["contain", "structure", "simplify"],
       problems: [],
@@ -321,8 +319,7 @@ export const mindLever: Lever = {
       sourceNumber: 6,
       slug: "conscious-affirmation",
       name: "Conscious Affirmation",
-      subtitle: "the architecture of belief",
-      essence: "Transforming your mind by deliberately tuning it to a chosen state, pattern, and disposition. The practice of consciously rewiring your underlying beliefs and self-image so that new outcomes and possibilities become effortlessly natural to your system.",
+      essence: "Choosing phrases that describe how you want to meet things, and repeating them until they are familiar. What changes is not the world but the default you reach for under pressure.",
       mechanism: [
         "Your current identity is largely the product of accidental affirmations. Since childhood, your mind has been programmed by the repeated words, beliefs, and limitations of your environment. Every thought you repeat carves a deeper groove in the mental body — and the vital body follows. This is not a malfunction; it is simply how the mind works. And",
         "it means the mechanism runs in both directions. Conscious affirmation is the act of taking deliberate control of this process — choosing the groove you carve rather than accepting the one that was carved for you. The subconscious mind does not filter for truth; it accepts what is repeated to it with sufficient emotion and consistency. By deliberately repeating a chosen belief with genuine feeling, you override the old conditioning and begin to transform the fabric of the mental body — altering your underlying sense of self until new outcomes and possibilities feel effortlessly natural."
@@ -354,7 +351,7 @@ export const mindLever: Lever = {
         "mindful-reflection"
       ],
       metaTitle: "Conscious Affirmation — How to Practise It | Sunya",
-      metaDescription: "Transforming your mind by deliberately tuning it to a chosen state, pattern, and disposition.",
+      metaDescription: "Choosing phrases that describe how you want to meet things, and repeating them until they are familiar.",
       families: ["M2"],
       directions: ["soften", "clarify"],
       problems: [],
@@ -378,7 +375,7 @@ export const mindLever: Lever = {
       slug: "mindful-reflection",
       name: "Mindful Reflection",
       subtitle: "the chessboard of time",
-      essence: "Gaining profound wisdom and mental maturity by observing the network of your past actions, radically accepting your present position, and strategically directing your future. It is also the deep work of recognising that the “person” you take yourself to be is not a fixed entity — it is a constantly changing phenomenon, held entirely within the eternal Now.",
+      essence: "Gaining profound wisdom and mental maturity by observing the network of your past actions, radically accepting your present position, and strategically directing your future. It is also the deep work of recognising that the person you take yourself to be is not fixed — it changes, continuously.",
       mechanism: [
         "The unconscious mind uses the past to generate guilt and the future to generate anxiety — draining the energy system and keeping you contracted. Mindful reflection is the antidote. It allows you to step back and view your life as a grand chessboard: your past moves (cause) have perfectly determined where you are now (effect), and how you move from here determines what becomes available to you in the future. This is the ultimate network of action and consequence — Karma. Through this self-understanding, the nature of time becomes clear. The “person” you think you are is not a fixed, solid entity; it is a constantly evolving, changing phenomenon. And the “past” is just a memory, the “future” just an imagination — both are simply thoughts arising in the absolute container of the present moment. When you see this, you stop resisting your current position, extract the wisdom from your history, and use your present choices to architect the future with intelligence and clarity."
       ],
@@ -405,7 +402,7 @@ export const mindLever: Lever = {
         "conscious-affirmation"
       ],
       metaTitle: "Mindful Reflection — How to Practise It | Sunya",
-      metaDescription: "Gaining profound wisdom and mental maturity by observing the network of your past actions, radically accepting your present position, and strategically directing your future.",
+      metaDescription: "Observing the network of your past actions, accepting your present position, and strategically directing your future — recognising that the person you take yourself to be is not fixed.",
       families: ["H1", "M2", "M1"],
       directions: ["soften", "clarify", "calm"],
       problems: [],
