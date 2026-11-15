@@ -15,6 +15,7 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as AccountRouteImport } from './routes/account'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as BookedRouteImport } from './routes/booked'
+import { Route as ContactRouteImport } from './routes/contact'
 import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as EssaysRouteImport } from './routes/essays'
 import { Route as ForgotPasswordRouteImport } from './routes/forgot-password'
@@ -85,6 +86,11 @@ const BlogRoute = BlogRouteImport.update({
 const BookedRoute = BookedRouteImport.update({
   id: '/booked',
   path: '/booked',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DashboardRoute = DashboardRouteImport.update({
@@ -303,6 +309,7 @@ export interface FileRoutesByFullPath {
   '/account': typeof AccountRoute
   '/blog': typeof BlogRouteWithChildren
   '/booked': typeof BookedRoute
+  '/contact': typeof ContactRoute
   '/dashboard': typeof DashboardRoute
   '/essays': typeof EssaysRouteWithChildren
   '/forgot-password': typeof ForgotPasswordRoute
@@ -352,6 +359,7 @@ export interface FileRoutesByTo {
   '/account': typeof AccountRoute
   '/blog': typeof BlogRouteWithChildren
   '/booked': typeof BookedRoute
+  '/contact': typeof ContactRoute
   '/dashboard': typeof DashboardRoute
   '/essays': typeof EssaysRouteWithChildren
   '/forgot-password': typeof ForgotPasswordRoute
@@ -402,6 +410,7 @@ export interface FileRoutesById {
   '/account': typeof AccountRoute
   '/blog': typeof BlogRouteWithChildren
   '/booked': typeof BookedRoute
+  '/contact': typeof ContactRoute
   '/dashboard': typeof DashboardRoute
   '/essays': typeof EssaysRouteWithChildren
   '/forgot-password': typeof ForgotPasswordRoute
@@ -453,6 +462,7 @@ export interface FileRouteTypes {
     | '/account'
     | '/blog'
     | '/booked'
+    | '/contact'
     | '/dashboard'
     | '/essays'
     | '/forgot-password'
@@ -502,6 +512,7 @@ export interface FileRouteTypes {
     | '/account'
     | '/blog'
     | '/booked'
+    | '/contact'
     | '/dashboard'
     | '/essays'
     | '/forgot-password'
@@ -551,6 +562,7 @@ export interface FileRouteTypes {
     | '/account'
     | '/blog'
     | '/booked'
+    | '/contact'
     | '/dashboard'
     | '/essays'
     | '/forgot-password'
@@ -601,6 +613,7 @@ export interface RootRouteChildren {
   AccountRoute: typeof AccountRoute
   BlogRoute: typeof BlogRouteWithChildren
   BookedRoute: typeof BookedRoute
+  ContactRoute: typeof ContactRoute
   DashboardRoute: typeof DashboardRoute
   EssaysRoute: typeof EssaysRouteWithChildren
   ForgotPasswordRoute: typeof ForgotPasswordRoute
@@ -675,6 +688,13 @@ declare module '@tanstack/react-router' {
       path: '/booked'
       fullPath: '/booked'
       preLoaderRoute: typeof BookedRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/dashboard': {
@@ -1080,6 +1100,7 @@ const rootRouteChildren: RootRouteChildren = {
   AccountRoute: AccountRoute,
   BlogRoute: BlogRouteWithChildren,
   BookedRoute: BookedRoute,
+  ContactRoute: ContactRoute,
   DashboardRoute: DashboardRoute,
   EssaysRoute: EssaysRouteWithChildren,
   ForgotPasswordRoute: ForgotPasswordRoute,

@@ -19,14 +19,13 @@ export const Route = createFileRoute("/sitemap.xml")({
         const generatedAt = new Date().toISOString();
         const staticEntries: SitemapEntry[] = [
           { path: "/", lastmod: generatedAt, changefreq: "weekly", priority: "1.0" },
+          { path: "/contact", lastmod: generatedAt, changefreq: "monthly", priority: "0.7" },
           { path: "/about", lastmod: generatedAt, changefreq: "monthly", priority: "0.8" },
           { path: "/philosophy", lastmod: generatedAt, changefreq: "monthly", priority: "0.9" },
           { path: "/practices", lastmod: generatedAt, changefreq: "weekly", priority: "0.9" },
           { path: "/practices/where-to-begin", lastmod: generatedAt, changefreq: "monthly", priority: "0.85" },
           { path: "/privacy", lastmod: generatedAt, changefreq: "yearly", priority: "0.5" },
           { path: "/terms", lastmod: generatedAt, changefreq: "yearly", priority: "0.5" },
-          { path: "/work-with-me", lastmod: generatedAt, changefreq: "monthly", priority: "0.8" },
-          { path: "/vision", lastmod: generatedAt, changefreq: "monthly", priority: "0.8" },
           { path: "/gatherings", lastmod: generatedAt, changefreq: "weekly", priority: "0.8" },
           { path: "/writing", lastmod: generatedAt, changefreq: "weekly", priority: "0.7" },
           { path: "/problems", lastmod: generatedAt, changefreq: "weekly", priority: "0.9" },

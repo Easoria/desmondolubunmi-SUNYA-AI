@@ -53,7 +53,7 @@ const COPY: Record<
 };
 
 type Props = {
-  /** When omitted, renders a compact form-only control (used on /vision). */
+  /** When omitted, renders a compact form-only control (used on About). */
   variant?: EmailCaptureVariant;
   id?: string;
   className?: string;
@@ -93,7 +93,7 @@ export function EmailCapture({ variant, id, className = "" }: Props) {
     );
   }
 
-  // Compact form for pages that already supply surrounding copy (e.g. /vision).
+  // Compact form for pages that already supply surrounding copy (e.g. About).
   if (!copy) {
     return (
       <div id={id} className={`mx-auto w-full max-w-xl ${className}`}>

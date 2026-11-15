@@ -135,10 +135,10 @@ function JoinPage() {
 
       <main className="relative z-10 mx-auto max-w-5xl px-6 pb-24 pt-28">
         <Link
-          to="/vision"
+          to="/about"
           className="inline-flex items-center gap-2 text-xs text-[#b8d4e8] hover:text-white"
         >
-          <ArrowLeft className="h-3.5 w-3.5" /> Back to the Vision
+          <ArrowLeft className="h-3.5 w-3.5" /> Back to About
         </Link>
 
         <header className="mt-10 text-center">
@@ -209,9 +209,9 @@ function JoinPage() {
                   <p>Desmond reads every one of these personally.</p>
                   <p>You'll hear back when the time is right.</p>
                   <p className="pt-2">
-                    In the meantime — stay connected via the{" "}
-                    <Link to="/vision" className="text-white underline-offset-4 hover:underline">
-                      Vision page
+                    In the meantime — read more on the{" "}
+                    <Link to="/about" className="text-white underline-offset-4 hover:underline">
+                      About page
                     </Link>
                     , or explore the{" "}
                     <Link to="/framework" className="text-white underline-offset-4 hover:underline">

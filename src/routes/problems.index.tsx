@@ -81,12 +81,12 @@ function ProblemsIndexPage() {
             >
               Where to begin
             </Link>{" "}
-            maps the order of operations — or{" "}
+            maps the order of operations — or come to a{" "}
             <Link
-              to="/work-with-me"
+              to="/gatherings"
               className="text-[#7ec8e3] underline decoration-[#7ec8e3]/35 underline-offset-2 transition hover:text-white hover:decoration-white/50"
             >
-              work with Desmond one-to-one
+              gathering
             </Link>
             .
           </p>

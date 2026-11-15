@@ -83,24 +83,15 @@ function TermsPage() {
           </section>
 
           <section>
-            <h2 className="display text-2xl text-white">5. Personal guidance</h2>
+            <h2 className="display text-2xl text-white">5. Gatherings and contact</h2>
             <ul className="mt-4 list-disc space-y-2 pl-5">
               <li>
-                Personal guidance is a one-to-one online session with Desmond, booked and paid for
-                in advance.
+                Sunya offers free group gatherings in Dublin and online. These are open sessions,
+                not private clinical services.
               </li>
               <li>
-                <span className="text-white">Cancellation and rescheduling:</span>{" "}
-                <span className="italic text-[#b8d4e8]/80">
-                  Policy to be confirmed — for example, you may reschedule or cancel for a full
-                  refund up to 24 hours before your session; later cancellations or missed sessions
-                  are not refunded.
-                </span>
-              </li>
-              <li>
-                When you book, you ask for the session to take place within the 14-day period in
-                which EU consumers can normally cancel. Once the session has been fully delivered,
-                that right to cancel no longer applies.
+                To reach Desmond directly, use the Contact page. One-to-one paid sessions are not
+                offered.
               </li>
             </ul>
           </section>

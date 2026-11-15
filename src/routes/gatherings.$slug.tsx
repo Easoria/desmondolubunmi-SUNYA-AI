@@ -339,8 +339,8 @@ function GatheringPage() {
         ) : null}
 
         <p className="mt-14 text-center text-sm text-[#b8d4e8]/80">
-          <Link to="/work-with-me" className="text-[#7ec8e3] transition hover:text-white">
-            Work with Desmond one-to-one →
+          <Link to="/contact" className="text-[#7ec8e3] transition hover:text-white">
+            Contact Desmond →
           </Link>
         </p>
       </article>
