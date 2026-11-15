@@ -26,6 +26,7 @@ import skillMasteryAndSelfEfficacy from "./skill-mastery-and-self-efficacy.conte
 import workAndValuesCongruence from "./work-and-values-congruence.content";
 import progressiveMuscleRelaxationAndStillness from "./progressive-muscle-relaxation-and-stillness.content";
 import coldExposure from "./cold-exposure.content";
+import timeRestrictedEatingAndFasting from "./time-restricted-eating-and-fasting.content";
 import groundingAndEarthing from "./grounding-and-earthing.content";
 import handPositions from "./hand-positions.content";
 import soundVibrationActingOnTissue from "./sound-vibration-acting-on-tissue.content";
@@ -391,8 +392,14 @@ export const EVIDENCE_MECHANISMS: EvidenceMechanism[] = [
     slug: "time-restricted-eating-and-fasting",
     title: "Time-restricted eating and fasting",
     group: "body-and-lifestyle",
-    status: "planned",
-    description: "Not yet researched.",
+    status: "complete",
+    reviewDate: "November 2026",
+    researchGrade:
+      "Moderate for weight and metabolic improvements comparable to ordinary calorie reduction, Preliminary for weight-independent circadian benefits, multi-day fasting and human cellular recycling",
+    traditionalGrade: "Very strong",
+    description:
+      "Eating windows and intermittent fasting — weight and metabolic effects mainly via fewer calories, earlier windows vs late eating, and where autophagy claims outrun human data.",
+    markdown: withNormalizedGrades(timeRestrictedEatingAndFasting),
   },
   {
     slug: "diet-composition",
