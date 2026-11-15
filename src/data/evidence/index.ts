@@ -31,6 +31,7 @@ import dietComposition from "./diet-composition.content";
 import groundingAndEarthing from "./grounding-and-earthing.content";
 import handPositions from "./hand-positions.content";
 import soundVibrationActingOnTissue from "./sound-vibration-acting-on-tissue.content";
+import energeticPropertiesOfObjectsAndSpaces from "./energetic-properties-of-objects-and-spaces.content";
 
 export type MechanismStatus = "complete" | "planned";
 
@@ -539,8 +540,14 @@ export const EVIDENCE_MECHANISMS: EvidenceMechanism[] = [
     slug: "energetic-properties-of-objects-and-spaces",
     title: "Energetic properties of objects and spaces",
     group: "expected-weak",
-    status: "planned",
-    description: "Not yet researched.",
+    status: "complete",
+    reviewDate: "November 2026",
+    researchGrade:
+      "None found for invisible healing or calming forces in crystals, talismans or sacred room proportions beyond expectation and ordinary sensory design",
+    traditionalGrade: "Moderate",
+    description:
+      "Crystals, talismans and sacred geometry — blinded tests reduce effects to expectation; room comfort tracks light, greenery and layout.",
+    markdown: withNormalizedGrades(energeticPropertiesOfObjectsAndSpaces),
   },
 ];
 
