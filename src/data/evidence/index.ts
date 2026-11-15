@@ -11,6 +11,7 @@ import mentalImageryAndVisualisation from "./mental-imagery-and-visualisation.co
 import valuesClarificationAndSelfAffirmation from "./values-clarification-and-self-affirmation.content";
 import inputRestrictionAndAttentionalLoad from "./input-restriction-and-attentional-load.content";
 import ruminationAndMindWandering from "./rumination-and-mind-wandering.content";
+import compassionAndLovingKindnessTraining from "./compassion-and-loving-kindness-training.content";
 
 export type MechanismStatus = "complete" | "planned";
 
@@ -217,8 +218,14 @@ export const EVIDENCE_MECHANISMS: EvidenceMechanism[] = [
     slug: "compassion-and-loving-kindness-training",
     title: "Compassion and loving-kindness training",
     group: "emotion-and-relationship",
-    status: "planned",
-    description: "Not yet researched.",
+    status: "complete",
+    reviewDate: "November 2026",
+    researchGrade:
+      "Moderate for reducing depression, anxiety, stress and self-criticism against waitlist controls, Preliminary against active psychological treatments and on real-world prosocial behaviour",
+    traditionalGrade: "Very strong",
+    description:
+      "Training goodwill and self-compassion — moderate clinical gains against waitlists, thinner results against active controls, and the backdraft caution.",
+    markdown: withNormalizedGrades(compassionAndLovingKindnessTraining),
   },
   {
     slug: "acceptance-and-psychological-flexibility",
