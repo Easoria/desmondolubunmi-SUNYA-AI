@@ -4,6 +4,7 @@ import activatingBreathwork from "./activating-breathwork.content";
 import sustainedVocalisation from "./sustained-vocalisation.content";
 import meditation from "./meditation.content";
 import decentering from "./decentering.content";
+import interoceptionAndBodyScan from "./interoception-and-body-scan.content";
 
 export type MechanismStatus = "complete" | "planned";
 
@@ -125,8 +126,14 @@ export const EVIDENCE_MECHANISMS: EvidenceMechanism[] = [
     slug: "interoception-and-body-scan",
     title: "Interoception and body scan",
     group: "attention-and-cognition",
-    status: "planned",
-    description: "Not yet researched.",
+    status: "complete",
+    reviewDate: "November 2026",
+    researchGrade:
+      "Moderate for self-reported body awareness and emotional self-regulation within broader mindfulness programmes, Preliminary for standalone body scan on health outcomes and for objective signal accuracy",
+    traditionalGrade: "Very strong",
+    description:
+      "Scanning attention through the body — how you relate to sensation, stress markers, and the limits of standalone body scan.",
+    markdown: withNormalizedGrades(interoceptionAndBodyScan),
   },
   {
     slug: "expressive-writing",
