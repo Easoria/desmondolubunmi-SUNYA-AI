@@ -16,6 +16,7 @@ import acceptanceAndPsychologicalFlexibility from "./acceptance-and-psychologica
 import socialConnectionAndIsolation from "./social-connection-and-isolation.content";
 import affectiveTouchAndCoRegulation from "./affective-touch-and-co-regulation.content";
 import prosocialBehaviourAndVolunteering from "./prosocial-behaviour-and-volunteering.content";
+import forgiveness from "./forgiveness.content";
 
 export type MechanismStatus = "complete" | "planned";
 
@@ -287,8 +288,14 @@ export const EVIDENCE_MECHANISMS: EvidenceMechanism[] = [
     slug: "forgiveness",
     title: "Forgiveness",
     group: "emotion-and-relationship",
-    status: "planned",
-    description: "Not yet researched.",
+    status: "complete",
+    reviewDate: "November 2026",
+    researchGrade:
+      "Moderate for structured process-based forgiveness programmes reducing anger, stress, depression and anxiety, Preliminary for physical health outcomes and brief decision-only exercises",
+    traditionalGrade: "Very strong",
+    description:
+      "Releasing resentment without excusing harm — process-based gains, failed decision-only workshops, and when forgiving an unrepentant partner backfires.",
+    markdown: withNormalizedGrades(forgiveness),
   },
   {
     slug: "religious-and-devotional-practice",
