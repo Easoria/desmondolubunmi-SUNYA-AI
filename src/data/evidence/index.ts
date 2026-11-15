@@ -32,6 +32,7 @@ import hydration from "./hydration.content";
 import natureExposureAndAwe from "./nature-exposure-and-awe.content";
 import botanicalPreparations from "./botanical-preparations.content";
 import airQualityNoiseAndVisualOrder from "./air-quality-noise-and-visual-order.content";
+import sexualBehaviourAndAbstinence from "./sexual-behaviour-and-abstinence.content";
 import groundingAndEarthing from "./grounding-and-earthing.content";
 import handPositions from "./hand-positions.content";
 import soundVibrationActingOnTissue from "./sound-vibration-acting-on-tissue.content";
@@ -481,9 +482,16 @@ export const EVIDENCE_MECHANISMS: EvidenceMechanism[] = [
     slug: "sexual-behaviour-and-abstinence",
     title: "Sexual behaviour and abstinence",
     group: "body-and-lifestyle",
-    status: "planned",
-    description: "Not yet researched.",
+    status: "complete",
+    reviewDate: "November 2026",
+    researchGrade:
+      "Moderate for the association between partnered sex, physical affection and relationship well-being, Preliminary for sleep effects, prostate health and deliberate sexual or pornography abstinence",
+    traditionalGrade: "Strong",
+    description:
+      "Partnered intimacy, affection and abstinence claims — the once-a-week well-being plateau, retracted testosterone myths, and shame-forum risks.",
+    markdown: withNormalizedGrades(sexualBehaviourAndAbstinence),
   },
+
   {
     slug: "financial-security-and-scarcity",
     title: "Financial security and scarcity",
