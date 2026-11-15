@@ -6,7 +6,7 @@
 
 **Traditional convergence — Very strong** *(systematic observation of bodily sensation in Buddhist, Jain, Yogic and Daoist practice independently, over more than two millennia)*.
 
-> **In short:** deliberately scanning attention through the body changes how people relate to their physical sensations — making them more likely to notice, trust and use bodily cues to steady themselves, rather than distracting away from discomfort.[^1][^4] Across 29 randomised trials, mindfulness training produced a small-to-moderate gain in self-reported body awareness that tracked with falling psychological distress.[^1] The catch is sharp and worth knowing up front: a body scan practised *on its own* has not been shown to produce broad clinical health benefits,[^2] and short-term practice rarely improves objective accuracy at detecting internal signals like your own heartbeat.[^3][^5] Most of the benefit appears to lie in changing the *relationship* to sensation rather than sharpening the sensor.[^4][^9]
+> **In short:** deliberately scanning attention through the body changes how people relate to their physical sensations — making them more likely to notice, trust and use bodily cues to steady themselves, rather than distracting away from discomfort.[^4] Across 29 randomised trials, mindfulness training produced a small-to-moderate gain in self-reported body awareness that tracked with falling psychological distress.[^1] The catch is sharp and worth knowing up front: a body scan practised *on its own* has not been shown to produce broad clinical health benefits,[^2] and short-term practice rarely improves objective accuracy at detecting internal signals like your own heartbeat.[^3] Most of the benefit appears to lie in changing the *relationship* to sensation rather than sharpening the sensor.[^4]
 
 ---
 
@@ -16,12 +16,12 @@
 
 **Body scanning** is the deliberate practice of moving attention sequentially through the body — from feet to head, or head to feet — noticing whatever physical sensations are present without trying to relax, fix or judge them.
 
-Researchers separate two things that are often confused:[^3][^6]
+Researchers separate two things that are often confused:[^3]
 
 - **Interoceptive accuracy** — whether you can detect an internal signal accurately when tested objectively, such as counting your own heartbeats without taking your pulse.
 - **Interoceptive sensibility** — how you experience, interpret and respond to bodily sensations in daily life: whether you notice them, trust them, avoid them or worry about them.
 
-Training changes the second far more reliably than the first.[^1][^3][^4]
+Training changes the second[^1] far more reliably than the first.[^3]
 
 ---
 
@@ -72,7 +72,7 @@ Partly: Breath Awareness · Settling the Body · Corpse Pose
 
 ## Where the evidence stops
 
-**A body scan on its own has not been shown to deliver broad health benefits.** A meta-analysis of **14 randomised controlled trials** testing body scan meditation as a standalone intervention found only a small effect on self-reported mindfulness compared with passive controls (**g = 0.268**, 95% CI [0.032, 0.504]), low study quality, and high variability across trials.[^2] The authors concluded that sole body scan meditation is **not effective enough to improve health-related outcomes on its own**.[^2] Most of the stronger clinical results come from full eight-week programmes that combine the body scan with sitting meditation, gentle movement and cognitive reflection.[^1][^9]
+**A body scan on its own has not been shown to deliver broad health benefits.** A meta-analysis of **14 randomised controlled trials** testing body scan meditation as a standalone intervention found only a small effect on self-reported mindfulness compared with passive controls (**g = 0.268**, 95% CI [0.032, 0.504]), low study quality, and high variability across trials.[^2] The authors concluded that sole body scan meditation is **not effective enough to improve health-related outcomes on its own**.[^2] Most of the stronger clinical results come from full eight-week programmes that combine the body scan with sitting meditation, gentle movement and cognitive reflection.[^1]
 
 **Standalone body scans often fail to beat active controls.** In two pre-registered two-week trials (**N = 85** and **N = 90**), a daily body scan improved interoception against a no-practice control, **but performed no better than guided imagery**.[^6] In the eight-week hair-cortisol study, self-reported stress fell just as much in the audiobook group.[^7] In the chronic pain study, the 10-minute body scan outperformed the neutral audio in a clinic room, **but showed no difference when patients used it at home**.[^8]
 
@@ -84,7 +84,7 @@ Partly: Breath Awareness · Settling the Body · Corpse Pose
 
 **Unknowns:** whether body scanning helps equally across different forms of interoception beyond heartbeat tracking (such as breath or gut signals), which remain far less studied;[^3] whether silent, unguided scanning performs differently from audio-guided tracks; and what happens beyond nine months of practice.[^5]
 
-**And one thing to actively disbelieve:** that feeling more sensations — or feeling a pulse, tingling or heat in every limb — means the practice is working better. Noticing numbness, tension or nothing at all is ordinary, and the research points to *non-reactive, steady attention* as the active part rather than sensory intensity.[^4][^9]
+**And one thing to actively disbelieve:** that feeling more sensations — or feeling a pulse, tingling or heat in every limb — means the practice is working better. Noticing numbness, tension or nothing at all is ordinary, and the research points to *non-reactive, steady attention* as the active part rather than sensory intensity.[^4]
 
 ---
 
