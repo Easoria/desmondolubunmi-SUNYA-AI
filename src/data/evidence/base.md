@@ -154,7 +154,7 @@ Pages carry the date they were last reviewed. Evidence changes; an undated page 
 
 **Expected to be weak or unsupported**
 - ● Grounding and earthing
-- ○ Pelvic floor contraction as an inner practice
+- ● Pelvic floor contraction as an inner practice
 - ● Hand positions
 - ● Sound vibration acting on tissue
 - ● Energetic properties of objects and spaces

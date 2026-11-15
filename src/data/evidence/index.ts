@@ -32,6 +32,7 @@ import groundingAndEarthing from "./grounding-and-earthing.content";
 import handPositions from "./hand-positions.content";
 import soundVibrationActingOnTissue from "./sound-vibration-acting-on-tissue.content";
 import energeticPropertiesOfObjectsAndSpaces from "./energetic-properties-of-objects-and-spaces.content";
+import pelvicFloorContractionAsAnInnerPractice from "./pelvic-floor-contraction-as-an-inner-practice.content";
 
 export type MechanismStatus = "complete" | "planned";
 
@@ -507,9 +508,16 @@ export const EVIDENCE_MECHANISMS: EvidenceMechanism[] = [
     slug: "pelvic-floor-contraction-as-an-inner-practice",
     title: "Pelvic floor contraction as an inner practice",
     group: "expected-weak",
-    status: "planned",
-    description: "Not yet researched.",
+    status: "complete",
+    reviewDate: "November 2026",
+    researchGrade:
+      "None found for mood, attention, autonomic balance or contemplative outcomes (Strong strictly as physical rehabilitation for female stress urinary incontinence, which is a different use)",
+    traditionalGrade: "Strong",
+    description:
+      "Root lock and pelvic floor contraction — strong for female stress incontinence rehab, none found for mood or contemplative outcomes alone.",
+    markdown: withNormalizedGrades(pelvicFloorContractionAsAnInnerPractice),
   },
+
   {
     slug: "hand-positions",
     title: "Hand positions",
