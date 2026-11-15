@@ -121,7 +121,7 @@ Pages carry the date they were last reviewed. Evidence changes; an undated page 
 - ● Expressive writing
 - ● Mental imagery and visualisation
 - ● Values clarification and self-affirmation
-- ○ Input restriction and attentional load
+- ● Input restriction and attentional load
 - ○ Rumination and mind-wandering
 
 **Emotion and relationship**

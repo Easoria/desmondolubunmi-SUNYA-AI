@@ -9,6 +9,7 @@ import expressiveWriting from "./expressive-writing.content";
 import musicAndDeliberatelyChosenSound from "./music-and-deliberately-chosen-sound.content";
 import mentalImageryAndVisualisation from "./mental-imagery-and-visualisation.content";
 import valuesClarificationAndSelfAffirmation from "./values-clarification-and-self-affirmation.content";
+import inputRestrictionAndAttentionalLoad from "./input-restriction-and-attentional-load.content";
 
 export type MechanismStatus = "complete" | "planned";
 
@@ -189,8 +190,14 @@ export const EVIDENCE_MECHANISMS: EvidenceMechanism[] = [
     slug: "input-restriction-and-attentional-load",
     title: "Input restriction and attentional load",
     group: "attention-and-cognition",
-    status: "planned",
-    description: "Not yet researched.",
+    status: "complete",
+    reviewDate: "November 2026",
+    researchGrade:
+      "Moderate for quiet post-learning rest, notification disruption and mobile-internet reduction on attention and well-being, Preliminary for standalone social-media detoxes and causal effects of media multitasking",
+    traditionalGrade: "Very strong",
+    description:
+      "Cutting alerts and continuous mobile internet — attention, well-being, quiet post-learning rest, and where short detoxes fall short.",
+    markdown: withNormalizedGrades(inputRestrictionAndAttentionalLoad),
   },
   {
     slug: "rumination-and-mind-wandering",
