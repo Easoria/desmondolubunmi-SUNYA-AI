@@ -1,0 +1,1464 @@
+import type { WhereToBegin } from "@/data/essays/types";
+
+export const whereToBegin: WhereToBegin = {
+  "slug": "where-to-begin",
+  "title": "Where to Begin — Using the Twelve Levers in the Right Order",
+  "description": "The practical sequence for the Sunya framework: the five zones, the three phases, and the safety guidance. Which lever matters for you right now, and which can wait.",
+  "sections": [
+    {
+      "heading": "1. The Governing Principle",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "The Rule",
+              "bold": true
+            },
+            {
+              "text": " Find the single biggest obstacle to your well-being right now. Address that and nothing else. Once it moves, reassess.",
+              "italic": true
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "spans": [
+            {
+              "text": "Why this rule breaks down",
+              "bold": true
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            [
+              {
+                "text": "The instinct when you are suffering is to take on everything at once"
+              }
+            ],
+            [
+              {
+                "text": "The result is overwhelm, inconsistency, and the false conclusion that the tools don’t work"
+              }
+            ],
+            [
+              {
+                "text": "The tools work. Overloading yourself fails."
+              }
+            ]
+          ]
+        },
+        {
+          "type": "subheading",
+          "spans": [
+            {
+              "text": "The bottleneck principle",
+              "bold": true
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            [
+              {
+                "text": "Every human system has a single point of greatest friction at any given time"
+              }
+            ],
+            [
+              {
+                "text": "This bottleneck determines the quality of everything downstream"
+              }
+            ],
+            [
+              {
+                "text": "Address anything other than the bottleneck and it remains — silently defeating every other intervention"
+              }
+            ],
+            [
+              {
+                "text": "Address the bottleneck directly and the entire system shifts"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "The core skill",
+              "bold": true
+            },
+            {
+              "text": " is the accuracy and speed with which you can identify the bottleneck."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "Everything in the sections that follow is in service of that one capability."
+            }
+          ]
+        }
+      ],
+      "paragraphs": [
+        "The Rule Find the single biggest obstacle to your well-being right now. Address that and nothing else. Once it moves, reassess.",
+        "Why this rule breaks down",
+        "The instinct when you are suffering is to take on everything at once",
+        "The result is overwhelm, inconsistency, and the false conclusion that the tools don’t work",
+        "The tools work. Overloading yourself fails.",
+        "The bottleneck principle",
+        "Every human system has a single point of greatest friction at any given time",
+        "This bottleneck determines the quality of everything downstream",
+        "Address anything other than the bottleneck and it remains — silently defeating every other intervention",
+        "Address the bottleneck directly and the entire system shifts",
+        "The core skill is the accuracy and speed with which you can identify the bottleneck.",
+        "Everything in the sections that follow is in service of that one capability."
+      ]
+    },
+    {
+      "heading": "2. The Diagnostic Framework — Reading the State",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "Before beginning any practice, identify which zone you are in. Most people sit clearly in one of five zones. Start there."
+            }
+          ]
+        }
+      ],
+      "paragraphs": [
+        "Before beginning any practice, identify which zone you are in. Most people sit clearly in one of five zones. Start there."
+      ]
+    },
+    {
+      "heading": "Zone 1 — Survival Crisis",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "The biological baseline is not handled. Sustenance, shelter, or safety are genuinely threatened or chronically uncertain."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "Signs:",
+              "italic": true,
+              "bold": true
+            },
+            {
+              "text": " Chronic financial terror, housing instability, inability to think beyond immediate survival, constant low-grade panic, inability to engage with any inner practice"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "First lever:",
+              "italic": true,
+              "bold": true
+            },
+            {
+              "text": " Sustenance (Lever 7). No inner practice can take root while the root energy centre is locked in survival mode. Address the material foundation first — always."
+            }
+          ]
+        }
+      ],
+      "paragraphs": [
+        "The biological baseline is not handled. Sustenance, shelter, or safety are genuinely threatened or chronically uncertain.",
+        "Signs: Chronic financial terror, housing instability, inability to think beyond immediate survival, constant low-grade panic, inability to engage with any inner practice",
+        "First lever: Sustenance (Lever 7). No inner practice can take root while the root energy centre is locked in survival mode. Address the material foundation first — always."
+      ]
+    },
+    {
+      "heading": "Zone 2 — Nervous System Collapse",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "The biological baseline is technically handled, but the body is chronically exhausted and dysregulated."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "Signs:",
+              "italic": true,
+              "bold": true
+            },
+            {
+              "text": " Poor or fragmented sleep, persistent fatigue, high baseline anxiety, inability to concentrate, physical tension that does not release, frequent illness"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "First lever:",
+              "italic": true,
+              "bold": true
+            },
+            {
+              "text": " Sleep (Lever 8). A chronically exhausted nervous system cannot hold inner practice. Stabilise the nightly reset first. Breath (Lever 1) as immediate support."
+            }
+          ]
+        }
+      ],
+      "paragraphs": [
+        "The biological baseline is technically handled, but the body is chronically exhausted and dysregulated.",
+        "Signs: Poor or fragmented sleep, persistent fatigue, high baseline anxiety, inability to concentrate, physical tension that does not release, frequent illness",
+        "First lever: Sleep (Lever 8). A chronically exhausted nervous system cannot hold inner practice. Stabilise the nightly reset first. Breath (Lever 1) as immediate support."
+      ]
+    },
+    {
+      "heading": "Zone 3 — Emotional Accumulation",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "The system is stable but the emotional body is heavy, blocked, or numb."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "Signs:",
+              "italic": true,
+              "bold": true
+            },
+            {
+              "text": " Persistent heaviness or sadness, unresolved grief, chronic resentment, relational conflict, emotional numbness, a general sense of being weighed down without clear cause"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "First lever:",
+              "italic": true,
+              "bold": true
+            },
+            {
+              "text": " Heart (Lever 5). Specifically: Emotional Presence, Heart Coherence, and the Alchemy of Forgiveness (Connection Lever 10). Breath (Lever 1) to open the system before heart work."
+            }
+          ]
+        }
+      ],
+      "paragraphs": [
+        "The system is stable but the emotional body is heavy, blocked, or numb.",
+        "Signs: Persistent heaviness or sadness, unresolved grief, chronic resentment, relational conflict, emotional numbness, a general sense of being weighed down without clear cause",
+        "First lever: Heart (Lever 5). Specifically: Emotional Presence, Heart Coherence, and the Alchemy of Forgiveness (Connection Lever 10). Breath (Lever 1) to open the system before heart work."
+      ]
+    },
+    {
+      "heading": "Zone 4 — Mental Fragmentation",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "The body and emotions are manageable but the mind is scattered, noisy, or out of control."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "Signs:",
+              "italic": true,
+              "bold": true
+            },
+            {
+              "text": " Compulsive overthinking, inability to focus, identity confusion, chronic comparison and self-criticism, inability to sit still, mental exhaustion despite physical rest"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "First lever:",
+              "italic": true,
+              "bold": true
+            },
+            {
+              "text": " Awareness (Lever 6). Specifically: Breath Awareness, Body Scan, and Pure Observation to establish the witness. Breath (Lever 1) as entry point."
+            }
+          ]
+        }
+      ],
+      "paragraphs": [
+        "The body and emotions are manageable but the mind is scattered, noisy, or out of control.",
+        "Signs: Compulsive overthinking, inability to focus, identity confusion, chronic comparison and self-criticism, inability to sit still, mental exhaustion despite physical rest",
+        "First lever: Awareness (Lever 6). Specifically: Breath Awareness, Body Scan, and Pure Observation to establish the witness. Breath (Lever 1) as entry point."
+      ]
+    },
+    {
+      "heading": "Zone 5 — The Hollow Seeker",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "Everything functions. Nothing fulfils. You may be stable, capable, and successful by external measures — but persistently empty inside."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "Signs:",
+              "italic": true,
+              "bold": true
+            },
+            {
+              "text": " Achievement without satisfaction, successful life that feels meaningless, seeking through relationships, substances, or spiritual bypassing, a sense that something essential is missing despite having “everything”"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "First lever:",
+              "italic": true,
+              "bold": true
+            },
+            {
+              "text": " Awareness (Lever 6) — the deeper practices: Self-Inquiry, Non-Doing, Aware of Awareness. Conservation (Lever 0) to stop the leakage feeding the inner void. The hollow seeker is often ready for the deepest practices in this framework — the bottleneck is not capacity but direction."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "A note on mixed presentations",
+              "bold": true
+            },
+            {
+              "text": " Most people present across two zones simultaneously."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "When this happens, identify which zone is "
+            },
+            {
+              "text": "primary",
+              "italic": true
+            },
+            {
+              "text": " — which one, if addressed, would most rapidly improve the other. Start there."
+            }
+          ]
+        }
+      ],
+      "paragraphs": [
+        "Everything functions. Nothing fulfils. You may be stable, capable, and successful by external measures — but persistently empty inside.",
+        "Signs: Achievement without satisfaction, successful life that feels meaningless, seeking through relationships, substances, or spiritual bypassing, a sense that something essential is missing despite having “everything”",
+        "First lever: Awareness (Lever 6) — the deeper practices: Self-Inquiry, Non-Doing, Aware of Awareness. Conservation (Lever 0) to stop the leakage feeding the inner void. The hollow seeker is often ready for the deepest practices in this framework — the bottleneck is not capacity but direction.",
+        "A note on mixed presentations Most people present across two zones simultaneously.",
+        "When this happens, identify which zone is primary — which one, if addressed, would most rapidly improve the other. Start there."
+      ]
+    },
+    {
+      "heading": "3. Phase One — The External Audit",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "Why external first",
+              "bold": true
+            },
+            {
+              "text": " Internal practices work on the energy body, the mind, and consciousness. But the energy body runs on a physical substrate — and that substrate has six foundational requirements. If any of them are severely compromised, the energy body cannot hold whatever the internal practices generate. Meditating while sleeping four hours a night is like taking medicine while still drinking the poison."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "Assess the six external pillars before beginning anything internal."
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "spans": [
+            {
+              "text": "The six-pillar audit — questions to ask",
+              "bold": true
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "Sleep — Are you sleeping 7–9 hours? Do you wake refreshed? Do you fall asleep easily? Any fragmentation or early waking? "
+            },
+            {
+              "text": "If compromised:",
+              "italic": true
+            },
+            {
+              "text": " Start here before anything else. Stabilise sleep first."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "Nutrition — Are you eating living, natural food? Are you eating in alignment with the sun (largest meal at midday, light dinner, 12–16 hour overnight fast)? Any chronic digestive issues? If compromised: Address after sleep, or alongside it if you have capacity."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "Connection — Do you have at least one genuine human relationship where you are truly seen? Are you chronically isolated? "
+            },
+            {
+              "text": "If compromised:",
+              "italic": true
+            },
+            {
+              "text": " Isolation is a biological stressor that undermines every other pillar. Address actively — this is not optional."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "Environment — Is your immediate living space clean, ordered, and physically safe? Are you surrounded by chaos, toxicity, or conditions of chronic stress? "
+            },
+            {
+              "text": "If compromised:",
+              "italic": true
+            },
+            {
+              "text": " Address the immediate physical space. Even small changes produce rapid nervous system relief."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "Nature — Do you spend meaningful time outdoors in natural environments? Are you spending the majority of your existence under artificial light in artificial spaces? If compromised: Make daily outdoor time a priority. This is the lowest-effort, highest-return intervention in the entire framework."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "Sustenance — Is material survival handled with reasonable ease? Is there chronic financial terror? "
+            },
+            {
+              "text": "If compromised:",
+              "italic": true
+            },
+            {
+              "text": " See Zone 1 above. Address the material foundation before anything else."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "The audit rule",
+              "bold": true
+            },
+            {
+              "text": " You are not looking for everything that could be improved. You are looking for the single pillar that is most severely compromised. Address that one. When it is stable, run the audit again."
+            }
+          ]
+        }
+      ],
+      "paragraphs": [
+        "Why external first Internal practices work on the energy body, the mind, and consciousness. But the energy body runs on a physical substrate — and that substrate has six foundational requirements. If any of them are severely compromised, the energy body cannot hold whatever the internal practices generate. Meditating while sleeping four hours a night is like taking medicine while still drinking the poison.",
+        "Assess the six external pillars before beginning anything internal.",
+        "The six-pillar audit — questions to ask",
+        "Sleep — Are you sleeping 7–9 hours? Do you wake refreshed? Do you fall asleep easily? Any fragmentation or early waking? If compromised: Start here before anything else. Stabilise sleep first.",
+        "Nutrition — Are you eating living, natural food? Are you eating in alignment with the sun (largest meal at midday, light dinner, 12–16 hour overnight fast)? Any chronic digestive issues? If compromised: Address after sleep, or alongside it if you have capacity.",
+        "Connection — Do you have at least one genuine human relationship where you are truly seen? Are you chronically isolated? If compromised: Isolation is a biological stressor that undermines every other pillar. Address actively — this is not optional.",
+        "Environment — Is your immediate living space clean, ordered, and physically safe? Are you surrounded by chaos, toxicity, or conditions of chronic stress? If compromised: Address the immediate physical space. Even small changes produce rapid nervous system relief.",
+        "Nature — Do you spend meaningful time outdoors in natural environments? Are you spending the majority of your existence under artificial light in artificial spaces? If compromised: Make daily outdoor time a priority. This is the lowest-effort, highest-return intervention in the entire framework.",
+        "Sustenance — Is material survival handled with reasonable ease? Is there chronic financial terror? If compromised: See Zone 1 above. Address the material foundation before anything else.",
+        "The audit rule You are not looking for everything that could be improved. You are looking for the single pillar that is most severely compromised. Address that one. When it is stable, run the audit again."
+      ]
+    },
+    {
+      "heading": "4. Phase Two — The Internal Entry Point",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "The universal starting point",
+              "bold": true
+            },
+            {
+              "text": " Once the most critical external pillar is stable, begin internal work. The entry point is always the same regardless of the presenting zone:"
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "spans": [
+            {
+              "text": "Breath first.",
+              "bold": true
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "Breath is the only physiological function that is both voluntary and involuntary. It is the direct bridge between conscious intention and the autonomic nervous system. It requires no prior experience, no belief system, and no particular state of readiness. It produces measurable results within minutes. And it is safe for almost everyone."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "Begin with Breath (Lever 1) before introducing any other internal practice."
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "spans": [
+            {
+              "text": "Expansion from Breath — the symptom-based map",
+              "bold": true
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "Once Breath is established as a daily practice (minimum 10 minutes, morning), expand based on what your system most needs:"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "If the primary presenting symptom is physical tension and nervous system dysregulation: Breath → Movement (Lever 2) → Sleep practices (Lever 8)"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "If the primary presenting symptom is emotional heaviness, grief, or numbness: Breath → Heart (Lever 5): Heart Coherence, Emotional Presence → Sound (Lever 4): toning, humming → Awareness (Lever 6): Body Scan"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "If the primary presenting symptom is mental noise, overthinking, or scattered focus: Breath → Awareness (Lever 6): Breath Awareness, Pure Observation → Mind (Lever 3): Input Control, Laser Focus → Conservation (Lever 0)"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "If the primary presenting symptom is disconnection, isolation, or relational difficulty: Breath → Heart (Lever 5) → Connection practices (Lever 10): Internal Saturation, Somatic Communion If you are stable but seeking depth: Breath → Awareness (Lever 6): the full spectrum → Conservation (Lever 0) → Self-Inquiry and Ultimate Self-Inquiry"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "The expansion rule",
+              "bold": true
+            },
+            {
+              "text": " Add one new practice at a time. Stay consistent with the current practice before a new one is introduced. Introducing multiple practices simultaneously produces the same result as overloading yourself — overwhelm and abandonment."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "One practice, consistently applied, always outperforms five practices inconsistently applied."
+            }
+          ]
+        }
+      ],
+      "paragraphs": [
+        "The universal starting point Once the most critical external pillar is stable, begin internal work. The entry point is always the same regardless of the presenting zone:",
+        "Breath first.",
+        "Breath is the only physiological function that is both voluntary and involuntary. It is the direct bridge between conscious intention and the autonomic nervous system. It requires no prior experience, no belief system, and no particular state of readiness. It produces measurable results within minutes. And it is safe for almost everyone.",
+        "Begin with Breath (Lever 1) before introducing any other internal practice.",
+        "Expansion from Breath — the symptom-based map",
+        "Once Breath is established as a daily practice (minimum 10 minutes, morning), expand based on what your system most needs:",
+        "If the primary presenting symptom is physical tension and nervous system dysregulation: Breath → Movement (Lever 2) → Sleep practices (Lever 8)",
+        "If the primary presenting symptom is emotional heaviness, grief, or numbness: Breath → Heart (Lever 5): Heart Coherence, Emotional Presence → Sound (Lever 4): toning, humming → Awareness (Lever 6): Body Scan",
+        "If the primary presenting symptom is mental noise, overthinking, or scattered focus: Breath → Awareness (Lever 6): Breath Awareness, Pure Observation → Mind (Lever 3): Input Control, Laser Focus → Conservation (Lever 0)",
+        "If the primary presenting symptom is disconnection, isolation, or relational difficulty: Breath → Heart (Lever 5) → Connection practices (Lever 10): Internal Saturation, Somatic Communion If you are stable but seeking depth: Breath → Awareness (Lever 6): the full spectrum → Conservation (Lever 0) → Self-Inquiry and Ultimate Self-Inquiry",
+        "The expansion rule Add one new practice at a time. Stay consistent with the current practice before a new one is introduced. Introducing multiple practices simultaneously produces the same result as overloading yourself — overwhelm and abandonment.",
+        "One practice, consistently applied, always outperforms five practices inconsistently applied."
+      ]
+    },
+    {
+      "heading": "5. Phase Three — Root Cause Work",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "The rule: stability before depth",
+              "bold": true
+            },
+            {
+              "text": " Root cause work addresses the deepest layer of the problem — the identification with the separate self, the fundamental contraction of consciousness that generates all suffering. These practices are the most powerful in the framework. They are also the most demanding."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "Do not move into root cause work until:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            [
+              {
+                "text": "At least one external pillar is stable and maintained"
+              }
+            ],
+            [
+              {
+                "text": "A consistent daily breath practice is established"
+              }
+            ],
+            [
+              {
+                "text": "You can sit in stillness for at least 10–15 minutes without acute distress"
+              }
+            ],
+            [
+              {
+                "text": "There is genuine readiness in you — not intellectual curiosity, but an authentic desire to see what is actually true"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "Attempting deep Awareness work, Self-Inquiry, or Ultimate Self-Inquiry while dysregulated, unstable, or resistant does not accelerate your progress. It destabilises you and often drives you away from the work entirely."
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "spans": [
+            {
+              "text": "The root cause practices — in order of approach",
+              "bold": true
+            }
+          ]
+        }
+      ],
+      "paragraphs": [
+        "The rule: stability before depth Root cause work addresses the deepest layer of the problem — the identification with the separate self, the fundamental contraction of consciousness that generates all suffering. These practices are the most powerful in the framework. They are also the most demanding.",
+        "Do not move into root cause work until:",
+        "At least one external pillar is stable and maintained",
+        "A consistent daily breath practice is established",
+        "You can sit in stillness for at least 10–15 minutes without acute distress",
+        "There is genuine readiness in you — not intellectual curiosity, but an authentic desire to see what is actually true",
+        "Attempting deep Awareness work, Self-Inquiry, or Ultimate Self-Inquiry while dysregulated, unstable, or resistant does not accelerate your progress. It destabilises you and often drives you away from the work entirely.",
+        "The root cause practices — in order of approach"
+      ]
+    },
+    {
+      "heading": "Step 1 — Establishing the Witness",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "Before the separate self can be questioned, you must be able to observe your own experience without being completely identified with it."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "Practices:",
+              "italic": true,
+              "bold": true
+            },
+            {
+              "text": " Pure Observation, Breath Awareness, Body Scan, Compassionate Presence (Lever 6)"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "Signs of readiness for Step 2:",
+              "bold": true,
+              "italic": true
+            },
+            {
+              "text": " You can sit quietly, notice thoughts arising, and return to the breath without being swept away. You have some felt sense of being the one who is watching."
+            }
+          ]
+        }
+      ],
+      "paragraphs": [
+        "Before the separate self can be questioned, you must be able to observe your own experience without being completely identified with it.",
+        "Practices: Pure Observation, Breath Awareness, Body Scan, Compassionate Presence (Lever 6)",
+        "Signs of readiness for Step 2: You can sit quietly, notice thoughts arising, and return to the breath without being swept away. You have some felt sense of being the one who is watching."
+      ]
+    },
+    {
+      "heading": "Step 2 — Disidentification",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "Systematically loosening the attachment to the layers of identity — body, thoughts, emotions — through the via negativa."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "Practices:",
+              "italic": true,
+              "bold": true
+            },
+            {
+              "text": " Disidentifying / Neti-Neti, Reading Your Vital State, Holistic Subtle Bodies Awareness (Lever 6)"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "Signs of readiness for Step 3:",
+              "bold": true,
+              "italic": true
+            },
+            {
+              "text": " You begin to experience, at least briefly, a quality of spaciousness or presence not dependent on your thoughts or circumstances."
+            }
+          ]
+        }
+      ],
+      "paragraphs": [
+        "Systematically loosening the attachment to the layers of identity — body, thoughts, emotions — through the via negativa.",
+        "Practices: Disidentifying / Neti-Neti, Reading Your Vital State, Holistic Subtle Bodies Awareness (Lever 6)",
+        "Signs of readiness for Step 3: You begin to experience, at least briefly, a quality of spaciousness or presence not dependent on your thoughts or circumstances."
+      ]
+    },
+    {
+      "heading": "Step 3 — Direct Self-Inquiry",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "Turning awareness directly onto the source of the sense of “I.”"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "Practices:",
+              "italic": true,
+              "bold": true
+            },
+            {
+              "text": " Self-Inquiry (Who Am I?), Ultimate Self-Inquiry (Lever 6)"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "Appropriate for:",
+              "bold": true,
+              "italic": true
+            },
+            {
+              "text": " When you are genuinely stable, with a consistent practice, experiencing spontaneous moments of inner openness. Not for beginners."
+            }
+          ]
+        }
+      ],
+      "paragraphs": [
+        "Turning awareness directly onto the source of the sense of “I.”",
+        "Practices: Self-Inquiry (Who Am I?), Ultimate Self-Inquiry (Lever 6)",
+        "Appropriate for: When you are genuinely stable, with a consistent practice, experiencing spontaneous moments of inner openness. Not for beginners."
+      ]
+    },
+    {
+      "heading": "Step 4 — Resting as Awareness",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "The culminating practice — no longer doing anything, simply being what you are."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "Practices:",
+              "italic": true,
+              "bold": true
+            },
+            {
+              "text": " Non-Doing, Aware of Awareness (Lever 6)"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "A critical note",
+              "bold": true
+            },
+            {
+              "text": " These practices work on the ego’s most fundamental defence. In some people, they surface buried psychological material: grief, fear, identity confusion, or disorientation. This is normal. If it becomes overwhelming, return immediately to stabilising practices — Breath, Movement, Sleep, Heart — until the system restabilises, then re- approach gradually."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "Do not force it. The path opens when the system is ready."
+            }
+          ]
+        }
+      ],
+      "paragraphs": [
+        "The culminating practice — no longer doing anything, simply being what you are.",
+        "Practices: Non-Doing, Aware of Awareness (Lever 6)",
+        "A critical note These practices work on the ego’s most fundamental defence. In some people, they surface buried psychological material: grief, fear, identity confusion, or disorientation. This is normal. If it becomes overwhelming, return immediately to stabilising practices — Breath, Movement, Sleep, Heart — until the system restabilises, then re- approach gradually.",
+        "Do not force it. The path opens when the system is ready."
+      ]
+    },
+    {
+      "heading": "6. The Lever Map — Quick Reference",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "What each lever does and when to reach for it.",
+              "italic": true
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "Lever 0 — Conservation",
+              "bold": true
+            },
+            {
+              "text": " Stops the leakage.",
+              "italic": true
+            },
+            {
+              "text": " Before generating more energy, plug the holes."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "Reach for this when you are consistently depleted despite practice — when everything you build keeps draining away."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "Lever 1 — Breath",
+              "bold": true
+            },
+            {
+              "text": " Regulates the nervous system.",
+              "italic": true
+            },
+            {
+              "text": " The universal entry point and the fastest- acting tool in the framework. Reach for this first, always, and return to it whenever the system is dysregulated."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "Lever 2 — Movement",
+              "bold": true
+            },
+            {
+              "text": " Releases stored physical tension and builds energetic capacity.",
+              "italic": true
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "Reach for this when the body is rigid, restless, or chronically tense — when the physical hardware is blocking everything above it."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "Lever 3 — Mind",
+              "bold": true
+            },
+            {
+              "text": " Directs cognitive energy and clears mental noise.",
+              "italic": true
+            },
+            {
+              "text": " Reach for this when you are capable of stability but scattered — when the mind is sharp but undirected."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "Lever 4 — Sound",
+              "bold": true
+            },
+            {
+              "text": " Reorganises internal coherence through vibration.",
+              "italic": true
+            },
+            {
+              "text": " Reach for this when you need a non-effortful entry into stillness — when the mind is too resistant for direct meditation but can be carried by sound."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "Lever 5 — Heart",
+              "bold": true
+            },
+            {
+              "text": " Dissolves emotional armour and opens the system.",
+              "italic": true
+            },
+            {
+              "text": " Reach for this when emotional heaviness, shutdown, or grief is the primary obstruction. The solvent that melts what mental effort cannot move."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "Lever 6 — Awareness",
+              "bold": true
+            },
+            {
+              "text": " The foundational lever.",
+              "italic": true
+            },
+            {
+              "text": " Reach for this once basic stability exists. Contains the entire spectrum from basic relaxation (NSDR, Body Scan) to the deepest practices in the framework (Ultimate Self-Inquiry, Aware of Awareness)."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "Lever 7 — Sustenance",
+              "bold": true
+            },
+            {
+              "text": " Frees the life force from survival panic.",
+              "italic": true
+            },
+            {
+              "text": " Reach for this when financial terror or misaligned work is the primary driver of your suffering. Must be addressed before genuine inner growth is possible."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "Lever 8 — Sleep",
+              "bold": true
+            },
+            {
+              "text": " The non-negotiable biological reset.",
+              "italic": true
+            },
+            {
+              "text": " Reach for this when you are chronically exhausted. No other practice compensates for a collapsing sleep foundation."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "Address this before anything else if it is severely compromised."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "Lever 9 — Nutrition",
+              "bold": true
+            },
+            {
+              "text": " Builds a clean, conductive physical vehicle.",
+              "italic": true
+            },
+            {
+              "text": " Reach for this when digestive issues, energy crashes, or food-related anxiety are creating consistent friction."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "Not usually the primary bottleneck, but a significant force multiplier."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "Lever 10 — Connection",
+              "bold": true
+            },
+            {
+              "text": " Dissolves isolation and co-regulates the nervous system.",
+              "italic": true
+            },
+            {
+              "text": " Reach for this when chronic loneliness, relational conflict, or social isolation is the primary drain on your energy and well-being."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "Lever 11 — Nature",
+              "bold": true
+            },
+            {
+              "text": " Restores biological coherence.",
+              "italic": true
+            },
+            {
+              "text": " Reach for this as a consistent daily practice for almost everyone — particularly those living in urban environments. The lowest-effort, highest-return baseline practice."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "Lever 12 — Environment",
+              "bold": true
+            },
+            {
+              "text": " The aquarium.",
+              "italic": true
+            },
+            {
+              "text": " Reach for this when your physical space is chaotic, toxic, or actively working against your inner practice. Often underestimated. A bad environment defeats a good practice."
+            }
+          ]
+        }
+      ],
+      "paragraphs": [
+        "What each lever does and when to reach for it.",
+        "Lever 0 — Conservation Stops the leakage. Before generating more energy, plug the holes.",
+        "Reach for this when you are consistently depleted despite practice — when everything you build keeps draining away.",
+        "Lever 1 — Breath Regulates the nervous system. The universal entry point and the fastest- acting tool in the framework. Reach for this first, always, and return to it whenever the system is dysregulated.",
+        "Lever 2 — Movement Releases stored physical tension and builds energetic capacity.",
+        "Reach for this when the body is rigid, restless, or chronically tense — when the physical hardware is blocking everything above it.",
+        "Lever 3 — Mind Directs cognitive energy and clears mental noise. Reach for this when you are capable of stability but scattered — when the mind is sharp but undirected.",
+        "Lever 4 — Sound Reorganises internal coherence through vibration. Reach for this when you need a non-effortful entry into stillness — when the mind is too resistant for direct meditation but can be carried by sound.",
+        "Lever 5 — Heart Dissolves emotional armour and opens the system. Reach for this when emotional heaviness, shutdown, or grief is the primary obstruction. The solvent that melts what mental effort cannot move.",
+        "Lever 6 — Awareness The foundational lever. Reach for this once basic stability exists. Contains the entire spectrum from basic relaxation (NSDR, Body Scan) to the deepest practices in the framework (Ultimate Self-Inquiry, Aware of Awareness).",
+        "Lever 7 — Sustenance Frees the life force from survival panic. Reach for this when financial terror or misaligned work is the primary driver of your suffering. Must be addressed before genuine inner growth is possible.",
+        "Lever 8 — Sleep The non-negotiable biological reset. Reach for this when you are chronically exhausted. No other practice compensates for a collapsing sleep foundation.",
+        "Address this before anything else if it is severely compromised.",
+        "Lever 9 — Nutrition Builds a clean, conductive physical vehicle. Reach for this when digestive issues, energy crashes, or food-related anxiety are creating consistent friction.",
+        "Not usually the primary bottleneck, but a significant force multiplier.",
+        "Lever 10 — Connection Dissolves isolation and co-regulates the nervous system. Reach for this when chronic loneliness, relational conflict, or social isolation is the primary drain on your energy and well-being.",
+        "Lever 11 — Nature Restores biological coherence. Reach for this as a consistent daily practice for almost everyone — particularly those living in urban environments. The lowest-effort, highest-return baseline practice.",
+        "Lever 12 — Environment The aquarium. Reach for this when your physical space is chaotic, toxic, or actively working against your inner practice. Often underestimated. A bad environment defeats a good practice."
+      ]
+    },
+    {
+      "heading": "7. Pacing, Safety, and the Kundalini Dimension",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "The pacing principle",
+              "bold": true
+            },
+            {
+              "text": " Genuine inner transformation is not linear and is not fast. The system needs time to integrate each shift before the next one is introduced. If you have had a powerful breakthrough, you need rest and stabilisation — not an immediate escalation to harder practices."
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "spans": [
+            {
+              "text": "Signs that the pace needs to slow:",
+              "bold": true
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            [
+              {
+                "text": "Emotional flooding that does not settle within a day or two"
+              }
+            ],
+            [
+              {
+                "text": "Sleep disruption following the introduction of a new practice"
+              }
+            ],
+            [
+              {
+                "text": "Disorientation, identity confusion, or feeling ungrounded"
+              }
+            ],
+            [
+              {
+                "text": "Increasing anxiety rather than decreasing"
+              }
+            ],
+            [
+              {
+                "text": "A sudden, compulsive urge to practice intensely for hours"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "When these signs appear: return to foundational practices, prioritise sleep and grounding (Earth, Movement, Conservation), and reduce the intensity and duration of inner practice until the system stabilises."
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "spans": [
+            {
+              "text": "General safety guardrails",
+              "bold": true
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            [
+              {
+                "text": "Avoid intense breathwork if you have a history of cardiovascular issues, epilepsy, or severe psychiatric conditions, unless you have medical clearance"
+              }
+            ],
+            [
+              {
+                "text": "Do not push into root cause practices if you are in acute crisis — stabilise first"
+              }
+            ],
+            [
+              {
+                "text": "If you experience persistent dissociation, depersonalisation, or a break from ordinary reality following practice, take it seriously. Reduce practice intensity, increase grounding, and seek professional support if the state persists"
+              }
+            ],
+            [
+              {
+                "text": "This framework is a complement to — not a replacement for — professional medical or psychological care where that care is genuinely needed"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "subheading",
+          "spans": [
+            {
+              "text": "The kundalini dimension",
+              "bold": true
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "Kundalini is the name given across traditions to the concentrated life force held at the base of the central channel. When inner practice deepens sufficiently — through consistent conservation, breath, awareness, and heart work — this energy begins to rise through the central channel toward the higher centres. This is the biological and energetic process underlying genuine contemplative opening."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "For most people engaging with this framework, the experience will be gradual and gentle: increasing clarity, spontaneous stillness, moments of unexpected spaciousness, a quiet dissolving of what used to feel urgent. This is the natural, healthy unfolding of the process."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "In a smaller number of people — particularly those with strong practice, significant prior life experience, or who are constitutionally sensitive — the process can accelerate rapidly. This may manifest as:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            [
+              {
+                "text": "Intense heat or energy moving through the body, particularly the spine"
+              }
+            ],
+            [
+              {
+                "text": "Spontaneous breathwork or involuntary physical movements"
+              }
+            ],
+            [
+              {
+                "text": "Profound, sudden experiences of expansiveness or dissolution of the self"
+              }
+            ],
+            [
+              {
+                "text": "Temporary emotional turbulence as old material surfaces and releases"
+              }
+            ],
+            [
+              {
+                "text": "Heightened sensory sensitivity"
+              }
+            ],
+            [
+              {
+                "text": "Periods of deep, effortless stillness alternating with periods of intensity"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "subheading",
+          "spans": [
+            {
+              "text": "How to support this process:",
+              "bold": true
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            [
+              {
+                "text": "Prioritise Conservation (Lever 0) — do not leak the energy that is building"
+              }
+            ],
+            [
+              {
+                "text": "Increase grounding: time in nature, barefoot on the earth, physical movement, nourishing food"
+              }
+            ],
+            [
+              {
+                "text": "Maintain consistent sleep and a stable daily rhythm — the system needs stability as it restructures"
+              }
+            ],
+            [
+              {
+                "text": "Reduce external stimulation during periods of intensity"
+              }
+            ],
+            [
+              {
+                "text": "Do not try to force, accelerate, or replicate an experience — let the process unfold at its own pace"
+              }
+            ],
+            [
+              {
+                "text": "Seek the presence of someone who has navigated this process themselves if the intensity becomes difficult to hold alone"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "subheading",
+          "spans": [
+            {
+              "text": "What not to do:",
+              "bold": true
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            [
+              {
+                "text": "Do not diagnose a kundalini process from symptoms alone — many of these signs have ordinary explanations and should be checked medically if there is any doubt"
+              }
+            ],
+            [
+              {
+                "text": "Do not use intense prolonged breathwork or sleep deprivation to force the process — this produces instability, not opening"
+              }
+            ],
+            [
+              {
+                "text": "Do not abandon the external pillars in pursuit of peak inner experiences — the biological foundation must remain strong throughout"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "The deepest insight here is this: the process knows what it is doing. Your role is not to force it, but to ensure the conditions are right for it to unfold safely. Remove the obstacles, stabilise the foundation, and trust the intelligence of the life force itself."
+            }
+          ]
+        }
+      ],
+      "paragraphs": [
+        "The pacing principle Genuine inner transformation is not linear and is not fast. The system needs time to integrate each shift before the next one is introduced. If you have had a powerful breakthrough, you need rest and stabilisation — not an immediate escalation to harder practices.",
+        "Signs that the pace needs to slow:",
+        "Emotional flooding that does not settle within a day or two",
+        "Sleep disruption following the introduction of a new practice",
+        "Disorientation, identity confusion, or feeling ungrounded",
+        "Increasing anxiety rather than decreasing",
+        "A sudden, compulsive urge to practice intensely for hours",
+        "When these signs appear: return to foundational practices, prioritise sleep and grounding (Earth, Movement, Conservation), and reduce the intensity and duration of inner practice until the system stabilises.",
+        "General safety guardrails",
+        "Avoid intense breathwork if you have a history of cardiovascular issues, epilepsy, or severe psychiatric conditions, unless you have medical clearance",
+        "Do not push into root cause practices if you are in acute crisis — stabilise first",
+        "If you experience persistent dissociation, depersonalisation, or a break from ordinary reality following practice, take it seriously. Reduce practice intensity, increase grounding, and seek professional support if the state persists",
+        "This framework is a complement to — not a replacement for — professional medical or psychological care where that care is genuinely needed",
+        "The kundalini dimension",
+        "Kundalini is the name given across traditions to the concentrated life force held at the base of the central channel. When inner practice deepens sufficiently — through consistent conservation, breath, awareness, and heart work — this energy begins to rise through the central channel toward the higher centres. This is the biological and energetic process underlying genuine contemplative opening.",
+        "For most people engaging with this framework, the experience will be gradual and gentle: increasing clarity, spontaneous stillness, moments of unexpected spaciousness, a quiet dissolving of what used to feel urgent. This is the natural, healthy unfolding of the process.",
+        "In a smaller number of people — particularly those with strong practice, significant prior life experience, or who are constitutionally sensitive — the process can accelerate rapidly. This may manifest as:",
+        "Intense heat or energy moving through the body, particularly the spine",
+        "Spontaneous breathwork or involuntary physical movements",
+        "Profound, sudden experiences of expansiveness or dissolution of the self",
+        "Temporary emotional turbulence as old material surfaces and releases",
+        "Heightened sensory sensitivity",
+        "Periods of deep, effortless stillness alternating with periods of intensity",
+        "How to support this process:",
+        "Prioritise Conservation (Lever 0) — do not leak the energy that is building",
+        "Increase grounding: time in nature, barefoot on the earth, physical movement, nourishing food",
+        "Maintain consistent sleep and a stable daily rhythm — the system needs stability as it restructures",
+        "Reduce external stimulation during periods of intensity",
+        "Do not try to force, accelerate, or replicate an experience — let the process unfold at its own pace",
+        "Seek the presence of someone who has navigated this process themselves if the intensity becomes difficult to hold alone",
+        "What not to do:",
+        "Do not diagnose a kundalini process from symptoms alone — many of these signs have ordinary explanations and should be checked medically if there is any doubt",
+        "Do not use intense prolonged breathwork or sleep deprivation to force the process — this produces instability, not opening",
+        "Do not abandon the external pillars in pursuit of peak inner experiences — the biological foundation must remain strong throughout",
+        "The deepest insight here is this: the process knows what it is doing. Your role is not to force it, but to ensure the conditions are right for it to unfold safely. Remove the obstacles, stabilise the foundation, and trust the intelligence of the life force itself."
+      ]
+    }
+  ]
+};
