@@ -50,6 +50,7 @@ export function Footer() {
               <FooterLink to="/framework">Sunya Framework</FooterLink>
               <FooterLink to="/philosophy">Philosophy</FooterLink>
               <FooterLink to="/practices">Practices</FooterLink>
+              <FooterLink to="/evidence">Evidence</FooterLink>
             </FooterColumn>
 
             <FooterColumn label="Gatherings">

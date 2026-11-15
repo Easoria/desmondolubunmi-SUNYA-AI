@@ -7,6 +7,7 @@ const FRAMEWORK_CHILDREN = [
   { label: "Find what helps", to: "/problems" as const },
   { label: "Philosophy", to: "/philosophy" as const },
   { label: "Practices", to: "/practices" as const },
+  { label: "Evidence", to: "/evidence" as const },
 ];
 
 const NAV_ITEMS = [
