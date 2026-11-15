@@ -112,7 +112,7 @@ Pages carry the date they were last reviewed. Evidence changes; an undated page 
 - ● Slow and paced breathing *(merges the earlier separate entries for extended exhale and resonance-frequency breathing — the literature pools them)*
 - ● Activating breathwork — rapid breathing and breath holding
 - ● Sustained vocalisation — chanting and humming
-- ○ Music and deliberately chosen sound *(added: Conscious Listening was not covered by any existing entry)*
+- ● Music and deliberately chosen sound *(added: Conscious Listening was not covered by any existing entry)*
 
 **Attention and cognition**
 - ● Meditation — focused attention and open monitoring *(merged: the trial literature teaches and tests both together)*
