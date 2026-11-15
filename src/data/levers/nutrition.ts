@@ -9,17 +9,18 @@ export const nutritionLever: Lever = {
   intro: [
     "Your body is being rebuilt constantly. Billions of cells die every day and are replaced, and what replaces them is what you ate. You are quite literally making your own flesh, blood and brain out of material you gathered from the world.",
     "So food is not only fuel. An apple is earth, water and sunlight, condensed into something you can hold. What you take in becomes what you are made of.",
-    "Eat food that is processed, stale or lifeless and the system turns dense and heavy. Digestion becomes hard work, the gut clogs, and a great deal of your available energy is spent simply breaking things down. Eat food that is fresh and alive and the opposite happens. Digestion takes less, the system stays clear, and the energy is left free to move.",
+    "Eat food that is processed, stale or lifeless and the system turns dense and heavy. Digestion becomes hard work — it takes longer and more of your energy goes into it — and a great deal of your available energy is spent simply breaking things down. Eat food that is fresh and alive and the opposite happens. Digestion takes less, the system stays clear, and the energy is left free to move.",
     "This is why nutrition is not really about diets. It is about keeping the body clear enough to let life move through it.",
     "Sunya recommends a pescatarian diet — primarily plants, with seafood as the one animal food. Two things point that way. Our teeth and digestive tract resemble those of herbivores far more than carnivores, which suggests plants are the natural baseline. And the research on long-term health tends to land in the same place: plant-based eating, with seafood as the one addition that holds up. Seafood also sits furthest from us in the animal kingdom, which is part of why it asks less of the system than heavier meat.",
+    "This is a general view, not individual dietary advice. Anyone with a medical condition, or who is pregnant, should speak to their doctor or a dietitian.",
   ],
   practices: [
     {
       sourceNumber: 1,
       slug: "the-pranic-spectrum",
-      name: "The Pranic Spectrum",
+      name: "How Food Affects You",
       subtitle: "what to eat",
-      essence: "Moving beyond dogmatic diets to directly observing how specific foods affect the energy and clarity of the human system. The practice of fuelling the body with living, sun- charged, high-water-content foods to build a clean, conductive physical vehicle.",
+      essence: "Noticing how specific foods actually affect your energy and clarity, rather than following a diet someone else designed. Fresh, water-rich, minimally processed food is the general direction.",
       mechanism: [
         "The ultimate test of any food is simple: does it give more energy than it costs to digest? If a food leaves you feeling heavy, lethargic, or mentally foggy, it is a net-negative transaction — draining your vital energy rather than restoring it. Traditional understanding recognises foods through their felt effects: some create restless, chaotic heat (excessive spice, deep-fried fats, extreme salt), while others create dull, heavy stagnation (highly processed foods, chemical preservatives, stale or reheated leftovers). The most natural foods for the human system are those found directly in nature, unaltered. Fresh vegetables, fruits, and organic whole foods are living structures — because they possess their original cellular integrity and are naturally rich in water, they pass through the digestive system cleanly, leaving minimal residue while flooding the cells with usable energy."
       ],
@@ -46,7 +47,7 @@ export const nutritionLever: Lever = {
         "chrononutrition",
         "high-frequency-hydration"
       ],
-      metaTitle: "The Pranic Spectrum — How to Practise It | Sunya",
+      metaTitle: "How Food Affects You — How to Practise It | Sunya",
       metaDescription: "Moving beyond dogmatic diets to directly observing how specific foods affect the energy and clarity of the human system.",
       families: ["L1", "P3", "H4"],
       generated: {
@@ -67,9 +68,8 @@ export const nutritionLever: Lever = {
     {
       sourceNumber: 2,
       slug: "chrononutrition",
-      name: "Chrononutrition",
-      subtitle: "when to eat",
-      essence: "Synchronising the internal process of digestion with the external cycle of the sun — what traditional science called Agni, the digestive fire, and what modern biology now confirms as circadian nutrition.",
+      name: "When You Eat",
+      essence: "Eating in step with daylight rather than against it. Digestion is more efficient earlier in the day, and late eating costs sleep. (Older traditions called digestive capacity agni; the modern field is chrononutrition.)",
       mechanism: [
         "The body is hardwired to process food most efficiently during daylight hours. Metabolism, insulin sensitivity, and digestive enzyme activity all peak around midday and naturally taper off in the evening. This is not a cultural preference — it is a direct expression of the circadian rhythm. When you eat a large, heavy meal late at night, you create circadian misalignment. The body is designed to transition into a restorative, parasympathetic state as darkness falls — preparing for sleep, tissue repair, and nervous system recovery. Forcing it into active digestion at this time works directly against its design. Because the gastrointestinal tract slows overnight, food sits longer in the stomach and intestines, leading to fermentation, gas, and bloating. Forced to work overtime on digestion rather than repair, the body cannot enter the restorative state it needs — and you wake up tired, heavy, and foggy rather than clear and renewed."
       ],
@@ -96,8 +96,8 @@ export const nutritionLever: Lever = {
         "high-frequency-hydration",
         "herbal-alchemy"
       ],
-      metaTitle: "Chrononutrition — How to Practise It | Sunya",
-      metaDescription: "Synchronising the internal process of digestion with the external cycle of the sun — what traditional science called Agni, the digestive fire, and what modern biology now confirms as circadian nutrition.",
+      metaTitle: "When You Eat — How to Practise It | Sunya",
+      metaDescription: "Eating in step with daylight rather than against it. Digestion is more efficient earlier in the day, and late eating costs sleep. (Older traditions called digestive capacity agni; the modern field is chrononutrition.)",
       families: ["L1"],
       generated: {
         layersSource: "INFERRED",
@@ -121,9 +121,8 @@ export const nutritionLever: Lever = {
     {
       sourceNumber: 3,
       slug: "high-frequency-hydration",
-      name: "High-Frequency Hydration",
-      subtitle: "the internal river",
-      essence: "Consciously flushing the biological system with living, high-quality water to support cellular energy, cleanse the internal ecosystem, and maintain absolute cellular fluidity.",
+      name: "Water",
+      essence: "Drinking enough, and noticing that most people do not. Water affects energy, concentration and mood faster than almost anything else you consume.",
       mechanism: [
         "The human body is not a solid object — it is largely composed of water, comprising roughly 60% of total physical mass. You are, quite literally, a fluid matrix. When the body becomes dehydrated, the blood thickens, cellular communication slows, and the nervous system contracts into a low-energy, stressed state. Water is the primary medium through which nutrients are transported, metabolic waste is flushed, and the tissues stay clear and flowing."
       ],
@@ -151,10 +150,10 @@ export const nutritionLever: Lever = {
       relatedPractices: [
         "chrononutrition",
         "herbal-alchemy",
-        "conscious-consumption"
+        "how-you-eat"
       ],
-      metaTitle: "High-Frequency Hydration — How to Practise It | Sunya",
-      metaDescription: "Consciously flushing the biological system with living, high-quality water to support cellular energy, cleanse the internal ecosystem, and maintain absolute cellular fluidity.",
+      metaTitle: "Water — How to Practise It | Sunya",
+      metaDescription: "Drinking enough, and noticing that most people do not. Water affects energy, concentration and mood faster than almost anything else you consume.",
       families: ["L1", "H1"],
       generated: {
         layersSource: "INFERRED",
@@ -169,7 +168,7 @@ export const nutritionLever: Lever = {
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "conscious-consumption",
+            slug: "how-you-eat",
             reason: "Adjacent in source order within the same lever sequence."
           }
         ]
@@ -178,9 +177,8 @@ export const nutritionLever: Lever = {
     {
       sourceNumber: 4,
       slug: "herbal-alchemy",
-      name: "Herbal Alchemy",
-      subtitle: "plant intelligence",
-      essence: "Utilising the concentrated biochemical intelligence of herbs and natural plant medicine to gently restore balance, repair the nervous system, and support the vital body.",
+      name: "Herbs",
+      essence: "Using herbs and plant preparations to support sleep, digestion and calm. Some have real evidence behind them and some do not — worth checking case by case rather than treating “natural” as a guarantee.",
       mechanism: [
         "Plants are stationary organisms — to survive millions of years of environmental stress, they evolved highly sophisticated biochemical systems. When you ingest specific herbs, you are not merely consuming random chemicals; you are absorbing the plant’s ancient adaptive intelligence directly into your biological system. Modern synthetic medicines typically isolate a single compound to force the body into a specific state, often creating side effects. Whole herbs and natural plant medicines work differently. Rather than aggressively overriding the body, they nudge biological systems gently back toward balance — working with the body’s own intelligence rather than against it. By strategically using different categories of herbs, you can lower the stress response, support digestion, and calm the nervous system with remarkable precision and minimal friction."
       ],
@@ -204,11 +202,11 @@ export const nutritionLever: Lever = {
       leverSlug: "nutrition",
       relatedPractices: [
         "high-frequency-hydration",
-        "conscious-consumption",
+        "how-you-eat",
         "the-alchemy-of-the-void"
       ],
-      metaTitle: "Herbal Alchemy — How to Practise It | Sunya",
-      metaDescription: "Utilising the concentrated biochemical intelligence of herbs and natural plant medicine to gently restore balance, repair the nervous system, and support the vital body.",
+      metaTitle: "Herbs — How to Practise It | Sunya",
+      metaDescription: "Using herbs and plant preparations to support sleep, digestion and calm. Some have real evidence behind them and some do not — worth checking case by case rather than treating “natural” as a guarantee.",
       families: ["H1"],
       generated: {
         layersSource: "INFERRED",
@@ -219,7 +217,7 @@ export const nutritionLever: Lever = {
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "conscious-consumption",
+            slug: "how-you-eat",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
@@ -231,10 +229,9 @@ export const nutritionLever: Lever = {
     },
     {
       sourceNumber: 5,
-      slug: "conscious-consumption",
-      name: "Conscious Consumption",
-      subtitle: "how to eat",
-      essence: "Shifting the body into the precise physiological state required to fully extract nourishment from food. The practice of recognising that eating while stressed turns even the finest food into a burden.",
+      slug: "how-you-eat",
+      name: "How You Eat",
+      essence: "Shifting the body into the state where it can actually digest. Eating while stressed or rushed turns even good food into a burden.",
       mechanism: [
         "The autonomic nervous system has two primary gears: sympathetic (survival mode) and parasympathetic (rest and digest). When you eat while stressed — rushing between tasks, watching alarming news, or working through lunch — the brain has physically diverted blood away from the digestive organs and into the limbs. In this state, the digestive system is essentially offline. Even the highest-quality food, consumed in a state of tension and distraction, will ferment, stagnate, and produce metabolic waste rather than nourishment. To extract maximum nourishment from food, the body must first be anchored in a state of genuine safety and presence."
       ],
@@ -261,7 +258,7 @@ export const nutritionLever: Lever = {
         "the-alchemy-of-the-void",
         "energetic-imprinting"
       ],
-      metaTitle: "Conscious Consumption — How to Practise It | Nutrition | Sunya",
+      metaTitle: "How You Eat — How to Practise It | Sunya",
       metaDescription: "Shifting the body into the precise physiological state required to fully extract nourishment from food.",
       families: ["H1", "P1"],
       generated: {
@@ -286,9 +283,8 @@ export const nutritionLever: Lever = {
     {
       sourceNumber: 6,
       slug: "the-alchemy-of-the-void",
-      name: "The Alchemy of the Void",
-      subtitle: "fasting",
-      essence: "Voluntarily abstaining from physical consumption to allow the body’s internal intelligence to incinerate cellular waste, repair the physical vehicle, and free energy from its most demanding daily task.",
+      name: "Fasting",
+      essence: "Going without food for a set period. The body gets a break from digestion, and the research on short-term fasting is genuinely interesting. Not for everyone, and not during pregnancy, illness, or with any history of disordered eating.",
       mechanism: [
         "Digesting food is one of the most energetically expensive operations the human system performs — consuming enormous amounts of metabolic power daily. When you are constantly digesting, the body is locked in an outward-focused, processing state. Energy is bound to the gut. When you voluntarily stop eating, a profound shift occurs. Without incoming food to process, the body turns its attention inward. It activates deep cellular restoration — clearing accumulated metabolic waste and allowing the system to repair itself from within. The energy freed from digestion becomes available to the brain and the rest of the system. Fasting is one of the quickest and most direct ways to physically clear the system and reset the baseline of the body’s functioning."
       ],
@@ -311,18 +307,18 @@ export const nutritionLever: Lever = {
       ],
       leverSlug: "nutrition",
       relatedPractices: [
-        "conscious-consumption",
+        "how-you-eat",
         "energetic-imprinting"
       ],
-      metaTitle: "The Alchemy of the Void — How to Practise It | Sunya",
-      metaDescription: "Voluntarily abstaining from physical consumption to allow the body’s internal intelligence to incinerate cellular waste, repair the physical vehicle, and free energy from its most demanding daily task.",
+      metaTitle: "Fasting — How to Practise It | Sunya",
+      metaDescription: "Going without food for a set period. The body gets a break from digestion, and the research on short-term fasting is genuinely interesting. Not for everyone, and not during pregnancy, illness, or with any history of disordered eating.",
       families: ["L1"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
         relatedPracticeRationale: [
           {
-            slug: "conscious-consumption",
+            slug: "how-you-eat",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
@@ -335,9 +331,8 @@ export const nutritionLever: Lever = {
     {
       sourceNumber: 7,
       slug: "energetic-imprinting",
-      name: "Food Intention",
-      subtitle: "the consciousness of preparation",
-      essence: "Recognising that the quality of a meal is not determined by its ingredients alone — but by the state of the one who prepares it, the simplicity of its construction, and the presence with which it is received.",
+      name: "Cooking and Eating with Attention",
+      essence: "Food made in a hurry and eaten distractedly is a different thing from food made with care and eaten with attention — in how it is cooked, and in how much of it you actually taste.",
       mechanism: [
         "Every ancient monastic tradition placed enormous importance on the",
         "consciousness of the cook. This was not superstition — it was a deep recognition that how food is prepared shapes the quality of what is consumed. When a meal is cooked in a state of anger, hurry, or disconnection, those qualities are present in the environment, the touch, and the atmosphere of its making. When food is prepared with presence, care, and simplicity, the entire experience of eating it is different — the body receives it differently. This is also why heavily industrialised food, produced in conditions of mechanical efficiency and profit-driven volume, lacks something that home-cooked food prepared with attention does not. The act of preparation is itself a form of nourishment."
@@ -360,8 +355,8 @@ export const nutritionLever: Lever = {
       relatedPractices: [
         "the-alchemy-of-the-void"
       ],
-      metaTitle: "Food Intention — How to Practise It | Sunya",
-      metaDescription: "Recognising that the quality of a meal is not determined by its ingredients alone — but by the state of the one who prepares it, the simplicity of its construction, and the presence with which it is received.",
+      metaTitle: "Cooking and Eating with Attention — How to Practise It | Sunya",
+      metaDescription: "Food made in a hurry and eaten distractedly is a different thing from food made with care and eaten with attention — in how it is cooked, and in how much of it you actually taste.",
       generated: {
         layersSource: "INFERRED",
         durationSource: "OMITTED",
