@@ -29,7 +29,8 @@ export const Route = createFileRoute("/about")({
   head: () => ({
     ...buildSeoHead({
       title: "About Desmond Olubunmi — Founder of Sunya | Sunya",
-      description: "Who Desmond Olubunmi is, and what Sunya is for.",
+      description:
+        "Desmond Olubunmi is the founder of Sunya — a complete, non-sectarian framework for human wellbeing. Author of The Sleep Rhythm Reset; teaches in Dublin and online.",
       path: "/about",
       ogType: "website",
       imageKind: "core",

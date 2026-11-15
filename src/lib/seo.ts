@@ -288,7 +288,7 @@ export function buildWebSiteSchema() {
     alternateName: ["Desmond Olubunmi", "Sunya by Desmond Olubunmi"],
     url: CANONICAL_ORIGIN,
     description:
-      "A complete, practical framework for human wellbeing — rooted in the timeless mechanics of consciousness.",
+      "Desmond Olubunmi's complete, non-sectarian map of human wellbeing — philosophy, practices, gatherings and evidence.",
     inLanguage: "en-IE",
     publisher: {
       "@type": "Organization",
@@ -317,8 +317,10 @@ export const PERSON_SCHEMA = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Desmond Olubunmi",
-  jobTitle: "Founder",
-  description: "Founder of Sunya. Author of The Sleep Rhythm Reset.",
+  jobTitle: "Founder of Sunya",
+  description:
+    "Founder of Sunya — a complete, non-sectarian framework for human wellbeing. Author of The Sleep Rhythm Reset.",
+  url: canonicalUrl("/about"),
   sameAs: [
     "https://amzn.eu/d/0bzw0W4k",
     "https://apps.apple.com/ie/app/sunya-sleep/id6764553926",
@@ -333,7 +335,7 @@ export const ORGANIZATION_SCHEMA = {
   url: CANONICAL_ORIGIN,
   logo: canonicalUrl("/og/core.jpg"),
   description:
-    "A universal system for inner transformation — philosophy, practices, gatherings, and writing.",
+    "A complete, non-sectarian system for human wellbeing — philosophy, practices, gatherings, writing and evidence.",
   founder: {
     "@type": "Person",
     name: "Desmond Olubunmi",

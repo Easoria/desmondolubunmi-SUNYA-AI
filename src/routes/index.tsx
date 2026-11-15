@@ -11,9 +11,9 @@ import heroWebp from "@/assets/desmond-hero.webp";
 export const Route = createFileRoute("/")({
   component: IndexPage,
   head: () => {
-    const title = "Desmond Olubunmi — Sunya | A Complete Map of Human Wellbeing";
+    const title = "Desmond Olubunmi — Sunya";
     const description =
-      "Most approaches treat one part of a person. Sunya is a complete, non-sectarian system for finding where you're actually stuck — and what to do about it.";
+      "Desmond Olubunmi founded Sunya — a complete, non-sectarian map of human wellbeing. Philosophy, practices, gatherings and evidence for finding where you're stuck.";
 
     const seo = buildSeoHead({
       title,
