@@ -126,7 +126,7 @@ Pages carry the date they were last reviewed. Evidence changes; an undated page 
 
 **Emotion and relationship**
 - ● Compassion and loving-kindness training
-- ○ Acceptance and psychological flexibility
+- ● Acceptance and psychological flexibility
 - ○ Social connection and isolation
 - ○ Affective touch and co-regulation
 - ○ Prosocial behaviour and volunteering

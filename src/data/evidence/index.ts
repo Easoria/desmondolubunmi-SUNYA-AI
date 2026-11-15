@@ -12,6 +12,7 @@ import valuesClarificationAndSelfAffirmation from "./values-clarification-and-se
 import inputRestrictionAndAttentionalLoad from "./input-restriction-and-attentional-load.content";
 import ruminationAndMindWandering from "./rumination-and-mind-wandering.content";
 import compassionAndLovingKindnessTraining from "./compassion-and-loving-kindness-training.content";
+import acceptanceAndPsychologicalFlexibility from "./acceptance-and-psychological-flexibility.content";
 
 export type MechanismStatus = "complete" | "planned";
 
@@ -231,8 +232,14 @@ export const EVIDENCE_MECHANISMS: EvidenceMechanism[] = [
     slug: "acceptance-and-psychological-flexibility",
     title: "Acceptance and psychological flexibility",
     group: "emotion-and-relationship",
-    status: "planned",
-    description: "Not yet researched.",
+    status: "complete",
+    reviewDate: "November 2026",
+    researchGrade:
+      "Strong for clinical outcomes in depression, anxiety and chronic pain against inactive controls and treatment as usual, Moderate for acceptance increasing distress tolerance experimentally and for whether flexibility is the unique active mechanism",
+    traditionalGrade: "Very strong",
+    description:
+      "Allowing unwanted experience while acting on what matters — ACT outcomes, distress tolerance, and limits of the flexibility measures.",
+    markdown: withNormalizedGrades(acceptanceAndPsychologicalFlexibility),
   },
   {
     slug: "social-connection-and-isolation",
