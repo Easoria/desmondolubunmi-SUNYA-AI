@@ -29,6 +29,7 @@ import coldExposure from "./cold-exposure.content";
 import timeRestrictedEatingAndFasting from "./time-restricted-eating-and-fasting.content";
 import dietComposition from "./diet-composition.content";
 import hydration from "./hydration.content";
+import natureExposureAndAwe from "./nature-exposure-and-awe.content";
 import groundingAndEarthing from "./grounding-and-earthing.content";
 import handPositions from "./hand-positions.content";
 import soundVibrationActingOnTissue from "./sound-vibration-acting-on-tissue.content";
@@ -443,9 +444,16 @@ export const EVIDENCE_MECHANISMS: EvidenceMechanism[] = [
     slug: "nature-exposure-and-awe",
     title: "Nature exposure and awe",
     group: "body-and-lifestyle",
-    status: "planned",
-    description: "Not yet researched.",
+    status: "complete",
+    reviewDate: "November 2026",
+    researchGrade:
+      "Moderate for blood pressure, stress markers, mood and clinical anxiety/depression from nature exposure, Preliminary for standalone awe interventions and cognitive attention restoration",
+    traditionalGrade: "Very strong",
+    description:
+      "Greenspace, cortisol and mood — the two-hour weekly threshold, awe walks, and why ordinary parks count without wilderness.",
+    markdown: withNormalizedGrades(natureExposureAndAwe),
   },
+
   {
     slug: "air-quality-noise-and-visual-order",
     title: "Air quality, noise and visual order",

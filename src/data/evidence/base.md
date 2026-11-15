@@ -143,7 +143,7 @@ Pages carry the date they were last reviewed. Evidence changes; an undated page 
 - ● Diet composition
 - ● Hydration
 - ○ Botanical preparations
-- ○ Nature exposure and awe
+- ● Nature exposure and awe
 - ○ Air quality, noise and visual order
 - ○ Sexual behaviour and abstinence
 
