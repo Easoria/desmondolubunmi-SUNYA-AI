@@ -139,7 +139,7 @@ Pages carry the date they were last reviewed. Evidence changes; an undated page 
 - ● Movement, mobility and exercise timing
 - ● Progressive muscle relaxation and stillness
 - ● Cold exposure
-- ○ Time-restricted eating and fasting
+- ● Time-restricted eating and fasting
 - ○ Diet composition
 - ○ Hydration
 - ○ Botanical preparations
