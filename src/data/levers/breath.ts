@@ -20,7 +20,7 @@ export const breathLever: Lever = {
         {
           slug: "alternate-nostril-breathing",
           name: "Alternate-Nostril Breathing",
-          subtitle: "the deep purifier",
+          subtitle: "balancing both sides",
           essence:
             "The most thorough of the balancing breaths. Alternating sides slows the breath and settles the whole system evenly. (Known in the yogic traditions as nadi shodhana.)",
           mechanism: [
@@ -174,7 +174,7 @@ export const breathLever: Lever = {
           slug: "the-physiological-sigh",
           name: "The Physiological Sigh",
           subtitle: "the panic switch",
-          essence: "The fastest way to stop panic in real time.",
+          essence: "The quickest of these to take effect, and the one to use mid-panic.",
           mechanism: [
             "A double inhale reopens the tiny collapsed air sacs deep in the lungs, and the long, complete exhale offloads carbon dioxide and triggers the body’s relaxation brake. It can pull the system out of acute panic in a single round — faster than almost anything else.",
           ],
@@ -193,7 +193,7 @@ export const breathLever: Lever = {
           groupSlug: "calming",
           relatedPractices: ["4-7-8-breathing", "deep-belly-breathing", "coherent-breathing"],
           metaTitle: "The Physiological Sigh — How to Practise It | Sunya",
-          metaDescription: "The fastest way to stop panic in real time.",
+          metaDescription: "The quickest of these to take effect, and the one to use mid-panic.",
           families: ["H1", "H4"],
           directions: ["calm", "contain", "slow"],
           problems: ["insomnia"],
@@ -220,7 +220,7 @@ export const breathLever: Lever = {
           slug: "4-7-8-breathing",
           name: "4-7-8 Breathing",
           subtitle: "the tranquiliser",
-          essence: "Deep sedation, for sleep or intense anxiety.",
+          essence: "Strongly calming — for sleep, or for high anxiety.",
           mechanism: [
             "The long hold and the still longer exhale tip the nervous system strongly toward rest, slowing the heart and quieting the mind. It is potent enough to carry many people down into sleep.",
           ],
@@ -240,7 +240,7 @@ export const breathLever: Lever = {
           groupSlug: "calming",
           relatedPractices: ["the-physiological-sigh", "coherent-breathing", "breath-retention"],
           metaTitle: "4-7-8 Breathing — How to Practise It | Sunya",
-          metaDescription: "Deep sedation, for sleep or intense anxiety.",
+          metaDescription: "Strongly calming — for sleep, or for high anxiety.",
           families: ["H4", "H1"],
           directions: ["calm", "slow", "contain"],
           problems: ["insomnia"],
@@ -423,8 +423,8 @@ export const breathLever: Lever = {
     },
     {
       slug: "the-deepest-practice",
-      name: "The Deepest Practice",
-      qualifier: "Meditation and higher states",
+      name: "Deeper Practices",
+      qualifier: "Meditation and deeper states",
       note: "Because these work directly on breath, attention, and the centre of the spine, approach them gently, never forcing, and let them unfold at their own pace.",
       safetyNote: [
         "A note on safety — important. The gentle, equal-count retention is suitable for most people and calming to practise. But as the holds grow longer, and with the Great Lock especially, these build strong internal pressure — so take care: practise seated, never in or near water, and never while driving; lengthen the holds only gradually and never strain; and stop if you feel light-headed.",
