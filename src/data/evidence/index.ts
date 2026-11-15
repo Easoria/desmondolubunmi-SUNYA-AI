@@ -26,6 +26,7 @@ import skillMasteryAndSelfEfficacy from "./skill-mastery-and-self-efficacy.conte
 import workAndValuesCongruence from "./work-and-values-congruence.content";
 import progressiveMuscleRelaxationAndStillness from "./progressive-muscle-relaxation-and-stillness.content";
 import groundingAndEarthing from "./grounding-and-earthing.content";
+import handPositions from "./hand-positions.content";
 
 export type MechanismStatus = "complete" | "planned";
 
@@ -490,8 +491,14 @@ export const EVIDENCE_MECHANISMS: EvidenceMechanism[] = [
     slug: "hand-positions",
     title: "Hand positions",
     group: "expected-weak",
-    status: "planned",
-    description: "Not yet researched.",
+    status: "complete",
+    reviewDate: "November 2026",
+    researchGrade:
+      "None found for finger-to-thumb hand seals on autonomic, cognitive or clinical outcomes; one controlled trial supports warm hand-on-chest self-touch for buffering cortisol after stress",
+    traditionalGrade: "Strong",
+    description:
+      "Finger seals versus warm self-touch — no sham-controlled evidence for mudrā geometry, and one cortisol trial for hand-on-chest contact.",
+    markdown: withNormalizedGrades(handPositions),
   },
   {
     slug: "sound-vibration-acting-on-tissue",
