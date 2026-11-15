@@ -2,19 +2,31 @@ import { useId, useState } from "react";
 import type { Lever } from "@/data/levers/types";
 
 type Props = {
-  lever: Pick<Lever, "summaryLine" | "intro">;
+  lever: Pick<
+    Lever,
+    "summaryLine" | "intro" | "leadEssence" | "leadMechanism" | "leadBridgeLine"
+  >;
   className?: string;
 };
 
 /**
- * Visible first paragraph (summaryLine) with optional expandable remainder (intro).
- * Expandable copy stays in the HTML when collapsed for indexing.
- * A noscript style keeps the remainder open when JavaScript is disabled.
+ * Visible first paragraph (summaryLine) with optional expandable remainder.
+ * Remainder comes from intro[], or from leadEssence / leadMechanism /
+ * leadBridgeLine when those are present (Conservation). Expandable copy
+ * stays in the HTML when collapsed for indexing. A noscript style keeps
+ * the remainder open when JavaScript is disabled.
  */
 export function LeverIntro({ lever, className }: Props) {
   const moreId = useId();
   const visible = (lever.summaryLine ?? "").trim();
-  const more = lever.intro.map((p) => p.trim()).filter(Boolean);
+  const more = [
+    ...lever.intro,
+    lever.leadEssence,
+    lever.leadMechanism,
+    lever.leadBridgeLine,
+  ]
+    .map((p) => (p ?? "").trim())
+    .filter(Boolean);
   const hasMore = more.length > 0;
   const [expanded, setExpanded] = useState(false);
 
