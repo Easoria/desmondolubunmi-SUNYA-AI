@@ -17,7 +17,6 @@ const NAV_PRIMARY = [
 ];
 
 const NAV_SECONDARY = [
-  { label: "The Timeless Solution", to: "/timeless-solution" as const },
   { label: "Writing", to: "/writing" as const },
   { label: "About", to: "/about" as const },
 ];

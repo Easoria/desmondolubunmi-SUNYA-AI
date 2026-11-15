@@ -168,8 +168,8 @@ function WritingIndexPage() {
             in order.
           </p>
           <p className="mt-4 text-sm text-[#b8d4e8]/80">
-            <Link to="/timeless-solution" className="text-[#7ec8e3] transition hover:text-white">
-              For the complete framework, start with the Timeless Solution →
+            <Link to="/philosophy" className="text-[#7ec8e3] transition hover:text-white">
+              For the complete framework, start with the philosophy →
             </Link>
           </p>
         </header>

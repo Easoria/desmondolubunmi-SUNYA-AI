@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
-import { essays } from "@/data/essays";
 import { getAllLeverPractices, getLeversInOrder } from "@/data/levers";
 import { getAllTagProblemSlugs } from "@/lib/family-labels";
 import { supabaseAdmin } from "@/integrations/supabase/client.server";
@@ -22,7 +21,6 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/", lastmod: generatedAt, changefreq: "weekly", priority: "1.0" },
           { path: "/about", lastmod: generatedAt, changefreq: "monthly", priority: "0.8" },
           { path: "/philosophy", lastmod: generatedAt, changefreq: "monthly", priority: "0.9" },
-          { path: "/timeless-solution", lastmod: generatedAt, changefreq: "monthly", priority: "0.9" },
           { path: "/practices", lastmod: generatedAt, changefreq: "weekly", priority: "0.9" },
           { path: "/practices/where-to-begin", lastmod: generatedAt, changefreq: "monthly", priority: "0.85" },
           { path: "/privacy", lastmod: generatedAt, changefreq: "yearly", priority: "0.5" },
@@ -40,13 +38,6 @@ export const Route = createFileRoute("/sitemap.xml")({
           lastmod: generatedAt,
           changefreq: "monthly" as const,
           priority: "0.85",
-        }));
-
-        const essayEntries: SitemapEntry[] = essays.map((essay) => ({
-          path: `/timeless-solution/${essay.slug}`,
-          lastmod: generatedAt,
-          changefreq: "monthly",
-          priority: "0.8",
         }));
 
         const practiceEntries: SitemapEntry[] = getLeversInOrder().flatMap((lever) => [
@@ -104,7 +95,6 @@ export const Route = createFileRoute("/sitemap.xml")({
         const all = [
           ...staticEntries,
           ...familyProblemEntries,
-          ...essayEntries,
           ...practiceEntries,
           ...dynamic,
           ...gatheringEntries,

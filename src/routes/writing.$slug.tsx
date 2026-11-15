@@ -195,7 +195,7 @@ function WritingArticlePage() {
 
         <div className="mx-auto mt-12 max-w-[680px] border-t border-white/10 pt-10 text-center">
           <Link
-            to="/timeless-solution"
+            to="/philosophy"
             className="text-sm text-[#7ec8e3] transition hover:text-white"
           >
             The complete framework →

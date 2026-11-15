@@ -35,7 +35,7 @@ type EssayProseProps = {
    * that have pages in the library (and Zone N → in-page anchors).
    */
   autoLinkFramework?: boolean;
-  /** Per-section visual chrome — does not change Timeless Solution defaults. */
+  /** Per-section visual chrome for guide pages. */
   presentationForHeading?: (heading: string) => EssaySectionPresentation | undefined;
   /** Denser, higher-contrast body for long operational guides. */
   density?: "essay" | "guide";
