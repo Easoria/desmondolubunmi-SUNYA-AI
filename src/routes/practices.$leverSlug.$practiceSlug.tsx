@@ -1,4 +1,5 @@
 import { Link, createFileRoute, notFound } from "@tanstack/react-router";
+import { GonePage } from "@/components/site/GonePage";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { EmailCapture } from "@/components/site/EmailCapture";
@@ -10,6 +11,8 @@ import {
   getPracticeBySlug,
 } from "@/data/levers";
 import type { LeverSlug } from "@/data/levers";
+import { goneResponse } from "@/lib/gone";
+import { isRetiredPractice } from "@/lib/retired-practices";
 import { formatNarrativeParagraphs, formatProtocolStepLayout } from "@/lib/practice-text-format";
 import {
   buildArticleSchema,
@@ -40,7 +43,23 @@ const DUPLICATE_PRACTICE_NAMES = new Set(
 );
 
 export const Route = createFileRoute("/practices/$leverSlug/$practiceSlug")({
+  server: {
+    handlers: {
+      GET: async ({ request }) => {
+        const pathname = new URL(request.url).pathname.replace(/\/$/, "");
+        const match = pathname.match(/^\/practices\/([^/]+)\/([^/]+)$/);
+        if (match && isRetiredPractice(match[1]!, match[2]!)) {
+          return goneResponse();
+        }
+        // Fall through to normal SSR for live practices.
+        return undefined as unknown as Response;
+      },
+    },
+  },
   loader: ({ params }) => {
+    if (isRetiredPractice(params.leverSlug, params.practiceSlug)) {
+      return { retired: true as const };
+    }
     const lever = getLeverBySlug(params.leverSlug);
     if (!lever) throw notFound();
     const practice = getPracticeBySlug(lever, params.practiceSlug);
@@ -49,15 +68,16 @@ export const Route = createFileRoute("/practices/$leverSlug/$practiceSlug")({
       ? getWhatItsForTags(practice.families)
       : [];
     return {
+      retired: false as const,
       lever: toPublicLever(lever),
       practice: toPublicPractice(practice),
       whatItsFor,
       showLeverQualifier: DUPLICATE_PRACTICE_NAMES.has(practice.name),
     };
   },
-  component: PracticeDetailPage,
+  component: PracticeDetailRoute,
   head: ({ loaderData }) => {
-    if (!loaderData?.lever || !loaderData?.practice) return {};
+    if (!loaderData || loaderData.retired || !loaderData.lever || !loaderData.practice) return {};
     const { lever, practice } = loaderData;
     const title = buildPracticeMetaTitle(practice, {
       includeLeverName: DUPLICATE_PRACTICE_NAMES.has(practice.name),
@@ -153,8 +173,18 @@ function renderProtocolText(text: string) {
   );
 }
 
+function PracticeDetailRoute() {
+  const data = Route.useLoaderData();
+  if (data.retired) {
+    return <GonePage title="This practice has been removed" />;
+  }
+  return <PracticeDetailPage />;
+}
+
 function PracticeDetailPage() {
-  const { lever, practice, whatItsFor, showLeverQualifier } = Route.useLoaderData();
+  const data = Route.useLoaderData();
+  if (data.retired) return null;
+  const { lever, practice, whatItsFor, showLeverQualifier } = data;
   const sameLeverRelated = practice.relatedPractices
     .map((slug) => {
       const entry = getPracticeBySlug(lever, slug);
