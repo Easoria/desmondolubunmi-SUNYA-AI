@@ -27,6 +27,7 @@ import workAndValuesCongruence from "./work-and-values-congruence.content";
 import progressiveMuscleRelaxationAndStillness from "./progressive-muscle-relaxation-and-stillness.content";
 import groundingAndEarthing from "./grounding-and-earthing.content";
 import handPositions from "./hand-positions.content";
+import soundVibrationActingOnTissue from "./sound-vibration-acting-on-tissue.content";
 
 export type MechanismStatus = "complete" | "planned";
 
@@ -504,8 +505,14 @@ export const EVIDENCE_MECHANISMS: EvidenceMechanism[] = [
     slug: "sound-vibration-acting-on-tissue",
     title: "Sound vibration acting on tissue",
     group: "expected-weak",
-    status: "planned",
-    description: "Not yet researched.",
+    status: "complete",
+    reviewDate: "November 2026",
+    researchGrade:
+      "Preliminary for singing bowls and vibroacoustic stimulation on short-term relaxation; none found for claims that acoustic sound waves mechanically repair tissue, dissolve knots or re-tune organs and cells",
+    traditionalGrade: "Weak",
+    description:
+      "Singing bowls and vibroacoustic beds — acute relaxation via listening and rest, not proven tissue repair or organ re-tuning.",
+    markdown: withNormalizedGrades(soundVibrationActingOnTissue),
   },
   {
     slug: "energetic-properties-of-objects-and-spaces",
