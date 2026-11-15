@@ -149,7 +149,7 @@ Pages carry the date they were last reviewed. Evidence changes; an undated page 
 
 **Material conditions**
 - ● Financial security and scarcity
-- ○ Skill mastery and self-efficacy
+- ● Skill mastery and self-efficacy
 - ○ Work and values congruence
 
 **Expected to be weak or unsupported**
