@@ -138,7 +138,7 @@ Pages carry the date they were last reviewed. Evidence changes; an undated page 
 - ● Sleep behaviour — stimulus control, wind-down, environment
 - ● Movement, mobility and exercise timing
 - ● Progressive muscle relaxation and stillness
-- ○ Cold exposure
+- ● Cold exposure
 - ○ Time-restricted eating and fasting
 - ○ Diet composition
 - ○ Hydration
