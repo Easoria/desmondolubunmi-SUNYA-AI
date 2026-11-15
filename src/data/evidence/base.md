@@ -135,7 +135,7 @@ Pages carry the date they were last reviewed. Evidence changes; an undated page 
 
 **Body and lifestyle**
 - ● Circadian light exposure and entrainment
-- ○ Sleep behaviour — stimulus control, wind-down, environment
+- ● Sleep behaviour — stimulus control, wind-down, environment
 - ○ Movement, mobility and exercise timing
 - ○ Progressive muscle relaxation and stillness
 - ○ Cold exposure

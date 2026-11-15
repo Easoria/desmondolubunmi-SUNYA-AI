@@ -1,0 +1,131 @@
+# Sleep behaviour — stimulus control, wind-down, environment
+
+*Reviewed November 2026*
+
+**Research strength — Strong** for stimulus control and sleep restriction within chronic insomnia treatment, **Moderate** for caffeine/alcohol timing, pre-bed warm bathing and room temperature, **Preliminary** for standalone sleep-hygiene checklists in chronic insomnia.
+
+**Traditional convergence — Strong** *(regulating sleep duration, steady bedtimes and calm pre-sleep surroundings prescribed independently in Hindu, Ayurvedic and Buddhist texts for over two millennia)*.
+
+> **In short:** the familiar "sleep hygiene" list — tidy bedroom, consistent bedtime, avoid late coffee — supports good sleep as a baseline, yet fails on its own to fix chronic insomnia.[^2] What actually reverses persistent sleeplessness across 241 randomised trials is breaking the learned link between bed and anxious wakefulness: **stimulus control** (using the bed only for sleep and sex, and leaving it when wide awake), **sleep restriction** (matching time in bed to actual sleep) and changing beliefs about sleep.[^1] Outside insomnia treatment, two physical levers hold solid evidence: cutting caffeine roughly nine hours before bed,[^6] and taking a warm shower or bath one to two hours before sleep to trigger core cooling afterwards.[^4] Paradoxically, trying harder to force relaxation in bed was potentially counterproductive in the largest component analysis.[^1]
+
+---
+
+## What it is
+
+Three different layers of sleep behaviour that people often mix up:
+
+- **Stimulus control and sleep scheduling** — training the brain to treat the bed strictly as a cue for sleep rather than tossing, scrolling or worrying: going to bed only when genuinely sleepy, getting out of bed if awake and frustrated after roughly 15 to 20 minutes, keeping a fixed wake time, and avoiding long daytime naps.[^1]
+- **Wind-down and substance timing** — stepping down physiological arousal before bed (such as a warm shower or bath 1 to 2 hours beforehand)[^4] and clearing stimulants or alcohol early enough not to alter night-time sleep stages.[^6]
+- **Sleep environment** — keeping the bedroom dark, quiet and thermally comfortable so heat or noise does not fragment sleep.[^5]
+
+When sleep has been broken for months, treating a learned bedtime-arousal problem with bedroom tips alone leaves the core loop untouched.[^2]
+
+---
+
+## What it does for you
+
+### Stimulus control and sleep restriction drive insomnia remission — not sleep hygiene tips
+
+In a 2024 component network meta-analysis of **241 randomised trials (31,452 adults with chronic insomnia)**, researchers separated every active ingredient inside Cognitive Behavioural Therapy for Insomnia (CBT-I) to see what predicted post-treatment remission:[^1]
+
+| CBT-I component | Incremental odds ratio (iOR) | Effect on sleep outcomes |
+|---|---|---|
+| Cognitive restructuring | **1.68** *(95% CI [1.28, 2.20])* | Improves subjective sleep quality |
+| Third-wave (mindfulness/acceptance) | **1.49** *(95% CI [1.10, 2.03])* | Improves subjective sleep quality |
+| Sleep restriction | **1.49** *(95% CI [1.04, 2.13])* | Improves sleep efficiency and lowers night waking |
+| Stimulus control | **1.43** *(95% CI [1.00, 2.05])* | Cuts time to fall asleep and improves efficiency |
+| Sleep hygiene education | 1.01 *(95% CI [0.77, 1.32])* | **Not essential** |
+| Relaxation procedures | 0.81 *(95% CI [0.64, 1.02])* | **Potentially counterproductive** |
+
+Delivering those four active components in person raised remission rates by **33 percentage points** over psychoeducation alone (number needed to treat = **3.0**).[^1]
+
+### A warm shower or bath 1 to 2 hours before bed speeds sleep onset
+
+Pooling **13 quantitative studies**, passive body heating via a warm shower or bath (**40°C to 42.5°C**, for as little as 10 minutes) scheduled **1 to 2 hours before bedtime** shortened time to fall asleep by **about 10 minutes** on average and improved sleep efficiency and subjective quality.[^4] Warm water draws blood to the hands and feet so the body sheds core heat faster once you step out, assisting the normal temperature drop that initiates sleep.[^4]
+
+### Room temperature, caffeine timing and alcohol timing shape sleep architecture
+
+- **Bedroom temperature:** in a longitudinal home-monitoring study of older adults, sleep was most efficient between **20°C and 25°C**, with sleep efficiency dropping **5% to 10%** as nighttime temperatures climbed toward 30°C — alongside wide individual differences in ideal temperature.[^5]
+- **Caffeine:** across **24 controlled trials**, caffeine cut total sleep time by **45 minutes**, reduced sleep efficiency by **7%**, reduced deep slow-wave sleep by **11 minutes**, added **9 minutes** to sleep onset and added **12 minutes** of night-time waking.[^6] Based on dose and clearance, the authors estimated finishing a standard coffee (~107 mg) at least **8.8 hours** before bedtime.[^6]
+- **Alcohol:** across **27 laboratory studies (529 healthy adults)**, even a low dose of alcohol (up to 0.50 g/kg — roughly two standard drinks) **delayed REM sleep onset and shortened REM duration**.[^7] Shorter time to fall asleep appeared only at high doses (roughly five drinks), at the cost of greater REM disruption later in the night.[^7]
+
+---
+
+## How much you need to do
+
+- **Keep one anchor wake time** every morning — even after a poor night — and go to bed only when sleepy rather than by the clock.[^1]
+- **Leave the bed if wide awake or restless** (after roughly 15 to 20 minutes without checking the clock) and do something quiet in dim light until sleepy again.[^1]
+- **Take a 10-minute warm shower or bath 60 to 120 minutes before bed**,[^4] keep the bedroom dark, quiet and comfortable (**around 20°C–25°C**, adjusted to personal comfort),[^5] and cut caffeine at least **9 hours before sleep**.[^6]
+- **Expect 4 to 8 weeks** of consistent behavioural scheduling for chronic insomnia patterns to unwind.[^1]
+
+**So: protect a fixed wake time, use the bed solely for sleep and sex, leave the bed when wakeful, clear caffeine roughly nine hours ahead, and warm up 1 to 2 hours before cooling down in a quiet room.**
+
+---
+
+## Practices that rest on it
+
+Taking the Pressure Off · Your Body Clock · The Wind-Down Hour · Caffeine, Alcohol and Timing · The Bedroom
+
+Partly: Non-Doing · Coherent Breathing · Settling the Body
+
+---
+
+## Where the evidence stops
+
+**Sleep hygiene checklists alone do not cure chronic insomnia.** A 2025 meta-analysis of **42 randomised trials (4,245 adults)** found that standalone sleep hygiene education produced a small pre-to-post drop on the Insomnia Severity Index (**3.4 points**), yet was consistently inferior to full **CBT-I (by 3.8 points)**, partial CBT-I (**4.5 points**) and exercise (**2.9 points**), with **85.7% of trials at high risk of bias**.[^2] An earlier 15-trial review likewise found gains were limited to subjective ratings while CBT-I led by medium-to-large margins.[^3]
+
+**Trying to "relax yourself to sleep" can backfire in insomnia.** In the 241-trial component analysis, standalone relaxation procedures trended **counterproductive (iOR = 0.81)** for insomnia remission — likely because turning breathing or muscle exercises into an effortful bedtime performance increases frustration when sleep does not come on cue.[^1]
+
+**Consumer sleep trackers do not measure sleep stages reliably — and watching them can worsen sleep.** In a clinical case series, patients tracking nightly scores developed **orthosomnia**: preoccupation with hitting "ideal" deep-sleep or REM numbers on imperfect wearables increased pre-sleep worry and drove sleep complaints even when sleep felt fine.[^9]
+
+**Alcohol's effect on total sleep time and night waking remains uncertain in pooled healthy-adult trials.** While REM delay and reduction held reliably from low doses upward, the 27-study meta-analysis found large uncertainty across studies for overall sleep time, sleep efficiency and wake after sleep onset.[^7]
+
+**Unknowns:** why individual thermal comfort varies so sharply between people in the same bedroom range;[^5] whether component-network estimates from combining trials hold identically when components are delivered completely solo;[^1] and how long caffeine cutoffs vary by genetic metabolism speed.[^6]
+
+**And one thing to actively disbelieve:** that lying in bed for nine or ten hours "trying to rest" after a bad night helps recovery, or that an extra nightcap buys deeper sleep. Extra wakeful hours in bed train the brain to stay alert there,[^1] and evening alcohol trims REM sleep starting around two drinks.[^7]
+
+---
+
+## Who should be careful
+
+**Sleep restriction causes real short-term sleepiness and impaired reaction time.** In a four-week laboratory investigation of standalone sleep restriction therapy, patients showed **reduced objective total sleep time**, significantly **increased daytime sleepiness** across weeks one to three, and **objectively impaired vigilance and reaction times** on computer testing.[^8] Never aggressively restrict time in bed on your own if you drive commercially, operate heavy machinery, or have conditions destabilised by acute sleep loss — including **bipolar disorder** (where sleep deprivation can trigger mania or hypomania), **seizure disorders** or **severe untreated sleep apnoea**. Work with a clinician if you pursue formal sleep restriction.[^8]
+
+**Hot baths and cardiovascular or pregnancy risk.** *As a practical medical judgement rather than a finding from the sleep trials cited here:* if you are pregnant, prone to dizziness/fainting, or have a heart or blood-pressure condition, check with a doctor before taking very hot baths (40°C–42.5°C).
+
+**Rule out medical sleep disorders.** Loud snoring, gasping awakenings, restless legs or overwhelming daytime sleepiness despite seven or more hours in bed warrant medical evaluation for sleep apnoea or other physiological sleep disorders before treating the issue purely as behavioural insomnia.
+
+---
+
+## Traditional convergence
+
+Strong. Two independent traditions treated steady sleep boundaries and deliberate pre-sleep settling as physiological prerequisites for mental steadiness rather than minor comforts.
+
+In India, the *Bhagavad Gītā* states plainly that mental discipline is impossible *"for one who sleeps too much or who does not sleep at all,"* prescribing regulated sleep and waking alongside regulated food and work.[^10] In classical Indian medicine, Chapter 21 of the *Caraka Saṃhitā* (*Sūtrasthāna*) places sleep alongside diet as a pillar of bodily balance and prescribes concrete pre-sleep behavioural and environmental measures for sleeplessness: a bath, gentle massage, pleasant calming sights and sounds, a comfortable bed and room, and going to sleep at a consistent accustomed time.[^10] And in early Buddhism, the *Sekha Sutta* and *Gaṇakamoggallāna Sutta* codify a disciplined sleep boundary — lying down on the right side in the middle watch of the night mindfully, after settling in mind the fixed time to arise — balanced with active wakefulness by day.[^10]
+
+You can test the highest-leverage behavioural rule across seven nights: fix one wake-up time every morning, stay out of bed until you feel genuinely sleepy, get up into dim quiet light if you lie awake and frustrated for 20 minutes, and keep track of how long you actually stay awake in bed by day seven.
+
+---
+
+## References
+
+*APA 7th.*
+
+[^1]: Furukawa, Y., Sakata, M., Yamamoto, R., Nakajima, S., Kikuchi, S., Inoue, M., Ito, M., Noma, H., Takashina, H. N., Funada, S., Ostinelli, E. G., Furukawa, T. A., Efthimiou, O., & Perlis, M. (2024). Components and delivery formats of cognitive behavioral therapy for chronic insomnia in adults: A systematic review and component network meta-analysis. *JAMA Psychiatry, 81*(4), 357–365. https://doi.org/10.1001/jamapsychiatry.2023.5060
+
+[^2]: Ruan, J. Y., Liu, Q., Chung, K. F., Ho, K. Y., & Yeung, W. F. (2025). Effects of sleep hygiene education for insomnia: A systematic review and meta-analysis. *Sleep Medicine Reviews, 82*, 102109. https://doi.org/10.1016/j.smrv.2025.102109
+
+[^3]: Chung, K.-F., Lee, C.-T., Yeung, W.-F., Chan, M.-S., Chung, E. W.-Y., & Lin, W.-L. (2018). Sleep hygiene education as a treatment of insomnia: A systematic review and meta-analysis. *Family Practice, 35*(4), 365–375. https://doi.org/10.1093/fampra/cmx122
+
+[^4]: Haghayegh, S., Khoshnevis, S., Smolensky, M. H., Diller, K. R., & Castriotta, R. J. (2019). Before-bedtime passive body heating by warm shower or bath to improve sleep: A systematic review and meta-analysis. *Sleep Medicine Reviews, 46*, 124–135. https://doi.org/10.1016/j.smrv.2019.04.008
+
+[^5]: Baniassadi, A., Manor, B., Yu, W., Travison, T., & Lipsitz, L. (2023). Nighttime ambient temperature and sleep in community-dwelling older adults. *Science of the Total Environment, 899*, 165623. https://doi.org/10.1016/j.scitotenv.2023.165623
+
+[^6]: Gardiner, C., Weakley, J., Burke, L. M., et al. (2023). The effect of caffeine on subsequent sleep: A systematic review and meta-analysis. *Sleep Medicine Reviews, 69*, 101764. https://doi.org/10.1016/j.smrv.2023.101764
+
+[^7]: Gardiner, C., Weakley, J., Burke, L. M., Roach, G. D., Sargent, C., Maniar, N., Huynh, M., Miller, D. J., Townshend, A., & Halson, S. L. (2025). The effect of alcohol on subsequent sleep in healthy adults: A systematic review and meta-analysis. *Sleep Medicine Reviews, 80*, 102030. https://doi.org/10.1016/j.smrv.2024.102030
+
+[^8]: Kyle, S. D., Miller, C. B., Rogers, Z., Siriwardena, A. N., Macmahon, K. M., & Espie, C. A. (2014). Sleep restriction therapy for insomnia is associated with reduced objective total sleep time, increased daytime somnolence, and objectively impaired vigilance: Implications for the clinical management of insomnia disorder. *Sleep, 37*(2), 229–237. https://doi.org/10.5665/sleep.3386
+
+[^9]: Baron, K. G., Abbott, S., Jao, N., Manalo, N., & Mullen, R. (2017). Orthosomnia: Are some patients taking the quantified self too far? *Journal of Clinical Sleep Medicine, 13*(2), 351–354. https://doi.org/10.5664/jcsm.6472
+
+[^10]: *Bhagavad Gītā*, ch. 6, vv. 16–17; *Caraka Saṃhitā*, *Sūtrasthāna*, ch. 21, vv. 51–54; Pali *Sekha Sutta* (Majjhima Nikāya 53) and *Gaṇakamoggallāna Sutta* (Majjhima Nikāya 107).

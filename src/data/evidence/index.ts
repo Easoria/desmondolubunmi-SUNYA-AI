@@ -19,6 +19,7 @@ import prosocialBehaviourAndVolunteering from "./prosocial-behaviour-and-volunte
 import forgiveness from "./forgiveness.content";
 import religiousAndDevotionalPractice from "./religious-and-devotional-practice.content";
 import circadianLightExposureAndEntrainment from "./circadian-light-exposure-and-entrainment.content";
+import sleepBehaviour from "./sleep-behaviour.content";
 
 export type MechanismStatus = "complete" | "planned";
 
@@ -329,8 +330,14 @@ export const EVIDENCE_MECHANISMS: EvidenceMechanism[] = [
     slug: "sleep-behaviour",
     title: "Sleep behaviour — stimulus control, wind-down, environment",
     group: "body-and-lifestyle",
-    status: "planned",
-    description: "Not yet researched.",
+    status: "complete",
+    reviewDate: "November 2026",
+    researchGrade:
+      "Strong for stimulus control and sleep restriction within chronic insomnia treatment, Moderate for caffeine/alcohol timing, pre-bed warm bathing and room temperature, Preliminary for standalone sleep-hygiene checklists in chronic insomnia",
+    traditionalGrade: "Strong",
+    description:
+      "Stimulus control, sleep restriction and wind-down timing — what reverses chronic insomnia, and why hygiene checklists alone fall short.",
+    markdown: withNormalizedGrades(sleepBehaviour),
   },
   {
     slug: "movement-mobility-and-exercise-timing",
