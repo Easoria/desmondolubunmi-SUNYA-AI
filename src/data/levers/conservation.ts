@@ -19,7 +19,7 @@ export const conservationLever: Lever = {
       slug: "silence",
       name: "Silence",
       essence:
-        "Speech is one of the largest drains of energy there is, because your speech is a projection of your energy — it runs on it. When you speak, you direct energy outward. It is a process of expenditure, which is why it is worth spending consciously.",
+        "Speech takes more out of you than most people notice. It keeps attention turned outward, and much of what gets said is unnecessary. The practice is not a rule of silence but spending speech deliberately.",
       mechanism: [
         "You can hear this directly: a person brimming with energy speaks with a strong, vivid voice, while a depleted person speaks slowly and faintly. The voice broadcasts the state of the energy, and spends it in the broadcasting.",
         "Notice, too, that you cannot speak and breathe freely at the same time — speech interrupts the very breath that feeds the system.",
@@ -46,7 +46,7 @@ export const conservationLever: Lever = {
       relatedPractices: ["sensory-rest", "deep-belly-breathing", "coherent-breathing"],
       metaTitle: "Silence — How to Practise It | Sunya",
       metaDescription:
-        "Speech is one of the largest drains of energy there is, because your speech is a projection of your energy — it runs on it.",
+        "Speech takes more out of you than most people notice. It keeps attention turned outward, and much of what gets said is unnecessary.",
       families: ["L1", "H2", "H4"],
       directions: ["restore", "reduce", "calm"],
       problems: [],
@@ -73,7 +73,7 @@ export const conservationLever: Lever = {
       slug: "sensory-rest",
       name: "Sensory Rest",
       essence:
-        "The senses reach outward all day toward stimulation — screens, noise, endless input — and pour energy out as they go. Sensory rest withdraws them: a detox for the senses, back to a natural state.",
+        "The senses reach outward all day toward stimulation — screens, noise, endless input. Sensory rest withdraws them: deliberate breaks from input, letting things settle back to a natural level.",
       mechanism: [
         "Overstimulation always has an effect on the system.",
         "You already know this from taste. Heavy sugar or salt gives you a spike and then a crash, and the tongue adapts — so next time you need more of it to feel the same satisfaction. Every sense works the same way. Loud music, constant visual novelty, a stream of bad news. Each one raises the level of stimulation you need before anything registers at all, and leaves the system agitated in between.",
@@ -103,7 +103,7 @@ export const conservationLever: Lever = {
       relatedPractices: ["silence", "coherent-breathing", "alternate-nostril-breathing"],
       metaTitle: "Sensory Rest — How to Practise It | Sunya",
       metaDescription:
-        "The senses reach outward all day toward stimulation — screens, noise, endless input — and pour energy out as they go.",
+        "The senses reach outward all day toward stimulation — screens, noise, endless input. Sensory rest withdraws them.",
       families: ["H2", "H4", "M4"],
       directions: ["reduce", "simplify", "calm"],
       problems: ["insomnia"],
@@ -130,7 +130,7 @@ export const conservationLever: Lever = {
       slug: "fasting",
       name: "Fasting",
       essence:
-        "A great deal of the body’s energy goes into digestion. Periodic fasting frees that energy, and the effects reach every layer at once — body, energy, and mind.",
+        "A great deal of the body’s energy goes into digestion. Periodic fasting frees that energy, and the effects reach every layer at once — body, vital body, and mind.",
       mechanism: [
         "Start with the body. Digestion is constant work, and eating every day means the body rarely gets to stop and attend to itself. Fasting gives it that time. Instead of breaking food down, it turns to maintenance — repairing, cleansing, consuming damaged cells, restoring itself. Inflammation drops. The body gets lighter and stronger.",
         "In the vital body, the same shift happens. When there is no food to digest, the freed energy is available to rise. Emptiness itself contributes to this: with nothing sitting in the system, energy moves upward more easily and begins to reorganise into its natural flow.",
@@ -186,7 +186,8 @@ export const conservationLever: Lever = {
     {
       slug: "sexual-conservation",
       name: "Sexual Conservation",
-      essence: "Sexual energy is among the most concentrated forms of vital energy.",
+      essence:
+        "A natural drive, and a strong one. The practice is not suppression — that tends to come out sideways — but moderation, and putting the drive into work, training and practice instead. Practitioners across traditions report more drive available for everything else.",
       mechanism: [
         "This drive is a natural part of the human system and serves a critical function — reproduction, the carrying on of the species. Just as hunger is there, just as the drive for sleep is there, this is there too. The first step is to recognise it rather than push it under the carpet.",
         "Then, having recognised it, ask what it actually is. Sexual energy is a life-giving substance — every human being comes from it. That alone tells you it is significant and powerful.",
@@ -227,7 +228,8 @@ export const conservationLever: Lever = {
       leverSlug: "conservation",
       relatedPractices: ["the-root-lock", "fasting", "spinal-breathing"],
       metaTitle: "Sexual Conservation — How to Practise It | Sunya",
-      metaDescription: "Sexual energy is among the most concentrated forms of vital energy.",
+      metaDescription:
+        "A natural drive, and a strong one. The practice is not suppression but moderation, and putting the drive into work, training and practice instead.",
       families: ["L1"],
       directions: ["contain", "restore", "reduce"],
       problems: [],
@@ -254,7 +256,7 @@ export const conservationLever: Lever = {
       slug: "the-root-lock",
       name: "The Root Lock",
       essence:
-        "A contraction at the base of the body that seals energy in and turns it upward. It is the most direct means of conserving vital energy, and the ground the other conservation practices stand on.",
+        "A contraction at the base of the pelvis, held during practice. It steadies the base of the body and produces a distinct upward pull through the torso. (Known in the yogic traditions as mula bandha.) It is the ground the other conservation practices stand on.",
       mechanism: [
         "Left alone, vital energy tends to settle at the base of the body and pool there. When it does, two things happen: it leaks away gradually, and it stagnates. Anyone who has felt sexual energy sitting heavily and going nowhere knows this sensation directly.",
         "The root lock changes both. The contraction seals the base, so the energy stops draining outward, and it gives that energy a floor to rise from rather than a place to collect. What was pooling begins to move upward through the system.",
@@ -285,7 +287,8 @@ export const conservationLever: Lever = {
       leverSlug: "conservation",
       relatedPractices: ["breath-retention", "the-great-lock", "spinal-breathing"],
       metaTitle: "The Root Lock — How to Practise It | Sunya",
-      metaDescription: "A contraction at the base of the body that seals energy in and turns it upward.",
+      metaDescription:
+        "A contraction at the base of the pelvis, held during practice. It steadies the base and produces a distinct upward pull. (Known as mula bandha.)",
       families: ["L1", "L3"],
       directions: ["contain", "initiate"],
       problems: [],
