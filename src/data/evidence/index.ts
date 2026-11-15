@@ -23,6 +23,7 @@ import sleepBehaviour from "./sleep-behaviour.content";
 import financialSecurityAndScarcity from "./financial-security-and-scarcity.content";
 import movementMobilityAndExerciseTiming from "./movement-mobility-and-exercise-timing.content";
 import skillMasteryAndSelfEfficacy from "./skill-mastery-and-self-efficacy.content";
+import workAndValuesCongruence from "./work-and-values-congruence.content";
 
 export type MechanismStatus = "complete" | "planned";
 
@@ -448,8 +449,14 @@ export const EVIDENCE_MECHANISMS: EvidenceMechanism[] = [
     slug: "work-and-values-congruence",
     title: "Work and values congruence",
     group: "material-conditions",
-    status: "planned",
-    description: "Not yet researched.",
+    status: "complete",
+    reviewDate: "November 2026",
+    researchGrade:
+      "Moderate for associations between value fit, meaningful work, engagement and job satisfaction and for job crafting interventions, Preliminary for causal mental health outcomes of career change and civilian occupational moral injury",
+    traditionalGrade: "Very strong",
+    description:
+      "Value fit, meaningful work and job crafting — engagement gains, calling risks, and when meaning cannot compensate for poor conditions.",
+    markdown: withNormalizedGrades(workAndValuesCongruence),
   },
   {
     slug: "grounding-and-earthing",
