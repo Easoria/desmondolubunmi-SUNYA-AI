@@ -148,7 +148,7 @@ Pages carry the date they were last reviewed. Evidence changes; an undated page 
 - ○ Sexual behaviour and abstinence
 
 **Material conditions**
-- ○ Financial security and scarcity
+- ● Financial security and scarcity
 - ○ Skill mastery and self-efficacy
 - ○ Work and values congruence
 

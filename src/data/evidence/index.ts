@@ -20,6 +20,7 @@ import forgiveness from "./forgiveness.content";
 import religiousAndDevotionalPractice from "./religious-and-devotional-practice.content";
 import circadianLightExposureAndEntrainment from "./circadian-light-exposure-and-entrainment.content";
 import sleepBehaviour from "./sleep-behaviour.content";
+import financialSecurityAndScarcity from "./financial-security-and-scarcity.content";
 
 export type MechanismStatus = "complete" | "planned";
 
@@ -413,8 +414,14 @@ export const EVIDENCE_MECHANISMS: EvidenceMechanism[] = [
     slug: "financial-security-and-scarcity",
     title: "Financial security and scarcity",
     group: "material-conditions",
-    status: "planned",
-    description: "Not yet researched.",
+    status: "complete",
+    reviewDate: "November 2026",
+    researchGrade:
+      "Strong for poverty, debt and mental health distress and for cash-transfer effects in low-income settings, Moderate for liquid savings buffers, debt-account relief and financial education, Preliminary for scarcity-induced cognitive decline and high-income guaranteed-income trials",
+    traditionalGrade: "Strong",
+    description:
+      "Poverty, debt and liquid cash buffers — mental-health effects, cash-transfer evidence, and why contemplation cannot replace a missing buffer.",
+    markdown: withNormalizedGrades(financialSecurityAndScarcity),
   },
   {
     slug: "skill-mastery-and-self-efficacy",
