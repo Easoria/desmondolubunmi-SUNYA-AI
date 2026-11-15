@@ -2,8 +2,9 @@
 
 *Reviewed November 2026*
 
-**Research strength — Strong** for acute activation and for the inflammatory response, **Moderate** for mood and anxiety with regular practice
-**Traditional convergence — Strong** *(bhastrika, kapalabhati and tummo, in continuous use for centuries)*
+**Research strength — Strong** for acute activation and for the inflammatory response, **Moderate** for mood and anxiety with regular practice.
+
+**Traditional convergence — Strong** *(bhastrika, kapalabhati and tummo, in continuous use for centuries)*.
 
 > **In short:** these practices rouse the system immediately and measurably — that part is physiology, not belief.[^2] More surprisingly, they give people a degree of voluntary control over their own inflammatory response,[^1] which is one of the more remarkable findings in this whole evidence base. And three weeks of daily practice has produced substantial reductions in depression, anxiety and stress that were still there three months later.[^4] The safety cautions on this page are not decorative, and they are the reason it is the longest such section in the library.[^2]
 

@@ -87,7 +87,7 @@ Each page is built to answer three questions in order: **what will this do for m
 - **Where the evidence stops** — the limitations, the null findings, and the things you should actively disbelieve, in one place rather than scattered through
 - **Who should be careful**
 - **Traditional convergence**
-- **Both grades**, at the top
+- **Both grades**, at the top — Research strength and Traditional convergence as two separate paragraphs, each ending with a full stop
 - **The sources**, footnoted
 
 ### On the citations

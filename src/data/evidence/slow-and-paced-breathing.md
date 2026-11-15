@@ -4,8 +4,9 @@
 
 *Supersedes the earlier separate records for "slow breathing and extended exhale" and "paced breathing at resonance frequency" — the research does not separate them, so neither should we.*
 
-**Research strength — Strong** for blood pressure and physiology, **Moderate** for mood
-**Traditional convergence — Very strong** *(independently arrived at by unrelated traditions, and two of them have been measured producing the same rate)*
+**Research strength — Strong** for blood pressure and physiology, **Moderate** for mood.
+
+**Traditional convergence — Very strong** *(independently arrived at by unrelated traditions, and two of them have been measured producing the same rate)*.
 
 > **In short:** slowing the breath to around six a minute lowers blood pressure by enough to matter clinically — the authors of that meta-analysis concluded it "may be a reasonable first treatment" for low-risk people with hypertension or prehypertension who are reluctant to start medication.[^7] It shifts the nervous system measurably toward rest and recovery, across one of the largest evidence bases in this framework.[^1] And it reduces stress, anxiety and low mood by a small-to-moderate amount,[^2] with the benefit growing the longer you keep it up.[^6] It costs nothing, needs no equipment, and has essentially no side effects.[^1]
 

@@ -60,7 +60,7 @@ export const EVIDENCE_MECHANISMS: EvidenceMechanism[] = [
     traditionalGrade: "Very strong",
     description:
       "Slowing the breath to around six a minute — blood pressure, nervous-system shift, and small-to-moderate mood effects.",
-    markdown: slowAndPacedBreathing,
+    markdown: withNormalizedGrades(slowAndPacedBreathing),
   },
   {
     slug: "activating-breathwork",
@@ -73,7 +73,7 @@ export const EVIDENCE_MECHANISMS: EvidenceMechanism[] = [
     traditionalGrade: "Strong",
     description:
       "Rapid breathing and breath holding — acute activation, inflammatory response, and the longest safety section in the library.",
-    markdown: activatingBreathwork,
+    markdown: withNormalizedGrades(activatingBreathwork),
   },
   {
     slug: "sustained-vocalisation",
@@ -86,9 +86,8 @@ export const EVIDENCE_MECHANISMS: EvidenceMechanism[] = [
     traditionalGrade: "Very strong",
     description:
       "Sustained sound with the voice — anxiety, stress, low mood, PTSD symptoms, and a route into slow breathing.",
-    markdown: sustainedVocalisation,
-  },
-  {
+    markdown: withNormalizedGrades(sustainedVocalisation),
+  },  {
     slug: "music-and-deliberately-chosen-sound",
     title: "Music and deliberately chosen sound",
     blurb: "Added: Conscious Listening was not covered by any existing entry.",
@@ -108,7 +107,7 @@ export const EVIDENCE_MECHANISMS: EvidenceMechanism[] = [
     traditionalGrade: "Very strong",
     description:
       "Training attention in focused and open modes — anxiety, depression, pain, and the dose finding on attention.",
-    markdown: meditation,
+    markdown: withNormalizedGrades(meditation),
   },
   {
     slug: "decentering",
@@ -120,7 +119,7 @@ export const EVIDENCE_MECHANISMS: EvidenceMechanism[] = [
     traditionalGrade: "Very strong",
     description:
       "The shift from being inside a thought to observing it — relapse prevention, rumination buffering, and trainability.",
-    markdown: decentering,
+    markdown: withNormalizedGrades(decentering),
   },
   {
     slug: "interoception-and-body-scan",
@@ -370,6 +369,24 @@ export function getMechanismsByGroup(group: EvidenceGroupId) {
 /** Drop the leading H1 so the page chrome owns the title. */
 export function stripLeadingTitle(markdown: string) {
   return markdown.replace(/^#\s+[^\n]+\n+/, "").trimStart();
+}
+
+/**
+ * Research strength and Traditional convergence must render as two distinct
+ * paragraphs, each ending with a full stop. Enforce this for every mechanism
+ * page — including future ones that forget the blank line or trailing period.
+ */
+export function normalizeGradeLines(markdown: string) {
+  return markdown.replace(
+    /(\*\*Research strength[^\n]*?)(?:\.)?\n+(?:\n*)(\*\*Traditional convergence[^\n]*?)(?:\.)?(?=\n)/g,
+    (_match, research: string, traditional: string) => {
+      return `${research.trimEnd()}.\n\n${traditional.trimEnd()}.`;
+    },
+  );
+}
+
+function withNormalizedGrades(markdown: string) {
+  return normalizeGradeLines(markdown);
 }
 
 function stripFromHeading(markdown: string, heading: string) {

@@ -2,8 +2,9 @@
 
 *Reviewed November 2026*
 
-**Research strength — Moderate** for anxiety, depression and pain; **Moderate to large** in healthy people against no treatment; **Preliminary** for attention at ordinary doses
-**Traditional convergence — Very strong** *(the central practice of every contemplative tradition, in continuous use for millennia)*
+**Research strength — Moderate** for anxiety, depression and pain; **Moderate to large** in healthy people against no treatment; **Preliminary** for attention at ordinary doses.
+
+**Traditional convergence — Very strong** *(the central practice of every contemplative tradition, in continuous use for millennia)*.
 
 > **In short:** meditation reduces anxiety, depression and pain by a moderate amount, and the benefit is still there months later.[^1] It survives the strictest test in the field — being compared against people doing some other active thing rather than nothing.[^1] In ordinary stressed people rather than patients, the effects are larger again, with stress improving most.[^2] Attention does measurably improve, but at retreat-level practice rather than at twenty minutes a day.[^4] For something free, portable and essentially harmless,[^1] this is among the best-evidenced things a person can do for themselves without a prescription.
 
