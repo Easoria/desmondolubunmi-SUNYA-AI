@@ -7,6 +7,7 @@ import decentering from "./decentering.content";
 import interoceptionAndBodyScan from "./interoception-and-body-scan.content";
 import expressiveWriting from "./expressive-writing.content";
 import musicAndDeliberatelyChosenSound from "./music-and-deliberately-chosen-sound.content";
+import mentalImageryAndVisualisation from "./mental-imagery-and-visualisation.content";
 
 export type MechanismStatus = "complete" | "planned";
 
@@ -161,8 +162,14 @@ export const EVIDENCE_MECHANISMS: EvidenceMechanism[] = [
     slug: "mental-imagery-and-visualisation",
     title: "Mental imagery and visualisation",
     group: "attention-and-cognition",
-    status: "planned",
-    description: "Not yet researched.",
+    status: "complete",
+    reviewDate: "November 2026",
+    researchGrade:
+      "Moderate for motor skill rehearsal, mental contrasting and clinical imagery rescripting, Preliminary for standalone positive imagery on depression",
+    traditionalGrade: "Strong",
+    description:
+      "Mental rehearsal, mental contrasting and clinical imagery — what works, and why outcome fantasies fall short.",
+    markdown: withNormalizedGrades(mentalImageryAndVisualisation),
   },
   {
     slug: "values-clarification-and-self-affirmation",
