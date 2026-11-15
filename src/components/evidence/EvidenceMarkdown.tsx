@@ -2,6 +2,7 @@ import type { Components } from "react-markdown";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { Link } from "@tanstack/react-router";
+import { normalizeGradeLines } from "@/data/evidence";
 
 const components: Components = {
   a: ({ href, children }) => {
@@ -61,10 +62,11 @@ const components: Components = {
 };
 
 export function EvidenceMarkdown({ markdown }: { markdown: string }) {
+  const source = normalizeGradeLines(markdown);
   return (
     <div className="prose-article evidence-prose">
       <ReactMarkdown remarkPlugins={[remarkGfm]} components={components}>
-        {markdown}
+        {source}
       </ReactMarkdown>
     </div>
   );

@@ -2,8 +2,9 @@
 
 *Reviewed November 2026*
 
-**Research strength — Moderate** for chanting and mantra on mental health, **None found** for the nitric-oxide explanation of humming
-**Traditional convergence — Very strong** *(independently arrived at by every major contemplative tradition, in continuous use for millennia)*
+**Research strength — Moderate** for chanting and mantra on mental health, **None found** for the nitric-oxide explanation of humming.
+
+**Traditional convergence — Very strong** *(independently arrived at by every major contemplative tradition, in continuous use for millennia)*.
 
 > **In short:** repeating a sustained sound helps with anxiety, stress, low mood and post-traumatic symptoms by a moderate amount, across one of the largest bodies of evidence in this framework — 51 studies and several thousand people, pointing consistently the same way.[^1] It is also a back door into the best-evidenced mechanism on this site, because chanting slows the breath to around six a minute whether you intend it to or not.[^3] It is free, needs nothing, and is among the safest practices there is.[^1]
 
