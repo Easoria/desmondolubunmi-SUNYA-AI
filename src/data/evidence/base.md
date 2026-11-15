@@ -141,7 +141,7 @@ Pages carry the date they were last reviewed. Evidence changes; an undated page 
 - ● Cold exposure
 - ● Time-restricted eating and fasting
 - ● Diet composition
-- ○ Hydration
+- ● Hydration
 - ○ Botanical preparations
 - ○ Nature exposure and awe
 - ○ Air quality, noise and visual order

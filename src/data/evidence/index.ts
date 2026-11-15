@@ -28,6 +28,7 @@ import progressiveMuscleRelaxationAndStillness from "./progressive-muscle-relaxa
 import coldExposure from "./cold-exposure.content";
 import timeRestrictedEatingAndFasting from "./time-restricted-eating-and-fasting.content";
 import dietComposition from "./diet-composition.content";
+import hydration from "./hydration.content";
 import groundingAndEarthing from "./grounding-and-earthing.content";
 import handPositions from "./hand-positions.content";
 import soundVibrationActingOnTissue from "./sound-vibration-acting-on-tissue.content";
@@ -421,9 +422,16 @@ export const EVIDENCE_MECHANISMS: EvidenceMechanism[] = [
     slug: "hydration",
     title: "Hydration",
     group: "body-and-lifestyle",
-    status: "planned",
-    description: "Not yet researched.",
+    status: "complete",
+    reviewDate: "November 2026",
+    researchGrade:
+      "Moderate for mild-dehydration effects on attention, fatigue and recurrent kidney stones, Preliminary for raising daily water intake beyond thirst for weight loss or general health",
+    traditionalGrade: "Moderate",
+    description:
+      "Mild dehydration, daily water targets and kidney-stone prevention — cognitive costs of fluid loss, and why eight glasses a day has no experimental basis.",
+    markdown: withNormalizedGrades(hydration),
   },
+
   {
     slug: "botanical-preparations",
     title: "Botanical preparations",
