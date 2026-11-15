@@ -27,6 +27,7 @@ import workAndValuesCongruence from "./work-and-values-congruence.content";
 import progressiveMuscleRelaxationAndStillness from "./progressive-muscle-relaxation-and-stillness.content";
 import coldExposure from "./cold-exposure.content";
 import timeRestrictedEatingAndFasting from "./time-restricted-eating-and-fasting.content";
+import dietComposition from "./diet-composition.content";
 import groundingAndEarthing from "./grounding-and-earthing.content";
 import handPositions from "./hand-positions.content";
 import soundVibrationActingOnTissue from "./sound-vibration-acting-on-tissue.content";
@@ -405,8 +406,14 @@ export const EVIDENCE_MECHANISMS: EvidenceMechanism[] = [
     slug: "diet-composition",
     title: "Diet composition",
     group: "body-and-lifestyle",
-    status: "planned",
-    description: "Not yet researched.",
+    status: "complete",
+    reviewDate: "November 2026",
+    researchGrade:
+      "Strong for cardiovascular and metabolic outcomes, Moderate for depressive symptoms",
+    traditionalGrade: "Very strong",
+    description:
+      "Whole-food dietary patterns, fibre and ultra-processed food — cardiovascular event reductions, mood effects, and why named macro diets converge.",
+    markdown: withNormalizedGrades(dietComposition),
   },
   {
     slug: "hydration",
