@@ -25,6 +25,7 @@ import movementMobilityAndExerciseTiming from "./movement-mobility-and-exercise-
 import skillMasteryAndSelfEfficacy from "./skill-mastery-and-self-efficacy.content";
 import workAndValuesCongruence from "./work-and-values-congruence.content";
 import progressiveMuscleRelaxationAndStillness from "./progressive-muscle-relaxation-and-stillness.content";
+import groundingAndEarthing from "./grounding-and-earthing.content";
 
 export type MechanismStatus = "complete" | "planned";
 
@@ -469,8 +470,14 @@ export const EVIDENCE_MECHANISMS: EvidenceMechanism[] = [
     slug: "grounding-and-earthing",
     title: "Grounding and earthing",
     group: "expected-weak",
-    status: "planned",
-    description: "Not yet researched.",
+    status: "complete",
+    reviewDate: "November 2026",
+    researchGrade:
+      "Preliminary — small pilots report isolated shifts, yet no large independent randomised trial or meta-analysis exists, mood and soreness results are mixed, and foundational papers carry commercial conflicts of interest",
+    traditionalGrade: "Weak",
+    description:
+      "Electrical earthing claims versus small pilots — skin voltage changes are real, broad anti-inflammatory claims are not established.",
+    markdown: withNormalizedGrades(groundingAndEarthing),
   },
   {
     slug: "pelvic-floor-contraction-as-an-inner-practice",
