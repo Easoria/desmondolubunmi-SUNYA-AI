@@ -6,6 +6,7 @@ import meditation from "./meditation.content";
 import decentering from "./decentering.content";
 import interoceptionAndBodyScan from "./interoception-and-body-scan.content";
 import expressiveWriting from "./expressive-writing.content";
+import musicAndDeliberatelyChosenSound from "./music-and-deliberately-chosen-sound.content";
 
 export type MechanismStatus = "complete" | "planned";
 
@@ -89,13 +90,20 @@ export const EVIDENCE_MECHANISMS: EvidenceMechanism[] = [
     description:
       "Sustained sound with the voice — anxiety, stress, low mood, PTSD symptoms, and a route into slow breathing.",
     markdown: withNormalizedGrades(sustainedVocalisation),
-  },  {
+  },
+  {
     slug: "music-and-deliberately-chosen-sound",
     title: "Music and deliberately chosen sound",
     blurb: "Added: Conscious Listening was not covered by any existing entry.",
     group: "breath-and-voice",
-    status: "planned",
-    description: "Received sound rather than produced sound — not yet researched.",
+    status: "complete",
+    reviewDate: "November 2026",
+    researchGrade:
+      "Moderate for acute stress, surgical pain and subjective sleep quality, Preliminary for everyday stress recovery in healthy adults and for binaural beats or specific tuning frequencies",
+    traditionalGrade: "Very strong",
+    description:
+      "Chosen music and natural sound — acute stress and surgical pain, subjective sleep, and where laboratory recovery and entrainment claims fall short.",
+    markdown: withNormalizedGrades(musicAndDeliberatelyChosenSound),
   },
   {
     slug: "meditation",
