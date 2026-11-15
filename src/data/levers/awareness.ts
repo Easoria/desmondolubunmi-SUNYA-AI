@@ -5,14 +5,13 @@ export const awarenessLever: Lever = {
   number: 6,
   name: "Awareness",
   layerLine: "Consciousness + Mental Body",
-  summaryLine: "Consciousness itself, turning back to recognise its own nature. Unconsciousness is the main cause of suffering, which makes this the most fundamental lever — and the one the others prepare you for.",
+  summaryLine: "Attention, turned back on itself.",
   intro: [
-    "At the root of suffering is unconsciousness. Not evil, not weakness — simply not seeing. Most suffering persists because we are entangled in our thoughts, emotions and impulses. When awareness strengthens, identification loosens. Thoughts are seen as thoughts. Emotions are felt without becoming identity. Sensations arise and pass. Energy that was locked in unconscious reaction becomes available for transformation.",
-    "The guiding principle is precise: whatever you shine the light of awareness on begins to transform into order and harmony.",
-    "Awareness is a spectrum. Focused awareness — the Laser — concentrates attention on a single point. Open awareness — the Lantern — expands the field to hold all experience without grasping. Pure awareness — the Light Source — drops all objects entirely and rests as consciousness itself, beyond time, space and form. The entire inner journey moves along this arc.",
-    "Bring it to the body, and you become grounded in it — aware of unconscious tension held in the muscles, rooted out of the mind and into the physical, able to use the body more skilfully. Bring it to the mind, and the mental machinery becomes visible: thought processes, self-image, the unconscious patterns that were previously running unnoticed. Bring it to the emotions, and what was suppressed or hardened dissolves in the simple light of attention. Bring it to the vital body, and what was stuck begins to reorganise and open, letting energy flow freely through whatever you shine it on. Bring it to the breath and the senses, and you are grounded in the present moment — the only place where anything is actually alive.",
-    "And then, at the depth of the practice, awareness is directed back upon itself. Instead of being absorbed in its objects, it recognises itself — the awareness that has been witnessing everything all along. In that moment you realise you are not the contents of awareness. You are awareness itself, in which everything is happening. Timeless, formless, limitless.",
-    "This is the fruit of the practices that follow: not a state to be achieved but a natural resting. At this depth, practice is no longer about doing. It is awareness resting in its own luminous nature, at home in the eternal Now.",
+    "At the root of suffering is unconsciousness. Not evil, not weakness — simply not seeing. Most suffering persists because we are entangled in our thoughts, emotions and impulses without noticing that we are. When awareness strengthens, identification loosens. Thoughts are seen as thoughts. Emotions are felt without becoming identity. Sensations arise and pass. Attention that was locked in unconscious reaction becomes available for something else.",
+    "The guiding principle: whatever you shine the light of awareness on begins to change.",
+    "Awareness has a range. Focused awareness — the Laser — concentrates attention on a single point. Open awareness — the Lantern — widens the field to hold everything present without grasping at any of it. Pure awareness — the Light Source — drops the objects entirely and rests in awareness alone. Most of the inner work moves along that range.",
+    "Bring it to the body and you become grounded in it — aware of tension you were holding without knowing. Bring it to the mind and the machinery becomes visible: thought patterns, self-image, habits that were running unnoticed. Bring it to the emotions and what was suppressed or hardened begins to soften under plain attention. Bring it to the vital body and what felt tight begins to flow freely. Bring it to the breath and the senses and you are here, which is the only place anything is actually happening.",
+    "And then attention turns back on itself — resting not in what it holds, but in itself. There is stillness there, and clarity, and an aliveness that does not depend on anything happening. The instruction is simple: look, and then look at what is looking.",
   ],
   practices: [
     {
@@ -207,7 +206,7 @@ export const awarenessLever: Lever = {
       sourceNumber: 5,
       slug: "energy-body-awareness",
       name: "Reading Your Vital State",
-      essence: "Holding awareness on the entire vital body as a unified whole — the most powerful practice for direct inner transformation. Where other practices work on the vital body indirectly, this one places awareness on it directly. The effect is immediate and far- reaching.",
+      essence: "Holding awareness on the vital body as a whole. Where other practices work on it indirectly, this one places attention on it directly.",
       mechanism: [
         "The vital body responds to awareness the same way all other layers do — what is brought into the light of awareness begins to transform. By holding awareness on the entire vital body as a whole simultaneously, you activate and clarify the complete field at once rather than working on isolated parts. This is what makes the practice so potent: the scope is total. The entire inner structure is held in a single, unified field of attention, and what was contracted — even at the periphery — begins to open and settle."
       ],
@@ -230,7 +229,7 @@ export const awarenessLever: Lever = {
         "compassionate-presence"
       ],
       metaTitle: "Reading Your Vital State — How to Practise It | Sunya",
-      metaDescription: "Holding awareness on the entire vital body as a unified whole — the most powerful practice for direct inner transformation.",
+      metaDescription: "Holding awareness on the vital body as a whole. Where other practices work on it indirectly, this one places attention on it directly.",
       families: ["L2", "M4"],
       directions: ["reconnect", "stabilise"],
       problems: [],
@@ -256,11 +255,11 @@ export const awarenessLever: Lever = {
     {
       sourceNumber: 6,
       slug: "holistic-subtle-bodies-awareness",
-      name: "Holistic Subtle Bodies Awareness",
+      name: "Whole-System Awareness",
       notes: [
-        "This is the most powerful practice in the entire document for rapid inner transformation."
+        "This is the most demanding practice in this lever, and the one the others prepare you for."
       ],
-      essence: "Shining the light of awareness on the entire layers of being at once — physical, emotional, mental, and vital simultaneously. More holistic and grounding than Reading Your Vital State alone, and more stabilising. It is the most powerful practice for inner transformation in this lever — and also the most demanding. It requires considerable awareness and skill as a prerequisite; the practices that precede it here are not merely preparation but the foundation that makes this one possible.",
+      essence: "Shining the light of awareness on the entire layers of being at once — physical, emotional, mental, and vital simultaneously. More holistic and grounding than Reading Your Vital State alone, and more stabilising. It is the most demanding practice in this lever, and the one the others prepare you for. It requires considerable awareness and skill as a prerequisite; the practices that precede it here are not merely preparation but the foundation that makes this one possible.",
       mechanism: [
         "In Reading Your Vital State, attention is narrowed to one specific layer. Here, awareness is expanded to hold the entire inner structure at once — body, emotions, mind, and vital body in one unified field of observation. The effect is total rather than targeted. Mental impressions, emotional patterns, and held tension are all exposed to the same undivided light of awareness simultaneously. Rather than dissolving layer by layer, the accumulated inner material — the conditioning, the held tension, the karmic impressions — begins to release all at once."
       ],
@@ -282,7 +281,7 @@ export const awarenessLever: Lever = {
         "compassionate-presence",
         "deep-listening-meditation"
       ],
-      metaTitle: "Holistic Subtle Bodies Awareness — How to Practise It | Sunya",
+      metaTitle: "Whole-System Awareness — How to Practise It | Sunya",
       metaDescription: "Shining the light of awareness on the entire layers of being at once — physical, emotional, mental, and vital simultaneously.",
       families: ["M4"],
       directions: ["ground", "stabilise"],
@@ -414,7 +413,7 @@ export const awarenessLever: Lever = {
       slug: "pure-observation",
       name: "Pure Observation",
       subtitle: "watching the mind",
-      essence: "The solution to compulsive thinking is not suppression — it is consciousness. The key to freedom is recognising you are not your thoughts.",
+      essence: "The solution to compulsive thinking is not suppression — it is consciousness. What changes is not the thoughts but your relationship to them.",
       mechanism: [
         "We suffer from our thoughts not because they arise, but because we identify with them — we become them, follow their narrative, and are carried away by their momentum. By stepping back and simply observing the stream of thoughts rather than participating in it, you make a fundamental distinction: there is the content of the mind, and there is the awareness watching that content. They are not the same. As this distinction deepens, thoughts lose their power. They continue to arise, but they no longer grip."
       ],
@@ -446,7 +445,7 @@ export const awarenessLever: Lever = {
         "self-inquiry"
       ],
       metaTitle: "Pure Observation — How to Practise It | Sunya",
-      metaDescription: "The solution to compulsive thinking is not suppression — it is consciousness.",
+      metaDescription: "The solution to compulsive thinking is not suppression — it is consciousness. What changes is not the thoughts but your relationship to them.",
       families: ["H4"],
       directions: ["calm", "clarify"],
       problems: [],
@@ -473,8 +472,7 @@ export const awarenessLever: Lever = {
       sourceNumber: 10,
       slug: "disidentifying",
       name: "Disidentifying",
-      subtitle: "the via negativa (Neti-Neti)",
-      essence: "Finding the truth by discarding what is false. Rather than searching for consciousness, you eliminate everything that consciousness is not — until only consciousness remains.",
+      essence: "Finding the truth by discarding what is false. Rather than searching for consciousness, you eliminate everything that consciousness is not — whatever you can observe is not the observer. (Known in the Vedantic traditions as neti-neti.)",
       mechanism: [
         "The separate self is sustained by identification — the constant, unexamined assumption that “I am this body,” “I am these thoughts,” “I am these feelings.” Neti-Neti — Sanskrit for “not this, not this” — is the systematic dismantling of every false identification. By discarding all objects, what cannot be discarded becomes self-evident: the awareness that was doing the observing all along. You cannot be what you observe. That which remains when everything observed has been set aside — that is what you are."
       ],
@@ -512,7 +510,7 @@ export const awarenessLever: Lever = {
         "ultimate-self-inquiry"
       ],
       metaTitle: "Disidentifying — How to Practise It | Sunya",
-      metaDescription: "Finding the truth by discarding what is false.",
+      metaDescription: "Finding the truth by discarding what is false — whatever you can observe is not the observer.",
       families: ["H1", "M2"],
       directions: ["clarify", "soften"],
       problems: [],
@@ -598,9 +596,8 @@ export const awarenessLever: Lever = {
     {
       sourceNumber: 12,
       slug: "ultimate-self-inquiry",
-      name: "Ultimate Self-Inquiry",
-      subtitle: "dissolving the illusory self",
-      essence: "Meditating on the nature of death, on what existed before birth, and on the ending of time — to cut through the illusion of the separate self at its deepest root and recognise pure consciousness.",
+      name: "Looking at Death",
+      essence: "Meditating on the nature of death, on what existed before birth, and on the ending of time — to cut through the illusion of the separate self at its deepest root.",
       mechanism: [
         "We maintain a deeply rooted sense of “I, me, and mine” — a vague, illusory mental identity that exists due to a lack of awareness and the underlying fear of being nothing. This false identity leads to self-centred activity and inevitable suffering, taking charge whenever we become unconscious. The physical self is constantly fleeting — it is time itself, in motion. But this limited, time-bound experience happens within a deeper dimension: consciousness itself. That consciousness has no shape or form. It is formless, timeless, and beyond birth and death. When we recognise the limited self is a mirage, we see that reality is pure consciousness — which had temporarily veiled itself in the appearance of a separate identity."
       ],
@@ -631,8 +628,8 @@ export const awarenessLever: Lever = {
         "non-doing",
         "aware-of-awareness"
       ],
-      metaTitle: "Ultimate Self-Inquiry — How to Practise It | Sunya",
-      metaDescription: "Meditating on the nature of death, on what existed before birth, and on the ending of time — to cut through the illusion of the separate self at its deepest root and recognise pure consciousness.",
+      metaTitle: "Looking at Death — How to Practise It | Sunya",
+      metaDescription: "Meditating on the nature of death, on what existed before birth, and on the ending of time — to cut through the illusion of the separate self at its deepest root.",
       families: ["H1"],
       directions: ["clarify"],
       problems: [],
@@ -723,7 +720,7 @@ export const awarenessLever: Lever = {
       slug: "aware-of-awareness",
       name: "Aware of Awareness",
       subtitle: "turning attention upon itself",
-      essence: "Shifting attention away from the objects of experience — thoughts, feelings, perceptions — and directing it toward the knowing presence itself. The state of pure consciousness. The simple recognition of your own being.",
+      essence: "Shifting attention away from the objects of experience — thoughts, feelings, perceptions — and directing it toward the knowing presence itself: the awareness in which they appear.",
       mechanism: [
         "The mind is habitually conditioned to grasp at objects — sounds, sensations, thoughts — in an endless stream. As long as attention is entangled with the contents of experience, you remain identified with the finite. By turning awareness in on itself, you transcend all objects of experiencing and knowledge. You move beyond time, space, and form. The mind’s compulsive grasping short-circuits. Awareness recognises itself, revealing your true nature as pure, boundless, unchanging presence."
       ],
@@ -754,7 +751,7 @@ export const awarenessLever: Lever = {
         "the-shunya"
       ],
       metaTitle: "Aware of Awareness — How to Practise It | Sunya",
-      metaDescription: "Shifting attention away from the objects of experience — thoughts, feelings, perceptions — and directing it toward the knowing presence itself.",
+      metaDescription: "Shifting attention away from the objects of experience — thoughts, feelings, perceptions — and directing it toward the knowing presence itself: the awareness in which they appear.",
       families: ["H4"],
       directions: ["calm", "clarify"],
       problems: [],
@@ -776,9 +773,8 @@ export const awarenessLever: Lever = {
     {
       sourceNumber: 15,
       slug: "the-shunya",
-      name: "The Shunya",
-      subtitle: "being nothing",
-      essence: "The practice of being absolutely nothing inwardly. Not as a state created or captured — but as something recognised. The discovery that in true nothingness, the very essence of life itself is found.",
+      name: "Being Nothing",
+      essence: "The practice of being absolutely nothing inwardly. Not as a state created or captured — but as something recognised: what is there when you stop producing states.",
       mechanism: [
         "In the nothingness, Truth is experienced — not as a thing, not as a concept, but as the very essence of life itself. It is a nothingness that is full of life. An emptiness that is totally alive and luminous. A stillness that is living and present. Completely nothing — without form, without movement, without activity, without boundary. To arrive at this is to not take shape with anything perceivable or known. Knowledge is useless here. Anything known is not nothingness — it is still something, still perceived, still a form. So the movement is to let go of identifying with anything known, and then take the next step: to surrender and agree to be nothing. We carry a deep fear of being nothing. The separate self clings to being something — to having a form, an image, a story, an identity. But if we truly and totally submit and surrender — if we agree to not being part of anything fleeting — then in that dissolution, the ending of everything we typically take ourselves to be, there is a true experience of inner nothingness. Not as something created. Not as something captured. Something that is recognised."
       ],
@@ -795,8 +791,8 @@ export const awarenessLever: Lever = {
       relatedPractices: [
         "aware-of-awareness"
       ],
-      metaTitle: "The Shunya — How to Practise It | Sunya",
-      metaDescription: "The practice of being absolutely nothing inwardly.",
+      metaTitle: "Being Nothing — How to Practise It | Sunya",
+      metaDescription: "The practice of being absolutely nothing inwardly — what is there when you stop producing states.",
       families: ["H4"],
       directions: ["calm", "soften", "release"],
       problems: [],
