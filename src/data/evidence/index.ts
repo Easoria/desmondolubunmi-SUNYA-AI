@@ -31,6 +31,7 @@ import dietComposition from "./diet-composition.content";
 import hydration from "./hydration.content";
 import natureExposureAndAwe from "./nature-exposure-and-awe.content";
 import botanicalPreparations from "./botanical-preparations.content";
+import airQualityNoiseAndVisualOrder from "./air-quality-noise-and-visual-order.content";
 import groundingAndEarthing from "./grounding-and-earthing.content";
 import handPositions from "./hand-positions.content";
 import soundVibrationActingOnTissue from "./sound-vibration-acting-on-tissue.content";
@@ -466,9 +467,16 @@ export const EVIDENCE_MECHANISMS: EvidenceMechanism[] = [
     slug: "air-quality-noise-and-visual-order",
     title: "Air quality, noise and visual order",
     group: "body-and-lifestyle",
-    status: "planned",
-    description: "Not yet researched.",
+    status: "complete",
+    reviewDate: "November 2026",
+    researchGrade:
+      "Moderate for indoor ventilation on cognitive performance and environmental noise on sleep and heart disease, Preliminary for air pollution and noise on mood, home air purifiers on blood pressure, and visual clutter on stress and well-being",
+    traditionalGrade: "Very strong",
+    description:
+      "Indoor air, night-time noise and visual clutter — cognitive costs of stale air, sleep micro-awakenings, and correlational clutter evidence.",
+    markdown: withNormalizedGrades(airQualityNoiseAndVisualOrder),
   },
+
   {
     slug: "sexual-behaviour-and-abstinence",
     title: "Sexual behaviour and abstinence",
