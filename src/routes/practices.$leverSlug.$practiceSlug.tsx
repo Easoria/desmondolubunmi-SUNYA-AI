@@ -27,6 +27,26 @@ import {
 import { FAMILY_STATE_COLOUR, getWhatItsForTags, TAGGABLE_LEVER_SLUGS, toPublicLever, toPublicPractice } from "@/lib/family-labels";
 import { problemTagLinkState, rememberProblemBackOrigin } from "@/lib/problem-back";
 
+async function handlePracticeSpecialResponse(
+  leverSlug: string,
+  practiceSlug: string,
+  next: () => Promise<unknown> | unknown,
+) {
+  const slugRedirect = getPracticeSlugRedirect(leverSlug, practiceSlug);
+  if (slugRedirect) {
+    return new Response(null, {
+      status: 301,
+      headers: {
+        Location: `/practices/${slugRedirect.leverSlug}/${slugRedirect.practiceSlug}`,
+      },
+    });
+  }
+  if (isRetiredPractice(leverSlug, practiceSlug)) {
+    return goneResponse();
+  }
+  return next();
+}
+
 const CROSS_LEVER_RELATED: Record<string, { leverSlug: LeverSlug; practiceSlug: string }[]> = {
   "breath/4-7-8-breathing": [{ leverSlug: "sleep", practiceSlug: "the-somatic-runway" }],
 };
@@ -46,27 +66,10 @@ const DUPLICATE_PRACTICE_NAMES = new Set(
 export const Route = createFileRoute("/practices/$leverSlug/$practiceSlug")({
   server: {
     handlers: {
-      GET: async ({ request }) => {
-        const pathname = new URL(request.url).pathname.replace(/\/$/, "");
-        const match = pathname.match(/^\/practices\/([^/]+)\/([^/]+)$/);
-        if (!match) return undefined as unknown as Response;
-        const leverSlug = match[1]!;
-        const practiceSlug = match[2]!;
-        const slugRedirect = getPracticeSlugRedirect(leverSlug, practiceSlug);
-        if (slugRedirect) {
-          return new Response(null, {
-            status: 301,
-            headers: {
-              Location: `/practices/${slugRedirect.leverSlug}/${slugRedirect.practiceSlug}`,
-            },
-          });
-        }
-        if (isRetiredPractice(leverSlug, practiceSlug)) {
-          return goneResponse();
-        }
-        // Fall through to normal SSR for live practices.
-        return undefined as unknown as Response;
-      },
+      // Must call next() for live practices — returning undefined 500s the page
+      // (broke every practice detail URL after the SPEC 40/41 redirect handlers).
+      GET: async ({ next, params }) =>
+        handlePracticeSpecialResponse(params.leverSlug, params.practiceSlug, next),
     },
   },
   loader: ({ params }) => {
