@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
+import { getCompleteEvidenceMechanisms } from "@/data/evidence";
 import { getAllLeverPractices, getLeversInOrder } from "@/data/levers";
 import { getAllTagProblemSlugs } from "@/lib/family-labels";
 import { supabaseAdmin } from "@/integrations/supabase/client.server";
@@ -29,6 +30,7 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/gatherings", lastmod: generatedAt, changefreq: "weekly", priority: "0.8" },
           { path: "/problems", lastmod: generatedAt, changefreq: "weekly", priority: "0.9" },
           { path: "/framework", lastmod: generatedAt, changefreq: "monthly", priority: "0.9" },
+          { path: "/evidence", lastmod: generatedAt, changefreq: "monthly", priority: "0.85" },
         ];
 
         const familyProblemEntries: SitemapEntry[] = getAllTagProblemSlugs().map((slug) => ({
@@ -71,11 +73,19 @@ export const Route = createFileRoute("/sitemap.xml")({
           priority: "0.75",
         }));
 
+        const evidenceEntries: SitemapEntry[] = getCompleteEvidenceMechanisms().map((m) => ({
+          path: `/evidence/${m.slug}`,
+          lastmod: generatedAt,
+          changefreq: "monthly" as const,
+          priority: "0.8",
+        }));
+
         const all = [
           ...staticEntries,
           ...familyProblemEntries,
           ...practiceEntries,
           ...gatheringEntries,
+          ...evidenceEntries,
         ];
 
         const urls = all

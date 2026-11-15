@@ -220,3 +220,32 @@
 .prose-article blockquote { border-left: 3px solid #7ec8e3; padding: 0.2em 0 0.2em 1.25em; margin: 1.5em 0; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 1.25em; color: #d8e6f0; }
 .prose-article img { border-radius: 0.75rem; margin: 1.5em 0; max-width: 100%; }
 .prose-article code { background: rgba(255,255,255,0.08); padding: 0.15em 0.4em; border-radius: 4px; font-size: 0.9em; }
+
+/* Evidence pages — tables + Markdown footnotes */
+.evidence-prose table { font-size: 0.95em; }
+.evidence-prose .evidence-callout p { margin: 0.6em 0; font-style: normal; font-family: inherit; font-size: 1rem; line-height: 1.75; color: #d8e6f0; }
+.evidence-prose .evidence-callout p:first-child { margin-top: 0; }
+.evidence-prose .evidence-callout p:last-child { margin-bottom: 0; }
+.evidence-prose .evidence-callout strong { color: #fff; }
+.evidence-prose section[data-footnotes],
+.evidence-prose .footnotes {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.9rem;
+  color: #9bb4c8;
+}
+.evidence-prose section[data-footnotes] h2,
+.evidence-prose .footnotes h2 {
+  font-size: 1.25rem;
+  margin-top: 0;
+}
+.evidence-prose sup a {
+  font-size: 0.75em;
+  text-decoration: none;
+  padding: 0 0.15em;
+}
+.evidence-prose .footnote-backref {
+  text-decoration: none;
+  margin-left: 0.25em;
+}

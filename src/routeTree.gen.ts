@@ -18,6 +18,7 @@ import { Route as BookedRouteImport } from './routes/booked'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as EssaysRouteImport } from './routes/essays'
+import { Route as EvidenceRouteImport } from './routes/evidence'
 import { Route as ForgotPasswordRouteImport } from './routes/forgot-password'
 import { Route as FrameworkRouteImport } from './routes/framework'
 import { Route as GatheringsRouteImport } from './routes/gatherings'
@@ -44,6 +45,7 @@ import { Route as ApiGatheringsSignupRouteImport } from './routes/api/gatherings
 import { Route as ApiSundaySessionSignupRouteImport } from './routes/api/sunday-session-signup'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as EssaysSlugRouteImport } from './routes/essays.$slug'
+import { Route as EvidenceSlugRouteImport } from './routes/evidence.$slug'
 import { Route as GatheringsSlugRouteImport } from './routes/gatherings.$slug'
 import { Route as LeversLeverSlugRouteImport } from './routes/levers.$leverSlug'
 import { Route as PracticesLeverSlugRouteImport } from './routes/practices.$leverSlug'
@@ -101,6 +103,11 @@ const DashboardRoute = DashboardRouteImport.update({
 const EssaysRoute = EssaysRouteImport.update({
   id: '/essays',
   path: '/essays',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EvidenceRoute = EvidenceRouteImport.update({
+  id: '/evidence',
+  path: '/evidence',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ForgotPasswordRoute = ForgotPasswordRouteImport.update({
@@ -233,6 +240,11 @@ const EssaysSlugRoute = EssaysSlugRouteImport.update({
   path: '/$slug',
   getParentRoute: () => EssaysRoute,
 } as any)
+const EvidenceSlugRoute = EvidenceSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => EvidenceRoute,
+} as any)
 const GatheringsSlugRoute = GatheringsSlugRouteImport.update({
   id: '/$slug',
   path: '/$slug',
@@ -312,6 +324,7 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/dashboard': typeof DashboardRoute
   '/essays': typeof EssaysRouteWithChildren
+  '/evidence': typeof EvidenceRouteWithChildren
   '/forgot-password': typeof ForgotPasswordRoute
   '/framework': typeof FrameworkRoute
   '/gatherings': typeof GatheringsRouteWithChildren
@@ -339,6 +352,7 @@ export interface FileRoutesByFullPath {
   '/api/sunday-session-signup': typeof ApiSundaySessionSignupRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/essays/$slug': typeof EssaysSlugRoute
+  '/evidence/$slug': typeof EvidenceSlugRoute
   '/gatherings/$slug': typeof GatheringsSlugRoute
   '/levers/$leverSlug': typeof LeversLeverSlugRouteWithChildren
   '/practices/$leverSlug': typeof PracticesLeverSlugRouteWithChildren
@@ -362,6 +376,7 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/dashboard': typeof DashboardRoute
   '/essays': typeof EssaysRouteWithChildren
+  '/evidence': typeof EvidenceRouteWithChildren
   '/forgot-password': typeof ForgotPasswordRoute
   '/framework': typeof FrameworkRoute
   '/gatherings': typeof GatheringsRouteWithChildren
@@ -389,6 +404,7 @@ export interface FileRoutesByTo {
   '/api/sunday-session-signup': typeof ApiSundaySessionSignupRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/essays/$slug': typeof EssaysSlugRoute
+  '/evidence/$slug': typeof EvidenceSlugRoute
   '/gatherings/$slug': typeof GatheringsSlugRoute
   '/levers/$leverSlug': typeof LeversLeverSlugRouteWithChildren
   '/practices/$leverSlug': typeof PracticesLeverSlugRouteWithChildren
@@ -413,6 +429,7 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/dashboard': typeof DashboardRoute
   '/essays': typeof EssaysRouteWithChildren
+  '/evidence': typeof EvidenceRouteWithChildren
   '/forgot-password': typeof ForgotPasswordRoute
   '/framework': typeof FrameworkRoute
   '/gatherings': typeof GatheringsRouteWithChildren
@@ -440,6 +457,7 @@ export interface FileRoutesById {
   '/api/sunday-session-signup': typeof ApiSundaySessionSignupRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/essays/$slug': typeof EssaysSlugRoute
+  '/evidence/$slug': typeof EvidenceSlugRoute
   '/gatherings/$slug': typeof GatheringsSlugRoute
   '/levers/$leverSlug': typeof LeversLeverSlugRouteWithChildren
   '/practices/$leverSlug': typeof PracticesLeverSlugRouteWithChildren
@@ -465,6 +483,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/dashboard'
     | '/essays'
+    | '/evidence'
     | '/forgot-password'
     | '/framework'
     | '/gatherings'
@@ -492,6 +511,7 @@ export interface FileRouteTypes {
     | '/api/sunday-session-signup'
     | '/blog/$slug'
     | '/essays/$slug'
+    | '/evidence/$slug'
     | '/gatherings/$slug'
     | '/levers/$leverSlug'
     | '/practices/$leverSlug'
@@ -515,6 +535,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/dashboard'
     | '/essays'
+    | '/evidence'
     | '/forgot-password'
     | '/framework'
     | '/gatherings'
@@ -542,6 +563,7 @@ export interface FileRouteTypes {
     | '/api/sunday-session-signup'
     | '/blog/$slug'
     | '/essays/$slug'
+    | '/evidence/$slug'
     | '/gatherings/$slug'
     | '/levers/$leverSlug'
     | '/practices/$leverSlug'
@@ -565,6 +587,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/dashboard'
     | '/essays'
+    | '/evidence'
     | '/forgot-password'
     | '/framework'
     | '/gatherings'
@@ -592,6 +615,7 @@ export interface FileRouteTypes {
     | '/api/sunday-session-signup'
     | '/blog/$slug'
     | '/essays/$slug'
+    | '/evidence/$slug'
     | '/gatherings/$slug'
     | '/levers/$leverSlug'
     | '/practices/$leverSlug'
@@ -616,6 +640,7 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   DashboardRoute: typeof DashboardRoute
   EssaysRoute: typeof EssaysRouteWithChildren
+  EvidenceRoute: typeof EvidenceRouteWithChildren
   ForgotPasswordRoute: typeof ForgotPasswordRoute
   FrameworkRoute: typeof FrameworkRoute
   GatheringsRoute: typeof GatheringsRouteWithChildren
@@ -709,6 +734,13 @@ declare module '@tanstack/react-router' {
       path: '/essays'
       fullPath: '/essays'
       preLoaderRoute: typeof EssaysRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/evidence': {
+      id: '/evidence'
+      path: '/evidence'
+      fullPath: '/evidence'
+      preLoaderRoute: typeof EvidenceRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/forgot-password': {
@@ -893,6 +925,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EssaysSlugRouteImport
       parentRoute: typeof EssaysRoute
     }
+    '/evidence/$slug': {
+      id: '/evidence/$slug'
+      path: '/$slug'
+      fullPath: '/evidence/$slug'
+      preLoaderRoute: typeof EvidenceSlugRouteImport
+      parentRoute: typeof EvidenceRoute
+    }
     '/gatherings/$slug': {
       id: '/gatherings/$slug'
       path: '/$slug'
@@ -1008,6 +1047,18 @@ const EssaysRouteChildren: EssaysRouteChildren = {
 const EssaysRouteWithChildren =
   EssaysRoute._addFileChildren(EssaysRouteChildren)
 
+interface EvidenceRouteChildren {
+  EvidenceSlugRoute: typeof EvidenceSlugRoute
+}
+
+const EvidenceRouteChildren: EvidenceRouteChildren = {
+  EvidenceSlugRoute: EvidenceSlugRoute,
+}
+
+const EvidenceRouteWithChildren = EvidenceRoute._addFileChildren(
+  EvidenceRouteChildren,
+)
+
 interface GatheringsRouteChildren {
   GatheringsSlugRoute: typeof GatheringsSlugRoute
 }
@@ -1103,6 +1154,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   DashboardRoute: DashboardRoute,
   EssaysRoute: EssaysRouteWithChildren,
+  EvidenceRoute: EvidenceRouteWithChildren,
   ForgotPasswordRoute: ForgotPasswordRoute,
   FrameworkRoute: FrameworkRoute,
   GatheringsRoute: GatheringsRouteWithChildren,
