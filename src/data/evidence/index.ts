@@ -25,6 +25,7 @@ import movementMobilityAndExerciseTiming from "./movement-mobility-and-exercise-
 import skillMasteryAndSelfEfficacy from "./skill-mastery-and-self-efficacy.content";
 import workAndValuesCongruence from "./work-and-values-congruence.content";
 import progressiveMuscleRelaxationAndStillness from "./progressive-muscle-relaxation-and-stillness.content";
+import coldExposure from "./cold-exposure.content";
 import groundingAndEarthing from "./grounding-and-earthing.content";
 import handPositions from "./hand-positions.content";
 import soundVibrationActingOnTissue from "./sound-vibration-acting-on-tissue.content";
@@ -377,8 +378,14 @@ export const EVIDENCE_MECHANISMS: EvidenceMechanism[] = [
     slug: "cold-exposure",
     title: "Cold exposure",
     group: "body-and-lifestyle",
-    status: "planned",
-    description: "Not yet researched.",
+    status: "complete",
+    reviewDate: "November 2026",
+    researchGrade:
+      "Moderate for post-exercise muscle soreness and acute autonomic arousal, Preliminary for mood, depression, stress, immunity and metabolic health",
+    traditionalGrade: "Moderate",
+    description:
+      "Cold showers and plunges — acute arousal and soreness relief, delayed stress shifts, and why mood and immunity claims remain unestablished.",
+    markdown: withNormalizedGrades(coldExposure),
   },
   {
     slug: "time-restricted-eating-and-fasting",
