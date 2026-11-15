@@ -1,5 +1,6 @@
 import { Link, useNavigate, useRouterState } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { Menu, X, LogOut, LayoutDashboard, Settings, ChevronDown } from "lucide-react";
 import { useAuth } from "@/hooks/use-auth";
 
@@ -222,104 +223,137 @@ export function Nav({ overHero = false }: NavProps) {
   const solidChrome = scrolled || open;
   const heroScrim = overHero && !solidChrome;
 
-  return (
-    <header
-      className={`pointer-events-none fixed inset-x-0 top-0 z-[100] transition-all duration-500 ${
-        solidChrome
-          ? "border-b border-white/10 bg-[#0a1628]/70 backdrop-blur-xl"
-          : heroScrim
-            ? "bg-gradient-to-b from-[rgba(10,22,40,0.62)] via-[rgba(10,22,40,0.28)] to-transparent"
-            : ""
-      }`}
-    >
-      <nav className="pointer-events-auto relative z-10 mx-auto flex max-w-7xl items-center justify-between gap-2 px-4 py-4 sm:px-6 sm:py-5">
-        <Link to="/" className="group min-w-0 shrink leading-tight">
-          <span className="display whitespace-nowrap text-[1.05rem] tracking-wide text-white sm:text-2xl">
-            Desmond Olubunmi
-          </span>
-        </Link>
-        <div className="hidden items-center gap-9 md:flex">
-          <FrameworkMenu />
-          {NAV_ITEMS.map((n) => (
-            <Link
-              key={n.to}
-              to={n.to}
-              className="text-sm text-[#b8d4e8] transition hover:text-white"
-              activeProps={{ className: "text-white" }}
+  const toggleMenu = () => setOpen((v) => !v);
+  const [portalReady, setPortalReady] = useState(false);
+  useEffect(() => setPortalReady(true), []);
+
+  const mobileMenu =
+    open && portalReady
+      ? createPortal(
+          <div className="fixed inset-0 z-[90] md:hidden" role="presentation">
+            <button
+              type="button"
+              aria-label="Dismiss menu"
+              className="absolute inset-0 bg-[#0a1628]/55"
+              onClick={() => setOpen(false)}
+            />
+            <div
+              id="mobile-nav-menu"
+              role="dialog"
+              aria-modal="true"
+              className="absolute inset-x-0 top-0 flex max-h-[100dvh] flex-col bg-[#0a1628]/98 pt-[4.75rem] shadow-2xl"
             >
-              {n.label}
-            </Link>
-          ))}
-          {user ? <AccountAvatar /> : null}
-        </div>
-        <div className="relative z-10 flex shrink-0 items-center gap-1.5 md:hidden">
-          {user ? <AccountAvatar /> : null}
-          <button
-            type="button"
-            aria-label={open ? "Close menu" : "Open menu"}
-            aria-expanded={open}
-            aria-controls="mobile-nav-menu"
-            className="relative z-[110] -mr-1 inline-flex min-h-11 min-w-11 flex-col items-center justify-center gap-0.5 rounded-xl px-1.5 py-1 text-white transition hover:bg-[#7ec8e3]/10 active:bg-[#7ec8e3]/15"
-            onClick={(e) => {
-              e.preventDefault();
-              e.stopPropagation();
-              setOpen((v) => !v);
-            }}
-          >
-            <span className="pointer-events-none inline-flex items-center justify-center rounded-full border border-[#7ec8e3]/55 bg-[#7ec8e3]/15 p-2 shadow-[0_0_18px_-2px_rgba(126,200,227,0.6)]">
-              {open ? (
-                <X className="h-[18px] w-[18px]" aria-hidden />
-              ) : (
-                <Menu className="h-[18px] w-[18px]" aria-hidden />
-              )}
+              <div className="max-h-[min(75vh,calc(100dvh-4.75rem))] overflow-y-auto border-t border-white/10">
+                <div className="flex flex-col gap-1 px-6 py-4">
+                  <MobileLink
+                    to="/framework"
+                    label="Sunya Framework"
+                    onClick={() => setOpen(false)}
+                  />
+                  {FRAMEWORK_CHILDREN.map((child) => (
+                    <MobileLink
+                      key={child.to}
+                      to={child.to}
+                      label={child.label}
+                      indent
+                      onClick={() => setOpen(false)}
+                    />
+                  ))}
+                  <div className="my-2 h-px bg-white/10" />
+                  {NAV_ITEMS.map((n) => (
+                    <MobileLink
+                      key={n.to}
+                      to={n.to}
+                      label={n.label}
+                      onClick={() => setOpen(false)}
+                    />
+                  ))}
+                  {user ? (
+                    <>
+                      <Link
+                        to="/dashboard"
+                        onClick={() => setOpen(false)}
+                        className="rounded-lg px-2 py-3 text-[#b8d4e8] transition hover:bg-white/5 hover:text-white"
+                      >
+                        Dashboard
+                      </Link>
+                      <Link
+                        to="/account"
+                        onClick={() => setOpen(false)}
+                        className="rounded-lg px-2 py-3 text-[#b8d4e8] transition hover:bg-white/5 hover:text-white"
+                      >
+                        Account
+                      </Link>
+                    </>
+                  ) : null}
+                </div>
+              </div>
+            </div>
+          </div>,
+          document.body,
+        )
+      : null;
+
+  return (
+    <>
+      <header
+        className={`fixed inset-x-0 top-0 z-[100] transition-all duration-500 ${
+          solidChrome
+            ? "border-b border-white/10 bg-[#0a1628]/70 backdrop-blur-xl"
+            : heroScrim
+              ? "bg-gradient-to-b from-[rgba(10,22,40,0.62)] via-[rgba(10,22,40,0.28)] to-transparent"
+              : ""
+        }`}
+      >
+        <nav className="relative z-20 mx-auto flex max-w-7xl items-center justify-between gap-2 px-4 py-4 sm:px-6 sm:py-5">
+          <Link to="/" className="group min-w-0 shrink overflow-hidden leading-tight">
+            <span className="display whitespace-nowrap text-[1.05rem] tracking-wide text-white sm:text-2xl">
+              Desmond Olubunmi
             </span>
-            <span className="pointer-events-none text-[9px] font-medium uppercase tracking-[0.16em] text-white">
-              {open ? "Close" : "View Menu"}
-            </span>
-          </button>
-        </div>
-      </nav>
-      {open ? (
-        <div
-          id="mobile-nav-menu"
-          className="pointer-events-auto relative z-10 max-h-[min(70vh,calc(100dvh-5.5rem))] overflow-y-auto border-t border-white/10 bg-[#0a1628]/95 backdrop-blur-xl md:hidden"
-        >
-          <div className="flex flex-col gap-1 px-6 py-4">
-            <MobileLink to="/framework" label="Sunya Framework" onClick={() => setOpen(false)} />
-            {FRAMEWORK_CHILDREN.map((child) => (
-              <MobileLink
-                key={child.to}
-                to={child.to}
-                label={child.label}
-                indent
-                onClick={() => setOpen(false)}
-              />
-            ))}
-            <div className="my-2 h-px bg-white/10" />
+          </Link>
+          <div className="hidden items-center gap-9 md:flex">
+            <FrameworkMenu />
             {NAV_ITEMS.map((n) => (
-              <MobileLink key={n.to} to={n.to} label={n.label} onClick={() => setOpen(false)} />
+              <Link
+                key={n.to}
+                to={n.to}
+                className="text-sm text-[#b8d4e8] transition hover:text-white"
+                activeProps={{ className: "text-white" }}
+              >
+                {n.label}
+              </Link>
             ))}
-            {user ? (
-              <>
-                <Link
-                  to="/dashboard"
-                  onClick={() => setOpen(false)}
-                  className="rounded-lg px-2 py-3 text-[#b8d4e8] transition hover:bg-white/5 hover:text-white"
-                >
-                  Dashboard
-                </Link>
-                <Link
-                  to="/account"
-                  onClick={() => setOpen(false)}
-                  className="rounded-lg px-2 py-3 text-[#b8d4e8] transition hover:bg-white/5 hover:text-white"
-                >
-                  Account
-                </Link>
-              </>
-            ) : null}
+            {user ? <AccountAvatar /> : null}
           </div>
-        </div>
-      ) : null}
-    </header>
+          <div className="relative z-30 flex shrink-0 items-center gap-1.5 md:hidden">
+            {user ? <AccountAvatar /> : null}
+            <button
+              type="button"
+              aria-label={open ? "Close menu" : "Open menu"}
+              aria-expanded={open}
+              aria-controls="mobile-nav-menu"
+              className="relative z-30 -mr-1 inline-flex min-h-11 min-w-[4.5rem] touch-manipulation flex-col items-center justify-center gap-0.5 rounded-xl px-1.5 py-1 text-white transition hover:bg-[#7ec8e3]/10 active:bg-[#7ec8e3]/15"
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                toggleMenu();
+              }}
+            >
+              <span className="pointer-events-none inline-flex items-center justify-center rounded-full border border-[#7ec8e3]/55 bg-[#7ec8e3]/15 p-2 shadow-[0_0_18px_-2px_rgba(126,200,227,0.6)]">
+                {open ? (
+                  <X className="h-[18px] w-[18px]" aria-hidden />
+                ) : (
+                  <Menu className="h-[18px] w-[18px]" aria-hidden />
+                )}
+              </span>
+              <span className="pointer-events-none text-[9px] font-medium uppercase tracking-[0.16em] text-white">
+                {open ? "Close" : "View Menu"}
+              </span>
+            </button>
+          </div>
+        </nav>
+      </header>
+      {mobileMenu}
+    </>
   );
 }
