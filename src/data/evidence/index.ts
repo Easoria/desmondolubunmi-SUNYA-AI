@@ -8,6 +8,7 @@ import interoceptionAndBodyScan from "./interoception-and-body-scan.content";
 import expressiveWriting from "./expressive-writing.content";
 import musicAndDeliberatelyChosenSound from "./music-and-deliberately-chosen-sound.content";
 import mentalImageryAndVisualisation from "./mental-imagery-and-visualisation.content";
+import valuesClarificationAndSelfAffirmation from "./values-clarification-and-self-affirmation.content";
 
 export type MechanismStatus = "complete" | "planned";
 
@@ -175,8 +176,14 @@ export const EVIDENCE_MECHANISMS: EvidenceMechanism[] = [
     slug: "values-clarification-and-self-affirmation",
     title: "Values clarification and self-affirmation",
     group: "attention-and-cognition",
-    status: "planned",
-    description: "Not yet researched.",
+    status: "complete",
+    reviewDate: "November 2026",
+    researchGrade:
+      "Moderate for small gains in everyday well-being, acute stress buffering and openness to threatening information, Preliminary for values clarification on clinical anxiety, depression and life satisfaction",
+    traditionalGrade: "Very strong",
+    description:
+      "Writing about a core personal value — small well-being and stress-buffering gains, and why pep-talk slogans are a different (and riskier) practice.",
+    markdown: withNormalizedGrades(valuesClarificationAndSelfAffirmation),
   },
   {
     slug: "input-restriction-and-attentional-load",
