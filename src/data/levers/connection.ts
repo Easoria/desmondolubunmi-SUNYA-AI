@@ -9,14 +9,14 @@ export const connectionLever: Lever = {
   intro: [
     "Human beings are not built to settle alone. Other people calm us — being around someone steady genuinely settles the body, and being around no one for long enough does the opposite. Isolation keeps the system quietly braced, and it drains you in a way that is hard to name at the time.",
     "When you look into someone's eyes and feel genuinely seen, something shifts at every level. The nervous system registers safety. The armour around the heart begins to soften. A natural flow of aliveness opens between two people, and for a moment the sense of being separate simply goes. The wave looks across at another wave and recognises they are made of the same water.",
-    "But there is one thing to get right first, or connection becomes a quiet form of taking rather than genuine meeting. Arrive full. When you come to someone from a state of inner lack, you are unconsciously looking for validation, reassurance, something to fill the gap — and the other person feels it, even if neither of you names it. When you arrive already whole, you are free to offer the rarest thing there is: your undivided presence, asking nothing back.",
+    "But there is one thing to get right first, or connection becomes a quiet form of taking rather than genuine meeting. Arrive full. When you come to someone from a state of inner lack, you are unconsciously looking for validation, reassurance, something to fill the gap — and the other person feels it, even if neither of you names it. When you arrive already whole, you are free to offer the rarest thing there is: your undivided presence, asking nothing back. This does not mean you must be whole before you can connect. People are how we become steadier, not a prize for already being so. It means noticing when you are reaching for someone to fix something — because the reaching itself is usually what pushes them away.",
   ],
   practices: [
     {
+      sourceNumber: 1,
       slug: "internal-saturation",
-      name: "Internal Saturation",
-      subtitle: "entering relationships full",
-      essence: "The foundational state for all genuine connection: arriving at every interaction already whole — needing nothing, seeking nothing, giving everything.",
+      name: "Arriving Full",
+      essence: "Coming to people with something to give rather than a gap to fill. A direction to move in, not a test to pass before you are allowed company.",
       mechanism: [
         "The separate self approaches relationships from a state of inner lack. It enters rooms asking — consciously or not — “Do they like me? Will they validate me? Will they give me what I need?” This subtle agenda corrupts every interaction. The other person feels it, even if they cannot name it. True connection is impossible when you are using the relationship to fill an inner void. Internal Saturation is the state in which the void has been addressed at its source — not through another person, but through direct inner work. When you are genuinely full — when you have spent time in meditation, in deep presence, in conscious contact with the life that sustains you — you arrive at relationships with nothing to prove and nothing to extract. In this state, the energy flows outward rather than inward. You offer instead of take."
       ],
@@ -37,8 +37,8 @@ export const connectionLever: Lever = {
         "the-resonance-principle",
         "the-alchemy-of-authenticity"
       ],
-      metaTitle: "Internal Saturation — How to Practise It | Sunya",
-      metaDescription: "The foundational state for all genuine connection: arriving at every interaction already whole — needing nothing, seeking nothing, giving everything.",
+      metaTitle: "Arriving Full — How to Practise It | Sunya",
+      metaDescription: "Coming to people with something to give rather than a gap to fill. A direction to move in, not a test to pass before you are allowed company.",
       families: ["L2", "M2"],
       generated: {
         layersSource: "INFERRED",
@@ -56,11 +56,10 @@ export const connectionLever: Lever = {
       }
     },
     {
-      sourceNumber: 1,
+      sourceNumber: 2,
       slug: "the-resonance-principle",
-      name: "The Resonance Principle",
-      subtitle: "self-understanding and relational alignment",
-      essence: "Gaining clarity on your own internal frequency so that you can consciously project it outward and attract the environments, communities, and people who naturally harmonise with you.",
+      name: "Knowing Yourself",
+      essence: "Getting clear on what you actually value and how you want to live — which is what lets you recognise the people and places that fit, and notice the ones that do not.",
       mechanism: [
         "You cannot find your true community if you do not know who you are. When self-understanding is absent, you project a chaotic or distorted frequency into the world — inadvertently attracting mismatched people and situations that deplete your energy. In physics, resonance occurs when two objects vibrate at the same frequency and amplify each other. The same principle operates between people. The more clearly and honestly you know yourself, the more precisely you attract relationships and environments that nourish rather than drain you."
       ],
@@ -88,8 +87,8 @@ export const connectionLever: Lever = {
         "the-alchemy-of-authenticity",
         "karma-yoga"
       ],
-      metaTitle: "The Resonance Principle — How to Practise It | Sunya",
-      metaDescription: "Gaining clarity on your own internal frequency so that you can consciously project it outward and attract the environments, communities, and people who naturally harmonise with you.",
+      metaTitle: "Knowing Yourself — How to Practise It | Sunya",
+      metaDescription: "Getting clear on what you actually value and how you want to live — which is what lets you recognise the people and places that fit, and notice the ones that do not.",
       families: ["L1", "L2", "M1"],
       generated: {
         layersSource: "INFERRED",
@@ -111,10 +110,9 @@ export const connectionLever: Lever = {
       }
     },
     {
-      sourceNumber: 2,
+      sourceNumber: 3,
       slug: "the-alchemy-of-authenticity",
-      name: "The Alchemy of Authenticity",
-      subtitle: "radical truthfulness",
+      name: "Honesty",
       essence: "Dropping the social mask to exist in a state of genuine honesty with yourself and the world. The recognition that true connection is impossible if you are hiding behind a false persona.",
       mechanism: [
         "To avoid rejection, the conditioned self constructs a social mask — a carefully managed persona designed to gain approval. Maintaining this mask consumes enormous amounts of vital energy. When you interact with someone while wearing it, they are not connecting with you; they are connecting with the performance. Even in a crowded room, you feel entirely alone. Authenticity is the practice of dropping this performance. It is terrifying at first, because it requires genuine vulnerability — the willingness to be seen as you actually are. But vulnerability has a precise effect: when you speak your truth and show your real face, you signal to the other person’s nervous system that it is safe for them to do the same. The armour on both sides dissolves. Real contact becomes possible."
@@ -140,7 +138,7 @@ export const connectionLever: Lever = {
         "karma-yoga",
         "somatic-communion"
       ],
-      metaTitle: "The Alchemy of Authenticity — How to Practise It | Sunya",
+      metaTitle: "Honesty — How to Practise It | Sunya",
       metaDescription: "Dropping the social mask to exist in a state of genuine honesty with yourself and the world.",
       families: ["L2", "M2", "M1"],
       generated: {
@@ -163,11 +161,10 @@ export const connectionLever: Lever = {
       }
     },
     {
-      sourceNumber: 3,
+      sourceNumber: 4,
       slug: "karma-yoga",
-      name: "Karma Yoga",
-      subtitle: "the art of selfless service",
-      essence: "Dissolving the boundaries of the separate self by serving something larger than personal survival. The shift from a life of extraction to a life of contribution — and the discovery that serving others is one of the most direct paths to inner freedom.",
+      name: "Service",
+      essence: "Doing something for other people that is not about you. The shift from a life of extraction to one of contribution — and people consistently find it does more for them than things done for themselves. (Known in the Indian traditions as karma yoga.)",
       mechanism: [
         "The separate self is fundamentally extractive in nature. It enters every",
         "relationship, room, and community with a subconscious equation: “What can I get from this? How does this benefit me?” This constant grasping keeps the heart locked, attention constricted, and energy stuck. You feel disconnected because you are treating the world as a transaction rather than a communion. Selfless service — giving your time, energy, or love with no expectation of reward — breaks this loop directly. When you pour your energy out for the benefit of another, you physically and inwardly open the heart. You stop being a stagnant vessel hoarding water and become a hollow, flowing pipe. Energy rushes through you to serve the other person, and in doing so, it washes and restores your own inner system. What you give, you experience. What you withhold, you lose."
@@ -196,7 +193,7 @@ export const connectionLever: Lever = {
         "somatic-communion",
         "the-ecosystem-of-belonging"
       ],
-      metaTitle: "Karma Yoga — How to Practise It | Sunya",
+      metaTitle: "Service — How to Practise It | Sunya",
       metaDescription: "Dissolving the boundaries of the separate self by serving something larger than personal survival.",
       families: ["L2"],
       generated: {
@@ -219,11 +216,10 @@ export const connectionLever: Lever = {
       }
     },
     {
-      sourceNumber: 4,
+      sourceNumber: 5,
       slug: "somatic-communion",
-      name: "Somatic Communion",
-      subtitle: "the physics of presence",
-      essence: "Utilising your physical presence to stabilise the nervous system of another human being. The practice of recognising that absolute, undivided attention is one of the most profound forms of care available.",
+      name: "Being With Someone",
+      essence: "Using your own steadiness to settle someone else. Undivided attention is one of the most useful things you can give a person, and rarer than it sounds.",
       mechanism: [
         "Human beings co-regulate through presence. The brain is constantly scanning the micro-expressions, breathing rates, and felt quality of the people around us to determine whether we are safe — a process called neuroception. We have mirror neurons",
         "that literally mirror the emotional and physical states of those we are with. When you sit with someone in distress while distracted, looking at your phone, or trying to logically fix their problem, you amplify their chaos. But when you drop into a deep, parasympathetic state of genuine presence — belly soft, breath slow, mind quiet — your whole physical system broadcasts a signal of safety. Without a single word, their nervous system begins to entrain to yours. You become a stable anchor in someone else’s storm. This is not a metaphor. It is biology."
@@ -252,7 +248,7 @@ export const connectionLever: Lever = {
         "the-ecosystem-of-belonging",
         "the-alchemy-of-forgiveness"
       ],
-      metaTitle: "Somatic Communion — How to Practise It | Sunya",
+      metaTitle: "Being With Someone — How to Practise It | Sunya",
       metaDescription: "Utilising your physical presence to stabilise the nervous system of another human being.",
       families: ["H1", "L2"],
       generated: {
@@ -275,11 +271,10 @@ export const connectionLever: Lever = {
       }
     },
     {
-      sourceNumber: 5,
+      sourceNumber: 6,
       slug: "the-ecosystem-of-belonging",
-      name: "The Ecosystem of Belonging",
-      subtitle: "community and tribe",
-      essence: "Architecting and immersing yourself in a collective field that amplifies consciousness and accelerates growth. The practice of moving from an isolated node into a unified network.",
+      name: "Community",
+      essence: "Belonging to a group that holds you to something. Isolation is the default in modern life and has to be actively worked against.",
       mechanism: [
         "In physics, when two waves of the same frequency meet, they do not merely add together — they multiply in power. This phenomenon, known as constructive interference, operates between human beings as well. When you gather with people driven by fear, gossip, and reactivity, your system must constantly expend energy resisting the pull toward their baseline state. But when you gather with people committed to authenticity, service, and genuine inner growth — what the tradition calls Satsang, or “gathering for truth” — the collective field becomes exponentially stronger than the sum of its parts. The",
         "separate self’s defences naturally soften. A genuine sense of belonging emerges — not because you fit into a social mould, but because your true, unmasked nature is finally resonating with the whole."
@@ -308,7 +303,7 @@ export const connectionLever: Lever = {
         "the-alchemy-of-forgiveness",
         "haptic-alchemy"
       ],
-      metaTitle: "The Ecosystem of Belonging — How to Practise It | Sunya",
+      metaTitle: "Community — How to Practise It | Sunya",
       metaDescription: "Architecting and immersing yourself in a collective field that amplifies consciousness and accelerates growth.",
       families: ["L2", "L4"],
       generated: {
@@ -331,11 +326,10 @@ export const connectionLever: Lever = {
       }
     },
     {
-      sourceNumber: 6,
+      sourceNumber: 7,
       slug: "the-alchemy-of-forgiveness",
-      name: "The Alchemy of Forgiveness",
-      subtitle: "releasing the hold of the past",
-      essence: "The ultimate internal technology for untying the deepest knots of the heart. Releasing the heavy, stuck residue of past grievances to reclaim your vitality and restore the fluidity of the inner system.",
+      name: "Forgiveness",
+      essence: "Letting go of what someone did. Not for their sake — carrying it costs you far more than it costs them.",
       mechanism: [
         "The conditioned self uses anger and resentment to maintain the rigid boundary of its identity. It builds itself around the story of being a victim. But holding a grudge is not just a psychological burden — it is a continuous drain. When you refuse to forgive, you construct a persistent connection between your heart centre and the object of your anger. Every time you replay the betrayal in your mind, you pump your precious energy into the past, keeping the knot of pain tightly bound in your chest. Forgiveness is not a passive act of condoning harmful behaviour. It is the deliberate, ruthlessly effective act of taking your power back. By forgiving, you sever that connection, dissolve the dense tension trapped in your nervous system, and return the leaked energy to your own centre. You are not doing this for them. You are doing it for yourself."
       ],
@@ -362,7 +356,7 @@ export const connectionLever: Lever = {
         "the-ecosystem-of-belonging",
         "haptic-alchemy"
       ],
-      metaTitle: "The Alchemy of Forgiveness — How to Practise It | Sunya",
+      metaTitle: "Forgiveness — How to Practise It | Sunya",
       metaDescription: "The ultimate internal technology for untying the deepest knots of the heart.",
       families: ["H3", "L2", "L4"],
       generated: {
@@ -381,11 +375,10 @@ export const connectionLever: Lever = {
       }
     },
     {
-      sourceNumber: 7,
+      sourceNumber: 8,
       slug: "haptic-alchemy",
-      name: "Haptic Alchemy",
-      subtitle: "the healing power of touch",
-      essence: "Consciously restoring the body’s need for safe, appropriate physical contact — and recognising that touch is not a luxury but a biological necessity for nervous system health.",
+      name: "Touch",
+      essence: "Restoring safe, appropriate physical contact. Touch is not a luxury — it measurably affects stress and mood, and most adults get far less than they need.",
       mechanism: [
         "The skin is the largest sensory organ in the human body and the primary medium through which we experience safety with other human beings from birth. Safe, appropriate touch triggers the immediate release of oxytocin — the primary bonding neurochemical — which simultaneously reduces cortisol, lowers blood pressure, and signals the nervous system that we are not alone. Conversely, prolonged absence of meaningful touch — a state known as skin hunger — produces measurable physiological stress. The modern world, with its digital-primary interactions and increasing physical distance, has created an epidemic of touch starvation that is invisible and rarely named."
       ],
@@ -411,8 +404,8 @@ export const connectionLever: Lever = {
       relatedPractices: [
         "the-alchemy-of-forgiveness"
       ],
-      metaTitle: "Haptic Alchemy — How to Practise It | Sunya",
-      metaDescription: "Consciously restoring the body’s need for safe, appropriate physical contact — and recognising that touch is not a luxury but a biological necessity for nervous system health.",
+      metaTitle: "Touch — How to Practise It | Sunya",
+      metaDescription: "Restoring safe, appropriate physical contact. Touch is not a luxury — it measurably affects stress and mood, and most adults get far less than they need.",
       families: ["H1", "L2"],
       generated: {
         layersSource: "INFERRED",
