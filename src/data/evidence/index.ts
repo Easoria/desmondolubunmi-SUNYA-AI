@@ -24,6 +24,7 @@ import financialSecurityAndScarcity from "./financial-security-and-scarcity.cont
 import movementMobilityAndExerciseTiming from "./movement-mobility-and-exercise-timing.content";
 import skillMasteryAndSelfEfficacy from "./skill-mastery-and-self-efficacy.content";
 import workAndValuesCongruence from "./work-and-values-congruence.content";
+import progressiveMuscleRelaxationAndStillness from "./progressive-muscle-relaxation-and-stillness.content";
 
 export type MechanismStatus = "complete" | "planned";
 
@@ -360,8 +361,14 @@ export const EVIDENCE_MECHANISMS: EvidenceMechanism[] = [
     slug: "progressive-muscle-relaxation-and-stillness",
     title: "Progressive muscle relaxation and stillness",
     group: "body-and-lifestyle",
-    status: "planned",
-    description: "Not yet researched.",
+    status: "complete",
+    reviewDate: "November 2026",
+    researchGrade:
+      "Moderate for reducing anxiety, stress and depressive symptoms and improving subjective sleep quality in clinical settings, Preliminary for long-term blood pressure reduction and standalone physical stillness",
+    traditionalGrade: "Strong",
+    description:
+      "Progressive muscle relaxation and deliberate stillness — anxiety and sleep gains, short-term blood-pressure drops, and when relaxing in bed backfires.",
+    markdown: withNormalizedGrades(progressiveMuscleRelaxationAndStillness),
   },
   {
     slug: "cold-exposure",

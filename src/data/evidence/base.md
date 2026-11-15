@@ -137,7 +137,7 @@ Pages carry the date they were last reviewed. Evidence changes; an undated page 
 - ● Circadian light exposure and entrainment
 - ● Sleep behaviour — stimulus control, wind-down, environment
 - ● Movement, mobility and exercise timing
-- ○ Progressive muscle relaxation and stillness
+- ● Progressive muscle relaxation and stillness
 - ○ Cold exposure
 - ○ Time-restricted eating and fasting
 - ○ Diet composition
