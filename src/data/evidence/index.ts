@@ -30,6 +30,7 @@ import timeRestrictedEatingAndFasting from "./time-restricted-eating-and-fasting
 import dietComposition from "./diet-composition.content";
 import hydration from "./hydration.content";
 import natureExposureAndAwe from "./nature-exposure-and-awe.content";
+import botanicalPreparations from "./botanical-preparations.content";
 import groundingAndEarthing from "./grounding-and-earthing.content";
 import handPositions from "./hand-positions.content";
 import soundVibrationActingOnTissue from "./sound-vibration-acting-on-tissue.content";
@@ -437,9 +438,16 @@ export const EVIDENCE_MECHANISMS: EvidenceMechanism[] = [
     slug: "botanical-preparations",
     title: "Botanical preparations",
     group: "body-and-lifestyle",
-    status: "planned",
-    description: "Not yet researched.",
+    status: "complete",
+    reviewDate: "November 2026",
+    researchGrade:
+      "Moderate for specific standardised extracts (St. John's wort in mild-to-moderate depression, oral lavender oil in anxiety), Preliminary for ashwagandha, chamomile and valerian",
+    traditionalGrade: "Very strong",
+    description:
+      "Herbal extracts for mood, anxiety and sleep — St. John's wort and Silexan evidence, plus interaction and liver-injury cautions.",
+    markdown: withNormalizedGrades(botanicalPreparations),
   },
+
   {
     slug: "nature-exposure-and-awe",
     title: "Nature exposure and awe",
