@@ -18,6 +18,7 @@ import affectiveTouchAndCoRegulation from "./affective-touch-and-co-regulation.c
 import prosocialBehaviourAndVolunteering from "./prosocial-behaviour-and-volunteering.content";
 import forgiveness from "./forgiveness.content";
 import religiousAndDevotionalPractice from "./religious-and-devotional-practice.content";
+import circadianLightExposureAndEntrainment from "./circadian-light-exposure-and-entrainment.content";
 
 export type MechanismStatus = "complete" | "planned";
 
@@ -315,8 +316,14 @@ export const EVIDENCE_MECHANISMS: EvidenceMechanism[] = [
     slug: "circadian-light-exposure-and-entrainment",
     title: "Circadian light exposure and entrainment",
     group: "body-and-lifestyle",
-    status: "planned",
-    description: "Not yet researched.",
+    status: "complete",
+    reviewDate: "November 2026",
+    researchGrade:
+      "Strong for bright light therapy in seasonal and non-seasonal depression and circadian phase shifting, Moderate for sleep problems overall and observational links between day/night light contrast and long-term health",
+    traditionalGrade: "Weak",
+    description:
+      "Morning bright light and evening darkness — depression and sleep timing gains, and why clear blue-blocker glasses fall short.",
+    markdown: withNormalizedGrades(circadianLightExposureAndEntrainment),
   },
   {
     slug: "sleep-behaviour",

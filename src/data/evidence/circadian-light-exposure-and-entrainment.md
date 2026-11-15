@@ -1,0 +1,134 @@
+# Circadian light exposure and entrainment
+
+*Reviewed November 2026*
+
+**Research strength — Strong** for bright light therapy in seasonal and non-seasonal depression and circadian phase shifting, **Moderate** for sleep problems overall and observational links between day/night light contrast and long-term health.
+
+**Traditional convergence — Weak** *(pre-modern traditions lived under natural light-dark cycles by necessity, though classical Chinese seasonal texts explicitly linked sleep and waking to solar light)*.
+
+> **In short:** morning bright light is one of the strongest non-drug treatments in clinical mood research — raising remission rates in non-seasonal depression from 23.5% to 40.7% across 11 trials[^1] and outperforming placebo in seasonal winter depression.[^2] Conversely, bright indoor light and glowing screens at night suppress melatonin and push the body's internal clock later, leaving you alert at bedtime and sluggish after waking.[^5] Outside clinical boxes, getting outdoors by day and keeping nights genuinely dark shifts sleep timing up to two hours earlier in a single week.[^4] One hyped shortcut falls flat: ordinary clear "blue-light blocking" glasses have not been shown to improve sleep quality or reduce eye strain.[^9]
+
+---
+
+## What it is
+
+Using the daily contrast between **bright light after waking** and **dim darkness at night** to set the timing of the brain's 24-hour clock.
+
+Dedicated light-sensing cells in the retina respond to overall brightness and short-wavelength blue-green light, signalling directly to the master circadian pacemaker in the hypothalamus — independent of ordinary conscious vision.[^5] When bright light hits the eyes early in the day, it anchors melatonin rise to the evening and sharpens daytime alertness; when bright light hits the eyes late at night, it tells that clock daytime is still running and delays sleep timing.[^5]
+
+---
+
+## What it does for you
+
+### Morning bright light treats both seasonal and non-seasonal depression
+
+In a 2025 meta-analysis of **11 randomised trials (858 patients)** with **non-seasonal depressive disorders**, adding 30 minutes or more of daily 10,000-lux bright light therapy alongside standard care outperformed antidepressants alone or dim-light placebos:[^1]
+
+| Outcome in non-seasonal depression | Bright light | Control |
+|---|---|---|
+| Remission rate | **40.7%** | 23.5% *(OR = 2.42)* |
+| Treatment response rate | **60.4%** | 38.6% *(OR = 2.34)* |
+
+Advantages appeared both within four weeks and beyond four weeks, suggesting faster initial improvement alongside medication.[^1]
+
+In **seasonal affective disorder (SAD)**, a meta-analysis of **19 randomised trials** confirmed bright light therapy outperformed dim or sham controls for depression ratings (**SMD = −0.37**, 18 studies, 610 patients) and treatment response (**RR = 1.42**, 16 studies, 559 patients).[^2]
+
+### Light timing shifts sleep problems and resets the body clock
+
+Pooling **53 studies (1,154 participants)**, timed light therapy improved sleep problems overall (**Hedges' g = 0.39**), including **circadian rhythm sleep disorders (g = 0.41)**, **insomnia symptoms (g = 0.47)** and **dementia-related sleep disturbance (g = 0.30)**.[^3]
+
+In a natural-environment trial, taking **eight adults** camping for **one week** with only natural sunlight and campfires — zero electric lights or screens after sunset — shifted melatonin onset and sleep timing **nearly two hours earlier**, synchronising both early risers and night owls to sunrise and sunset while keeping total sleep time constant.[^4]
+
+### Evening screens and room light suppress melatonin and delay morning alertness
+
+In a tightly controlled crossover trial, reading on a bright light-emitting tablet for four hours before bedtime suppressed evening melatonin by **about 55%**, delayed the circadian melatonin rhythm by **more than 1.5 hours**, lengthened time to fall asleep by **10 minutes**, cut REM sleep and impaired next-morning alertness compared with reading a printed book under dim room light.[^5]
+
+Later laboratory work showed wide individual variation: some people's circadian systems are so sensitive that ordinary indoor room light in the evening suppresses melatonin by half.[^6]
+
+### Brighter days and darker nights predict mood, sleep and survival in large cohorts
+
+Across **over 400,000 UK Biobank adults**, each additional hour spent outdoors in daytime light correlated both cross-sectionally and longitudinally with lower odds of major depressive disorder (**OR 0.92–0.98**), lower antidepressant use, less low mood, fewer insomnia symptoms and easier waking.[^7]
+
+In a follow-up tracking **88,905 UK Biobank participants** who wore wrist light sensors for one week over an eight-year period, people exposed to the brightest daytime light had **17% to 34% lower all-cause mortality**, while people exposed to the brightest night light had **21% to 34% higher all-cause mortality** after adjusting for lifestyle and demographic factors.[^8]
+
+---
+
+## How much you need to do
+
+- **Go outside within an hour of waking** for **15 to 30 minutes** (even on an overcast day, outdoor light is roughly 1,000 to 10,000 lux — far brighter than typical indoor rooms).[^4]
+- **If using a clinical light box** in dark winter months or for mood symptoms, trials most consistently used **10,000 lux** for **30 minutes each morning**, positioned off to the side at eye height without staring directly into the bulbs.[^1]
+- **Dim indoor lighting and screens one to two hours before sleep**, switching overhead LEDs to low, warm table lamps and lowering screen brightness.[^5]
+
+**So: bright outdoor light shortly after waking and genuinely dim light before bed — sustained for at least one to four weeks — covers what both physiology and depression trials support.**
+
+---
+
+## Practices that rest on it
+
+Your Body Clock · Light and Sound at Night · The First Hour
+
+Partly: Air, Light and Sound · The Bedroom
+
+---
+
+## Where the evidence stops
+
+**Clear "blue-light blocking" glasses have failed clinical tests.** A 2023 Cochrane systematic review pooling **17 randomised trials (619 adults)** found that blue-light filtering spectacle lenses probably make **little or no difference to computer eye strain or visual performance**, while evidence on sleep quality was graded **very low certainty and inconsistent** (three of six sleep trials showed benefit and three showed none, with positive trials mostly testing deeply tinted amber glasses in clinical populations rather than standard clear computer lenses).[^9] Dimming overall light intensity[^6] matters more than buying lightly tinted glasses.[^9]
+
+**Sleep and seasonal-depression meta-analyses show bias risks.** The 19-trial seasonal-depression review noted moderate heterogeneity and moderate-to-high risk of bias across trials,[^2] and the 53-study sleep review flagged publication bias alongside smaller effects when circadian-disorder analysis was restricted to randomised trials.[^3] Blinding is difficult because people can see whether a lamp is bright or dim.[^2]
+
+**UK Biobank daylight and night-light figures are observational.** Active, healthy adults go outdoors more during the day and sleep in darker, quieter schedules; wrist-sensor cohorts cannot prove causality on their own even after statistical adjustments.[^8]
+
+**Non-seasonal depression trials tested light mostly as an add-on.** Most trials in the 2025 *JAMA Psychiatry* meta-analysis combined bright light with existing antidepressant treatment rather than testing it as a standalone replacement.[^1]
+
+**Unknowns:** whether brief 10-minute morning outdoor walks[^7] produce the same mood benefit in healthy adults as 30-minute 10,000-lux clinical boxes;[^1] why evening light sensitivity varies tenfold or more between healthy individuals;[^6] and how much benefit from natural-light camping comes from darkness at night versus brightness by day.[^4]
+
+**And one thing to actively disbelieve:** that ordinary clear blue-blocker glasses cancel out bright overhead LEDs and bright late-night screens,[^9] or that looking at daylight through a closed window matches stepping outdoors (window glass and indoor distance drop light intensity sharply).[^4]
+
+---
+
+## Who should be careful
+
+**Bipolar disorder and risk of mania or hypomania.** Morning bright light can destabilise mood or trigger hypomania or mania in people with bipolar I or II disorder.[^10] In a six-week randomised trial of **46 adults with bipolar depression** already taking stable anti-manic medication, gradually building up to **7,000-lux bright light at midday** achieved **68.2% remission versus 22.2%** on dim red placebo with zero mood switches.[^10] Do not self-prescribe morning bright light therapy if you have bipolar disorder or a history of manic episodes — work with a psychiatrist, ensure mood-stabilising cover, and never use light therapy during active hypomania, mania or mixed episodes.[^10]
+
+**Eye disease and photosensitising medications.** *As a clinical and practical judgement rather than a finding from the mood trials cited here:* if you have retinal disease (such as macular degeneration or diabetic retinopathy), severe dry eye, glaucoma-related light sensitivity, or take photosensitising medications (including lithium, certain antipsychotics, tetracyclines or St John's wort), check with an eye doctor or prescribing clinician before sitting in front of a 10,000-lux light box. Never stare directly into a bright lamp or the sun.
+
+**Do not replace prescribed care.** Severe or suicidal depression requires clinical assessment; bright light therapy in trials functioned primarily alongside standard medical care.[^1]
+
+---
+
+## Traditional convergence
+
+Weak. Because electric lighting after sunset and indoor desk work are modern inventions, pre-modern traditions did not need a science of evening lux or screen timing — as noted in *The Sunya Evidence Base*, this mechanism rests on contemporary biology rather than ancient pedigree.
+
+Where older texts addressed daily timing at all, they treated solar light practically rather than metaphorically. In classical Chinese medicine, Chapter 2 of the *Huangdi Neijing Suwen* (*Siqi Tiaoshen Dalun*) instructs readers to vary waking and sleeping with seasonal daylight — retiring at night and rising early with the dawn in spring and summer, rising with the fowl in autumn, and retiring early while **waiting for the sun's light** before rising in winter.[^11]
+
+You can test the mechanism directly across seven days: step outside for 20 minutes within an hour of waking without sunglasses (without looking at the sun), keep indoor lights dim and lamps low for the final 90 minutes before sleep, and track how easily you fall asleep and wake up by day seven.
+
+---
+
+## References
+
+*APA 7th.*
+
+[^1]: Menegaz de Almeida, A., Aquino de Moraes, F. C., Cavalcanti Souza, M. E., Cavalcanti Orestes Cardoso, J. H., Tamashiro, F., Miranda, C., Fernandes, L., Kreuz, M., & Kelly, F. A. (2025). Bright light therapy for nonseasonal depressive disorders: A systematic review and meta-analysis. *JAMA Psychiatry, 82*(1), 38–46. https://doi.org/10.1001/jamapsychiatry.2024.2871
+
+[^2]: Pjrek, E., Friedrich, M.-E., Cambioli, L., Dold, M., Jäger, F., Komorowski, A., Lanzenberger, R., Kasper, S., & Winkler, D. (2020). The efficacy of light therapy in the treatment of seasonal affective disorder: A meta-analysis of randomized controlled trials. *Psychotherapy and Psychosomatics, 89*(1), 17–24. https://doi.org/10.1159/000502891
+
+[^3]: van Maanen, A., Meijer, A. M., van der Heijden, K. B., & Oort, F. J. (2016). The effects of light therapy on sleep problems: A systematic review and meta-analysis. *Sleep Medicine Reviews, 29*, 52–62. https://doi.org/10.1016/j.smrv.2015.08.009
+
+[^4]: Wright, K. P., Jr., McHill, A. W., Birks, B. R., Griffin, B. R., Rusterholz, T., & Chinoy, E. D. (2013). Entrainment of the human circadian clock to the natural light-dark cycle. *Current Biology, 23*(16), 1554–1558. https://doi.org/10.1016/j.cub.2013.06.039
+
+[^5]: Chang, A.-M., Aeschbach, D., Duffy, J. F., & Czeisler, C. A. (2015). Evening use of light-emitting eReaders negatively affects sleep, circadian timing, and next-morning alertness. *Proceedings of the National Academy of Sciences, 112*(4), 1232–1237. https://doi.org/10.1073/pnas.1418490112
+
+[^6]: Phillips, A. J. K., Vidafar, P., Burns, A. C., McGlashan, E. M., Anderson, C., Rajaratnam, S. M. W., Lockley, S. W., & Cain, S. W. (2019). High sensitivity and interindividual variability in the response of the human circadian system to evening light. *Proceedings of the National Academy of Sciences, 116*(24), 12019–12024. https://doi.org/10.1073/pnas.1901824116
+
+[^7]: Burns, A. C., Saxena, R., Vetter, C., Phillips, A. J. K., Lane, J. M., & Cain, S. W. (2021). Time spent in outdoor light is associated with mood, sleep, and circadian rhythm-related outcomes: A cross-sectional and longitudinal study in over 400,000 UK Biobank participants. *Journal of Affective Disorders, 295*, 347–352. https://doi.org/10.1016/j.jad.2021.08.056
+
+[^8]: Windred, D. P., Burns, A. C., Lane, J. M., Olivier, P., Rutter, M. K., Saxena, R., Phillips, A. J. K., & Cain, S. W. (2024). Brighter nights and darker days predict higher mortality risk: A prospective analysis of personal light exposure in >88,000 individuals. *Proceedings of the National Academy of Sciences, 121*(43), e2405924121. https://doi.org/10.1073/pnas.2405924121
+
+[^9]: Singh, S., Keller, P. R., Busija, L., McMillan, P., Makrai, E., Lawrenson, J. G., Hull, C. C., & Downie, L. E. (2023). Blue-light filtering spectacle lenses for visual performance, sleep, and macular health in adults. *Cochrane Database of Systematic Reviews*, (8), CD013244. https://doi.org/10.1002/14651858.CD013244.pub2
+
+[^10]: Sit, D. K., McGowan, J., Wiltrout, C., et al. (2018). Adjunctive bright light therapy for bipolar depression: A randomized double-blind placebo-controlled trial. *American Journal of Psychiatry, 175*(2), 131–139. https://doi.org/10.1176/appi.ajp.2017.16101200
+
+[^11]: *Huangdi Neijing Suwen*, ch. 2 (*Siqi Tiaoshen Dalun*, "Comprehensive Discourse on Regulating the Spirit in Accordance with the Qi of the Four Seasons").
