@@ -10,6 +10,7 @@ import musicAndDeliberatelyChosenSound from "./music-and-deliberately-chosen-sou
 import mentalImageryAndVisualisation from "./mental-imagery-and-visualisation.content";
 import valuesClarificationAndSelfAffirmation from "./values-clarification-and-self-affirmation.content";
 import inputRestrictionAndAttentionalLoad from "./input-restriction-and-attentional-load.content";
+import ruminationAndMindWandering from "./rumination-and-mind-wandering.content";
 
 export type MechanismStatus = "complete" | "planned";
 
@@ -203,8 +204,14 @@ export const EVIDENCE_MECHANISMS: EvidenceMechanism[] = [
     slug: "rumination-and-mind-wandering",
     title: "Rumination and mind-wandering",
     group: "attention-and-cognition",
-    status: "planned",
-    description: "Not yet researched.",
+    status: "complete",
+    reviewDate: "November 2026",
+    researchGrade:
+      "Strong for rumination's link to depression and anxiety and for targeted therapies reducing repetitive negative thinking, Moderate for mindfulness reducing rumination and for content-dependent mood effects of mind-wandering",
+    traditionalGrade: "Very strong",
+    description:
+      "Repetitive negative thinking versus ordinary mind-wandering — clinical risk, targeted training, and why not every drift of attention is the problem.",
+    markdown: withNormalizedGrades(ruminationAndMindWandering),
   },
   {
     slug: "compassion-and-loving-kindness-training",
