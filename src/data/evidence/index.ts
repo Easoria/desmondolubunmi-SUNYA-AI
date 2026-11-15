@@ -5,6 +5,7 @@ import sustainedVocalisation from "./sustained-vocalisation.content";
 import meditation from "./meditation.content";
 import decentering from "./decentering.content";
 import interoceptionAndBodyScan from "./interoception-and-body-scan.content";
+import expressiveWriting from "./expressive-writing.content";
 
 export type MechanismStatus = "complete" | "planned";
 
@@ -139,8 +140,14 @@ export const EVIDENCE_MECHANISMS: EvidenceMechanism[] = [
     slug: "expressive-writing",
     title: "Expressive writing",
     group: "attention-and-cognition",
-    status: "planned",
-    description: "Not yet researched.",
+    status: "complete",
+    reviewDate: "November 2026",
+    researchGrade:
+      "Moderate for small reductions in everyday distress and reported symptoms, Preliminary for clinical depression, trauma and physical disease markers",
+    traditionalGrade: "Weak",
+    description:
+      "Private writing about an unresolved experience — small delayed gains in distress, and where the protocol fails.",
+    markdown: withNormalizedGrades(expressiveWriting),
   },
   {
     slug: "mental-imagery-and-visualisation",
