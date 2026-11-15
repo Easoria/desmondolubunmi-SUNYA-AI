@@ -284,8 +284,8 @@ function ProblemPageView() {
         <div>
           <EmailCapture variant="problem" />
           <p className="mt-6 text-sm text-[#b8d4e8]/65">
-            <Link to="/work-with-me" className="transition hover:text-white">
-              Or work through this directly with Desmond, one-to-one →
+            <Link to="/gatherings" className="transition hover:text-white">
+              Or come to a gathering →
             </Link>
           </p>
         </div>

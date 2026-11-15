@@ -75,7 +75,7 @@ function PrivacyPage() {
                   </tr>
                   <tr>
                     <td className="px-4 py-3 align-top">
-                      You book personal guidance or buy a course
+                      You buy a course
                     </td>
                     <td className="px-4 py-3 align-top">Your name, email and payment details</td>
                     <td className="px-4 py-3 align-top">

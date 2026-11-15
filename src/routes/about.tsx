@@ -1,7 +1,8 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { Breadcrumb } from "@/components/site/Breadcrumb";
+import { EmailCapture } from "@/components/site/EmailCapture";
 import { FounderBio, FOUNDER_SUBTITLE } from "@/components/site/FounderBio";
 import { buildSeoHead, PERSON_SCHEMA } from "@/lib/seo";
 
@@ -28,8 +29,7 @@ export const Route = createFileRoute("/about")({
   head: () => ({
     ...buildSeoHead({
       title: "About Desmond Olubunmi — Founder of Sunya | Sunya",
-      description:
-        "Founder of Sunya. Author of The Sleep Rhythm Reset, and creator of the Sunya Sleep app.",
+      description: "Who Desmond Olubunmi is, and what Sunya is for.",
       path: "/about",
       ogType: "website",
       imageKind: "core",
@@ -89,6 +89,65 @@ function AboutPage() {
               — an iOS app for sleep and nervous system regulation.
             </li>
           </ul>
+        </section>
+
+        <section className="mt-20">
+          <h2 className="display text-3xl text-white sm:text-4xl">What Sunya is for</h2>
+          <div className="mt-8 space-y-7 text-[15px] leading-8 text-[#b8d4e8] sm:text-base sm:leading-8">
+            <p>
+              We have developed the external world enormously, through scientific and
+              technological advancement. Inwardly, we remain largely underdeveloped. We still
+              operate from fear, tribalism, borrowed belief and limited identities — which
+              produces much of the conflict and suffering we are trying to escape.
+            </p>
+            <p>The world is a collection of individuals. When individuals change, the world changes.</p>
+            <p>
+              We breathe the same air and we want the same things: freedom from suffering,
+              genuine happiness, a life that feels worth living. Those run deeper than any belief
+              that divides us.
+            </p>
+            <p>
+              When a person creates genuine wellbeing within themselves, it begins to radiate
+              outward — into the people around them, and into the world. Not because anyone
+              preached unity, but because someone whose being is in order has less to defend, less
+              to take, and less to prove.
+            </p>
+            <p className="display text-2xl font-semibold text-white sm:text-3xl">
+              This is not idealism. This is mechanics.
+            </p>
+            <p>
+              To give every human being a complete, non-sectarian map of their own wellbeing —
+              body, mind, emotions, and the conditions around them — in plain language, free,
+              with nothing required in exchange.
+            </p>
+            <p>
+              Nothing to believe. Nothing to join. The map is public and it stays that way.
+            </p>
+          </div>
+
+          <h3 className="display mt-16 text-2xl text-white sm:text-3xl">Where this is now</h3>
+          <div className="mt-6 space-y-6 text-[15px] leading-8 text-[#b8d4e8] sm:text-base">
+            <p>
+              Sunya is early. There is a framework, a book, an app, a practice library, and
+              occasional gatherings in Dublin and online. It is built and maintained by one
+              person. What exists is real. What does not exist yet is not announced here.
+            </p>
+          </div>
+
+          <div className="mt-14 space-y-8">
+            <div>
+              <p className="mb-4 text-sm text-[#b8d4e8]/85">Stay in touch</p>
+              <EmailCapture id="about-signup" />
+            </div>
+            <div>
+              <Link
+                to="/gatherings"
+                className="inline-flex text-sm text-[#7ec8e3] transition hover:text-white"
+              >
+                Gatherings →
+              </Link>
+            </div>
+          </div>
         </section>
       </main>
       <Footer />

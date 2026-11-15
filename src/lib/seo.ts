@@ -298,46 +298,6 @@ export function buildWebSiteSchema() {
   };
 }
 
-export function buildServiceSchema({
-  name,
-  description,
-  path,
-  price,
-  priceCurrency = "EUR",
-  durationMinutes,
-}: {
-  name: string;
-  description: string;
-  path: string;
-  price: number;
-  priceCurrency?: string;
-  durationMinutes?: number;
-}) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    name,
-    description,
-    url: canonicalUrl(path),
-    provider: {
-      "@type": "Person",
-      name: "Desmond Olubunmi",
-      url: canonicalUrl("/about"),
-    },
-    areaServed: "Worldwide",
-    serviceType: "1-on-1 spiritual diagnostic session",
-    offers: {
-      "@type": "Offer",
-      price: String(price),
-      priceCurrency,
-      availability: "https://schema.org/InStock",
-      url: canonicalUrl(path),
-    },
-    ...(durationMinutes
-      ? { termsOfService: `${durationMinutes}-minute private session` }
-      : {}),
-  };
-}
 
 export function parseDurationToIso(duration?: string) {
   if (!duration) return undefined;

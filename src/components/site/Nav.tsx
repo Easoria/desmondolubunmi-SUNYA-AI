@@ -1,24 +1,19 @@
 import { Link, useNavigate, useRouterState } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
-import { Menu, X, LogOut, LayoutDashboard, Settings } from "lucide-react";
+import { Menu, X, LogOut, LayoutDashboard, Settings, ChevronDown } from "lucide-react";
 import { useAuth } from "@/hooks/use-auth";
-import { oneToOneNavLabel } from "@/lib/one-to-one-offer";
 
-// Find what helps lives inside /framework as one of three doors.
-// Do not re-add it to the navbar.
-// No CTA pill — plain links only.
-// Philosophy and Practices are deliberately merged behind /framework —
-// do not re-add them as separate items.
-const NAV_PRIMARY = [
-  { label: "Sunya Framework", to: "/framework" as const },
-  { label: "Gatherings", to: "/gatherings" as const },
-  { label: oneToOneNavLabel(), to: "/work-with-me" as const },
-  { label: "Vision", to: "/vision" as const },
+const FRAMEWORK_CHILDREN = [
+  { label: "Find what helps", to: "/problems" as const },
+  { label: "Philosophy", to: "/philosophy" as const },
+  { label: "Practices", to: "/practices" as const },
 ];
 
-const NAV_SECONDARY = [
+const NAV_ITEMS = [
   { label: "Writing", to: "/writing" as const },
+  { label: "Gatherings", to: "/gatherings" as const },
   { label: "About", to: "/about" as const },
+  { label: "Contact", to: "/contact" as const },
 ];
 
 function initials(name?: string | null, email?: string | null) {
@@ -110,19 +105,81 @@ function MobileLink({
   to,
   label,
   onClick,
+  indent = false,
 }: {
   to: string;
   label: string;
   onClick: () => void;
+  indent?: boolean;
 }) {
   return (
     <Link
       to={to}
       onClick={onClick}
-      className="rounded-lg px-2 py-3 text-[#b8d4e8] transition hover:bg-white/5 hover:text-white"
+      className={`rounded-lg px-2 py-3 text-[#b8d4e8] transition hover:bg-white/5 hover:text-white ${
+        indent ? "pl-6 text-sm" : ""
+      }`}
     >
       {label}
     </Link>
+  );
+}
+
+function FrameworkMenu() {
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const childActive = FRAMEWORK_CHILDREN.some(
+    (c) => pathname === c.to || pathname.startsWith(`${c.to}/`),
+  );
+  const parentActive = pathname === "/framework" || pathname.startsWith("/framework/") || childActive;
+
+  useEffect(() => {
+    if (!open) return;
+    const h = (e: MouseEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+    };
+    document.addEventListener("mousedown", h);
+    return () => document.removeEventListener("mousedown", h);
+  }, [open]);
+
+  return (
+    <div ref={ref} className="relative">
+      <button
+        type="button"
+        aria-expanded={open}
+        aria-haspopup="true"
+        onClick={() => setOpen((v) => !v)}
+        className={`inline-flex items-center gap-1 text-sm transition hover:text-white ${
+          parentActive ? "text-white" : "text-[#b8d4e8]"
+        }`}
+      >
+        Sunya Framework
+        <ChevronDown className={`h-3.5 w-3.5 transition ${open ? "rotate-180" : ""}`} />
+      </button>
+      {open ? (
+        <div className="absolute left-0 top-full z-[60] mt-3 min-w-[13rem] rounded-2xl border border-white/10 bg-[#0a1628]/95 p-2 shadow-xl backdrop-blur-xl">
+          <Link
+            to="/framework"
+            onClick={() => setOpen(false)}
+            className="block rounded-lg px-3 py-2 text-sm text-[#b8d4e8] hover:bg-white/5 hover:text-white"
+          >
+            Overview
+          </Link>
+          <div className="my-1 h-px bg-white/10" />
+          {FRAMEWORK_CHILDREN.map((child) => (
+            <Link
+              key={child.to}
+              to={child.to}
+              onClick={() => setOpen(false)}
+              className="block rounded-lg px-3 py-2 text-sm text-[#b8d4e8] hover:bg-white/5 hover:text-white"
+            >
+              {child.label}
+            </Link>
+          ))}
+        </div>
+      ) : null}
+    </div>
   );
 }
 
@@ -144,7 +201,6 @@ export function Nav({ overHero = false }: NavProps) {
     return () => window.removeEventListener("scroll", on);
   }, []);
 
-  // Close the drawer whenever the route changes.
   useEffect(() => {
     setOpen(false);
   }, [pathname]);
@@ -183,7 +239,8 @@ export function Nav({ overHero = false }: NavProps) {
           </span>
         </Link>
         <div className="hidden items-center gap-9 md:flex">
-          {NAV_PRIMARY.map((n) => (
+          <FrameworkMenu />
+          {NAV_ITEMS.map((n) => (
             <Link
               key={n.to}
               to={n.to}
@@ -229,21 +286,18 @@ export function Nav({ overHero = false }: NavProps) {
         >
           <div className="flex flex-col gap-1 px-6 py-4">
             <MobileLink to="/framework" label="Sunya Framework" onClick={() => setOpen(false)} />
-            <MobileLink to="/gatherings" label="Gatherings" onClick={() => setOpen(false)} />
-            <MobileLink
-              to="/work-with-me"
-              label={oneToOneNavLabel()}
-              onClick={() => setOpen(false)}
-            />
-            <MobileLink to="/vision" label="Vision" onClick={() => setOpen(false)} />
-            <div className="my-2 h-px bg-white/10" />
-            {NAV_SECONDARY.map((n) => (
+            {FRAMEWORK_CHILDREN.map((child) => (
               <MobileLink
-                key={n.to}
-                to={n.to}
-                label={n.label}
+                key={child.to}
+                to={child.to}
+                label={child.label}
+                indent
                 onClick={() => setOpen(false)}
               />
+            ))}
+            <div className="my-2 h-px bg-white/10" />
+            {NAV_ITEMS.map((n) => (
+              <MobileLink key={n.to} to={n.to} label={n.label} onClick={() => setOpen(false)} />
             ))}
             {user ? (
               <>

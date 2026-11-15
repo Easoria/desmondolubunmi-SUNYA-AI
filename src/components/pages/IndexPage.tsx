@@ -379,8 +379,8 @@ function About() {
           <Link to="/gatherings" className={heroGatheringsBtn}>
             Upcoming gatherings
           </Link>
-          <Link to="/work-with-me" className={heroGatheringsBtn}>
-            Work with Desmond
+          <Link to="/contact" className={heroGatheringsBtn}>
+            Contact
           </Link>
         </div>
       }

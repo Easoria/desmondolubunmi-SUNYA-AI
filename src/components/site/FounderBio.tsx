@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import desmondImg from "@/assets/desmond.jpg";
 
-/** Shared founder copy — keep homepage, About, and work-with-me in sync. */
+/** Shared founder copy — keep homepage and About in sync. */
 export const FOUNDER_SUBTITLE = "Founder of Sunya · Author of The Sleep Rhythm Reset";
 
 export const FOUNDER_PARAGRAPHS = [
@@ -31,7 +31,7 @@ type FounderSectionProps = {
   actions?: ReactNode;
 };
 
-/** Photo + bio layout used on the homepage and /work-with-me. */
+/** Photo + bio layout used on the homepage. */
 export function FounderSection({ actions }: FounderSectionProps) {
   return (
     <section

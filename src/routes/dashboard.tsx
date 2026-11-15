@@ -74,12 +74,11 @@ function DashboardPage() {
             <Link to="/account" className="block text-[#b8d4e8] hover:text-white">
               Account settings →
             </Link>
-            <Link
-              to="/work-with-me"
-              hash="booking"
-              className="block text-[#b8d4e8] hover:text-white"
-            >
-              Book a session with Desmond →
+            <Link to="/gatherings" className="block text-[#b8d4e8] hover:text-white">
+              Upcoming gatherings →
+            </Link>
+            <Link to="/contact" className="block text-[#b8d4e8] hover:text-white">
+              Contact Desmond →
             </Link>
             <Link to="/practices" className="block text-[#b8d4e8] hover:text-white">
               Explore the practices →

@@ -1,4 +1,4 @@
-import { createFileRoute, Outlet, useRouterState } from "@tanstack/react-router";
+import { createFileRoute, Link, Outlet, useRouterState } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { useMemo } from "react";
 import { Nav } from "@/components/site/Nav";
@@ -151,6 +151,13 @@ function GatheringsIndexPage() {
             </div>
           </section>
         ) : null}
+
+        <p className="mt-16 text-center text-sm text-[#b8d4e8]/80">
+          To reach Desmond directly,{" "}
+          <Link to="/contact" className="text-[#7ec8e3] transition hover:text-white">
+            contact him here →
+          </Link>
+        </p>
       </main>
 
       <Footer />

@@ -491,10 +491,10 @@ function PracticeDetailPage() {
                 className="text-[#7ec8e3] underline decoration-[#7ec8e3]/35 underline-offset-2 transition hover:text-white hover:decoration-white/50"
               >
                 Start from what you&apos;re experiencing
-              </Link>{" "}
-              — or work with Desmond directly,{" "}
-              <Link to="/work-with-me" className="transition hover:text-white">
-                one-to-one →
+              </Link>
+              , or come to a{" "}
+              <Link to="/gatherings" className="transition hover:text-white">
+                gathering →
               </Link>
             </p>
           </div>
