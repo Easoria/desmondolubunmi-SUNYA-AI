@@ -116,7 +116,7 @@ export function EmailCapture({ variant, id, className = "" }: Props) {
             disabled={loading}
             className="inline-flex items-center justify-center whitespace-nowrap rounded-md border border-white/15 bg-white/[0.06] px-5 py-3 text-sm text-[#e8f4fb] transition hover:border-white/25 hover:bg-white/[0.1] disabled:opacity-50"
           >
-            {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : "Stay Connected"}
+            {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : "Stay in touch"}
           </button>
         </form>
         <p className="mt-3 text-center text-xs text-[#b8d4e8]/50">

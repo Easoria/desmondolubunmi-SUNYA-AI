@@ -1,15 +1,4 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import {
-  ArrowRight,
-  Sparkles,
-  BookOpen,
-  Globe2,
-  ShoppingBag,
-  Leaf,
-  Building2,
-  Waves,
-  Flame,
-} from "lucide-react";
 import { Starfield } from "@/components/Starfield";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
@@ -21,72 +10,14 @@ export const Route = createFileRoute("/vision")({
   component: VisionPage,
   head: () =>
     buildSeoHead({
-      title: "The Sunya Vision — A Civilisational Project | Sunya",
+      title: "The Sunya Vision | Sunya",
       description:
-        "Imagine a world where every human being knows how to create wellbeing within themselves. The Sunya mission, the six arms of the ecosystem, and the legacy being built.",
+        "What Sunya is for — a complete, non-sectarian map of human wellbeing, free and public.",
       path: "/vision",
       ogType: "website",
       imageKind: "core",
     }),
 });
-
-type EcoItem = {
-  Icon: typeof Sparkles;
-  t: string;
-  c: string;
-  items: { label: string; href?: string; to?: string; comingSoon?: boolean }[];
-};
-
-const ECO: EcoItem[] = [
-  {
-    Icon: Sparkles,
-    t: "Sunya Technology",
-    c: "Tools for human wellbeing — for individuals, wellness creators, and organisations.",
-    items: [
-      {
-        label: "Sunya Sleep →",
-        href: "https://apps.apple.com/ie/app/sunya-sleep/id6764553926",
-      },
-      { label: "Sunya Studio — Coming Soon", comingSoon: true },
-    ],
-  },
-  {
-    Icon: BookOpen,
-    t: "Sunya Publishing",
-    c: "Timeless written guides distilling the framework into accessible, practical wisdom.",
-    items: [
-      {
-        label: "The Sleep Rhythm Reset — an Amazon #1 bestseller in its category →",
-        href: "https://amzn.eu/d/0bzw0W4k",
-      },
-      { label: "The Timeless Solution for Humanity", comingSoon: true },
-    ],
-  },
-  {
-    Icon: Globe2,
-    t: "Sunya Experiences",
-    c: "Live events, immersive retreats, digital courses, and conscious communities — structured pathways for deep inner transformation.",
-    items: [{ label: "Coming Soon", comingSoon: true }],
-  },
-  {
-    Icon: ShoppingBag,
-    t: "Sunya Shop",
-    c: "A curated collection of physical tools for human wellbeing — herbs, organic essentials, natural oils, copper vessels, and healing consumables.",
-    items: [{ label: "Coming Soon", comingSoon: true }],
-  },
-  {
-    Icon: Leaf,
-    t: "Sunya Superfoods",
-    c: "High-frequency nutrition for peak consciousness. Clean, living, nourishing food designed to fuel the human system at its highest.",
-    items: [{ label: "Coming Soon", comingSoon: true }],
-  },
-  {
-    Icon: Building2,
-    t: "Sunya Sanctuaries",
-    c: "Physical spaces of inner transformation and conscious living. Situated in nature, solar powered, open to the world. Not isolated communes — charging stations for humanity, integrated with society.",
-    items: [{ label: "Coming Soon", comingSoon: true }],
-  },
-];
 
 function VisionPage() {
   return (
@@ -94,312 +25,78 @@ function VisionPage() {
       <Nav />
       <Breadcrumb />
 
-      {/* Hero */}
-      <section className="relative overflow-hidden pb-32 pt-16">
-        <Starfield density={1.8} />
-        <div
-          className="absolute left-1/2 top-1/2 h-[700px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-40 spin-slow"
-          style={{
-            background:
-              "radial-gradient(circle at 35% 35%, #2e6db4 0%, #1a1530 40%, transparent 70%)",
-            boxShadow: "0 0 200px 60px rgba(126,200,227,0.2)",
-          }}
-        />
-        <div
-          className="absolute right-[5%] top-[20%] h-72 w-72 rounded-full opacity-30"
-          style={{
-            background: "radial-gradient(circle, #a85a8c 0%, transparent 70%)",
-            filter: "blur(40px)",
-          }}
-        />
-        <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
-          <div className="label-eyebrow">The mission</div>
-          <h1 className="display mt-6 text-5xl text-white sm:text-7xl">
-            The Sunya
-            <br />
-            <span className="display-italic text-[#b8d4e8]">Vision.</span>
-          </h1>
-          <p className="mx-auto mt-10 max-w-2xl text-lg text-[#b8d4e8] sm:text-xl">
-            When individuals change, the world changes.
-            <br />
-            This is how we change individuals.
-          </p>
-        </div>
-      </section>
-
-      {/* The Vision */}
-      <section className="relative bg-[#0a1628] py-28">
-        <div className="relative z-10 mx-auto max-w-3xl px-6">
-          <div className="text-center">
-            <div className="label-eyebrow">The vision</div>
-          </div>
-          <div className="mt-12 space-y-7 text-[#b8d4e8]">
-            <p className="display-italic text-2xl text-white">
-              Imagine a world where every human being knows how to create wellbeing within
-              themselves.
-            </p>
-            <p>
-              Where the restlessness that drives conflict, addiction, and endless seeking
-              finally has an answer. Not in doctrine, not in an imagined afterlife — but here
-              and now.
-            </p>
-            <p>
-              We have developed the external world enormously. But inwardly, we remain largely
-              underdeveloped. We still operate from fear, tribalism, and borrowed beliefs —
-              creating the very conflict and suffering we are trying to escape.
-            </p>
-            <p>
-              The world is simply a collection of individuals. When individuals change, the
-              world changes. This is what Sunya exists to address — to empower every human
-              being with universal tools to create genuine wellbeing within themselves.
-            </p>
-            <p>
-              We breathe the same air. We want the same things. Freedom from suffering.
-              Genuine happiness. A life that feels worth living. These truths run deeper than
-              any belief or ideology that divides us.
-            </p>
-            <p>
-              When people learn to create real inner peace — conflict loses its fuel. Division
-              loses its grip. Not because unity was preached, but because inner freedom
-              naturally dissolves the fear that drives separation.
-            </p>
-            <p className="display pt-2 text-2xl font-semibold text-white sm:text-3xl">
-              This is not idealism. This is mechanics.
-            </p>
-            <p>
-              The mechanics are specific. Human suffering runs as a single chain — unconsciousness, identification, resistance, contraction, insufficiency — where each link produces the next. One root means one place it can be undone, and that is what every part of Sunya is built to address.
-            </p>
-            <div>
-              <Link
-                to="/philosophy"
-                className="inline-flex items-center gap-2 text-sm text-[#7ec8e3] transition hover:text-white"
-              >
-                See the full framework →
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Ecosystem */}
-      <section className="relative overflow-hidden bg-[#060d1c] py-28">
-        <Starfield density={0.4} />
-        <div className="relative z-10 mx-auto max-w-6xl px-6">
-          <div className="text-center">
-            <div className="label-eyebrow">The ecosystem</div>
-            <h2 className="display mt-6 text-4xl text-white sm:text-5xl md:text-6xl">
-              Six arms. <span className="display-italic text-[#b8d4e8]">One mission.</span>
-            </h2>
-            <p className="mt-4 text-lg text-[#b8d4e8]">Sunya creates infrastructure for inner wellbeing.</p>
-          </div>
-          <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {ECO.map((e, i) => (
-              <div key={e.t} className="glass-card flex flex-col p-7">
-                <div className="font-display text-xs tracking-[0.4em] text-[#7ec8e3]">
-                  {String(i + 1).padStart(2, "0")}
-                </div>
-                <e.Icon className="mt-4 h-6 w-6 text-[#7ec8e3]" />
-                <h3 className="display mt-4 text-2xl text-white">{e.t}</h3>
-                <p className="mt-3 text-sm text-[#b8d4e8]">{e.c}</p>
-                <div className="mt-5 flex flex-wrap gap-2">
-                  {e.items.map((item) =>
-                    item.to ? (
-                      <Link
-                        key={item.label}
-                        to={item.to}
-                        className="rounded-full border border-[#7ec8e3]/40 bg-white/[0.04] px-3 py-1 text-[11px] tracking-wide text-[#b8d4e8] transition hover:border-[#7ec8e3] hover:text-white"
-                      >
-                        {item.label}
-                      </Link>
-                    ) : item.href ? (
-                      <a
-                        key={item.label}
-                        href={item.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="rounded-full border border-[#7ec8e3]/40 bg-white/[0.04] px-3 py-1 text-[11px] tracking-wide text-[#b8d4e8] transition hover:border-[#7ec8e3] hover:text-white"
-                      >
-                        {item.label}
-                      </a>
-                    ) : (
-                      <span
-                        key={item.label}
-                        className="rounded-full border border-white/10 bg-white/[0.02] px-3 py-1 text-[11px] tracking-wide text-white/40"
-                      >
-                        {item.label}
-                      </span>
-                    ),
-                  )}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* The Legacy */}
-      <section className="relative overflow-hidden bg-[#060d1c] py-32">
+      <section className="relative overflow-hidden pb-20 pt-16 sm:pb-28">
         <Starfield density={1.2} />
         <div className="relative z-10 mx-auto max-w-3xl px-6">
           <div className="text-center">
-            <div className="label-eyebrow">The legacy</div>
-            <h2 className="display mt-6 text-4xl text-white sm:text-5xl">
-              This is how humanity moves
-              <br />
-              <span className="display-italic text-[#b8d4e8]">into its next phase.</span>
-            </h2>
+            <div className="label-eyebrow">The mission</div>
+            <h1 className="display mt-6 text-4xl text-white sm:text-6xl">
+              The Sunya Vision
+            </h1>
           </div>
-          <div className="space-y-6 pt-12 text-left text-[#b8d4e8]">
-            <p>
-              Not through a new religion. Not through a new ideology. But through something far
-              more fundamental — every human being learning to understand and work with their
-              own inner system.
-            </p>
-            <p>
-              Children growing up knowing how to regulate their own nervous system. Workers who
-              can discharge stress before it accumulates into illness or conflict. People who
-              face life's difficulties — and even death — with equanimity rather than terror.
-              Goodness that emerges from inner freedom rather than from fear of punishment.
-            </p>
-            <p>
-              And as technology eases the burden of survival, automation handles what doesn&apos;t
-              require the human spirit. People have more time — for creativity, for connection, for
-              inner exploration, for living fully.
-            </p>
-            <p className="display pt-2 text-center text-2xl font-semibold text-white sm:text-3xl">
-              This is the world Sunya is building — conscious and genuinely human.
-            </p>
-          </div>
-          <div className="mt-16 text-center">
-            <p className="display-italic text-2xl text-white sm:text-3xl">
-              We are at the beginning.
-              <br />
-              You are already part of this.
-            </p>
-          </div>
-          <div className="mt-10 text-center">
-            <Link
-              to="/join"
-              className="glow-btn inline-flex items-center gap-2 rounded-full px-8 py-4 text-sm font-medium"
-            >
-              Begin your part in this → Join the vision
-            </Link>
-          </div>
-        </div>
-      </section>
 
-      {/* Three Paths */}
-      <section className="relative overflow-hidden bg-[#0a1628] py-28">
-        <div
-          className="absolute inset-0 opacity-40"
-          style={{
-            background:
-              "radial-gradient(ellipse at 50% 100%, rgba(217, 165, 80, 0.10) 0%, transparent 65%)",
-          }}
-        />
-        <div className="relative z-10 mx-auto max-w-6xl px-6">
-          <div className="text-center">
-            <div className="label-eyebrow">Three paths in</div>
-            <h2 className="display mt-6 text-4xl text-white sm:text-5xl">
-              Where do <span className="display-italic text-[#b8d4e8]">you stand?</span>
-            </h2>
+          <div className="mt-12 space-y-7 text-[15px] leading-8 text-[#b8d4e8] sm:text-base sm:leading-8">
+            <p>
+              We have developed the external world enormously, through scientific and
+              technological advancement. Inwardly, we remain largely underdeveloped. We still
+              operate from fear, tribalism, borrowed belief and limited identities — which
+              produces much of the conflict and suffering we are trying to escape.
+            </p>
+            <p>The world is a collection of individuals. When individuals change, the world changes.</p>
+            <p>
+              We breathe the same air and we want the same things: freedom from suffering,
+              genuine happiness, a life that feels worth living. Those run deeper than any belief
+              that divides us.
+            </p>
+            <p>
+              When a person creates genuine wellbeing within themselves, it begins to radiate
+              outward — into the people around them, and into the world. Not because anyone
+              preached unity, but because someone whose being is in order has less to defend, less
+              to take, and less to prove.
+            </p>
+            <p className="display text-2xl font-semibold text-white sm:text-3xl">
+              This is not idealism. This is mechanics.
+            </p>
           </div>
-          <div className="mt-14 grid gap-5 md:grid-cols-3">
-            <div className="glass-card flex flex-col p-7">
-              <Waves className="h-7 w-7 text-[#7ec8e3]" />
-              <div className="label-eyebrow mt-5">The Seeker</div>
-              <h3 className="display mt-3 text-2xl text-white">
-                I'm here for my own transformation
-              </h3>
-              <p className="mt-3 flex-1 text-sm text-[#b8d4e8]">
-                Start with the practices, or book a 1-on-1 session with Desmond.
+
+          <div className="mt-16">
+            <h2 className="display text-3xl text-white sm:text-4xl">What Sunya is for</h2>
+            <div className="mt-6 space-y-6 text-[15px] leading-8 text-[#b8d4e8] sm:text-base">
+              <p>
+                To give every human being a complete, non-sectarian map of their own wellbeing —
+                body, mind, emotions, and the conditions around them — in plain language, free,
+                with nothing required in exchange.
               </p>
+              <p>
+                Nothing to believe. Nothing to join. The map is public and it stays that way.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-16">
+            <h2 className="display text-3xl text-white sm:text-4xl">Where this is now</h2>
+            <div className="mt-6 space-y-6 text-[15px] leading-8 text-[#b8d4e8] sm:text-base">
+              <p>
+                Sunya is early. There is a framework, a book, an app, a practice library, and
+                occasional gatherings in Dublin and online. It is built and maintained by one
+                person. What exists is real. What does not exist yet is not announced here.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-14 space-y-8">
+            <div>
+              <p className="mb-4 text-sm text-[#b8d4e8]/85">Stay in touch</p>
+              <EmailCapture id="vision-signup" />
+            </div>
+            <div>
               <Link
-                to="/work-with-me"
-                className="mt-6 inline-flex items-center gap-2 text-sm text-[#7ec8e3] hover:text-white"
+                to="/gatherings"
+                className="inline-flex text-sm text-[#7ec8e3] transition hover:text-white"
               >
-                Begin here <ArrowRight className="h-4 w-4" />
+                Gatherings →
               </Link>
             </div>
-
-            <div className="glass-card flex flex-col p-7">
-              <Sparkles className="h-7 w-7 text-[#7ec8e3]" />
-              <div className="label-eyebrow mt-5">The Believer</div>
-              <h3 className="display mt-3 text-2xl text-white">
-                I resonate with this mission
-              </h3>
-              <p className="mt-3 flex-1 text-sm text-[#b8d4e8]">
-                Stay connected. Be part of Sunya as it grows into something larger.
-              </p>
-              <a
-                href="#community-signup"
-                className="mt-6 inline-flex items-center gap-2 text-sm text-[#7ec8e3] hover:text-white"
-              >
-                Stay connected <ArrowRight className="h-4 w-4" />
-              </a>
-            </div>
-
-            <div className="glass-card flex flex-col p-7">
-              <Flame className="h-7 w-7 text-[#7ec8e3]" />
-              <div className="label-eyebrow mt-5">The Builder</div>
-              <h3 className="display mt-3 text-2xl text-white">
-                I want to contribute
-              </h3>
-              <p className="mt-3 flex-1 text-sm text-[#b8d4e8]">
-                Volunteers, collaborators, future teachers — Sunya needs people like you.
-              </p>
-              <Link
-                to="/join"
-                className="mt-6 inline-flex items-center gap-2 text-sm text-[#7ec8e3] hover:text-white"
-              >
-                Tell us about yourself <ArrowRight className="h-4 w-4" />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Be Part of This */}
-      <section className="relative overflow-hidden bg-[#0a1628] py-32">
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(ellipse at 50% 50%, rgba(217, 165, 80, 0.14) 0%, transparent 60%), radial-gradient(ellipse at 10% 100%, rgba(217, 165, 80, 0.08) 0%, transparent 50%), radial-gradient(ellipse at 90% 0%, rgba(217, 165, 80, 0.08) 0%, transparent 50%)",
-          }}
-        />
-        <div className="relative z-10 mx-auto max-w-3xl px-6 text-center">
-          <div className="label-eyebrow">This is just the beginning</div>
-          <h2 className="display display-italic mt-6 text-4xl text-white sm:text-6xl">
-            You found this for a reason.
-          </h2>
-          <div className="mx-auto mt-10 max-w-2xl space-y-5 text-left text-[#b8d4e8]">
-            <p>
-              Sunya is not a finished product. It is a living project — a framework, a community,
-              and eventually a civilisation being built from the ground up.
-            </p>
-            <p>
-              If something here has resonated with you — the philosophy, the mission, the vision of
-              what human life could actually be — then you are already part of this.
-            </p>
-            <p className="text-white/90">
-              Stay connected. Be the first to know as Sunya grows. Receive philosophy, practices,
-              and early access to everything being built.
-            </p>
-            <p className="display-italic text-lg text-white">No noise. No spam. Just signal.</p>
-          </div>
-
-          <div className="mt-10">
-            <EmailCapture id="community-signup" />
-          </div>
-
-          <div className="mt-10">
-            <Link
-              to="/join"
-              className="display-italic text-sm text-[#b8d4e8] underline-offset-4 hover:text-white hover:underline"
-            >
-              Want to contribute, volunteer, or collaborate? →
-            </Link>
           </div>
         </div>
       </section>

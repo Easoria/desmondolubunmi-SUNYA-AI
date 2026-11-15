@@ -12,6 +12,7 @@ export const sustenanceLever: Lever = {
     "But look at nature. A tree does not suffer anxiety about tomorrow's sunlight. A bird does not dread its next meal. They do their specific work within the ecosystem, and life sustains them effortlessly.",
     "We are in an ecosystem too. Ours is other people, and money is how what we need moves between us — your effort exchanged for what sustains you. The mechanism is simple. The panic around it is not, and most of that panic comes from never having looked at it directly.",
     "When that exchange is understood and handled well, sustenance stops being a struggle and becomes a stable floor. Energy is freed to rise, and everything else becomes possible at a depth it could not reach before.",
+    "This lever offers general perspective on work and money. It is not financial advice, and nothing here is a recommendation about any particular decision, investment or debt.",
   ],
   practices: [
     {
