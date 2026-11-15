@@ -11,6 +11,16 @@
       ],
       "destination": "https://www.desmondolubunmi.com/:path*",
       "permanent": true
+    },
+    {
+      "source": "/practices/sleep/conscious-consumption",
+      "destination": "/practices/sleep/caffeine-alcohol-and-timing",
+      "permanent": true
+    },
+    {
+      "source": "/practices/nutrition/conscious-consumption",
+      "destination": "/practices/nutrition/how-you-eat",
+      "permanent": true
     }
   ]
 }
