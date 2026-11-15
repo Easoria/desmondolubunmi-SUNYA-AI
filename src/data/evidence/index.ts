@@ -13,6 +13,7 @@ import inputRestrictionAndAttentionalLoad from "./input-restriction-and-attentio
 import ruminationAndMindWandering from "./rumination-and-mind-wandering.content";
 import compassionAndLovingKindnessTraining from "./compassion-and-loving-kindness-training.content";
 import acceptanceAndPsychologicalFlexibility from "./acceptance-and-psychological-flexibility.content";
+import socialConnectionAndIsolation from "./social-connection-and-isolation.content";
 
 export type MechanismStatus = "complete" | "planned";
 
@@ -245,8 +246,14 @@ export const EVIDENCE_MECHANISMS: EvidenceMechanism[] = [
     slug: "social-connection-and-isolation",
     title: "Social connection and isolation",
     group: "emotion-and-relationship",
-    status: "planned",
-    description: "Not yet researched.",
+    status: "complete",
+    reviewDate: "November 2026",
+    researchGrade:
+      "Strong for the association between social disconnection, mortality, cardiovascular disease and depression, Moderate for interventions reducing loneliness",
+    traditionalGrade: "Very strong",
+    description:
+      "Isolation versus loneliness — survival and health associations, and why contact alone often fails without addressing social fear.",
+    markdown: withNormalizedGrades(socialConnectionAndIsolation),
   },
   {
     slug: "affective-touch-and-co-regulation",
