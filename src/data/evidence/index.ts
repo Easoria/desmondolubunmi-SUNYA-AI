@@ -15,6 +15,7 @@ import compassionAndLovingKindnessTraining from "./compassion-and-loving-kindnes
 import acceptanceAndPsychologicalFlexibility from "./acceptance-and-psychological-flexibility.content";
 import socialConnectionAndIsolation from "./social-connection-and-isolation.content";
 import affectiveTouchAndCoRegulation from "./affective-touch-and-co-regulation.content";
+import prosocialBehaviourAndVolunteering from "./prosocial-behaviour-and-volunteering.content";
 
 export type MechanismStatus = "complete" | "planned";
 
@@ -273,8 +274,14 @@ export const EVIDENCE_MECHANISMS: EvidenceMechanism[] = [
     slug: "prosocial-behaviour-and-volunteering",
     title: "Prosocial behaviour and volunteering",
     group: "emotion-and-relationship",
-    status: "planned",
-    description: "Not yet researched.",
+    status: "complete",
+    reviewDate: "November 2026",
+    researchGrade:
+      "Moderate for small-to-medium well-being gains from experimental acts of kindness, Preliminary for formal volunteering's causal effects on physical health and mortality",
+    traditionalGrade: "Very strong",
+    description:
+      "Acts of kindness and volunteering — modest well-being gains when freely chosen, and why observational survival links outrun randomised proof.",
+    markdown: withNormalizedGrades(prosocialBehaviourAndVolunteering),
   },
   {
     slug: "forgiveness",
