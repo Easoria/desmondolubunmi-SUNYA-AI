@@ -1,4 +1,4 @@
-import { Link, createFileRoute, notFound } from "@tanstack/react-router";
+import { Link, createFileRoute, notFound, redirect } from "@tanstack/react-router";
 import { GonePage } from "@/components/site/GonePage";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
@@ -12,6 +12,7 @@ import {
 } from "@/data/levers";
 import type { LeverSlug } from "@/data/levers";
 import { goneResponse } from "@/lib/gone";
+import { getPracticeSlugRedirect } from "@/lib/practice-slug-redirects";
 import { isRetiredPractice } from "@/lib/retired-practices";
 import { formatNarrativeParagraphs, formatProtocolStepLayout } from "@/lib/practice-text-format";
 import {
@@ -48,7 +49,19 @@ export const Route = createFileRoute("/practices/$leverSlug/$practiceSlug")({
       GET: async ({ request }) => {
         const pathname = new URL(request.url).pathname.replace(/\/$/, "");
         const match = pathname.match(/^\/practices\/([^/]+)\/([^/]+)$/);
-        if (match && isRetiredPractice(match[1]!, match[2]!)) {
+        if (!match) return undefined as unknown as Response;
+        const leverSlug = match[1]!;
+        const practiceSlug = match[2]!;
+        const slugRedirect = getPracticeSlugRedirect(leverSlug, practiceSlug);
+        if (slugRedirect) {
+          return new Response(null, {
+            status: 301,
+            headers: {
+              Location: `/practices/${slugRedirect.leverSlug}/${slugRedirect.practiceSlug}`,
+            },
+          });
+        }
+        if (isRetiredPractice(leverSlug, practiceSlug)) {
           return goneResponse();
         }
         // Fall through to normal SSR for live practices.
@@ -57,6 +70,17 @@ export const Route = createFileRoute("/practices/$leverSlug/$practiceSlug")({
     },
   },
   loader: ({ params }) => {
+    const slugRedirect = getPracticeSlugRedirect(params.leverSlug, params.practiceSlug);
+    if (slugRedirect) {
+      throw redirect({
+        to: "/practices/$leverSlug/$practiceSlug",
+        params: {
+          leverSlug: slugRedirect.leverSlug,
+          practiceSlug: slugRedirect.practiceSlug,
+        },
+        statusCode: 301,
+      });
+    }
     if (isRetiredPractice(params.leverSlug, params.practiceSlug)) {
       return { retired: true as const };
     }

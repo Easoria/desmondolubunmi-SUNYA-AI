@@ -9,15 +9,14 @@ export const sleepLever: Lever = {
   intro: [
     "Sleep is not passive. It is the nightly mechanism through which the nervous system recalibrates and the vital body is restored. The body repairs itself, the mind clears what the day accumulated, and what felt overwhelming the evening before often arrives transformed by morning.",
     "This is why sleep supports every other practice. No amount of meditation compensates for a chronically exhausted nervous system. When sleep is deep, you wake with a clear and replenished system, and energy is free to rise.",
-    "There is something worth noticing in it. Sleep is a small death. Every night you let go of your name, your work, your problems, everything you have accumulated and taken yourself to be — and every morning you return unharmed. This crossing can also be explored deliberately, for meditative and transcendental benefit, which is what the deeper practices in this lever are for.",
+    "There is something worth noticing in it. Sleep is a small death. Every night you let go of your name, your work, your problems, everything you have accumulated and taken yourself to be — and every morning you return unharmed. This crossing can also be explored deliberately, for meditative purposes, which is what the deeper practices in this lever are for.",
   ],
   practices: [
     {
       sourceNumber: 1,
       slug: "the-circadian-architecture",
-      name: "The Circadian Architecture",
-      subtitle: "honouring the rhythm of rest",
-      essence: "Sleep is not a switch to be forced — it is a natural biological rhythm to be honoured. The practice of aligning daily life with the body’s innate clock so that deep and restorative sleep unfolds effortlessly.",
+      name: "Your Body Clock",
+      essence: "Sleep is not a switch to be forced — it is a natural biological rhythm to be honoured. The practice of aligning daily life with the body’s innate clock so that sleep comes more easily.",
       mechanism: [
         "The human body operates on a built-in 24-hour clock called the circadian rhythm, which governs hormone release, body temperature, and cellular repair. This clock runs in 90-minute cycles across the night — prioritising physically restorative deep sleep in the first half, and mentally restorative REM sleep in the second. Each person also carries a genetic chronotype — a natural tendency toward earlier or later sleep that cannot be overridden without cost. When this rhythm is disrupted, the body becomes confused: melatonin and the sleep- pressure chemical adenosine cannot be released at the right time, and the architecture of the night collapses. The five most common rhythm killers are inconsistency in sleep timing, artificial light at night, eating too close to sleep, caffeine late in the day, and overstimulation before bed. By eliminating these disruptions and aligning with the body’s natural timing, you stop fighting your own biology — and sleep arrives on its own."
       ],
@@ -44,7 +43,7 @@ export const sleepLever: Lever = {
         "cognitive-de-escalation",
         "somatic-regulation"
       ],
-      metaTitle: "The Circadian Architecture — How to Practise It | Sunya",
+      metaTitle: "Your Body Clock — How to Practise It | Sunya",
       metaDescription: "Sleep is not a switch to be forced — it is a natural biological rhythm to be honoured.",
       families: ["L1"],
       directions: ["structure", "stabilise", "reduce"],
@@ -67,9 +66,8 @@ export const sleepLever: Lever = {
     {
       sourceNumber: 2,
       slug: "cognitive-de-escalation",
-      name: "Cognitive De-Escalation",
-      subtitle: "quieting the overactive mind",
-      essence: "Breaking the cycle of stress and sleeplessness by removing the performance pressure of sleep. The practice of rewiring the mind’s relationship with the bed and giving the nervous system the psychological permission it needs to fully let go.",
+      name: "Taking the Pressure Off",
+      essence: "Breaking the cycle of stress and sleeplessness by removing the performance pressure of sleep. The practice of changing what your mind associates with the bed and giving the nervous system the psychological permission it needs to fully let go.",
       mechanism: [
         "Sleep requires an absolute sense of safety. When the mind is crowded with unresolved tasks, stress, or the fear of not sleeping, the nervous system remains in a state of alert — cortisol suppresses melatonin, and the brain stays active rather than descending into rest. Worse, when you repeatedly lie awake in bed frustrated, the brain quietly begins to associate the mattress with anxiety rather than rest — building a conditioned response that makes the problem self-reinforcing. The solution is not to fight the overactive mind but to bypass it entirely."
       ],
@@ -98,9 +96,9 @@ export const sleepLever: Lever = {
       relatedPractices: [
         "the-circadian-architecture",
         "somatic-regulation",
-        "conscious-consumption"
+        "caffeine-alcohol-and-timing"
       ],
-      metaTitle: "Cognitive De-Escalation — How to Practise It | Sunya",
+      metaTitle: "Taking the Pressure Off — How to Practise It | Sunya",
       metaDescription: "Breaking the cycle of stress and sleeplessness by removing the performance pressure of sleep.",
       families: ["H4", "H1", "M4"],
       directions: ["calm", "slow", "contain", "soften"],
@@ -118,7 +116,7 @@ export const sleepLever: Lever = {
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "conscious-consumption",
+            slug: "caffeine-alcohol-and-timing",
             reason: "Adjacent in source order within the same lever sequence."
           }
         ]
@@ -127,8 +125,7 @@ export const sleepLever: Lever = {
     {
       sourceNumber: 3,
       slug: "somatic-regulation",
-      name: "Somatic Regulation",
-      subtitle: "calming the nervous system",
+      name: "Settling the Body",
       essence: "Shifting the body from a state of survival into a state of rest and repair by manually signalling safety to the nervous system. When sleep difficulties are rooted in chronic tension, mental overactivity, or an overactive stress response — this is where to look first.",
       mechanism: [
         "The modern stress response is rarely dramatic — it is a quiet, unconscious tension that lingers in the background of daily life. Unresolved conflict, chronic anxiety, and accumulated pressure train the body to remain in a state of low-grade vigilance. Even if you appear calm, the internal alarm is quietly active — keeping the breath shallow, the muscles slightly braced, and the nervous system primed. Because sleep fundamentally requires a felt sense of safety, this invisible holding makes deep rest impossible. You cannot think your way out of this physical state; the body must be spoken to directly. The six internal levers are the most powerful tools available for this. When sleep difficulties are linked to mental activity or nervous system dysregulation, work with the levers before bed rather than reaching for external solutions. The most directly relevant are: Breath — the physiological sigh, slow diaphragmatic breathing, and alternate nostril breathing are among the fastest ways to shift from a stress state to a rest state. Awareness — the body scan and NSDR practised lying down guide the system into deep physical release. Heart — Heart Coherence and Emotional Presence dissolve accumulated emotional tension that keeps the nervous system braced. Sound — the grounding and safety signal protocols (heavy rain, ocean, log fire, slow breath sounds) signal safety to the primal survival centres. Movement — gentle stretching, the somatic primer, or spinal loosening release physical tension stored in the body during the day. Use the lever that addresses the root of the disturbance on that particular night."
@@ -163,10 +160,10 @@ export const sleepLever: Lever = {
       leverSlug: "sleep",
       relatedPractices: [
         "cognitive-de-escalation",
-        "conscious-consumption",
+        "caffeine-alcohol-and-timing",
         "environmental-architecture"
       ],
-      metaTitle: "Somatic Regulation — How to Practise It | Sunya",
+      metaTitle: "Settling the Body — How to Practise It | Sunya",
       metaDescription: "Shifting the body from a state of survival into a state of rest and repair by manually signalling safety to the nervous system.",
       families: ["P1", "H1", "H4"],
       directions: ["ground", "calm", "soften", "release"],
@@ -180,7 +177,7 @@ export const sleepLever: Lever = {
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "conscious-consumption",
+            slug: "caffeine-alcohol-and-timing",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
@@ -192,10 +189,9 @@ export const sleepLever: Lever = {
     },
     {
       sourceNumber: 4,
-      slug: "conscious-consumption",
-      name: "Conscious Consumption",
-      subtitle: "the biochemistry of rest",
-      essence: "Architecting your internal chemistry to support the natural descent into sleep. What you consume — and crucially, when — determines whether the biology of the night works for or against you.",
+      slug: "caffeine-alcohol-and-timing",
+      name: "Caffeine, Alcohol and Timing",
+      essence: "What you consume, and when, decides whether the night’s biology works for you or against you.",
       mechanism: [
         "Caffeine physically blocks the sleep-pressure chemical adenosine, the substance that builds the biological drive for sleep across the day. Alcohol, despite inducing drowsiness, actively fragments the restorative architecture of the night — particularly the REM sleep in the second half. And because initiating deep sleep requires a drop in core body temperature, eating a heavy meal too close to bedtime keeps the body burning and prevents the thermal descent necessary for rest."
       ],
@@ -226,8 +222,8 @@ export const sleepLever: Lever = {
         "environmental-architecture",
         "the-sleep-sanctuary"
       ],
-      metaTitle: "Conscious Consumption — How to Practise It | Sleep | Sunya",
-      metaDescription: "Architecting your internal chemistry to support the natural descent into sleep.",
+      metaTitle: "Caffeine, Alcohol and Timing — How to Practise It | Sunya",
+      metaDescription: "What you consume, and when, decides whether the night’s biology works for you or against you.",
       families: ["H4", "L1"],
       directions: ["reduce", "simplify"],
       problems: ["insomnia"],
@@ -253,8 +249,7 @@ export const sleepLever: Lever = {
     {
       sourceNumber: 5,
       slug: "environmental-architecture",
-      name: "Environmental Architecture",
-      subtitle: "mastering light and sound",
+      name: "Light and Sound at Night",
       essence: "Reclaiming your natural sleep rhythm by controlling the two most powerful environmental signals that shape your biological clock — light and sound.",
       mechanism: [
         "The brain relies on environmental cues to regulate the 24-hour cycle. Melatonin — the chemical signal that initiates sleep — is acutely sensitive to light. Blue light from screens closely resembles midday sunlight to the brain, and exposure to it in the evening suppresses melatonin production and sends a false wakefulness signal to the nervous system. Meanwhile, the ears never fully switch off — they constantly scan the environment for threats. It is not steady noise that disrupts sleep but sudden acoustic shifts (a door closing, a car passing). By managing both light and sound deliberately, you stop the environment from working against your biology."
@@ -283,11 +278,11 @@ export const sleepLever: Lever = {
       ],
       leverSlug: "sleep",
       relatedPractices: [
-        "conscious-consumption",
+        "caffeine-alcohol-and-timing",
         "the-sleep-sanctuary",
         "strategic-somatic-movement"
       ],
-      metaTitle: "Environmental Architecture — How to Practise It | Sunya",
+      metaTitle: "Light and Sound at Night — How to Practise It | Sunya",
       metaDescription: "Reclaiming your natural sleep rhythm by controlling the two most powerful environmental signals that shape your biological clock — light and sound.",
       families: ["H4", "H1"],
       directions: ["reduce", "ground", "calm"],
@@ -297,7 +292,7 @@ export const sleepLever: Lever = {
         durationSource: "STATED",
         relatedPracticeRationale: [
           {
-            slug: "conscious-consumption",
+            slug: "caffeine-alcohol-and-timing",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
@@ -314,9 +309,8 @@ export const sleepLever: Lever = {
     {
       sourceNumber: 6,
       slug: "the-sleep-sanctuary",
-      name: "The Sleep Sanctuary",
-      subtitle: "designing the bedroom",
-      essence: "Transforming the bedroom from a chaotic, multi-purpose room into a single- purpose sanctuary — an environment engineered to passively pull the body into deep, restorative rest.",
+      name: "The Bedroom",
+      essence: "Transforming the bedroom from a chaotic, multi-purpose room into a single-purpose sanctuary — set up so the room itself does some of the work.",
       mechanism: [
         "The nervous system constantly reads the physical space around it. Visual clutter signals unfinished business, keeping the brain in a state of low-grade alert. Synthetic fabrics trap heat and disrupt the body’s thermal descent. An unsupportive mattress creates physical friction throughout the night. Most critically, initiating deep sleep requires a drop in core body temperature — so a stuffy, warm, or cluttered room actively works against the body’s most essential sleep trigger. By deliberately designing the space, you turn the bedroom itself into a sleep signal — an environment that whispers to the nervous system: you are safe here. You can let go."
       ],
@@ -354,8 +348,8 @@ export const sleepLever: Lever = {
         "strategic-somatic-movement",
         "somatic-alignment"
       ],
-      metaTitle: "The Sleep Sanctuary — How to Practise It | Sunya",
-      metaDescription: "Transforming the bedroom from a chaotic, multi-purpose room into a single- purpose sanctuary — an environment engineered to passively pull the body into deep, restorative rest.",
+      metaTitle: "The Bedroom — How to Practise It | Sunya",
+      metaDescription: "Transforming the bedroom from a chaotic, multi-purpose room into a single-purpose sanctuary — set up so the room itself does some of the work.",
       families: ["H2"],
       directions: ["simplify", "reduce", "calm"],
       problems: ["insomnia"],
@@ -381,7 +375,7 @@ export const sleepLever: Lever = {
     {
       sourceNumber: 7,
       slug: "strategic-somatic-movement",
-      name: "Strategic Somatic Movement",
+      name: "Moving at the Right Times",
       subtitle: "building sleep pressure",
       essence: "Using the body’s physical energy to build the chemical drive for sleep during the day, while downshifting the nervous system in the evening. The practice of moving in sync with the circadian rhythm.",
       mechanism: [
@@ -412,7 +406,7 @@ export const sleepLever: Lever = {
         "somatic-alignment",
         "the-morning-ignition"
       ],
-      metaTitle: "Strategic Somatic Movement — How to Practise It | Sunya",
+      metaTitle: "Moving at the Right Times — How to Practise It | Sunya",
       metaDescription: "Using the body’s physical energy to build the chemical drive for sleep during the day, while downshifting the nervous system in the evening.",
       families: ["H4", "L1", "P3", "P2"],
       directions: ["discharge", "release", "calm"],
@@ -439,8 +433,7 @@ export const sleepLever: Lever = {
     {
       sourceNumber: 8,
       slug: "somatic-alignment",
-      name: "Somatic Alignment",
-      subtitle: "the physics of sleep position",
+      name: "Sleep Position",
       essence: "Consciously placing the body in a posture that honours its natural design — supporting the spine, keeping airways open, and allowing the nightly repair work to proceed without physical friction.",
       mechanism: [
         "While sleep is largely an unconscious process, the initial position of the body determines how efficiently it performs its repair. Gravity and skeletal mechanics dictate how the organs function, how freely you breathe, and how well the spine decompresses. A body positioned against its natural design generates low-level physical stress throughout the night — pulling the nervous system out of deep rest repeatedly, even if the awakenings are too brief to be consciously remembered."
@@ -469,7 +462,7 @@ export const sleepLever: Lever = {
         "the-morning-ignition",
         "biological-adaptability"
       ],
-      metaTitle: "Somatic Alignment — How to Practise It | Sunya",
+      metaTitle: "Sleep Position — How to Practise It | Sunya",
       metaDescription: "Consciously placing the body in a posture that honours its natural design — supporting the spine, keeping airways open, and allowing the nightly repair work to proceed without physical friction.",
       families: ["P1", "P2"],
       directions: ["soften", "release"],
@@ -496,8 +489,7 @@ export const sleepLever: Lever = {
     {
       sourceNumber: 9,
       slug: "the-morning-ignition",
-      name: "The Morning Ignition",
-      subtitle: "neurochemical waking protocols",
+      name: "The First Hour",
       essence: "Leveraging the first hour of waking to fuel the day and biologically anchor the subsequent night’s rest. How you begin the morning directly shapes the quality of the sleep that follows.",
       mechanism: [
         "The body has a built-in wake signal: in the 30–60 minutes after waking, cortisol rises naturally to clear sleep inertia and boot up the brain. Smothering this natural process with immediate caffeine disrupts the pattern, setting up an afternoon energy crash. Additionally, the transitional state between sleep and full waking is a fleeting window of relaxed, unconditioned awareness — highly creative and intuitive. How you navigate this 60- minute window shapes the entire rhythm of energy across the day."
@@ -530,7 +522,7 @@ export const sleepLever: Lever = {
         "biological-adaptability",
         "relational-ecology"
       ],
-      metaTitle: "The Morning Ignition — How to Practise It | Sunya",
+      metaTitle: "The First Hour — How to Practise It | Sunya",
       metaDescription: "Leveraging the first hour of waking to fuel the day and biologically anchor the subsequent night’s rest.",
       families: ["L1", "L3", "P3"],
       directions: ["energise", "initiate", "stabilise"],
@@ -557,8 +549,7 @@ export const sleepLever: Lever = {
     {
       sourceNumber: 10,
       slug: "biological-adaptability",
-      name: "Biological Adaptability",
-      subtitle: "navigating real-world friction",
+      name: "When Life Gets Irregular",
       essence: "Maintaining the core principles of circadian rhythm and nervous system regulation when faced with the irregular demands of modern life — travel, shift work, and new parenthood. The human body is more adaptable than most people realise.",
       mechanism: [
         "Life is not a controlled environment. When external constraints shatter the ideal sleep window, the first casualty is not the sleep — it is the added psychological anxiety about the sleep. The body can adapt remarkably well when you focus on anchor blocks, light manipulation, and prioritising parasympathetic rest over the illusion of a perfect eight hours."
@@ -587,7 +578,7 @@ export const sleepLever: Lever = {
         "relational-ecology",
         "the-somatic-runway"
       ],
-      metaTitle: "Biological Adaptability — How to Practise It | Sunya",
+      metaTitle: "When Life Gets Irregular — How to Practise It | Sunya",
       metaDescription: "Maintaining the core principles of circadian rhythm and nervous system regulation when faced with the irregular demands of modern life — travel, shift work, and new parenthood.",
       families: ["H1"],
       directions: ["stabilise", "soften", "calm"],
@@ -614,8 +605,7 @@ export const sleepLever: Lever = {
     {
       sourceNumber: 11,
       slug: "relational-ecology",
-      name: "Relational Ecology",
-      subtitle: "harmony in shared sleep spaces",
+      name: "Sharing a Bed",
       essence: "Protecting the sleep quality of both people in a shared sleep environment — through honest communication, structural solutions, and the willingness to prioritise restoration over social habit.",
       mechanism: [
         "Sleep is a deeply private biological process, yet most adults share their most sensitive recovery time with another person whose schedule, body temperature, snoring, or light usage may be chronobiologically incompatible with their own. The modern norm of co- sleeping at identical times regardless of individual biology silently erodes the quality of both partners’ sleep for years before anyone names it as a problem. Simple structural solutions — chronotype staggering, separate duvets, temporary separate sleeping — are not signs of relationship failure. They are acts of care."
@@ -647,7 +637,7 @@ export const sleepLever: Lever = {
         "the-somatic-runway",
         "data-and-intuition"
       ],
-      metaTitle: "Relational Ecology — How to Practise It | Sunya",
+      metaTitle: "Sharing a Bed — How to Practise It | Sunya",
       metaDescription: "Protecting the sleep quality of both people in a shared sleep environment — through honest communication, structural solutions, and the willingness to prioritise restoration over social habit.",
       families: ["L1"],
       directions: ["clarify", "structure", "simplify"],
@@ -674,8 +664,7 @@ export const sleepLever: Lever = {
     {
       sourceNumber: 12,
       slug: "the-somatic-runway",
-      name: "The Somatic Runway",
-      subtitle: "the full wind-down sequence",
+      name: "The Wind-Down Hour",
       essence: "A structured 60-minute sequence that systematically transitions the nervous system from the demands of the day to the threshold of deep sleep. The ritual that makes everything else in this lever work.",
       mechanism: [
         "Deep sleep does not switch on instantly. The descent from full wakefulness into unconscious repair requires a biological runway — a graduated lowering of core temperature, cortisol, and neurological activation. Most people skip this runway entirely, moving from screen to bed in minutes and then wondering why sleep does not come. By creating a consistent, unhurried transition sequence, you train the brain to associate each step with the next — building a powerful automatic chain that leads reliably to sleep."
@@ -705,7 +694,7 @@ export const sleepLever: Lever = {
         "data-and-intuition",
         "the-threshold-of-awakening"
       ],
-      metaTitle: "The Somatic Runway — How to Practise It | Sunya",
+      metaTitle: "The Wind-Down Hour — How to Practise It | Sunya",
       metaDescription: "A structured 60-minute sequence that systematically transitions the nervous system from the demands of the day to the threshold of deep sleep.",
       families: ["H4"],
       directions: ["slow", "calm", "contain", "structure"],
@@ -732,7 +721,7 @@ export const sleepLever: Lever = {
     {
       sourceNumber: 13,
       slug: "data-and-intuition",
-      name: "Data and Intuition",
+      name: "Tracking Your Sleep",
       subtitle: "tracking without anxiety",
       essence: "Using sleep data as a tool for honest self-knowledge — without allowing the numbers to become a new source of sleep anxiety.",
       mechanism: [
@@ -755,7 +744,7 @@ export const sleepLever: Lever = {
         "the-somatic-runway",
         "the-threshold-of-awakening"
       ],
-      metaTitle: "Data and Intuition — How to Practise It | Sunya",
+      metaTitle: "Tracking Your Sleep — How to Practise It | Sunya",
       metaDescription: "Using sleep data as a tool for honest self-knowledge — without allowing the numbers to become a new source of sleep anxiety.",
       families: ["H1"],
       directions: ["soften", "clarify"],
@@ -778,8 +767,7 @@ export const sleepLever: Lever = {
     {
       sourceNumber: 14,
       slug: "the-threshold-of-awakening",
-      name: "The Threshold of Sleep",
-      subtitle: "witnessing the crossing",
+      name: "The Edge of Sleep",
       essence: "A more advanced practice that builds on everything in this lever — bringing a thread of gentle awareness to the natural process of falling asleep, without trying to do anything at all.",
       mechanism: [
         "Most people cross into sleep as passive unconsciousness — the mind simply blanks. But the threshold between waking and sleep is one of the most significant crossings in human experience: the moment the separate self fully releases its grip, the mental narrator powers down, and the prominence of physical and mental activity subsides. By maintaining a gentle thread of awareness through this crossing, you begin to witness the ego’s dissolution rather than simply collapsing into it. Over time, this opens access to dimensions of consciousness that ordinary sleep — and ordinary waking — cannot reach."
@@ -803,7 +791,7 @@ export const sleepLever: Lever = {
       relatedPractices: [
         "data-and-intuition"
       ],
-      metaTitle: "The Threshold of Sleep — How to Practise It | Sunya",
+      metaTitle: "The Edge of Sleep — How to Practise It | Sunya",
       metaDescription: "A more advanced practice that builds on everything in this lever — bringing a thread of gentle awareness to the natural process of falling asleep, without trying to do anything at all.",
       directions: ["soften", "calm", "release", "slow"],
       problems: [],
