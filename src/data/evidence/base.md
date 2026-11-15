@@ -8,9 +8,49 @@
 
 Every practice in Sunya rests on an underlying mechanism — something about the body, the mind or the conditions of a life that makes the practice do what it does. There are far fewer mechanisms than practices, because many practices work the same way by different routes.
 
-This section sets out each of those mechanisms, what the research actually says about it, and how strong that research is.
+This section sets out each mechanism, what the research actually says about it, and how strong that research is.
 
-It includes the mechanisms where the evidence is weak, and says so. A page that only reported the good findings would not be an evidence base; it would be advertising.
+It includes the mechanisms where the evidence is weak, and says so. A page that reported only the good findings would not be an evidence base; it would be advertising.
+
+It also sets out, below, what this kind of evidence can and cannot tell you. That part matters more than any individual finding, and almost nobody publishes it.
+
+---
+
+## What to expect from this evidence
+
+Read this before the mechanism pages, because without it the numbers will mislead you — in both directions.
+
+### Effects in this field are small. Everywhere, not just here.
+
+The honest summary of almost every mechanism in this library is a small-to-moderate improvement. That is not a verdict on these practices. It is the ceiling of the entire domain. For comparison: a network meta-analysis of 522 randomised trials covering 116,477 patients found antidepressants beat placebo by a standardised mean difference of 0.30.[^1] That is the flagship intervention of modern psychiatry, and it sits in the same range as breathing practice. So when a page here reports an effect of 0.3, the correct reading is not *this barely works*. It is *this works about as well as the things we already consider worth prescribing*.
+
+### Studies test one thing at a time. A person is a system.
+
+This is the deepest limitation, and understanding it changes how you read every page. A trial recruits a mixed group of people and gives them one practice — breathing, say — for eight weeks. But wellbeing fails at its weakest point. Someone whose life is dominated by an unresolved family conflict, or by money, or by four hours of sleep a night, will get very little from breathing practice, because breathing is not where their system is failing. They are in the trial. Their non-response goes into the average. The average effect of a single practice across a mixed population is therefore not a measure of what that practice can do. It is a measure of how many people in the room happened to be limited by that one thing.
+
+This generates a claim Sunya can be held to: an approach addressing several domains at once should outperform one addressing a single domain in the same person. That is falsifiable, and where it has been tested in other fields it has held up. The FINGER trial randomised 1,260 older adults at risk of dementia to a two-year programme combining diet, exercise, cognitive training and vascular risk management, against general health advice — and found a significant benefit to cognition, with effects on executive function and processing speed.[^2] No single component of that programme would have looked impressive alone. The same logic underpins cardiovascular prevention, where modest individual interventions combined to change mortality across the developed world. Small independent effects do not average. They accumulate.
+
+### Studies run for weeks. The practices are for years.
+
+Nearly every trial cited in these pages ran for eight weeks, usually at twenty minutes a day. That is a very small dose of contemplative practice, and it is chosen because research grants are short, not because eight weeks is the interesting period. The two places where anyone went further are instructive. Intensive retreat practice — three months at around six hours daily — produced attention improvements that eight-week trials consistently fail to detect. And a nine-month training study found objective improvements in bodily perception that were absent at three months, present at six, and larger at nine. The pattern is consistent: where the dose rises, effects appear that shorter trials could not see. This means the research systematically understates what sustained practice does, and it means claims about what years of practice produce are not supported by this evidence — in either direction. They have not been tested.
+
+### An average hides the people it is made of
+
+An effect size is a group average. It is nobody's experience. A trial can report a small average while containing people who changed substantially and people who changed not at all. One trial in this library makes the point sharply: the headline effects were tiny, and 46% of the participants who began with high depressive symptoms had mild or no depression three months later. Nearly half of them, meaningfully better — and the effect size concealed it completely. Analyses of who responded are rarely run and almost never headlined. So when you read a small number, the question worth asking is not *does this work* but *for whom, and am I that person*.
+
+### And some things are not measurable in principle
+
+Three different situations get confused with one another, and they have nothing in common except an absence of studies.
+
+**Not yet studied.** Nobody has run the trial. There is no obstacle other than funding and interest — the outcome of nine months of daily practice, for instance, or whether one breathing protocol beats another. These gaps can be filled, and some of them will be.
+
+**Hard to study.** The research is possible but expensive and awkward: long durations, individualised interventions, outcomes that take years to appear. The whole-system claim described at the end of this document is of this kind.
+
+**Not measurable by these methods at all.** This is a different thing, and it is a structural limit rather than a gap waiting to be filled. Where the object of inquiry is the subject itself, an objective measure necessarily records something adjacent to it — a verbal report, a behaviour, a pattern of brain activity — rather than the thing in question. This is the same argument the [Philosophy](/philosophy) page makes about consciousness: whatever you can observe is not the observer, and consciousness cannot be known as an object. If that holds, then no questionnaire, scan or trial can reach it, and no future instrument will either. It is not a matter of better science.
+
+The discipline this requires is narrow, and it matters more than the point itself. "Some things cannot be measured" is true of a small class of claims and false of nearly everything else — and it is the standard refuge of anyone whose claims cannot survive checking. So the boundary is held strictly here, and claims are not moved across it for convenience:
+
+Anxiety is measurable. Sleep is measurable. Blood pressure is measurable. Any claim that a practice improves these is an empirical claim, and it is reported on these pages with evidence or not at all. The claim that identification with the contents of the mind produces suffering has measurable consequences — relapse rates, rumination, distress — and the research tracks them. Those appear on the [Decentering](/evidence/decentering) page. What is not measurable is whether what self-inquiry reveals about the nature of the self is true. No outcome measure bears on that question, in either direction. So where a practice is aimed at something outside the reach of third-person methods, these pages say exactly that, rather than grading it as having no evidence. "No research found" and "not accessible to research" are different statements, and only one of them is a weakness.
 
 ---
 
@@ -27,6 +67,9 @@ Two scales, graded separately. They measure different things, and averaging them
 | **Preliminary** | Few or small studies, inconsistent findings, or evidence only on indirect measures |
 | **Mechanistic only** | The physiology is documented and plausible, but no trials have tested whether it helps people |
 | **None found** | No research located, or what exists does not support the claim |
+| **Outside the reach of these methods** | The claim is not the kind of thing a trial can assess — see *some things are not measurable in principle*, above |
+
+The last row is used sparingly and never as an escape from a claim that could have been tested. A practice graded this way is still reported with what the traditions hold and what you can verify for yourself; it simply carries no research column, and says why.
 
 ### Traditional convergence
 
@@ -45,58 +88,53 @@ A practice can score high on one scale and low on the other. Chanting has thin t
 
 ## What "small", "moderate" and "large" actually mean
 
-Research reports the size of an effect as a number. Those numbers are given on each page for anyone who wants them, but the words matter more, so here is what they buy you.
-
 | Size | What it means in practice |
 |---|---|
-| **Small** | Real, but you would not reliably notice it in yourself from week to week. Visible across a group of people; easy to miss on your own. |
+| **Small** | Real, but you would not reliably notice it in yourself from week to week. Visible across a group; easy to miss on your own. |
 | **Moderate** | Most people who do it consistently notice something. This is where most genuinely useful non-medical interventions sit. |
 | **Large** | Hard to miss. Rare outside medication and surgery — and in this field, a claim worth treating with suspicion. |
 
-That last row is worth keeping in mind while reading anyone's website, including this one. Almost nothing in wellbeing produces large effects. Things that are well worth doing mostly produce moderate ones, and they add up.
+That last row is worth keeping in mind while reading anyone's website, including this one.
 
 ---
 
-## The third kind of support: try it yourself
+## Two things that look like contradictions and are not
 
-Every practice in this library was used personally, over a period of years, before being included. That is a filter rather than evidence, and it is why the library is not simply everything that exists. It is said here once rather than repeated on every page.
+**One: the control group changes everything.** Comparing a practice against a waiting list tells you that doing something beats doing nothing. Comparing it against another activity tells you whether the practice itself is doing the work. The same practice routinely looks effective in the first comparison and unremarkable in the second, and two honest reviews can appear to contradict each other for no other reason. Where a page reports what the comparator was, that is why.
 
-But the strongest thing available to you is not a study and not a tradition. It is trying one of these for two weeks and watching what happens in your own system.
+**Two: strength of evidence is not size of effect.** Evidence can be strong that an effect is small. These are separate axes, and conflating them is the most common error made in reading this literature. A well-evidenced modest finding is more useful than a dramatic one from three weak studies.
 
-Research tells you what happened to people on average. Tradition tells you what many people have found over a long time. Neither tells you what will happen to you. That part you can only find out directly, and it costs very little to check.
+---
 
-So there are three kinds of support here, and they answer different questions:
+## Mechanism evidence is not practice evidence
+
+These pages are about mechanisms, not about the specific practices built on them. A mechanism page can tell you that slowing the breath lowers blood pressure. It cannot tell you that one particular breathing protocol, at one particular count, taught in one particular sequence, does so better than another. Almost nothing in this field has been tested at that resolution. So a mechanism page licenses a claim about the mechanism. It does not license a claim that a named practice is optimal, or superior to its alternatives. Where the research has compared specific protocols, the pages say so explicitly, and those comparisons are rare.
+
+---
+
+## The three kinds of support
+
+The strongest thing available to you is not a study and not a tradition. It is trying one of these for two weeks and watching what happens in your own system.
+
+Research tells you what happened to people on average. Tradition tells you what many people have found over a long time. Neither tells you what will happen to you.
 
 - **Research** — does this hold up when tested properly?
 - **Tradition** — have people independently found this useful, for a long time?
 - **Your own trial** — does it do anything for you?
 
-The first two are set out on every mechanism page. The third is yours.
+The first two are set out on every mechanism page. The third is yours, and for the questions these practices are ultimately aimed at, it is currently the only instrument there is.
+
+Every practice in this library was used personally, over a period of years, before being included. That is a filter rather than evidence, and it is why the library is not simply everything that exists.
 
 ---
 
 ## How to read a mechanism page
 
-Each page is built to answer three questions in order: **what will this do for me, how much do I need to do, and where does the evidence run out.**
+Each page answers three questions in order: **what will this do for me, how much do I need to do, and where does the evidence run out.**
 
-- **In short** — the summary, so you can take the gist and stop there
-- **What it is**, in plain terms
-- **What it does for you** — every outcome the mechanism has been shown to improve, with the size of each. This is the main section, and the one to read if you only read one.
-- **How much you need to do** — how long and how often, taken from what the studies actually did. Evidence only transfers to a practice done at a comparable dose, so this doubles as the honest limit on everything above it.
-- **Practices that rest on it**
-- **Where the evidence stops** — the limitations, the null findings, and the things you should actively disbelieve, in one place rather than scattered through
-- **Who should be careful**
-- **Traditional convergence**
-- **Both grades**, at the top — Research strength and Traditional convergence as two separate paragraphs, each ending with a full stop
-- **The sources**, footnoted
+The section to read if you only read one is **what it does for you**. The section that keeps you honest is **how much you need to do**, because evidence only transfers to a practice done at a comparable dose, and that is the most common place where research gets stretched further than it reaches.
 
-### On the citations
-
-Every claim carries its own footnote, including the ones in the summary box. Where several studies are cited, you can see which one supports which statement rather than having to work it out from a list at the end. References follow APA 7th.
-
-Claims about the traditions are cited to primary texts, not to secondary summaries.
-
-And where something on a page is a practical judgement rather than a research finding — a safety caution nobody has trialled, for instance — it says so in the text. You should never have to guess whether you are reading a result or an opinion.
+Every claim carries its own footnote, including those in the summary box, so you can check any individual statement against the study it came from. Claims about the traditions are cited to primary texts. And where something is a practical judgement rather than a research finding — a safety caution nobody has trialled, for instance — it says so. You should never have to guess whether you are reading a result or an opinion.
 
 Pages carry the date they were last reviewed. Evidence changes; an undated page goes quietly stale.
 
@@ -104,65 +142,79 @@ Pages carry the date they were last reviewed. Evidence changes; an undated page 
 
 ## The mechanisms
 
-*Status: ○ not yet researched · ◐ in progress · ● complete*
-
-*Numbers are assigned at publication, not now. The list is a working hypothesis derived from the practice library rather than from the literature, so entries will merge where the research does not separate them, and split where one heading turns out to hide two different bodies of work. Numbering as we go would mean renumbering every time.*
-
 **Breath and voice**
-- ● Slow and paced breathing *(merges the earlier separate entries for extended exhale and resonance-frequency breathing — the literature pools them)*
-- ● Activating breathwork — rapid breathing and breath holding
-- ● Sustained vocalisation — chanting and humming
-- ● Music and deliberately chosen sound *(added: Conscious Listening was not covered by any existing entry)*
+- Slow and paced breathing
+- Activating breathwork — rapid breathing and breath holding
+- Sustained vocalisation — chanting and humming
+- Music and deliberately chosen sound
 
 **Attention and cognition**
-- ● Meditation — focused attention and open monitoring *(merged: the trial literature teaches and tests both together)*
-- ● Decentering — seeing thoughts as thoughts
-- ● Interoception and body scan
-- ● Expressive writing
-- ● Mental imagery and visualisation
-- ● Values clarification and self-affirmation
-- ● Input restriction and attentional load
-- ● Rumination and mind-wandering
+- Meditation — focused attention and open monitoring
+- Decentering — seeing thoughts as thoughts
+- Interoception and body scan
+- Expressive writing
+- Mental imagery and visualisation
+- Values clarification and self-affirmation
+- Input restriction and attentional load
+- Rumination and mind-wandering
 
 **Emotion and relationship**
-- ● Compassion and loving-kindness training
-- ● Acceptance and psychological flexibility
-- ● Social connection and isolation
-- ● Affective touch and co-regulation
-- ● Prosocial behaviour and volunteering
-- ● Forgiveness
-- ● Religious and devotional practice
+- Compassion and loving-kindness training
+- Acceptance and psychological flexibility
+- Social connection and isolation
+- Affective touch and co-regulation
+- Prosocial behaviour and volunteering
+- Forgiveness
+- Religious and devotional practice
 
 **Body and lifestyle**
-- ● Circadian light exposure and entrainment
-- ● Sleep behaviour — stimulus control, wind-down, environment
-- ● Movement, mobility and exercise timing
-- ● Progressive muscle relaxation and stillness
-- ● Cold exposure
-- ● Time-restricted eating and fasting
-- ● Diet composition
-- ● Hydration
-- ● Botanical preparations
-- ● Nature exposure and awe
-- ● Air quality, noise and visual order
-- ● Sexual behaviour and abstinence
+- Circadian light exposure and entrainment
+- Sleep behaviour — stimulus control, wind-down, environment
+- Movement, mobility and exercise timing
+- Progressive muscle relaxation and stillness
+- Cold exposure
+- Time-restricted eating and fasting
+- Diet composition
+- Hydration
+- Botanical preparations
+- Nature exposure and awe
+- Air quality, noise and visual order
+- Sexual behaviour and abstinence
 
 **Material conditions**
-- ● Financial security and scarcity
-- ● Skill mastery and self-efficacy
-- ● Work and values congruence
+- Financial security and scarcity
+- Skill mastery and self-efficacy
+- Work and values congruence
 
-**Expected to be weak or unsupported**
-- ● Grounding and earthing
-- ● Pelvic floor contraction as an inner practice
-- ● Hand positions
-- ● Sound vibration acting on tissue
-- ● Energetic properties of objects and spaces
+**Mechanisms expected to be weak or unsupported**
+- Grounding and earthing
+- Pelvic floor contraction as an inner practice
+- Hand positions
+- Sound vibration acting on tissue
+- Energetic properties of objects and spaces
+
+That last group is listed because finding out that something is unsupported is part of the work, not a failure of it. The negative findings are what make the positive ones worth believing.
+
+---
+
+## What would actually test this
+
+Nothing in this evidence base tests Sunya. Every study cited here examines one practice, usually for eight weeks, usually in people who were not selected for being limited by the thing being tested. What the framework actually claims is different: that you can identify where a particular person's wellbeing is failing, intervene there with support from the adjacent areas, sustain it for a substantial period, and produce a change that no single practice tested in isolation would predict.
+
+That claim has not been tested, and it is testable. It would require identifying each participant's limiting domain, intervening across several domains rather than one, running for considerably longer than eight weeks, and measuring responders rather than only averages. Until that study exists, the honest position is this: the mechanisms are evidenced to the degree these pages describe, and the framework assembled from them is a well-reasoned hypothesis rather than a demonstrated result. Anyone who tells you their wellbeing system has been proven to transform lives is describing research that has not been done — including, for now, this one.
 
 ---
 
 ## Completeness
 
-This list was derived from the practice library, not from the literature, so it may be incomplete.
+This list was derived from the practice library, not from the literature, so it may be incomplete. The test is coverage: every practice must map to at least one mechanism. When all of the above are written, any practice left unmapped has revealed a mechanism that is missing, and it gets added. The list is finished when no practice is orphaned.
 
-The test is coverage: **every practice must map to at least one mechanism.** When all of the above are written, any practice left unmapped has revealed a mechanism that is missing, and it gets added. The list is finished when no practice is orphaned.
+---
+
+## References
+
+*APA 7th.*
+
+[^1]: Cipriani, A., Furukawa, T. A., Salanti, G., Chaimani, A., Atkinson, L. Z., Ogawa, Y., Leucht, S., Ruhe, H. G., Turner, E. H., Higgins, J. P. T., Egger, M., Takeshima, N., Hayasaka, Y., Imai, H., Shinohara, K., Tajika, A., Ioannidis, J. P. A., & Geddes, J. R. (2018). Comparative efficacy and acceptability of 21 antidepressant drugs for the acute treatment of adults with major depressive disorder: A systematic review and network meta-analysis. *The Lancet, 391*(10128), 1357–1366. https://doi.org/10.1016/S0140-6736(17)32802-7
+
+[^2]: Ngandu, T., Lehtisalo, J., Solomon, A., Levälahti, E., Ahtiluoto, S., Antikainen, R., Bäckman, L., Hänninen, T., Jula, A., Laatikainen, T., Lindström, J., Mangialasche, F., Paajanen, T., Pajala, S., Peltonen, M., Rauramaa, R., Stigsdotter-Neely, A., Strandberg, T., Tuomilehto, J., Soininen, H., & Kivipelto, M. (2015). A 2 year multidomain intervention of diet, exercise, cognitive training, and vascular risk monitoring versus control to prevent cognitive decline in at-risk elderly people (FINGER): A randomised controlled trial. *The Lancet, 385*(9984), 2255–2263. https://doi.org/10.1016/S0140-6736(15)60461-5

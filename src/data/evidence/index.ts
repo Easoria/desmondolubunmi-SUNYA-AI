@@ -69,17 +69,54 @@ export const EVIDENCE_GROUPS: Array<{ id: EvidenceGroupId; label: string }> = [
   { id: "emotion-and-relationship", label: "Emotion and relationship" },
   { id: "body-and-lifestyle", label: "Body and lifestyle" },
   { id: "material-conditions", label: "Material conditions" },
-  { id: "expected-weak", label: "Expected to be weak or unsupported" },
+  { id: "expected-weak", label: "Mechanisms expected to be weak or unsupported" },
 ];
 
+/** Footnote definitions from the parent doc — needed wherever [^n] markers render. */
+function extractFootnoteDefinitions(markdown: string) {
+  const defs = markdown.match(/^\[\^\d+\]:[\s\S]*$/m);
+  if (!defs) return "";
+  // Collect every [^n]: line through end of file.
+  const start = markdown.search(/^\[\^\d+\]:/m);
+  if (start === -1) return "";
+  return markdown.slice(start).trim();
+}
+
 /** Parent-page prose — everything above the mechanism index. */
-export const EVIDENCE_BASE_INTRO_MARKDOWN = stripLeadingTitle(
-  stripFromHeading(baseMarkdown, "## The mechanisms"),
-)
-  // Drop internal editorial note + decorative rule from the source doc.
-  .replace(/^\*Parent document\.[^*\n]*\*\n+/, "")
-  .replace(/^---\n+/, "")
-  .trimStart();
+export const EVIDENCE_BASE_INTRO_MARKDOWN = (() => {
+  const intro = stripLeadingTitle(stripFromHeading(baseMarkdown, "## The mechanisms"))
+    // Drop internal editorial note + decorative rule from the source doc.
+    .replace(/^\*Parent document\.[^*\n]*\*\n+/, "")
+    .replace(/^---\n+/, "")
+    .trimStart();
+  const defs = extractFootnoteDefinitions(baseMarkdown);
+  // Footnote markers live in the intro; append defs so superscripts resolve.
+  // The visible References list is rendered after the mechanism index instead.
+  return defs ? `${intro}\n\n${defs}` : intro;
+})();
+
+/**
+ * Parent-page prose after the mechanism index — What would actually test this,
+ * Completeness, and a reader-facing References list (not footnote-def syntax,
+ * which already drives the intro superscripts).
+ */
+export const EVIDENCE_BASE_AFTER_MARKDOWN = (() => {
+  const start = baseMarkdown.indexOf("## What would actually test this");
+  if (start === -1) return "";
+  const after = baseMarkdown.slice(start);
+  const withoutFootnoteDefs = after.replace(/\n## References\n[\s\S]*$/, "").trim();
+  const references = `
+
+## References
+
+*APA 7th.*
+
+1. Cipriani, A., Furukawa, T. A., Salanti, G., Chaimani, A., Atkinson, L. Z., Ogawa, Y., Leucht, S., Ruhe, H. G., Turner, E. H., Higgins, J. P. T., Egger, M., Takeshima, N., Hayasaka, Y., Imai, H., Shinohara, K., Tajika, A., Ioannidis, J. P. A., & Geddes, J. R. (2018). Comparative efficacy and acceptability of 21 antidepressant drugs for the acute treatment of adults with major depressive disorder: A systematic review and network meta-analysis. *The Lancet, 391*(10128), 1357–1366. https://doi.org/10.1016/S0140-6736(17)32802-7
+
+2. Ngandu, T., Lehtisalo, J., Solomon, A., Levälahti, E., Ahtiluoto, S., Antikainen, R., Bäckman, L., Hänninen, T., Jula, A., Laatikainen, T., Lindström, J., Mangialasche, F., Paajanen, T., Pajala, S., Peltonen, M., Rauramaa, R., Stigsdotter-Neely, A., Strandberg, T., Tuomilehto, J., Soininen, H., & Kivipelto, M. (2015). A 2 year multidomain intervention of diet, exercise, cognitive training, and vascular risk monitoring versus control to prevent cognitive decline in at-risk elderly people (FINGER): A randomised controlled trial. *The Lancet, 385*(9984), 2255–2263. https://doi.org/10.1016/S0140-6736(15)60461-5
+`;
+  return `${withoutFootnoteDefs}\n${references}`.trim();
+})();
 
 export const EVIDENCE_MECHANISMS: EvidenceMechanism[] = [
   {

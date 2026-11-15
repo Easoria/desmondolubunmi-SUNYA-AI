@@ -4,6 +4,13 @@ import { Footer } from "@/components/site/Footer";
 import { Breadcrumb } from "@/components/site/Breadcrumb";
 import { EvidenceMarkdown } from "@/components/evidence/EvidenceMarkdown";
 import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import {
+  EVIDENCE_BASE_AFTER_MARKDOWN,
   EVIDENCE_BASE_INTRO_MARKDOWN,
   EVIDENCE_GROUPS,
   getMechanismsByGroup,
@@ -62,60 +69,64 @@ function EvidenceIndexPage() {
           </h1>
         </header>
 
-        <EvidenceMarkdown markdown={EVIDENCE_BASE_INTRO_MARKDOWN} />
+        <div className="evidence-intro-hide-footnote-list">
+          <EvidenceMarkdown markdown={EVIDENCE_BASE_INTRO_MARKDOWN} />
+        </div>
 
         <section className="mt-16 border-t border-white/10 pt-12">
           <h2 className="display text-3xl text-white">The mechanisms</h2>
-          <p className="mt-4 text-sm leading-relaxed text-[#b8d4e8]/80">
-            Status: <span aria-hidden="true">○</span> not yet researched ·{" "}
-            <span aria-hidden="true">●</span> complete. Numbers are assigned at publication, not
-            now.
-          </p>
 
-          <div className="mt-10 space-y-12">
+          <Accordion type="multiple" className="mt-8 border-t border-white/10">
             {EVIDENCE_GROUPS.map((group) => {
               const mechanisms = getMechanismsByGroup(group.id);
               return (
-                <div key={group.id}>
-                  <h3 className="display text-xl text-white sm:text-2xl">{group.label}</h3>
-                  <ul className="mt-4 space-y-3">
-                    {mechanisms.map((m) => (
-                      <li key={m.slug} className="text-[15px] leading-relaxed text-[#b8d4e8]">
-                        <span className="mr-2 text-[#7ec8e3]" aria-hidden="true">
-                          {m.status === "complete" ? "●" : "○"}
-                        </span>
-                        {m.status === "complete" ? (
-                          <Link
-                            to="/evidence/$slug"
-                            params={{ slug: m.slug }}
-                            className="text-white underline decoration-[#7ec8e3]/35 underline-offset-2 transition hover:decoration-white/50"
-                          >
-                            {m.title}
-                          </Link>
-                        ) : (
-                          <span>{m.title}</span>
-                        )}
-                        {m.blurb ? (
-                          <span className="text-[#b8d4e8]/70"> — <em>{m.blurb}</em></span>
-                        ) : null}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                <AccordionItem
+                  key={group.id}
+                  value={group.id}
+                  className="border-white/10"
+                >
+                  <AccordionTrigger className="display py-5 text-left text-xl text-white hover:no-underline sm:text-2xl [&[data-state=open]>svg]:text-[#7ec8e3]">
+                    {group.label}
+                  </AccordionTrigger>
+                  <AccordionContent className="pb-6 pt-0">
+                    <ul className="space-y-3">
+                      {mechanisms.map((m) => (
+                        <li
+                          key={m.slug}
+                          className="text-[15px] leading-relaxed text-[#b8d4e8]"
+                        >
+                          {m.status === "complete" ? (
+                            <Link
+                              to="/evidence/$slug"
+                              params={{ slug: m.slug }}
+                              className="text-white underline decoration-[#7ec8e3]/35 underline-offset-2 transition hover:decoration-white/50"
+                            >
+                              {m.title}
+                            </Link>
+                          ) : (
+                            <span>{m.title}</span>
+                          )}
+                        </li>
+                      ))}
+                    </ul>
+                  </AccordionContent>
+                </AccordionItem>
               );
             })}
-          </div>
-        </section>
+          </Accordion>
 
-        <section className="mt-16 border-t border-white/10 pt-10">
-          <h2 className="display text-2xl text-white">Completeness</h2>
-          <p className="mt-4 text-[15px] leading-8 text-[#b8d4e8]">
-            This list was derived from the practice library, not from the literature, so it may be
-            incomplete. The test is coverage: every practice must map to at least one mechanism.
-            When all of the above are written, any practice left unmapped has revealed a mechanism
-            that is missing, and it gets added. The list is finished when no practice is orphaned.
+          <p className="mt-8 text-[15px] leading-8 text-[#b8d4e8]">
+            That last group is listed because finding out that something is unsupported is part of
+            the work, not a failure of it. The negative findings are what make the positive ones
+            worth believing.
           </p>
         </section>
+
+        {EVIDENCE_BASE_AFTER_MARKDOWN ? (
+          <div className="mt-16 border-t border-white/10 pt-4">
+            <EvidenceMarkdown markdown={EVIDENCE_BASE_AFTER_MARKDOWN} />
+          </div>
+        ) : null}
       </main>
       <Footer />
     </div>

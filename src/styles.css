@@ -222,6 +222,12 @@
 .prose-article code { background: rgba(255,255,255,0.08); padding: 0.15em 0.4em; border-radius: 4px; font-size: 0.9em; }
 
 /* Evidence pages — tables + Markdown footnotes */
+.evidence-intro-hide-footnote-list section[data-footnotes],
+.evidence-intro-hide-footnote-list .footnotes {
+  /* Footnote defs live on the intro so superscripts resolve; the visible
+     References list is rendered after the mechanism index instead. */
+  display: none;
+}
 .evidence-prose table { font-size: 0.95em; }
 .evidence-prose .evidence-callout p { margin: 0.6em 0; font-style: normal; font-family: inherit; font-size: 1rem; line-height: 1.75; color: #d8e6f0; }
 .evidence-prose .evidence-callout p:first-child { margin-top: 0; }
