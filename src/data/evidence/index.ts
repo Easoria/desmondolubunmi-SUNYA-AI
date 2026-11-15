@@ -14,6 +14,7 @@ import ruminationAndMindWandering from "./rumination-and-mind-wandering.content"
 import compassionAndLovingKindnessTraining from "./compassion-and-loving-kindness-training.content";
 import acceptanceAndPsychologicalFlexibility from "./acceptance-and-psychological-flexibility.content";
 import socialConnectionAndIsolation from "./social-connection-and-isolation.content";
+import affectiveTouchAndCoRegulation from "./affective-touch-and-co-regulation.content";
 
 export type MechanismStatus = "complete" | "planned";
 
@@ -259,8 +260,14 @@ export const EVIDENCE_MECHANISMS: EvidenceMechanism[] = [
     slug: "affective-touch-and-co-regulation",
     title: "Affective touch and co-regulation",
     group: "emotion-and-relationship",
-    status: "planned",
-    description: "Not yet researched.",
+    status: "complete",
+    reviewDate: "November 2026",
+    researchGrade:
+      "Moderate for massage and structured touch reducing pain, anxiety and depression, Preliminary for everyday affectionate touch (hugs, hand-holding) and dyadic physiological co-regulation as standalone interventions",
+    traditionalGrade: "Strong",
+    description:
+      "Safe physical contact and partner co-regulation — massage trial gains, stress buffering, and when touch triggers threat instead.",
+    markdown: withNormalizedGrades(affectiveTouchAndCoRegulation),
   },
   {
     slug: "prosocial-behaviour-and-volunteering",
