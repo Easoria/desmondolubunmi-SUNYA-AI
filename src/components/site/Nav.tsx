@@ -10,7 +10,6 @@ const FRAMEWORK_CHILDREN = [
 ];
 
 const NAV_ITEMS = [
-  { label: "Writing", to: "/writing" as const },
   { label: "Gatherings", to: "/gatherings" as const },
   { label: "About", to: "/about" as const },
   { label: "Contact", to: "/contact" as const },
