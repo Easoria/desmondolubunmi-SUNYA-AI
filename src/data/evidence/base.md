@@ -117,7 +117,7 @@ Pages carry the date they were last reviewed. Evidence changes; an undated page 
 **Attention and cognition**
 - ● Meditation — focused attention and open monitoring *(merged: the trial literature teaches and tests both together)*
 - ● Decentering — seeing thoughts as thoughts
-- ○ Interoception and body scan
+- ● Interoception and body scan
 - ○ Expressive writing
 - ○ Mental imagery and visualisation
 - ○ Values clarification and self-affirmation
