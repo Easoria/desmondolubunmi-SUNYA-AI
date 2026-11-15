@@ -1,0 +1,103 @@
+# Sound vibration acting on tissue
+
+*Reviewed November 2026*
+
+**Research strength — Preliminary** for singing bowls and vibroacoustic stimulation on short-term relaxation *(**None found** for claims that acoustic sound waves mechanically repair tissue, dissolve knots or "re-tune" organs and cells)*.
+
+**Traditional convergence — Weak** *(standing bronze bells were struck in East Asian meditation halls to mark pauses, yet "Tibetan singing bowls" as tissue-healing instruments do not appear in Tibetan monastic instrument catalogues and are a late-twentieth-century Western invention)*.
+
+> **In short:** lying quietly while listening to singing bowls, gongs or tuning forks can feel deeply relaxing, and one small randomised trial found lower acute anxiety and higher heart rate variability after a 50-minute listening session.[^3] What has *not* been shown is that sound waves travelling through air or placed against the skin physically repair tissue, align cells or heal injuries. Airborne sound mostly bounces off skin and works through the **ear** and unhurried lying down — not through mechanical vibration of your organs. Even in clinical **vibroacoustic therapy**, where powered speakers transmit low-frequency vibration directly into a bed or chair, a scoping review concluded the research is too sparse to establish reliable treatment protocols.[^4]
+
+---
+
+## What it is
+
+Two very different mechanisms are routinely sold under the label "vibrational sound healing":
+
+- **Airborne acoustic sound** — listening to struck or rim-rubbed metal or quartz singing bowls, gongs or tuning forks during a "sound bath," or holding a vibrating tuning fork or bowl near the body. Almost all the acoustic energy reflects off the skin surface and enters through ordinary hearing rather than penetrating deep tissue.
+- **Direct mechanical vibration (vibroacoustic therapy)** — lying on a bed or chair fitted with low-frequency transducers (most commonly 40 Hz sinusoidal vibration paired with music) that physically shake skin, fascia and muscle spindles through direct contact.[^4]
+
+Auditory relaxation through the ear is already covered under *Music and deliberately chosen sound*. This page evaluates the separate claim that physical sound waves act directly on body tissue.
+
+---
+
+## What it does for you
+
+### Listening to singing bowls can produce acute relaxation — through hearing and stillness
+
+A systematic review of singing bowl studies reported reductions in self-rated distress, tension, anxiety, depression and fatigue across early trials, while noting weak designs and high risk of bias because participants and practitioners cannot be blinded.[^1]
+
+In a single-session randomised trial of **50 anxious adults**, listening to singing bowls for 50 minutes reduced state anxiety and raised heart rate variability compared with progressive muscle relaxation and a waiting-list control.[^3] An earlier observational study of **62 participants** lying on the floor listening to singing bowls, gongs and bells likewise found lower tension, anger, fatigue and depressed mood afterwards — with no control group.[^2]
+
+Crucially, these studies tested **listening in a quiet room** while lying still,[^2] not mechanical sound waves penetrating tissue.[^3]
+
+### Direct low-frequency vibration shows early, unsettled signals for pain
+
+In a scoping review of **20 studies** testing **vibroacoustic therapy** in adults with acute or chronic pain (15 studies on chronic pain, typically 20 to 45 minutes using 40 Hz vibration), some trials reported lower perceived pain or reduced pain-medication use.[^4] However, protocols varied widely and the authors concluded that **research is too sparse to identify which vibration parameters actually work for pain**.[^4]
+
+---
+
+## How much you need to do
+
+- **20 to 50 minutes lying quietly** is what single-session singing-bowl[^3] and vibroacoustic[^4] studies tested.
+- **No evidence-backed dose exists for tissue vibration**, because clinical research has not separated mechanical tissue vibration from ordinary music listening and supine rest.[^1] The vibroacoustic scoping review likewise found research too sparse for reliable protocols.[^4]
+
+**So: if you enjoy sound baths or quiet bowl listening as an accessible way to lie still for half an hour, treat it as auditory rest — and do not pay for claims that specific Hertz frequencies target specific organs.**
+
+---
+
+## Practices that rest on it
+
+Partly: Conscious Listening · Chanting · Humming
+
+---
+
+## Where the evidence stops
+
+**Listening is routinely mislabelled as tissue therapy.** When someone lies comfortably on a mat with their eyes closed for 45 minutes listening to slow, resonant tones, the nervous system settles via auditory attention and rest — the same pathway as calm instrumental music. In the 50-person randomised trial, singing bowls were not compared against slow ambient music or quiet recorded nature sounds, so nothing isolates "bowl vibration" from peaceful listening.[^3]
+
+**Airborne acoustic waves barely enter soft tissue.** Because air and human tissue have very different acoustic densities, almost all sound energy from a bowl or gong in the room reflects off the skin surface rather than penetrating deeply into joints or organs. High-intensity medical ultrasound can transmit focused acoustic energy into tissue precisely because a gel couples a medical transducer directly to skin at megahertz frequencies — nothing like a gong or tuning fork in air.
+
+**High bias across singing-bowl trials.** Both the systematic review[^1] and the largest observational study[^2] note the lack of blinding, small sample sizes, and absence of sham-sound controls.
+
+**Unknowns:** whether placing a vibrating bowl directly on the body adds anything over listening to the same bowl across the room;[^1] whether low-frequency vibroacoustic beds offer lasting pain relief beyond the placebo and relaxation value of lying on a warm, music-playing mattress;[^4] and whether mechanical vibration alters mood differently from quiet supine rest.
+
+**And one thing to actively disbelieve:** that bowls, tuning forks or gongs vibrate cellular water into healthy alignment, clear physical blockages in organs, or deliver ancient Tibetan medical effects through "seven sacred metals." Neither the singing-bowl systematic review[^1] nor the vibroacoustic scoping review[^4] supports those claims.
+
+---
+
+## Who should be careful
+
+*The cautions below combine standard vibroacoustic safety screening with practical clinical judgements (the small relaxation trials cited here did not systematically test medically vulnerable groups).*
+
+**Implanted electronic devices, pacemakers and metal hardware.** Avoid placing vibrating bowls, tuning forks or vibroacoustic transducers directly on the body if you have a cardiac pacemaker, implanted defibrillator, neurostimulator, recent surgical implants or unhealed fractures.
+
+**Pregnancy, acute blood clots and recent surgery.** Do not use direct mechanical vibration or vibroacoustic beds over the abdomen or body during pregnancy, with suspected deep-vein thrombosis, or over fresh surgical wounds.
+
+**Sound-triggered epilepsy, tinnitus and hearing sensitivity.** Loud gongs, high-pitched quartz bowls or sudden intense chimes close to the head can trigger migraines, aggravate tinnitus or provoke discomfort in people sensitive to loud noise or sound-triggered seizures. Keep volume gentle and step out if a tone feels piercing rather than settling.
+
+---
+
+## Traditional convergence
+
+Weak. Struck bronze standing bells (*rin* in Japan, temple bowls in East Asia) have been used for centuries to mark the start and end of seated meditation and ritual chanting. That practice uses sound as an auditory signal for attention.
+
+By contrast, the popular story that "Tibetan singing bowls" are ancient monastic healing tools used to balance tissue and internal organs is a late-twentieth-century Western myth. In his comprehensive survey of Tibetan monastic music (*Tibetan Ritual Music*, 1988), ethnomusicologist Daniel Scheidegger catalogued 12 major ritual instruments and 36 minor variants — including bells, hand drums, cymbals and horns — **and recorded no singing bowls at all**.[^5] Himalayan metal bowls existed historically as household vessels rather than medical or liturgical sound instruments.[^5]
+
+You can test what is actually doing the work directly: lie flat on the floor in a quiet, warm room for 30 minutes listening to slow instrumental music or nature sounds with your eyes closed, and compare how calm your body feels against attending a singing-bowl session.
+
+---
+
+## References
+
+*APA 7th.*
+
+[^1]: Stanhope, J., & Weinstein, P. (2020). The human health effects of singing bowls: A systematic review. *Complementary Therapies in Medicine, 51*, 102412. https://doi.org/10.1016/j.ctim.2020.102412
+
+[^2]: Goldsby, T. L., Goldsby, M. E., McWalters, M., & Mills, P. J. (2017). Effects of singing bowl sound meditation on mood, tension, and well-being: An observational study. *Journal of Evidence-Based Complementary & Alternative Medicine, 22*(3), 401–406. https://doi.org/10.1177/2156587216668109
+
+[^3]: Rio-Alamos, C., Montefusco-Siegmund, R., Cañete, T., Sotomayor, J., & Fernandez-Teruel, A. (2023). Acute relaxation response induced by Tibetan singing bowl sounds: A randomized controlled trial. *European Journal of Investigation in Health, Psychology and Education, 13*(2), 317–330. https://doi.org/10.3390/ejihpe13020024
+
+[^4]: Kantor, J., Campbell, E. A., Kantorová, L., Marečková, J., Regec, V., Karasová, K., Sedláčková, D., & Klugar, M. (2022). Exploring vibroacoustic therapy in adults experiencing pain: A scoping review. *BMJ Open, 12*(4), e046591. https://doi.org/10.1136/bmjopen-2020-046591
+
+[^5]: Scheidegger, D. A. (1988). *Tibetan ritual music: A general survey with special reference to the Mindroling tradition* (*Opuscula Tibetana*, fasc. 19). Tibet-Institut.
