@@ -10,7 +10,7 @@ export const heartLever: Lever = {
     "Emotions are among the most direct expressions of how open or closed the system feels. When the emotional body is open, there is aliveness: joy, love, genuine connection, the capacity to give and receive freely. When it is closed or numbed — as it is for many people — there is a flatness that no amount of outer activity can fill.",
     "What you feel is not merely a mental event. It is a movement through the whole body. Fear contracts the chest and belly. Grief hardens them. Gratitude and love open them, allowing warmth and ease to move more freely and saturating the inner experience with a sweetness that has nothing to do with outer circumstances.",
     "By learning to work with emotions — feeling them fully, transmuting them, consciously holding specific states, and ultimately choosing the quality of your inner experience — you reshape how settled and open the system feels at a foundational level. The outer world does not need to change for this to happen. It happens from within.",
-    "The practices that follow move in a deliberate arc, from the most accessible — learning to feel safe enough to open — through to the deepest: the recognition that the lover and the beloved are one.",
+    "The practices that follow move in a deliberate arc, from the most accessible — learning to feel safe enough to open — through to the deepest, where the sense of separation between the one loving and what is loved thins.",
   ],
   practices: [
     {
@@ -311,8 +311,7 @@ export const heartLever: Lever = {
       sourceNumber: 6,
       slug: "ecstatic-chanting",
       name: "Ecstatic Chanting",
-      subtitle: "devotional alchemy",
-      essence: "Using melody, repetition, and fierce emotional intensity to override the analytical mind and open the heart completely. It does not matter what name or form you sing to — Jesus, Shiva, Mary, Krishna, Mother Earth. These are simply bridges to the Infinite. The practice depends entirely on the intensity of your devotion — transforming the heavy, gravity-bound energy of human longing into the liberating force of divine love.",
+      essence: "Using melody, repetition and sustained emotional intensity to quiet the analytical mind and open the heart. What you sing to is yours to choose — Jesus, Shiva, Mary, Krishna, the earth, or nothing named at all. The practice works on the intensity of the feeling rather than on its object.",
       mechanism: [
         "From the standpoint of felt experience, devotional chanting is an act of emotional alchemy. In the normal human condition, the separate self is driven by endless desire (Kama) — constantly projecting its longing outward, attempting to extract fulfilment from finite things. Chanting takes this exact same momentum and redirects it upward. The heartbreak, the yearning, the passion — all of it becomes fuel, burned in the fire of vocal vibration. Because the analytical mind cannot surrender to formless, abstract concepts easily, a Name or Form — a deity, a saint, a mantra — is used as a focal point. By repeating the phrase endlessly, the analytical, self-referential mind becomes hypnotised and exhausted. The repetitive vibration softens the held tightness around the chest. The singer pours their finite identity entirely into the song, until the separation between the Lover and the Beloved dissolves."
       ],
@@ -343,7 +342,7 @@ export const heartLever: Lever = {
         "non-dual-devotion"
       ],
       metaTitle: "Ecstatic Chanting — How to Practise It | Sunya",
-      metaDescription: "Using melody, repetition, and fierce emotional intensity to override the analytical mind and open the heart completely.",
+      metaDescription: "Using melody, repetition and sustained emotional intensity to quiet the analytical mind and open the heart.",
       families: ["L2", "L4"],
       directions: ["open", "reconnect"],
       problems: [],
@@ -370,8 +369,7 @@ export const heartLever: Lever = {
       sourceNumber: 7,
       slug: "surrendering",
       name: "Surrendering",
-      subtitle: "the ultimate practice",
-      essence: "Quieting the overthinking mind and calming the nervous system by surrendering completely to the present moment — to what is, and to the flow of life. An inner shift where one drops all striving, drops the need for things to be different, and begins simply allowing. The complete release of resistance.",
+      essence: "Quieting the overthinking mind and calming the nervous system by surrendering completely to the present moment — to what is actually happening, rather than to how you need it to be. An inner shift where one drops all striving, drops the need for things to be different, and begins simply allowing. The complete release of resistance.",
       mechanism: [
         "Resistance equals tension and pain; surrender equals ease and flow. Effort is usually a function of the separate self — “I must do this,” “I must control this” — which is a localised contraction that activates the survival response and shuts down the higher functions. Surrender is the relaxation of that contraction. When the “I” lets go, the body softens and opens, the parasympathetic system activates, and the whole inner system receives the signal: the war is over. You are safe. The energy that was being consumed in defence is released, and warmth or ease often rises through the chest. Because the present moment is the only thing that truly exists, surrendering to what is constitutes the most direct and immediate way to align yourself with reality — and it is also a profoundly effective tool for regulating the nervous system. (Surrender is not passivity, withdrawal, collapse, or negligence. It is non-resistance to present reality, while still acting intelligently within it.)"
       ],
@@ -411,7 +409,7 @@ export const heartLever: Lever = {
         "prayer"
       ],
       metaTitle: "Surrendering — How to Practise It | Sunya",
-      metaDescription: "Quieting the overthinking mind and calming the nervous system by surrendering completely to the present moment — to what is, and to the flow of life.",
+      metaDescription: "Quieting the overthinking mind and calming the nervous system by surrendering completely to the present moment — to what is actually happening, rather than to how you need it to be.",
       families: ["H3"],
       directions: ["soften", "release"],
       problems: [],
@@ -437,12 +435,11 @@ export const heartLever: Lever = {
     {
       sourceNumber: 8,
       slug: "non-dual-devotion",
-      name: "Non-Dual Devotion",
-      subtitle: "falling in love with life",
+      name: "Loving Life Itself",
       notes: [
         "Devotion, at its deepest, is not a practice directed outward. It is the divine glorifying its own nature through the human form — the source recognising itself within you and worshipping its own glory through you. There is no duality, no external deity separate from the one pure consciousness. All worship, at its core, is worship of the Self — of that which is already whole, already divine. When you worship a teacher or a deity, what you are truly honouring are the divine qualities they embody — qualities that already exist within you. Worship becomes a form of surrender: by bowing to the divine in them, you let go of resistance to that same divine force within yourself. Even external worship, then, serves to awaken the inner being. It is a mirror for remembrance. Worship is the act of dissolving into something greater — being absorbed in what is whole, immersed in the beauty and aliveness of your own true nature. This is the spirit in which the practice that follows is approached."
       ],
-      essence: "Falling in love with life itself — not as a religious act directed at an external deity, but as a profound, loving recognition that you are an expression of the very life you revere. The path of pure love where the Lover, the Beloved, and the act of loving dissolve into one continuous flow of presence.",
+      essence: "Directing love at life itself rather than at a deity, a person or an outcome. Practitioners describe the sense of separation between the one loving and what is loved thinning, and sometimes going altogether.",
       mechanism: [
         "Ordinary devotion often keeps the separate self intact by maintaining a gap between “me” and “the Divine.” This practice dissolves that separation entirely — between “me” and life itself. You begin to recognise the sheer magnificence of the livingness that is the ground of all being, and to treat the ordinary world not as dead matter but as a vibrating expression of pure consciousness. Meeting everything this way — a tree, the sky, another face — turns daily existence into a continuous act of worship. Not of something separate from you, but of the one universal life that dwells at the core of your own heart. As this recognition deepens, the knot of fear and isolation dissolves. The heart expands. The compulsive hunger of the separate self — its endless need to extract fulfilment from the world — is replaced by an internal saturation that needs nothing. You no longer take from the world; you overflow into it."
       ],
@@ -474,8 +471,8 @@ export const heartLever: Lever = {
         "surrendering",
         "prayer"
       ],
-      metaTitle: "Non-Dual Devotion — How to Practise It | Sunya",
-      metaDescription: "Falling in love with life itself — not as a religious act directed at an external deity, but as a profound, loving recognition that you are an expression of the very life you revere.",
+      metaTitle: "Loving Life Itself — How to Practise It | Sunya",
+      metaDescription: "Directing love at life itself rather than at a deity, a person or an outcome.",
       families: ["H1", "L2"],
       generated: {
         layersSource: "INFERRED",
@@ -496,8 +493,7 @@ export const heartLever: Lever = {
       sourceNumber: 9,
       slug: "prayer",
       name: "Prayer",
-      subtitle: "the inner command (Sankalpa)",
-      essence: "Moving beyond petitionary begging — beyond the desperate asking of a separate, frightened self. The recognition that the consciousness looking out of your eyes is the exact same unconditioned intelligence that beats your heart and sustains the cosmos. Therefore, prayer is not an external request. It is an internal command.",
+      essence: "Prayer practised as a clear statement of intent held with feeling, rather than as a request. Traditions differ sharply on what prayer is and does; this is one approach among several. (Known in the yogic traditions as sankalpa.)",
       mechanism: [
         "The separate self approaches prayer from the Extraction Economy — operating from a state of scarcity and fear, constantly begging: “Please give me money, please heal my sickness, please make them love me.” This posture broadcasts the frequency of lack, and receives more of the same in return. True prayer (Sankalpa) is the precise opposite. It is the recognition that you are not separate from the intelligence you are praying to. You are it. Prayer, understood this way, is not directed outward — it is a focused movement of consciousness itself, from within. Matter is dense energy; thought is subtle energy. When you combine a precisely focused intention with a genuine, elevated emotion — the feeling of the prayer having already been answered — the entire inner system reorganises around that coherent field. The body shifts from a state of lack to a state of fullness. From this state, you are no longer pulling against life; you are aligned with it. You act as a conscious source, not a passive recipient."
       ],
@@ -526,7 +522,7 @@ export const heartLever: Lever = {
         "non-dual-devotion"
       ],
       metaTitle: "Prayer — How to Practise It | Sunya",
-      metaDescription: "Moving beyond petitionary begging — beyond the desperate asking of a separate, frightened self.",
+      metaDescription: "Prayer practised as a clear statement of intent held with feeling, rather than as a request.",
       families: ["M1"],
       generated: {
         layersSource: "INFERRED",

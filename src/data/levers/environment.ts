@@ -16,8 +16,7 @@ export const environmentLever: Lever = {
     {
       sourceNumber: 1,
       slug: "somatic-architecture",
-      name: "Somatic Architecture",
-      subtitle: "the intimate environment",
+      name: "What You Wear",
       essence: "Auditing the most immediate layer of your physical environment — what wraps your skin all day. The practice of choosing natural, unrestrictive materials that allow the body to breathe and move without constant physical friction.",
       mechanism: [
         "Clothing is the environment closest to your skin. The conditioned self typically chooses clothing based on social validation, status, or fashion trends — entirely ignoring the physical consequences. Tight, restrictive clothing acts as a physical tourniquet, constricting the flow of blood and lymphatic fluid and creating constant low- level tension in the body. Synthetic fabrics — polyester, nylon, acrylic — are essentially plastic. They do not breathe, and they generate static electricity that interferes with the body’s natural electromagnetic field. When you wear loose-fitting, natural fibres — organic cotton, linen, silk, wool — you wear materials that were recently alive. They allow the skin to breathe, the body to regulate temperature naturally, and heat and moisture to exchange freely with the air."
@@ -45,7 +44,7 @@ export const environmentLever: Lever = {
         "spatial-alchemy",
         "vibrational-signatures"
       ],
-      metaTitle: "Somatic Architecture — How to Practise It | Sunya",
+      metaTitle: "What You Wear — How to Practise It | Sunya",
       metaDescription: "Auditing the most immediate layer of your physical environment — what wraps your skin all day.",
       families: ["P1", "P2"],
       generated: {
@@ -66,8 +65,7 @@ export const environmentLever: Lever = {
     {
       sourceNumber: 2,
       slug: "spatial-alchemy",
-      name: "Spatial Alchemy",
-      subtitle: "the home as a mirror",
+      name: "Clearing Your Space",
       essence: "Transforming your living space into an externalised reflection of a clear, settled mind. The practice of decluttering and physical purification to eliminate visual friction and the low-level restlessness that clutter produces.",
       mechanism: [
         "Your home is a macroscopic mirror of your mental body. When a room is filled with clutter, visual chaos, and unorganised objects, the brain continuously registers background disorder — keeping it in a state of subtle overload, unable to fully settle.",
@@ -97,7 +95,7 @@ export const environmentLever: Lever = {
         "vibrational-signatures",
         "atmospheric-purity"
       ],
-      metaTitle: "Spatial Alchemy — How to Practise It | Sunya",
+      metaTitle: "Clearing Your Space — How to Practise It | Sunya",
       metaDescription: "Transforming your living space into an externalised reflection of a clear, settled mind.",
       families: ["H2", "M3"],
       generated: {
@@ -122,9 +120,8 @@ export const environmentLever: Lever = {
     {
       sourceNumber: 3,
       slug: "vibrational-signatures",
-      name: "Sound Signatures",
-      subtitle: "the audit of objects",
-      essence: "Recognising that the objects around you are not emotionally neutral — and that each one carries a specific felt quality you can begin to notice if you pay close enough attention. The practice of curating your physical space so that everything in it supports openness and ease rather than stagnation, guilt, or heaviness.",
+      name: "The Objects Around You",
+      essence: "Noticing which objects in a room you are glad to see and which you avoid looking at, and clearing what consistently weighs on you.",
       mechanism: [
         "Every object in your home carries a charge — not mystically, but practically. An object carries the emotional associations you have built around it over time. A gift from a toxic relationship sits in your room broadcasting the memory of that pain. A stack of unread books makes you feel quietly guilty every time you glance at them. An ugly piece of furniture kept out of obligation radiates the quiet resentment of having accepted something you did not want. These objects silently shape the inner atmosphere of your home.",
         "Each object has its own specific felt signature — and if you pay close enough attention, you can begin to notice it directly. The practice begins with observation. Conversely, a thriving plant, a beautiful piece of art, a book you love, or an object tied to a meaningful memory generates a felt sense of warmth and expansion every time your eyes pass over it. By deliberately auditing and curating the objects in your space, you transform your home from a neutral container into an active field of support."
@@ -153,8 +150,8 @@ export const environmentLever: Lever = {
         "atmospheric-purity",
         "cultural-resonance"
       ],
-      metaTitle: "Sound Signatures — How to Practise It | Sunya",
-      metaDescription: "Recognising that the objects around you are not emotionally neutral — and that each one carries a specific felt quality you can begin to notice if you pay close enough attention.",
+      metaTitle: "The Objects Around You — How to Practise It | Sunya",
+      metaDescription: "Noticing which objects in a room you are glad to see and which you avoid looking at, and clearing what consistently weighs on you.",
       families: ["M2", "L4", "H3"],
       generated: {
         layersSource: "INFERRED",
@@ -178,8 +175,7 @@ export const environmentLever: Lever = {
     {
       sourceNumber: 4,
       slug: "atmospheric-purity",
-      name: "Atmospheric Purity",
-      subtitle: "the invisible medium",
+      name: "Air, Light and Sound",
       essence: "Controlling the microscopic and acoustic inputs of your environment. The practice of ensuring the air, light, and soundscape of your home actively support biological thriving and a settled nervous system rather than silently draining them.",
       mechanism: [
         "You are constantly ingesting your environment through every sense. If you live in a space with toxic air, harsh fluorescent lighting, and the constant irregular noise of traffic or machinery, your nervous system is absorbing this as a continuous baseline of low-grade stress. The immune system and the nervous system both burn significant resources simply fighting the invisible burden of a polluted environment — leaving less available for everything else."
@@ -208,7 +204,7 @@ export const environmentLever: Lever = {
         "cultural-resonance",
         "navigating-shared-frequencies"
       ],
-      metaTitle: "Atmospheric Purity — How to Practise It | Sunya",
+      metaTitle: "Air, Light and Sound — How to Practise It | Sunya",
       metaDescription: "Controlling the microscopic and acoustic inputs of your environment.",
       families: ["H1", "L1"],
       generated: {
@@ -233,9 +229,8 @@ export const environmentLever: Lever = {
     {
       sourceNumber: 5,
       slug: "cultural-resonance",
-      name: "Cultural Resonance",
-      subtitle: "the macro-environment",
-      essence: "Evaluating the collective mindset and energy of your geographical location — and recognising when the environment itself is fundamentally misaligned with your nature, requiring a complete geographic change.",
+      name: "Where You Live",
+      essence: "Assessing whether the place you live actually suits you — its pace, its values, what it rewards — and recognising when the honest answer is to move.",
       mechanism: [
         "The people, history, and culture of a specific city or region create a powerful collective field. The dominant values, pace, and emotional baseline of your local culture are the water you swim in every day — invisible, ambient, and continuously shaping your nervous system’s default state. If you are attempting to build a life of inner peace, authenticity, and genuine growth, but live in a culture driven by chronic competition, anxiety, and consumption, the friction is continuous and largely invisible. The nervous system must constantly expend energy maintaining its baseline against the pull of the collective field. Over time, this wears you down in ways that are difficult to identify — because the source of the friction is everywhere, all at once."
       ],
@@ -260,8 +255,8 @@ export const environmentLever: Lever = {
         "navigating-shared-frequencies",
         "consecrated-spaces"
       ],
-      metaTitle: "Cultural Resonance — How to Practise It | Sunya",
-      metaDescription: "Evaluating the collective mindset and energy of your geographical location — and recognising when the environment itself is fundamentally misaligned with your nature, requiring a complete geographic change.",
+      metaTitle: "Where You Live — How to Practise It | Sunya",
+      metaDescription: "Assessing whether the place you live actually suits you — its pace, its values, what it rewards — and recognising when the honest answer is to move.",
       families: ["H1", "L1", "H2", "M1"],
       generated: {
         layersSource: "INFERRED",
@@ -285,8 +280,7 @@ export const environmentLever: Lever = {
     {
       sourceNumber: 6,
       slug: "navigating-shared-frequencies",
-      name: "Navigating Shared Frequencies",
-      subtitle: "the multi-agent environment",
+      name: "Living Among Others",
       essence: "Maintaining your inner steadiness when living or working with others whose habits, stress, and unconscious patterns are continuously imposing on the shared space.",
       mechanism: [
         "You rarely control 100% of your environment. You share spaces with roommates, family members, or coworkers who act as independent agents — often projecting their stress, messiness, and emotional states into the shared field. If you fight this reality with constant resistance and resentment, you damage your own system more than the environment does. The key is a set of strategic, non-reactive approaches that allow you to maintain your inner stability without requiring the external world to change."
@@ -317,7 +311,7 @@ export const environmentLever: Lever = {
         "cultural-resonance",
         "consecrated-spaces"
       ],
-      metaTitle: "Navigating Shared Frequencies — How to Practise It | Sunya",
+      metaTitle: "Living Among Others — How to Practise It | Sunya",
       metaDescription: "Maintaining your inner steadiness when living or working with others whose habits, stress, and unconscious patterns are continuously imposing on the shared space.",
       families: ["H3", "H1", "L2", "M1"],
       generated: {
@@ -338,8 +332,7 @@ export const environmentLever: Lever = {
     {
       sourceNumber: 7,
       slug: "consecrated-spaces",
-      name: "Consecrated Spaces",
-      subtitle: "ancient charging stations",
+      name: "Places of Stillness",
       essence: "Immersing the body and nervous system in deliberately engineered environments of deep stillness and concentrated presence. The practice of utilising ancient technologies of consecration to settle and lift the inner system without relying entirely on personal mental effort.",
       mechanism: [
         "Most modern spaces feel chaotic — saturated with the hurry and unconsciousness of daily life. But ancient spiritual sciences understood how to take physical matter — stone, specific geometry, and certain metals — and shape an environment that constantly holds a state of deep stillness and settled presence. This is the science of consecration. True temples, ancient churches, historic mosques, and consecrated yogic spaces were not originally designed as places of intellectual belief. They were engineered as public charging stations for the human nervous system. Through specific materials, acoustics, and deliberate geometric form, the quality of a space was amplified and held steady. When a contracted, depleted nervous system enters such a space, the biological law of entrainment takes over — without any effort, the nervous system begins to synchronise with the profound stillness of the environment. The space does the work for you."
@@ -366,7 +359,7 @@ export const environmentLever: Lever = {
       relatedPractices: [
         "navigating-shared-frequencies"
       ],
-      metaTitle: "Consecrated Spaces — How to Practise It | Sunya",
+      metaTitle: "Places of Stillness — How to Practise It | Sunya",
       metaDescription: "Immersing the body and nervous system in deliberately engineered environments of deep stillness and concentrated presence.",
       families: ["L1"],
       generated: {
