@@ -17,6 +17,7 @@ import socialConnectionAndIsolation from "./social-connection-and-isolation.cont
 import affectiveTouchAndCoRegulation from "./affective-touch-and-co-regulation.content";
 import prosocialBehaviourAndVolunteering from "./prosocial-behaviour-and-volunteering.content";
 import forgiveness from "./forgiveness.content";
+import religiousAndDevotionalPractice from "./religious-and-devotional-practice.content";
 
 export type MechanismStatus = "complete" | "planned";
 
@@ -301,8 +302,14 @@ export const EVIDENCE_MECHANISMS: EvidenceMechanism[] = [
     slug: "religious-and-devotional-practice",
     title: "Religious and devotional practice",
     group: "emotion-and-relationship",
-    status: "planned",
-    description: "Not yet researched.",
+    status: "complete",
+    reviewDate: "November 2026",
+    researchGrade:
+      "Moderate for longitudinal associations between public religious participation, lower mortality, lower suicide rates and small mental-health gains, Preliminary for private prayer on its own",
+    traditionalGrade: "Very strong",
+    description:
+      "Communal worship and devotion — survival and mental-health associations, faith-adapted therapy, and where private prayer and distant intercession fall short.",
+    markdown: withNormalizedGrades(religiousAndDevotionalPractice),
   },
   {
     slug: "circadian-light-exposure-and-entrainment",

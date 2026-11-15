@@ -131,7 +131,7 @@ Pages carry the date they were last reviewed. Evidence changes; an undated page 
 - ● Affective touch and co-regulation
 - ● Prosocial behaviour and volunteering
 - ● Forgiveness
-- ○ Religious and devotional practice
+- ● Religious and devotional practice
 
 **Body and lifestyle**
 - ○ Circadian light exposure and entrainment
