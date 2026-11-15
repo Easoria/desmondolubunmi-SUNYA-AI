@@ -22,6 +22,7 @@ import circadianLightExposureAndEntrainment from "./circadian-light-exposure-and
 import sleepBehaviour from "./sleep-behaviour.content";
 import financialSecurityAndScarcity from "./financial-security-and-scarcity.content";
 import movementMobilityAndExerciseTiming from "./movement-mobility-and-exercise-timing.content";
+import skillMasteryAndSelfEfficacy from "./skill-mastery-and-self-efficacy.content";
 
 export type MechanismStatus = "complete" | "planned";
 
@@ -434,8 +435,14 @@ export const EVIDENCE_MECHANISMS: EvidenceMechanism[] = [
     slug: "skill-mastery-and-self-efficacy",
     title: "Skill mastery and self-efficacy",
     group: "material-conditions",
-    status: "planned",
-    description: "Not yet researched.",
+    status: "complete",
+    reviewDate: "November 2026",
+    researchGrade:
+      "Strong for behavioral activation on depression and experimental self-efficacy gains on health behaviour, Moderate for deliberate practice and work performance correlations, Preliminary for standalone confidence interventions on complex real-world jobs",
+    traditionalGrade: "Very strong",
+    description:
+      "Mastery experiences and task-specific self-efficacy — behavioral activation, deliberate practice limits, and why pep talks are not enough.",
+    markdown: withNormalizedGrades(skillMasteryAndSelfEfficacy),
   },
   {
     slug: "work-and-values-congruence",
