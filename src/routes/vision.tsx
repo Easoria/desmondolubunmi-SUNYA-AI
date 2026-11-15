@@ -25,17 +25,37 @@ function VisionPage() {
       <Nav />
       <Breadcrumb />
 
-      <section className="relative overflow-hidden pb-20 pt-16 sm:pb-28">
-        <Starfield density={1.2} />
-        <div className="relative z-10 mx-auto max-w-3xl px-6">
-          <div className="text-center">
-            <div className="label-eyebrow">The mission</div>
-            <h1 className="display mt-6 text-4xl text-white sm:text-6xl">
-              The Sunya Vision
-            </h1>
-          </div>
+      {/* Hero — restored header design */}
+      <section className="relative overflow-hidden pb-32 pt-16">
+        <Starfield density={1.8} />
+        <div
+          className="absolute left-1/2 top-1/2 h-[700px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-40 spin-slow"
+          style={{
+            background:
+              "radial-gradient(circle at 35% 35%, #2e6db4 0%, #1a1530 40%, transparent 70%)",
+            boxShadow: "0 0 200px 60px rgba(126,200,227,0.2)",
+          }}
+        />
+        <div
+          className="absolute right-[5%] top-[20%] h-72 w-72 rounded-full opacity-30"
+          style={{
+            background: "radial-gradient(circle, #a85a8c 0%, transparent 70%)",
+            filter: "blur(40px)",
+          }}
+        />
+        <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
+          <div className="label-eyebrow">The mission</div>
+          <h1 className="display mt-6 text-5xl text-white sm:text-7xl">
+            The Sunya
+            <br />
+            <span className="display-italic text-[#b8d4e8]">Vision.</span>
+          </h1>
+        </div>
+      </section>
 
-          <div className="mt-12 space-y-7 text-[15px] leading-8 text-[#b8d4e8] sm:text-base sm:leading-8">
+      <section className="relative bg-[#0a1628] py-28">
+        <div className="relative z-10 mx-auto max-w-3xl px-6">
+          <div className="space-y-7 text-[15px] leading-8 text-[#b8d4e8] sm:text-base sm:leading-8">
             <p>
               We have developed the external world enormously, through scientific and
               technological advancement. Inwardly, we remain largely underdeveloped. We still
