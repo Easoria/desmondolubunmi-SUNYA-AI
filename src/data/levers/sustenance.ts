@@ -15,10 +15,10 @@ export const sustenanceLever: Lever = {
   ],
   practices: [
     {
+      sourceNumber: 1,
       slug: "the-master-code-of-abundance",
-      name: "The Code of Abundance",
-      subtitle: "the conduit principle",
-      essence: "The absolute, timeless framework for achieving limitless sustenance. The recognition that true abundance is not amassed through aggressive extraction, but guaranteed by becoming an indispensable, frictionless conduit for the expansion of the whole.",
+      name: "How You Think About Money",
+      essence: "The idea the rest of this lever rests on: earning follows from being useful to other people. That is not a guarantee, and luck and circumstance matter enormously — but it is a better place to put your attention than chasing or hoarding.",
       mechanism: [
         "Understand the human network as a giant biological organism. In a physical",
         "body, which blood vessel receives the most blood, oxygen, and nutrients? The main arteries. Why? Because they are the conduits responsible for sustaining the rest of the system. A cell that tries to hoard resources for itself is starved, or treated as a cancer. But a vessel that efficiently moves vitality to the rest of the body is continuously flooded with maximum resources by the innate intelligence of the system. The universal law of abundance is this: the ecosystem infinitely funds whatever serves its own expansion. If your goal is merely to pay your own bills and protect your isolated self, you will only ever receive the baseline sustenance of a single, small unit. But when you expand your scope of responsibility — when you position yourself to solve massive friction, elevate consciousness, or provide immense value for the collective — the conditions become overwhelmingly favourable for life to route enormous energy through you. You do not chase abundance; you build the conditions that make it natural. The three timeless principles: Deep competence. You cannot be a massive conduit if your instrument is narrow or broken. You must forge a profound, undeniable competence in your chosen domain. Whether you are building software, creating art, healing trauma, or organizing logistics, you must eliminate the friction in your craft until you operate at the level of genuine excellence. The human ecosystem ignores mediocrity — it gravitates toward, and rewards, genuine skill. Infinite Leverage. You will never achieve abundant sustenance if your income is permanently tied to your physical exhaustion — trading one hour of time for one unit of survival. Build systems, write code, create media, design products, lead teams. Create a solution once and allow it to serve thousands or millions of people. Leverage is what transforms a small stream into an ocean. The Frictionless State. This is the ultimate key. Money and resources are forms of energy, and energy flows away from desperation. If you build while terrified of poverty, the frequency you broadcast repels the very abundance you seek. Pursue massive value creation from a state of Internal Saturation — working with fierce ambition but with zero desperate attachment to the outcome. The guaranteed formula: Deep competence + Infinite Leverage + Frictionless State. When the Wave executes all three from a place of genuine service to the Water, the universe does not merely sustain it — it makes it an artery."
@@ -49,8 +49,8 @@ export const sustenanceLever: Lever = {
         "decoding-money-and-value",
         "mastery-of-the-instrument"
       ],
-      metaTitle: "The Code of Abundance — How to Practise It | Sunya",
-      metaDescription: "The absolute, timeless framework for achieving limitless sustenance.",
+      metaTitle: "How You Think About Money — How to Practise It | Sunya",
+      metaDescription: "Earning follows from being useful to other people. That is not a guarantee, and luck and circumstance matter enormously.",
       families: ["H1", "L1", "M4"],
       generated: {
         layersSource: "INFERRED",
@@ -68,11 +68,10 @@ export const sustenanceLever: Lever = {
       }
     },
     {
-      sourceNumber: 1,
+      sourceNumber: 2,
       slug: "decoding-money-and-value",
-      name: "Decoding Money and Value",
-      subtitle: "the currency of value",
-      essence: "Stripping away the fear, greed, and illusion surrounding money — and recognising it for what it actually is: the physical manifestation of exchanged value and human effort within the network.",
+      name: "What Money Is",
+      essence: "Stripping away the fear and confusion around money and seeing what it actually is: a record of value exchanged between people.",
       mechanism: [
         "The ego views money as a scarce, solid object to be hoarded or hunted. This generates chronic friction and the anxiety of scarcity. The illusion must be broken. Money is not paper or digital numbers. It is a placeholder for human effort and care. When someone has a problem, an unfulfilled need, or a desire for beauty — they carry a felt gap. When you step in and solve that problem, build that shelter, or provide that nourishment, you are transmitting your intelligence and vital energy to fill their void. Because you expended your energy to create value for them, the human network hands you a certificate of stored energy — money — in return. The code of sustenance is this: you do not “make” money. You generate value. If you output undeniable, high-quality value into the human network, the network will, in the overwhelming majority of cases, sustain you in return."
       ],
@@ -97,8 +96,8 @@ export const sustenanceLever: Lever = {
         "mastery-of-the-instrument",
         "the-economics-of-simplicity"
       ],
-      metaTitle: "Decoding Money and Value — How to Practise It | Sunya",
-      metaDescription: "Stripping away the fear, greed, and illusion surrounding money — and recognising it for what it actually is: the physical manifestation of exchanged value and human effort within the network.",
+      metaTitle: "What Money Is — How to Practise It | Sunya",
+      metaDescription: "Stripping away the fear and confusion around money and seeing what it actually is: a record of value exchanged between people.",
       families: ["H1"],
       generated: {
         layersSource: "INFERRED",
@@ -120,11 +119,10 @@ export const sustenanceLever: Lever = {
       }
     },
     {
-      sourceNumber: 2,
+      sourceNumber: 3,
       slug: "mastery-of-the-instrument",
-      name: "Craft of the Instrument",
-      subtitle: "skill as the conduit",
-      essence: "Acquiring and relentlessly sharpening a practical, high-leverage skill to interface with the physical arena with ease. The practice of turning the human machine into an undeniable asset to the ecosystem.",
+      name: "Building Skill",
+      essence: "Acquiring a practical skill other people need, then sharpening it for years. The most reliable route to a stable floor, and the slowest.",
       mechanism: [
         "Being spiritually awake, loving, or deeply conscious does not exempt you from the laws of physics or the Biological Tax. The infinite Water must still operate through the finite Wave. To harvest sustenance effortlessly, the Wave must possess a sharp instrument. Think of the human network as a giant puzzle. If you do not possess a defined skill — coding, building, healing, designing, communicating — you are a puzzle piece with no defined edges. The network does not know where to place you, so it does not feed you. But",
         "when you become skilled at a craft, you become an efficient conduit: you can generate enormous value with relatively little effort, securing abundant sustenance with a fraction of the time and stress of someone operating without clear skill."
@@ -150,8 +148,8 @@ export const sustenanceLever: Lever = {
         "the-economics-of-simplicity",
         "right-livelihood"
       ],
-      metaTitle: "Craft of the Instrument — How to Practise It | Sunya",
-      metaDescription: "Acquiring and relentlessly sharpening a practical, high-leverage skill to interface with the physical arena with ease.",
+      metaTitle: "Building Skill — How to Practise It | Sunya",
+      metaDescription: "Acquiring a practical skill other people need, then sharpening it for years. The most reliable route to a stable floor, and the slowest.",
       families: ["L1"],
       generated: {
         layersSource: "INFERRED",
@@ -173,11 +171,11 @@ export const sustenanceLever: Lever = {
       }
     },
     {
-      sourceNumber: 3,
+      sourceNumber: 4,
       slug: "the-economics-of-simplicity",
-      name: "The Economics of Simplicity",
+      name: "Spending Less",
       subtitle: "lowering the biological tax",
-      essence: "Mastering the outflow of your stored energy. Breaking free from the trap of endless consumerism to achieve immediate financial, biological, and practical sovereignty.",
+      essence: "Lowering what your life costs to run. Every euro you do not need is a euro you do not have to earn, and the drop in pressure is immediate.",
       mechanism: [
         "The equation of sustenance has two sides: generation and consumption. Most people focus entirely on increasing generation while allowing consumption to expand in lockstep — a pattern called lifestyle inflation. The ego attempts to fill its inner void through constant acquisition of finite physical objects. When you continuously buy things you do not need to impress people you do not know, you artificially inflate your own Biological Tax. Every unnecessary subscription, luxury payment, or impulse purchase is a chain tying your vitality to the financial grindstone. When you radically lower your cost of living and embrace physical simplicity, you instantly reduce the baseline pressure on your nervous system. You achieve abundance not by acquiring the whole world, but by requiring very little of it."
       ],
@@ -202,8 +200,8 @@ export const sustenanceLever: Lever = {
         "right-livelihood",
         "the-ecosystem-trust"
       ],
-      metaTitle: "The Economics of Simplicity — How to Practise It | Sunya",
-      metaDescription: "Mastering the outflow of your stored energy.",
+      metaTitle: "Spending Less — How to Practise It | Sunya",
+      metaDescription: "Lowering what your life costs to run. Every euro you do not need is a euro you do not have to earn.",
       families: ["H1", "H2", "M4"],
       generated: {
         layersSource: "INFERRED",
@@ -225,11 +223,10 @@ export const sustenanceLever: Lever = {
       }
     },
     {
-      sourceNumber: 4,
+      sourceNumber: 5,
       slug: "right-livelihood",
       name: "Right Livelihood",
-      subtitle: "aligning income with integrity",
-      essence: "Ensuring the method by which you gather sustenance does not poison the inner system. The practice of aligning daily work with the highest principles of unconditioned intelligence.",
+      essence: "Making sure how you earn does not cost you something worse. Work that requires you to act against your own judgement extracts a price no amount of money covers.",
       mechanism: [
         "While money itself is a neutral energy, the action used to acquire it is not. If you generate sustenance through manipulation, deceit, exploiting the vulnerable, or destroying the environment, you are operating from the darkest dimension of the survival instinct. Even if this generates significant financial wealth, it destroys the human machine from the inside out. Actions of this kind create a persistent knot of subconscious guilt and shame in the heart — and block the clear perception needed to navigate life from a place of genuine intelligence. You cannot build a clear, open inner life if you spend eight hours a day harming the human network. The generation of sustenance must be clean for the ascent to be real."
       ],
@@ -254,7 +251,7 @@ export const sustenanceLever: Lever = {
         "the-ecosystem-trust"
       ],
       metaTitle: "Right Livelihood — How to Practise It | Sunya",
-      metaDescription: "Ensuring the method by which you gather sustenance does not poison the inner system.",
+      metaDescription: "Making sure how you earn does not cost you something worse. Work that requires you to act against your own judgement extracts a price no amount of money covers.",
       families: ["M2", "M1"],
       generated: {
         layersSource: "INFERRED",
@@ -272,11 +269,10 @@ export const sustenanceLever: Lever = {
       }
     },
     {
-      sourceNumber: 5,
+      sourceNumber: 6,
       slug: "the-ecosystem-trust",
-      name: "The Ecosystem Trust",
-      subtitle: "surrendering the survival panic",
-      essence: "The ultimate shift in the relationship with sustenance: moving from the terrified, grasping energy of scarcity into the relaxed, magnetic frequency of absolute trust in the intelligence of life.",
+      name: "Easing Money Fear",
+      essence: "Scarcity fear outlasts the actual scarcity, and it distorts decisions long after the danger has passed. This is the work of noticing that, and acting from assessment rather than panic.",
       mechanism: [
         "When you operate from scarcity, the ego generates catastrophic hallucinations about the future — bankruptcy, homelessness, starvation. This state of panic does not merely feel bad. It physiologically shuts down the brain’s capacity for clear perception. The brain’s filtering system, overwhelmed by the alarm signal of survival terror, literally cannot process the opportunities, resources, and connections sitting right in front of you. Panic is not only uncomfortable — it is functionally blind. Look at the forest. The intelligence of life inherently sustains its creations. Every organism that operates within its natural role is provided for. When you finally drop the survival panic, the tightness that contracted around it begins to open. The heavy, localised tension of the anxious self relaxes. By moving from desperate grasping to peaceful, clear-eyed receptivity, you stop repelling sustenance and begin receiving it. You realise that you are an integral, necessary part of the cosmos — and the cosmos does not starve its own vital organs."
       ],
@@ -299,8 +295,8 @@ export const sustenanceLever: Lever = {
       relatedPractices: [
         "right-livelihood"
       ],
-      metaTitle: "The Ecosystem Trust — How to Practise It | Sunya",
-      metaDescription: "The ultimate shift in the relationship with sustenance: moving from the terrified, grasping energy of scarcity into the relaxed, magnetic frequency of absolute trust in the intelligence of life.",
+      metaTitle: "Easing Money Fear — How to Practise It | Sunya",
+      metaDescription: "Scarcity fear outlasts the actual scarcity, and it distorts decisions long after the danger has passed.",
       families: ["H1", "H4"],
       generated: {
         layersSource: "INFERRED",
