@@ -9,12 +9,9 @@ export const SUNDAY_SESSION_MINUTE = 0;
 /** Shown length for calendar entries; the live session is about 60–90 minutes. */
 export const SUNDAY_SESSION_DURATION_MINUTES = 90;
 
-/**
- * EDIT WEEKLY — shown as “This week: …” under the subtitle on /gatherings.
- * Leave empty to hide the line completely.
- */
-export const THIS_WEEKS_THEME =
-  "Stillness and compassion, quieting the mind and opening the heart";
+/** Permanent session format line — no weekly upkeep. */
+export const SESSION_FORMAT_LINE =
+  "Each session: a short teaching, a guided practice, and time for questions";
 
 export type DublinParts = {
   year: number;

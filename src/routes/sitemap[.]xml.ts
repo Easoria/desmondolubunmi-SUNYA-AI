@@ -27,7 +27,6 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/privacy", lastmod: generatedAt, changefreq: "yearly", priority: "0.5" },
           { path: "/terms", lastmod: generatedAt, changefreq: "yearly", priority: "0.5" },
           { path: "/gatherings", lastmod: generatedAt, changefreq: "weekly", priority: "0.8" },
-          { path: "/writing", lastmod: generatedAt, changefreq: "weekly", priority: "0.7" },
           { path: "/problems", lastmod: generatedAt, changefreq: "weekly", priority: "0.9" },
           { path: "/framework", lastmod: generatedAt, changefreq: "monthly", priority: "0.9" },
         ];
@@ -54,25 +53,6 @@ export const Route = createFileRoute("/sitemap.xml")({
           })),
         ]);
 
-        let articles: Array<{ slug: string; published_at: string | null; updated_at: string | null }> =
-          [];
-        try {
-          const { data } = await supabaseAdmin
-            .from("articles")
-            .select("slug, published_at, updated_at")
-            .eq("published", true);
-          articles = data ?? [];
-        } catch (error) {
-          console.warn("Sitemap: skipping writing article fetch due to missing Supabase admin env.", error);
-        }
-
-        const dynamic: SitemapEntry[] = articles.map((a) => ({
-          path: `/writing/${a.slug}`,
-          lastmod: (a.updated_at ?? a.published_at ?? generatedAt) as string,
-          changefreq: "monthly",
-          priority: "0.7",
-        }));
-
         let gatherings: Array<{ slug: string; updated_at: string | null; starts_at: string }> = [];
         try {
           const { data } = await supabaseAdmin
@@ -95,7 +75,6 @@ export const Route = createFileRoute("/sitemap.xml")({
           ...staticEntries,
           ...familyProblemEntries,
           ...practiceEntries,
-          ...dynamic,
           ...gatheringEntries,
         ];
 

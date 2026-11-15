@@ -78,19 +78,13 @@ function GatheringsIndexPage() {
     staleTime: 60_000,
   });
 
-  const { upcoming, past } = useMemo(() => {
+  const upcoming = useMemo(() => {
     const now = new Date();
-    const up = gatherings
+    return gatherings
       .filter((g) => isGatheringUpcoming(g, now))
       .sort(
         (a, b) => new Date(a.starts_at).getTime() - new Date(b.starts_at).getTime(),
       );
-    const pastItems = gatherings
-      .filter((g) => !isGatheringUpcoming(g, now))
-      .sort(
-        (a, b) => new Date(b.starts_at).getTime() - new Date(a.starts_at).getTime(),
-      );
-    return { upcoming: up, past: pastItems };
   }, [gatherings]);
 
   return (
@@ -119,8 +113,8 @@ function GatheringsIndexPage() {
             <div className="mt-10">
               <p className="text-center text-lg text-white">Nothing scheduled right now.</p>
               <p className="mx-auto mt-4 max-w-xl text-center text-sm leading-relaxed text-[#b8d4e8]">
-                Gatherings happen roughly monthly, in Dublin and online. Leave your email and
-                you'll hear when the next one is announced.
+                Gatherings happen occasionally, in Dublin and online. Leave your email and you will
+                hear when the next one is announced.
               </p>
               <div className="mt-8">
                 <GatheringInterestCapture />
@@ -133,24 +127,17 @@ function GatheringsIndexPage() {
               ))}
             </div>
           )}
-        </section>
 
-        {upcoming.length > 0 ? (
-          <section className="mt-16">
-            <GatheringInterestCapture />
-          </section>
-        ) : null}
-
-        {past.length > 0 ? (
-          <section className="mt-20">
-            <div className="label-eyebrow">Past gatherings</div>
-            <div className="mt-6 border-t border-white/10">
-              {past.map((g) => (
-                <GatheringCard key={g.id} gathering={g} dimmed />
-              ))}
+          {upcoming.length > 0 ? (
+            <div className="mt-16">
+              <GatheringInterestCapture />
             </div>
-          </section>
-        ) : null}
+          ) : null}
+
+          <p className="mt-14 text-center text-sm text-[#b8d4e8]/80">
+            Previous gatherings have been held in Phoenix Park and online.
+          </p>
+        </section>
 
         <p className="mt-16 text-center text-sm text-[#b8d4e8]/80">
           To reach Desmond directly,{" "}
