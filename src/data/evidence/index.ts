@@ -21,6 +21,7 @@ import religiousAndDevotionalPractice from "./religious-and-devotional-practice.
 import circadianLightExposureAndEntrainment from "./circadian-light-exposure-and-entrainment.content";
 import sleepBehaviour from "./sleep-behaviour.content";
 import financialSecurityAndScarcity from "./financial-security-and-scarcity.content";
+import movementMobilityAndExerciseTiming from "./movement-mobility-and-exercise-timing.content";
 
 export type MechanismStatus = "complete" | "planned";
 
@@ -344,8 +345,14 @@ export const EVIDENCE_MECHANISMS: EvidenceMechanism[] = [
     slug: "movement-mobility-and-exercise-timing",
     title: "Movement, mobility and exercise timing",
     group: "body-and-lifestyle",
-    status: "planned",
-    description: "Not yet researched.",
+    status: "complete",
+    reviewDate: "November 2026",
+    researchGrade:
+      "Strong for depression, anxiety, all-cause mortality and joint range of motion, Moderate for post-meal walking breaks and evening exercise timing",
+    traditionalGrade: "Very strong",
+    description:
+      "Daily movement, mobility and workout timing — mood and longevity gains, post-meal walking breaks, and why stretching alone does not prevent injury.",
+    markdown: withNormalizedGrades(movementMobilityAndExerciseTiming),
   },
   {
     slug: "progressive-muscle-relaxation-and-stillness",
