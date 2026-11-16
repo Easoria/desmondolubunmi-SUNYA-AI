@@ -6,6 +6,8 @@
 
 **Traditional convergence — Very strong** *(central to Buddhist, Vedantic and Stoic practice independently, over two thousand years)*.
 
+> **Depth 1 of 4 in [Quieting repetitive thought](/evidence/quieting-repetitive-thought).** This is the entry point of the family, and the best-evidenced step in it. Below it: interrupting the loop, quieting the commentary about yourself, and awareness without thought — the same move applied further in, with the evidence thinning as you go. The gradient is set out on the family page.
+
 > **In short:** learning to see a thought as a passing mental event rather than as the truth about you is one of the most reliably trainable skills in psychology, and one of the best evidenced.[^4] It roughly halves the chance of falling back into depression,[^1] it strips negative thoughts of their believability within a single session of training,[^4] and it appears to break the link by which rumination turns into depression.[^5] Three separate families of therapy — cognitive, mindfulness-based and acceptance-based — all produce large gains in it.[^4]
 
 ---
