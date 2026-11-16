@@ -5,6 +5,7 @@ import sustainedVocalisation from "./sustained-vocalisation.content";
 import meditation from "./meditation.content";
 import decentering from "./decentering.content";
 import selfReferentialProcessing from "./self-referential-processing.content";
+import awarenessWithoutThought from "./awareness-without-thought.content";
 import interoceptionAndBodyScan from "./interoception-and-body-scan.content";
 import expressiveWriting from "./expressive-writing.content";
 import musicAndDeliberatelyChosenSound from "./music-and-deliberately-chosen-sound.content";
@@ -258,11 +259,16 @@ export const EVIDENCE_MECHANISMS: EvidenceMechanism[] = [
   },
   {
     slug: "awareness-without-thought",
-    title: "Awareness without thought — in preparation.",
+    title: "Awareness without thought",
     group: "attention-and-cognition",
-    status: "planned",
+    status: "complete",
+    reviewDate: "November 2026",
+    researchGrade:
+      "Preliminary for the phenomenology, case-study level for the physiology, Outside the reach of these methods for whether the state is what the traditions say it is",
+    traditionalGrade: "Very strong",
     description:
-      "Pending research. The fourth depth in Quieting repetitive thought — what remains when the commentary stops.",
+      "The deep end of Quieting repetitive thought — a describable profile, small-sample physiology, and why the question is partly outside these methods.",
+    markdown: withNormalizedGrades(awarenessWithoutThought),
   },
   {
     slug: "interoception-and-body-scan",
