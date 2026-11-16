@@ -1,12 +1,39 @@
 import type { Components } from "react-markdown";
+import type { ReactNode } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { Link } from "@tanstack/react-router";
 import { normalizeGradeLines } from "@/data/evidence";
 
+function childrenToText(children: ReactNode): string {
+  if (children == null || typeof children === "boolean") return "";
+  if (typeof children === "string" || typeof children === "number") return String(children);
+  if (Array.isArray(children)) return children.map(childrenToText).join("");
+  if (typeof children === "object" && "props" in children) {
+    return childrenToText((children as { props?: { children?: ReactNode } }).props?.children);
+  }
+  return "";
+}
+
+function slugifyHeading(children: ReactNode): string {
+  return childrenToText(children)
+    .toLowerCase()
+    .replace(/[^\w\s-]/g, "")
+    .trim()
+    .replace(/[\s_]+/g, "-")
+    .replace(/-+/g, "-");
+}
+
 const components: Components = {
   a: ({ href, children }) => {
     if (!href) return <span>{children}</span>;
+    if (href.startsWith("/") && href.includes("#")) {
+      return (
+        <a href={href} className="text-[#7ec8e3] underline underline-offset-2 hover:text-white">
+          {children}
+        </a>
+      );
+    }
     if (href.startsWith("/")) {
       return (
         <Link to={href} className="text-[#7ec8e3] underline underline-offset-2 hover:text-white">
@@ -50,15 +77,30 @@ const components: Components = {
     </blockquote>
   ),
   hr: () => <hr className="my-10 border-white/10" />,
-  h1: ({ children }) => (
-    <h1 className="display mt-0 scroll-mt-28 text-4xl text-white sm:text-5xl">{children}</h1>
-  ),
-  h2: ({ children }) => (
-    <h2 className="display mt-12 scroll-mt-28 text-2xl text-white sm:text-3xl">{children}</h2>
-  ),
-  h3: ({ children }) => (
-    <h3 className="display mt-8 scroll-mt-28 text-xl text-white sm:text-2xl">{children}</h3>
-  ),
+  h1: ({ children }) => {
+    const id = slugifyHeading(children);
+    return (
+      <h1 id={id || undefined} className="display mt-0 scroll-mt-28 text-4xl text-white sm:text-5xl">
+        {children}
+      </h1>
+    );
+  },
+  h2: ({ children }) => {
+    const id = slugifyHeading(children);
+    return (
+      <h2 id={id || undefined} className="display mt-12 scroll-mt-28 text-2xl text-white sm:text-3xl">
+        {children}
+      </h2>
+    );
+  },
+  h3: ({ children }) => {
+    const id = slugifyHeading(children);
+    return (
+      <h3 id={id || undefined} className="display mt-8 scroll-mt-28 text-xl text-white sm:text-2xl">
+        {children}
+      </h3>
+    );
+  },
 };
 
 export function EvidenceMarkdown({ markdown }: { markdown: string }) {
