@@ -4,6 +4,7 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { Link } from "@tanstack/react-router";
 import { normalizeGradeLines } from "@/data/evidence";
+import { withMappedPracticeLinks } from "@/data/evidence/practice-mechanism-map";
 
 function childrenToText(children: ReactNode): string {
   if (children == null || typeof children === "boolean") return "";
@@ -103,8 +104,18 @@ const components: Components = {
   },
 };
 
-export function EvidenceMarkdown({ markdown }: { markdown: string }) {
-  const source = normalizeGradeLines(markdown);
+export function EvidenceMarkdown({
+  markdown,
+  mechanismSlug,
+}: {
+  markdown: string;
+  /** When set, replaces the Practices that rest on it list from SPEC 47. */
+  mechanismSlug?: string;
+}) {
+  const mapped = mechanismSlug
+    ? withMappedPracticeLinks(markdown, mechanismSlug)
+    : markdown;
+  const source = normalizeGradeLines(mapped);
   return (
     <div className="prose-article evidence-prose">
       <ReactMarkdown remarkPlugins={[remarkGfm]} components={components}>

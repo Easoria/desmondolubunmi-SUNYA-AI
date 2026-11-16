@@ -26,6 +26,76 @@ import {
 } from "@/lib/seo";
 import { FAMILY_STATE_COLOUR, getWhatItsForTags, TAGGABLE_LEVER_SLUGS, toPublicLever, toPublicPractice } from "@/lib/family-labels";
 import { problemTagLinkState, rememberProblemBackOrigin } from "@/lib/problem-back";
+import {
+  getPracticeEvidence,
+  type PracticeMechanismLink,
+} from "@/data/evidence/practice-mechanism-map";
+
+const NOTHING_FOUND_NOTE =
+  "no supporting research found; this practice is carried on tradition and your own trial";
+
+function honestyNoteFor(link: PracticeMechanismLink): string | null {
+  if (link.honesty === "custom") return link.honestyText ?? null;
+  if (link.honesty === "nothing-found") return NOTHING_FOUND_NOTE;
+  return null;
+}
+
+function PracticeEvidenceLine({
+  leverSlug,
+  practiceSlug,
+}: {
+  leverSlug: string;
+  practiceSlug: string;
+}) {
+  const mapping = getPracticeEvidence(leverSlug, practiceSlug);
+  if (!mapping) return null;
+
+  if (!mapping.mechanisms) {
+    return (
+      <p className="mt-3 max-w-[72ch] text-sm leading-relaxed text-[#b8d4e8]/85">
+        <span className="font-medium text-white">Evidence</span>
+        <span aria-hidden> · </span>
+        <em>{mapping.orphanNote ?? NOTHING_FOUND_NOTE}</em>
+      </p>
+    );
+  }
+
+  const rowHonesty = mapping.mechanisms.map(honestyNoteFor).find(Boolean) ?? null;
+
+  return (
+    <p className="mt-3 max-w-[72ch] text-sm leading-relaxed text-[#b8d4e8]/85">
+      <span className="font-medium text-white">Evidence</span>
+      {mapping.mechanisms.map((link) => {
+        const linkHonesty = honestyNoteFor(link);
+        const showQualifier = Boolean(link.qualifier) && !linkHonesty && !rowHonesty;
+        return (
+          <span key={link.slug}>
+            <span aria-hidden> · </span>
+            <Link
+              to="/evidence/$slug"
+              params={{ slug: link.slug }}
+              className="text-[#7ec8e3] underline decoration-[#7ec8e3]/35 underline-offset-2 transition hover:text-white hover:decoration-white/50"
+            >
+              {link.name}
+            </Link>
+            {showQualifier ? (
+              <>
+                <span aria-hidden> — </span>
+                <em>{link.qualifier}</em>
+              </>
+            ) : null}
+          </span>
+        );
+      })}
+      {rowHonesty ? (
+        <>
+          <span aria-hidden> — </span>
+          <em>{rowHonesty}</em>
+        </>
+      ) : null}
+    </p>
+  );
+}
 
 async function handlePracticeSpecialResponse(
   leverSlug: string,
@@ -369,6 +439,7 @@ function PracticeDetailPage() {
               ) : null}
             </div>
             ) : null}
+            <PracticeEvidenceLine leverSlug={lever.slug} practiceSlug={practice.slug} />
             <p className="mt-3 text-xs text-[#b8d4e8]/70">
               Written by{" "}
               <Link to="/about" className="underline decoration-[#7ec8e3]/45 underline-offset-2 hover:text-white">

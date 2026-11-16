@@ -88,7 +88,10 @@ function EvidenceMechanismPage() {
           </Link>
         </p>
 
-        <EvidenceMarkdown markdown={mechanism.markdown ?? ""} />
+        <EvidenceMarkdown
+          markdown={mechanism.markdown ?? ""}
+          mechanismSlug={mechanism.slug}
+        />
 
         <nav className="mt-16 flex flex-col gap-4 border-t border-white/10 pt-8 sm:flex-row sm:justify-between">
           {previous ? (
