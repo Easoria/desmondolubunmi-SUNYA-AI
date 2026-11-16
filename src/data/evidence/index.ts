@@ -215,15 +215,15 @@ export const EVIDENCE_MECHANISMS: EvidenceMechanism[] = [
   },
   {
     slug: "self-referential-processing",
-    title: "Self-referential processing — the commentary about yourself",
+    title: "Self-referential processing",
     group: "attention-and-cognition",
     status: "complete",
     reviewDate: "November 2026",
     researchGrade:
-      "Moderate for mindfulness training changing self-referential processing, Preliminary for those changes producing the clinical benefit, None found for the deeper non-dual practices specifically",
+      "Moderate for training changing self-referential processing and self-views, Preliminary for the neural account and for whether any of it mediates improvement, None found for the deep self-inquiry practices",
     traditionalGrade: "Very strong",
     description:
-      "The running commentary that relates everything back to you — measurable network changes, social-anxiety trial findings, and where non-dual practice remains unstudied.",
+      "The commentary that turns experience into a story about you — self-view trials, mediation evidence, network changes, and where deep self-inquiry remains untested.",
     markdown: withNormalizedGrades(selfReferentialProcessing),
   },
   {
