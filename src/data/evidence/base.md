@@ -79,7 +79,7 @@ So read the table as a gradient rather than a ladder. The first two steps are am
 
 ### Two: changing physiological arousal
 
-The second mechanism has nothing to do with thought. It changes how activated the body is — in either direction.
+The second mechanism has nothing to do with thought. It changes how activated the body is — in either direction. The dedicated family page is [Regulating arousal](/evidence/regulating-arousal).
 
 **Downward.** Slowing the breath to around six a minute lowers blood pressure by enough to matter clinically and shifts the nervous system measurably toward rest. Progressive muscle relaxation reduces anxiety and improves self-rated sleep.
 

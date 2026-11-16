@@ -13,6 +13,7 @@ import valuesClarificationAndSelfAffirmation from "./values-clarification-and-se
 import inputRestrictionAndAttentionalLoad from "./input-restriction-and-attentional-load.content";
 import ruminationAndMindWandering from "./rumination-and-mind-wandering.content";
 import quietingRepetitiveThought from "./quieting-repetitive-thought.content";
+import regulatingArousal from "./regulating-arousal.content";
 import compassionAndLovingKindnessTraining from "./compassion-and-loving-kindness-training.content";
 import acceptanceAndPsychologicalFlexibility from "./acceptance-and-psychological-flexibility.content";
 import socialConnectionAndIsolation from "./social-connection-and-isolation.content";
@@ -121,6 +122,20 @@ export const EVIDENCE_BASE_AFTER_MARKDOWN = (() => {
 })();
 
 export const EVIDENCE_MECHANISMS: EvidenceMechanism[] = [
+  {
+    slug: "regulating-arousal",
+    title: "Regulating arousal",
+    blurb: "Family page for lowering and raising physiological activation.",
+    group: "breath-and-voice",
+    status: "complete",
+    reviewDate: "November 2026",
+    researchGrade:
+      "Strong for lowering blood pressure and for shifting the nervous system in either direction, Moderate for mood and anxiety",
+    traditionalGrade: "Very strong downward, Strong upward",
+    description:
+      "The second mechanism behind the internal levers — slowing the system toward rest, or rousing it, and knowing which direction you need.",
+    markdown: withNormalizedGrades(regulatingArousal),
+  },
   {
     slug: "slow-and-paced-breathing",
     title: "Slow and paced breathing",

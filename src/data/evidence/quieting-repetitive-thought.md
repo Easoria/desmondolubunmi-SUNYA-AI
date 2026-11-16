@@ -69,7 +69,7 @@ The assignments come from the practices themselves rather than being imposed. Pu
 
 **If the content of the thoughts is what hurts** — harsh self-judgement, shame, conviction that the thought is simply true — start at depth one. That is what decentering addresses, and it has the longest follow-up evidence of anything here.
 
-**If your difficulty is anxiety rather than thinking**, this is probably the wrong family. Anxiety is substantially a problem of physiological arousal, and handing it a thought tool is one of the most common reasons practice disappoints. See **Regulating arousal** instead.
+**If your difficulty is anxiety rather than thinking**, this is probably the wrong family. Anxiety is substantially a problem of physiological arousal, and handing it a thought tool is one of the most common reasons practice disappoints. See [Regulating arousal](/evidence/regulating-arousal) instead.
 
 ---
 
