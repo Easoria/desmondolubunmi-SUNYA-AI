@@ -4,6 +4,7 @@ import activatingBreathwork from "./activating-breathwork.content";
 import sustainedVocalisation from "./sustained-vocalisation.content";
 import meditation from "./meditation.content";
 import decentering from "./decentering.content";
+import selfReferentialProcessing from "./self-referential-processing.content";
 import interoceptionAndBodyScan from "./interoception-and-body-scan.content";
 import expressiveWriting from "./expressive-writing.content";
 import musicAndDeliberatelyChosenSound from "./music-and-deliberately-chosen-sound.content";
@@ -214,11 +215,16 @@ export const EVIDENCE_MECHANISMS: EvidenceMechanism[] = [
   },
   {
     slug: "self-referential-processing",
-    title: "Self-referential processing — in preparation.",
+    title: "Self-referential processing — the commentary about yourself",
     group: "attention-and-cognition",
-    status: "planned",
+    status: "complete",
+    reviewDate: "November 2026",
+    researchGrade:
+      "Moderate for mindfulness training changing self-referential processing, Preliminary for those changes producing the clinical benefit, None found for the deeper non-dual practices specifically",
+    traditionalGrade: "Very strong",
     description:
-      "Pending research. The third depth in How the inner practices work — quieting self-referential thought.",
+      "The running commentary that relates everything back to you — measurable network changes, social-anxiety trial findings, and where non-dual practice remains unstudied.",
+    markdown: withNormalizedGrades(selfReferentialProcessing),
   },
   {
     slug: "interoception-and-body-scan",
