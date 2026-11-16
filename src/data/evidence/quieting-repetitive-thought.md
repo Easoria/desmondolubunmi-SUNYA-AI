@@ -47,16 +47,16 @@ That decline is the honest shape of this material. Anyone presenting the deep en
 
 Each practice has one primary depth. Several reach further as they deepen, and are listed as *partly* on the pages above and below.
 
-**Depth 1 — stepping outside the thought**
+**Depth 1 — Decentering**
 Pure Observation · Disidentifying · Compassionate Presence · Mindful Reflection
 
-**Depth 2 — interrupting the loop**
+**Depth 2 — Rumination and mind-wandering**
 Breath Awareness · Inner Gaze · Laser Focus · Journaling · Input Control
 
-**Depth 3 — quieting self-referential thought**
+**Depth 3 — Self-referential processing**
 Non-Doing · Deep Listening Meditation · Whole-System Awareness
 
-**Depth 4 — awareness without thought**
+**Depth 4 — Awareness without thought**
 Aware of Awareness · Being Nothing · Self-Inquiry · Looking at Death
 
 The assignments come from the practices themselves rather than being imposed. Pure Observation's own instruction is that what changes is not the thoughts but your relationship to them — which is depth one, stated exactly. Inner Gaze says *don't fight the thoughts; do this instead* — which is depth two. Non-Doing describes resting where the mind is not shaping reality — depth three.

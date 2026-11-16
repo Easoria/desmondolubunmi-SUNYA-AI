@@ -6,7 +6,7 @@
 
 **Traditional convergence — Very strong** *(diagnosing runaway mental loops and training deliberate interruption or return of wandering attention appear independently in Buddhist, Hindu and early Christian desert traditions for over two millennia)*.
 
-**This is the largest single effect in the Sunya evidence base, and the mechanism most of the internal practices work through.**
+> **Depth 2 of 4 in [Quieting repetitive thought](/evidence/quieting-repetitive-thought), and the largest single effect in this evidence base.** Above it: stepping outside the thought. Below it: quieting the commentary about yourself, and awareness without thought. The same move applied further in, with the evidence thinning as you go — the gradient is set out on the family page.
 
 > **In short:** repetitive negative thinking — brooding on past failures and worrying about future threats — is one of the strongest psychological drivers of depression and anxiety across clinical research.[^1] The good news is that it responds unusually well to targeted training: across 55 trials, therapies built specifically to break repetitive thought loops achieved a large effect and outperformed general cognitive behavioural therapy.[^2] Mind-wandering itself is not the enemy, despite the famous headline; experience-sampling studies show drifting thoughts lower mood primarily when they turn negative, past-focused or involuntary, rather than during planning or pleasant reflection.[^4][^6]
 
