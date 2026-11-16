@@ -296,8 +296,9 @@ export const PRACTICE_MECHANISM_MAP: Record<string, PracticeEvidenceMapping> = {
   },
   "environment/somatic-architecture": {
     key: "environment/somatic-architecture",
-    mechanisms: null,
-    orphanNote: "no mechanism page yet; this practice is carried on tradition and your own trial",
+    mechanisms: [
+      { slug: "pressure-and-texture-on-the-skin", name: "Pressure and texture on the skin" },
+    ],
   },
   "environment/the-objects-around-you": {
     key: "environment/the-objects-around-you",
@@ -635,6 +636,7 @@ export const PRACTICE_MECHANISM_MAP: Record<string, PracticeEvidenceMapping> = {
     key: "sleep/the-sleep-sanctuary",
     mechanisms: [
       { slug: "sleep-behaviour", name: "Sleep behaviour" },
+      { slug: "pressure-and-texture-on-the-skin", name: "Pressure and texture on the skin" },
       { slug: "air-quality-noise-and-visual-order", name: "Air quality, noise and visual order" },
     ],
   },
@@ -855,6 +857,10 @@ export const MECHANISM_PRACTICES: Record<string, MechanismPracticeRef[]> = {
   "pelvic-floor-contraction-as-an-inner-practice": [
     { leverSlug: "conservation", slug: "the-root-lock", name: "The Root Lock" },
     { leverSlug: "breath", slug: "the-great-lock", name: "The Great Lock" },
+  ],
+  "pressure-and-texture-on-the-skin": [
+    { leverSlug: "environment", slug: "somatic-architecture", name: "What You Wear" },
+    { leverSlug: "sleep", slug: "the-sleep-sanctuary", name: "The Bedroom" },
   ],
   "progressive-muscle-relaxation-and-stillness": [
     { leverSlug: "movement", slug: "progressive-muscle-relaxation", name: "Progressive Muscle Relaxation" },

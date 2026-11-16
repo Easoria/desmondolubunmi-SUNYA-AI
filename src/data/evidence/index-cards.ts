@@ -249,6 +249,13 @@ export const EVIDENCE_INDEX_CARD_GROUPS: Array<{
     label: "Material conditions",
     cards: [
       {
+        slug: "pressure-and-texture-on-the-skin",
+        name: "Pressure and texture on the skin",
+        grade: "Moderate",
+        note:
+          "What's touching you all day, and all night. A weighted blanket beat a lighter identical one for sleep quality. Fabric is a measurable event in the brain and an unstudied one in your life.",
+      },
+      {
         slug: "financial-security-and-scarcity",
         name: "Financial security and scarcity",
         grade: "Strong",
