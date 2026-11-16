@@ -37,6 +37,7 @@ import natureExposureAndAwe from "./nature-exposure-and-awe.content";
 import botanicalPreparations from "./botanical-preparations.content";
 import airQualityNoiseAndVisualOrder from "./air-quality-noise-and-visual-order.content";
 import sexualBehaviourAndAbstinence from "./sexual-behaviour-and-abstinence.content";
+import pressureAndTextureOnTheSkin from "./pressure-and-texture-on-the-skin.content";
 import groundingAndEarthing from "./grounding-and-earthing.content";
 import handPositions from "./hand-positions.content";
 import soundVibrationActingOnTissue from "./sound-vibration-acting-on-tissue.content";
@@ -587,6 +588,19 @@ export const EVIDENCE_MECHANISMS: EvidenceMechanism[] = [
     markdown: withNormalizedGrades(sexualBehaviourAndAbstinence),
   },
 
+  {
+    slug: "pressure-and-texture-on-the-skin",
+    title: "Pressure and texture on the skin",
+    group: "material-conditions",
+    status: "complete",
+    reviewDate: "November 2026",
+    researchGrade:
+      "Moderate for steady pressure improving sleep quality, Preliminary for pressure on anxiety, stress and pain, Mechanistic only for fabric and material, None found for cut and shape",
+    traditionalGrade: "Weak",
+    description:
+      "What's touching you all day and all night — weighted-blanket sleep evidence, fabric as a measurable neural event, and where cut and shape remain unstudied.",
+    markdown: withNormalizedGrades(pressureAndTextureOnTheSkin),
+  },
   {
     slug: "financial-security-and-scarcity",
     title: "Financial security and scarcity",
