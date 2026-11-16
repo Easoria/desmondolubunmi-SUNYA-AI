@@ -17,7 +17,7 @@ export const sustenanceLever: Lever = {
   practices: [
     {
       sourceNumber: 1,
-      slug: "the-master-code-of-abundance",
+      slug: "how-you-think-about-money",
       name: "How You Think About Money",
       essence: "The idea the rest of this lever rests on: earning follows from being useful to other people. That is not a guarantee, and luck and circumstance matter enormously — but it is a better place to put your attention than chasing or hoarding.",
       mechanism: [
@@ -74,14 +74,14 @@ export const sustenanceLever: Lever = {
       name: "What Money Is",
       essence: "Stripping away the fear and confusion around money and seeing what it actually is: a record of value exchanged between people.",
       mechanism: [
-        "The ego views money as a scarce, solid object to be hoarded or hunted. This generates chronic friction and the anxiety of scarcity. The illusion must be broken. Money is not paper or digital numbers. It is a placeholder for human effort and care. When someone has a problem, an unfulfilled need, or a desire for beauty — they carry a felt gap. When you step in and solve that problem, build that shelter, or provide that nourishment, you are transmitting your intelligence and vital energy to fill their void. Because you expended your energy to create value for them, the human network hands you a certificate of stored energy — money — in return. The code of sustenance is this: you do not “make” money. You generate value. If you output undeniable, high-quality value into the human network, the network will, in the overwhelming majority of cases, sustain you in return."
+        "The ego views money as a scarce, solid object to be hoarded or hunted. This generates chronic friction and the anxiety of scarcity. The illusion must be broken. Money is not paper or digital numbers. It is a placeholder for human effort and care. When someone has a problem, an unfulfilled need, or a desire for beauty — they carry a felt gap. When you step in and solve that problem, build that shelter, or provide that nourishment, you are transmitting your intelligence and energy to fill their void. Because you expended your energy to create value for them, the human network hands you a certificate of stored energy — money — in return. The code of sustenance is this: you do not “make” money. You generate value. If you output undeniable, high-quality value into the human network, the network will, in the overwhelming majority of cases, sustain you in return."
       ],
       protocol: [
         {
           text: "The paradigm shift: Stop asking “How do I get more money to survive?” — this is the desperate plea of survival thinking. Shift your question entirely: “What problem can I solve? What friction can I remove? What undeniable value can I create?” Focus entirely on the output of value and the input of sustenance will automatically follow."
         },
         {
-          text: "De-weaponizing currency: Remove all emotional charge from money. It is not evil, nor is it salvation. It is a neutral, highly conductive form of energy flowing through the pipes of society. Treat it with the same objective respect you treat electricity: learn its circuitry, and let it flow through you without hoarding it in terror."
+          text: "De-weaponizing currency: Remove all emotional weight from money. It is not evil, nor is it salvation. It is a neutral, highly conductive form of energy flowing through the pipes of society. Treat it with the same objective respect you treat electricity: learn its circuitry, and let it flow through you without hoarding it in terror."
         },
         {
           text: "The Law of Compensation: The market — the human network — rewards you in exact proportion to the magnitude of the problem you solve, the number of people you solve it for, and how difficult you are to replace. To increase your sustenance, simply increase the scale and quality of the value you provide."
@@ -93,7 +93,7 @@ export const sustenanceLever: Lever = {
       ],
       leverSlug: "sustenance",
       relatedPractices: [
-        "the-master-code-of-abundance",
+        "how-you-think-about-money",
         "mastery-of-the-instrument",
         "the-economics-of-simplicity"
       ],
@@ -105,7 +105,7 @@ export const sustenanceLever: Lever = {
         durationSource: "OMITTED",
         relatedPracticeRationale: [
           {
-            slug: "the-master-code-of-abundance",
+            slug: "how-you-think-about-money",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
@@ -188,7 +188,7 @@ export const sustenanceLever: Lever = {
           text: "The 48-hour void test: Before spending money on any non-essential item, enforce a mandatory 48-hour waiting period. Rest in the void of not having it. In almost every case, the ego’s False Hunger — the compulsive craving for sensory distraction dressed up as a need — will subside, revealing that the object was never a true necessity."
         },
         {
-          text: "Minimalism as energetic freedom: Treat financial simplicity as a spiritual practice. By ruthlessly stripping away excess expenses, you buy back your most precious non- renewable resource: time. Time is the canvas on which your consciousness operates. When your Biological Tax is low, you have the freedom to rest, create, and evolve — without the constant lash of financial terror driving every decision."
+          text: "Minimalism as freedom: Treat financial simplicity as a spiritual practice. By ruthlessly stripping away excess expenses, you buy back your most precious non- renewable resource: time. Time is the canvas on which your consciousness operates. When your Biological Tax is low, you have the freedom to rest, create, and evolve — without the constant lash of financial terror driving every decision."
         }
       ],
       layers: [

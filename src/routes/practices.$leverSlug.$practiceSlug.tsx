@@ -200,6 +200,21 @@ function renderProtocolText(text: string) {
   );
 }
 
+/** Minimal **bold** support for caution paragraphs. */
+function renderInlineMarkdown(text: string) {
+  const parts = text.split(/(\*\*[^*]+\*\*)/g);
+  return parts.map((part, index) => {
+    if (part.startsWith("**") && part.endsWith("**")) {
+      return (
+        <strong key={index} className="font-semibold text-white">
+          {part.slice(2, -2)}
+        </strong>
+      );
+    }
+    return <span key={index}>{part}</span>;
+  });
+}
+
 function PracticeDetailRoute() {
   const data = Route.useLoaderData();
   if (data.retired) {
@@ -440,6 +455,19 @@ function PracticeDetailPage() {
                     );
                   })}
                 </div>
+              </div>
+            </section>
+          ) : null}
+
+          {practice.beforeYouStart?.length ? (
+            <section className="mt-10 max-w-[72ch]">
+              <h2 className="display text-2xl text-white">Before you start</h2>
+              <div className="mt-4 space-y-5 text-[15px] leading-7 text-[#b8d4e8] sm:text-base">
+                {practice.beforeYouStart.map((paragraph, index) => (
+                  <p key={index} className="whitespace-pre-line">
+                    {renderInlineMarkdown(paragraph)}
+                  </p>
+                ))}
               </div>
             </section>
           ) : null}

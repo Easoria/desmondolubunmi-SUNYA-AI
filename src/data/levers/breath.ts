@@ -443,7 +443,7 @@ export const breathLever: Lever = {
           protocol: [
             { text: "Sit with the spine erect." },
             {
-              text: "As you inhale slowly, mentally draw the life force up the spine — pulling it, with your whole concentration, from the base of the spine to the centre of the forehead.",
+              text: "As you inhale slowly, mentally draw attention up the spine — pulling it, with your whole concentration, from the base of the spine to the centre of the forehead.",
             },
             {
               text: "As you exhale slowly, push it back down, from the centre of the forehead to the base.",
@@ -452,7 +452,7 @@ export const breathLever: Lever = {
               text: "Keep your entire attention on this rising and falling, moving the energy with your will. It should come to feel as though you are breathing not through the nose but through the spine itself — as though the spine is breathing: drawing up on the in-breath, releasing down on the out-breath.",
             },
             {
-              text: "Continue, breath and life force moving as one, up and down the central channel.",
+              text: "Continue, breath and attention moving as one, up and down the central channel.",
             },
             {
               text: "Optional variation: rather than sweeping the whole spine, you may rest the breath on a single centre — breathing into it and out from it — to open and strengthen that centre in particular.",

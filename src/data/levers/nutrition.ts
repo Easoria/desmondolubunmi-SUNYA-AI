@@ -17,25 +17,27 @@ export const nutritionLever: Lever = {
   practices: [
     {
       sourceNumber: 1,
-      slug: "the-pranic-spectrum",
+      slug: "how-food-affects-you",
       name: "How Food Affects You",
       subtitle: "what to eat",
       essence: "Noticing how specific foods actually affect your energy and clarity, rather than following a diet someone else designed. Fresh, water-rich, minimally processed food is the general direction.",
       mechanism: [
-        "The ultimate test of any food is simple: does it give more energy than it costs to digest? If a food leaves you feeling heavy, lethargic, or mentally foggy, it is a net-negative transaction — draining your vital energy rather than restoring it. Traditional understanding recognises foods through their felt effects: some create restless, chaotic heat (excessive spice, deep-fried fats, extreme salt), while others create dull, heavy stagnation (highly processed foods, chemical preservatives, stale or reheated leftovers). The most natural foods for the human system are those found directly in nature, unaltered. Fresh vegetables, fruits, and organic whole foods are living structures — because they possess their original cellular integrity and are naturally rich in water, they pass through the digestive system cleanly, leaving minimal residue while flooding the cells with usable energy."
+        "The useful question is not what a food contains but what it does to you over the following few hours. Some meals leave you clear and steady; the same quantity of something else leaves you heavy, foggy or hungry again within the hour. That difference is worth more than any nutritional label, because it is specific to you and you can check it.",
+        "Two things reliably shift it. How processed the food is — minimally processed, fibre-rich food digests more slowly and holds energy steadier. And how much water it carries — vegetables and fruit arrive with the water needed to handle them.",
+        "This is not a claim that some foods are alive and others dead. It is a claim that the effect is noticeable within hours, and that you are the only person positioned to notice it.",
       ],
       protocol: [
         {
-          text: "The sun-to-cell rule: Look at your plate and ask: how many steps removed is this from the sun and the soil? An apple from a tree is one step — full of life force. An apple pulverised, mixed with synthetic chemicals, baked into a packaged product, and left on a shelf for a month is entirely dead. Eat as close to the sun as possible."
+          text: "The few-hours test. Pick one meal you eat often. Note how you feel two and four hours afterwards — clear or foggy, steady or crashing, satisfied or hungry again. Do it for a week. You are building a record of how specific foods behave in you, which no general diet can give you."
         },
         {
           text: "High-water-content eating: Do not rely on drinking alone for hydration — eat your water. Fresh fruits and vegetables are 80–90% water. This natural fluid is structured by the plant to be absorbed directly into the cells, continuously flushing the channels and keeping the body’s internal ecosystem clean."
         },
         {
-          text: "Avoiding friction agents: Observe the effect of heavy fats, refined sugars, excessive salt, and extreme spices. While they may stimulate the taste buds, they destabilise the nervous system — forcing the digestive organs to work in overdrive and stealing life force from the brain and the higher energy centres."
+          text: "Avoiding friction agents: Observe the effect of heavy fats, refined sugars, excessive salt, and extreme spices. While they may stimulate the taste buds, they destabilise the nervous system — forcing the digestive organs to work in overdrive."
         },
         {
-          text: "Objective somatic observation: Abandon strict dietary labels and dogmas — every biological system has unique needs. Instead, become a careful observer. Eat a specific food, sit quietly for 30 minutes, and observe the result honestly. Is your mind sharp? Is your body light? Is your breath clear? Let the energetic feedback of your own system dictate what you eat."
+          text: "Objective somatic observation: Abandon strict dietary labels and dogmas — every biological system has unique needs. Instead, become a careful observer. Eat a specific food, sit quietly for 30 minutes, and observe the result honestly. Is your mind sharp? Is your body light? Is your breath clear? Let the feedback of your own system dictate what you eat."
         }
       ],
       duration: "30 minutes",
@@ -45,10 +47,10 @@ export const nutritionLever: Lever = {
       leverSlug: "nutrition",
       relatedPractices: [
         "chrononutrition",
-        "high-frequency-hydration"
+        "water"
       ],
       metaTitle: "How Food Affects You — How to Practise It | Sunya",
-      metaDescription: "Moving beyond dogmatic diets to directly observing how specific foods affect the energy and clarity of the human system.",
+      metaDescription: "Moving beyond dogmatic diets to directly observing how specific foods affect your energy and clarity.",
       families: ["L1", "P3", "H4"],
       generated: {
         layersSource: "INFERRED",
@@ -59,7 +61,7 @@ export const nutritionLever: Lever = {
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "high-frequency-hydration",
+            slug: "water",
             reason: "Adjacent in source order within the same lever sequence."
           }
         ]
@@ -75,10 +77,10 @@ export const nutritionLever: Lever = {
       ],
       protocol: [
         {
-          text: "The solar peak — the largest meal: Align your heaviest, most complex meal of the day with the peak of the sun, between 12:00 PM and 2:00 PM. At this time the digestive system is primed at maximum capacity — extracting the most life force from food with the least metabolic effort."
+          text: "The solar peak — the largest meal: Align your heaviest, most complex meal of the day with the peak of the sun, between 12:00 PM and 2:00 PM. At this time the digestive system is primed at maximum capacity — extracting the most energy from food with the least metabolic effort."
         },
         {
-          text: "The sunset cutoff: As the sun goes down, so should your consumption. Eat a light, easy-to-digest dinner — soups or steamed vegetables — while it is still light, or at least 3–4 hours before bed. When you sleep on an empty stomach, the life force is entirely freed from digestion and rises to repair the brain and nervous system."
+          text: "The sunset cutoff: As the sun goes down, so should your consumption. Eat a light, easy-to-digest dinner — soups or steamed vegetables — while it is still light, or at least 3–4 hours before bed. When you sleep on an empty stomach, the energy is entirely freed from digestion and rises to repair the brain and nervous system."
         },
         {
           text: "Circadian fasting — the daily void: The human system is not designed to digest for 16 hours a day. By leaving a 12–16-hour gap between the last meal of the evening and the first meal of the following day, you support the body’s natural cellular cleanup and restoration processes. This is one of the most powerful daily cleansing mechanisms available."
@@ -92,9 +94,9 @@ export const nutritionLever: Lever = {
       ],
       leverSlug: "nutrition",
       relatedPractices: [
-        "the-pranic-spectrum",
-        "high-frequency-hydration",
-        "herbal-alchemy"
+        "how-food-affects-you",
+        "water",
+        "herbs"
       ],
       metaTitle: "When You Eat — How to Practise It | Sunya",
       metaDescription: "Eating in step with daylight rather than against it. Digestion is more efficient earlier in the day, and late eating costs sleep. (Older traditions called digestive capacity agni; the modern field is chrononutrition.)",
@@ -104,15 +106,15 @@ export const nutritionLever: Lever = {
         durationSource: "OMITTED",
         relatedPracticeRationale: [
           {
-            slug: "the-pranic-spectrum",
+            slug: "how-food-affects-you",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "high-frequency-hydration",
+            slug: "water",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "herbal-alchemy",
+            slug: "herbs",
             reason: "Adjacent in source order within the same lever sequence."
           }
         ]
@@ -120,7 +122,7 @@ export const nutritionLever: Lever = {
     },
     {
       sourceNumber: 3,
-      slug: "high-frequency-hydration",
+      slug: "water",
       name: "Water",
       essence: "Drinking enough, and noticing that most people do not. Water affects energy, concentration and mood faster than almost anything else you consume.",
       mechanism: [
@@ -149,7 +151,7 @@ export const nutritionLever: Lever = {
       leverSlug: "nutrition",
       relatedPractices: [
         "chrononutrition",
-        "herbal-alchemy",
+        "herbs",
         "how-you-eat"
       ],
       metaTitle: "Water — How to Practise It | Sunya",
@@ -164,7 +166,7 @@ export const nutritionLever: Lever = {
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "herbal-alchemy",
+            slug: "herbs",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
@@ -176,7 +178,7 @@ export const nutritionLever: Lever = {
     },
     {
       sourceNumber: 4,
-      slug: "herbal-alchemy",
+      slug: "herbs",
       name: "Herbs",
       essence: "Using herbs and plant preparations to support sleep, digestion and calm. Some have real evidence behind them and some do not — worth checking case by case rather than treating “natural” as a guarantee.",
       mechanism: [
@@ -201,9 +203,9 @@ export const nutritionLever: Lever = {
       ],
       leverSlug: "nutrition",
       relatedPractices: [
-        "high-frequency-hydration",
+        "water",
         "how-you-eat",
-        "the-alchemy-of-the-void"
+        "fasting"
       ],
       metaTitle: "Herbs — How to Practise It | Sunya",
       metaDescription: "Using herbs and plant preparations to support sleep, digestion and calm. Some have real evidence behind them and some do not — worth checking case by case rather than treating “natural” as a guarantee.",
@@ -213,7 +215,7 @@ export const nutritionLever: Lever = {
         durationSource: "OMITTED",
         relatedPracticeRationale: [
           {
-            slug: "high-frequency-hydration",
+            slug: "water",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
@@ -221,7 +223,7 @@ export const nutritionLever: Lever = {
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "the-alchemy-of-the-void",
+            slug: "fasting",
             reason: "Adjacent in source order within the same lever sequence."
           }
         ]
@@ -237,13 +239,13 @@ export const nutritionLever: Lever = {
       ],
       protocol: [
         {
-          text: "The parasympathetic pause: Never take a bite while your heart rate is elevated or your mind is racing. Before eating, sit in front of your food and take three slow, deep breaths — a long inhale followed by a long exhale. This mechanically activates the parasympathetic nervous system, physically turns on the digestive organs, and signals the body that it is safe to receive nourishment."
+          text: "The parasympathetic pause: Never take a bite while your heart rate is elevated or your mind is racing. Before eating, sit in front of your food and take three slow, deep breaths — a long inhale followed by a long exhale. This mechanically turns on the parasympathetic nervous system, physically turns on the digestive organs, and signals the body that it is safe to receive nourishment."
         },
         {
           text: "Mastication — chew completely: Digestion does not begin in the stomach; it begins in the mouth. Chew every bite until it is completely liquid before swallowing. This pre- digests the food mechanically, dramatically reducing the load on the intestines and allowing the body to extract the maximum nourishment with minimal effort."
         },
         {
-          text: "Digital fasting at the table: Remove all screens, stressful conversations, and chaotic inputs from the eating environment. Your eyes and ears are consuming the environment at the same time your mouth is consuming the food. Injecting anxiety or stimulation into the meal cross-wires the nervous system — the frequency of what you watch enters the body alongside the food."
+          text: "Digital fasting at the table: Remove all screens, stressful conversations, and chaotic inputs from the eating environment. Your eyes and ears are consuming the environment at the same time your mouth is consuming the food. Injecting anxiety or stimulation into the meal cross-wires the nervous system — what you watch enters the body alongside the food."
         },
         {
           text: "Mitahara — the law of the void: Never eat to full capacity. The digestive system requires physical space to churn and process food effectively. The traditional guidance of Mitahara recommends filling the stomach roughly half with food, a quarter with water, and leaving the remaining quarter empty. If the furnace is completely packed with fuel, it smothers the fire."
@@ -254,9 +256,9 @@ export const nutritionLever: Lever = {
       ],
       leverSlug: "nutrition",
       relatedPractices: [
-        "herbal-alchemy",
-        "the-alchemy-of-the-void",
-        "energetic-imprinting"
+        "herbs",
+        "fasting",
+        "cooking-and-eating-with-attention"
       ],
       metaTitle: "How You Eat — How to Practise It | Sunya",
       metaDescription: "Shifting the body into the precise physiological state required to fully extract nourishment from food.",
@@ -266,15 +268,15 @@ export const nutritionLever: Lever = {
         durationSource: "OMITTED",
         relatedPracticeRationale: [
           {
-            slug: "herbal-alchemy",
+            slug: "herbs",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "the-alchemy-of-the-void",
+            slug: "fasting",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "energetic-imprinting",
+            slug: "cooking-and-eating-with-attention",
             reason: "Adjacent in source order within the same lever sequence."
           }
         ]
@@ -282,18 +284,18 @@ export const nutritionLever: Lever = {
     },
     {
       sourceNumber: 6,
-      slug: "the-alchemy-of-the-void",
+      slug: "fasting",
       name: "Fasting",
       essence: "Going without food for a set period. The body gets a break from digestion, and the research on short-term fasting is genuinely interesting. Not for everyone, and not during pregnancy, illness, or with any history of disordered eating.",
       mechanism: [
-        "Digesting food is one of the most energetically expensive operations the human system performs — consuming enormous amounts of metabolic power daily. When you are constantly digesting, the body is locked in an outward-focused, processing state. Energy is bound to the gut. When you voluntarily stop eating, a profound shift occurs. Without incoming food to process, the body turns its attention inward. It activates deep cellular restoration — clearing accumulated metabolic waste and allowing the system to repair itself from within. The energy freed from digestion becomes available to the brain and the rest of the system. Fasting is one of the quickest and most direct ways to physically clear the system and reset the baseline of the body’s functioning."
+        "Digesting food is one of the most energetically expensive operations the human system performs — consuming enormous amounts of metabolic power daily. When you are constantly digesting, the body is locked in an outward-focused, processing state. Energy is bound to the gut. When you voluntarily stop eating, a profound shift occurs. Without incoming food to process, the body turns its attention inward. It turns on deep cellular restoration — clearing accumulated metabolic waste and allowing the system to repair itself from within. The energy freed from digestion becomes available to the brain and the rest of the system. Fasting is one of the quickest and most direct ways to physically clear the system and reset the baseline of the body’s functioning."
       ],
       protocol: [
         {
           text: "Circadian fasting — the daily reset: At minimum, align your eating window with the sun and give the body a 12–16-hour gap of total digestive rest overnight — for example, finishing dinner by 6PM and breaking the fast at 10AM. This daily period of rest prevents the accumulation of heavy, stagnant energy and ensures you wake up clear and conductive."
         },
         {
-          text: "The 24-hour reset: Once a week or once a month, perform a 24-hour water fast. By completely removing solid food for a full day, the digestive organs enter total rest. The mental clarity and sensory sharpness that follow can be remarkable, as the life force normally bound to digestion becomes available to the whole system."
+          text: "The 24-hour reset: Once a week or once a month, perform a 24-hour water fast. By completely removing solid food for a full day, the digestive organs enter total rest. The mental clarity and sensory sharpness that follow can be remarkable, as the energy normally bound to digestion becomes available to the whole system."
         },
         {
           text: "Observing the False Hunger: During a fast, the mind will object loudly. The habit of eating will generate intense cravings and discomfort. Use your discernment to distinguish between true biological hunger — a physical sensation arising from the body — and False Hunger — the mind’s conditioned desire for sensory distraction and comfort. Do not fight the craving; simply watch it arise and pass."
@@ -308,7 +310,7 @@ export const nutritionLever: Lever = {
       leverSlug: "nutrition",
       relatedPractices: [
         "how-you-eat",
-        "energetic-imprinting"
+        "cooking-and-eating-with-attention"
       ],
       metaTitle: "Fasting — How to Practise It | Sunya",
       metaDescription: "Going without food for a set period. The body gets a break from digestion, and the research on short-term fasting is genuinely interesting. Not for everyone, and not during pregnancy, illness, or with any history of disordered eating.",
@@ -322,7 +324,7 @@ export const nutritionLever: Lever = {
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "energetic-imprinting",
+            slug: "cooking-and-eating-with-attention",
             reason: "Adjacent in source order within the same lever sequence."
           }
         ]
@@ -330,7 +332,7 @@ export const nutritionLever: Lever = {
     },
     {
       sourceNumber: 7,
-      slug: "energetic-imprinting",
+      slug: "cooking-and-eating-with-attention",
       name: "Cooking and Eating with Attention",
       essence: "Food made in a hurry and eaten distractedly is a different thing from food made with care and eaten with attention — in how it is cooked, and in how much of it you actually taste.",
       mechanism: [
@@ -353,7 +355,7 @@ export const nutritionLever: Lever = {
       ],
       leverSlug: "nutrition",
       relatedPractices: [
-        "the-alchemy-of-the-void"
+        "fasting"
       ],
       metaTitle: "Cooking and Eating with Attention — How to Practise It | Sunya",
       metaDescription: "Food made in a hurry and eaten distractedly is a different thing from food made with care and eaten with attention — in how it is cooked, and in how much of it you actually taste.",
@@ -362,7 +364,7 @@ export const nutritionLever: Lever = {
         durationSource: "OMITTED",
         relatedPracticeRationale: [
           {
-            slug: "the-alchemy-of-the-void",
+            slug: "fasting",
             reason: "Adjacent in source order within the same lever sequence."
           }
         ]

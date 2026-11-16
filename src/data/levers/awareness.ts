@@ -111,7 +111,8 @@ export const awarenessLever: Lever = {
       sourceNumber: 3,
       slug: "body-scan",
       name: "Body Scan",
-      essence: "Moving awareness slowly through the body, from feet to head, turning unconscious tension into conscious relaxation. One of the simplest and most effective ways to get out of the thinking mind and back into the body.",
+      essence:
+        "Moving awareness slowly through the body, from feet to head, turning unconscious tension into conscious relaxation. It works best as part of a wider practice rather than on its own — the research is clear that the scan alone does less than the scan inside a fuller routine.",
       mechanism: [
         "Most tension is held below the threshold of conscious awareness — you are not aware you are clenching your jaw, gripping your stomach, or bracing your shoulders until attention is deliberately placed there. The body scan works by methodically shining awareness on each region in turn. The moment tension becomes conscious, it can be",
         "released. Over time this retrains the body to shift from its default state of unconscious bracing to effortless, natural ease."
@@ -121,6 +122,13 @@ export const awarenessLever: Lever = {
           text: "Find a comfortable position sitting or lying down. Close the eyes and bring your awareness into the inner body. Begin at the feet and slowly move attention upward — through the feet, the legs, the hips, the stomach, the chest, the hands, the arms, the shoulders, the neck, the jaw, the face, the top of the head. As you move through each region, consciously invite it to soften and let go — like unclenching a fist. Once the scan is complete, hold the whole body loosely in a state of gentle, open relaxation and allow it to rest there."
         }
       ],
+      beforeYouStart: [
+        "For most people this carries no risk. Three situations warrant care, and they are the reason this note exists rather than a general disclaimer.",
+        "**If you live with panic or health anxiety.** Close attention to the heartbeat, breathing or chest can amplify ordinary bodily fluctuation into alarm. If scanning leaves you more watchful rather than less, stop, open your eyes, and move attention outward to sounds or objects in the room.",
+        "**If you have a trauma history.** Lying still with the eyes closed and attention turned inward can bring up distress, flashbacks, or numbness and detachment. Practise sitting rather than lying down, keep the eyes open, and keep sessions to a few minutes. If it reliably goes badly, work with a qualified clinician rather than an audio track.",
+        "**If bodily monitoring is already anxious or compulsive** — including during treatment for an eating disorder — unguided internal scanning can reinforce checking. Use this only alongside professional care.",
+        "Difficult experiences during contemplative practice are documented rather than rare. If a practice reliably leaves you worse than when you started, that is information, not failure.",
+      ],
       layers: [
         "Consciousness",
         "Mental Body"
@@ -129,11 +137,11 @@ export const awarenessLever: Lever = {
       relatedPractices: [
         "inner-gaze",
         "non-sleep-deep-rest",
-        "energy-body-awareness"
+        "reading-your-vital-state"
       ],
       metaTitle: "Body Scan — How to Practise It | Sunya",
       metaDescription: "Moving awareness slowly through the body, from feet to head, turning unconscious tension into conscious relaxation.",
-      families: ["H3", "H1", "P1"],
+      families: ["H3", "P1"],
       directions: ["soften", "release", "ground"],
       problems: ["insomnia"],
       generated: {
@@ -149,7 +157,7 @@ export const awarenessLever: Lever = {
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "energy-body-awareness",
+            slug: "reading-your-vital-state",
             reason: "Adjacent in source order within the same lever sequence."
           }
         ]
@@ -159,9 +167,9 @@ export const awarenessLever: Lever = {
       sourceNumber: 4,
       slug: "non-sleep-deep-rest",
       name: "Non-Sleep Deep Rest (NSDR)",
-      essence: "A practice of guided rest rooted in the ancient tradition of Yoga Nidra. The body becomes profoundly still — as if asleep — while the mind remains clear and quietly aware. A powerful way to recharge the vital body and calm the nervous system at any time of day.",
+      essence: "A practice of guided rest rooted in the ancient tradition of Yoga Nidra. The body becomes profoundly still — as if asleep — while the mind remains clear and quietly aware. A powerful way to restore the system and calm the nervous system at any time of day.",
       mechanism: [
-        "In ordinary rest the mind is either active or unconscious. NSDR occupies a rare third state: the body fully released from effort while awareness remains gently present. In this state the nervous system recalibrates deeply — accumulated tension discharges, energy replenishes, and the mind rests in a natural stillness that active thinking never allows."
+        "In ordinary rest the mind is either active or unconscious. NSDR occupies a rare third state: the body fully released from effort while awareness remains gently present. In this state the nervous system recalibrates deeply — accumulated tension eases, energy replenishes, and the mind rests in a natural stillness that active thinking never allows."
       ],
       protocol: [
         {
@@ -175,8 +183,8 @@ export const awarenessLever: Lever = {
       leverSlug: "awareness",
       relatedPractices: [
         "body-scan",
-        "energy-body-awareness",
-        "holistic-subtle-bodies-awareness"
+        "reading-your-vital-state",
+        "whole-system-awareness"
       ],
       metaTitle: "Non-Sleep Deep Rest (NSDR) — How to Practise It | Sunya",
       metaDescription: "A practice of guided rest rooted in the ancient tradition of Yoga Nidra.",
@@ -192,11 +200,11 @@ export const awarenessLever: Lever = {
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "energy-body-awareness",
+            slug: "reading-your-vital-state",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "holistic-subtle-bodies-awareness",
+            slug: "whole-system-awareness",
             reason: "Adjacent in source order within the same lever sequence."
           }
         ]
@@ -204,18 +212,16 @@ export const awarenessLever: Lever = {
     },
     {
       sourceNumber: 5,
-      slug: "energy-body-awareness",
+      slug: "reading-your-vital-state",
       name: "Reading Your Vital State",
-      essence: "Holding awareness on the vital body as a whole. Where other practices work on it indirectly, this one places attention on it directly.",
+      essence: "Holding awareness on how settled or agitated your system is as a whole. Where other practices work on it indirectly, this one places attention on it directly.",
       mechanism: [
-        "The vital body responds to awareness the same way all other layers do — what is brought into the light of awareness begins to transform. By holding awareness on the entire vital body as a whole simultaneously, you activate and clarify the complete field at once rather than working on isolated parts. This is what makes the practice so potent: the scope is total. The entire inner structure is held in a single, unified field of attention, and what was contracted — even at the periphery — begins to open and settle."
+        "Attention changes what it rests on. Most of the time you only notice how your system feels when something is already wrong — a knot in the stomach, a tight chest. This practice places attention on the whole felt state at once, before it localises into a complaint.",
+        "What you are reading is how settled or agitated the system is as a whole: where there is warmth, pressure, heaviness, tingling, slackness or nothing at all. Holding the whole of it at once, rather than hunting region by region, is what distinguishes this from a body scan.",
       ],
       protocol: [
         {
-          text: "Sit with the spine erect. Close the eyes and take a few breaths to settle. Enter deep, formless meditation. Become conscious of consciousness itself. Disidentify completely from the physical body, the mind, the thoughts, the emotions — from all content of experience. Let all of it go. Rest solely as awareness itself — pure, formless, without object. From this space of pure consciousness — not identified with anything — the energy body becomes perceptible. When you are no longer absorbed in the content of experience, the subtle field of the energy body can be felt and known directly. From this space, direct your awareness to the energy body entirely. Hold your full attention on the complete field of it at once — not on any single centre or channel, but on the whole. Simply sustain this. As awareness rests on the energy body, it begins to transform, evolve, open, and heal. The sustained, undivided attention is the practice itself. Hold it for as long as you can maintain without strain."
-        },
-        {
-          text: "Variation — Spinal Awareness: Once comfortable with the above, practise moving awareness precisely along the central channel — from the base of the spine upward to the brain centre and back down again. This specific attention to the central channel directly stimulates the upward movement of the life force."
+          text: "Sit with the spine erect. Close the eyes and take a few breaths to settle. Let attention come away from thought — not by suppressing it, but by giving it something else to rest on. Then widen attention to include the whole body at once, from the soles of the feet to the crown, as a single field rather than a sequence of parts.\n\nHold the whole of it together. Do not search for anything. Notice what the overall state is: settled or agitated, warm or cold, heavy or light, present or faint. Some regions will report nothing. That is ordinary and is not a failure of the practice."
         }
       ],
       layers: [
@@ -225,11 +231,11 @@ export const awarenessLever: Lever = {
       leverSlug: "awareness",
       relatedPractices: [
         "non-sleep-deep-rest",
-        "holistic-subtle-bodies-awareness",
+        "whole-system-awareness",
         "compassionate-presence"
       ],
       metaTitle: "Reading Your Vital State — How to Practise It | Sunya",
-      metaDescription: "Holding awareness on the vital body as a whole. Where other practices work on it indirectly, this one places attention on it directly.",
+      metaDescription: "Holding awareness on how settled or agitated your system is as a whole. Where other practices work on it indirectly, this one places attention on it directly.",
       families: ["L2", "M4"],
       directions: ["reconnect", "stabilise"],
       problems: [],
@@ -242,7 +248,7 @@ export const awarenessLever: Lever = {
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "holistic-subtle-bodies-awareness",
+            slug: "whole-system-awareness",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
@@ -254,21 +260,21 @@ export const awarenessLever: Lever = {
     },
     {
       sourceNumber: 6,
-      slug: "holistic-subtle-bodies-awareness",
+      slug: "whole-system-awareness",
       name: "Whole-System Awareness",
       notes: [
         "This is the most demanding practice in this lever, and the one the others prepare you for."
       ],
-      essence: "Shining the light of awareness on the entire layers of being at once — physical, emotional, mental, and vital simultaneously. More holistic and grounding than Reading Your Vital State alone, and more stabilising. It is the most demanding practice in this lever, and the one the others prepare you for. It requires considerable awareness and skill as a prerequisite; the practices that precede it here are not merely preparation but the foundation that makes this one possible.",
+      essence: "Shining the light of awareness on the whole system at once — body, feeling, thought, and overall state simultaneously. More grounding than Reading Your Vital State alone, and more stabilising. It is the most demanding practice in this lever, and the one the others prepare you for. It requires considerable awareness and skill as a prerequisite; the practices that precede it here are not merely preparation but the foundation that makes this one possible.",
       mechanism: [
-        "In Reading Your Vital State, attention is narrowed to one specific layer. Here, awareness is expanded to hold the entire inner structure at once — body, emotions, mind, and vital body in one unified field of observation. The effect is total rather than targeted. Mental impressions, emotional patterns, and held tension are all exposed to the same undivided light of awareness simultaneously. Rather than dissolving layer by layer, the accumulated inner material — the conditioning, the held tension, the karmic impressions — begins to release all at once."
+        "In Reading Your Vital State, attention rests on the overall felt state. Here, awareness is expanded to hold body, emotions, mind, and that whole-state reading in one unified field of observation. The effect is total rather than targeted. Mental impressions, emotional patterns, and held tension are all exposed to the same undivided light of awareness simultaneously. Rather than dissolving layer by layer, the accumulated inner material — the conditioning, the held tension, the karmic impressions — begins to release all at once."
       ],
       protocol: [
         {
-          text: "Sit with the spine erect. Close the eyes and take a few breaths to settle. Step back from all four bodies — the physical, the emotional, the mental, and the energetic. Disidentify completely. Rest as pure awareness beyond all of them. Now bring the entire layers of being into your field of awareness at once — not part by part, but the whole. Hold the physical body, the emotions, the mind, and the energy body simultaneously in a single, expansive field of attention. Hold steady presence. Do nothing. Simply maintain this broad, all-encompassing awareness and allow mental impressions to dissolve, emotions to resolve and release, and energy pathways to unblock — all at once, in the light of undivided awareness."
+          text: "Sit with the spine erect. Close the eyes and take a few breaths to settle. Step back from body, feeling, and thought. Disidentify completely. Rest as pure awareness beyond all of them. Now bring the whole system into your field of awareness at once — not part by part, but the whole. Hold the physical body, the emotions, the mind, and the overall felt state simultaneously in a single, expansive field of attention. Hold steady presence. Do nothing. Simply maintain this broad, all-encompassing awareness and allow mental impressions to dissolve and emotions to resolve and release — all at once, in the light of undivided awareness."
         },
         {
-          text: "Note: This practice combines four things simultaneously — releasing physical tension, witnessing thoughts without reactivity, feeling the emotional body and allowing it to open, and holding awareness of the entire energy body. Practise each individually before attempting to hold all four at once."
+          text: "Note: This practice combines four things simultaneously — releasing physical tension, witnessing thoughts without reactivity, feeling the emotional body and allowing it to open, and holding awareness of the overall felt state. Practise each individually before attempting to hold all four at once."
         }
       ],
       layers: [
@@ -277,12 +283,12 @@ export const awarenessLever: Lever = {
       ],
       leverSlug: "awareness",
       relatedPractices: [
-        "energy-body-awareness",
+        "reading-your-vital-state",
         "compassionate-presence",
         "deep-listening-meditation"
       ],
       metaTitle: "Whole-System Awareness — How to Practise It | Sunya",
-      metaDescription: "Shining the light of awareness on the entire layers of being at once — physical, emotional, mental, and vital simultaneously.",
+      metaDescription: "Shining the light of awareness on the whole system at once — body, feeling, thought, and overall state simultaneously.",
       families: ["M4"],
       directions: ["ground", "stabilise"],
       problems: [],
@@ -291,7 +297,7 @@ export const awarenessLever: Lever = {
         durationSource: "OMITTED",
         relatedPracticeRationale: [
           {
-            slug: "energy-body-awareness",
+            slug: "reading-your-vital-state",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
@@ -311,7 +317,7 @@ export const awarenessLever: Lever = {
       name: "Compassionate Presence",
       essence: "The simple act of being with whatever is arising in you, without judgment or avoidance. Unresolved experiences seek resolution — and that resolution is offered by total, non-judgmental presence.",
       mechanism: [
-        "Difficult or painful experiences do not always get processed at the time they occur. Instead they are stored — in the mind as repeating thought patterns, in the body as physical tension, in the emotional body as numbness or reactive charge. Left unresolved, these accumulated impressions surface as intrusive thoughts, inner unrest, and patterns that seem to run on their own. Conscious observation is profoundly healing: whatever is arising from within is seeking resolution. Meeting it with full, non-judgmental attention is exactly what allows it to complete itself."
+        "Difficult or painful experiences do not always get processed at the time they occur. Instead they are stored — in the mind as repeating thought patterns, in the body as physical tension, in the emotional body as numbness or reactive residue. Left unresolved, these accumulated impressions surface as intrusive thoughts, inner unrest, and patterns that seem to run on their own. Conscious observation is profoundly healing: whatever is arising from within is seeking resolution. Meeting it with full, non-judgmental attention is exactly what allows it to complete itself."
       ],
       protocol: [
         {
@@ -333,7 +339,7 @@ export const awarenessLever: Lever = {
       ],
       leverSlug: "awareness",
       relatedPractices: [
-        "holistic-subtle-bodies-awareness",
+        "whole-system-awareness",
         "deep-listening-meditation",
         "pure-observation"
       ],
@@ -347,7 +353,7 @@ export const awarenessLever: Lever = {
         durationSource: "OMITTED",
         relatedPracticeRationale: [
           {
-            slug: "holistic-subtle-bodies-awareness",
+            slug: "whole-system-awareness",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {

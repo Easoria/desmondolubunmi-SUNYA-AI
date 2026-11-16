@@ -91,7 +91,7 @@ export const mindLever: Lever = {
           text: "Identify your energy sources: Pay close attention to how your body and mind react to daily activities. Notice what drains you — but more importantly, notice what gives you energy. Identify the specific actions, subjects, and environments that make you feel passionate, alive, and full of vitality."
         },
         {
-          text: "Define your direction: Clarify exactly what you want to achieve and where you are moving. Write down a clear vision. The mind cannot settle when it does not know where it is going; a clear, written direction gives it something to organise around and stops the scattering of life force through indecision."
+          text: "Define your direction: Clarify exactly what you want to achieve and where you are moving. Write down a clear vision. The mind cannot settle when it does not know where it is going; a clear, written direction gives it something to organise around and stops the scattering of energy through indecision."
         },
         {
           text: "Align with joy: Make joy and fulfillment your internal compass. Ruthlessly eliminate commitments that scatter your attention and pull against your true direction. Funnel your time and energy toward what brings you real satisfaction."
@@ -150,13 +150,13 @@ export const mindLever: Lever = {
           text: "Powerful visualization: Close your eyes and focus intensely on your desired reality. Visualize it so vividly and completely that you genuinely feel the emotion of having already achieved it. Repeat this until the inner orientation becomes total."
         },
         {
-          text: "Deliberate attention: Consciously direct your daily attention toward your path. Do not allow the mind to scatter into doubts, distractions, or inputs that contradict your vision. Where attention goes, life force flows."
+          text: "Deliberate attention: Consciously direct your daily attention toward your path. Do not allow the mind to scatter into doubts, distractions, or inputs that contradict your vision. Where attention goes, energy flows."
         },
         {
           text: "Strategic action — the physical anchor: Do not fall into the trap of passive imagination. Break your vision into practical, concrete steps and act on them. You must ground your inner vision into the physical world through right action — this is what bridges the gap."
         },
         {
-          text: "Unwavering determination: Marry your inner focus with relentless outer effort. When obstacles arise, meet them with concentration and determination. Your actions are the physical proof of your internal vision. Manifestation is not magic — it is the ultimate alignment of the mind, the energy body, and the physical body. When you hold an undeniable inner vision and back it with strategic action, you become the conscious source of your experience. The outer world begins to organise itself around your focused, determined direction, bringing your desired reality to life."
+          text: "Unwavering determination: Marry your inner focus with relentless outer effort. When obstacles arise, meet them with concentration and determination. Your actions are the physical proof of your internal vision. Manifestation is not magic — it is the ultimate alignment of the mind, the felt state, and the physical body. When you hold an undeniable inner vision and back it with strategic action, you become the conscious source of your experience. The outer world begins to organise itself around your focused, determined direction, bringing your desired reality to life."
         }
       ],
       layers: [
@@ -210,16 +210,16 @@ export const mindLever: Lever = {
           text: "The mental rep: Your mind will wander — it is conditioned to seek stimulation. When you notice you have drifted into thought, do not get frustrated. That moment of noticing is consciousness becoming aware of itself. Gently, without judgment, return your attention to the anchor. Each return is one mental rep, and each rep strengthens the muscle."
         },
         {
-          text: "Single-tasking — sealing the leaks: Carry this training into daily life. Multi-tasking is an illusion that scatters the life force. Do one thing at a time. If you are reading, just read. If you are eating, just eat. Give the present moment the full weight of your localized consciousness."
+          text: "Single-tasking — sealing the leaks: Carry this training into daily life. Multi-tasking is an illusion that scatters attention. Do one thing at a time. If you are reading, just read. If you are eating, just eat. Give the present moment the full weight of your localized consciousness."
         },
         {
           text: "The distraction capture system: During deep work, the mind will throw urgent thoughts at you to break your focus. Keep a notebook nearby. When a nagging thought arises, write it down immediately — this externalises the noise, frees your mental space, and allows you to let the thought go and return to your work without losing anything."
         },
         {
-          text: "Embrace the void — boredom as training: We live in a world built on the Extraction Economy — engineered to fill every empty moment with stimulation, keeping the attention scattered and the life force endlessly dispersed. To build genuine focus, you must learn to sit with a lack of stimulation. Stare out a window. Stand in a queue without reaching for the phone. Embracing this stillness starves the mind’s false hunger for distraction and builds immense, unwavering concentration. And beyond the training, every gap between activities is an invitation to go further — to practice presence itself, to simply rest as awareness, conscious of consciousness. These quiet moments are among the most direct doorways into the experience of pure inner silence."
+          text: "Embrace the void — boredom as training: We live in a world built on the Extraction Economy — engineered to fill every empty moment with stimulation, keeping the attention scattered and the energy endlessly dispersed. To build genuine focus, you must learn to sit with a lack of stimulation. Stare out a window. Stand in a queue without reaching for the phone. Embracing this stillness starves the mind’s false hunger for distraction and builds immense, unwavering concentration. And beyond the training, every gap between activities is an invitation to go further — to practice presence itself, to simply rest as awareness, conscious of consciousness. These quiet moments are among the most direct doorways into the experience of pure inner silence."
         },
         {
-          text: "Consistency is far more powerful than duration: five minutes of genuine daily practice will transform your capacity over months. As the attention muscle hardens into a laser, you cease to be a victim of external distractions or unconscious thinking. You become able to direct your vital energy — capable of sustaining focus on your vision until it takes form in the physical world."
+          text: "Consistency is far more powerful than duration: five minutes of genuine daily practice will transform your capacity over months. As the attention muscle hardens into a laser, you cease to be a victim of external distractions or unconscious thinking. You become able to direct your energy — capable of sustaining focus on your vision until it takes form in the physical world."
         }
       ],
       duration: "5–10 minutes",
@@ -264,7 +264,7 @@ export const mindLever: Lever = {
       subtitle: "externalising the mind",
       essence: "Transferring internal mental chaos into external physical form. The practice of disentangling your thoughts, quieting the overactive mind, and creating a physical mirror for profound self-understanding.",
       mechanism: [
-        "The mind is an extraordinary tool for execution, but a terrible place for storage. When you attempt to hold unprocessed emotions, anxieties, and unfinished tasks purely within the mind, you create mental loops (Vrittis) — circular, repetitive thinking patterns that consume enormous amounts of vital energy and keep the nervous system in a state of low- grade stress. Journaling acts as a release valve for this overflow. By translating the abstract, looping content of the mind into concrete words on a page, you instantly soothe the nervous system",
+        "The mind is an extraordinary tool for execution, but a terrible place for storage. When you attempt to hold unprocessed emotions, anxieties, and unfinished tasks purely within the mind, you create mental loops (Vrittis) — circular, repetitive thinking patterns that consume enormous amounts of energy and keep the nervous system in a state of low- grade stress. Journaling acts as a release valve for this overflow. By translating the abstract, looping content of the mind into concrete words on a page, you instantly soothe the nervous system",
         "and release the grip of the mental noise. In practice, you are taking the chaotic elements of thought and grounding them into the physical earth of the page. By getting these thoughts out of your head, you detach from them — shifting from being the entangled victim of your thinking to the silent observer of it."
       ],
       protocol: [
@@ -332,7 +332,7 @@ export const mindLever: Lever = {
           text: "The I AM anchor — present tense: Craft your affirmation in the present tense. Do not say “I will be confident” — that programs the mind to keep the reality in the future. State it as current truth: “I am unwavering in my focus.” I AM is the most fundamental assertion of being."
         },
         {
-          text: "The emotional charge: Words spoken mechanically are dead. To penetrate the subconscious, the affirmation must be paired with intense, elevated emotion. Thoughts are the vocabulary of the brain; emotions are the vocabulary of the body. As you speak the words, physically feel the joy, power, or peace of that reality — this emotional fire is what actually changes the pattern."
+          text: "The emotional intensity: Words spoken mechanically are dead. To penetrate the subconscious, the affirmation must be paired with intense, elevated emotion. Thoughts are the vocabulary of the brain; emotions are the vocabulary of the body. As you speak the words, physically feel the joy, power, or peace of that reality — this emotional fire is what actually changes the pattern."
         },
         {
           text: "The state of receptivity: The analytical mind will reject affirmations that contradict its current picture of reality. To bypass this, practise your affirmations in the in-between states — right as you wake, before full alertness arrives, and right before you fall asleep. In these windows the analytical gatekeeper is relaxed and the subconscious is most open to direct influence."
@@ -390,7 +390,7 @@ export const mindLever: Lever = {
           text: "Strategic positioning — architecting the future: Now turn your gaze forward. Having accepted your current position on the board, envision the exact reality you want to create. Ask yourself: what is the most intelligent, strategic choice I can make right now to move toward that future?"
         },
         {
-          text: "Collapsing time into the Now: Finally, pull the attention back from past and future entirely. The entire network of your life — every past lesson, every future vision — is being held right here, in the eternal Now. Ground your strategic clarity into immediate, present-moment action. Mindful reflection transforms you from an unconscious reactor into someone who can steer their own existence with clarity. By studying the past, you gain unparalleled wisdom. By accepting the present, you dissolve the friction of resistance, freeing enormous vital energy. By strategically positioning the future, you become the conscious creator of your destiny. You navigate the complex network of time and action with grace, anchored in the only place where true power exists: the present moment."
+          text: "Collapsing time into the Now: Finally, pull the attention back from past and future entirely. The entire network of your life — every past lesson, every future vision — is being held right here, in the eternal Now. Ground your strategic clarity into immediate, present-moment action. Mindful reflection transforms you from an unconscious reactor into someone who can steer their own existence with clarity. By studying the past, you gain unparalleled wisdom. By accepting the present, you dissolve the friction of resistance, freeing enormous energy. By strategically positioning the future, you become the conscious creator of your destiny. You navigate the complex network of time and action with grace, anchored in the only place where true power exists: the present moment."
         }
       ],
       layers: [
