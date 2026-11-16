@@ -64,7 +64,7 @@ Repetitive negative thinking — brooding over what has happened, worrying about
 
 That is the largest single finding in this evidence base, and it happens to be what the contemplative traditions have always said they were doing. Patanjali defines yoga as the stilling of the mind's fluctuations. The practices are older than the measurement by about two thousand years; the measurement arrived at the same target.
 
-This mechanism works at four depths. They are the same move applied more thoroughly, and **the evidence thins as you go deeper** — which is worth seeing laid out plainly:
+This mechanism works at four depths. They are the same move applied more thoroughly, and **the evidence thins as you go deeper** — which is worth seeing laid out plainly. The dedicated family page is [Quieting repetitive thought](/evidence/quieting-repetitive-thought).
 
 | Depth | What it involves | What the research shows |
 |---|---|---|
@@ -79,7 +79,7 @@ So read the table as a gradient rather than a ladder. The first two steps are am
 
 ### Two: changing physiological arousal
 
-The second mechanism has nothing to do with thought. It changes how activated the body is — in either direction.
+The second mechanism has nothing to do with thought. It changes how activated the body is — in either direction. The dedicated family page is [Regulating arousal](/evidence/regulating-arousal).
 
 **Downward.** Slowing the breath to around six a minute lowers blood pressure by enough to matter clinically and shifts the nervous system measurably toward rest. Progressive muscle relaxation reduces anxiety and improves self-rated sleep.
 
