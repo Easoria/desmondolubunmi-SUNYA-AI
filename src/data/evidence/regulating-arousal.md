@@ -57,14 +57,16 @@ Two cautions sit on these pages rather than here, and both are counterintuitive 
 
 ## Which practices sit where
 
-**Downward**
-Deep Belly Breathing · Coherent Breathing · 4-7-8 Breathing · The Physiological Sigh · Alternate-Nostril Breathing · Progressive Muscle Relaxation · The Corpse Pose · Non-Sleep Deep Rest (NSDR) · Heart Coherence
+The Breath lever already sorts itself this way, into **Calming** and **The Activators**. This family simply names why that split exists and extends it to the practices outside that lever.
 
-**Upward**
-Bellows Breath · Skull-Shining Breath · Cyclic Hyperventilation · Breath Retention
+**Calming the body**
+Alternate-Nostril Breathing · Deep Belly Breathing · Coherent Breathing · The Physiological Sigh · 4-7-8 Breathing · Progressive Muscle Relaxation · The Corpse Pose · Non-Sleep Deep Rest · Heart Coherence
+
+**Activating the body**
+Bellows Breath · Skull-Shining Breath · Cyclic Hyperventilation
 
 **Either, depending on how they are done**
-Spinal Breathing · Chanting · Humming — these lengthen the exhale and so tend downward, but pace and volume change the effect.
+Chanting · Humming · Spinal Breathing · Breath Retention — the first three lengthen the out-breath and so tend to calm, but pace and volume change the effect. Breath Retention depends entirely on what precedes it.
 
 ---
 
