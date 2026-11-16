@@ -6,7 +6,7 @@
 
 **Traditional convergence — Very strong** *(separating direct experience from the constructed narrative "I" appears independently across Buddhist, Advaita Vedānta and Daoist traditions for over two thousand years)*.
 
-> **Depth 3 of 4 in [Quieting repetitive thought](/evidence#how-the-inner-practices-work).** Above it: interrupting the loop. Below it: awareness without thought. The same move, applied further in — and the evidence thins as you go. The gradient is set out on the family page.
+> **Depth 3 of 4 in [Quieting repetitive thought](/evidence/quieting-repetitive-thought).** Above it: interrupting the loop. Below it: awareness without thought. The same move, applied further in — and the evidence thins as you go. The gradient is set out on the family page.
 
 > **In short:** the running commentary that turns experience into a story about you can be measurably changed. Eight-week mindfulness training reduced negative self-views **more than aerobic exercise did** in people with social anxiety,[^3] lowered self-focused attention in a way that **mediated** symptom improvement across 137 adults,[^7] and produced a small shift in connectivity between self-related and attention networks (**g = 0.234**).[^8] Two limits matter as much as the findings. The direction of brain change is **not** simply "less" — both the main trial and the meta-analysis found activity and connectivity *increased*.[^3][^8] And **every trial tested standard mindfulness or group therapy, not Self-Inquiry, Aware of Awareness, Being Nothing or Looking at Death.**
 

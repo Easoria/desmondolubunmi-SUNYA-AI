@@ -12,6 +12,7 @@ import mentalImageryAndVisualisation from "./mental-imagery-and-visualisation.co
 import valuesClarificationAndSelfAffirmation from "./values-clarification-and-self-affirmation.content";
 import inputRestrictionAndAttentionalLoad from "./input-restriction-and-attentional-load.content";
 import ruminationAndMindWandering from "./rumination-and-mind-wandering.content";
+import quietingRepetitiveThought from "./quieting-repetitive-thought.content";
 import compassionAndLovingKindnessTraining from "./compassion-and-loving-kindness-training.content";
 import acceptanceAndPsychologicalFlexibility from "./acceptance-and-psychological-flexibility.content";
 import socialConnectionAndIsolation from "./social-connection-and-isolation.content";
@@ -175,6 +176,20 @@ export const EVIDENCE_MECHANISMS: EvidenceMechanism[] = [
     markdown: withNormalizedGrades(musicAndDeliberatelyChosenSound),
   },
   {
+    slug: "quieting-repetitive-thought",
+    title: "Quieting repetitive thought",
+    blurb: "Family page for the four depths of interrupting thought that feeds on itself.",
+    group: "attention-and-cognition",
+    status: "complete",
+    reviewDate: "November 2026",
+    researchGrade:
+      "Strong at the first two depths, Moderate at the third, Preliminary at the fourth",
+    traditionalGrade: "Very strong",
+    description:
+      "The largest finding in this evidence base as one mechanism at four depths — from decentering through rumination and self-reference to awareness without thought.",
+    markdown: withNormalizedGrades(quietingRepetitiveThought),
+  },
+  {
     slug: "rumination-and-mind-wandering",
     title: "Rumination and mind-wandering",
     group: "attention-and-cognition",
@@ -225,6 +240,14 @@ export const EVIDENCE_MECHANISMS: EvidenceMechanism[] = [
     description:
       "The commentary that turns experience into a story about you — self-view trials, mediation evidence, network changes, and where deep self-inquiry remains untested.",
     markdown: withNormalizedGrades(selfReferentialProcessing),
+  },
+  {
+    slug: "awareness-without-thought",
+    title: "Awareness without thought — in preparation.",
+    group: "attention-and-cognition",
+    status: "planned",
+    description:
+      "Pending research. The fourth depth in Quieting repetitive thought — what remains when the commentary stops.",
   },
   {
     slug: "interoception-and-body-scan",
