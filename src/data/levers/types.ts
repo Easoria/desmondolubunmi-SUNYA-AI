@@ -83,6 +83,11 @@ export type Practice = {
   essence?: string;
   mechanism?: string[];
   protocol?: ProtocolStep[];
+  /**
+   * Caution block rendered below the Protocol, under the heading
+   * "Before you start". Exact paragraphs from evidence-driven safety notes.
+   */
+  beforeYouStart?: string[];
   duration?: string;
   layers: LayerOfBeing[];
   leverSlug: string;

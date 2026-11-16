@@ -187,49 +187,45 @@ export const conservationLever: Lever = {
       slug: "sexual-conservation",
       name: "Sexual Conservation",
       essence:
-        "A natural drive, and a strong one. The practice is not suppression — that tends to come out sideways — but moderation, and putting the drive into work, training and practice instead. Practitioners across traditions report more drive available for everything else.",
+        "A natural drive, and a strong one. The practice is not suppression — that tends to come out sideways — but moderation, and putting attention into work, training, relationship warmth and practice instead. Forced frequency targets lower enjoyment; shame-driven abstinence streaks often make things worse.",
       mechanism: [
-        "This drive is a natural part of the human system and serves a critical function — reproduction, the carrying on of the species. Just as hunger is there, just as the drive for sleep is there, this is there too. The first step is to recognise it rather than push it under the carpet.",
-        "Then, having recognised it, ask what it actually is. Sexual energy is a life-giving substance — every human being comes from it. That alone tells you it is significant and powerful.",
-        "Its habitual, excessive discharge is a significant drain. Conserving it — through moderation, or periods of continence — keeps that vital energy within the system, where it can rise and be put to higher use.",
-        "What is gained is not only the energy itself. Conserved, it fuels building and creating, and your attention and intelligence become available for that work. Dissipated, it costs twice: the energy is lost, and time must be spent rebuilding it. Overindulgence also reduces prefrontal activity — executive function, future planning, and the plain ability to be skilful and capable in practical life.",
-        "No suppression and no repression. Suppressed, it tends to come out sideways. But there is equally no need to make it the whole of life, or to be ruled by it — that corrupts and distorts life just as surely. Balance is the key, and being in flow with the way of nature tends to lead there on its own.",
+        "This drive is a natural part of the human system. The first step is to recognise it rather than push it under the carpet.",
+        "What the evidence actually supports is narrower than internet mythology. In committed relationships, sexual frequency tracks with well-being up to about once a week, and much of that link runs through everyday physical affection rather than intercourse alone. Instructing couples to double how often they have sex lowers happiness and enjoyment — turning intimacy into a quota removes intrinsic desire.",
+        "Claims that holding back ejaculation produces a lasting testosterone boost rest on a 2003 study that was formally retracted in 2021. There is no solid evidence that semen retention builds physiological “superpowers.” Stepping back from compulsive pornography can restore a sense of self-control when paired with ordinary habit changes and support; shame-heavy online abstinence forums are linked to higher anxiety, erectile worries and post-slip distress.",
+        "No suppression and no repression. Suppressed, the drive tends to come out sideways. But there is equally no need to make it the whole of life, or to be ruled by it. Balance is the key.",
       ],
       protocol: [
         {
-          text: "Begin with balance: Not abstinence as a rule imposed from outside. Living in balance means this is no longer a constant demand — the natural interval becomes a few months or more, rather than every day or every week. That interval is where the practice actually becomes possible.",
+          text: "Begin with balance: Not abstinence as a rule imposed from outside. Notice whether sexual activity is driven by desire, boredom, loneliness or habit — and whether everyday affection is present without a quota.",
         },
         {
-          text: "Use the root lock: A gentle squeeze and lift of the pelvic floor muscles, drawing the energy upward rather than letting it settle. It is the most direct practice here.",
+          text: "If you pause pornography or solo habits: Run a calm 14-to-30-day behavioural check rather than an all-or-nothing streak. Change bedtime routines, remove triggers, and replace boredom with something real. Drop streak counting if a slip becomes a crisis of worth.",
         },
         {
-          text: "Do not look: A small thing with a disproportionate effect. Avoid looking at the genitals — in the shower, changing, at any point. Looking keeps it present in the mind and makes arousal considerably easier. Ideally you forget it is there at all. But do not turn this into a rule you are resisting, because then it occupies the mind anyway and eventually wins. It is a quiet decision, not a battle. Simply do not look.",
+          text: "Limit the exposure: Avoid what triggers compulsive use. Audit what you consume and who you follow — anything that keeps you looping goes. This matters more than willpower does, because once arousal arises it is much harder to resist the second time.",
         },
         {
-          text: "Limit the exposure: Avoid what triggers the instinct. Lower the gaze. Keep dealings with the opposite sex to practical and business matters, and limit that exposure. Audit what you consume and who you follow — anything arousing goes. This matters more than willpower does, because once arousal arises it is much harder to resist the second time, and harder again the third. It becomes a downward spiral. Avoid it at the start and there is nothing to resist.",
+          text: "Build non-sexual connection: Much of compulsive activity is driven by boredom or loneliness rather than genuine desire. Friendships, people you see regularly, and touch that has nothing sexual in it meet the need underneath.",
         },
         {
-          text: "Build non-sexual connection: Much of this activity is driven by boredom or loneliness rather than genuine desire. A real social circle — friendships, people you see regularly, connection that has nothing sexual in it — meets the need underneath. Humans need connection; when that need is genuinely met, the pull weakens on its own rather than having to be resisted.",
+          text: "Have something you are building: Something that captures your focus so completely that sexual activity becomes secondary — not through struggle, but because you are absorbed in what you are doing.",
         },
         {
-          text: "Cold water and physical exertion: A cold shower in the morning helps considerably — it does not have to be freezing, only colder than usual. Exercise, jogging, calisthenics and yoga all move the same energy through the body rather than leaving it pooled in one place. Yoga in particular diffuses it across the whole system.",
-        },
-        {
-          text: "Have something you are building: This is the one that makes the rest work. Something that captures your focus so completely that sexual activity becomes secondary — not through struggle, but because you are absorbed, passionate, and genuinely enjoying what you are doing. The energy, the focus and the vitality then become a creation in the world rather than a discharge.",
-        },
-        {
-          text: "Keep practising: You cannot conserve and have nothing else going on. Without meditation, devotional practice, and real inner work, this becomes a tug of war between you and nature — and eventually you lose that war. The energy has to be channelled, not merely withheld. There is a deeper reason too: the more strongly you identify with the body, the more strongly you are ruled by its compulsive needs. As practice deepens and that identification loosens, conservation becomes considerably easier — less a matter of restraint than of no longer being so completely subject to the body’s demands.",
-        },
-        {
-          text: "Never fight nature: If nature calls, yield to it and move on. Then return to what you were doing. Spending your time and energy fighting and resisting is itself another loss.",
+          text: "Never fight nature: If nature calls, yield to it and move on. Then return to what you were doing. Spending your time fighting and resisting is itself another loss.",
         },
       ],
-      layers: ["The Vital Body", "Physical Body"],
+      beforeYouStart: [
+        "If an abstinence attempt makes you obsessive, self-hating or hopeless after a slip, leave shame-heavy online forums and drop streak counting.",
+        "Worry about sexual performance — rather than frequency itself — strongly predicts erectile difficulties; framing ordinary arousal shifts as permanent damage worsens anxiety.",
+        "Never use frequency targets or unilateral abstinence as leverage or punishment inside a relationship.",
+        "If sexual urges or pornography use feel genuinely out of control, cause serious harm, or tie into trauma, seek qualified care rather than an unguided online challenge.",
+      ],
+      layers: ["Physical Body"],
       leverSlug: "conservation",
       relatedPractices: ["the-root-lock", "fasting", "spinal-breathing"],
       metaTitle: "Sexual Conservation — How to Practise It | Sunya",
       metaDescription:
-        "A natural drive, and a strong one. The practice is not suppression but moderation, and putting the drive into work, training and practice instead.",
+        "Moderation and attention rather than suppression or quotas — with affection evidence kept and retracted testosterone myths removed.",
       families: ["L1"],
       directions: ["contain", "restore", "reduce"],
       problems: [],
@@ -243,7 +239,7 @@ export const conservationLever: Lever = {
           },
           {
             slug: "fasting",
-            reason: "Each practice conserves major drains of vital energy.",
+            reason: "Each practice reduces a major drain.",
           },
           {
             slug: "spinal-breathing",
@@ -256,39 +252,42 @@ export const conservationLever: Lever = {
       slug: "the-root-lock",
       name: "The Root Lock",
       essence:
-        "A contraction at the base of the pelvis, held during practice. It steadies the base of the body and produces a distinct upward pull through the torso. (Known in the yogic traditions as mula bandha.) It is the ground the other conservation practices stand on.",
+        "A gentle contraction at the base of the pelvis, held briefly during seated practice. (Known in the yogic traditions as mula bandha.) Its evidence as an inner practice for mood, attention or autonomic balance is traditional rather than clinical — keep contractions brief, and release fully between breaths.",
       mechanism: [
-        "Left alone, vital energy tends to settle at the base of the body and pool there. When it does, two things happen: it leaks away gradually, and it stagnates. Anyone who has felt sexual energy sitting heavily and going nowhere knows this sensation directly.",
-        "The root lock changes both. The contraction seals the base, so the energy stops draining outward, and it gives that energy a floor to rise from rather than a place to collect. What was pooling begins to move upward through the system.",
-        "This is why it belongs to conservation. It is not generating anything new — it is stopping a loss and redirecting what is already there.",
-        "It also works at the level of the body itself. The contraction creates stability and grounding, a felt sense of being rooted, which is the physical counterpart of sealing energy in. And for anyone working with sexual conservation, this is what makes it possible in the body rather than only in the will.",
+        "In rehabilitation medicine, the same muscles are trained for stress urinary incontinence and related weakness. That physical use is well evidenced. As an inner practice aimed at mood, attention, meditation depth or autonomic balance, there are no controlled trials showing the contraction does anything on its own.",
+        "The traditional instruction treats the lock as a physical cue during breath retention and seated stillness — a brief lift at the pelvic base, then a complete release. It does not validate claims that holding a tight contraction forces sensation or awareness up the spine.",
+        "A real harm sits on the other side of overuse: many people already hold excess tension in these muscles under stress. Repeated squeezing or holding a tight lock on top of high resting tone can trigger or worsen pelvic pain, urinary urgency and constipation. If you have those symptoms, stop contracting and seek pelvic-health assessment — the required training is usually relaxation, not tightening.",
       ],
       protocol: [
         {
-          text: "Sit with the spine erect: Cross-legged on the floor or upright in a chair. The spine needs to be straight for the energy to have a clear path upward.",
+          text: "Sit with the spine erect: Cross-legged on the floor or upright in a chair.",
         },
         {
           text: "Find the muscles: The pelvic floor — specifically the muscles between the genitals and the anus. The same ones you would use to stop the flow of urine. Contract them gently once or twice to locate them.",
         },
         {
-          text: "Breathe in and squeeze: Take a full breath in, then contract the pelvic floor muscles upward. Everything else stays relaxed — shoulders, jaw, abdomen.",
+          text: "Breathe in and squeeze lightly: Take a full breath in, then contract the pelvic floor muscles upward. Everything else stays relaxed — shoulders, jaw, abdomen.",
         },
         {
-          text: "Hold for a few seconds: Keep the breath and the contraction together, without strain. If you are gripping hard or the jaw is tightening, ease off. The lock should be firm and quiet.",
+          text: "Hold briefly: Keep the breath and the contraction together for a few seconds, without strain. If you are gripping hard or the jaw is tightening, ease off.",
         },
         {
-          text: "Release and exhale: Let the contraction go completely as you breathe out. Sit for a breath or two.",
+          text: "Release completely and exhale: Let the contraction go fully as you breathe out. Sit for a breath or two with the pelvic floor soft.",
         },
         {
-          text: "Repeat: Continue for several rounds. Over time it becomes subtler and more available, until you can hold a light version of it while sitting in meditation, or at any point in the day.",
+          text: "Repeat gently: Continue for a few rounds only. Do not turn this into a sustained clamp through the day.",
         },
       ],
-      layers: ["The Vital Body", "Physical Body"],
+      beforeYouStart: [
+        "If you have pelvic pain, painful sex, difficulty emptying the bladder, urinary urgency or constipation, do not practise tightening. Those symptoms often mean the pelvic floor is already overactive; the needed work is usually down-training with a clinician, not more squeezing.",
+        "Avoid forceful locking with breath-holding if you are pregnant, recovering from pelvic or abdominal surgery, or have hernias, haemorrhoids, high blood pressure or glaucoma.",
+      ],
+      layers: ["Physical Body"],
       leverSlug: "conservation",
       relatedPractices: ["breath-retention", "the-great-lock", "spinal-breathing"],
       metaTitle: "The Root Lock — How to Practise It | Sunya",
       metaDescription:
-        "A contraction at the base of the pelvis, held during practice. It steadies the base and produces a distinct upward pull. (Known as mula bandha.)",
+        "A brief pelvic-floor contraction used in traditional practice. Evidence for inner effects is traditional, not clinical; release fully between breaths.",
       families: ["L1", "L3"],
       directions: ["contain", "initiate"],
       problems: [],

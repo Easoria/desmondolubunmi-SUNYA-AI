@@ -34,8 +34,8 @@ export const connectionLever: Lever = {
       ],
       leverSlug: "connection",
       relatedPractices: [
-        "the-resonance-principle",
-        "the-alchemy-of-authenticity"
+        "knowing-yourself",
+        "honesty"
       ],
       metaTitle: "Arriving Full — How to Practise It | Sunya",
       metaDescription: "Coming to people with something to give rather than a gap to fill. A direction to move in, not a test to pass before you are allowed company.",
@@ -45,11 +45,11 @@ export const connectionLever: Lever = {
         durationSource: "OMITTED",
         relatedPracticeRationale: [
           {
-            slug: "the-resonance-principle",
+            slug: "knowing-yourself",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "the-alchemy-of-authenticity",
+            slug: "honesty",
             reason: "Adjacent in source order within the same lever sequence."
           }
         ]
@@ -57,7 +57,7 @@ export const connectionLever: Lever = {
     },
     {
       sourceNumber: 2,
-      slug: "the-resonance-principle",
+      slug: "knowing-yourself",
       name: "Knowing Yourself",
       essence: "Getting clear on what you actually value and how you want to live — which is what lets you recognise the people and places that fit, and notice the ones that do not.",
       mechanism: [
@@ -84,7 +84,7 @@ export const connectionLever: Lever = {
       leverSlug: "connection",
       relatedPractices: [
         "internal-saturation",
-        "the-alchemy-of-authenticity",
+        "honesty",
         "karma-yoga"
       ],
       metaTitle: "Knowing Yourself — How to Practise It | Sunya",
@@ -99,7 +99,7 @@ export const connectionLever: Lever = {
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "the-alchemy-of-authenticity",
+            slug: "honesty",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
@@ -111,11 +111,11 @@ export const connectionLever: Lever = {
     },
     {
       sourceNumber: 3,
-      slug: "the-alchemy-of-authenticity",
+      slug: "honesty",
       name: "Honesty",
       essence: "Dropping the social mask to exist in a state of genuine honesty with yourself and the world. The recognition that true connection is impossible if you are hiding behind a false persona.",
       mechanism: [
-        "To avoid rejection, the conditioned self constructs a social mask — a carefully managed persona designed to gain approval. Maintaining this mask consumes enormous amounts of vital energy. When you interact with someone while wearing it, they are not connecting with you; they are connecting with the performance. Even in a crowded room, you feel entirely alone. Authenticity is the practice of dropping this performance. It is terrifying at first, because it requires genuine vulnerability — the willingness to be seen as you actually are. But vulnerability has a precise effect: when you speak your truth and show your real face, you signal to the other person’s nervous system that it is safe for them to do the same. The armour on both sides dissolves. Real contact becomes possible."
+        "To avoid rejection, the conditioned self constructs a social mask — a carefully managed persona designed to gain approval. Maintaining this mask consumes enormous amounts of energy. When you interact with someone while wearing it, they are not connecting with you; they are connecting with the performance. Even in a crowded room, you feel entirely alone. Authenticity is the practice of dropping this performance. It is terrifying at first, because it requires genuine vulnerability — the willingness to be seen as you actually are. But vulnerability has a precise effect: when you speak your truth and show your real face, you signal to the other person’s nervous system that it is safe for them to do the same. The armour on both sides dissolves. Real contact becomes possible."
       ],
       protocol: [
         {
@@ -134,7 +134,7 @@ export const connectionLever: Lever = {
       ],
       leverSlug: "connection",
       relatedPractices: [
-        "the-resonance-principle",
+        "knowing-yourself",
         "karma-yoga",
         "somatic-communion"
       ],
@@ -146,7 +146,7 @@ export const connectionLever: Lever = {
         durationSource: "OMITTED",
         relatedPracticeRationale: [
           {
-            slug: "the-resonance-principle",
+            slug: "knowing-yourself",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
@@ -189,7 +189,7 @@ export const connectionLever: Lever = {
       ],
       leverSlug: "connection",
       relatedPractices: [
-        "the-alchemy-of-authenticity",
+        "honesty",
         "somatic-communion",
         "the-ecosystem-of-belonging"
       ],
@@ -201,7 +201,7 @@ export const connectionLever: Lever = {
         durationSource: "OMITTED",
         relatedPracticeRationale: [
           {
-            slug: "the-alchemy-of-authenticity",
+            slug: "honesty",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
@@ -301,7 +301,7 @@ export const connectionLever: Lever = {
       relatedPractices: [
         "somatic-communion",
         "the-alchemy-of-forgiveness",
-        "haptic-alchemy"
+        "touch"
       ],
       metaTitle: "Community — How to Practise It | Sunya",
       metaDescription: "Architecting and immersing yourself in a collective field that amplifies consciousness and accelerates growth.",
@@ -319,7 +319,7 @@ export const connectionLever: Lever = {
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "haptic-alchemy",
+            slug: "touch",
             reason: "Adjacent in source order within the same lever sequence."
           }
         ]
@@ -335,7 +335,7 @@ export const connectionLever: Lever = {
       ],
       protocol: [
         {
-          text: "The autopsy of resentment: Identify anyone who has hurt you, or any grudge or resentment you are currently holding. Observe honestly how this resentment is consuming your vital energy, your clarity, your focus, and your happiness. Recognise this brutal truth: this mental loop is draining your vital energy, not theirs. You are drinking poison and expecting the other person to die."
+          text: "The autopsy of resentment: Identify anyone who has hurt you, or any grudge or resentment you are currently holding. Observe honestly how this resentment is consuming your energy, your clarity, your focus, and your happiness. Recognise this brutal truth: this mental loop is draining your energy, not theirs. You are drinking poison and expecting the other person to die."
         },
         {
           text: "Compassion as a technology: To sever the cord, shift your perspective of the person who harmed you. Recognise that anyone who inflicts pain on another is operating from a state of deep unconsciousness and inner suffering of their own. You do not excuse the harmful act — but you recognise the ignorance (Avidya) that caused it. This shift from anger to objective compassion immediately stops the energetic leak."
@@ -344,7 +344,7 @@ export const connectionLever: Lever = {
           text: "The somatic release: Forgiveness cannot only be an intellectual decision — it must be a physical release. Locate the exact physical sensation of the anger in your body: the tightness in the throat, the weight in the chest, the tension in the stomach. Breathe directly into it. On the exhale, sigh audibly and consciously allow the heavy energy to leave the body with the breath."
         },
         {
-          text: "Reclaiming the boundary: Forgiveness severs the energetic cord to the past, but it does not mean you must welcome toxic behaviour back into your present life. You can completely forgive someone in your heart while simultaneously maintaining a clear, firm boundary to protect your peace. Release the anger. Keep the lesson. Forgiveness is an entirely internal act. The other person does not need to know. They do not need to agree, apologise, or even be alive for this to work. It is something you do inwardly, simply by letting go — and in doing so, you free yourself from the burden of discord."
+          text: "Reclaiming the boundary: Forgiveness severs the emotional tie to the past, but it does not mean you must welcome toxic behaviour back into your present life. You can completely forgive someone in your heart while simultaneously maintaining a clear, firm boundary to protect your peace. Release the anger. Keep the lesson. Forgiveness is an entirely internal act. The other person does not need to know. They do not need to agree, apologise, or even be alive for this to work. It is something you do inwardly, simply by letting go — and in doing so, you free yourself from the burden of discord."
         }
       ],
       layers: [
@@ -354,7 +354,7 @@ export const connectionLever: Lever = {
       leverSlug: "connection",
       relatedPractices: [
         "the-ecosystem-of-belonging",
-        "haptic-alchemy"
+        "touch"
       ],
       metaTitle: "Forgiveness — How to Practise It | Sunya",
       metaDescription: "The ultimate internal technology for untying the deepest knots of the heart.",
@@ -368,7 +368,7 @@ export const connectionLever: Lever = {
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "haptic-alchemy",
+            slug: "touch",
             reason: "Adjacent in source order within the same lever sequence."
           }
         ]
@@ -376,7 +376,7 @@ export const connectionLever: Lever = {
     },
     {
       sourceNumber: 8,
-      slug: "haptic-alchemy",
+      slug: "touch",
       name: "Touch",
       essence: "Restoring safe, appropriate physical contact. Touch is not a luxury — it measurably affects stress and mood, and most adults get far less than they need.",
       mechanism: [

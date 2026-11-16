@@ -214,7 +214,7 @@ export const movementLever: Lever = {
               text: "Inhale: pull the chest forward, lift the gaze, and arch the lower back."
             },
             {
-              text: "Exhale: round the spine backward, tucking the chin. Move rhythmically, like stoking a fire with a bellows, for 1–3 minutes. This pumps the life force up the spine and draws the dormant energy up out of the pelvis. The twist — rotation. Sit cross-legged. Place your left hand on your right knee, and plant your right hand on the floor behind your tailbone to keep the spine tall. Inhale and lengthen the crown of the head upward. Exhale and twist the torso to the right, turning the head to gaze over the right shoulder. Breathe into the restriction. Release fluidly, then switch sides. Twisting wrings the spine like a sponge; on the release, life force rushes back through, clearing the knots."
+              text: "Exhale: round the spine backward, tucking the chin. Move rhythmically, like stoking a fire with a bellows, for 1–3 minutes. This pumps the energy up the spine and draws the dormant energy up out of the pelvis. The twist — rotation. Sit cross-legged. Place your left hand on your right knee, and plant your right hand on the floor behind your tailbone to keep the spine tall. Inhale and lengthen the crown of the head upward. Exhale and twist the torso to the right, turning the head to gaze over the right shoulder. Breathe into the restriction. Release fluidly, then switch sides. Twisting wrings the spine like a sponge; on the release, energy rushes back through, clearing the knots."
             },
             {
               text: "Gentler, restorative version: lie on your back, draw the knees to the chest, drop them to one side and turn the head the other way, and rest into gravity for a minute or two before switching. The side bend — lateral. Sit cross-legged. Plant your right hand on the floor beside you. Inhale and reach the left arm up and over, bending the whole spine to the right like a crescent moon. Breathe deeply into the opened left side of the ribcage. Then switch sides. This opens the side body, expands the ribs and the breath, and frees the spine sideways."
@@ -305,7 +305,7 @@ export const movementLever: Lever = {
               text: "Bird left: inhale — extend the left leg back and up, lift the chest and chin."
             },
             {
-              text: "Neutral: return, exhale fully, inhale fully. (One cycle complete — repeat 3 times in total.) Keep the eyes closed throughout. The spinal wave moves the life force up through the central channel and balances the two sides of the body. Phase 4 — Dynamic flow. From all fours, press up to Downward Dog — hips high, inverted V, head hanging loose. A few deep breaths. Then begin the flow:"
+              text: "Neutral: return, exhale fully, inhale fully. (One cycle complete — repeat 3 times in total.) Keep the eyes closed throughout. The spinal wave moves the energy up through the central channel and balances the two sides of the body. Phase 4 — Dynamic flow. From all fours, press up to Downward Dog — hips high, inverted V, head hanging loose. A few deep breaths. Then begin the flow:"
             },
             {
               text: "Inhale: shift forward into Plank — body straight, core fully engaged."
@@ -347,7 +347,7 @@ export const movementLever: Lever = {
               text: "Throat Lock: tuck the chin firmly to the chest."
             },
             {
-              text: "The hold: remain here with the breath held and locks engaged for as long as is comfortable. The locks seal both ends of the central channel; the life force, with nowhere to disperse, gathers and flows upward through the spine."
+              text: "The hold: remain here with the breath held and locks engaged for as long as is comfortable. The locks seal both ends of the central channel; the energy, with nowhere to disperse, gathers and flows upward through the spine."
             },
             {
               text: "The release: release all three locks, lift the head, exhale slowly. Sit quietly for a few breaths. Switch legs — right heel to the perineum, left leg extended — and repeat. Phase 7 — Rest. Lie completely flat on the back, arms and legs falling open naturally. Let the breath return to its own rhythm. This is not the end of the practice — it is the most important phase. Everything before was preparation for this stillness. Rest unmoving for at least 5–10 minutes. The practice is complete when you rise."
@@ -404,13 +404,13 @@ export const movementLever: Lever = {
               text: "The shake. Don’t try to dance yet — the mind will immediately try to choreograph you. Bypass it by beginning with a deliberate, whole-body shake: the hands, the feet, the shoulders, the spine. Shaking is how the body naturally discharges held tension — animals do it instinctively after stress. You are signalling the body: the war is over. It is safe to open."
             },
             {
-              text: "Intuitive movement. Once the body is loose, drop the mind’s control over the limbs entirely. Stop trying to catch the beat. Stop trying to look good. Let the body lead. If it wants to writhe, stomp, jump, or stretch — let it, without hesitation. Hand the movement entirely over to the life force."
+              text: "Intuitive movement. Once the body is loose, drop the mind’s control over the limbs entirely. Stop trying to catch the beat. Stop trying to look good. Let the body lead. If it wants to writhe, stomp, jump, or stretch — let it, without hesitation. Hand the movement entirely over to the energy."
             },
             {
               text: "The climax. As the momentum builds, pour everything into it — intensity, passion, total abandon. If anger is there, let the body stomp. If joy is there, let the body fly. There will come a threshold where the mind gives up entirely. At that peak, the dancer disappears and only the dance remains. You are no longer doing the moving — life is moving through you."
             },
             {
-              text: "The void. When the music ends, do not reach for the phone. Collapse flat on your back and do not move a single muscle. You may feel the body buzzing, vibrating, intensely alive — this is the life force moving freely through channels that had been held closed. Rest in this silent, objectless stillness for 5–10 minutes. It is in this gap that the body integrates the shift. If seated meditation feels impossible because the mind is too loud, or the body feels numb and disconnected — this is the entry point. Once the static has been shaken out, stillness arrives on its own. Held Postures and Seals These are not a routine. Each is an individual form — held during meditation, breathing practice, or any moment of stillness. They can be used independently or in any combination."
+              text: "The void. When the music ends, do not reach for the phone. Collapse flat on your back and do not move a single muscle. You may feel the body buzzing, vibrating, intensely alive — this is the energy moving freely through channels that had been held closed. Rest in this silent, objectless stillness for 5–10 minutes. It is in this gap that the body integrates the shift. If seated meditation feels impossible because the mind is too loud, or the body feels numb and disconnected — this is the entry point. Once the static has been shaken out, stillness arrives on its own. Held Postures and Seals These are not a routine. Each is an individual form — held during meditation, breathing practice, or any moment of stillness. They can be used independently or in any combination."
             }
           ],
           duration: "5–10 minutes",

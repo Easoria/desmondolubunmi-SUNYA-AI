@@ -43,7 +43,7 @@ export const heartLever: Lever = {
       leverSlug: "heart",
       relatedPractices: [
         "emotional-presence",
-        "holding-love-as-vibration"
+        "holding-love-steady"
       ],
       metaTitle: "Heart Coherence — How to Practise It | Sunya",
       metaDescription: "The baseline practice of the Heart lever — creating a state of biological safety and inner calm by directing the breath and attention to the heart centre and actively generating a feeling of genuine appreciation.",
@@ -59,7 +59,7 @@ export const heartLever: Lever = {
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "holding-love-as-vibration",
+            slug: "holding-love-steady",
             reason: "Adjacent in source order within the same lever sequence."
           }
         ]
@@ -100,7 +100,7 @@ export const heartLever: Lever = {
       leverSlug: "heart",
       relatedPractices: [
         "heart-coherence",
-        "holding-love-as-vibration",
+        "holding-love-steady",
         "loving-kindness"
       ],
       metaTitle: "Emotional Presence — How to Practise It | Sunya",
@@ -117,7 +117,7 @@ export const heartLever: Lever = {
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "holding-love-as-vibration",
+            slug: "holding-love-steady",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
@@ -129,11 +129,11 @@ export const heartLever: Lever = {
     },
     {
       sourceNumber: 3,
-      slug: "holding-love-as-vibration",
+      slug: "holding-love-steady",
       name: "Holding Love Steady",
       essence: "Rather than directing love at someone or something, you learn to inhabit it as a self-generated state — consciously choosing to immerse yourself in the feeling of love by deliberate inner attention.",
       mechanism: [
-        "Most people experience love only as a response to an external stimulus — a person, an animal, a beautiful moment. The love arises, and when the object is gone, the love fades. This practice reverses that dependency. By recalling a moment of pure, unconditional love to access the feeling, then deliberately dropping the object while sustaining the feeling itself, you discover that love is not merely a reaction — it is a state you consciously choose to be in. As you hold this vibration, it saturates the inner system and radiates outward naturally. You are not directing love at anyone; you are becoming a source of it."
+        "Most people experience love only as a response to an external stimulus — a person, an animal, a beautiful moment. The love arises, and when the object is gone, the love fades. This practice reverses that dependency. By recalling a moment of pure, unconditional love to access the feeling, then deliberately dropping the object while sustaining the feeling itself, you discover that love is not merely a reaction — it is a state you consciously choose to be in. As you hold it, the feeling spreads through the chest and torso and becomes easier to sustain. You are not directing love at anyone; you are becoming a source of it."
       ],
       protocol: [
         {
@@ -143,7 +143,7 @@ export const heartLever: Lever = {
           text: "Amplify it: Don’t just remember the scene — reach for the feeling itself. Let it grow in the chest until it fills the whole torso."
         },
         {
-          text: "Drop the object: Gently release the image or memory. You no longer need it. Hold only the vibration of the feeling itself — the warmth, the openness, the sweetness — without it being directed at anything."
+          text: "Drop the object: Gently release the image or memory. You no longer need it. Hold only the feeling itself — the warmth, the openness, the sweetness — without it being directed at anything."
         },
         {
           text: "Immerse yourself: Let this feeling saturate every part of the body. You are consciously choosing to be in this state by your own will, independent of any external circumstance."
@@ -204,13 +204,13 @@ export const heartLever: Lever = {
           text: "Stage 2 — a loved one: Bring to mind someone you love easily. Visualise them clearly and send the phrases to them. Let the warmth flow naturally."
         },
         {
-          text: "Stage 3 — a neutral person: Someone you neither like nor dislike — a neighbour, a shopkeeper, someone you pass regularly. Notice how the heart responds when there is no charge in either direction."
+          text: "Stage 3 — a neutral person: Someone you neither like nor dislike — a neighbour, a shopkeeper, someone you pass regularly. Notice how the heart responds when there is no pull in either direction."
         },
         {
           text: "Stage 4 — a difficult person: Someone who has caused you pain or frustration. This is the alchemical stage. Send the phrases without condition. You are not condoning what they did — you are freeing your own heart from the weight of the contraction."
         },
         {
-          text: "Stage 5 — all beings: Expand the feeling outward without limit — to all people, all creatures, the entirety of life. Radiate the warmth in every direction until there is no boundary left."
+          text: "Stage 5 — all beings: Expand the feeling outward without limit — to all people, all creatures, the entirety of life. Let the warmth spread in every direction until there is no boundary left."
         }
       ],
       layers: [
@@ -218,7 +218,7 @@ export const heartLever: Lever = {
       ],
       leverSlug: "heart",
       relatedPractices: [
-        "holding-love-as-vibration",
+        "holding-love-steady",
         "giving-and-receiving",
         "ecstatic-chanting"
       ],
@@ -232,7 +232,7 @@ export const heartLever: Lever = {
         durationSource: "OMITTED",
         relatedPracticeRationale: [
           {
-            slug: "holding-love-as-vibration",
+            slug: "holding-love-steady",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
@@ -313,7 +313,7 @@ export const heartLever: Lever = {
       name: "Ecstatic Chanting",
       essence: "Using melody, repetition and sustained emotional intensity to quiet the analytical mind and open the heart. What you sing to is yours to choose — Jesus, Shiva, Mary, Krishna, the earth, or nothing named at all. The practice works on the intensity of the feeling rather than on its object.",
       mechanism: [
-        "From the standpoint of felt experience, devotional chanting is an act of emotional alchemy. In the normal human condition, the separate self is driven by endless desire (Kama) — constantly projecting its longing outward, attempting to extract fulfilment from finite things. Chanting takes this exact same momentum and redirects it upward. The heartbreak, the yearning, the passion — all of it becomes fuel, burned in the fire of vocal vibration. Because the analytical mind cannot surrender to formless, abstract concepts easily, a Name or Form — a deity, a saint, a mantra — is used as a focal point. By repeating the phrase endlessly, the analytical, self-referential mind becomes hypnotised and exhausted. The repetitive vibration softens the held tightness around the chest. The singer pours their finite identity entirely into the song, until the separation between the Lover and the Beloved dissolves."
+        "From the standpoint of felt experience, devotional chanting is an act of emotional alchemy. In the normal human condition, the separate self is driven by endless desire (Kama) — constantly projecting its longing outward, attempting to extract fulfilment from finite things. Chanting takes this exact same momentum and redirects it upward. The heartbreak, the yearning, the passion — all of it becomes fuel, burned in the fire of the song. Because the analytical mind cannot surrender to formless, abstract concepts easily, a Name or Form — a deity, a saint, a mantra — is used as a focal point. By repeating the phrase endlessly, the analytical, self-referential mind becomes hypnotised and exhausted. The repetitive sound softens the held tightness around the chest. The singer pours their finite identity entirely into the song, until the separation between the Lover and the Beloved dissolves."
       ],
       protocol: [
         {
@@ -323,13 +323,13 @@ export const heartLever: Lever = {
           text: "The ignition — Bhav: Do not sing dryly or mechanically. To ignite this practice you must cultivate Bhav — spiritual emotion. Tap into your deepest human longing. Pour your grief, your joy, your desperation, and your gratitude into the words. Use the song to cry out to the Infinite. You are not performing; you are pleading, loving, and demanding connection."
         },
         {
-          text: "The physical offering: Devotional chanting must engage the whole body. Sing from the navel — pull the breath deep from the belly and push the vibration outward through the centre of the chest. Allow the physical intensity to rise. Clap, sway, or weep if the body demands it. You are offering the friction and beauty of the human experience back to Life itself."
+          text: "The physical offering: Devotional chanting must engage the whole body. Sing from the navel — pull the breath deep from the belly and push the sound outward through the centre of the chest. Allow the physical intensity to rise. Clap, sway, or weep if the body demands it. You are offering the friction and beauty of the human experience back to Life itself."
         },
         {
           text: "The current — repetition: As you repeat the chorus or mantra over and over, stop trying to understand the words. Let the rhythm become a sweeping current. With every repetition, consciously offer a piece of the separate self into the sound. The repetition is designed to blur the boundary of your identity. You are letting the song sing you."
         },
         {
-          text: "The silence: As the chant reaches its ecstatic peak and finally ends, do not immediately open your eyes or move. Plunge into the sudden, ringing silence. This is the most crucial phase. The physical sound has stopped, but the channels are open and vibrating. Rest in this state of profound internal saturation. The inner emptiness is completely full. The messy, passionate emotions of the human condition are not an obstacle to inner work — they are the very fuel for it. By merging pure acoustic vibration with fierce, unapologetic love, the body overrides its own survival programming. You cease to be a fragmented, isolated entity trying to extract love from the world; you become a unified, vibrating instrument radiating love into it. In the climax of the chant, the illusion of separation ends: there is no longer a singer and a song, only the pure, ecstatic expression of Life singing to Itself."
+          text: "The silence: As the chant reaches its ecstatic peak and finally ends, do not immediately open your eyes or move. Plunge into the sudden, ringing silence. This is the most crucial phase. The physical sound has stopped, but the chest and throat are still open. Rest in this state of profound internal saturation. The inner emptiness is completely full. The messy, passionate emotions of the human condition are not an obstacle to inner work — they are the very fuel for it. By merging pure acoustic sound with fierce, unapologetic love, the body overrides its own survival programming. You cease to be a fragmented, isolated entity trying to extract love from the world; you become a unified instrument offering love into it. In the climax of the chant, the illusion of separation ends: there is no longer a singer and a song, only the pure, ecstatic expression of Life singing to Itself."
         }
       ],
       layers: [
@@ -378,7 +378,7 @@ export const heartLever: Lever = {
           text: "Part 1 — Dropping the effort to be separate: Resistance is the energy expended to maintain the illusion of being an isolated entity fighting the universe. Begin by dropping it from three layers:"
         },
         {
-          text: "Drop the mental model: The life force knots when there is a gap between what is and what you think should be. Drop the demand. Drop the rigidity that says “this moment is wrong” or “I need to be somewhere else.” When the mental model is released, the inner noise quiets."
+          text: "Drop the mental model: The system knots when there is a gap between what is and what you think should be. Drop the demand. Drop the rigidity that says “this moment is wrong” or “I need to be somewhere else.” When the mental model is released, the inner noise quiets."
         },
         {
           text: "Drop the armour: Over years, we hold fear and trauma by tightening the muscles and channels — building a literal shell. Let the belly go soft. Let the jaw unclench. Let the shoulders drop. Stop burning energy maintaining a fortress that is not under attack."
@@ -390,13 +390,13 @@ export const heartLever: Lever = {
           text: "Surrender to gravity: Physically yield the full weight of your body to the pull of the earth. Stop holding yourself up. This discharges accumulated tension instantly into the ground."
         },
         {
-          text: "Surrender to the life force: You are not breathing yourself — you are being breathed. The same intelligence that digests your food is circulating the life force. Step back. Allow the breath to find its own rhythm. Allow the intelligence of the life force to repair what it knows needs repairing — it knows exactly where the blockages are, and it will heal them if you stop steering with limited effort."
+          text: "Surrender to the breath: You are not breathing yourself — you are being breathed. The same intelligence that digests your food is circulating the energy. Step back. Allow the breath to find its own rhythm. Allow the intelligence of the energy to repair what it knows needs repairing — it knows exactly where the blockages are, and it will heal them if you stop steering with limited effort."
         },
         {
           text: "Surrender to the present moment: To anchor yourself in the Now, give your attention entirely to the immediate sensation of existence — the air on the skin, the sounds in the room, the beat of the heart. This stills the mental body and creates a state of flow with zero friction."
         },
         {
-          text: "Surrender to the Void: This is the ultimate surrender. Surrender the object — the body and mind — to the subject, the witness. Relax into the silence behind the noise. Rest as the screen, and let the movie play however it will. Even simply holding the feeling of dropping all resistance and effort is powerful. It unblocks the energy system and allows the life force to move freely. By surrendering completely, you reconnect the individual drop to the Ocean, and universal life floods back in. This practice can dissolve insomnia by surrendering to sleep rather than struggling to make it happen. It can restore the breath to its natural rhythm. It can release muscles that have been unconsciously tight for years. And when there is something you cannot change — surrender to it. The clarity and intelligence to perceive the right course of action almost always arises when you are calm and present, not when you are lost in worry and resistance. At the deepest level, surrender is not something done toward something external. From the perspective of non-duality, it is an inward movement of dissolution — the separate, egoic self dissolving back into the vast, infinite life from which it was never truly separate. You are not surrendering to something outside yourself; you are dying into something truer and more eternal within yourself. Through this insight comes a natural subsidence of the separate self back into the one Self — and with it, a natural, effortless freedom. All there simply is, is the one Self. The idea of a separate self existing in the world was always the illusion. This is the deepest surrendering."
+          text: "Surrender to the Void: This is the ultimate surrender. Surrender the object — the body and mind — to the subject, the witness. Relax into the silence behind the noise. Rest as the screen, and let the movie play however it will. Even simply holding the feeling of dropping all resistance and effort is powerful. It unblocks the energy system and allows the energy to move freely. By surrendering completely, you reconnect the individual drop to the Ocean, and universal life floods back in. This practice can dissolve insomnia by surrendering to sleep rather than struggling to make it happen. It can restore the breath to its natural rhythm. It can release muscles that have been unconsciously tight for years. And when there is something you cannot change — surrender to it. The clarity and intelligence to perceive the right course of action almost always arises when you are calm and present, not when you are lost in worry and resistance. At the deepest level, surrender is not something done toward something external. From the perspective of non-duality, it is an inward movement of dissolution — the separate, egoic self dissolving back into the vast, infinite life from which it was never truly separate. You are not surrendering to something outside yourself; you are dying into something truer and more eternal within yourself. Through this insight comes a natural subsidence of the separate self back into the one Self — and with it, a natural, effortless freedom. All there simply is, is the one Self. The idea of a separate self existing in the world was always the illusion. This is the deepest surrendering."
         }
       ],
       layers: [

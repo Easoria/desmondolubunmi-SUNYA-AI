@@ -174,6 +174,19 @@ export const EVIDENCE_MECHANISMS: EvidenceMechanism[] = [
     markdown: withNormalizedGrades(musicAndDeliberatelyChosenSound),
   },
   {
+    slug: "rumination-and-mind-wandering",
+    title: "Rumination and mind-wandering",
+    group: "attention-and-cognition",
+    status: "complete",
+    reviewDate: "November 2026",
+    researchGrade:
+      "Strong for rumination's link to depression and anxiety and for targeted therapies reducing repetitive negative thinking, Moderate for mindfulness reducing rumination and for content-dependent mood effects of mind-wandering",
+    traditionalGrade: "Very strong",
+    description:
+      "Repetitive negative thinking versus ordinary mind-wandering — clinical risk, targeted training, and why not every drift of attention is the problem.",
+    markdown: withNormalizedGrades(ruminationAndMindWandering),
+  },
+  {
     slug: "meditation",
     title: "Meditation — focused attention and open monitoring",
     blurb: "Merged: the trial literature teaches and tests both together.",
@@ -198,6 +211,14 @@ export const EVIDENCE_MECHANISMS: EvidenceMechanism[] = [
     description:
       "The shift from being inside a thought to observing it — relapse prevention, rumination buffering, and trainability.",
     markdown: withNormalizedGrades(decentering),
+  },
+  {
+    slug: "self-referential-processing",
+    title: "Self-referential processing — in preparation.",
+    group: "attention-and-cognition",
+    status: "planned",
+    description:
+      "Pending research. The third depth in How the inner practices work — quieting self-referential thought.",
   },
   {
     slug: "interoception-and-body-scan",
@@ -263,19 +284,6 @@ export const EVIDENCE_MECHANISMS: EvidenceMechanism[] = [
     description:
       "Cutting alerts and continuous mobile internet — attention, well-being, quiet post-learning rest, and where short detoxes fall short.",
     markdown: withNormalizedGrades(inputRestrictionAndAttentionalLoad),
-  },
-  {
-    slug: "rumination-and-mind-wandering",
-    title: "Rumination and mind-wandering",
-    group: "attention-and-cognition",
-    status: "complete",
-    reviewDate: "November 2026",
-    researchGrade:
-      "Strong for rumination's link to depression and anxiety and for targeted therapies reducing repetitive negative thinking, Moderate for mindfulness reducing rumination and for content-dependent mood effects of mind-wandering",
-    traditionalGrade: "Very strong",
-    description:
-      "Repetitive negative thinking versus ordinary mind-wandering — clinical risk, targeted training, and why not every drift of attention is the problem.",
-    markdown: withNormalizedGrades(ruminationAndMindWandering),
   },
   {
     slug: "compassion-and-loving-kindness-training",

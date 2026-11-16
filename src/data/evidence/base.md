@@ -54,6 +54,59 @@ Anxiety is measurable. Sleep is measurable. Blood pressure is measurable. Any cl
 
 ---
 
+## How the inner practices work
+
+The practices on the internal levers look varied — sitting, breathing, chanting, inquiry, lying still. Almost all of them operate through one of two mechanisms, and knowing which one a practice uses tells you what to expect from it.
+
+### One: interrupting thought that feeds on itself
+
+Repetitive negative thinking — brooding over what has happened, worrying about what might — is one of the strongest psychological drivers of depression and anxiety in the whole research literature. It is also, unusually, one of the most treatable: across 55 trials, therapies built specifically to break these loops produced a **large** effect and outperformed general cognitive behavioural therapy.
+
+That is the largest single finding in this evidence base, and it happens to be what the contemplative traditions have always said they were doing. Patanjali defines yoga as the stilling of the mind's fluctuations. The practices are older than the measurement by about two thousand years; the measurement arrived at the same target.
+
+This mechanism works at four depths. They are the same move applied more thoroughly, and **the evidence thins as you go deeper** — which is worth seeing laid out plainly:
+
+| Depth | What it involves | What the research shows |
+|---|---|---|
+| **Stepping outside the thought** | Seeing a thought as a passing event rather than as the truth | **Strong.** Cut depressive relapse from 62% to 36% over 68 weeks |
+| **Interrupting the loop** | Catching repetitive negative thinking and stopping it continuing | **Strong, large.** 55 trials; outperformed general CBT |
+| **Quieting self-referential thought** | The background commentary about yourself going quiet | **Small but real.** Measurable changes in the brain networks that carry self-focused thought |
+| **Awareness without thought** | What remains when that commentary stops | **Nothing.** Not studied, and partly not reachable by these methods |
+
+The last row is the honest one. Practitioners across every tradition report that this is where the practice leads, and that living more of the time there changes how the rest of life goes — less reactivity, fewer ordinary situations turned into problems, more room for other people. None of that has been tested. It is testable, and nobody has run the study: the longest trials in this field are nine months, and the claim concerns years.
+
+So read the table as a gradient rather than a ladder. The first two steps are among the best-evidenced things in this library. The third is real and modest. The fourth is where the traditions agree and the research has not gone.
+
+### Two: changing physiological arousal
+
+The second mechanism has nothing to do with thought. It changes how activated the body is — in either direction.
+
+**Downward.** Slowing the breath to around six a minute lowers blood pressure by enough to matter clinically and shifts the nervous system measurably toward rest. Progressive muscle relaxation reduces anxiety and improves self-rated sleep.
+
+**Upward.** Rapid breathing and breath holding rouse the system immediately and measurably, and ten days of training produced a measurable change in the inflammatory response to a controlled immune challenge.
+
+### Why this distinction is useful
+
+Because the two mechanisms suit different problems, and using the wrong one is the most common reason a practice disappoints.
+
+Anxiety is substantially a problem of arousal. Handing someone a sitting practice for it means handing them a thought tool for a body problem — which is one reason meditation's results for anxiety are moderate rather than strong, while slow breathing has solid physiological evidence behind it.
+
+A mind that will not stop circling is the opposite case. No amount of downregulation addresses the loop itself.
+
+Every practice on the internal levers names which mechanism it works through, and at what depth. That is what the mechanism tag on each practice page is for.
+
+### A note on what the research compares against
+
+One pattern runs through this whole literature and it is worth understanding, because it explains most of the apparent disappointments.
+
+When a practice is compared against doing nothing, it usually wins. When it is compared against some other active thing — lying down quietly, guided imagery, a warm shower — the advantage often disappears. Chanting, the standalone body scan and the activating breath practices all showed this.
+
+The practices that held their advantage against an active comparison had one thing in common: **they targeted something specific.** Rumination-focused therapy beat general CBT. Walking and running beat active controls for depression. Deliberate acts of kindness beat treat-yourself exercises.
+
+What does not survive comparison is generalised calming — because anything that calms you does it about as well. That is not a failure of these practices; it means several of them are **equivalent routes to the same place** rather than superior ones. Where that is true, these pages say so, and you should choose the route you will actually keep doing.
+
+---
+
 ## How the grading works
 
 Two scales, graded separately. They measure different things, and averaging them into a single score would hide the thing worth knowing.

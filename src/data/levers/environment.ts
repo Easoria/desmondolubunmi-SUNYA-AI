@@ -41,8 +41,8 @@ export const environmentLever: Lever = {
       ],
       leverSlug: "environment",
       relatedPractices: [
-        "spatial-alchemy",
-        "vibrational-signatures"
+        "clearing-your-space",
+        "the-objects-around-you"
       ],
       metaTitle: "What You Wear — How to Practise It | Sunya",
       metaDescription: "Auditing the most immediate layer of your physical environment — what wraps your skin all day.",
@@ -52,11 +52,11 @@ export const environmentLever: Lever = {
         durationSource: "OMITTED",
         relatedPracticeRationale: [
           {
-            slug: "spatial-alchemy",
+            slug: "clearing-your-space",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "vibrational-signatures",
+            slug: "the-objects-around-you",
             reason: "Adjacent in source order within the same lever sequence."
           }
         ]
@@ -64,7 +64,7 @@ export const environmentLever: Lever = {
     },
     {
       sourceNumber: 2,
-      slug: "spatial-alchemy",
+      slug: "clearing-your-space",
       name: "Clearing Your Space",
       essence: "Transforming your living space into an externalised reflection of a clear, settled mind. The practice of decluttering and physical purification to eliminate visual friction and the low-level restlessness that clutter produces.",
       mechanism: [
@@ -92,7 +92,7 @@ export const environmentLever: Lever = {
       leverSlug: "environment",
       relatedPractices: [
         "somatic-architecture",
-        "vibrational-signatures",
+        "the-objects-around-you",
         "atmospheric-purity"
       ],
       metaTitle: "Clearing Your Space — How to Practise It | Sunya",
@@ -107,7 +107,7 @@ export const environmentLever: Lever = {
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "vibrational-signatures",
+            slug: "the-objects-around-you",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
@@ -119,25 +119,25 @@ export const environmentLever: Lever = {
     },
     {
       sourceNumber: 3,
-      slug: "vibrational-signatures",
+      slug: "the-objects-around-you",
       name: "The Objects Around You",
       essence: "Noticing which objects in a room you are glad to see and which you avoid looking at, and clearing what consistently weighs on you.",
       mechanism: [
-        "Every object in your home carries a charge — not mystically, but practically. An object carries the emotional associations you have built around it over time. A gift from a toxic relationship sits in your room broadcasting the memory of that pain. A stack of unread books makes you feel quietly guilty every time you glance at them. An ugly piece of furniture kept out of obligation radiates the quiet resentment of having accepted something you did not want. These objects silently shape the inner atmosphere of your home.",
-        "Each object has its own specific felt signature — and if you pay close enough attention, you can begin to notice it directly. The practice begins with observation. Conversely, a thriving plant, a beautiful piece of art, a book you love, or an object tied to a meaningful memory generates a felt sense of warmth and expansion every time your eyes pass over it. By deliberately auditing and curating the objects in your space, you transform your home from a neutral container into an active field of support."
+        "Every object in your home carries associations — not mystically, but practically. An object carries the emotional associations you have built around it over time. A gift from a toxic relationship sits in your room broadcasting the memory of that pain. A stack of unread books makes you feel quietly guilty every time you glance at them. An ugly piece of furniture kept out of obligation holds the quiet resentment of having accepted something you did not want. These objects silently shape the inner atmosphere of your home.",
+        "Each object has its own specific felt signature — and if you pay close enough attention, you can begin to notice it directly. The practice begins with observation. Conversely, a thriving plant, a beautiful piece of art, a book you love, or an object tied to a meaningful memory generates a felt sense of warmth and expansion every time your eyes pass over it. By deliberately auditing and curating the objects in your space, you transform your home from a neutral container into a space that supports you."
       ],
       protocol: [
         {
-          text: "The resonance audit: Look around your living space and pay close attention to each item. What is it communicating? How does it make you feel? What impression does it emit? What energy does it carry? Everything in your space is saying something — and most of it has been speaking so quietly for so long that you have stopped noticing it. Begin to notice."
+          text: "The object audit: Look around your living space and pay close attention to each item. What is it communicating? How does it make you feel? What do you feel when your eyes land on it? What does it remind you of? Everything in your space is saying something — and most of it has been speaking so quietly for so long that you have stopped noticing it. Begin to notice."
         },
         {
           text: "Purging the anchors: Remove any object that consistently generates a contracting feeling. Do not keep items out of guilt or social obligation. You cannot build a new inner life while your physical space is anchoring you to the past."
         },
         {
-          text: "Curating the living grid: Introduce objects that actively generate life force. Bring in living plants — they clean the air, carry natural energy, and create a felt sense of vitality. Use natural light wherever possible. Surround yourself with objects that inspire, comfort, or genuinely delight you."
+          text: "Curating what stays: Introduce objects that help the room feel clearer and more alive. Bring in living plants — they clean the air and create a felt sense of vitality. Use natural light wherever possible. Surround yourself with objects that inspire, comfort, or genuinely delight you."
         },
         {
-          text: "Visual alchemy: Do not leave your walls blank or filled with unconscious imagery. Deliberately place artwork, images, and objects that speak to peace, beauty, or depth. When your eyes habitually rest on something beautiful or meaningful, it continuously shapes the inner atmosphere of your mind."
+          text: "What you look at: Do not leave your walls blank or filled with unconscious imagery. Deliberately place artwork, images, and objects that speak to peace, beauty, or depth. When your eyes habitually rest on something beautiful or meaningful, it continuously shapes the inner atmosphere of your mind."
         }
       ],
       layers: [
@@ -146,7 +146,7 @@ export const environmentLever: Lever = {
       ],
       leverSlug: "environment",
       relatedPractices: [
-        "spatial-alchemy",
+        "clearing-your-space",
         "atmospheric-purity",
         "cultural-resonance"
       ],
@@ -158,7 +158,7 @@ export const environmentLever: Lever = {
         durationSource: "OMITTED",
         relatedPracticeRationale: [
           {
-            slug: "spatial-alchemy",
+            slug: "clearing-your-space",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
@@ -182,7 +182,7 @@ export const environmentLever: Lever = {
       ],
       protocol: [
         {
-          text: "Air purity: Air is the primary medium through which life force enters the body. Ensure your home is well-ventilated — open windows daily. If you live in a dense city, invest in a high-quality HEPA air purifier to remove toxic particulate matter. Indoor plants further filter and oxygenate the space."
+          text: "Air purity: Air is the primary medium the body depends on. Ensure your home is well-ventilated — open windows daily. If you live in a dense city, invest in a high-quality HEPA air purifier to remove toxic particulate matter. Indoor plants further filter and oxygenate the space."
         },
         {
           text: "Harmonic lighting: Harsh artificial blue and fluorescent light mimics an emergency signal to the nervous system. Replace harsh overhead lights with warm, amber, or incandescent lighting — frequencies that resemble the soothing quality of fire and evening light. Reserve bright, blue-spectrum light for the morning only."
@@ -200,7 +200,7 @@ export const environmentLever: Lever = {
       ],
       leverSlug: "environment",
       relatedPractices: [
-        "vibrational-signatures",
+        "the-objects-around-you",
         "cultural-resonance",
         "navigating-shared-frequencies"
       ],
@@ -212,7 +212,7 @@ export const environmentLever: Lever = {
         durationSource: "OMITTED",
         relatedPracticeRationale: [
           {
-            slug: "vibrational-signatures",
+            slug: "the-objects-around-you",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
@@ -290,13 +290,13 @@ export const environmentLever: Lever = {
           text: "The sovereign micro-space: Secure at least one physical zone over which you have complete control. If you cannot control the house, control your bedroom. If you share a bedroom, control your desk or your side of the room. Make this specific micro-space an impenetrable sanctuary of cleanliness, order, and beauty. When the shared environment becomes chaotic, do not fight it — retreat to your anchor and restore."
         },
         {
-          text: "Environmental aikido: When a shared space is dirty or chaotic, the instinct is to complain or clean it while radiating resentment. Both inject more heavy, stagnant energy into the environment. Instead, clean the shared space in a state of complete inner stillness and joy, expecting nothing in return. High-frequency action is inherently more powerful than low-frequency stagnation — and through the law of entrainment, the others in the space will often naturally begin to elevate their own behaviour without you ever saying a word."
+          text: "Environmental aikido: When a shared space is dirty or chaotic, the instinct is to complain or clean it while carrying resentment. Both inject more heavy, stagnant energy into the environment. Instead, clean the shared space in a state of complete inner stillness and joy, expecting nothing in return. Clear, settled action is inherently more powerful than stagnant resentment — and through the law of entrainment, the others in the space will often naturally begin to elevate their own behaviour without you ever saying a word."
         },
         {
           text: "Conscious communication: When addressing a roommate or family member about noise, mess, or boundaries, do not attack their identity — it triggers defensiveness. Instead, frame the boundary around your own biological and energetic needs: “My nervous system is sensitive to noise and I need quiet to function well.” Making it about your genuine needs rather than their failure opens the door to actual resolution."
         },
         {
-          text: "Somatic shielding: When someone in your environment is radiating aggression, panic, or chaos, your nervous system will automatically attempt to match their state. Consciously refuse this frequency match. Drop your attention into the breath, soften the belly, and maintain a slow, deeply settled baseline. Let their energy break against your steadiness. You remain the silent witness — completely present, completely unmoved."
+          text: "Somatic shielding: When someone in your environment is expressing aggression, panic, or chaos, your nervous system will automatically attempt to match their state. Consciously refuse to match their state. Drop your attention into the breath, soften the belly, and maintain a slow, deeply settled baseline. Let their energy break against your steadiness. You remain the silent witness — completely present, completely unmoved."
         },
         {
           text: "The strategic extraction: Use your discernment to distinguish between normal relational friction and a fundamentally toxic environment. If the people sharing your space are committed to sustained aggression, abuse, or the continuous destruction of your peace, no amount of shielding is sufficient. Your highest priority in this scenario is to plan a quiet, strategic exit."
@@ -339,16 +339,16 @@ export const environmentLever: Lever = {
       ],
       protocol: [
         {
-          text: "The pilgrimage: For thousands of years, millions of human beings have poured genuine devotion, prayer, and surrender into specific ancient sanctuaries. Energy retains memory. Actively seek out spaces of deep spiritual significance — not to beg for mundane outcomes, but simply to bathe your physical and energy body in their immense, established fields of life force."
+          text: "The pilgrimage: For thousands of years, millions of human beings have poured genuine devotion, prayer, and surrender into specific ancient sanctuaries. Energy retains memory. Actively seek out spaces of deep spiritual significance — not to beg for mundane outcomes, but simply to sit quietly in places shaped by long practice."
         },
         {
-          text: "Consecrated forms: In advanced inner science, specific physical forms are energised to act as continuous, radiating sources of life force. The most powerful geometric shape for holding and radiating energy without dissipation is the ellipsoid — the science behind the Shivlinga. Forms constructed using specific materials, including solidified mercury (Rasalingas), which holds an exceptionally high energetic charge, emit a constant frequency of unconditioned intelligence. In the presence of such a form, drop all mental effort. Sit in absolute silence, spine erect, palms open upward. The sphere of energy is sufficient to draw the life force directly up the central channel without any directed practice from you."
+          text: "Consecrated forms: In advanced inner science, specific physical forms are energised to act as continuous, ongoing sources of presence. The most powerful geometric shape for holding and sharing presence without dissipation is the ellipsoid — the science behind the Shivlinga. Forms constructed using specific materials, including solidified mercury (Rasalingas), which holds an exceptionally high emotional weight, carry a quiet sense of settled presence. In the presence of such a form, drop all mental effort. Sit in absolute silence, spine erect, palms open upward. The sphere of energy is sufficient to draw the energy directly up the central channel without any directed practice from you."
         },
         {
-          text: "The micro-shrine: You do not have to live near an ancient temple to benefit from this science. Bring small consecrated forms, energised objects, or carefully chosen geometric forms into your own home. By dedicating a specific corner or room to such a form, you create a localised field of high-frequency life force — a continuous energetic presence that cleanses the atmosphere of your home and uplifts anyone who enters."
+          text: "The micro-shrine: You do not have to live near an ancient temple to benefit from this science. Bring small consecrated forms, energised objects, or carefully chosen geometric forms into your own home. By dedicating a specific corner or room to such a form, you create a localised space of quiet practice — a continuous energetic presence that cleanses the atmosphere of your home and uplifts anyone who enters."
         },
         {
-          text: "The living presence: The most powerful consecrated space is not a building — it is a human being whose separate self has genuinely dissolved. Such a person operates as a completely open system, continuously radiating the boundless energy of pure consciousness. If you ever have the opportunity to sit in the physical presence of such a person, treat it as the highest environmental upgrade available. Their open nervous system will naturally entrain and dissolve the deepest energetic knots within your own."
+          text: "The living presence: The most powerful consecrated space is not a building — it is a human being whose separate self has genuinely dissolved. Such a person operates as a completely open system, continuously offering the boundless energy of pure consciousness. If you ever have the opportunity to sit in the physical presence of such a person, treat it as the highest environmental upgrade available. Their open nervous system will naturally entrain and dissolve the deepest held knots within your own."
         }
       ],
       layers: [
