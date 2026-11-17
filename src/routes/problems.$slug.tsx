@@ -292,9 +292,11 @@ function ProblemPageView() {
 
         <section className="mt-10 sm:mt-12">
           <h2 className="display text-2xl text-white">What&apos;s actually happening</h2>
-          <p className="mt-3 text-[15px] leading-7 text-[#b8d4e8] sm:text-base sm:leading-7">
-            {problem.mechanism}
-          </p>
+          <div className="mt-3 space-y-4 text-[15px] leading-7 text-[#b8d4e8] sm:text-base sm:leading-7">
+            {problem.mechanism.split(/\n\n+/).map((paragraph) => (
+              <p key={paragraph.slice(0, 48)}>{paragraph}</p>
+            ))}
+          </div>
         </section>
 
         <StartHereSection problem={problem} />
@@ -302,9 +304,11 @@ function ProblemPageView() {
         {problem.evidenceSays ? (
           <section className="mt-12 border-t border-white/10 pt-8 sm:mt-14 sm:pt-10">
             <h2 className="display text-2xl text-white">What the evidence actually says</h2>
-            <p className="mt-3 text-[15px] leading-7 text-[#b8d4e8] sm:text-base sm:leading-7">
-              {renderInlineMarkdown(problem.evidenceSays)}
-            </p>
+            <div className="mt-3 space-y-4 text-[15px] leading-7 text-[#b8d4e8] sm:text-base sm:leading-7">
+              {problem.evidenceSays.split(/\n\n+/).map((paragraph) => (
+                <p key={paragraph.slice(0, 48)}>{renderInlineMarkdown(paragraph)}</p>
+              ))}
+            </div>
           </section>
         ) : null}
 

@@ -58,7 +58,7 @@ function familyPage(
   };
 }
 
-/** New SPEC 48 pages — full recognition / mechanism copy arrives in Spec 49. */
+/** SPEC 48/49 pages — recognition, mechanism, and evidence copy are final. */
 function newPage(
   slug: string,
   title: string,
@@ -218,15 +218,17 @@ export const PROBLEM_PAGES: ProblemPage[] = [
     "mood-and-feeling",
     "Someone or something is gone, and the loss is still shaping your days.",
     [
-      "Ordinary days still have a hole in them",
-      "People expect you to be further along than you are",
-      "Some hours are fine, and then it returns without warning",
-      "You are not trying to feel better — you are trying to keep going",
+      "You are fine for most of a day and then undone by something small",
+      "You keep reaching for them before you remember",
+      "People have stopped asking, and you have stopped mentioning it",
+      "You are not sure how long you are allowed to still feel this",
     ],
-    "Grief is not a malfunction. Something that mattered is gone, and the system is reorganising around the absence. Nothing here is trying to shorten that. What helps is not being alone in it, keeping the body from locking around the loss, and meeting what arises without turning it into a problem to solve.",
+    "Your mind built a world with them in it, and every part of that world now has to be revised — not as an idea you accept once, but in thousands of small corrections, each one its own small shock. That is what the waves are. They are not you failing to move on. They are the work happening.\n\nGrief is not a problem the system is having. It is the system doing something very hard, and doing it correctly. Nothing on this page is trying to shorten it. What practice can do is make it possible to carry — to be with what arrives without bracing against it, and to not be alone while you do.",
     {
       ifSevere:
         "Grief is not a malfunction and nothing on this page is trying to shorten it. If it has stopped moving at all, grief-specific support exists and is different from general therapy.",
+      evidenceSays:
+        "There is very little here, and what exists mostly says the same thing: grief is not a disorder, and treating it as one does not help. The practices on this page are not evidenced as treatments for grief, because grief is not the kind of thing those trials are built to measure. Two findings are worth carrying anyway. Social connection is among the strongest things in this entire evidence base, and bereavement is exactly when it tends to thin out. And movement has the best intervention evidence of anything here for low mood — not the same as grief, but it often travels alongside. Beyond that, the honest answer is that what helps is time, company, and not being told you should be further along than you are.",
     },
   ),
   newPage(
@@ -235,12 +237,16 @@ export const PROBLEM_PAGES: ProblemPage[] = [
     "mood-and-feeling",
     "Things are broadly fine and none of it seems to be for anything.",
     [
-      "Nothing is urgently wrong, which makes it harder to name",
-      "Goals that once pulled you now feel hollow",
-      "You go through the motions and cannot find the point",
-      "Advice to 'find your passion' does not land",
+      "You got the thing you wanted and felt almost nothing",
+      "You can describe your life as good and not feel it",
+      "You are waiting for something to start, without knowing what",
+      "Asking what the point is has stopped feeling like a question and started feeling like a fact",
     ],
-    "When the outer conditions are broadly fine and nothing feels worth doing, the problem is usually not mood chemistry alone — it is the absence of a reason that still holds. Values, contribution and work that fits are the evidenced doors.",
+    "Nothing is wrong, which is the confusing part. There is no event to point at and nothing obvious to fix, so the state gets no sympathy, including from you.\n\nWhat has usually happened is that the things you organised your life around have either been reached or seen through, and nothing has replaced them. Meaning is not a feeling that arrives on its own. It is mostly a by-product of being committed to something beyond yourself and being useful to other people, and when both of those thin out, this is what is left.\n\nIt is also, across every contemplative tradition, the most common point at which people start looking inward seriously. Which is to say: it is uncomfortable, and it is not a bad sign.",
+    {
+      evidenceSays:
+        "This is one of the thinnest pages in the set for evidence and one of the most important states in the framework, and that gap is worth stating rather than hiding. Nobody has run a trial on meaninglessness — partly because it is hard to measure, partly because it is not a clinical category. What has been studied is adjacent: volunteering and prosocial behaviour show reasonably consistent associations with wellbeing, and work that lines up with what a person values is linked to better outcomes than work that does not. Both are observational rather than randomised, so treat them as pointers rather than proof. The deeper claim — that this state resolves when attention rests in awareness rather than in what it holds — sits outside what these methods can reach, and this framework says so rather than dressing it up as something tested.",
+    },
   ),
   newPage(
     "fear-of-death",
@@ -248,17 +254,17 @@ export const PROBLEM_PAGES: ProblemPage[] = [
     "mood-and-feeling",
     "The fact that you will die is present to you, and it frightens you.",
     [
-      "The thought arrives uninvited and will not leave",
-      "You find yourself checking your body for signs",
-      "Reassurance helps briefly, then the fear returns",
-      "It is not a vague unease — it is the fact of ending",
+      "It arrives at night, or in gaps, and you get busy to make it go",
+      "You have caught yourself working out roughly how many years are left",
+      "A symptom becomes a search, and the search becomes hours",
+      "You cannot say any of this out loud without it sounding dramatic",
     ],
-    "This is the one page where the deepest practices lead, because here the subject is the practice. The honest grade on those practices is the weakest in the library — preliminary, case-study, and outside the reach of these methods for the largest claim. That is said plainly below.",
+    "Most people hold this at arm's length for most of their lives, and the arrangement works until something breaks it — an illness, a death, a birthday, or nothing in particular.\n\nWhat you are looking at now is not a distortion. It is accurate. That is precisely why reassurance does not touch it: there is nothing false to correct, so every comforting thing anyone says slides off.\n\nThe traditions are unanimous that this is not resolved by argument. It is approached by examining the thing that is afraid — what it actually is, and whether it is as solid as it takes itself to be. That is slow work, and it is the deepest work on this site. It is also where this framework can promise least, which the evidence note below says plainly.",
     {
       ifSevere:
         "If this comes with compulsive checking of your body or repeated reassurance-seeking, that is a health-anxiety presentation and the anxiety page is the better door — and it responds well to proper treatment.",
       evidenceSays:
-        "The practices on this page sit at the thin end of the evidence base. Awareness without thought is describable and has been studied, but the strongest traditional claim — that the state is what the traditions say it is — sits outside what these methods can settle. Come here knowing that: the practices are real, the research is early, and this page does not pretend otherwise.",
+        "This is the clearest place on the site where the research runs out. Death anxiety has been studied in clinical settings, but the practices on this page — sustained contemplation of mortality, and inquiry into what is afraid — have essentially no trial evidence behind them, and the mechanism they work through is the least-evidenced one in the library.\n\nThere is a reason for that beyond neglect. What these practices aim at is a change in how the self is experienced, which is reportable but not measurable from the outside. So what is on offer here is a traditional claim with a long and remarkably consistent history and almost no modern verification. That is a weaker position than anywhere else on this site. Weigh it accordingly.",
     },
   ),
 
@@ -325,13 +331,14 @@ export const PROBLEM_PAGES: ProblemPage[] = [
     "the-body",
     "You cannot fall asleep, or you wake and cannot get back.",
     [
-      "You are tired in bed and still not sleeping",
-      "You watch the clock and feel the night slipping",
-      "Waking at three becomes a familiar shift",
-      "Trying harder to sleep makes it worse",
+      "You are exhausted all day and wide awake the moment you lie down",
+      "You do the maths on how many hours are left",
+      "You sleep fine on the sofa and badly in bed",
+      "Trying harder to sleep is reliably the thing that keeps you up",
     ],
-    "What usually fails first is not the room — it is what the bed has come to mean. When bed is where you worry, plan, and fail to sleep, the body learns to stay alert there. Stimulus control reverses that link. Bedroom optimisation helps some people; it is not the strongest finding, and it is not first on this page.",
+    "Your bed has become a place where you lie awake, and your body has learned it.\n\nThat sounds too simple to be the answer, and it is the central finding of the entire sleep literature. After enough bad nights the bed itself becomes a cue for alertness rather than for sleep — which is why you can drift off on the sofa and then lose it completely in the thirty seconds between the sofa and the bedroom.\n\nOn top of that sits the effort. Sleep is one of the few things that recedes the harder you chase it, because chasing is an aroused state and sleep requires the opposite. So the work is not to sleep better tonight. It is to break the association and take the pressure off, and let the body's own sleep pressure do what it does without you supervising it.",
     {
+      // Spec 48 Part 4 — not restated in Spec 49
       evidenceSays:
         "The strongest finding in the sleep research is also the least fashionable: what works is changing what your bed means to your body, not optimising the room it sits in. Sleep-hygiene checklists — temperature, screens, caffeine timing — are the weakest-evidenced part of this literature, and they are what nearly every source leads with. They are on this page, further down, because some of them help some people. They are not first, because the evidence does not put them first.",
       alsoUsefulProblemTags: ["insomnia"],
@@ -343,15 +350,17 @@ export const PROBLEM_PAGES: ProblemPage[] = [
     "the-body",
     "You reach for things — food, your phone, the next thing — before deciding to.",
     [
-      "Your hand is already moving before you notice you wanted it",
-      "Stopping feels like deprivation even when you are not hungry",
-      "Quiet moments fill with the urge to fill them",
-      "You know the pattern and still follow it",
+      "Your hand has the phone before you knew you wanted it",
+      "You eat standing up, and not because you were hungry",
+      "The thing you wanted is good for about four minutes",
+      "Sitting with nothing to do is the hardest part of the day",
     ],
-    "Restlessness looks like appetite, but it is often load and avoidance — too much coming in, and a feeling you would rather not sit with. Cutting cues and meeting the feeling directly are the first moves; deliberate periods without reaching train the other muscle.",
+    "The reaching is not really for the thing. It is for the end of a feeling that was there a second before you reached — and usually you never noticed the feeling at all, only the reaching.\n\nThis is why willpower works so badly here. You are blocking the behaviour while leaving the discomfort it was solving completely untouched, so the urge simply finds another door. And the discomfort is almost always ordinary and low-grade: boredom, restlessness, a flat patch, being slightly alone. Nothing dramatic enough to take seriously, which is exactly why it goes unexamined.\n\nThe work is to get the gap back between the feeling and the hand. That is a matter of noticing, not of resisting.",
     {
       ifSevere:
         "If this is alcohol or drug dependence, this page is not the resource and will not be enough. That needs proper support, and it exists.",
+      evidenceSays:
+        "The practices here work on attention and on tolerating discomfort, and that is where their evidence sits — reducing what competes for attention, and learning to be with a feeling rather than act on it. What has not been tested is whether that reduces craving specifically.\n\nTwo cautions about things you will read elsewhere. Restriction-based approaches — fasting, strict rules — can raise the pressure rather than lower it, and are deliberately left off this page for that reason. And nothing here is a treatment for dependence; see the note below.",
     },
   ),
 
@@ -362,13 +371,14 @@ export const PROBLEM_PAGES: ProblemPage[] = [
     "conditions-of-life",
     "There is not enough, or there might not be, and it is on you constantly.",
     [
-      "You do the sums again and the answer does not change",
-      "A bill arriving is a physical event in the body",
-      "You cannot think past the next payment",
-      "Advice to 'not worry about money' is not available to you",
+      "You check the balance already knowing what it says",
+      "An unexpected bill is not an inconvenience, it is a crisis",
+      "You have run the sums for a situation that has not happened",
+      "It is the first thing in the morning and the last thing at night",
     ],
-    "Money pressure is a circumstance before it is a feeling. The practices on this page do not conjure cash. They lower what life costs to run, stop fear from distorting decisions, and build earning capacity. That is the honest scope.",
+    "Some of this is not psychological and should not be handled as if it were. If there is genuinely not enough, the pressure you feel is an accurate reading of your situation, and no amount of inner work will make the numbers different. That part is addressed by changing the numbers — lowering what your life costs to run, and building something you can charge for.\n\nBut scarcity does a second thing, and this part is less obvious. The fear outlasts the shortage. It keeps running after the danger has passed, it pulls attention onto the immediate, and it quietly degrades exactly the long-range decisions that would get you out.\n\nSo there are two jobs here and they are not the same. Change the numbers where you can. And separately, stop the fear from making the decisions, because it makes them badly.",
     {
+      // Spec 48 Part 4 — not restated in Spec 49
       evidenceSays:
         "Financial insecurity is the single strongest thing in this evidence base — stronger than any practice on this site. It is also where the tested interventions are weakest: giving people money produces much smaller improvements in wellbeing than the size of the problem would predict. Both of those are true at once, and the practical consequence is worth being plain about. **No practice here fixes a shortage of money.** What these practices do is lower what your life costs to run, stop the fear from distorting decisions it should not be touching, and build the capacity to earn. That is a smaller claim than you will see elsewhere, and it is the one the evidence supports.",
       ifSevere:
@@ -381,13 +391,14 @@ export const PROBLEM_PAGES: ProblemPage[] = [
     "conditions-of-life",
     "You are not known by anyone, or not as well as you need to be.",
     [
-      "You can go days without a real conversation",
-      "Being around people does not always fix it",
-      "You hesitate to reach out because you do not want to need it",
-      "The absence is quieter than sadness, and harder to name",
+      "You can go a whole weekend without a conversation that is about anything",
+      "You have people, and none of them know how you actually are",
+      "Starting now would mean explaining too much",
+      "You are always the one who has to organise it",
     ],
-    "Loneliness is a condition of a life, not a mood to manage. The observational evidence that isolation harms is among the strongest in the library; the interventions that reduce it are weaker than that finding suggests. Treat the target seriously and hold the methods loosely.",
+    "Loneliness is not a shortage of people. It is the gap between the connection you have and the connection you need, which is why it survives a full calendar and a crowded house.\n\nTwo things make it self-sustaining. It is uncomfortable to be seen when you already feel unseen, so the instinct is to withdraw slightly further. And it makes you a harsher reader of other people — you register the short reply and miss the invitation. Both of those are normal, and both make it worse.\n\nWhich means the opening move is almost never to go and find new people. It is to be more honest with one person you already have, and to put yourself somewhere regularly enough that familiarity does the work you cannot force.",
     {
+      // Spec 48 Part 4 — not restated in Spec 49
       evidenceSays:
         "The observational evidence here is among the strongest in the whole library: social isolation predicts mortality at a level comparable to well-known medical risk factors. The interventions tested to *reduce* loneliness are substantially weaker than that finding would suggest. So the target is right and the tools are uncertain. What that means in practice is to treat this as seriously as the evidence says — more seriously than most people treat it — while holding the specific methods loosely.",
     },
