@@ -173,12 +173,12 @@ function Reframe() {
           <p>
             A person&apos;s wellbeing is not one thing. It runs on a number of separate systems —
             how you breathe, how you sleep, how you move, what you eat, whether you have enough
-            money, whether anyone really knows you — and
+            money, whether anyone really knows you.
           </p>
         </div>
 
         <p className="display mx-auto mt-10 max-w-3xl text-center text-3xl leading-snug text-white sm:mt-12 sm:text-4xl">
-          the whole thing performs at the level of whichever one is worst.
+          The whole thing performs at the level of whichever one is worst.
         </p>
 
         <div className="mx-auto mt-10 max-w-2xl space-y-6 text-[15px] leading-7 text-[#b8d4e8] sm:mt-12 sm:text-base sm:leading-8">
