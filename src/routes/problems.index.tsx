@@ -3,26 +3,15 @@ import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { EmailCapture } from "@/components/site/EmailCapture";
 import { getAllProblemPages } from "@/data/problems";
-import {
-  FAMILY_PROBLEM_META,
-  FAMILY_STATE_COLOUR,
-  type FamilyProblemMeta,
-} from "@/lib/family-labels";
+import { PROBLEM_GROUPS } from "@/data/problems/types";
 import { buildSeoHead } from "@/lib/seo";
-
-const STATE_ORDER: FamilyProblemMeta["state"][] = ["over", "under", "mixed", "physical"];
-
-function stateForSlug(slug: string): FamilyProblemMeta["state"] {
-  const meta = Object.values(FAMILY_PROBLEM_META).find((entry) => entry.slug === slug);
-  return meta?.state ?? "mixed";
-}
 
 export const Route = createFileRoute("/problems/")({
   head: () =>
     buildSeoHead({
       title: "Find What Helps — Start Where You Actually Are | Sunya",
       description:
-        "These are the fifteen difficult states a human system falls into. Find yours, and the practices that work on it.",
+        "Twenty-two states, drawn from how identification shows up in a life and from what the research says actually goes wrong. Find the one that fits closest.",
       path: "/problems",
       ogType: "website",
       imageKind: "core",
@@ -31,9 +20,11 @@ export const Route = createFileRoute("/problems/")({
 });
 
 function ProblemsIndexPage() {
-  const pages = [...getAllProblemPages()].sort(
-    (a, b) => STATE_ORDER.indexOf(stateForSlug(a.slug)) - STATE_ORDER.indexOf(stateForSlug(b.slug)),
-  );
+  const pages = getAllProblemPages();
+  const byGroup = PROBLEM_GROUPS.map((group) => ({
+    ...group,
+    pages: pages.filter((page) => page.group === group.id),
+  }));
 
   return (
     <div className="min-h-screen bg-[#07101c] text-white">
@@ -43,34 +34,48 @@ function ProblemsIndexPage() {
           Start where you actually are.
         </h1>
         <p className="mt-6 text-[17px] leading-8 text-[#d5e6f2] sm:text-lg sm:leading-9">
-          These are the fifteen difficult states a human system falls into. There are no others.
+          Twenty-two states, drawn from the ten ways identification shows up in a life and from what
+          the research says actually goes wrong. Find the one that fits closest. It does not have to
+          fit perfectly.
         </p>
         <p className="mt-4 text-[17px] leading-8 text-[#d5e6f2] sm:text-lg sm:leading-9">
-          Find yours, and the practices that work on it.
+          <strong className="font-semibold text-white">One thing worth knowing before you choose.</strong>{" "}
+          The states in the last group have the strongest evidence behind them of anything on this
+          site — and they are the ones people skip past while looking for an inner problem. If your
+          honest answer is money, or loneliness, or sleep, start there.
         </p>
 
-        <ul className="mt-12 space-y-3">
-          {pages.map((page) => {
-            const colour = FAMILY_STATE_COLOUR[stateForSlug(page.slug)];
-            return (
-              <li key={page.slug}>
-                <Link
-                  to="/problems/$slug"
-                  params={{ slug: page.slug }}
-                  className="relative block overflow-hidden rounded-xl border border-[#7ec8e3]/35 bg-[#7ec8e3]/[0.06] px-5 py-5 transition hover:border-[#7ec8e3]/55 hover:bg-[#7ec8e3]/10"
-                >
-                  <span
-                    className="absolute inset-y-0 left-0 w-[3px]"
-                    style={{ backgroundColor: colour }}
-                    aria-hidden
-                  />
-                  <h2 className="display text-2xl text-white">{page.title}</h2>
-                  <p className="mt-2 text-[15px] leading-7 text-[#b8d4e8]">{page.opening}</p>
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
+        <div className="mt-14 space-y-12">
+          {byGroup.map((group) => (
+            <section key={group.id} aria-labelledby={`group-${group.id}`}>
+              <h2
+                id={`group-${group.id}`}
+                className="text-xs uppercase tracking-[0.22em] text-[#7ec8e3]/85"
+              >
+                {group.label}
+              </h2>
+              <ul className="mt-4 space-y-3">
+                {group.pages.map((page) => (
+                  <li key={page.slug}>
+                    <Link
+                      to="/problems/$slug"
+                      params={{ slug: page.slug }}
+                      className="relative block overflow-hidden rounded-xl border border-[#7ec8e3]/35 bg-[#7ec8e3]/[0.06] px-5 py-5 transition hover:border-[#7ec8e3]/55 hover:bg-[#7ec8e3]/10"
+                    >
+                      <span
+                        className="absolute inset-y-0 left-0 w-[3px]"
+                        style={{ backgroundColor: group.colour }}
+                        aria-hidden
+                      />
+                      <h3 className="display text-2xl text-white">{page.title}</h3>
+                      <p className="mt-2 text-[15px] leading-7 text-[#b8d4e8]">{page.opening}</p>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          ))}
+        </div>
 
         <div className="mt-16 border-t border-white/10 pt-12">
           <p className="text-base leading-relaxed text-[#b8d4e8]/85 sm:text-[17px] sm:leading-8">

@@ -41,8 +41,8 @@ const COPY: Record<
     button: "Notify me",
   },
   problem: {
-    title: "When the night is hard",
-    body: "Occasional notes on sleep, practice, and what actually helps — quiet, useful, no noise.",
+    title: "Occasional notes",
+    body: "Occasional notes on practice and what actually helps — quiet, useful, no noise.",
     button: "Send it to me",
   },
   problems: {
