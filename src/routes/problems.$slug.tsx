@@ -216,45 +216,35 @@ function StartHereSection({ problem }: { problem: Omit<ProblemPage, "code"> }) {
   return (
     <section className="mt-12 border-t border-white/10 pt-8 sm:mt-14 sm:pt-10">
       <h2 className="display text-2xl text-white">Start here</h2>
-      <ol className="mt-6 space-y-5">
-        {problem.startHere.map((entry, index) => (
-          <li key={`${entry.leverSlug}/${entry.practiceSlug}`} className="flex gap-4">
-            <span
-              className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-[#7ec8e3]/35 text-sm text-[#7ec8e3]"
-              aria-hidden
+      <ol className="mt-6 space-y-6">
+        {problem.startHere.map((entry) => (
+          <li key={`${entry.leverSlug}/${entry.practiceSlug}`} className="min-w-0">
+            <Link
+              to="/practices/$leverSlug/$practiceSlug"
+              params={{ leverSlug: entry.leverSlug, practiceSlug: entry.practiceSlug }}
+              className="display text-xl font-semibold text-white transition hover:text-[#7ec8e3] sm:text-2xl"
             >
-              {index + 1}
-            </span>
-            <div className="min-w-0">
-              <Link
-                to="/practices/$leverSlug/$practiceSlug"
-                params={{ leverSlug: entry.leverSlug, practiceSlug: entry.practiceSlug }}
-                className="display text-xl text-white transition hover:text-[#7ec8e3] sm:text-2xl"
-              >
-                {entry.name}
-              </Link>
-              <p className="mt-1.5 text-[15px] leading-7 text-[#b8d4e8]">{entry.whyFirst}</p>
-              <p className="mt-2 text-sm leading-6 text-[#b8d4e8]/85">
-                {entry.mechanisms.map((mechanism, mechIndex) => (
+              {entry.name}
+            </Link>
+            <p className="mt-1.5 text-[15px] leading-7 text-[#b8d4e8]">{entry.whyFirst}</p>
+            {entry.mechanisms.length ? (
+              <p className="mt-1.5 text-[0.85rem] leading-6 text-[#b8d4e8]/70">
+                <span>Evidence</span>
+                {entry.mechanisms.map((mechanism) => (
                   <span key={mechanism.slug}>
-                    {mechIndex > 0 ? <span aria-hidden> · </span> : null}
+                    <span aria-hidden> · </span>
                     <Link
                       to="/evidence/$slug"
                       params={{ slug: mechanism.slug }}
-                      className="text-[#7ec8e3] underline decoration-[#7ec8e3]/35 underline-offset-2 transition hover:text-white hover:decoration-white/50"
+                      className="underline decoration-[#7ec8e3]/25 underline-offset-2 transition hover:text-[#7ec8e3] hover:decoration-[#7ec8e3]/50"
                     >
                       {mechanism.name}
                     </Link>
-                    {mechanism.qualifier ? (
-                      <>
-                        <span aria-hidden> </span>
-                        <em>({mechanism.qualifier})</em>
-                      </>
-                    ) : null}
                   </span>
                 ))}
+                <span aria-hidden> →</span>
               </p>
-            </div>
+            ) : null}
           </li>
         ))}
       </ol>

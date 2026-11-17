@@ -207,6 +207,10 @@ export const PROBLEM_PAGES: ProblemPage[] = [
       "You would rather feel something difficult than nothing",
     ],
     "This is protection rather than damage. At some point there was more feeling than the system could hold, so it turned the volume down — and it has stayed down, because nothing has told it that it is safe to come back up. The door closed for a reason. It does not open by force or by deciding to feel more. It opens slowly, through the body, when there is enough steadiness to risk it.",
+    {
+      evidenceSays:
+        "These practices sit on the Heart lever because that is where the framework places numbness — not because trials have tested them for this state. Heart Coherence's evidenced mechanism is respiratory rather than emotional, which the mechanism link will show. The honest position is that none of these three is evidenced for numbness specifically. This is the thinnest page in the set, and it should be read that way.",
+    },
   ),
   newPage(
     "grief",
