@@ -844,9 +844,6 @@
   color: inherit;
   cursor: pointer;
 }
-.problems-start-card__main:hover .problems-start-card__name {
-  color: #b7e7f6;
-}
 .problems-start-card__index {
   flex-shrink: 0;
   width: 1.85rem;
@@ -885,6 +882,7 @@
   transition: color 0.15s ease, text-decoration-color 0.15s ease;
 }
 .problems-start-card__main:hover .problems-start-card__name {
+  color: #b7e7f6;
   text-decoration-color: rgba(126, 200, 227, 0.75);
 }
 .problems-start-card__affordance {
