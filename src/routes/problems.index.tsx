@@ -29,46 +29,61 @@ function ProblemsIndexPage() {
   return (
     <div className="min-h-screen bg-[#07101c] text-white">
       <Nav />
-      <main className="mx-auto max-w-3xl px-4 pb-24 pt-28 sm:px-6 sm:pb-28 sm:pt-32">
-        <h1 className="display text-4xl leading-tight text-white sm:text-5xl">
-          Start where you actually are.
-        </h1>
-        <p className="mt-6 text-[17px] leading-8 text-[#d5e6f2] sm:text-lg sm:leading-9">
-          Twenty-two states, drawn from the ten ways identification shows up in a life and from what
-          the research says actually goes wrong. Find the one that fits closest. It does not have to
-          fit perfectly.
-        </p>
-        <p className="mt-4 text-[17px] leading-8 text-[#d5e6f2] sm:text-lg sm:leading-9">
-          <strong className="font-semibold text-white">One thing worth knowing before you choose.</strong>{" "}
-          The states in the last group have the strongest evidence behind them of anything on this
-          site — and they are the ones people skip past while looking for an inner problem. If your
-          honest answer is money, or loneliness, or sleep, start there.
-        </p>
+      <main className="problems-index mx-auto max-w-3xl px-4 pb-24 pt-28 sm:px-6 sm:pb-28 sm:pt-32">
+        <header className="problems-index__masthead">
+          <h1 className="display text-4xl leading-tight text-white sm:text-5xl">
+            Start where you actually are.
+          </h1>
+          <p className="mt-6 text-[17px] leading-8 text-[#d5e6f2] sm:text-lg sm:leading-9">
+            Twenty-two states, drawn from the ten ways identification shows up in a life and from what
+            the research says actually goes wrong. Find the one that fits closest. It does not have to
+            fit perfectly.
+          </p>
+          <p className="mt-4 text-[17px] leading-8 text-[#d5e6f2] sm:text-lg sm:leading-9">
+            <strong className="font-semibold text-white">
+              One thing worth knowing before you choose.
+            </strong>{" "}
+            The states in the last group have the strongest evidence behind them of anything on this
+            site — and they are the ones people skip past while looking for an inner problem. If your
+            honest answer is money, or loneliness, or sleep, start there.
+          </p>
+        </header>
 
-        <div className="mt-14 space-y-12">
+        <div className="problems-index__groups">
           {byGroup.map((group) => (
-            <section key={group.id} aria-labelledby={`group-${group.id}`}>
-              <h2
-                id={`group-${group.id}`}
-                className="text-xs uppercase tracking-[0.22em] text-[#7ec8e3]/85"
-              >
-                {group.label}
-              </h2>
-              <ul className="mt-4 space-y-3">
+            <section
+              key={group.id}
+              aria-labelledby={`group-${group.id}`}
+              className={
+                group.id === "conditions-of-life"
+                  ? "problems-index__group problems-index__group--conditions"
+                  : "problems-index__group"
+              }
+              style={{ ["--group-colour" as string]: group.colour }}
+            >
+              <div className="problems-index__group-head">
+                <span className="problems-index__group-dot" aria-hidden />
+                <h2 id={`group-${group.id}`} className="problems-index__group-label">
+                  {group.label}
+                </h2>
+              </div>
+              <ul className="problems-index__list">
                 {group.pages.map((page) => (
                   <li key={page.slug}>
                     <Link
                       to="/problems/$slug"
                       params={{ slug: page.slug }}
-                      className="relative block overflow-hidden rounded-xl border border-[#7ec8e3]/35 bg-[#7ec8e3]/[0.06] px-5 py-5 transition hover:border-[#7ec8e3]/55 hover:bg-[#7ec8e3]/10"
+                      className="problems-index__card"
                     >
-                      <span
-                        className="absolute inset-y-0 left-0 w-[3px]"
-                        style={{ backgroundColor: group.colour }}
-                        aria-hidden
-                      />
-                      <h3 className="display text-2xl text-white">{page.title}</h3>
-                      <p className="mt-2 text-[15px] leading-7 text-[#b8d4e8]">{page.opening}</p>
+                      <div className="problems-index__card-row">
+                        <div className="min-w-0">
+                          <h3 className="problems-index__card-title">{page.title}</h3>
+                          <p className="problems-index__card-opening">{page.opening}</p>
+                        </div>
+                        <span className="problems-index__card-go" aria-hidden>
+                          Open →
+                        </span>
+                      </div>
                     </Link>
                   </li>
                 ))}

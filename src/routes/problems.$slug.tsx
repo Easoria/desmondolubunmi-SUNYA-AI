@@ -216,28 +216,34 @@ function StartHereSection({ problem }: { problem: Omit<ProblemPage, "code"> }) {
   return (
     <section className="mt-12 border-t border-white/10 pt-8 sm:mt-14 sm:pt-10">
       <h2 className="display text-2xl text-white">Start here</h2>
-      <ol className="mt-6 space-y-6">
-        {problem.startHere.map((entry) => (
-          <li key={`${entry.leverSlug}/${entry.practiceSlug}`} className="min-w-0">
+      <ol className="problems-start-here">
+        {problem.startHere.map((entry, index) => (
+          <li key={`${entry.leverSlug}/${entry.practiceSlug}`} className="problems-start-card">
             <Link
               to="/practices/$leverSlug/$practiceSlug"
               params={{ leverSlug: entry.leverSlug, practiceSlug: entry.practiceSlug }}
-              className="display text-xl font-semibold text-white transition hover:text-[#7ec8e3] sm:text-2xl"
+              className="problems-start-card__main"
             >
-              {entry.name}
+              <span className="problems-start-card__index" aria-hidden>
+                {index + 1}
+              </span>
+              <div className="problems-start-card__body">
+                <div className="problems-start-card__name-row">
+                  <h3 className="problems-start-card__name">{entry.name}</h3>
+                  <span className="problems-start-card__affordance" aria-hidden>
+                    Practice →
+                  </span>
+                </div>
+                <p className="problems-start-card__why">{entry.whyFirst}</p>
+              </div>
             </Link>
-            <p className="mt-1.5 text-[15px] leading-7 text-[#b8d4e8]">{entry.whyFirst}</p>
             {entry.mechanisms.length ? (
-              <p className="mt-1.5 text-[0.85rem] leading-6 text-[#b8d4e8]/70">
+              <p className="problems-start-card__evidence">
                 <span>Evidence</span>
                 {entry.mechanisms.map((mechanism) => (
                   <span key={mechanism.slug}>
                     <span aria-hidden> · </span>
-                    <Link
-                      to="/evidence/$slug"
-                      params={{ slug: mechanism.slug }}
-                      className="underline decoration-[#7ec8e3]/25 underline-offset-2 transition hover:text-[#7ec8e3] hover:decoration-[#7ec8e3]/50"
-                    >
+                    <Link to="/evidence/$slug" params={{ slug: mechanism.slug }}>
                       {mechanism.name}
                     </Link>
                   </span>
