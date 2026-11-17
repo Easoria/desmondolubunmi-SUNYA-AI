@@ -428,6 +428,10 @@ export const PROBLEM_PAGES: ProblemPage[] = [
       "Every time it comes back, you believe this will be the time it holds",
     ],
     "You are not failing at consistency. You are running a system that swings between full output and collapse with nothing in between, and the crash is not weakness — it is the necessary correction to the push. Each phase causes the next, which is why discipline during the up phase makes the following crash worse rather than better. The way out is taking less at the top, so there is less to fall from.",
+    {
+      // Spec 48 patch — Wind-Down Hour moves out of Start here into Also useful.
+      alsoUsefulProblemTags: ["burnout-cycles"],
+    },
   ),
 ];
 

@@ -52,6 +52,11 @@ export type ProblemStartHereEntry = {
   /** Why this comes first — ordering, not a re-description of the practice. */
   whyFirst: string;
   mechanisms: ProblemMechanismLink[];
+  /**
+   * Marks a deliberate shift in the Start here sequence — the practice that
+   * addresses cause after the repair steps, not another item on the same list.
+   */
+  addressesCause?: boolean;
 };
 
 export type ProblemVariant = {
