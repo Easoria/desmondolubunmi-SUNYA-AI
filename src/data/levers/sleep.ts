@@ -698,7 +698,7 @@ export const sleepLever: Lever = {
       metaDescription: "A structured 60-minute sequence that systematically transitions the nervous system from the demands of the day to the threshold of deep sleep.",
       families: ["H4"],
       directions: ["slow", "calm", "contain", "structure"],
-      problems: ["insomnia"],
+      problems: ["insomnia", "burnout-cycles"],
       generated: {
         layersSource: "INFERRED",
         durationSource: "STATED",

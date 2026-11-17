@@ -539,7 +539,7 @@ export const PROBLEM_START_HERE: Record<string, ProblemStartHereEntry[]> = {
       leverSlug: "breath",
       practiceSlug: "alternate-nostril-breathing",
       name: "Alternate-Nostril Breathing",
-      whyFirst: "Settles the swing from the breath side",
+      whyFirst: "Same calming route once the body has somewhere to land",
       mechanisms: [{ slug: "slow-and-paced-breathing", name: "Slow and paced breathing", qualifier: "calming" }],
     },
     {
@@ -548,6 +548,7 @@ export const PROBLEM_START_HERE: Record<string, ProblemStartHereEntry[]> = {
       name: "Right Livelihood",
       whyFirst: "The first three repair the crash; this one is why the cycle exists",
       mechanisms: [{ slug: "work-and-values-congruence", name: "Work and values congruence" }],
+      addressesCause: true,
     },
   ],
 };

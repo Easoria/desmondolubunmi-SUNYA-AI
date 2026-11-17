@@ -218,7 +218,14 @@ function StartHereSection({ problem }: { problem: Omit<ProblemPage, "code"> }) {
       <h2 className="display text-2xl text-white">Start here</h2>
       <ol className="problems-start-here">
         {problem.startHere.map((entry, index) => (
-          <li key={`${entry.leverSlug}/${entry.practiceSlug}`} className="problems-start-card">
+          <li
+            key={`${entry.leverSlug}/${entry.practiceSlug}`}
+            className={
+              entry.addressesCause
+                ? "problems-start-card problems-start-card--cause"
+                : "problems-start-card"
+            }
+          >
             <Link
               to="/practices/$leverSlug/$practiceSlug"
               params={{ leverSlug: entry.leverSlug, practiceSlug: entry.practiceSlug }}

@@ -836,6 +836,54 @@
     inset 0 1px 0 rgba(126, 200, 227, 0.2);
   transform: translateY(-2px);
 }
+/* Deliberate shift after repair steps — cause practice, not another item on the list */
+.problems-start-card--cause {
+  margin-top: 0.55rem;
+  border-color: rgba(176, 122, 173, 0.45);
+  background:
+    linear-gradient(135deg, rgba(176, 122, 173, 0.16), rgba(255, 255, 255, 0.03) 55%),
+    rgba(255, 255, 255, 0.035);
+  box-shadow: inset 0 1px 0 rgba(176, 122, 173, 0.14);
+}
+.problems-start-card--cause::before {
+  content: "";
+  display: block;
+  height: 1px;
+  margin: 0 1.15rem;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(176, 122, 173, 0.45),
+    transparent
+  );
+}
+.problems-start-card--cause .problems-start-card__index {
+  border-color: rgba(176, 122, 173, 0.45);
+  background: rgba(176, 122, 173, 0.12);
+  color: #d4a8d0;
+}
+.problems-start-card--cause .problems-start-card__name {
+  text-decoration-color: rgba(176, 122, 173, 0.4);
+}
+.problems-start-card--cause .problems-start-card__affordance {
+  border-color: rgba(176, 122, 173, 0.4);
+  background: rgba(176, 122, 173, 0.12);
+  color: #d4a8d0;
+}
+.problems-start-card--cause:hover {
+  border-color: rgba(176, 122, 173, 0.7);
+  background:
+    linear-gradient(135deg, rgba(176, 122, 173, 0.22), rgba(255, 255, 255, 0.04) 55%),
+    rgba(176, 122, 173, 0.07);
+  box-shadow:
+    0 16px 40px -26px rgba(176, 122, 173, 0.7),
+    inset 0 1px 0 rgba(176, 122, 173, 0.22);
+}
+.problems-start-card--cause:hover .problems-start-card__affordance {
+  border-color: rgba(176, 122, 173, 0.65);
+  background: rgba(176, 122, 173, 0.2);
+  color: #fff;
+}
 .problems-start-card__main {
   display: flex;
   gap: 0.95rem;
