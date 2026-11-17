@@ -1,7 +1,5 @@
-import { useEffect, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
-import { ChevronDown } from "lucide-react";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { EmailCapture } from "@/components/site/EmailCapture";
@@ -148,127 +146,7 @@ function Hero() {
   );
 }
 
-const WHY_BRANCH_LINES = [
-  "we ruminate over the past and worry about the future, never in the now",
-  "we feel divided from others, and from that division comes conflict and fear",
-  "we experience ourselves as finite, time-bound creatures living under the fear of death",
-  "we chase sense gratification endlessly",
-  "we feel permanently insufficient, because we have identified ourselves with limited things",
-  "we seek salvation in external things, or in the future, rather than in the presence always here",
-] as const;
-
-const WHY_CAUSE_CARDS = [
-  {
-    n: "01",
-    name: "Unconsciousness",
-    line: "We are born with our senses turned outward for survival — unaware of the source of life within.",
-  },
-  {
-    n: "02",
-    name: "Identification",
-    line: "So we take ourselves to be the nearest things: the body, our thoughts, what we accumulate.",
-  },
-] as const;
-
-function WhyWeSufferBranches({ reduceMotion }: { reduceMotion: boolean }) {
-  const blockRef = useRef<HTMLDivElement | null>(null);
-  const [enhanced, setEnhanced] = useState(false);
-  const [inView, setInView] = useState(false);
-  const [active, setActive] = useState(0);
-  const [paused, setPaused] = useState(false);
-  // SSR / no-JS / reduced-motion: stacked static list. Motion clients: fixed-height crossfade.
-  const cycleLayout = enhanced && !reduceMotion;
-  const cycling = cycleLayout && inView;
-
-  useEffect(() => {
-    setEnhanced(true);
-  }, []);
-
-  useEffect(() => {
-    if (!cycleLayout) return;
-    const node = blockRef.current;
-    if (!node) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setInView(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.35 },
-    );
-    observer.observe(node);
-    return () => observer.disconnect();
-  }, [cycleLayout]);
-
-  useEffect(() => {
-    if (!cycling || paused) return;
-    // 7s hold + ~600ms crossfade before the next advance
-    const id = window.setInterval(() => {
-      setActive((i) => (i + 1) % WHY_BRANCH_LINES.length);
-    }, 7600);
-    return () => window.clearInterval(id);
-  }, [cycling, paused]);
-
-  const longest = WHY_BRANCH_LINES.reduce((a, b) => (a.length >= b.length ? a : b));
-
-  return (
-    <div
-      ref={blockRef}
-      tabIndex={cycleLayout ? 0 : undefined}
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
-      onFocus={() => setPaused(true)}
-      onBlur={() => setPaused(false)}
-    >
-      {/*
-        All six lines stay in the HTML for indexing and no-JS / reduced-motion fallbacks.
-        Cycling only changes opacity; aria-live stays off so AT reads the full list.
-      */}
-      <div aria-live="off" className={cycleLayout ? "relative" : "space-y-3"}>
-        {cycleLayout && (
-          <p
-            className="invisible whitespace-pre-wrap italic text-sm leading-relaxed text-[#b8d4e8] sm:text-[0.95rem]"
-            aria-hidden
-          >
-            {longest}
-          </p>
-        )}
-        {WHY_BRANCH_LINES.map((line, index) => (
-          <p
-            key={line}
-            className={
-              cycleLayout
-                ? `absolute inset-x-0 top-0 italic text-sm leading-relaxed text-[#b8d4e8] transition-opacity duration-[600ms] ease-in-out sm:text-[0.95rem] ${
-                    index === active ? "opacity-100" : "pointer-events-none opacity-0"
-                  }`
-                : "italic text-sm leading-relaxed text-[#b8d4e8] sm:text-[0.95rem]"
-            }
-          >
-            {line}
-          </p>
-        ))}
-      </div>
-
-      <p className="mt-4 text-sm tracking-wide text-[#b8d4e8]/55">and on, and on</p>
-    </div>
-  );
-}
-
 function Reframe() {
-  const [baselineOpen, setBaselineOpen] = useState(false);
-  const [reduceMotion, setReduceMotion] = useState(
-    () => typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches,
-  );
-
-  useEffect(() => {
-    const media = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const onChange = () => setReduceMotion(media.matches);
-    onChange();
-    media.addEventListener("change", onChange);
-    return () => media.removeEventListener("change", onChange);
-  }, []);
-
   return (
     <section className="relative overflow-hidden bg-[#060d1c] pb-32 pt-44 md:pt-52">
       <div
@@ -282,89 +160,74 @@ function Reframe() {
       />
       <div className="relative z-10 mx-auto max-w-3xl px-6">
         <div className="text-center">
-          <h2 className="display text-4xl text-white sm:text-5xl">Why we suffer</h2>
+          <h2 className="display text-4xl text-white sm:text-5xl">Why nothing has held</h2>
         </div>
 
-        {/* Baseline — ground, not step zero. Outside the connector. */}
-        <div className="mx-auto mt-12 max-w-2xl">
-          <button
-            type="button"
-            aria-expanded={baselineOpen}
-            onClick={() => setBaselineOpen((o) => !o)}
-            className="flex w-full items-center justify-between gap-4 py-2 text-left text-sm text-[#b8d4e8]/55 transition hover:text-[#b8d4e8]/75 sm:text-[0.9rem]"
-          >
-            <span>Entropy</span>
-            <ChevronDown
-              className={`h-4 w-4 shrink-0 transition-transform duration-300 ${baselineOpen ? "rotate-180" : ""}`}
-              aria-hidden
-            />
-          </button>
-          <div
-            className="grid transition-[grid-template-rows] duration-300 ease-out"
-            style={{ gridTemplateRows: baselineOpen ? "1fr" : "0fr" }}
-          >
-            <div className="overflow-hidden">
-              <p className="pb-3 pt-1 text-[0.8rem] leading-relaxed text-[#b8d4e8]/45 sm:text-[0.85rem]">
-                The body has its own limitations and constant demands — food, shelter, sleep. It is also subject to illness and aging. This is the constant underlying pressure of the physical body. We are less able to meet the demands of life when we live unconsciously.
-              </p>
-            </div>
-          </div>
+        <div className="mx-auto mt-12 max-w-2xl space-y-6 text-[15px] leading-7 text-[#b8d4e8] sm:mt-14 sm:text-base sm:leading-8">
+          <p>
+            You have probably tried something. Breathing, an app, the gym, a book, maybe therapy. It
+            worked for a while and then it did not, and the usual explanation offered is that you
+            stopped doing it.
+          </p>
+          <p>Here is a better one.</p>
+          <p>
+            A person&apos;s wellbeing is not one thing. It runs on a number of separate systems —
+            how you breathe, how you sleep, how you move, what you eat, whether you have enough
+            money, whether anyone really knows you — and
+          </p>
         </div>
 
-        {/* Separator between baseline and the causal stack */}
-        <div className="mx-auto mt-4 h-px w-full max-w-2xl bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-
-        {/* Cards 01–03 share one vertical connector that never reaches the baseline */}
-        <div className="relative mx-auto mt-10 max-w-2xl pb-14">
-          <div
-            className="pointer-events-none absolute bottom-0 left-[1.15rem] top-6 w-px md:left-[1.35rem]"
-            aria-hidden
-            style={{
-              background:
-                "linear-gradient(180deg, rgba(126,200,227,0.55) 0%, rgba(126,200,227,0.38) 58%, rgba(126,200,227,0.14) 82%, rgba(126,200,227,0) 100%)",
-            }}
-          />
-
-          <div className="space-y-5">
-            {WHY_CAUSE_CARDS.map((link) => (
-              <div
-                key={link.name}
-                className="glass-card relative z-10 flex flex-col p-5 md:p-6"
-                style={{ backgroundColor: "rgba(10, 22, 40, 0.62)" }}
-              >
-                <div className="font-display text-xl tracking-[0.16em] text-[#7ec8e3]/45">{link.n}</div>
-                <h3 className="display mt-2 text-2xl text-white">{link.name}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-[#b8d4e8]">{link.line}</p>
-              </div>
-            ))}
-
-            <div
-              className="glass-card relative z-10 flex flex-col p-5 md:p-6"
-              style={{ backgroundColor: "rgba(10, 22, 40, 0.62)" }}
-            >
-              <div className="font-display text-xl tracking-[0.16em] text-[#7ec8e3]/45">03</div>
-              <h3 className="display mt-2 text-2xl text-white">Suffering</h3>
-              <p className="mt-3 text-sm leading-relaxed text-[#b8d4e8]">
-                Identification with form makes life feel limited, and leads to suffering in endless
-                ways.
-              </p>
-              <div className="mt-5 h-px w-full bg-gradient-to-r from-transparent via-white/15 to-transparent" />
-              <div className="mt-5">
-                <WhyWeSufferBranches reduceMotion={reduceMotion} />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <p className="display mx-auto mt-16 max-w-3xl text-center text-3xl text-white sm:text-4xl">
-          The solution is to become conscious of the source of life within, and to live in harmony
-          with the intelligence of life.
+        <p className="display mx-auto mt-10 max-w-3xl text-center text-3xl leading-snug text-white sm:mt-12 sm:text-4xl">
+          the whole thing performs at the level of whichever one is worst.
         </p>
 
+        <div className="mx-auto mt-10 max-w-2xl space-y-6 text-[15px] leading-7 text-[#b8d4e8] sm:mt-12 sm:text-base sm:leading-8">
+          <p>
+            Improve the second-worst and very little changes. Improve the worst and everything
+            moves.
+          </p>
+          <p>
+            Almost nothing on offer addresses more than one of them. A breathing practice is
+            excellent if your limit is your nervous system, and close to useless if your limit is
+            that you are broke and alone. The practice was not wrong. It was aimed at the wrong part
+            of you.
+          </p>
+          <p>
+            This is also why the research in this field looks so unimpressive. When a study gives
+            one practice to a room of people whose limits are all different, most of them are
+            receiving the wrong thing, and their non-response goes into the average. What gets
+            published as a small effect is often a large effect in the few people who happened to
+            need that particular thing.
+          </p>
+          <p>
+            So the first question is not what to practise. It is which part of you is actually
+            weakest — and that is usually not the part making the most noise.
+          </p>
+        </div>
+
         <div className="mt-10 flex justify-center">
-          <Link to="/framework" className={heroGatheringsBtn}>
-            Explore the Sunya framework
+          <Link to="/problems" className={heroPrimaryBtn}>
+            Find where you&apos;re stuck →
           </Link>
+        </div>
+
+        <div className="mx-auto mt-20 max-w-2xl border-t border-white/10 pt-12 sm:mt-24 sm:pt-14">
+          <div className="space-y-5 text-[15px] leading-7 text-[#b8d4e8] sm:text-base sm:leading-8">
+            <p>
+              The traditions make one much larger claim: that all of this comes from taking yourself
+              to be the things you can observe — your body, your thoughts, what you own — and that
+              it ends when attention turns back on itself.
+            </p>
+            <p>
+              That is the philosophy. It is a bigger claim than anything above, and it is not one
+              that research can test.
+            </p>
+          </div>
+          <div className="mt-8 flex justify-center sm:justify-start">
+            <Link to="/philosophy" className={sectionCtaClass}>
+              Read the philosophy →
+            </Link>
+          </div>
         </div>
       </div>
     </section>

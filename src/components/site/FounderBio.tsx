@@ -5,7 +5,7 @@ import desmondImg from "@/assets/desmond.jpg";
 export const FOUNDER_SUBTITLE = "Founder of Sunya · Author of The Sleep Rhythm Reset";
 
 export const FOUNDER_PARAGRAPHS = [
-  "Desmond built Sunya as a complete map of human wellbeing — not a single technique, and not a sect. Most approaches treat one part of a person; Sunya starts from where you are actually stuck.",
+  "Desmond built Sunya as a map of human wellbeing — not a single technique, and not a sect. Most approaches treat one part of a person; Sunya starts from where you are actually stuck.",
   "He spent his teens and early twenties in daily contemplative practice across several traditions, working out what they had in common and what each one left out. The result is a framework that covers the whole of a person rather than one part.",
 ] as const;
 

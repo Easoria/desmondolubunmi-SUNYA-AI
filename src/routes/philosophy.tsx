@@ -67,6 +67,8 @@ const BRANCH_ROW_ACCENT = {
   lack: "#b07aad", // soft violet
 } as const;
 
+type FeltLink = { label: string; slug: string };
+
 const SUFFERING_BRANCH_GROUPS = [
   {
     accent: BRANCH_ROW_ACCENT.time,
@@ -74,17 +76,29 @@ const SUFFERING_BRANCH_GROUPS = [
       {
         name: "Time",
         line: "Identification with the contents of the mind causes us to ruminate over the past and worry about the future, never in the now.",
-        felt: "This is felt as worry, regret, mental rumination.",
+        felt: [
+          { label: "worry", slug: "anxiety-and-worry" },
+          { label: "regret", slug: "anxiety-and-worry" },
+          { label: "mental rumination", slug: "a-racing-mind" },
+        ] satisfies FeltLink[],
       },
       {
         name: "Linearity",
         line: "Identification with form confines us to the space-time continuum, and to the movement of cause and effect. We are forced to move in a linear direction through time, towards a certain end.",
-        felt: "This is felt as pressure, urgency, indecision.",
+        felt: [
+          { label: "pressure", slug: "overwhelm" },
+          { label: "urgency", slug: "overwhelm" },
+          { label: "indecision", slug: "feeling-torn" },
+        ] satisfies FeltLink[],
       },
       {
         name: "Mortality",
         line: "Identification with form causes us to experience ourselves as finite, time-bound creatures living under the fear of death.",
-        felt: "This is felt as fear, dread, health anxiety.",
+        felt: [
+          { label: "fear", slug: "fear-of-death" },
+          { label: "dread", slug: "fear-of-death" },
+          { label: "health anxiety", slug: "fear-of-death" },
+        ] satisfies FeltLink[],
       },
     ],
   },
@@ -94,17 +108,29 @@ const SUFFERING_BRANCH_GROUPS = [
       {
         name: "Division",
         line: "Identification with form makes us feel divided from others, and from that division comes conflict and fear.",
-        felt: "This is felt as loneliness, jealousy, conflict.",
+        felt: [
+          { label: "loneliness", slug: "loneliness" },
+          { label: "jealousy", slug: "loneliness" },
+          { label: "conflict", slug: "loneliness" },
+        ] satisfies FeltLink[],
       },
       {
         name: "Resistance",
         line: "Identification with form causes us to resist things that are outside the boundaries of our limited identities. We resist the present moment. We resist what is. And to resist what is, is to be in conflict with life itself — because life only exists in the present moment.",
-        felt: "This is felt as stress, frustration, anger.",
+        felt: [
+          { label: "stress", slug: "anger-and-frustration" },
+          { label: "frustration", slug: "anger-and-frustration" },
+          { label: "anger", slug: "anger-and-frustration" },
+        ] satisfies FeltLink[],
       },
       {
         name: "Contraction",
         line: "Identification with form causes us to feel threatened, contract physically and hold tension — and contraction is tiring to hold. It leaves the body braced and, over time, depleted.",
-        felt: "This is felt as tension, exhaustion, burnout.",
+        felt: [
+          { label: "tension", slug: "physical-tension" },
+          { label: "exhaustion", slug: "exhaustion" },
+          { label: "burnout", slug: "burnout-cycles" },
+        ] satisfies FeltLink[],
       },
     ],
   },
@@ -114,21 +140,60 @@ const SUFFERING_BRANCH_GROUPS = [
       {
         name: "Craving",
         line: "Identification with the bodily senses causes us to chase sense gratification endlessly.",
-        felt: "This is felt as addiction, restlessness, overconsumption.",
+        felt: [
+          { label: "addiction", slug: "craving-and-restlessness" },
+          { label: "restlessness", slug: "craving-and-restlessness" },
+          { label: "overconsumption", slug: "craving-and-restlessness" },
+        ] satisfies FeltLink[],
       },
       {
         name: "Insufficiency",
         line: "Identification with form causes us to feel permanently insufficient, because the body and mind are inherently limited.",
-        felt: "This is felt as low self-esteem, envy, never enough.",
+        felt: [
+          { label: "low self-esteem", slug: "self-criticism-and-shame" },
+          { label: "envy", slug: "self-criticism-and-shame" },
+          { label: "never enough", slug: "self-criticism-and-shame" },
+        ] satisfies FeltLink[],
       },
       {
         name: "Seeking",
         line: "Identification with any form causes us to seek salvation in external things or in the future, rather than being content with what is here and now.",
-        felt: "This is felt as emptiness, dissatisfaction, meaninglessness.",
+        felt: [
+          { label: "emptiness", slug: "emptiness-and-meaninglessness" },
+          { label: "dissatisfaction", slug: "emptiness-and-meaninglessness" },
+          { label: "meaninglessness", slug: "emptiness-and-meaninglessness" },
+        ] satisfies FeltLink[],
       },
     ],
   },
 ] as const;
+
+const ENTROPY_FELT: FeltLink[] = [
+  { label: "the body's demands", slug: "exhaustion" },
+  { label: "illness", slug: "stiffness-and-immobility" },
+  { label: "ageing", slug: "low-physical-energy" },
+];
+
+function FeltAsLine({ links }: { links: readonly FeltLink[] }) {
+  return (
+    <p className="mt-2 text-[12px] leading-relaxed text-[#b8d4e8]/50 sm:text-[13px]">
+      This is felt as{" "}
+      {links.map((link, index) => (
+        <span key={`${link.slug}-${link.label}`}>
+          {index > 0 ? ", " : null}
+          <Link
+            to="/problems/$slug"
+            params={{ slug: link.slug }}
+            className="underline decoration-[#7ec8e3]/35 underline-offset-2 transition hover:text-[#7ec8e3] hover:decoration-[#7ec8e3]/70"
+          >
+            {link.label}
+          </Link>
+        </span>
+      ))}
+      .
+    </p>
+  );
+}
 
 const JUICE_OF_LIFE_PARAGRAPHS = [
   "When attention is taken up entirely by what it holds — a thought, a sensation, the next thing — you come to take yourself to be those things. And they are limited, so you feel limited. Life starts to feel like you against the world, and you never quite feel like enough.",
@@ -509,8 +574,10 @@ const ZONES: Zone[] = [
   },
 ];
 
-const GROUND_BODY =
-  "The body has its own limitations and constant demands — food, shelter, sleep. It is also subject to illness and aging. This is the constant underlying pressure of the physical body. We are less able to meet the demands of life when we live unconsciously.";
+const GROUND_PARAGRAPHS = [
+  "It has limits and constant demands — food, shelter, sleep — and it is subject to illness and ageing. This pressure is not caused by unconsciousness and does not resolve with insight. It is the one source of difficulty in this map that has nothing to do with how you see. It is met by handling the conditions of your life well, which is what the six external pillars are for.",
+  "Everything below is different in kind.",
+] as const;
 
 function ZonePanel({
   zone,
@@ -634,7 +701,7 @@ function PhilosophyPage() {
         </div>
       </section>
 
-      {/* Why we suffer — Entropy subordinate, widening trunk + branch canopy */}
+      {/* Why we suffer — Entropy framed above the chain, then 01–03 + canopy */}
       <section className="relative overflow-hidden bg-[#060d1c] py-[7.04rem]">
         <Starfield density={0.3} />
         <div className="relative z-10 mx-auto max-w-5xl px-6">
@@ -642,16 +709,20 @@ function PhilosophyPage() {
             <h2 className="display text-4xl text-white sm:text-5xl md:text-6xl">Why we suffer</h2>
           </div>
 
-          {/* Entropy — always open, subordinate to the section heading */}
-          <div className="mx-auto mt-10 max-w-3xl sm:mt-12">
+          {/* Entropy — parallel source, visually distinct from the numbered chain */}
+          <div className="mx-auto mt-10 max-w-3xl rounded-2xl border border-white/10 bg-white/[0.03] px-6 py-8 sm:mt-12 sm:px-8 sm:py-10">
             <p className="text-center text-sm tracking-wide text-[#b8d4e8]/55 sm:text-[0.9rem]">
               Entropy
             </p>
-            <div className="mx-auto mt-8 h-px w-24 bg-gradient-to-r from-transparent via-[#7ec8e3]/40 to-transparent sm:mt-10" />
-            <div className="mt-8 text-[15px] leading-loose text-[#b8d4e8] sm:mt-10 sm:text-base">
-              <p>{GROUND_BODY}</p>
+            <h3 className="display mt-5 text-center text-2xl text-white sm:mt-6 sm:text-3xl">
+              Before any of this, there is simply the body.
+            </h3>
+            <div className="mt-6 space-y-4 text-[15px] leading-loose text-[#b8d4e8] sm:mt-7 sm:text-base">
+              {GROUND_PARAGRAPHS.map((paragraph) => (
+                <p key={paragraph.slice(0, 40)}>{paragraph}</p>
+              ))}
             </div>
-            <div className="mx-auto mt-10 h-px w-24 bg-gradient-to-r from-transparent via-[#7ec8e3]/40 to-transparent sm:mt-12" />
+            <FeltAsLine links={ENTROPY_FELT} />
           </div>
 
           <div className="relative mx-auto mt-14 pb-14">
@@ -717,9 +788,7 @@ function PhilosophyPage() {
                       <p className="mt-2 text-[15px] leading-relaxed text-[#b8d4e8] sm:text-base">
                         {branch.line}
                       </p>
-                      <p className="mt-2 text-[12px] leading-relaxed text-[#b8d4e8]/50 sm:text-[13px]">
-                        {branch.felt}
-                      </p>
+                      <FeltAsLine links={branch.felt} />
                     </div>
                   ))}
                 </div>
