@@ -1,5 +1,6 @@
 import type { ProblemStartHereEntry } from "./types";
-/** SPEC 48 — Start here ordering. Max four. Depth 4 never leads except fear-of-death. */
+
+/** SPEC 48 revise — Start here ordering. Max four. Depth 4 never leads except fear-of-death. */
 export const PROBLEM_START_HERE: Record<string, ProblemStartHereEntry[]> = {
   "anxiety-and-worry": [
     {
@@ -11,17 +12,17 @@ export const PROBLEM_START_HERE: Record<string, ProblemStartHereEntry[]> = {
     },
     {
       leverSlug: "breath",
+      practiceSlug: "alternate-nostril-breathing",
+      name: "Alternate-Nostril Breathing",
+      whyFirst: "Same calming route, next to reach for",
+      mechanisms: [{ slug: "slow-and-paced-breathing", name: "Slow and paced breathing", qualifier: "calming" }],
+    },
+    {
+      leverSlug: "breath",
       practiceSlug: "deep-belly-breathing",
       name: "Deep Belly Breathing",
       whyFirst: "The daily version of the same thing",
       mechanisms: [{ slug: "slow-and-paced-breathing", name: "Slow and paced breathing", qualifier: "calming" }],
-    },
-    {
-      leverSlug: "awareness",
-      practiceSlug: "pure-observation",
-      name: "Pure Observation",
-      whyFirst: "Works on the worry itself rather than the alarm",
-      mechanisms: [{ slug: "decentering", name: "Decentering", qualifier: "Quieting repetitive thought, depth 1 of 4" }],
     },
   ],
   "a-racing-mind": [
@@ -33,18 +34,18 @@ export const PROBLEM_START_HERE: Record<string, ProblemStartHereEntry[]> = {
       mechanisms: [{ slug: "rumination-and-mind-wandering", name: "Rumination and mind-wandering", qualifier: "Quieting repetitive thought, depth 2 of 4" }],
     },
     {
+      leverSlug: "awareness",
+      practiceSlug: "pure-observation",
+      name: "Pure Observation",
+      whyFirst: "Stops the loop producing distress, rather than stopping the loop",
+      mechanisms: [{ slug: "decentering", name: "Decentering", qualifier: "Quieting repetitive thought, depth 1 of 4" }],
+    },
+    {
       leverSlug: "mind",
       practiceSlug: "journaling",
       name: "Journaling",
       whyFirst: "Gets the loop out of the loop",
       mechanisms: [{ slug: "expressive-writing", name: "Expressive writing", qualifier: "Quieting repetitive thought, depth 2 of 4" }],
-    },
-    {
-      leverSlug: "breath",
-      practiceSlug: "4-7-8-breathing",
-      name: "4-7-8 Breathing",
-      whyFirst: "If this is happening at night",
-      mechanisms: [{ slug: "slow-and-paced-breathing", name: "Slow and paced breathing", qualifier: "calming" }],
     },
   ],
   "a-scattered-mind": [
@@ -56,9 +57,9 @@ export const PROBLEM_START_HERE: Record<string, ProblemStartHereEntry[]> = {
       mechanisms: [{ slug: "input-restriction-and-attentional-load", name: "Input restriction and attentional load", qualifier: "Quieting repetitive thought, depth 2 of 4" }],
     },
     {
-      leverSlug: "mind",
-      practiceSlug: "laser-focus",
-      name: "Laser Focus",
+      leverSlug: "awareness",
+      practiceSlug: "inner-gaze",
+      name: "Inner Gaze",
       whyFirst: "Trains attention once the field is quieter",
       mechanisms: [{ slug: "meditation", name: "Meditation", qualifier: "Quieting repetitive thought, depth 2 of 4" }],
     },
@@ -171,41 +172,41 @@ export const PROBLEM_START_HERE: Record<string, ProblemStartHereEntry[]> = {
       mechanisms: [{ slug: "slow-and-paced-breathing", name: "Slow and paced breathing", qualifier: "calming" }],
     },
     {
-      leverSlug: "movement",
-      practiceSlug: "the-dance-of-dissolution",
-      name: "Free Movement",
-      whyFirst: "Gives the energy somewhere physical to go",
-      mechanisms: [{ slug: "movement-mobility-and-exercise-timing", name: "Movement, mobility and exercise timing" }],
+      leverSlug: "breath",
+      practiceSlug: "alternate-nostril-breathing",
+      name: "Alternate-Nostril Breathing",
+      whyFirst: "Same calming route once the first breath has landed",
+      mechanisms: [{ slug: "slow-and-paced-breathing", name: "Slow and paced breathing", qualifier: "calming" }],
+    },
+    {
+      leverSlug: "breath",
+      practiceSlug: "4-7-8-breathing",
+      name: "4-7-8 Breathing",
+      whyFirst: "A third calming option when the body is still hot",
+      mechanisms: [{ slug: "slow-and-paced-breathing", name: "Slow and paced breathing", qualifier: "calming" }],
+    },
+  ],
+  "emotional-numbness": [
+    {
+      leverSlug: "heart",
+      practiceSlug: "heart-coherence",
+      name: "Heart Coherence",
+      whyFirst: "Opens the heart lever through the breath",
+      mechanisms: [{ slug: "slow-and-paced-breathing", name: "Slow and paced breathing", qualifier: "calming" }],
     },
     {
       leverSlug: "heart",
       practiceSlug: "emotional-presence",
       name: "Emotional Presence",
-      whyFirst: "Meets what is under the heat once the body has settled",
+      whyFirst: "Meets feeling without forcing it back",
       mechanisms: [{ slug: "acceptance-and-psychological-flexibility", name: "Acceptance and psychological flexibility" }],
     },
-  ],
-  "emotional-numbness": [
     {
-      leverSlug: "awareness",
-      practiceSlug: "reading-your-vital-state",
-      name: "Reading Your Vital State",
-      whyFirst: "Reopens contact with what the body is actually signalling",
-      mechanisms: [{ slug: "interoception-and-body-scan", name: "Interoception and body scan" }],
-    },
-    {
-      leverSlug: "awareness",
-      practiceSlug: "body-scan",
-      name: "Body Scan",
-      whyFirst: "Rebuilds sensation without forcing feeling",
-      mechanisms: [{ slug: "interoception-and-body-scan", name: "Interoception and body scan" }],
-    },
-    {
-      leverSlug: "sound",
-      practiceSlug: "humming",
-      name: "Humming",
-      whyFirst: "A gentle bodily route back into feeling",
-      mechanisms: [{ slug: "sustained-vocalisation", name: "Sustained vocalisation" }],
+      leverSlug: "heart",
+      practiceSlug: "giving-and-receiving",
+      name: "Giving and Receiving",
+      whyFirst: "Practises warmth in both directions",
+      mechanisms: [{ slug: "compassion-and-loving-kindness-training", name: "Compassion and loving-kindness training" }],
     },
   ],
   "grief": [
@@ -224,11 +225,11 @@ export const PROBLEM_START_HERE: Record<string, ProblemStartHereEntry[]> = {
       mechanisms: [{ slug: "social-connection-and-isolation", name: "Social connection and isolation" }],
     },
     {
-      leverSlug: "movement",
-      practiceSlug: "the-dance-of-dissolution",
-      name: "Free Movement",
-      whyFirst: "Keeps the body from locking around the loss",
-      mechanisms: [{ slug: "movement-mobility-and-exercise-timing", name: "Movement, mobility and exercise timing" }],
+      leverSlug: "heart",
+      practiceSlug: "heart-coherence",
+      name: "Heart Coherence",
+      whyFirst: "Settles the body around what cannot be fixed",
+      mechanisms: [{ slug: "slow-and-paced-breathing", name: "Slow and paced breathing", qualifier: "calming" }],
     },
   ],
   "emptiness-and-meaninglessness": [
@@ -302,17 +303,17 @@ export const PROBLEM_START_HERE: Record<string, ProblemStartHereEntry[]> = {
   ],
   "low-physical-energy": [
     {
-      leverSlug: "movement",
-      practiceSlug: "the-dance-of-dissolution",
-      name: "Free Movement",
-      whyFirst: "Energy arrives after movement, not before it",
-      mechanisms: [{ slug: "movement-mobility-and-exercise-timing", name: "Movement, mobility and exercise timing" }],
-    },
-    {
       leverSlug: "breath",
       practiceSlug: "bellows-breath",
       name: "Bellows Breath",
-      whyFirst: "The activating direction",
+      whyFirst: "The activating direction, deliberately",
+      mechanisms: [{ slug: "activating-breathwork", name: "Activating breathwork", qualifier: "Regulating arousal — activating" }],
+    },
+    {
+      leverSlug: "breath",
+      practiceSlug: "skull-shining-breath",
+      name: "Skull-Shining Breath",
+      whyFirst: "Same activating family, a second route in",
       mechanisms: [{ slug: "activating-breathwork", name: "Activating breathwork", qualifier: "Regulating arousal — activating" }],
     },
     {
@@ -422,11 +423,11 @@ export const PROBLEM_START_HERE: Record<string, ProblemStartHereEntry[]> = {
       mechanisms: [{ slug: "input-restriction-and-attentional-load", name: "Input restriction and attentional load" }],
     },
     {
-      leverSlug: "conservation",
-      practiceSlug: "fasting",
-      name: "Fasting",
-      whyFirst: "Practises not reaching, on purpose",
-      mechanisms: [{ slug: "time-restricted-eating-and-fasting", name: "Time-restricted eating and fasting" }],
+      leverSlug: "awareness",
+      practiceSlug: "inner-gaze",
+      name: "Inner Gaze",
+      whyFirst: "Builds the clarity to meet an urge rather than obey it",
+      mechanisms: [{ slug: "meditation", name: "Meditation", qualifier: "Quieting repetitive thought, depth 2 of 4" }],
     },
   ],
   "money-pressure": [
@@ -511,28 +512,42 @@ export const PROBLEM_START_HERE: Record<string, ProblemStartHereEntry[]> = {
       whyFirst: "Settles the body so sorting can restart",
       mechanisms: [{ slug: "slow-and-paced-breathing", name: "Slow and paced breathing", qualifier: "calming" }],
     },
+    {
+      leverSlug: "breath",
+      practiceSlug: "alternate-nostril-breathing",
+      name: "Alternate-Nostril Breathing",
+      whyFirst: "Same calming route once the first breath has landed",
+      mechanisms: [{ slug: "slow-and-paced-breathing", name: "Slow and paced breathing", qualifier: "calming" }],
+    },
   ],
   "burnout-cycles": [
     {
-      leverSlug: "sustenance",
-      practiceSlug: "right-livelihood",
-      name: "Right Livelihood",
-      whyFirst: "The lever; the rest manage the symptom",
-      mechanisms: [{ slug: "work-and-values-congruence", name: "Work and values congruence" }],
-    },
-    {
-      leverSlug: "conservation",
-      practiceSlug: "silence",
-      name: "Silence",
-      whyFirst: "Cuts the input that keeps the swing going",
-      mechanisms: [{ slug: "input-restriction-and-attentional-load", name: "Input restriction and attentional load" }],
+      leverSlug: "sleep",
+      practiceSlug: "somatic-regulation",
+      name: "Settling the Body",
+      whyFirst: "Repairs the crash in the body first",
+      mechanisms: [{ slug: "progressive-muscle-relaxation-and-stillness", name: "Progressive muscle relaxation and stillness", qualifier: "calming" }],
     },
     {
       leverSlug: "sleep",
       practiceSlug: "the-circadian-architecture",
       name: "Your Body Clock",
-      whyFirst: "Restores the daily rhythm the crash is breaking",
+      whyFirst: "A push-and-crash pattern destroys circadian regularity first",
       mechanisms: [{ slug: "circadian-light-exposure-and-entrainment", name: "Circadian light exposure and entrainment" }],
+    },
+    {
+      leverSlug: "breath",
+      practiceSlug: "alternate-nostril-breathing",
+      name: "Alternate-Nostril Breathing",
+      whyFirst: "Settles the swing from the breath side",
+      mechanisms: [{ slug: "slow-and-paced-breathing", name: "Slow and paced breathing", qualifier: "calming" }],
+    },
+    {
+      leverSlug: "sustenance",
+      practiceSlug: "right-livelihood",
+      name: "Right Livelihood",
+      whyFirst: "The first three repair the crash; this one is why the cycle exists",
+      mechanisms: [{ slug: "work-and-values-congruence", name: "Work and values congruence" }],
     },
   ],
 };
