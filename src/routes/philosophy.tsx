@@ -170,21 +170,21 @@ const SUFFERING_BRANCH_GROUPS = [
 
 function FeltAsLine({ links }: { links: readonly FeltLink[] }) {
   return (
-    <p className="mt-2 text-[12px] leading-relaxed text-[#b8d4e8]/50 sm:text-[13px]">
-      This is felt as{" "}
+    <p className="mt-4 text-[14px] leading-relaxed text-[#b8d4e8]/85 sm:mt-5 sm:text-[15px] sm:leading-7">
+      <span className="text-[#b8d4e8]/70">This is felt as </span>
       {links.map((link, index) => (
         <span key={`${link.slug}-${link.label}`}>
-          {index > 0 ? ", " : null}
+          {index > 0 ? <span className="text-[#b8d4e8]/55">, </span> : null}
           <Link
             to="/problems/$slug"
             params={{ slug: link.slug }}
-            className="underline decoration-[#7ec8e3]/35 underline-offset-2 transition hover:text-[#7ec8e3] hover:decoration-[#7ec8e3]/70"
+            className="font-medium text-[#7ec8e3] underline decoration-[#7ec8e3]/55 underline-offset-[0.18em] transition hover:text-white hover:decoration-white/70"
           >
             {link.label}
           </Link>
         </span>
       ))}
-      .
+      <span className="text-[#b8d4e8]/70">.</span>
     </p>
   );
 }
