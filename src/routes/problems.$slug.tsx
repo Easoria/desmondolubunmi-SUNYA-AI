@@ -43,19 +43,29 @@ type LoaderData = {
   practiceCount: number;
 };
 
-function buildPracticeGroups(code: ProblemPage["code"]): {
+function buildAlsoUsefulGroups(problem: ProblemPage): {
   groups: PracticeGroup[];
   practiceCount: number;
 } {
+  const startKeys = new Set(
+    problem.startHere.map((entry) => `${entry.leverSlug}/${entry.practiceSlug}`),
+  );
   const bySlug = new Map(getLeversInOrder().map((lever) => [lever.slug, lever]));
   const groups: PracticeGroup[] = [];
   let practiceCount = 0;
+  const tags = new Set(problem.alsoUsefulProblemTags ?? []);
 
   for (const leverSlug of PROBLEM_PRACTICE_LEVER_ORDER) {
     const lever = bySlug.get(leverSlug) ?? leverLibrary[leverSlug as LeverSlug];
     if (!lever) continue;
     const practices = getAllLeverPractices(lever)
-      .filter((practice) => practice.families?.includes(code))
+      .filter((practice) => {
+        const key = `${lever.slug}/${practice.slug}`;
+        if (startKeys.has(key)) return false;
+        if (problem.code && practice.families?.includes(problem.code)) return true;
+        if (tags.size && practice.problems?.some((tag) => tags.has(tag))) return true;
+        return false;
+      })
       .map((practice) => ({
         slug: practice.slug,
         name: practice.name,
@@ -73,6 +83,23 @@ function buildPracticeGroups(code: ProblemPage["code"]): {
   return { groups, practiceCount };
 }
 
+function renderInlineMarkdown(text: string) {
+  const parts = text.split(/(\*\*[^*]+\*\*|\*[^*]+\*)/g);
+  return parts.map((part, index) => {
+    if (part.startsWith("**") && part.endsWith("**")) {
+      return (
+        <strong key={index} className="font-semibold text-white">
+          {part.slice(2, -2)}
+        </strong>
+      );
+    }
+    if (part.startsWith("*") && part.endsWith("*")) {
+      return <em key={index}>{part.slice(1, -1)}</em>;
+    }
+    return <span key={index}>{part}</span>;
+  });
+}
+
 export const Route = createFileRoute("/problems/$slug")({
   loader: ({ params }): LoaderData => {
     const redirected = PROBLEM_SLUG_REDIRECTS[params.slug];
@@ -87,8 +114,8 @@ export const Route = createFileRoute("/problems/$slug")({
     const problem = getProblemPageBySlug(params.slug);
     if (!problem) throw notFound();
 
-    const { code, ...publicProblem } = problem;
-    const { groups, practiceCount } = buildPracticeGroups(code);
+    const { groups, practiceCount } = buildAlsoUsefulGroups(problem);
+    const { code: _code, ...publicProblem } = problem;
 
     return {
       problem: publicProblem,
@@ -183,6 +210,58 @@ function ProblemBackLink() {
   );
 }
 
+function StartHereSection({ problem }: { problem: Omit<ProblemPage, "code"> }) {
+  if (!problem.startHere.length) return null;
+
+  return (
+    <section className="mt-12 border-t border-white/10 pt-8 sm:mt-14 sm:pt-10">
+      <h2 className="display text-2xl text-white">Start here</h2>
+      <ol className="mt-6 space-y-5">
+        {problem.startHere.map((entry, index) => (
+          <li key={`${entry.leverSlug}/${entry.practiceSlug}`} className="flex gap-4">
+            <span
+              className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-[#7ec8e3]/35 text-sm text-[#7ec8e3]"
+              aria-hidden
+            >
+              {index + 1}
+            </span>
+            <div className="min-w-0">
+              <Link
+                to="/practices/$leverSlug/$practiceSlug"
+                params={{ leverSlug: entry.leverSlug, practiceSlug: entry.practiceSlug }}
+                className="display text-xl text-white transition hover:text-[#7ec8e3] sm:text-2xl"
+              >
+                {entry.name}
+              </Link>
+              <p className="mt-1.5 text-[15px] leading-7 text-[#b8d4e8]">{entry.whyFirst}</p>
+              <p className="mt-2 text-sm leading-6 text-[#b8d4e8]/85">
+                {entry.mechanisms.map((mechanism, mechIndex) => (
+                  <span key={mechanism.slug}>
+                    {mechIndex > 0 ? <span aria-hidden> · </span> : null}
+                    <Link
+                      to="/evidence/$slug"
+                      params={{ slug: mechanism.slug }}
+                      className="text-[#7ec8e3] underline decoration-[#7ec8e3]/35 underline-offset-2 transition hover:text-white hover:decoration-white/50"
+                    >
+                      {mechanism.name}
+                    </Link>
+                    {mechanism.qualifier ? (
+                      <>
+                        <span aria-hidden> </span>
+                        <em>({mechanism.qualifier})</em>
+                      </>
+                    ) : null}
+                  </span>
+                ))}
+              </p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </section>
+  );
+}
+
 function ProblemPageView() {
   const { problem, groups, practiceCount } = Route.useLoaderData();
 
@@ -222,50 +301,84 @@ function ProblemPageView() {
           </p>
         </section>
 
-        <section className="mt-12 border-t border-white/10 pt-8 sm:mt-14 sm:pt-10">
-          <h2 className="display text-2xl text-white">Practices</h2>
-          {practiceCount > 1 ? (
-            <p className="mt-3 text-sm leading-6 text-[#b8d4e8]/85 sm:text-[15px] sm:leading-7">
-              Start with whichever is most available to you right now. The first groups tend to work
-              soonest; the later ones build over time.
-            </p>
-          ) : null}
+        <StartHereSection problem={problem} />
 
-          {groups.length === 0 ? (
-            <p className="mt-6 text-sm text-[#b8d4e8]/80">Practices for this pattern are being tagged.</p>
-          ) : (
-            <div className="mt-6 space-y-8">
-              {groups.map((group) => (
-                <div key={group.leverSlug}>
-                  <h3 className="text-xs uppercase tracking-[0.22em] text-[#7ec8e3]/80">
-                    {group.leverName}
-                  </h3>
-                  <ul className="mt-3 space-y-2.5">
-                    {group.practices.map((practice) => (
-                      <li key={practice.slug}>
-                        <Link
-                          to="/practices/$leverSlug/$practiceSlug"
-                          params={{
-                            leverSlug: group.leverSlug,
-                            practiceSlug: practice.slug,
-                          }}
-                          className="block rounded-xl border border-white/10 px-4 py-3 transition hover:border-[#7ec8e3]/35 hover:bg-white/[0.03]"
-                        >
-                          <span className="display text-lg text-white sm:text-xl">{practice.name}</span>
-                          {practice.essence ? (
-                            <p className="mt-1.5 text-sm leading-6 text-[#b8d4e8]/9">
-                              {practice.essence}
-                            </p>
-                          ) : null}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          )}
-        </section>
+        {problem.evidenceSays ? (
+          <section className="mt-12 border-t border-white/10 pt-8 sm:mt-14 sm:pt-10">
+            <h2 className="display text-2xl text-white">What the evidence actually says</h2>
+            <p className="mt-3 text-[15px] leading-7 text-[#b8d4e8] sm:text-base sm:leading-7">
+              {renderInlineMarkdown(problem.evidenceSays)}
+            </p>
+          </section>
+        ) : null}
+
+        {practiceCount > 0 ? (
+          <section className="mt-12 border-t border-white/10 pt-8 sm:mt-14 sm:pt-10">
+            <details className="group">
+              <summary className="cursor-pointer list-none">
+                <h2 className="display inline text-2xl text-white">Also useful</h2>
+                <span className="ml-3 text-sm text-[#7ec8e3]/80 group-open:hidden">Show</span>
+                <span className="ml-3 hidden text-sm text-[#7ec8e3]/80 group-open:inline">Hide</span>
+              </summary>
+              <p className="mt-3 text-sm leading-6 text-[#b8d4e8]/85 sm:text-[15px] sm:leading-7">
+                Further practices that touch this state, grouped by lever. Start here is enough for
+                most people; open this only if you want the wider set.
+              </p>
+              <div className="mt-6 space-y-8">
+                {groups.map((group) => (
+                  <div key={group.leverSlug}>
+                    <h3 className="text-xs uppercase tracking-[0.22em] text-[#7ec8e3]/80">
+                      {group.leverName}
+                    </h3>
+                    <ul className="mt-3 space-y-2.5">
+                      {group.practices.map((practice) => (
+                        <li key={practice.slug}>
+                          <Link
+                            to="/practices/$leverSlug/$practiceSlug"
+                            params={{
+                              leverSlug: group.leverSlug,
+                              practiceSlug: practice.slug,
+                            }}
+                            className="block rounded-xl border border-white/10 px-4 py-3 transition hover:border-[#7ec8e3]/35 hover:bg-white/[0.03]"
+                          >
+                            <span className="display text-lg text-white sm:text-xl">
+                              {practice.name}
+                            </span>
+                            {practice.essence ? (
+                              <p className="mt-1.5 text-sm leading-6 text-[#b8d4e8]/9">
+                                {practice.essence}
+                              </p>
+                            ) : null}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </details>
+          </section>
+        ) : null}
+
+        {problem.ifSevere ? (
+          <section className="mt-12 border-t border-white/10 pt-8 sm:mt-14 sm:pt-10">
+            <h2 className="display text-2xl text-white">If this is severe</h2>
+            <p className="mt-3 text-[15px] leading-7 text-[#b8d4e8] sm:text-base sm:leading-7">
+              {problem.ifSevere}
+            </p>
+          </section>
+        ) : null}
+
+        <div className="my-12 max-w-full border-t border-[#7ec8e3]/20" aria-hidden="true" />
+
+        <div>
+          <EmailCapture variant="problem" />
+          <p className="mt-6 text-sm text-[#b8d4e8]/65">
+            <Link to="/gatherings" className="transition hover:text-white">
+              Or come to a gathering →
+            </Link>
+          </p>
+        </div>
 
         <section className="mt-12 border-t border-white/10 pt-8 sm:mt-14 sm:pt-10">
           <h2 className="display text-2xl text-white">Why this works</h2>
@@ -278,17 +391,6 @@ function ProblemPageView() {
             </Link>
           </p>
         </section>
-
-        <div className="my-12 max-w-full border-t border-[#7ec8e3]/20" aria-hidden="true" />
-
-        <div>
-          <EmailCapture variant="problem" />
-          <p className="mt-6 text-sm text-[#b8d4e8]/65">
-            <Link to="/gatherings" className="transition hover:text-white">
-              Or come to a gathering →
-            </Link>
-          </p>
-        </div>
       </main>
       <Footer />
     </div>
