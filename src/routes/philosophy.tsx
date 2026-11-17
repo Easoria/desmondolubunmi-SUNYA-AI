@@ -168,12 +168,6 @@ const SUFFERING_BRANCH_GROUPS = [
   },
 ] as const;
 
-const ENTROPY_FELT: FeltLink[] = [
-  { label: "the body's demands", slug: "exhaustion" },
-  { label: "illness", slug: "stiffness-and-immobility" },
-  { label: "ageing", slug: "low-physical-energy" },
-];
-
 function FeltAsLine({ links }: { links: readonly FeltLink[] }) {
   return (
     <p className="mt-2 text-[12px] leading-relaxed text-[#b8d4e8]/50 sm:text-[13px]">
@@ -722,7 +716,6 @@ function PhilosophyPage() {
                 <p key={paragraph.slice(0, 40)}>{paragraph}</p>
               ))}
             </div>
-            <FeltAsLine links={ENTROPY_FELT} />
           </div>
 
           <div className="relative mx-auto mt-14 pb-14">
@@ -946,6 +939,135 @@ function PhilosophyPage() {
         </div>
       </section>
 
+      {/* Why this is timeless and universal — foundation for the Twelve Levers */}
+      <section className="relative overflow-hidden bg-[#0a1628] py-32">
+        <div className="relative z-10 mx-auto max-w-3xl px-6">
+          <h2 className="display text-center text-4xl text-white sm:text-5xl md:text-6xl">
+            Why this is timeless and universal
+          </h2>
+
+          <div className="mt-12 space-y-6 text-[15px] leading-7 text-[#b8d4e8] sm:mt-14 sm:text-base sm:leading-8">
+            <p>You are aware. You breathe. You move. You make sound. You feel. You think.</p>
+            <p>
+              These six are true of you right now, and of everyone else alive. The six internal levers
+              are those six facts put to use. Each asks the same question: you are doing this anyway
+              — how do you do it so that it works for you?
+            </p>
+            <p>
+              You breathe anyway. So how do you breathe, to change how you feel? You move anyway. You
+              make sound anyway. You feel, and you think, anyway.
+            </p>
+            <p>
+              That is what first-principles means here. The levers are what you get when you take
+              what a person already is and ask what can be done with it.
+            </p>
+            <p>Two of the six go deeper than the rest.</p>
+          </div>
+
+          <h3 className="display mt-14 text-3xl text-white sm:mt-16 sm:text-4xl">Awareness</h3>
+          <div className="mt-6 space-y-6 text-[15px] leading-7 text-[#b8d4e8] sm:text-base sm:leading-8">
+            <p>
+              That you are conscious right now is the most fundamental thing about you. Everything
+              you will ever know arrives through it. Without it there is no breath, no body, no
+              world.
+            </p>
+            <p>
+              You can check it in a second. Notice something. Now notice that you are noticing. That
+              is all of it.
+            </p>
+            <p>
+              And it is always now. Every experience you have ever had happened in the present
+              moment, and so will every one to come. Whatever else moves, awareness is here.
+            </p>
+            <p>
+              The work is to know it as the place you are looking from. That means quieting the
+              thought that covers it, which happens by degrees: seeing a thought as a thought rather
+              than as the truth about you, then interrupting the loops, then the commentary about
+              yourself going quiet, then awareness with nothing in front of it.
+            </p>
+            <p>
+              Living from there changes ordinary things. You stop being moved by every thought that
+              arrives. You can watch one without standing inside it. The commentary thins. And most
+              of what we call suffering is manufactured in that commentary — in projection, in fear
+              of what has not happened, in comparison, in replaying what cannot be changed. The
+              body&apos;s pain is largely fixed. The mind&apos;s is substantially yours to reduce.
+            </p>
+          </div>
+
+          <h3 className="display mt-14 text-3xl text-white sm:mt-16 sm:text-4xl">The breath</h3>
+          <div className="mt-6 space-y-6 text-[15px] leading-7 text-[#b8d4e8] sm:text-base sm:leading-8">
+            <p>Everyone alive is breathing.</p>
+            <p>
+              Your heartbeat, your digestion and your immune response run without you, and you cannot
+              reach them directly. The breath is the exception — the one automatic process that is
+              also under your control. It is the single direct handle you have on your own nervous
+              system.
+            </p>
+            <p>
+              It works in both directions. Slow it and the body follows into rest. Quicken it and the
+              system rouses. Wound tight, you can bring yourself down. Flat, you can bring yourself
+              up. It costs nothing, needs nothing, works in any room, and nobody has to know you are
+              doing it.
+            </p>
+          </div>
+
+          <h3 className="display mt-14 text-3xl text-white sm:mt-16 sm:text-4xl">
+            Why these two together
+          </h3>
+          <div className="mt-6 space-y-6 text-[15px] leading-7 text-[#b8d4e8] sm:text-base sm:leading-8">
+            <p>
+              <Link
+                to="/evidence/$slug"
+                params={{ slug: "quieting-repetitive-thought" }}
+                className="font-semibold text-white underline decoration-[#7ec8e3]/40 underline-offset-2 transition hover:decoration-[#7ec8e3]/80"
+              >
+                Awareness
+              </Link>{" "}
+              changes your relationship to what you are thinking.{" "}
+              <Link
+                to="/evidence/$slug"
+                params={{ slug: "regulating-arousal" }}
+                className="font-semibold text-white underline decoration-[#7ec8e3]/40 underline-offset-2 transition hover:decoration-[#7ec8e3]/80"
+              >
+                The breath
+              </Link>{" "}
+              changes the state of the body you are thinking in.
+            </p>
+            <p>
+              Neither substitutes for the other. Assuming one will is the most common mistake people
+              make — trying to think your way out of an aroused body, or breathe your way out of a
+              thought that needs to be seen.
+            </p>
+            <p>
+              One last thing, which belongs here rather than buried. The state all of this points at
+              —{" "}
+              <Link
+                to="/evidence/$slug"
+                params={{ slug: "awareness-without-thought" }}
+                className="italic underline decoration-[#7ec8e3]/40 underline-offset-2 transition hover:text-[#7ec8e3] hover:decoration-[#7ec8e3]/80"
+              >
+                awareness without thought
+              </Link>{" "}
+              — is the least evidenced thing on this site, and it is also what the entire inner chain
+              is for. Both are true, and the grading says so on its own page.
+            </p>
+          </div>
+
+          <h3 className="display mt-14 text-3xl text-white sm:mt-16 sm:text-4xl">And the other six</h3>
+          <div className="mt-6 space-y-6 text-[15px] leading-7 text-[#b8d4e8] sm:text-base sm:leading-8">
+            <p>
+              The external pillars arrive by a different route. The internal levers are capacities
+              you have. The external pillars are conditions you need — sleep, food, money, other
+              people, somewhere to live, contact with the natural world. Every human requires these,
+              and the research puts them above anything on the inside.
+            </p>
+            <p>
+              Twelve levers. Six capacities, six conditions, all of them facts about being human.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* The Levers */}
       <section className="relative overflow-hidden bg-[#060d1c] py-32">
         <div className="relative z-10 mx-auto max-w-6xl px-6">
@@ -954,9 +1076,6 @@ function PhilosophyPage() {
               The Twelve Levers of Transformation
             </h2>
             <div className="mx-auto mt-6 max-w-2xl space-y-4 text-[#b8d4e8]">
-              <p>
-                When we distil the vast diversity of techniques and paths for human wellbeing into their absolute essence, we arrive at the twelve levers of transformation.
-              </p>
               <p>
                 These are the twelve fundamental means through which a human being can transform their wellbeing. Contained within each lever are simple yet powerful practices for complete wellbeing.
               </p>
