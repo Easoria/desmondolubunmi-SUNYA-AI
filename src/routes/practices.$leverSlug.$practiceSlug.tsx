@@ -255,9 +255,58 @@ function splitProtocolLeadIn(text: string) {
   };
 }
 
+const PROTOCOL_LINK_CLASS =
+  "text-[#7ec8e3] underline decoration-[#7ec8e3]/35 underline-offset-2 transition hover:text-white hover:decoration-white/50";
+
+/** Render markdown-style [label](/path) links inside protocol copy. */
+function renderLinkedPlainText(text: string) {
+  const parts = text.split(/(\[[^\]]+\]\([^)]+\))/g);
+  return parts.map((part, index) => {
+    const match = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+    if (!match) {
+      return <span key={index}>{part}</span>;
+    }
+
+    const [, label, href] = match;
+    const practiceMatch = href.match(/^\/practices\/([^/]+)\/([^/]+)\/?$/);
+    if (practiceMatch) {
+      return (
+        <Link
+          key={index}
+          to="/practices/$leverSlug/$practiceSlug"
+          params={{ leverSlug: practiceMatch[1], practiceSlug: practiceMatch[2] }}
+          className={PROTOCOL_LINK_CLASS}
+        >
+          {label}
+        </Link>
+      );
+    }
+
+    const leverMatch = href.match(/^\/practices\/([^/]+)\/?$/);
+    if (leverMatch) {
+      return (
+        <Link
+          key={index}
+          to="/practices/$leverSlug"
+          params={{ leverSlug: leverMatch[1] }}
+          className={PROTOCOL_LINK_CLASS}
+        >
+          {label}
+        </Link>
+      );
+    }
+
+    return (
+      <a key={index} href={href} className={PROTOCOL_LINK_CLASS}>
+        {label}
+      </a>
+    );
+  });
+}
+
 function renderProtocolText(text: string) {
   const parsed = splitProtocolLeadIn(text);
-  if (!parsed) return text;
+  if (!parsed) return renderLinkedPlainText(text);
 
   return (
     <>
@@ -265,7 +314,7 @@ function renderProtocolText(text: string) {
         {parsed.leadIn}
         {parsed.punctuation}
       </span>{" "}
-      {parsed.rest}
+      {renderLinkedPlainText(parsed.rest)}
     </>
   );
 }
@@ -483,7 +532,7 @@ function PracticeDetailPage() {
               <h2 className="label-eyebrow">Mechanism</h2>
               <div className="mt-3 space-y-5 text-[15px] leading-7 text-[#b8d4e8] sm:text-base">
                 {mechanismParagraphs.map((paragraph, index) => (
-                  <p key={index}>{paragraph}</p>
+                  <p key={index}>{renderLinkedPlainText(paragraph)}</p>
                 ))}
               </div>
             </section>
