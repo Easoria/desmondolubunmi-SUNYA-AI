@@ -47,8 +47,8 @@ export const sustenanceLever: Lever = {
       ],
       leverSlug: "sustenance",
       relatedPractices: [
-        "decoding-money-and-value",
-        "mastery-of-the-instrument"
+        "what-money-is",
+        "building-skill"
       ],
       metaTitle: "How You Think About Money — How to Practise It | Sunya",
       metaDescription: "Earning follows from being useful to other people. That is not a guarantee, and luck and circumstance matter enormously.",
@@ -58,11 +58,11 @@ export const sustenanceLever: Lever = {
         durationSource: "OMITTED",
         relatedPracticeRationale: [
           {
-            slug: "decoding-money-and-value",
+            slug: "what-money-is",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "mastery-of-the-instrument",
+            slug: "building-skill",
             reason: "Adjacent in source order within the same lever sequence."
           }
         ]
@@ -70,7 +70,7 @@ export const sustenanceLever: Lever = {
     },
     {
       sourceNumber: 2,
-      slug: "decoding-money-and-value",
+      slug: "what-money-is",
       name: "What Money Is",
       essence: "Stripping away the fear and confusion around money and seeing what it actually is: a record of value exchanged between people.",
       mechanism: [
@@ -94,8 +94,8 @@ export const sustenanceLever: Lever = {
       leverSlug: "sustenance",
       relatedPractices: [
         "how-you-think-about-money",
-        "mastery-of-the-instrument",
-        "the-economics-of-simplicity"
+        "building-skill",
+        "spending-less"
       ],
       metaTitle: "What Money Is — How to Practise It | Sunya",
       metaDescription: "Stripping away the fear and confusion around money and seeing what it actually is: a record of value exchanged between people.",
@@ -109,11 +109,11 @@ export const sustenanceLever: Lever = {
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "mastery-of-the-instrument",
+            slug: "building-skill",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "the-economics-of-simplicity",
+            slug: "spending-less",
             reason: "Adjacent in source order within the same lever sequence."
           }
         ]
@@ -121,7 +121,7 @@ export const sustenanceLever: Lever = {
     },
     {
       sourceNumber: 3,
-      slug: "mastery-of-the-instrument",
+      slug: "building-skill",
       name: "Building Skill",
       essence: "Acquiring a practical skill other people need, then sharpening it for years. The most reliable route to a stable floor, and the slowest.",
       mechanism: [
@@ -145,8 +145,8 @@ export const sustenanceLever: Lever = {
       ],
       leverSlug: "sustenance",
       relatedPractices: [
-        "decoding-money-and-value",
-        "the-economics-of-simplicity",
+        "what-money-is",
+        "spending-less",
         "right-livelihood"
       ],
       metaTitle: "Building Skill — How to Practise It | Sunya",
@@ -157,11 +157,11 @@ export const sustenanceLever: Lever = {
         durationSource: "OMITTED",
         relatedPracticeRationale: [
           {
-            slug: "decoding-money-and-value",
+            slug: "what-money-is",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "the-economics-of-simplicity",
+            slug: "spending-less",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
@@ -173,7 +173,7 @@ export const sustenanceLever: Lever = {
     },
     {
       sourceNumber: 4,
-      slug: "the-economics-of-simplicity",
+      slug: "spending-less",
       name: "Spending Less",
       subtitle: "lowering the biological tax",
       essence: "Lowering what your life costs to run. Every euro you do not need is a euro you do not have to earn, and the drop in pressure is immediate.",
@@ -197,9 +197,9 @@ export const sustenanceLever: Lever = {
       ],
       leverSlug: "sustenance",
       relatedPractices: [
-        "mastery-of-the-instrument",
+        "building-skill",
         "right-livelihood",
-        "the-ecosystem-trust"
+        "easing-money-fear"
       ],
       metaTitle: "Spending Less — How to Practise It | Sunya",
       metaDescription: "Lowering what your life costs to run. Every euro you do not need is a euro you do not have to earn.",
@@ -209,7 +209,7 @@ export const sustenanceLever: Lever = {
         durationSource: "OMITTED",
         relatedPracticeRationale: [
           {
-            slug: "mastery-of-the-instrument",
+            slug: "building-skill",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
@@ -217,7 +217,7 @@ export const sustenanceLever: Lever = {
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "the-ecosystem-trust",
+            slug: "easing-money-fear",
             reason: "Adjacent in source order within the same lever sequence."
           }
         ]
@@ -248,8 +248,8 @@ export const sustenanceLever: Lever = {
       ],
       leverSlug: "sustenance",
       relatedPractices: [
-        "the-economics-of-simplicity",
-        "the-ecosystem-trust"
+        "spending-less",
+        "easing-money-fear"
       ],
       metaTitle: "Right Livelihood — How to Practise It | Sunya",
       metaDescription: "Making sure how you earn does not cost you something worse. Work that requires you to act against your own judgement extracts a price no amount of money covers.",
@@ -259,11 +259,11 @@ export const sustenanceLever: Lever = {
         durationSource: "OMITTED",
         relatedPracticeRationale: [
           {
-            slug: "the-economics-of-simplicity",
+            slug: "spending-less",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "the-ecosystem-trust",
+            slug: "easing-money-fear",
             reason: "Adjacent in source order within the same lever sequence."
           }
         ]
@@ -271,7 +271,7 @@ export const sustenanceLever: Lever = {
     },
     {
       sourceNumber: 6,
-      slug: "the-ecosystem-trust",
+      slug: "easing-money-fear",
       name: "Easing Money Fear",
       essence: "Scarcity fear outlasts the actual scarcity, and it distorts decisions long after the danger has passed. This is the work of noticing that, and acting from assessment rather than panic.",
       mechanism: [

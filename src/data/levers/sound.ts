@@ -14,7 +14,7 @@ export const soundLever: Lever = {
   practices: [
     {
       sourceNumber: 1,
-      slug: "aum-chanting",
+      slug: "chanting",
       name: "Chanting",
       essence:
         "A sustained sound on a long out-breath. It quiets the mind, loosens held tension and settles the body — mostly through the long exhale, which is one of the most reliable ways to calm the nervous system. The usual form is ah–oo–mm: the mouth travels from fully open to fully closed, using only jaw and lips, with no tongue shaping. It needs no language — those are among the most common sounds in human speech. You feel it in the chest and the skull. (Known in the Indian traditions as AUM, or Om.) If you have a tradition of your own, its chant or prayer does this as well as anything here — the Jesus Prayer, dhikr, a psalm, a mantra you were given, a hymn you know by heart. The practice is the sustained sound and the feeling behind it, not the words.",
@@ -92,7 +92,7 @@ export const soundLever: Lever = {
       ],
       layers: ["The Vital Body", "Emotional Body"],
       leverSlug: "sound",
-      relatedPractices: ["aum-chanting", "conscious-listening"],
+      relatedPractices: ["chanting", "conscious-listening"],
       metaTitle: "Humming — How to Practise It | Sunya",
       metaDescription:
         "The easiest way in. Mouth closed, one long tone on the out-breath. You feel it strongest in the face and skull.",
@@ -102,7 +102,7 @@ export const soundLever: Lever = {
         durationSource: "OMITTED",
         relatedPracticeRationale: [
           {
-            slug: "aum-chanting",
+            slug: "chanting",
             reason: "Adjacent in source order within the same lever sequence.",
           },
           {
@@ -146,7 +146,7 @@ export const soundLever: Lever = {
       ],
       layers: ["The Vital Body", "Emotional Body"],
       leverSlug: "sound",
-      relatedPractices: ["aum-chanting", "humming"],
+      relatedPractices: ["chanting", "humming"],
       metaTitle: "Conscious Listening — How to Practise It | Sunya",
       metaDescription:
         "Choosing what you listen to deliberately. What goes into your ears changes how settled you feel, and most people never choose it.",
@@ -156,7 +156,7 @@ export const soundLever: Lever = {
         durationSource: "OMITTED",
         relatedPracticeRationale: [
           {
-            slug: "aum-chanting",
+            slug: "chanting",
             reason: "Adjacent in source order within the same lever sequence.",
           },
           {

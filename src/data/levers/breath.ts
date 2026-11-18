@@ -422,7 +422,7 @@ export const breathLever: Lever = {
       ],
     },
     {
-      slug: "the-deepest-practice",
+      slug: "deeper-practices",
       name: "Deeper Practices",
       qualifier: "Meditation and deeper states",
       note: "Because these work directly on breath, attention, and the centre of the spine, approach them gently, never forcing, and let them unfold at their own pace.",
@@ -460,7 +460,7 @@ export const breathLever: Lever = {
           ],
           layers: ["The Vital Body", "Physical Body", "Mental Body", "Consciousness"],
           leverSlug: "breath",
-          groupSlug: "the-deepest-practice",
+          groupSlug: "deeper-practices",
           relatedPractices: ["alternate-nostril-breathing", "breath-retention", "the-great-lock"],
           metaTitle: "Spinal Breathing — How to Practise It | Sunya",
           metaDescription:
@@ -507,7 +507,7 @@ export const breathLever: Lever = {
           ],
           layers: ["The Vital Body", "Physical Body", "Mental Body"],
           leverSlug: "breath",
-          groupSlug: "the-deepest-practice",
+          groupSlug: "deeper-practices",
           relatedPractices: ["the-great-lock", "spinal-breathing", "4-7-8-breathing"],
           metaTitle: "Breath Retention — How to Practise It | Sunya",
           metaDescription:
@@ -563,7 +563,7 @@ export const breathLever: Lever = {
           ],
           layers: ["The Vital Body", "Physical Body"],
           leverSlug: "breath",
-          groupSlug: "the-deepest-practice",
+          groupSlug: "deeper-practices",
           relatedPractices: ["the-root-lock", "breath-retention", "spinal-breathing"],
           metaTitle: "The Great Lock — How to Practise It | Sunya",
           metaDescription:

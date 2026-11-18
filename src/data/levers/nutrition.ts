@@ -46,7 +46,7 @@ export const nutritionLever: Lever = {
       ],
       leverSlug: "nutrition",
       relatedPractices: [
-        "chrononutrition",
+        "when-you-eat",
         "water"
       ],
       metaTitle: "How Food Affects You — How to Practise It | Sunya",
@@ -57,7 +57,7 @@ export const nutritionLever: Lever = {
         durationSource: "STATED",
         relatedPracticeRationale: [
           {
-            slug: "chrononutrition",
+            slug: "when-you-eat",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
@@ -69,9 +69,9 @@ export const nutritionLever: Lever = {
     },
     {
       sourceNumber: 2,
-      slug: "chrononutrition",
+      slug: "when-you-eat",
       name: "When You Eat",
-      essence: "Eating in step with daylight rather than against it. Digestion is more efficient earlier in the day, and late eating costs sleep. (Older traditions called digestive capacity agni; the modern field is chrononutrition.)",
+      essence: "Eating in step with daylight rather than against it. Digestion is more efficient earlier in the day, and late eating costs sleep. (Older traditions called digestive capacity agni; the modern field is when-you-eat.)",
       mechanism: [
         "The body is hardwired to process food most efficiently during daylight hours. Metabolism, insulin sensitivity, and digestive enzyme activity all peak around midday and naturally taper off in the evening. This is not a cultural preference — it is a direct expression of the circadian rhythm. When you eat a large, heavy meal late at night, you create circadian misalignment. The body is designed to transition into a restorative, parasympathetic state as darkness falls — preparing for sleep, tissue repair, and nervous system recovery. Forcing it into active digestion at this time works directly against its design. Because the gastrointestinal tract slows overnight, food sits longer in the stomach and intestines, leading to fermentation, gas, and bloating. Forced to work overtime on digestion rather than repair, the body cannot enter the restorative state it needs — and you wake up tired, heavy, and foggy rather than clear and renewed."
       ],
@@ -99,7 +99,7 @@ export const nutritionLever: Lever = {
         "herbs"
       ],
       metaTitle: "When You Eat — How to Practise It | Sunya",
-      metaDescription: "Eating in step with daylight rather than against it. Digestion is more efficient earlier in the day, and late eating costs sleep. (Older traditions called digestive capacity agni; the modern field is chrononutrition.)",
+      metaDescription: "Eating in step with daylight rather than against it. Digestion is more efficient earlier in the day, and late eating costs sleep. (Older traditions called digestive capacity agni; the modern field is when-you-eat.)",
       families: ["L1"],
       generated: {
         layersSource: "INFERRED",
@@ -150,7 +150,7 @@ export const nutritionLever: Lever = {
       ],
       leverSlug: "nutrition",
       relatedPractices: [
-        "chrononutrition",
+        "when-you-eat",
         "herbs",
         "how-you-eat"
       ],
@@ -162,7 +162,7 @@ export const nutritionLever: Lever = {
         durationSource: "OMITTED",
         relatedPracticeRationale: [
           {
-            slug: "chrononutrition",
+            slug: "when-you-eat",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {

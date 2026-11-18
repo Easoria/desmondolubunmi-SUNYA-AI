@@ -41,7 +41,7 @@ export const movementLever: Lever = {
           groupSlug: "practices",
           relatedPractices: [
             "joint-rotations",
-            "the-somatic-primer"
+            "full-mobility-sequence"
           ],
           metaTitle: "Progressive Muscle Relaxation — How to Practise It | Sunya",
           metaDescription: "The most accessible practice of all, and a fine place to begin: you tense each part of the body in turn, then let it go — teaching the body, by contrast, the felt difference between holding and releasing.",
@@ -55,7 +55,7 @@ export const movementLever: Lever = {
                 reason: "Adjacent in source order within the same lever sequence."
               },
               {
-                slug: "the-somatic-primer",
+                slug: "full-mobility-sequence",
                 reason: "Adjacent in source order within the same lever sequence."
               }
             ]
@@ -83,7 +83,7 @@ export const movementLever: Lever = {
           groupSlug: "practices",
           relatedPractices: [
             "progressive-muscle-relaxation",
-            "the-somatic-primer",
+            "full-mobility-sequence",
             "spinal-loosening"
           ],
           metaTitle: "Joint Rotations — How to Practise It | Sunya",
@@ -98,7 +98,7 @@ export const movementLever: Lever = {
                 reason: "Adjacent in source order within the same lever sequence."
               },
               {
-                slug: "the-somatic-primer",
+                slug: "full-mobility-sequence",
                 reason: "Adjacent in source order within the same lever sequence."
               },
               {
@@ -110,7 +110,7 @@ export const movementLever: Lever = {
         },
     {
           sourceNumber: 3,
-          slug: "the-somatic-primer",
+          slug: "full-mobility-sequence",
           name: "Full Mobility Sequence",
           essence: "The complete mobility practice: a structured sequence that works the joints, frees the neck, fortifies the spine, and balances the system with the breath. Where the Joint Rotations are the quick minimum, this is the full version.",
           mechanism: [
@@ -228,9 +228,9 @@ export const movementLever: Lever = {
           leverSlug: "movement",
           groupSlug: "practices",
           relatedPractices: [
-            "the-somatic-primer",
+            "full-mobility-sequence",
             "the-full-practice",
-            "the-dance-of-dissolution"
+            "free-movement"
           ],
           metaTitle: "Spinal Loosening — How to Practise It | Sunya",
           metaDescription: "A focused sequence for loosening the spine — a line through the centre of the body along which attention and ease rise.",
@@ -240,7 +240,7 @@ export const movementLever: Lever = {
             durationSource: "STATED",
             relatedPracticeRationale: [
               {
-                slug: "the-somatic-primer",
+                slug: "full-mobility-sequence",
                 reason: "Adjacent in source order within the same lever sequence."
               },
               {
@@ -248,7 +248,7 @@ export const movementLever: Lever = {
                 reason: "Adjacent in source order within the same lever sequence."
               },
               {
-                slug: "the-dance-of-dissolution",
+                slug: "free-movement",
                 reason: "Adjacent in source order within the same lever sequence."
               }
             ]
@@ -362,7 +362,7 @@ export const movementLever: Lever = {
           groupSlug: "practices",
           relatedPractices: [
             "spinal-loosening",
-            "the-dance-of-dissolution",
+            "free-movement",
             "the-meditation-seat"
           ],
           metaTitle: "The Full Practice — How to Practise It | Sunya",
@@ -377,7 +377,7 @@ export const movementLever: Lever = {
                 reason: "Adjacent in source order within the same lever sequence."
               },
               {
-                slug: "the-dance-of-dissolution",
+                slug: "free-movement",
                 reason: "Adjacent in source order within the same lever sequence."
               },
               {
@@ -389,7 +389,7 @@ export const movementLever: Lever = {
         },
     {
           sourceNumber: 6,
-          slug: "the-dance-of-dissolution",
+          slug: "free-movement",
           name: "Free Movement",
           essence: "Unstructured movement with no sequence to follow. It reaches parts of the body that structured practice cannot, and because there is nothing to get right, the analytical mind has nothing to do.",
           mechanism: [
@@ -472,9 +472,9 @@ export const movementLever: Lever = {
           leverSlug: "movement",
           groupSlug: "postures-and-seals",
           relatedPractices: [
-            "the-dance-of-dissolution",
+            "free-movement",
             "the-deep-squat",
-            "the-prostration-sujud-balasana"
+            "prostration"
           ],
           metaTitle: "The Meditation Seat — How to Practise It | Sunya",
           metaDescription: "The foundation of all seated practice — a stable, self-contained base that holds the energy in and directs it upward.",
@@ -483,7 +483,7 @@ export const movementLever: Lever = {
             durationSource: "OMITTED",
             relatedPracticeRationale: [
               {
-                slug: "the-dance-of-dissolution",
+                slug: "free-movement",
                 reason: "Adjacent in source order within the same lever sequence."
               },
               {
@@ -491,7 +491,7 @@ export const movementLever: Lever = {
                 reason: "Adjacent in source order within the same lever sequence."
               },
               {
-                slug: "the-prostration-sujud-balasana",
+                slug: "prostration",
                 reason: "Adjacent in source order within the same lever sequence."
               }
             ]
@@ -518,7 +518,7 @@ export const movementLever: Lever = {
           groupSlug: "postures-and-seals",
           relatedPractices: [
             "the-meditation-seat",
-            "the-prostration-sujud-balasana",
+            "prostration",
             "the-corpse-pose"
           ],
           metaTitle: "The Deep Squat — How to Practise It | Sunya",
@@ -533,7 +533,7 @@ export const movementLever: Lever = {
                 reason: "Adjacent in source order within the same lever sequence."
               },
               {
-                slug: "the-prostration-sujud-balasana",
+                slug: "prostration",
                 reason: "Adjacent in source order within the same lever sequence."
               },
               {
@@ -544,7 +544,7 @@ export const movementLever: Lever = {
           }
         },
     {
-          slug: "the-prostration-sujud-balasana",
+          slug: "prostration",
           name: "Prostration",
           essence: "The geometry of complete surrender — using the body to enact what the mind is being asked to do. (Known as sujud in Islamic practice and balasana, or child's pose, in yoga.)",
           mechanism: [
@@ -565,7 +565,7 @@ export const movementLever: Lever = {
           relatedPractices: [
             "the-deep-squat",
             "the-corpse-pose",
-            "the-consciousness-seal"
+            "thumb-to-index-seal"
           ],
           metaTitle: "Prostration — How to Practise It | Sunya",
           metaDescription: "The geometry of complete surrender — using the body to enact what the mind is being asked to do.",
@@ -583,7 +583,7 @@ export const movementLever: Lever = {
                 reason: "Adjacent in source order within the same lever sequence."
               },
               {
-                slug: "the-consciousness-seal",
+                slug: "thumb-to-index-seal",
                 reason: "Adjacent in source order within the same lever sequence."
               }
             ]
@@ -609,9 +609,9 @@ export const movementLever: Lever = {
           leverSlug: "movement",
           groupSlug: "postures-and-seals",
           relatedPractices: [
-            "the-prostration-sujud-balasana",
-            "the-consciousness-seal",
-            "the-primal-seal"
+            "prostration",
+            "thumb-to-index-seal",
+            "closed-hand-seal"
           ],
           metaTitle: "The Corpse Pose — How to Practise It | Sunya",
           metaDescription: "Total integration — the most important position in the practice.",
@@ -621,22 +621,22 @@ export const movementLever: Lever = {
             durationSource: "STATED",
             relatedPracticeRationale: [
               {
-                slug: "the-prostration-sujud-balasana",
+                slug: "prostration",
                 reason: "Adjacent in source order within the same lever sequence."
               },
               {
-                slug: "the-consciousness-seal",
+                slug: "thumb-to-index-seal",
                 reason: "Adjacent in source order within the same lever sequence."
               },
               {
-                slug: "the-primal-seal",
+                slug: "closed-hand-seal",
                 reason: "Adjacent in source order within the same lever sequence."
               }
             ]
           }
         },
     {
-          slug: "the-consciousness-seal",
+          slug: "thumb-to-index-seal",
           name: "Thumb-to-Index Seal",
           essence: "A hand position held during seated practice — thumb and index finger touching. It gives the hands something settled to do and is widely used as an anchor. (Known in the yogic traditions as gyan mudra or chin mudra.)",
           mechanism: [
@@ -655,7 +655,7 @@ export const movementLever: Lever = {
           groupSlug: "postures-and-seals",
           relatedPractices: [
             "the-corpse-pose",
-            "the-primal-seal"
+            "closed-hand-seal"
           ],
           metaTitle: "Thumb-to-Index Seal — How to Practise It | Sunya",
           metaDescription: "A simple, stabilising loop that focuses the mind and redirects the flow of energy.",
@@ -669,14 +669,14 @@ export const movementLever: Lever = {
                 reason: "Adjacent in source order within the same lever sequence."
               },
               {
-                slug: "the-primal-seal",
+                slug: "closed-hand-seal",
                 reason: "Adjacent in source order within the same lever sequence."
               }
             ]
           }
         },
     {
-          slug: "the-primal-seal",
+          slug: "closed-hand-seal",
           name: "Closed-Hand Seal",
           essence: "A grounding hand position, the fist closed around the thumb. (Known in the yogic traditions as adi mudra.)",
           mechanism: [
@@ -695,7 +695,7 @@ export const movementLever: Lever = {
           leverSlug: "movement",
           groupSlug: "postures-and-seals",
           relatedPractices: [
-            "the-consciousness-seal"
+            "thumb-to-index-seal"
           ],
           metaTitle: "Closed-Hand Seal — How to Practise It | Sunya",
           metaDescription: "A grounding, stabilising seal — the primordial hand position of the human being.",
@@ -705,7 +705,7 @@ export const movementLever: Lever = {
             durationSource: "OMITTED",
             relatedPracticeRationale: [
               {
-                slug: "the-consciousness-seal",
+                slug: "thumb-to-index-seal",
                 reason: "Adjacent in source order within the same lever sequence."
               }
             ]

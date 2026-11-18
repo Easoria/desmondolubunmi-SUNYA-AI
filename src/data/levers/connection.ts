@@ -14,7 +14,7 @@ export const connectionLever: Lever = {
   practices: [
     {
       sourceNumber: 1,
-      slug: "internal-saturation",
+      slug: "arriving-full",
       name: "Arriving Full",
       essence: "Coming to people with something to give rather than a gap to fill. A direction to move in, not a test to pass before you are allowed company.",
       mechanism: [
@@ -83,9 +83,9 @@ export const connectionLever: Lever = {
       ],
       leverSlug: "connection",
       relatedPractices: [
-        "internal-saturation",
+        "arriving-full",
         "honesty",
-        "karma-yoga"
+        "service"
       ],
       metaTitle: "Knowing Yourself — How to Practise It | Sunya",
       metaDescription: "Getting clear on what you actually value and how you want to live — which is what lets you recognise the people and places that fit, and notice the ones that do not.",
@@ -95,7 +95,7 @@ export const connectionLever: Lever = {
         durationSource: "OMITTED",
         relatedPracticeRationale: [
           {
-            slug: "internal-saturation",
+            slug: "arriving-full",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
@@ -103,7 +103,7 @@ export const connectionLever: Lever = {
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "karma-yoga",
+            slug: "service",
             reason: "Adjacent in source order within the same lever sequence."
           }
         ]
@@ -135,8 +135,8 @@ export const connectionLever: Lever = {
       leverSlug: "connection",
       relatedPractices: [
         "knowing-yourself",
-        "karma-yoga",
-        "somatic-communion"
+        "service",
+        "being-with-someone"
       ],
       metaTitle: "Honesty — How to Practise It | Sunya",
       metaDescription: "Dropping the social mask to exist in a state of genuine honesty with yourself and the world.",
@@ -150,11 +150,11 @@ export const connectionLever: Lever = {
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "karma-yoga",
+            slug: "service",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "somatic-communion",
+            slug: "being-with-someone",
             reason: "Adjacent in source order within the same lever sequence."
           }
         ]
@@ -162,7 +162,7 @@ export const connectionLever: Lever = {
     },
     {
       sourceNumber: 4,
-      slug: "karma-yoga",
+      slug: "service",
       name: "Service",
       essence: "Doing something for other people that is not about you. The shift from a life of extraction to one of contribution — and people consistently find it does more for them than things done for themselves. (Known in the Indian traditions as karma yoga.)",
       mechanism: [
@@ -190,8 +190,8 @@ export const connectionLever: Lever = {
       leverSlug: "connection",
       relatedPractices: [
         "honesty",
-        "somatic-communion",
-        "the-ecosystem-of-belonging"
+        "being-with-someone",
+        "community"
       ],
       metaTitle: "Service — How to Practise It | Sunya",
       metaDescription: "Dissolving the boundaries of the separate self by serving something larger than personal survival.",
@@ -205,11 +205,11 @@ export const connectionLever: Lever = {
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "somatic-communion",
+            slug: "being-with-someone",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "the-ecosystem-of-belonging",
+            slug: "community",
             reason: "Adjacent in source order within the same lever sequence."
           }
         ]
@@ -217,7 +217,7 @@ export const connectionLever: Lever = {
     },
     {
       sourceNumber: 5,
-      slug: "somatic-communion",
+      slug: "being-with-someone",
       name: "Being With Someone",
       essence: "Using your own steadiness to settle someone else. Undivided attention is one of the most useful things you can give a person, and rarer than it sounds.",
       mechanism: [
@@ -244,9 +244,9 @@ export const connectionLever: Lever = {
       ],
       leverSlug: "connection",
       relatedPractices: [
-        "karma-yoga",
-        "the-ecosystem-of-belonging",
-        "the-alchemy-of-forgiveness"
+        "service",
+        "community",
+        "forgiveness"
       ],
       metaTitle: "Being With Someone — How to Practise It | Sunya",
       metaDescription: "Utilising your physical presence to stabilise the nervous system of another human being.",
@@ -256,15 +256,15 @@ export const connectionLever: Lever = {
         durationSource: "OMITTED",
         relatedPracticeRationale: [
           {
-            slug: "karma-yoga",
+            slug: "service",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "the-ecosystem-of-belonging",
+            slug: "community",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "the-alchemy-of-forgiveness",
+            slug: "forgiveness",
             reason: "Adjacent in source order within the same lever sequence."
           }
         ]
@@ -272,7 +272,7 @@ export const connectionLever: Lever = {
     },
     {
       sourceNumber: 6,
-      slug: "the-ecosystem-of-belonging",
+      slug: "community",
       name: "Community",
       essence: "Belonging to a group that holds you to something. Isolation is the default in modern life and has to be actively worked against.",
       mechanism: [
@@ -299,8 +299,8 @@ export const connectionLever: Lever = {
       ],
       leverSlug: "connection",
       relatedPractices: [
-        "somatic-communion",
-        "the-alchemy-of-forgiveness",
+        "being-with-someone",
+        "forgiveness",
         "touch"
       ],
       metaTitle: "Community — How to Practise It | Sunya",
@@ -311,11 +311,11 @@ export const connectionLever: Lever = {
         durationSource: "OMITTED",
         relatedPracticeRationale: [
           {
-            slug: "somatic-communion",
+            slug: "being-with-someone",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "the-alchemy-of-forgiveness",
+            slug: "forgiveness",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
@@ -327,7 +327,7 @@ export const connectionLever: Lever = {
     },
     {
       sourceNumber: 7,
-      slug: "the-alchemy-of-forgiveness",
+      slug: "forgiveness",
       name: "Forgiveness",
       essence: "Letting go of what someone did. Not for their sake — carrying it costs you far more than it costs them.",
       mechanism: [
@@ -353,7 +353,7 @@ export const connectionLever: Lever = {
       ],
       leverSlug: "connection",
       relatedPractices: [
-        "the-ecosystem-of-belonging",
+        "community",
         "touch"
       ],
       metaTitle: "Forgiveness — How to Practise It | Sunya",
@@ -364,7 +364,7 @@ export const connectionLever: Lever = {
         durationSource: "OMITTED",
         relatedPracticeRationale: [
           {
-            slug: "the-ecosystem-of-belonging",
+            slug: "community",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
@@ -402,7 +402,7 @@ export const connectionLever: Lever = {
       ],
       leverSlug: "connection",
       relatedPractices: [
-        "the-alchemy-of-forgiveness"
+        "forgiveness"
       ],
       metaTitle: "Touch — How to Practise It | Sunya",
       metaDescription: "Restoring safe, appropriate physical contact. Touch is not a luxury — it measurably affects stress and mood, and most adults get far less than they need.",
@@ -412,7 +412,7 @@ export const connectionLever: Lever = {
         durationSource: "OMITTED",
         relatedPracticeRationale: [
           {
-            slug: "the-alchemy-of-forgiveness",
+            slug: "forgiveness",
             reason: "Adjacent in source order within the same lever sequence."
           }
         ]

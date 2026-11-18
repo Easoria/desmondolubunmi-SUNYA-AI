@@ -513,7 +513,7 @@ export const awarenessLever: Lever = {
       relatedPractices: [
         "pure-observation",
         "self-inquiry",
-        "ultimate-self-inquiry"
+        "looking-at-death"
       ],
       metaTitle: "Disidentifying — How to Practise It | Sunya",
       metaDescription: "Finding the truth by discarding what is false — whatever you can observe is not the observer.",
@@ -533,7 +533,7 @@ export const awarenessLever: Lever = {
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "ultimate-self-inquiry",
+            slug: "looking-at-death",
             reason: "Adjacent in source order within the same lever sequence."
           }
         ]
@@ -572,7 +572,7 @@ export const awarenessLever: Lever = {
       leverSlug: "awareness",
       relatedPractices: [
         "disidentifying",
-        "ultimate-self-inquiry",
+        "looking-at-death",
         "non-doing"
       ],
       metaTitle: "Self-Inquiry — How to Practise It | Sunya",
@@ -589,7 +589,7 @@ export const awarenessLever: Lever = {
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "ultimate-self-inquiry",
+            slug: "looking-at-death",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
@@ -601,7 +601,7 @@ export const awarenessLever: Lever = {
     },
     {
       sourceNumber: 12,
-      slug: "ultimate-self-inquiry",
+      slug: "looking-at-death",
       name: "Looking at Death",
       essence: "Meditating on the nature of death, on what existed before birth, and on the ending of time — to cut through the illusion of the separate self at its deepest root.",
       mechanism: [
@@ -693,9 +693,9 @@ export const awarenessLever: Lever = {
       ],
       leverSlug: "awareness",
       relatedPractices: [
-        "ultimate-self-inquiry",
+        "looking-at-death",
         "aware-of-awareness",
-        "the-shunya"
+        "being-nothing"
       ],
       metaTitle: "Non-Doing — How to Practise It | Sunya",
       metaDescription: "Dropping all sense of doing and simply being.",
@@ -707,7 +707,7 @@ export const awarenessLever: Lever = {
         durationSource: "STATED",
         relatedPracticeRationale: [
           {
-            slug: "ultimate-self-inquiry",
+            slug: "looking-at-death",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
@@ -715,7 +715,7 @@ export const awarenessLever: Lever = {
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "the-shunya",
+            slug: "being-nothing",
             reason: "Adjacent in source order within the same lever sequence."
           }
         ]
@@ -754,7 +754,7 @@ export const awarenessLever: Lever = {
       leverSlug: "awareness",
       relatedPractices: [
         "non-doing",
-        "the-shunya"
+        "being-nothing"
       ],
       metaTitle: "Aware of Awareness — How to Practise It | Sunya",
       metaDescription: "Shifting attention away from the objects of experience — thoughts, feelings, perceptions — and directing it toward the knowing presence itself: the awareness in which they appear.",
@@ -770,7 +770,7 @@ export const awarenessLever: Lever = {
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "the-shunya",
+            slug: "being-nothing",
             reason: "Adjacent in source order within the same lever sequence."
           }
         ]
@@ -778,7 +778,7 @@ export const awarenessLever: Lever = {
     },
     {
       sourceNumber: 15,
-      slug: "the-shunya",
+      slug: "being-nothing",
       name: "Being Nothing",
       essence: "The practice of being absolutely nothing inwardly. Not as a state created or captured — but as something recognised: what is there when you stop producing states.",
       mechanism: [

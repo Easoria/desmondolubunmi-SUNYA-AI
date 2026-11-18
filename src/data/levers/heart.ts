@@ -339,7 +339,7 @@ export const heartLever: Lever = {
       relatedPractices: [
         "giving-and-receiving",
         "surrendering",
-        "non-dual-devotion"
+        "loving-life-itself"
       ],
       metaTitle: "Ecstatic Chanting — How to Practise It | Sunya",
       metaDescription: "Using melody, repetition and sustained emotional intensity to quiet the analytical mind and open the heart.",
@@ -359,7 +359,7 @@ export const heartLever: Lever = {
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "non-dual-devotion",
+            slug: "loving-life-itself",
             reason: "Adjacent in source order within the same lever sequence."
           }
         ]
@@ -405,7 +405,7 @@ export const heartLever: Lever = {
       leverSlug: "heart",
       relatedPractices: [
         "ecstatic-chanting",
-        "non-dual-devotion",
+        "loving-life-itself",
         "prayer"
       ],
       metaTitle: "Surrendering — How to Practise It | Sunya",
@@ -422,7 +422,7 @@ export const heartLever: Lever = {
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "non-dual-devotion",
+            slug: "loving-life-itself",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
@@ -434,7 +434,7 @@ export const heartLever: Lever = {
     },
     {
       sourceNumber: 8,
-      slug: "non-dual-devotion",
+      slug: "loving-life-itself",
       name: "Loving Life Itself",
       notes: [
         "Devotion, at its deepest, is not a practice directed outward. It is the divine glorifying its own nature through the human form — the source recognising itself within you and worshipping its own glory through you. There is no duality, no external deity separate from the one pure consciousness. All worship, at its core, is worship of the Self — of that which is already whole, already divine. When you worship a teacher or a deity, what you are truly honouring are the divine qualities they embody — qualities that already exist within you. Worship becomes a form of surrender: by bowing to the divine in them, you let go of resistance to that same divine force within yourself. Even external worship, then, serves to awaken the inner being. It is a mirror for remembrance. Worship is the act of dissolving into something greater — being absorbed in what is whole, immersed in the beauty and aliveness of your own true nature. This is the spirit in which the practice that follows is approached."
@@ -519,7 +519,7 @@ export const heartLever: Lever = {
       ],
       leverSlug: "heart",
       relatedPractices: [
-        "non-dual-devotion"
+        "loving-life-itself"
       ],
       metaTitle: "Prayer — How to Practise It | Sunya",
       metaDescription: "Prayer practised as a clear statement of intent held with feeling, rather than as a request.",
@@ -529,7 +529,7 @@ export const heartLever: Lever = {
         durationSource: "OMITTED",
         relatedPracticeRationale: [
           {
-            slug: "non-dual-devotion",
+            slug: "loving-life-itself",
             reason: "Adjacent in source order within the same lever sequence."
           }
         ]

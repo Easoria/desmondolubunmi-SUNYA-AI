@@ -118,7 +118,7 @@ async function handlePracticeSpecialResponse(
 }
 
 const CROSS_LEVER_RELATED: Record<string, { leverSlug: LeverSlug; practiceSlug: string }[]> = {
-  "breath/4-7-8-breathing": [{ leverSlug: "sleep", practiceSlug: "the-somatic-runway" }],
+  "breath/4-7-8-breathing": [{ leverSlug: "sleep", practiceSlug: "the-wind-down-hour" }],
 };
 const DUPLICATE_PRACTICE_NAMES = new Set(
   Object.entries(

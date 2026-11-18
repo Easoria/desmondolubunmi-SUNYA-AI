@@ -96,14 +96,14 @@ export const PRACTICE_MECHANISM_MAP: Record<string, PracticeEvidenceMapping> = {
       { slug: "awareness-without-thought", name: "Awareness without thought", qualifier: "depth 4" },
     ],
   },
-  "awareness/the-shunya": {
-    key: "awareness/the-shunya",
+  "awareness/being-nothing": {
+    key: "awareness/being-nothing",
     mechanisms: [
       { slug: "awareness-without-thought", name: "Awareness without thought", qualifier: "depth 4" },
     ],
   },
-  "awareness/ultimate-self-inquiry": {
-    key: "awareness/ultimate-self-inquiry",
+  "awareness/looking-at-death": {
+    key: "awareness/looking-at-death",
     mechanisms: [
       { slug: "awareness-without-thought", name: "Awareness without thought", qualifier: "depth 4" },
     ],
@@ -188,14 +188,14 @@ export const PRACTICE_MECHANISM_MAP: Record<string, PracticeEvidenceMapping> = {
       { slug: "social-connection-and-isolation", name: "Social connection and isolation" },
     ],
   },
-  "connection/internal-saturation": {
-    key: "connection/internal-saturation",
+  "connection/arriving-full": {
+    key: "connection/arriving-full",
     mechanisms: [
       { slug: "social-connection-and-isolation", name: "Social connection and isolation" },
     ],
   },
-  "connection/karma-yoga": {
-    key: "connection/karma-yoga",
+  "connection/service": {
+    key: "connection/service",
     mechanisms: [
       { slug: "prosocial-behaviour-and-volunteering", name: "Prosocial behaviour and volunteering" },
     ],
@@ -206,21 +206,21 @@ export const PRACTICE_MECHANISM_MAP: Record<string, PracticeEvidenceMapping> = {
       { slug: "values-clarification-and-self-affirmation", name: "Values clarification and self-affirmation" },
     ],
   },
-  "connection/somatic-communion": {
-    key: "connection/somatic-communion",
+  "connection/being-with-someone": {
+    key: "connection/being-with-someone",
     mechanisms: [
       { slug: "social-connection-and-isolation", name: "Social connection and isolation" },
       { slug: "affective-touch-and-co-regulation", name: "Affective touch and co-regulation" },
     ],
   },
-  "connection/the-alchemy-of-forgiveness": {
-    key: "connection/the-alchemy-of-forgiveness",
+  "connection/forgiveness": {
+    key: "connection/forgiveness",
     mechanisms: [
       { slug: "forgiveness", name: "Forgiveness" },
     ],
   },
-  "connection/the-ecosystem-of-belonging": {
-    key: "connection/the-ecosystem-of-belonging",
+  "connection/community": {
+    key: "connection/community",
     mechanisms: [
       { slug: "social-connection-and-isolation", name: "Social connection and isolation" },
     ],
@@ -261,8 +261,8 @@ export const PRACTICE_MECHANISM_MAP: Record<string, PracticeEvidenceMapping> = {
       { slug: "pelvic-floor-contraction-as-an-inner-practice", name: "Pelvic floor contraction as an inner practice", honesty: "nothing-found" },
     ],
   },
-  "environment/atmospheric-purity": {
-    key: "environment/atmospheric-purity",
+  "environment/air-light-and-sound": {
+    key: "environment/air-light-and-sound",
     mechanisms: [
       { slug: "air-quality-noise-and-visual-order", name: "Air quality, noise and visual order" },
       { slug: "circadian-light-exposure-and-entrainment", name: "Circadian light exposure" },
@@ -274,28 +274,28 @@ export const PRACTICE_MECHANISM_MAP: Record<string, PracticeEvidenceMapping> = {
       { slug: "air-quality-noise-and-visual-order", name: "Air quality, noise and visual order" },
     ],
   },
-  "environment/consecrated-spaces": {
-    key: "environment/consecrated-spaces",
+  "environment/places-of-stillness": {
+    key: "environment/places-of-stillness",
     mechanisms: [
       { slug: "nature-exposure-and-awe", name: "Nature exposure and awe" },
       { slug: "energetic-properties-of-objects-and-spaces", name: "Energetic properties of objects and spaces", honesty: "nothing-found" },
     ],
   },
-  "environment/cultural-resonance": {
-    key: "environment/cultural-resonance",
+  "environment/where-you-live": {
+    key: "environment/where-you-live",
     mechanisms: [
       { slug: "air-quality-noise-and-visual-order", name: "Air quality, noise and visual order" },
       { slug: "social-connection-and-isolation", name: "Social connection and isolation" },
     ],
   },
-  "environment/navigating-shared-frequencies": {
-    key: "environment/navigating-shared-frequencies",
+  "environment/living-among-others": {
+    key: "environment/living-among-others",
     mechanisms: [
       { slug: "social-connection-and-isolation", name: "Social connection and isolation" },
     ],
   },
-  "environment/somatic-architecture": {
-    key: "environment/somatic-architecture",
+  "environment/what-you-wear": {
+    key: "environment/what-you-wear",
     mechanisms: [
       { slug: "pressure-and-texture-on-the-skin", name: "Pressure and texture on the skin" },
     ],
@@ -344,8 +344,8 @@ export const PRACTICE_MECHANISM_MAP: Record<string, PracticeEvidenceMapping> = {
       { slug: "compassion-and-loving-kindness-training", name: "Compassion and loving-kindness training" },
     ],
   },
-  "heart/non-dual-devotion": {
-    key: "heart/non-dual-devotion",
+  "heart/loving-life-itself": {
+    key: "heart/loving-life-itself",
     mechanisms: [
       { slug: "religious-and-devotional-practice", name: "Religious and devotional practice" },
       { slug: "awareness-without-thought", name: "Awareness without thought", qualifier: "depth 4" },
@@ -376,8 +376,8 @@ export const PRACTICE_MECHANISM_MAP: Record<string, PracticeEvidenceMapping> = {
       { slug: "values-clarification-and-self-affirmation", name: "Values clarification and self-affirmation" },
     ],
   },
-  "mind/conscious-creation": {
-    key: "mind/conscious-creation",
+  "mind/visualisation-and-action": {
+    key: "mind/visualisation-and-action",
     mechanisms: [
       { slug: "mental-imagery-and-visualisation", name: "Mental imagery and visualisation" },
     ],
@@ -424,8 +424,8 @@ export const PRACTICE_MECHANISM_MAP: Record<string, PracticeEvidenceMapping> = {
       { slug: "movement-mobility-and-exercise-timing", name: "Movement, mobility and exercise timing" },
     ],
   },
-  "movement/the-consciousness-seal": {
-    key: "movement/the-consciousness-seal",
+  "movement/thumb-to-index-seal": {
+    key: "movement/thumb-to-index-seal",
     mechanisms: [
       { slug: "hand-positions", name: "Hand positions", honesty: "nothing-found" },
     ],
@@ -437,8 +437,8 @@ export const PRACTICE_MECHANISM_MAP: Record<string, PracticeEvidenceMapping> = {
       { slug: "interoception-and-body-scan", name: "Interoception and body scan" },
     ],
   },
-  "movement/the-dance-of-dissolution": {
-    key: "movement/the-dance-of-dissolution",
+  "movement/free-movement": {
+    key: "movement/free-movement",
     mechanisms: [
       { slug: "movement-mobility-and-exercise-timing", name: "Movement, mobility and exercise timing" },
     ],
@@ -461,20 +461,20 @@ export const PRACTICE_MECHANISM_MAP: Record<string, PracticeEvidenceMapping> = {
       { slug: "movement-mobility-and-exercise-timing", name: "Movement, mobility and exercise timing" },
     ],
   },
-  "movement/the-primal-seal": {
-    key: "movement/the-primal-seal",
+  "movement/closed-hand-seal": {
+    key: "movement/closed-hand-seal",
     mechanisms: [
       { slug: "hand-positions", name: "Hand positions", honesty: "nothing-found" },
     ],
   },
-  "movement/the-prostration-sujud-balasana": {
-    key: "movement/the-prostration-sujud-balasana",
+  "movement/prostration": {
+    key: "movement/prostration",
     mechanisms: [
       { slug: "movement-mobility-and-exercise-timing", name: "Movement, mobility and exercise timing" },
     ],
   },
-  "movement/the-somatic-primer": {
-    key: "movement/the-somatic-primer",
+  "movement/full-mobility-sequence": {
+    key: "movement/full-mobility-sequence",
     mechanisms: [
       { slug: "movement-mobility-and-exercise-timing", name: "Movement, mobility and exercise timing" },
     ],
@@ -500,8 +500,8 @@ export const PRACTICE_MECHANISM_MAP: Record<string, PracticeEvidenceMapping> = {
       { slug: "nature-exposure-and-awe", name: "Nature exposure and awe" },
     ],
   },
-  "nature/places-of-natural-transformational-power": {
-    key: "nature/places-of-natural-transformational-power",
+  "nature/wild-places": {
+    key: "nature/wild-places",
     mechanisms: [
       { slug: "nature-exposure-and-awe", name: "Nature exposure and awe" },
     ],
@@ -519,8 +519,8 @@ export const PRACTICE_MECHANISM_MAP: Record<string, PracticeEvidenceMapping> = {
       { slug: "nature-exposure-and-awe", name: "Nature exposure and awe" },
     ],
   },
-  "nutrition/chrononutrition": {
-    key: "nutrition/chrononutrition",
+  "nutrition/when-you-eat": {
+    key: "nutrition/when-you-eat",
     mechanisms: [
       { slug: "time-restricted-eating-and-fasting", name: "Time-restricted eating and fasting" },
     ],
@@ -563,8 +563,8 @@ export const PRACTICE_MECHANISM_MAP: Record<string, PracticeEvidenceMapping> = {
       { slug: "hydration", name: "Hydration" },
     ],
   },
-  "sleep/biological-adaptability": {
-    key: "sleep/biological-adaptability",
+  "sleep/when-life-gets-irregular": {
+    key: "sleep/when-life-gets-irregular",
     mechanisms: [
       { slug: "circadian-light-exposure-and-entrainment", name: "Circadian light exposure" },
       { slug: "sleep-behaviour", name: "Sleep behaviour" },
@@ -576,84 +576,84 @@ export const PRACTICE_MECHANISM_MAP: Record<string, PracticeEvidenceMapping> = {
       { slug: "sleep-behaviour", name: "Sleep behaviour" },
     ],
   },
-  "sleep/cognitive-de-escalation": {
-    key: "sleep/cognitive-de-escalation",
+  "sleep/taking-the-pressure-off": {
+    key: "sleep/taking-the-pressure-off",
     mechanisms: [
       { slug: "sleep-behaviour", name: "Sleep behaviour" },
     ],
   },
-  "sleep/data-and-intuition": {
-    key: "sleep/data-and-intuition",
+  "sleep/tracking-your-sleep": {
+    key: "sleep/tracking-your-sleep",
     mechanisms: [
       { slug: "sleep-behaviour", name: "Sleep behaviour" },
     ],
   },
-  "sleep/environmental-architecture": {
-    key: "sleep/environmental-architecture",
+  "sleep/light-and-sound-at-night": {
+    key: "sleep/light-and-sound-at-night",
     mechanisms: [
       { slug: "circadian-light-exposure-and-entrainment", name: "Circadian light exposure" },
       { slug: "air-quality-noise-and-visual-order", name: "Air quality, noise and visual order" },
     ],
   },
-  "sleep/relational-ecology": {
-    key: "sleep/relational-ecology",
+  "sleep/sharing-a-bed": {
+    key: "sleep/sharing-a-bed",
     mechanisms: [
       { slug: "sleep-behaviour", name: "Sleep behaviour" },
       { slug: "social-connection-and-isolation", name: "Social connection and isolation" },
     ],
   },
-  "sleep/somatic-alignment": {
-    key: "sleep/somatic-alignment",
+  "sleep/sleep-position": {
+    key: "sleep/sleep-position",
     mechanisms: [
       { slug: "sleep-behaviour", name: "Sleep behaviour" },
     ],
   },
-  "sleep/somatic-regulation": {
-    key: "sleep/somatic-regulation",
+  "sleep/settling-the-body": {
+    key: "sleep/settling-the-body",
     mechanisms: [
       { slug: "progressive-muscle-relaxation-and-stillness", name: "Progressive muscle relaxation and stillness", qualifier: "calming" },
     ],
   },
-  "sleep/strategic-somatic-movement": {
-    key: "sleep/strategic-somatic-movement",
+  "sleep/moving-at-the-right-times": {
+    key: "sleep/moving-at-the-right-times",
     mechanisms: [
       { slug: "movement-mobility-and-exercise-timing", name: "Movement, mobility and exercise timing" },
     ],
   },
-  "sleep/the-circadian-architecture": {
-    key: "sleep/the-circadian-architecture",
+  "sleep/your-body-clock": {
+    key: "sleep/your-body-clock",
     mechanisms: [
       { slug: "circadian-light-exposure-and-entrainment", name: "Circadian light exposure and entrainment" },
     ],
   },
-  "sleep/the-morning-ignition": {
-    key: "sleep/the-morning-ignition",
+  "sleep/the-first-hour": {
+    key: "sleep/the-first-hour",
     mechanisms: [
       { slug: "circadian-light-exposure-and-entrainment", name: "Circadian light exposure and entrainment" },
     ],
   },
-  "sleep/the-sleep-sanctuary": {
-    key: "sleep/the-sleep-sanctuary",
+  "sleep/the-bedroom": {
+    key: "sleep/the-bedroom",
     mechanisms: [
       { slug: "sleep-behaviour", name: "Sleep behaviour" },
       { slug: "pressure-and-texture-on-the-skin", name: "Pressure and texture on the skin" },
       { slug: "air-quality-noise-and-visual-order", name: "Air quality, noise and visual order" },
     ],
   },
-  "sleep/the-somatic-runway": {
-    key: "sleep/the-somatic-runway",
+  "sleep/the-wind-down-hour": {
+    key: "sleep/the-wind-down-hour",
     mechanisms: [
       { slug: "sleep-behaviour", name: "Sleep behaviour" },
     ],
   },
-  "sleep/the-threshold-of-awakening": {
-    key: "sleep/the-threshold-of-awakening",
+  "sleep/the-edge-of-sleep": {
+    key: "sleep/the-edge-of-sleep",
     mechanisms: [
       { slug: "interoception-and-body-scan", name: "Interoception and body scan" },
     ],
   },
-  "sound/aum-chanting": {
-    key: "sound/aum-chanting",
+  "sound/chanting": {
+    key: "sound/chanting",
     mechanisms: [
       { slug: "sustained-vocalisation", name: "Sustained vocalisation" },
       { slug: "slow-and-paced-breathing", name: "Slow and paced breathing" },
@@ -672,8 +672,8 @@ export const PRACTICE_MECHANISM_MAP: Record<string, PracticeEvidenceMapping> = {
       { slug: "slow-and-paced-breathing", name: "Slow and paced breathing" },
     ],
   },
-  "sustenance/decoding-money-and-value": {
-    key: "sustenance/decoding-money-and-value",
+  "sustenance/what-money-is": {
+    key: "sustenance/what-money-is",
     mechanisms: [
       { slug: "financial-security-and-scarcity", name: "Financial security and scarcity" },
     ],
@@ -684,8 +684,8 @@ export const PRACTICE_MECHANISM_MAP: Record<string, PracticeEvidenceMapping> = {
       { slug: "financial-security-and-scarcity", name: "Financial security and scarcity" },
     ],
   },
-  "sustenance/mastery-of-the-instrument": {
-    key: "sustenance/mastery-of-the-instrument",
+  "sustenance/building-skill": {
+    key: "sustenance/building-skill",
     mechanisms: [
       { slug: "skill-mastery-and-self-efficacy", name: "Skill mastery and self-efficacy" },
     ],
@@ -696,14 +696,14 @@ export const PRACTICE_MECHANISM_MAP: Record<string, PracticeEvidenceMapping> = {
       { slug: "work-and-values-congruence", name: "Work and values congruence" },
     ],
   },
-  "sustenance/the-economics-of-simplicity": {
-    key: "sustenance/the-economics-of-simplicity",
+  "sustenance/spending-less": {
+    key: "sustenance/spending-less",
     mechanisms: [
       { slug: "financial-security-and-scarcity", name: "Financial security and scarcity" },
     ],
   },
-  "sustenance/the-ecosystem-trust": {
-    key: "sustenance/the-ecosystem-trust",
+  "sustenance/easing-money-fear": {
+    key: "sustenance/easing-money-fear",
     mechanisms: [
       { slug: "financial-security-and-scarcity", name: "Financial security and scarcity" },
       { slug: "rumination-and-mind-wandering", name: "Rumination and mind-wandering", qualifier: "depth 2" },
@@ -732,34 +732,34 @@ export const MECHANISM_PRACTICES: Record<string, MechanismPracticeRef[]> = {
   ],
   "affective-touch-and-co-regulation": [
     { leverSlug: "connection", slug: "touch", name: "Touch" },
-    { leverSlug: "connection", slug: "somatic-communion", name: "Being With Someone" },
+    { leverSlug: "connection", slug: "being-with-someone", name: "Being With Someone" },
   ],
   "air-quality-noise-and-visual-order": [
     { leverSlug: "environment", slug: "clearing-your-space", name: "Clearing Your Space" },
     { leverSlug: "environment", slug: "the-objects-around-you", name: "The Objects Around You" },
-    { leverSlug: "environment", slug: "atmospheric-purity", name: "Air, Light and Sound" },
-    { leverSlug: "environment", slug: "cultural-resonance", name: "Where You Live" },
-    { leverSlug: "sleep", slug: "environmental-architecture", name: "Light and Sound at Night" },
-    { leverSlug: "sleep", slug: "the-sleep-sanctuary", name: "The Bedroom" },
+    { leverSlug: "environment", slug: "air-light-and-sound", name: "Air, Light and Sound" },
+    { leverSlug: "environment", slug: "where-you-live", name: "Where You Live" },
+    { leverSlug: "sleep", slug: "light-and-sound-at-night", name: "Light and Sound at Night" },
+    { leverSlug: "sleep", slug: "the-bedroom", name: "The Bedroom" },
     { leverSlug: "nature", slug: "air", name: "Air" },
   ],
   "awareness-without-thought": [
     { leverSlug: "awareness", slug: "self-inquiry", name: "Self-Inquiry" },
-    { leverSlug: "awareness", slug: "ultimate-self-inquiry", name: "Looking at Death" },
+    { leverSlug: "awareness", slug: "looking-at-death", name: "Looking at Death" },
     { leverSlug: "awareness", slug: "aware-of-awareness", name: "Aware of Awareness" },
-    { leverSlug: "awareness", slug: "the-shunya", name: "Being Nothing" },
-    { leverSlug: "heart", slug: "non-dual-devotion", name: "Loving Life Itself" },
+    { leverSlug: "awareness", slug: "being-nothing", name: "Being Nothing" },
+    { leverSlug: "heart", slug: "loving-life-itself", name: "Loving Life Itself" },
   ],
   "botanical-preparations": [
     { leverSlug: "nutrition", slug: "herbs", name: "Herbs" },
   ],
   "circadian-light-exposure-and-entrainment": [
-    { leverSlug: "sleep", slug: "the-circadian-architecture", name: "Your Body Clock" },
-    { leverSlug: "sleep", slug: "environmental-architecture", name: "Light and Sound at Night" },
-    { leverSlug: "sleep", slug: "the-morning-ignition", name: "The First Hour" },
-    { leverSlug: "sleep", slug: "biological-adaptability", name: "When Life Gets Irregular" },
+    { leverSlug: "sleep", slug: "your-body-clock", name: "Your Body Clock" },
+    { leverSlug: "sleep", slug: "light-and-sound-at-night", name: "Light and Sound at Night" },
+    { leverSlug: "sleep", slug: "the-first-hour", name: "The First Hour" },
+    { leverSlug: "sleep", slug: "when-life-gets-irregular", name: "When Life Gets Irregular" },
     { leverSlug: "nature", slug: "fire", name: "Fire" },
-    { leverSlug: "environment", slug: "atmospheric-purity", name: "Air, Light and Sound" },
+    { leverSlug: "environment", slug: "air-light-and-sound", name: "Air, Light and Sound" },
   ],
   "cold-exposure": [
     { leverSlug: "nature", slug: "water", name: "Water" },
@@ -783,26 +783,26 @@ export const MECHANISM_PRACTICES: Record<string, MechanismPracticeRef[]> = {
   ],
   "energetic-properties-of-objects-and-spaces": [
     { leverSlug: "environment", slug: "the-objects-around-you", name: "The Objects Around You" },
-    { leverSlug: "environment", slug: "consecrated-spaces", name: "Places of Stillness" },
+    { leverSlug: "environment", slug: "places-of-stillness", name: "Places of Stillness" },
   ],
   "expressive-writing": [
     { leverSlug: "mind", slug: "journaling", name: "Journaling" },
   ],
   "financial-security-and-scarcity": [
     { leverSlug: "sustenance", slug: "how-you-think-about-money", name: "How You Think About Money" },
-    { leverSlug: "sustenance", slug: "decoding-money-and-value", name: "What Money Is" },
-    { leverSlug: "sustenance", slug: "the-economics-of-simplicity", name: "Spending Less" },
-    { leverSlug: "sustenance", slug: "the-ecosystem-trust", name: "Easing Money Fear" },
+    { leverSlug: "sustenance", slug: "what-money-is", name: "What Money Is" },
+    { leverSlug: "sustenance", slug: "spending-less", name: "Spending Less" },
+    { leverSlug: "sustenance", slug: "easing-money-fear", name: "Easing Money Fear" },
   ],
   "forgiveness": [
-    { leverSlug: "connection", slug: "the-alchemy-of-forgiveness", name: "Forgiveness" },
+    { leverSlug: "connection", slug: "forgiveness", name: "Forgiveness" },
   ],
   "grounding-and-earthing": [
     { leverSlug: "nature", slug: "earth", name: "Earth" },
   ],
   "hand-positions": [
-    { leverSlug: "movement", slug: "the-consciousness-seal", name: "Thumb-to-Index Seal" },
-    { leverSlug: "movement", slug: "the-primal-seal", name: "Closed-Hand Seal" },
+    { leverSlug: "movement", slug: "thumb-to-index-seal", name: "Thumb-to-Index Seal" },
+    { leverSlug: "movement", slug: "closed-hand-seal", name: "Closed-Hand Seal" },
   ],
   "hydration": [
     { leverSlug: "nutrition", slug: "water", name: "Water" },
@@ -816,7 +816,7 @@ export const MECHANISM_PRACTICES: Record<string, MechanismPracticeRef[]> = {
     { leverSlug: "awareness", slug: "body-scan", name: "Body Scan" },
     { leverSlug: "awareness", slug: "non-sleep-deep-rest", name: "Non-Sleep Deep Rest (NSDR)" },
     { leverSlug: "awareness", slug: "reading-your-vital-state", name: "Reading Your Vital State" },
-    { leverSlug: "sleep", slug: "the-threshold-of-awakening", name: "The Edge of Sleep" },
+    { leverSlug: "sleep", slug: "the-edge-of-sleep", name: "The Edge of Sleep" },
     { leverSlug: "movement", slug: "the-corpse-pose", name: "The Corpse Pose" },
     { leverSlug: "awareness", slug: "whole-system-awareness", name: "Whole-System Awareness" },
     { leverSlug: "nutrition", slug: "how-you-eat", name: "How You Eat" },
@@ -828,18 +828,18 @@ export const MECHANISM_PRACTICES: Record<string, MechanismPracticeRef[]> = {
     { leverSlug: "nutrition", slug: "cooking-and-eating-with-attention", name: "Cooking and Eating with Attention" },
   ],
   "mental-imagery-and-visualisation": [
-    { leverSlug: "mind", slug: "conscious-creation", name: "Visualisation and Action" },
+    { leverSlug: "mind", slug: "visualisation-and-action", name: "Visualisation and Action" },
   ],
   "movement-mobility-and-exercise-timing": [
     { leverSlug: "movement", slug: "joint-rotations", name: "Joint Rotations" },
-    { leverSlug: "movement", slug: "the-somatic-primer", name: "Full Mobility Sequence" },
+    { leverSlug: "movement", slug: "full-mobility-sequence", name: "Full Mobility Sequence" },
     { leverSlug: "movement", slug: "spinal-loosening", name: "Spinal Loosening" },
     { leverSlug: "movement", slug: "the-full-practice", name: "The Full Practice" },
-    { leverSlug: "movement", slug: "the-dance-of-dissolution", name: "Free Movement" },
+    { leverSlug: "movement", slug: "free-movement", name: "Free Movement" },
     { leverSlug: "movement", slug: "the-meditation-seat", name: "The Meditation Seat" },
     { leverSlug: "movement", slug: "the-deep-squat", name: "The Deep Squat" },
-    { leverSlug: "movement", slug: "the-prostration-sujud-balasana", name: "Prostration" },
-    { leverSlug: "sleep", slug: "strategic-somatic-movement", name: "Moving at the Right Times" },
+    { leverSlug: "movement", slug: "prostration", name: "Prostration" },
+    { leverSlug: "sleep", slug: "moving-at-the-right-times", name: "Moving at the Right Times" },
   ],
   "music-and-deliberately-chosen-sound": [
     { leverSlug: "sound", slug: "conscious-listening", name: "Conscious Listening" },
@@ -849,8 +849,8 @@ export const MECHANISM_PRACTICES: Record<string, MechanismPracticeRef[]> = {
     { leverSlug: "nature", slug: "earth", name: "Earth" },
     { leverSlug: "nature", slug: "air", name: "Air" },
     { leverSlug: "nature", slug: "space", name: "Space" },
-    { leverSlug: "nature", slug: "places-of-natural-transformational-power", name: "Wild Places" },
-    { leverSlug: "environment", slug: "consecrated-spaces", name: "Places of Stillness" },
+    { leverSlug: "nature", slug: "wild-places", name: "Wild Places" },
+    { leverSlug: "environment", slug: "places-of-stillness", name: "Places of Stillness" },
     { leverSlug: "nature", slug: "water", name: "Water" },
     { leverSlug: "nature", slug: "fire", name: "Fire" },
   ],
@@ -859,24 +859,24 @@ export const MECHANISM_PRACTICES: Record<string, MechanismPracticeRef[]> = {
     { leverSlug: "breath", slug: "the-great-lock", name: "The Great Lock" },
   ],
   "pressure-and-texture-on-the-skin": [
-    { leverSlug: "environment", slug: "somatic-architecture", name: "What You Wear" },
-    { leverSlug: "sleep", slug: "the-sleep-sanctuary", name: "The Bedroom" },
+    { leverSlug: "environment", slug: "what-you-wear", name: "What You Wear" },
+    { leverSlug: "sleep", slug: "the-bedroom", name: "The Bedroom" },
   ],
   "progressive-muscle-relaxation-and-stillness": [
     { leverSlug: "movement", slug: "progressive-muscle-relaxation", name: "Progressive Muscle Relaxation" },
     { leverSlug: "movement", slug: "the-corpse-pose", name: "The Corpse Pose" },
-    { leverSlug: "sleep", slug: "somatic-regulation", name: "Settling the Body" },
+    { leverSlug: "sleep", slug: "settling-the-body", name: "Settling the Body" },
   ],
   "prosocial-behaviour-and-volunteering": [
-    { leverSlug: "connection", slug: "karma-yoga", name: "Service" },
+    { leverSlug: "connection", slug: "service", name: "Service" },
   ],
   "religious-and-devotional-practice": [
-    { leverSlug: "heart", slug: "non-dual-devotion", name: "Loving Life Itself" },
+    { leverSlug: "heart", slug: "loving-life-itself", name: "Loving Life Itself" },
     { leverSlug: "heart", slug: "prayer", name: "Prayer" },
     { leverSlug: "heart", slug: "ecstatic-chanting", name: "Ecstatic Chanting" },
   ],
   "rumination-and-mind-wandering": [
-    { leverSlug: "sustenance", slug: "the-ecosystem-trust", name: "Easing Money Fear" },
+    { leverSlug: "sustenance", slug: "easing-money-fear", name: "Easing Money Fear" },
   ],
   "self-referential-processing": [
     { leverSlug: "awareness", slug: "whole-system-awareness", name: "Whole-System Awareness" },
@@ -887,17 +887,17 @@ export const MECHANISM_PRACTICES: Record<string, MechanismPracticeRef[]> = {
     { leverSlug: "conservation", slug: "sexual-conservation", name: "Sexual Conservation" },
   ],
   "skill-mastery-and-self-efficacy": [
-    { leverSlug: "sustenance", slug: "mastery-of-the-instrument", name: "Building Skill" },
+    { leverSlug: "sustenance", slug: "building-skill", name: "Building Skill" },
   ],
   "sleep-behaviour": [
-    { leverSlug: "sleep", slug: "cognitive-de-escalation", name: "Taking the Pressure Off" },
+    { leverSlug: "sleep", slug: "taking-the-pressure-off", name: "Taking the Pressure Off" },
     { leverSlug: "sleep", slug: "caffeine-alcohol-and-timing", name: "Caffeine, Alcohol and Timing" },
-    { leverSlug: "sleep", slug: "the-sleep-sanctuary", name: "The Bedroom" },
-    { leverSlug: "sleep", slug: "somatic-alignment", name: "Sleep Position" },
-    { leverSlug: "sleep", slug: "relational-ecology", name: "Sharing a Bed" },
-    { leverSlug: "sleep", slug: "the-somatic-runway", name: "The Wind-Down Hour" },
-    { leverSlug: "sleep", slug: "data-and-intuition", name: "Tracking Your Sleep" },
-    { leverSlug: "sleep", slug: "biological-adaptability", name: "When Life Gets Irregular" },
+    { leverSlug: "sleep", slug: "the-bedroom", name: "The Bedroom" },
+    { leverSlug: "sleep", slug: "sleep-position", name: "Sleep Position" },
+    { leverSlug: "sleep", slug: "sharing-a-bed", name: "Sharing a Bed" },
+    { leverSlug: "sleep", slug: "the-wind-down-hour", name: "The Wind-Down Hour" },
+    { leverSlug: "sleep", slug: "tracking-your-sleep", name: "Tracking Your Sleep" },
+    { leverSlug: "sleep", slug: "when-life-gets-irregular", name: "When Life Gets Irregular" },
   ],
   "slow-and-paced-breathing": [
     { leverSlug: "breath", slug: "alternate-nostril-breathing", name: "Alternate-Nostril Breathing" },
@@ -907,26 +907,26 @@ export const MECHANISM_PRACTICES: Record<string, MechanismPracticeRef[]> = {
     { leverSlug: "breath", slug: "4-7-8-breathing", name: "4-7-8 Breathing" },
     { leverSlug: "breath", slug: "spinal-breathing", name: "Spinal Breathing" },
     { leverSlug: "heart", slug: "heart-coherence", name: "Heart Coherence" },
-    { leverSlug: "sound", slug: "aum-chanting", name: "Chanting" },
+    { leverSlug: "sound", slug: "chanting", name: "Chanting" },
     { leverSlug: "sound", slug: "humming", name: "Humming" },
   ],
   "social-connection-and-isolation": [
-    { leverSlug: "connection", slug: "internal-saturation", name: "Arriving Full" },
+    { leverSlug: "connection", slug: "arriving-full", name: "Arriving Full" },
     { leverSlug: "connection", slug: "honesty", name: "Honesty" },
-    { leverSlug: "connection", slug: "somatic-communion", name: "Being With Someone" },
-    { leverSlug: "connection", slug: "the-ecosystem-of-belonging", name: "Community" },
-    { leverSlug: "environment", slug: "navigating-shared-frequencies", name: "Living Among Others" },
-    { leverSlug: "sleep", slug: "relational-ecology", name: "Sharing a Bed" },
-    { leverSlug: "environment", slug: "cultural-resonance", name: "Where You Live" },
+    { leverSlug: "connection", slug: "being-with-someone", name: "Being With Someone" },
+    { leverSlug: "connection", slug: "community", name: "Community" },
+    { leverSlug: "environment", slug: "living-among-others", name: "Living Among Others" },
+    { leverSlug: "sleep", slug: "sharing-a-bed", name: "Sharing a Bed" },
+    { leverSlug: "environment", slug: "where-you-live", name: "Where You Live" },
   ],
   "sustained-vocalisation": [
-    { leverSlug: "sound", slug: "aum-chanting", name: "Chanting" },
+    { leverSlug: "sound", slug: "chanting", name: "Chanting" },
     { leverSlug: "sound", slug: "humming", name: "Humming" },
     { leverSlug: "heart", slug: "ecstatic-chanting", name: "Ecstatic Chanting" },
   ],
   "time-restricted-eating-and-fasting": [
     { leverSlug: "conservation", slug: "fasting", name: "Fasting" },
-    { leverSlug: "nutrition", slug: "chrononutrition", name: "When You Eat" },
+    { leverSlug: "nutrition", slug: "when-you-eat", name: "When You Eat" },
     { leverSlug: "nutrition", slug: "fasting", name: "Fasting" },
   ],
   "values-clarification-and-self-affirmation": [
