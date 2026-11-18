@@ -15,7 +15,7 @@ export const environmentLever: Lever = {
   practices: [
     {
       sourceNumber: 1,
-      slug: "somatic-architecture",
+      slug: "what-you-wear",
       name: "What You Wear",
       essence: "Auditing the most immediate layer of your physical environment — what wraps your skin all day. The practice of choosing natural, unrestrictive materials that allow the body to breathe and move without constant physical friction.",
       mechanism: [
@@ -91,9 +91,9 @@ export const environmentLever: Lever = {
       ],
       leverSlug: "environment",
       relatedPractices: [
-        "somatic-architecture",
+        "what-you-wear",
         "the-objects-around-you",
-        "atmospheric-purity"
+        "air-light-and-sound"
       ],
       metaTitle: "Clearing Your Space — How to Practise It | Sunya",
       metaDescription: "Transforming your living space into an externalised reflection of a clear, settled mind.",
@@ -103,7 +103,7 @@ export const environmentLever: Lever = {
         durationSource: "OMITTED",
         relatedPracticeRationale: [
           {
-            slug: "somatic-architecture",
+            slug: "what-you-wear",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
@@ -111,7 +111,7 @@ export const environmentLever: Lever = {
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "atmospheric-purity",
+            slug: "air-light-and-sound",
             reason: "Adjacent in source order within the same lever sequence."
           }
         ]
@@ -147,8 +147,8 @@ export const environmentLever: Lever = {
       leverSlug: "environment",
       relatedPractices: [
         "clearing-your-space",
-        "atmospheric-purity",
-        "cultural-resonance"
+        "air-light-and-sound",
+        "where-you-live"
       ],
       metaTitle: "The Objects Around You — How to Practise It | Sunya",
       metaDescription: "Noticing which objects in a room you are glad to see and which you avoid looking at, and clearing what consistently weighs on you.",
@@ -162,11 +162,11 @@ export const environmentLever: Lever = {
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "atmospheric-purity",
+            slug: "air-light-and-sound",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "cultural-resonance",
+            slug: "where-you-live",
             reason: "Adjacent in source order within the same lever sequence."
           }
         ]
@@ -174,7 +174,7 @@ export const environmentLever: Lever = {
     },
     {
       sourceNumber: 4,
-      slug: "atmospheric-purity",
+      slug: "air-light-and-sound",
       name: "Air, Light and Sound",
       essence: "Controlling the microscopic and acoustic inputs of your environment. The practice of ensuring the air, light, and soundscape of your home actively support biological thriving and a settled nervous system rather than silently draining them.",
       mechanism: [
@@ -201,8 +201,8 @@ export const environmentLever: Lever = {
       leverSlug: "environment",
       relatedPractices: [
         "the-objects-around-you",
-        "cultural-resonance",
-        "navigating-shared-frequencies"
+        "where-you-live",
+        "living-among-others"
       ],
       metaTitle: "Air, Light and Sound — How to Practise It | Sunya",
       metaDescription: "Controlling the microscopic and acoustic inputs of your environment.",
@@ -216,11 +216,11 @@ export const environmentLever: Lever = {
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "cultural-resonance",
+            slug: "where-you-live",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "navigating-shared-frequencies",
+            slug: "living-among-others",
             reason: "Adjacent in source order within the same lever sequence."
           }
         ]
@@ -228,7 +228,7 @@ export const environmentLever: Lever = {
     },
     {
       sourceNumber: 5,
-      slug: "cultural-resonance",
+      slug: "where-you-live",
       name: "Where You Live",
       essence: "Assessing whether the place you live actually suits you — its pace, its values, what it rewards — and recognising when the honest answer is to move.",
       mechanism: [
@@ -251,9 +251,9 @@ export const environmentLever: Lever = {
       ],
       leverSlug: "environment",
       relatedPractices: [
-        "atmospheric-purity",
-        "navigating-shared-frequencies",
-        "consecrated-spaces"
+        "air-light-and-sound",
+        "living-among-others",
+        "places-of-stillness"
       ],
       metaTitle: "Where You Live — How to Practise It | Sunya",
       metaDescription: "Assessing whether the place you live actually suits you — its pace, its values, what it rewards — and recognising when the honest answer is to move.",
@@ -263,15 +263,15 @@ export const environmentLever: Lever = {
         durationSource: "OMITTED",
         relatedPracticeRationale: [
           {
-            slug: "atmospheric-purity",
+            slug: "air-light-and-sound",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "navigating-shared-frequencies",
+            slug: "living-among-others",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "consecrated-spaces",
+            slug: "places-of-stillness",
             reason: "Adjacent in source order within the same lever sequence."
           }
         ]
@@ -279,7 +279,7 @@ export const environmentLever: Lever = {
     },
     {
       sourceNumber: 6,
-      slug: "navigating-shared-frequencies",
+      slug: "living-among-others",
       name: "Living Among Others",
       essence: "Maintaining your inner steadiness when living or working with others whose habits, stress, and unconscious patterns are continuously imposing on the shared space.",
       mechanism: [
@@ -308,8 +308,8 @@ export const environmentLever: Lever = {
       ],
       leverSlug: "environment",
       relatedPractices: [
-        "cultural-resonance",
-        "consecrated-spaces"
+        "where-you-live",
+        "places-of-stillness"
       ],
       metaTitle: "Living Among Others — How to Practise It | Sunya",
       metaDescription: "Maintaining your inner steadiness when living or working with others whose habits, stress, and unconscious patterns are continuously imposing on the shared space.",
@@ -319,11 +319,11 @@ export const environmentLever: Lever = {
         durationSource: "OMITTED",
         relatedPracticeRationale: [
           {
-            slug: "cultural-resonance",
+            slug: "where-you-live",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "consecrated-spaces",
+            slug: "places-of-stillness",
             reason: "Adjacent in source order within the same lever sequence."
           }
         ]
@@ -331,7 +331,7 @@ export const environmentLever: Lever = {
     },
     {
       sourceNumber: 7,
-      slug: "consecrated-spaces",
+      slug: "places-of-stillness",
       name: "Places of Stillness",
       essence: "Immersing the body and nervous system in deliberately engineered environments of deep stillness and concentrated presence. The practice of utilising ancient technologies of consecration to settle and lift the inner system without relying entirely on personal mental effort.",
       mechanism: [
@@ -357,7 +357,7 @@ export const environmentLever: Lever = {
       ],
       leverSlug: "environment",
       relatedPractices: [
-        "navigating-shared-frequencies"
+        "living-among-others"
       ],
       metaTitle: "Places of Stillness — How to Practise It | Sunya",
       metaDescription: "Immersing the body and nervous system in deliberately engineered environments of deep stillness and concentrated presence.",
@@ -367,7 +367,7 @@ export const environmentLever: Lever = {
         durationSource: "OMITTED",
         relatedPracticeRationale: [
           {
-            slug: "navigating-shared-frequencies",
+            slug: "living-among-others",
             reason: "Adjacent in source order within the same lever sequence."
           }
         ]

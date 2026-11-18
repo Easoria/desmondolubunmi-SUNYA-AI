@@ -53,7 +53,7 @@ export const mindLever: Lever = {
       leverSlug: "mind",
       relatedPractices: [
         "clarity-of-purpose",
-        "conscious-creation"
+        "visualisation-and-action"
       ],
       metaTitle: "Input Control — How to Practise It | Sunya",
       metaDescription: "The content of the mind is not the truth — it is accumulated data.",
@@ -69,7 +69,7 @@ export const mindLever: Lever = {
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "conscious-creation",
+            slug: "visualisation-and-action",
             reason: "Adjacent in source order within the same lever sequence."
           }
         ]
@@ -107,7 +107,7 @@ export const mindLever: Lever = {
       leverSlug: "mind",
       relatedPractices: [
         "input-control",
-        "conscious-creation",
+        "visualisation-and-action",
         "laser-focus"
       ],
       metaTitle: "Clarity of Purpose — How to Practise It | Sunya",
@@ -124,7 +124,7 @@ export const mindLever: Lever = {
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "conscious-creation",
+            slug: "visualisation-and-action",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
@@ -136,7 +136,7 @@ export const mindLever: Lever = {
     },
     {
       sourceNumber: 3,
-      slug: "conscious-creation",
+      slug: "visualisation-and-action",
       name: "Visualisation and Action",
       essence: "Using the mind as a creative force — combining deep, focused visualization with sustained determination and strategic action. This is not wishful thinking; it is the deliberate alignment of inner vision with outer effort.",
       mechanism: [
@@ -229,7 +229,7 @@ export const mindLever: Lever = {
       ],
       leverSlug: "mind",
       relatedPractices: [
-        "conscious-creation",
+        "visualisation-and-action",
         "journaling",
         "conscious-affirmation"
       ],
@@ -243,7 +243,7 @@ export const mindLever: Lever = {
         durationSource: "STATED",
         relatedPracticeRationale: [
           {
-            slug: "conscious-creation",
+            slug: "visualisation-and-action",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {

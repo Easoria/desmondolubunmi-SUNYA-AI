@@ -14,7 +14,7 @@ export const sleepLever: Lever = {
   practices: [
     {
       sourceNumber: 1,
-      slug: "the-circadian-architecture",
+      slug: "your-body-clock",
       name: "Your Body Clock",
       essence: "Sleep is not a switch to be forced — it is a natural biological rhythm to be honoured. The practice of aligning daily life with the body’s innate clock so that sleep comes more easily.",
       mechanism: [
@@ -40,8 +40,8 @@ export const sleepLever: Lever = {
       ],
       leverSlug: "sleep",
       relatedPractices: [
-        "cognitive-de-escalation",
-        "somatic-regulation"
+        "taking-the-pressure-off",
+        "settling-the-body"
       ],
       metaTitle: "Your Body Clock — How to Practise It | Sunya",
       metaDescription: "Sleep is not a switch to be forced — it is a natural biological rhythm to be honoured.",
@@ -53,11 +53,11 @@ export const sleepLever: Lever = {
         durationSource: "OMITTED",
         relatedPracticeRationale: [
           {
-            slug: "cognitive-de-escalation",
+            slug: "taking-the-pressure-off",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "somatic-regulation",
+            slug: "settling-the-body",
             reason: "Adjacent in source order within the same lever sequence."
           }
         ]
@@ -65,7 +65,7 @@ export const sleepLever: Lever = {
     },
     {
       sourceNumber: 2,
-      slug: "cognitive-de-escalation",
+      slug: "taking-the-pressure-off",
       name: "Taking the Pressure Off",
       essence: "Breaking the cycle of stress and sleeplessness by removing the performance pressure of sleep. The practice of changing what your mind associates with the bed and giving the nervous system the psychological permission it needs to fully let go.",
       mechanism: [
@@ -94,8 +94,8 @@ export const sleepLever: Lever = {
       ],
       leverSlug: "sleep",
       relatedPractices: [
-        "the-circadian-architecture",
-        "somatic-regulation",
+        "your-body-clock",
+        "settling-the-body",
         "caffeine-alcohol-and-timing"
       ],
       metaTitle: "Taking the Pressure Off — How to Practise It | Sunya",
@@ -108,11 +108,11 @@ export const sleepLever: Lever = {
         durationSource: "OMITTED",
         relatedPracticeRationale: [
           {
-            slug: "the-circadian-architecture",
+            slug: "your-body-clock",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "somatic-regulation",
+            slug: "settling-the-body",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
@@ -124,11 +124,11 @@ export const sleepLever: Lever = {
     },
     {
       sourceNumber: 3,
-      slug: "somatic-regulation",
+      slug: "settling-the-body",
       name: "Settling the Body",
       essence: "Shifting the body from a state of survival into a state of rest and repair by manually signalling safety to the nervous system. When sleep difficulties are rooted in chronic tension, mental overactivity, or an overactive stress response — this is where to look first.",
       mechanism: [
-        "The modern stress response is rarely dramatic — it is a quiet, unconscious tension that lingers in the background of daily life. Unresolved conflict, chronic anxiety, and accumulated pressure train the body to remain in a state of low-grade vigilance. Even if you appear calm, the internal alarm is quietly active — keeping the breath shallow, the muscles slightly braced, and the nervous system primed. Because sleep fundamentally requires a felt sense of safety, this invisible holding makes deep rest impossible. You cannot think your way out of this physical state; the body must be spoken to directly. The six internal levers are the most powerful tools available for this. When sleep difficulties are linked to mental activity or nervous system dysregulation, work with the levers before bed rather than reaching for external solutions. The most directly relevant are: Breath — the [physiological sigh](/practices/breath/the-physiological-sigh), [slow diaphragmatic breathing](/practices/breath/deep-belly-breathing), and [alternate nostril breathing](/practices/breath/alternate-nostril-breathing) are among the fastest ways to shift from a stress state to a rest state. Awareness — the [body scan](/practices/awareness/body-scan) and [NSDR](/practices/awareness/non-sleep-deep-rest) practised lying down guide the system into deep physical release. Heart — [Heart Coherence](/practices/heart/heart-coherence) and [Emotional Presence](/practices/heart/emotional-presence) dissolve accumulated emotional tension that keeps the nervous system braced. Sound — the [grounding and safety signal protocols](/practices/sound/conscious-listening) (heavy rain, ocean, log fire, slow breath sounds) signal safety to the primal survival centres. Movement — gentle stretching, the [somatic primer](/practices/movement/the-somatic-primer), or [spinal loosening](/practices/movement/spinal-loosening) release physical tension stored in the body during the day. Use the lever that addresses the root of the disturbance on that particular night."
+        "The modern stress response is rarely dramatic — it is a quiet, unconscious tension that lingers in the background of daily life. Unresolved conflict, chronic anxiety, and accumulated pressure train the body to remain in a state of low-grade vigilance. Even if you appear calm, the internal alarm is quietly active — keeping the breath shallow, the muscles slightly braced, and the nervous system primed. Because sleep fundamentally requires a felt sense of safety, this invisible holding makes deep rest impossible. You cannot think your way out of this physical state; the body must be spoken to directly. The six internal levers are the most powerful tools available for this. When sleep difficulties are linked to mental activity or nervous system dysregulation, work with the levers before bed rather than reaching for external solutions. The most directly relevant are: Breath — the [physiological sigh](/practices/breath/the-physiological-sigh), [slow diaphragmatic breathing](/practices/breath/deep-belly-breathing), and [alternate nostril breathing](/practices/breath/alternate-nostril-breathing) are among the fastest ways to shift from a stress state to a rest state. Awareness — the [body scan](/practices/awareness/body-scan) and [NSDR](/practices/awareness/non-sleep-deep-rest) practised lying down guide the system into deep physical release. Heart — [Heart Coherence](/practices/heart/heart-coherence) and [Emotional Presence](/practices/heart/emotional-presence) dissolve accumulated emotional tension that keeps the nervous system braced. Sound — the [grounding and safety signal protocols](/practices/sound/conscious-listening) (heavy rain, ocean, log fire, slow breath sounds) signal safety to the primal survival centres. Movement — gentle stretching, the [somatic primer](/practices/movement/full-mobility-sequence), or [spinal loosening](/practices/movement/spinal-loosening) release physical tension stored in the body during the day. Use the lever that addresses the root of the disturbance on that particular night."
       ],
       protocol: [
         {
@@ -147,7 +147,7 @@ export const sleepLever: Lever = {
           text: "Sound: Use [grounding and safety signal protocols](/practices/sound/conscious-listening) — heavy rain, ocean, log fire, or slow breath sounds — to signal safety to the primal survival centres."
         },
         {
-          text: "Movement: Use gentle stretching, the [somatic primer](/practices/movement/the-somatic-primer), or [spinal loosening](/practices/movement/spinal-loosening) to release physical tension stored in the body during the day."
+          text: "Movement: Use gentle stretching, the [somatic primer](/practices/movement/full-mobility-sequence), or [spinal loosening](/practices/movement/spinal-loosening) to release physical tension stored in the body during the day."
         },
         {
           text: "Night-by-night prescription: Use the lever that addresses the root of the disturbance on that particular night, before reaching for external solutions."
@@ -159,9 +159,9 @@ export const sleepLever: Lever = {
       ],
       leverSlug: "sleep",
       relatedPractices: [
-        "cognitive-de-escalation",
+        "taking-the-pressure-off",
         "caffeine-alcohol-and-timing",
-        "environmental-architecture"
+        "light-and-sound-at-night"
       ],
       metaTitle: "Settling the Body — How to Practise It | Sunya",
       metaDescription: "Shifting the body from a state of survival into a state of rest and repair by manually signalling safety to the nervous system.",
@@ -173,7 +173,7 @@ export const sleepLever: Lever = {
         durationSource: "OMITTED",
         relatedPracticeRationale: [
           {
-            slug: "cognitive-de-escalation",
+            slug: "taking-the-pressure-off",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
@@ -181,7 +181,7 @@ export const sleepLever: Lever = {
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "environmental-architecture",
+            slug: "light-and-sound-at-night",
             reason: "Adjacent in source order within the same lever sequence."
           }
         ]
@@ -218,9 +218,9 @@ export const sleepLever: Lever = {
       ],
       leverSlug: "sleep",
       relatedPractices: [
-        "somatic-regulation",
-        "environmental-architecture",
-        "the-sleep-sanctuary"
+        "settling-the-body",
+        "light-and-sound-at-night",
+        "the-bedroom"
       ],
       metaTitle: "Caffeine, Alcohol and Timing — How to Practise It | Sunya",
       metaDescription: "What you consume, and when, decides whether the night’s biology works for you or against you.",
@@ -232,15 +232,15 @@ export const sleepLever: Lever = {
         durationSource: "OMITTED",
         relatedPracticeRationale: [
           {
-            slug: "somatic-regulation",
+            slug: "settling-the-body",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "environmental-architecture",
+            slug: "light-and-sound-at-night",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "the-sleep-sanctuary",
+            slug: "the-bedroom",
             reason: "Adjacent in source order within the same lever sequence."
           }
         ]
@@ -248,7 +248,7 @@ export const sleepLever: Lever = {
     },
     {
       sourceNumber: 5,
-      slug: "environmental-architecture",
+      slug: "light-and-sound-at-night",
       name: "Light and Sound at Night",
       essence: "Reclaiming your natural sleep rhythm by controlling the two most powerful environmental signals that shape your biological clock — light and sound.",
       mechanism: [
@@ -279,8 +279,8 @@ export const sleepLever: Lever = {
       leverSlug: "sleep",
       relatedPractices: [
         "caffeine-alcohol-and-timing",
-        "the-sleep-sanctuary",
-        "strategic-somatic-movement"
+        "the-bedroom",
+        "moving-at-the-right-times"
       ],
       metaTitle: "Light and Sound at Night — How to Practise It | Sunya",
       metaDescription: "Reclaiming your natural sleep rhythm by controlling the two most powerful environmental signals that shape your biological clock — light and sound.",
@@ -296,11 +296,11 @@ export const sleepLever: Lever = {
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "the-sleep-sanctuary",
+            slug: "the-bedroom",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "strategic-somatic-movement",
+            slug: "moving-at-the-right-times",
             reason: "Adjacent in source order within the same lever sequence."
           }
         ]
@@ -308,7 +308,7 @@ export const sleepLever: Lever = {
     },
     {
       sourceNumber: 6,
-      slug: "the-sleep-sanctuary",
+      slug: "the-bedroom",
       name: "The Bedroom",
       essence: "Transforming the bedroom from a chaotic, multi-purpose room into a single-purpose sanctuary — set up so the room itself does some of the work.",
       mechanism: [
@@ -344,9 +344,9 @@ export const sleepLever: Lever = {
       ],
       leverSlug: "sleep",
       relatedPractices: [
-        "environmental-architecture",
-        "strategic-somatic-movement",
-        "somatic-alignment"
+        "light-and-sound-at-night",
+        "moving-at-the-right-times",
+        "sleep-position"
       ],
       metaTitle: "The Bedroom — How to Practise It | Sunya",
       metaDescription: "Transforming the bedroom from a chaotic, multi-purpose room into a single-purpose sanctuary — set up so the room itself does some of the work.",
@@ -358,15 +358,15 @@ export const sleepLever: Lever = {
         durationSource: "STATED",
         relatedPracticeRationale: [
           {
-            slug: "environmental-architecture",
+            slug: "light-and-sound-at-night",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "strategic-somatic-movement",
+            slug: "moving-at-the-right-times",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "somatic-alignment",
+            slug: "sleep-position",
             reason: "Adjacent in source order within the same lever sequence."
           }
         ]
@@ -374,7 +374,7 @@ export const sleepLever: Lever = {
     },
     {
       sourceNumber: 7,
-      slug: "strategic-somatic-movement",
+      slug: "moving-at-the-right-times",
       name: "Moving at the Right Times",
       subtitle: "building sleep pressure",
       essence: "Using the body’s physical energy to build the chemical drive for sleep during the day, while downshifting the nervous system in the evening. The practice of moving in sync with the circadian rhythm.",
@@ -402,9 +402,9 @@ export const sleepLever: Lever = {
       ],
       leverSlug: "sleep",
       relatedPractices: [
-        "the-sleep-sanctuary",
-        "somatic-alignment",
-        "the-morning-ignition"
+        "the-bedroom",
+        "sleep-position",
+        "the-first-hour"
       ],
       metaTitle: "Moving at the Right Times — How to Practise It | Sunya",
       metaDescription: "Using the body’s physical energy to build the chemical drive for sleep during the day, while downshifting the nervous system in the evening.",
@@ -416,15 +416,15 @@ export const sleepLever: Lever = {
         durationSource: "OMITTED",
         relatedPracticeRationale: [
           {
-            slug: "the-sleep-sanctuary",
+            slug: "the-bedroom",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "somatic-alignment",
+            slug: "sleep-position",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "the-morning-ignition",
+            slug: "the-first-hour",
             reason: "Adjacent in source order within the same lever sequence."
           }
         ]
@@ -432,7 +432,7 @@ export const sleepLever: Lever = {
     },
     {
       sourceNumber: 8,
-      slug: "somatic-alignment",
+      slug: "sleep-position",
       name: "Sleep Position",
       essence: "Consciously placing the body in a posture that honours its natural design — supporting the spine, keeping airways open, and allowing the nightly repair work to proceed without physical friction.",
       mechanism: [
@@ -458,9 +458,9 @@ export const sleepLever: Lever = {
       ],
       leverSlug: "sleep",
       relatedPractices: [
-        "strategic-somatic-movement",
-        "the-morning-ignition",
-        "biological-adaptability"
+        "moving-at-the-right-times",
+        "the-first-hour",
+        "when-life-gets-irregular"
       ],
       metaTitle: "Sleep Position — How to Practise It | Sunya",
       metaDescription: "Consciously placing the body in a posture that honours its natural design — supporting the spine, keeping airways open, and allowing the nightly repair work to proceed without physical friction.",
@@ -472,15 +472,15 @@ export const sleepLever: Lever = {
         durationSource: "OMITTED",
         relatedPracticeRationale: [
           {
-            slug: "strategic-somatic-movement",
+            slug: "moving-at-the-right-times",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "the-morning-ignition",
+            slug: "the-first-hour",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "biological-adaptability",
+            slug: "when-life-gets-irregular",
             reason: "Adjacent in source order within the same lever sequence."
           }
         ]
@@ -488,7 +488,7 @@ export const sleepLever: Lever = {
     },
     {
       sourceNumber: 9,
-      slug: "the-morning-ignition",
+      slug: "the-first-hour",
       name: "The First Hour",
       essence: "Leveraging the first hour of waking to fuel the day and biologically anchor the subsequent night’s rest. How you begin the morning directly shapes the quality of the sleep that follows.",
       mechanism: [
@@ -518,9 +518,9 @@ export const sleepLever: Lever = {
       ],
       leverSlug: "sleep",
       relatedPractices: [
-        "somatic-alignment",
-        "biological-adaptability",
-        "relational-ecology"
+        "sleep-position",
+        "when-life-gets-irregular",
+        "sharing-a-bed"
       ],
       metaTitle: "The First Hour — How to Practise It | Sunya",
       metaDescription: "Leveraging the first hour of waking to fuel the day and biologically anchor the subsequent night’s rest.",
@@ -532,15 +532,15 @@ export const sleepLever: Lever = {
         durationSource: "STATED",
         relatedPracticeRationale: [
           {
-            slug: "somatic-alignment",
+            slug: "sleep-position",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "biological-adaptability",
+            slug: "when-life-gets-irregular",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "relational-ecology",
+            slug: "sharing-a-bed",
             reason: "Adjacent in source order within the same lever sequence."
           }
         ]
@@ -548,7 +548,7 @@ export const sleepLever: Lever = {
     },
     {
       sourceNumber: 10,
-      slug: "biological-adaptability",
+      slug: "when-life-gets-irregular",
       name: "When Life Gets Irregular",
       essence: "Maintaining the core principles of circadian rhythm and nervous system regulation when faced with the irregular demands of modern life — travel, shift work, and new parenthood. The human body is more adaptable than most people realise.",
       mechanism: [
@@ -574,9 +574,9 @@ export const sleepLever: Lever = {
       ],
       leverSlug: "sleep",
       relatedPractices: [
-        "the-morning-ignition",
-        "relational-ecology",
-        "the-somatic-runway"
+        "the-first-hour",
+        "sharing-a-bed",
+        "the-wind-down-hour"
       ],
       metaTitle: "When Life Gets Irregular — How to Practise It | Sunya",
       metaDescription: "Maintaining the core principles of circadian rhythm and nervous system regulation when faced with the irregular demands of modern life — travel, shift work, and new parenthood.",
@@ -588,15 +588,15 @@ export const sleepLever: Lever = {
         durationSource: "OMITTED",
         relatedPracticeRationale: [
           {
-            slug: "the-morning-ignition",
+            slug: "the-first-hour",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "relational-ecology",
+            slug: "sharing-a-bed",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "the-somatic-runway",
+            slug: "the-wind-down-hour",
             reason: "Adjacent in source order within the same lever sequence."
           }
         ]
@@ -604,7 +604,7 @@ export const sleepLever: Lever = {
     },
     {
       sourceNumber: 11,
-      slug: "relational-ecology",
+      slug: "sharing-a-bed",
       name: "Sharing a Bed",
       essence: "Protecting the sleep quality of both people in a shared sleep environment — through honest communication, structural solutions, and the willingness to prioritise restoration over social habit.",
       mechanism: [
@@ -633,9 +633,9 @@ export const sleepLever: Lever = {
       ],
       leverSlug: "sleep",
       relatedPractices: [
-        "biological-adaptability",
-        "the-somatic-runway",
-        "data-and-intuition"
+        "when-life-gets-irregular",
+        "the-wind-down-hour",
+        "tracking-your-sleep"
       ],
       metaTitle: "Sharing a Bed — How to Practise It | Sunya",
       metaDescription: "Protecting the sleep quality of both people in a shared sleep environment — through honest communication, structural solutions, and the willingness to prioritise restoration over social habit.",
@@ -647,15 +647,15 @@ export const sleepLever: Lever = {
         durationSource: "OMITTED",
         relatedPracticeRationale: [
           {
-            slug: "biological-adaptability",
+            slug: "when-life-gets-irregular",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "the-somatic-runway",
+            slug: "the-wind-down-hour",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "data-and-intuition",
+            slug: "tracking-your-sleep",
             reason: "Adjacent in source order within the same lever sequence."
           }
         ]
@@ -663,7 +663,7 @@ export const sleepLever: Lever = {
     },
     {
       sourceNumber: 12,
-      slug: "the-somatic-runway",
+      slug: "the-wind-down-hour",
       name: "The Wind-Down Hour",
       essence: "A structured 60-minute sequence that systematically transitions the nervous system from the demands of the day to the threshold of deep sleep. The ritual that makes everything else in this lever work.",
       mechanism: [
@@ -690,9 +690,9 @@ export const sleepLever: Lever = {
       ],
       leverSlug: "sleep",
       relatedPractices: [
-        "relational-ecology",
-        "data-and-intuition",
-        "the-threshold-of-awakening"
+        "sharing-a-bed",
+        "tracking-your-sleep",
+        "the-edge-of-sleep"
       ],
       metaTitle: "The Wind-Down Hour — How to Practise It | Sunya",
       metaDescription: "A structured 60-minute sequence that systematically transitions the nervous system from the demands of the day to the threshold of deep sleep.",
@@ -704,15 +704,15 @@ export const sleepLever: Lever = {
         durationSource: "STATED",
         relatedPracticeRationale: [
           {
-            slug: "relational-ecology",
+            slug: "sharing-a-bed",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "data-and-intuition",
+            slug: "tracking-your-sleep",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "the-threshold-of-awakening",
+            slug: "the-edge-of-sleep",
             reason: "Adjacent in source order within the same lever sequence."
           }
         ]
@@ -720,7 +720,7 @@ export const sleepLever: Lever = {
     },
     {
       sourceNumber: 13,
-      slug: "data-and-intuition",
+      slug: "tracking-your-sleep",
       name: "Tracking Your Sleep",
       subtitle: "tracking without anxiety",
       essence: "Using sleep data as a tool for honest self-knowledge — without allowing the numbers to become a new source of sleep anxiety.",
@@ -741,8 +741,8 @@ export const sleepLever: Lever = {
       ],
       leverSlug: "sleep",
       relatedPractices: [
-        "the-somatic-runway",
-        "the-threshold-of-awakening"
+        "the-wind-down-hour",
+        "the-edge-of-sleep"
       ],
       metaTitle: "Tracking Your Sleep — How to Practise It | Sunya",
       metaDescription: "Using sleep data as a tool for honest self-knowledge — without allowing the numbers to become a new source of sleep anxiety.",
@@ -754,11 +754,11 @@ export const sleepLever: Lever = {
         durationSource: "OMITTED",
         relatedPracticeRationale: [
           {
-            slug: "the-somatic-runway",
+            slug: "the-wind-down-hour",
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "the-threshold-of-awakening",
+            slug: "the-edge-of-sleep",
             reason: "Adjacent in source order within the same lever sequence."
           }
         ]
@@ -766,7 +766,7 @@ export const sleepLever: Lever = {
     },
     {
       sourceNumber: 14,
-      slug: "the-threshold-of-awakening",
+      slug: "the-edge-of-sleep",
       name: "The Edge of Sleep",
       essence: "A more advanced practice that builds on everything in this lever — bringing a thread of gentle awareness to the natural process of falling asleep, without trying to do anything at all.",
       mechanism: [
@@ -789,7 +789,7 @@ export const sleepLever: Lever = {
       ],
       leverSlug: "sleep",
       relatedPractices: [
-        "data-and-intuition"
+        "tracking-your-sleep"
       ],
       metaTitle: "The Edge of Sleep — How to Practise It | Sunya",
       metaDescription: "A more advanced practice that builds on everything in this lever — bringing a thread of gentle awareness to the natural process of falling asleep, without trying to do anything at all.",
@@ -800,7 +800,7 @@ export const sleepLever: Lever = {
         durationSource: "OMITTED",
         relatedPracticeRationale: [
           {
-            slug: "data-and-intuition",
+            slug: "tracking-your-sleep",
             reason: "Adjacent in source order within the same lever sequence."
           }
         ]

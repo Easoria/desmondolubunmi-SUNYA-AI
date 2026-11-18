@@ -111,7 +111,7 @@ export const PROBLEM_START_HERE: Record<string, ProblemStartHereEntry[]> = {
     },
     {
       leverSlug: "mind",
-      practiceSlug: "conscious-creation",
+      practiceSlug: "visualisation-and-action",
       name: "Visualisation and Action",
       whyFirst: "Makes the first step concrete enough to start",
       mechanisms: [{ slug: "mental-imagery-and-visualisation", name: "Mental imagery and visualisation" }],
@@ -120,14 +120,14 @@ export const PROBLEM_START_HERE: Record<string, ProblemStartHereEntry[]> = {
   "low-mood-and-heaviness": [
     {
       leverSlug: "movement",
-      practiceSlug: "the-dance-of-dissolution",
+      practiceSlug: "free-movement",
       name: "Free Movement",
       whyFirst: "Movement has the strongest intervention evidence for low mood of anything here",
       mechanisms: [{ slug: "movement-mobility-and-exercise-timing", name: "Movement, mobility and exercise timing" }],
     },
     {
       leverSlug: "sleep",
-      practiceSlug: "strategic-somatic-movement",
+      practiceSlug: "moving-at-the-right-times",
       name: "Moving at the Right Times",
       whyFirst: "Uses timing to get more from the same movement",
       mechanisms: [{ slug: "movement-mobility-and-exercise-timing", name: "Movement, mobility and exercise timing" }],
@@ -219,7 +219,7 @@ export const PROBLEM_START_HERE: Record<string, ProblemStartHereEntry[]> = {
     },
     {
       leverSlug: "connection",
-      practiceSlug: "somatic-communion",
+      practiceSlug: "being-with-someone",
       name: "Being With Someone",
       whyFirst: "Grief is lighter when it is not carried alone",
       mechanisms: [{ slug: "social-connection-and-isolation", name: "Social connection and isolation" }],
@@ -242,7 +242,7 @@ export const PROBLEM_START_HERE: Record<string, ProblemStartHereEntry[]> = {
     },
     {
       leverSlug: "connection",
-      practiceSlug: "karma-yoga",
+      practiceSlug: "service",
       name: "Service",
       whyFirst: "The one thing with evidence behind it for this state",
       mechanisms: [{ slug: "prosocial-behaviour-and-volunteering", name: "Prosocial behaviour and volunteering" }],
@@ -258,7 +258,7 @@ export const PROBLEM_START_HERE: Record<string, ProblemStartHereEntry[]> = {
   "fear-of-death": [
     {
       leverSlug: "awareness",
-      practiceSlug: "ultimate-self-inquiry",
+      practiceSlug: "looking-at-death",
       name: "Looking at Death",
       whyFirst: "The subject of this page is the practice",
       mechanisms: [{ slug: "awareness-without-thought", name: "Awareness without thought", qualifier: "Quieting repetitive thought, depth 4 of 4" }],
@@ -274,21 +274,21 @@ export const PROBLEM_START_HERE: Record<string, ProblemStartHereEntry[]> = {
   "exhaustion": [
     {
       leverSlug: "sleep",
-      practiceSlug: "the-circadian-architecture",
+      practiceSlug: "your-body-clock",
       name: "Your Body Clock",
       whyFirst: "Restores the timing the energy system runs on",
       mechanisms: [{ slug: "circadian-light-exposure-and-entrainment", name: "Circadian light exposure and entrainment" }],
     },
     {
       leverSlug: "sleep",
-      practiceSlug: "cognitive-de-escalation",
+      practiceSlug: "taking-the-pressure-off",
       name: "Taking the Pressure Off",
       whyFirst: "Stops the bed from becoming another place of effort",
       mechanisms: [{ slug: "sleep-behaviour", name: "Sleep behaviour" }],
     },
     {
       leverSlug: "sleep",
-      practiceSlug: "strategic-somatic-movement",
+      practiceSlug: "moving-at-the-right-times",
       name: "Moving at the Right Times",
       whyFirst: "Uses movement to refill rather than spend",
       mechanisms: [{ slug: "movement-mobility-and-exercise-timing", name: "Movement, mobility and exercise timing" }],
@@ -318,7 +318,7 @@ export const PROBLEM_START_HERE: Record<string, ProblemStartHereEntry[]> = {
     },
     {
       leverSlug: "sleep",
-      practiceSlug: "strategic-somatic-movement",
+      practiceSlug: "moving-at-the-right-times",
       name: "Moving at the Right Times",
       whyFirst: "Puts the movement where it pays back most",
       mechanisms: [{ slug: "movement-mobility-and-exercise-timing", name: "Movement, mobility and exercise timing" }],
@@ -357,7 +357,7 @@ export const PROBLEM_START_HERE: Record<string, ProblemStartHereEntry[]> = {
     },
     {
       leverSlug: "movement",
-      practiceSlug: "the-somatic-primer",
+      practiceSlug: "full-mobility-sequence",
       name: "Full Mobility Sequence",
       whyFirst: "Takes the whole system through that range",
       mechanisms: [{ slug: "movement-mobility-and-exercise-timing", name: "Movement, mobility and exercise timing" }],
@@ -373,28 +373,28 @@ export const PROBLEM_START_HERE: Record<string, ProblemStartHereEntry[]> = {
   "cant-sleep": [
     {
       leverSlug: "sleep",
-      practiceSlug: "cognitive-de-escalation",
+      practiceSlug: "taking-the-pressure-off",
       name: "Taking the Pressure Off",
       whyFirst: "Changing what the bed means is the strongest sleep intervention there is",
       mechanisms: [{ slug: "sleep-behaviour", name: "Sleep behaviour" }],
     },
     {
       leverSlug: "sleep",
-      practiceSlug: "the-circadian-architecture",
+      practiceSlug: "your-body-clock",
       name: "Your Body Clock",
       whyFirst: "Sets the clock the night depends on",
       mechanisms: [{ slug: "circadian-light-exposure-and-entrainment", name: "Circadian light exposure and entrainment" }],
     },
     {
       leverSlug: "sleep",
-      practiceSlug: "somatic-regulation",
+      practiceSlug: "settling-the-body",
       name: "Settling the Body",
       whyFirst: "Gives the body a way down once the bed is safe again",
       mechanisms: [{ slug: "progressive-muscle-relaxation-and-stillness", name: "Progressive muscle relaxation and stillness", qualifier: "calming" }],
     },
     {
       leverSlug: "sleep",
-      practiceSlug: "the-threshold-of-awakening",
+      practiceSlug: "the-edge-of-sleep",
       name: "The Edge of Sleep",
       whyFirst: "Works at the threshold without forcing sleep",
       mechanisms: [{ slug: "interoception-and-body-scan", name: "Interoception and body scan" }],
@@ -433,28 +433,28 @@ export const PROBLEM_START_HERE: Record<string, ProblemStartHereEntry[]> = {
   "money-pressure": [
     {
       leverSlug: "sustenance",
-      practiceSlug: "the-economics-of-simplicity",
+      practiceSlug: "spending-less",
       name: "Spending Less",
       whyFirst: "The only one of these that is entirely within your control and works immediately",
       mechanisms: [{ slug: "financial-security-and-scarcity", name: "Financial security and scarcity" }],
     },
     {
       leverSlug: "sustenance",
-      practiceSlug: "the-ecosystem-trust",
+      practiceSlug: "easing-money-fear",
       name: "Easing Money Fear",
       whyFirst: "Stops the fear from distorting decisions it should not touch",
       mechanisms: [{ slug: "financial-security-and-scarcity", name: "Financial security and scarcity" }, { slug: "rumination-and-mind-wandering", name: "Rumination and mind-wandering", qualifier: "Quieting repetitive thought, depth 2 of 4" }],
     },
     {
       leverSlug: "sustenance",
-      practiceSlug: "decoding-money-and-value",
+      practiceSlug: "what-money-is",
       name: "What Money Is",
       whyFirst: "Clears what money is actually for",
       mechanisms: [{ slug: "financial-security-and-scarcity", name: "Financial security and scarcity" }],
     },
     {
       leverSlug: "sustenance",
-      practiceSlug: "mastery-of-the-instrument",
+      practiceSlug: "building-skill",
       name: "Building Skill",
       whyFirst: "Builds the capacity to earn",
       mechanisms: [{ slug: "skill-mastery-and-self-efficacy", name: "Skill mastery and self-efficacy" }],
@@ -463,21 +463,21 @@ export const PROBLEM_START_HERE: Record<string, ProblemStartHereEntry[]> = {
   "loneliness": [
     {
       leverSlug: "connection",
-      practiceSlug: "the-ecosystem-of-belonging",
+      practiceSlug: "community",
       name: "Community",
       whyFirst: "Puts you among people without requiring a performance",
       mechanisms: [{ slug: "social-connection-and-isolation", name: "Social connection and isolation" }],
     },
     {
       leverSlug: "connection",
-      practiceSlug: "internal-saturation",
+      practiceSlug: "arriving-full",
       name: "Arriving Full",
       whyFirst: "Stops using other people to fill what is empty",
       mechanisms: [{ slug: "social-connection-and-isolation", name: "Social connection and isolation" }],
     },
     {
       leverSlug: "connection",
-      practiceSlug: "karma-yoga",
+      practiceSlug: "service",
       name: "Service",
       whyFirst: "Connection through contribution rather than need",
       mechanisms: [{ slug: "prosocial-behaviour-and-volunteering", name: "Prosocial behaviour and volunteering" }],
@@ -523,14 +523,14 @@ export const PROBLEM_START_HERE: Record<string, ProblemStartHereEntry[]> = {
   "burnout-cycles": [
     {
       leverSlug: "sleep",
-      practiceSlug: "somatic-regulation",
+      practiceSlug: "settling-the-body",
       name: "Settling the Body",
       whyFirst: "Repairs the crash in the body first",
       mechanisms: [{ slug: "progressive-muscle-relaxation-and-stillness", name: "Progressive muscle relaxation and stillness", qualifier: "calming" }],
     },
     {
       leverSlug: "sleep",
-      practiceSlug: "the-circadian-architecture",
+      practiceSlug: "your-body-clock",
       name: "Your Body Clock",
       whyFirst: "A push-and-crash pattern destroys circadian regularity first",
       mechanisms: [{ slug: "circadian-light-exposure-and-entrainment", name: "Circadian light exposure and entrainment" }],

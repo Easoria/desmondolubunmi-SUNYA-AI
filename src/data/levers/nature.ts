@@ -238,7 +238,7 @@ export const natureLever: Lever = {
       leverSlug: "nature",
       relatedPractices: [
         "fire",
-        "places-of-natural-transformational-power"
+        "wild-places"
       ],
       metaTitle: "Space — How to Practise It | Sunya",
       metaDescription: "Removing visual boundaries and exposing the awareness to vastness — sky, open horizon, infinite depth — to dissolve the contracted, self-referential mind and allow attention to expand beyond its habitual limits.",
@@ -252,14 +252,14 @@ export const natureLever: Lever = {
             reason: "Adjacent in source order within the same lever sequence."
           },
           {
-            slug: "places-of-natural-transformational-power",
+            slug: "wild-places",
             reason: "Part Two follows the elemental practices and extends space into natural environments used for contemplative work."
           }
         ]
       }
     },
     {
-      slug: "places-of-natural-transformational-power",
+      slug: "wild-places",
       name: "Wild Places",
       essence: "Some places affect people more than others — mountains, oceans, deserts, deep forest. Worth travelling for, and worth staying in longer than a photograph takes.",
       mechanism: [
